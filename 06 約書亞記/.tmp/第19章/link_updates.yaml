@@ -1,0 +1,559 @@
+book: 約書亞記
+chapter: 19
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。正確形狀：從前幾章講起、把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；本章的細節與引句留在本章 summary，主題發展不再重述一遍。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 西緬
+  path: link_folder/人物/西緬.md
+  summary: 第1-9節西緬拈出第二鬮，地業在猶大人地業中間，第9節說是因為猶大人的分過多。CT 說西緬在巴力毗珥事件後成了人數最少的支派，它的地業沒有明確的界線；GT《綜合解讀》說人口從59,300人劇降到22,200人；CT、GT《聖經精讀本》、KC 與 BH 都把這讀成雅各「散住在以色列地中」（創49:7）的應驗。
+  relation: 本章是西緬在約書亞記第一次得地，也是雅各那句話落地的地方：它沒有自己的地界，只有猶大地業中的城。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 13
+    - 14
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:49
+      - 民數記:26
+      - 約書亞記:19
+- title: 西布倫（同住）
+  path: link_folder/人物/西布倫（同住）.md
+  summary: 第10-16節西布倫拈出第三鬮，經文說十二座城卻只列出五座，CT 說可能是邊界城，GT《研經資料》說可能是抄本文字佚失；華爾頓說拿撒勒雖未出現，卻是這分地業的定位點，西布倫的領土並不延伸到地中海；KC 卻說西布倫西臨地中海、東到提比哩亞海；KC 與 BH 都引賽9:1-2、太4:13-16。
+  relation: 本章是雅各「必住在海口」那句祝福第一次對上地圖，對得上對不上，各家說法不一。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 9
+    - 10
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:49
+      - 申命記:33
+      - 約書亞記:19
+- title: 以薩迦（價值）
+  path: link_folder/人物/以薩迦（價值）.md
+  summary: 第17-23節以薩迦拈出第四鬮，境界從耶斯列、書念到他泊，共十六座城。GT《聖經精讀本》《綜合解讀》說它得了耶斯列平原的肥沃農田，應驗創49:14-15；華爾頓說本區極不穩定、很具戰略性；KC 與 GT《聖經精讀本》記下陀拉與巴沙出自以薩迦。
+  relation: 書17 以薩迦還只是瑪拿西的鄰居，本章它拿到了自己的一鬮。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 10
+    - 11
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:49
+      - 約書亞記:17
+      - 約書亞記:19
+- title: 亞設（有福）
+  path: link_folder/人物/亞設（有福）.md
+  summary: 第24-31節亞設拈出第五鬮，從迦密往北沿海到西頓、推羅、亞革悉，共二十二座城。GT《聖經精讀本》《綜合解讀》說它分得肥沃的土地，應驗創49:20；華爾頓說提及推羅和西頓並不表示已被佔領；KC 說女先知亞拿出自亞設（路2:36-38）；BH 說亞設後來沒有趕出境內所有居民（士1:31-32）。
+  relation: 書17 它是瑪拿西北邊的鄰居，本章它的地一路畫到腓尼基的海港。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 10
+    - 11
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:49
+      - 約書亞記:17
+      - 約書亞記:19
+- title: 拿弗他利
+  path: link_folder/人物/拿弗他利.md
+  summary: 第32-39節拿弗他利拈出第六鬮，地業在加利利海以北，有十九座堅固城。華爾頓說他泊山是它地業的主要基準點，南界因撒拿音的橡樹位置不明而略有爭議；第34節「達到約但河那裡的猶大」，CT、GT《研經資料》、GT《綜合解讀》與 BH 各有解法；GT《聖經精讀本》說它很早就陷入偶像崇拜（士1:33）。
+  relation: 本章是拿弗他利第一次得地；書11-12 被攻下的夏瑣、基低斯都落在它的境內。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 10
+    - 11
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:49
+      - 申命記:33
+      - 約書亞記:19
+- title: 但支派
+  path: link_folder/人物/但支派.md
+  summary: 第40-48節但拈出第七鬮，地業在便雅憫以西到海邊；第47節但人的地界越過原得的地界，北上攻取利善。CT 說它的地業相較其他支派很小，第47節是後人的補遺；KC 說他們的地因自己的錯變小，又成了第一個引進偶像的支派（士18:30）；GT《聖經精讀本》卻說他們沒有抱怨艱苦的環境，起來尋找新地；BH 說非利士人的壓力使許多但人北遷（士18）。
+  relation: 民26 它是人數第二多的支派，本章它最後拈鬮，得到很小的地，而且守不住。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:26
+      - 申命記:33
+      - 約書亞記:19
+- title: 但
+  path: link_folder/地點/但.md
+  summary: 第47節「但人上去攻取利善……以他們先祖但的名將利善改名為但」。CT 說利善是但城的原名，在加利利海北方約40公里；GT《啟導本》說「從但到別是巴」指以色列人所在地的範圍；GT《聖經精讀本》說利善亦稱拉億；GT《綜合解讀》說凱撒利亞腓立比就在但東面6公里。
+  relation: 創14 與申34 已用「但」標出北界，本章才交代這個名字是怎麼來的。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:14
+      - 申命記:34
+      - 約書亞記:19
+- title: 但支派至終定居於何地
+  path: link_folder/解經爭議/但支派至終定居於何地.md
+  summary: 第40-47節但的原得地界與北遷利善。STEP 顯示第47節「越過」是 va/i.ye.Tze'（H3318G，to come out）；GT《研經資料》把這句直譯為「當但人的地界從他們流出去時」；GT《聖經精讀本》列出北遷的兩個原因：人多地少，地業內外又有強盛的亞摩利人與非利士人；CT 說越過原得的地界是到以色列人尚未征服的土地去取得。
+  relation: 民26 這個條目只有一個人數，本章經文自己寫出了北遷這件事。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:26
+      - 約書亞記:19
+- title: 猶大支派
+  path: link_folder/人物/猶大支派.md
+  summary: 第1、9節西緬的地業在猶大人地業中間，「因為猶大人的分過多」。KC 說猶大的地多過他們能自己維持的，一方的富餘可以補另一方的不足（林後8:14）；BH 說把猶大的一部分分給西緬，顯出以色列要分享約的福分，而不是為自己保留多餘。
+  relation: 書15 猶大分得最大的一份，本章這一份讓出一部分給西緬。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 15
+    - 16
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:7
+      - 約書亞記:14
+      - 約書亞記:15
+      - 約書亞記:18
+      - 約書亞記:19
+- title: 別是巴
+  path: link_folder/地點/別是巴.md
+  summary: 第2節「別是巴（或名示巴）」是西緬城單的第一個。CT 說它在希伯崙西南方約40公里；GT《綜合解讀》說這是亞伯拉罕和以撒挖井的地方、南地的主要城市；GT《研經資料》說「示巴」可能是抄本訛誤，若保留，名單就有14座城，與第6節的總結不符；BH 說它在以色列的南端。
+  relation: 書15:28 它列在猶大的城中，本章它歸了西緬。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: keep
+      basis: already_covered
+      covered_by: 以色列人分迦南時，這城給了西緬支派，名示瑪（書十五28、十九2），又名示巴
+- title: 迦南大敗直到何珥瑪
+  path: link_folder/歷史/迦南大敗直到何珥瑪.md
+  summary: 第4節何珥瑪列在西緬的城中。CT 說它的字義是「庇護所」，在別是巴東方約11公里；BH 說以色列先因擅自上去在何珥瑪戰敗（民14:40-45），後來許願毀滅得勝（民21:1-3）。
+  relation: 書15:30 它列在猶大南地，本章歸了西緬。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 洗革拉
+  path: link_folder/地點/洗革拉.md
+  summary: 第5節洗革拉列在西緬的城中。CT 說它在別是巴西北方約22公里；BH 說它後來是大衛躲避掃羅時的避難所，由迦特王亞吉賜給他（撒上27:6）。
+  relation: 書15:31 它列在猶大南地，本章它又列在西緬名下。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:15
+      - 約書亞記:19
+- title: 南地
+  path: link_folder/地點/南地.md
+  summary: 第8節「就是南地的拉瑪」。GT《研經資料》說本段的城市大都在尼革（南地），以帖、亞珊在薩非拉（高原）；華爾頓說「南地的拉瑪」表示這是邱壇或祭儀地點。
+  relation: 書15 南地是猶大城單的第一區，本章西緬的城也大都在這裡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 約念
+  path: link_folder/地點/約念.md
+  summary: 第11節西布倫的境界「又達到約念前的河」。CT 說約念位於基順河的南岸，約念前的河即指基順河；BH 說約念曾有被擊敗的迦南王，後來給了利未人（書12:22；21:34）。
+  relation: 書12 約念的王被擊殺，本章約念成了西布倫地界的參照點。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:12
+      - 約書亞記:19
+- title: 伸崙
+  path: link_folder/地點/伸崙.md
+  summary: 第15節伸崙列在西布倫的城邑。CT 說它在約念東北方約9公里，字義「守望高處」；BH 說伸崙曾有迦南王加入約書亞所擊敗的北方聯盟（書11:1；12:20）。
+  relation: 書11、12 伸崙王是被擊敗的一方，本章伸崙歸了西布倫。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:11
+      - 約書亞記:12
+      - 約書亞記:19
+- title: 押煞
+  path: link_folder/地點/押煞.md
+  summary: 第25節押煞列在亞設的境界。CT 說它在亞柯南方約18公里；華爾頓說杜得模斯三世攻取迦南城鎮的名單包括押煞；BH 說押煞王加入耶賓的北方聯盟（書11:1），耶和華使以色列得勝，押煞成了交給亞設的地。
+  relation: 書11、12 押煞王被擊敗，本章押煞進了亞設的地業。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:11
+      - 約書亞記:12
+      - 約書亞記:19
+- title: 迦密
+  path: link_folder/地點/迦密.md
+  summary: 第26節亞設的境界「往西達到迦密」。CT 說迦密是從亞柯灣南岸往東南延伸的山脈，全長約40公里；GT《綜合解讀》與 BH 都提到以利亞在迦密對付巴力的先知（王上18）。
+  relation: 書12 迦密替約念定位，本章它標出亞設的西界。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:12
+      - 約書亞記:19
+- title: 西頓
+  path: link_folder/地點/西頓.md
+  summary: 第28節亞設的境界「直到西頓大城」。CT 說西頓在推羅北方約34公里；GT《串珠》說它雖在亞設抽籤得地的範圍，這城卻沒有被攻取；GT《綜合解讀》說它一直沒有被亞設支派攻取（士1:31）；BH 說它是富裕而拜偶像的航海城市。
+  relation: 書13 西頓是未得之地，本章它寫進亞設的地界，仍然沒有攻取。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 夏瑣
+  path: link_folder/地點/夏瑣.md
+  summary: 第36節夏瑣列在拿弗他利的堅固城。CT 說它在基尼烈城北方約17公里；GT《聖經精讀本》說夏瑣王的居所在拿弗他利境內；GT《綜合解讀》說它被燒毀後又被迦南人佔領，耶賓欺壓以色列人二十年（士4:3）；BH 說它是以色列最大的考古遺址之一。
+  relation: 書11 被焚燒、書12 列在王單上，本章它成了拿弗他利的一座城。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:11
+      - 約書亞記:12
+      - 約書亞記:19
+- title: 基低斯
+  path: link_folder/地點/基低斯.md
+  summary: 第37節基低斯列在拿弗他利的堅固城。CT 說它在夏瑣北方約11公里；華爾頓說它在今日已被排乾的胡列湖北面；GT《綜合解讀》說巴拉來自基低斯（士4:6）；BH 說它後來成為逃城（書20:7）。
+  relation: 書12 它的王被擊殺、歸屬兩說，本章經文把它列給拿弗他利。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:12
+      - 約書亞記:19
+- title: 瑣拉
+  path: link_folder/地點/瑣拉.md
+  summary: 第41節瑣拉是但地業的第一個地名。CT 說它在耶路撒冷西方約23公里；GT《綜合解讀》《研經資料》與 BH 說它是參孫的家鄉（士13:2；16:31）；KC 說參孫在瑣拉和以實陶開始藉著聖靈行事（士13:25）。
+  relation: 書15 它列在猶大高原，本章它歸了但。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:15
+      - 約書亞記:19
+- title: 以實陶
+  path: link_folder/地點/以實陶.md
+  summary: 第41節「瑣拉、以實陶」。CT 說它在耶路撒冷西方約22公里，字義「懇求」；KC 與 BH 說耶和華的靈在瑣拉和以實陶之間開始感動參孫（士13:25）。
+  relation: 書15 它列在猶大高原，本章它和瑣拉一起歸了但。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:15
+      - 約書亞記:19
+- title: 以革倫
+  path: link_folder/地點/以革倫.md
+  summary: 第43節以革倫列在但的城邑。CT 說它在基色西南方約11公里；GT《綜合解讀》說它是非利士人五城中最北的一個；BH 說約櫃曾被送到以革倫（撒上5:10-12），雖列在但的地界，非利士人在這時期的大部分時間仍控制著它。
+  relation: 書13 它是未得之地，書15 劃給猶大，本章又列在但的名下。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 亭拿（猶大）
+  path: link_folder/地點/亭拿（猶大）.md
+  summary: 第43節「以倫、亭拿他、以革倫」。CT 說亭拿他在伯示麥西北方約7公里；GT《研經資料》說亭拿他應該是亭拿，可能是巴塔希遺址；BH 作 Timnah，說參孫向亭拿的非利士女子求親（士14:1-2），Tel Batash 出土非利士陶器。
+  relation: 書15:10 亭拿在猶大的北界上，本章同一個地方以「亭拿他」之名列在但的城邑。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:38
+      - 約書亞記:15
+      - 約書亞記:19
+- title: 以法蓮山地
+  path: link_folder/地點/以法蓮山地.md
+  summary: 第50節約書亞所求的亭拿西拉城在以法蓮山地。BH 說約書亞屬以法蓮支派，產業在以法蓮崎嶇的中部山地，靠近示羅；KC 說那是他同時代的人不願意住的地方（書17:15-16）。
+  relation: 書17 約瑟的子孫嫌這片山地窄小，本章約書亞自己在這裡求了一座城。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:17
+      - 約書亞記:19
+- title: 約書亞
+  path: link_folder/人物/約書亞.md
+  summary: 第49-51節以色列人分完地業，才把約書亞所求的以法蓮山地亭拿西拉城給他，他修城住在其中；第51節他與以利亞撒、各支派族長在示羅拈鬮分地。CT 說他沒有利用職務的便利以權謀私；GT《聖經精讀本》說分地以迦勒為始、以約書亞為終；KC 說他出於謙虛，等到眾人都得了，並把他讀成主耶穌的圖畫。
+  relation: 他帶以色列人進迦南、主持分地，到本章才最後一個得到自己的地業。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 33
+    - 34
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:13
+      - 約書亞記:14
+      - 約書亞記:18
+      - 約書亞記:19
+- title: 以利亞撒
+  path: link_folder/人物/以利亞撒.md
+  summary: 第51節「這就是祭司以利亞撒和嫩的兒子約書亞，並以色列各支派的族長……拈鬮所分的地業」。KC 說這個結語幾乎和書14:1 一樣，以利亞撒排在前面，領導要有祭司的心；GT《啟導本》說主持分地的人是摩西預先指定的（民34:17-19）；BH 說他代表亞倫傳下的祭司權柄。
+  relation: 書14:1 他與約書亞一同開始分地，本章一同結束。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 16
+    - 17
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:34
+      - 約書亞記:14
+      - 約書亞記:17
+      - 約書亞記:19
+- title: 示羅
+  path: link_folder/地點/示羅.md
+  summary: 第51節「在示羅會幕門口，耶和華面前，拈鬮所分的地業」。CT 說分配地業的事宜是在示羅進行的（書18:1）；BH 說士師時代會幕與約櫃大多時候都在示羅，使它成為全國敬拜、審判與立約的聚集之處。
+  relation: 書18 會幕設立在示羅、開始為七個支派拈鬮，本章在示羅收尾。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:18
+      - 約書亞記:19
+- title: 會幕（帳幕整體）
+  path: link_folder/主題/會幕（帳幕整體）.md
+  summary: 第51節「在示羅會幕門口，耶和華面前」。KC 說神的子民可以在自己中間給基督一份產業，這件事在信徒的聚會中、也就是會幕裡顯明出來；BH 說會幕門口是以色列藉祭司親近神的指定地點，在那裡拈鬮表明國家的疆界、領袖與將來都由耶和華的同在來定。
+  relation: 書18 會幕設在示羅，本章分地在會幕門口結束。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 25
+    - 26
+    definition: keep
+    development: keep
+- title: 拈鬮分地（go.ral）
+  path: link_folder/主題/拈鬮分地（go.ral）.md
+  summary: 第1、10、17、24、32、40節拈出第二到第七鬮，第51節「拈鬮所分的地業。這樣，他們把地分完了」。KC 說這個結語幾乎和書14:1 一樣；GT《綜合解讀》說雖然還有許多未得之地，他們已在信心中完成了神所交託的任務；BH 說拈鬮防止最強的支派或領袖按自己的喜好取地。
+  relation: 書18 在示羅開始為七個支派拈鬮，本章把剩下的六鬮拈完，分地到此結束。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 11
+    - 12
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:14
+      - 約書亞記:18
+      - 約書亞記:19
+- title: 產業（na.cha.lah）
+  path: link_folder/原文/產業（na.cha.lah）.md
+  summary: 全章反覆「按著宗族所得的地業」；STEP 顯示本章 na.cha.lah（H5159）出現15次，第49節以色列人把 na.cha.Lah（一份產業）給了約書亞；CT 在第49節說「地業」原文是雙字，首字是土地，次字是財產、產業。
+  relation: 本章用同一個詞替六個支派各記一筆，最後一筆給了約書亞。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 23
+    - 24
+    definition: keep
+    development: keep
+- title: 未得之地
+  path: link_folder/主題/未得之地.md
+  summary: 第28-29節亞設的境界列到西頓大城、堅固城推羅、亞革悉，第47節但人的地界越過原得的地界。華爾頓與 GT《研經資料》說提及推羅和西頓並不表示已被佔領，本段可能只是理論上的疆界；GT《研經資料》說亞革悉從來沒有被攻取（士1:31）；GT《綜合解讀》說雖然還有許多未得之地，他們仍照神的吩咐把地分完；BH 說各支派仍要趕出剩下的仇敵。
+  relation: 書13 列出的未得之地，到分地最後一章仍有一部分寫在支派地界上而沒有得著。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:13
+      - 約書亞記:19
+- title: 西緬利未受咒詛 (創49_5-7)
+  path: link_folder/互文/西緬利未受咒詛 (創49_5-7).md
+  summary: 第1、9節西緬的地業在猶大人地業中間。CT、GT《聖經精讀本》與《雷氏研讀本》說這應驗了雅各的預言（創49:7）；KC 說西緬融進猶大、幾乎失去身分，利未人分散在各城成為祝福；BH 說利未的分散成了聖職，西緬的分散反映支派影響力的減弱。
+  relation: 創49 的宣告在本章應驗了西緬那一半。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:34
+      - 創世記:49
+      - 約書亞記:19
+- title: 摩西的祝福與雅各的祝福
+  path: link_folder/主題/摩西的祝福與雅各的祝福.md
+  summary: 第10-39節各支派的地業。GT《綜合解讀》逐一支派對照創49 與申33；華爾頓與 GT《研經資料》說西布倫的領土並不延伸到地中海，似乎不合創49:13、申33:18-19；KC 說西布倫西臨地中海，合乎創49:13；GT《聖經精讀本》以西布倫經商、但支派進取來解釋兩份預言。
+  relation: 申33 的祝福到本章第一次對上各支派實際分到的地。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:33
+      - 約書亞記:19
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: 第22、33、34節以薩迦、拿弗他利的地界通到約但河，第34節「達到約但河那裡的猶大」。CT 說拿弗他利並不與猶大相鄰，這句是指約但河往南流到死海，猶大就在死海西面；GT《研經資料》說七十士譯本缺「那裏的猶大」；GT《綜合解讀》說可能指河東睚珥的城邑（代上2:22）；BH 說約但河是以色列的東界。
+  relation: 本章約但河是北方兩個支派地業的東界。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 32
+    - 33
+    definition: keep
+    development: keep

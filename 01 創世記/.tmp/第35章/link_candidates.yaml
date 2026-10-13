@@ -101,9 +101,11 @@ candidates:
   - name: 以法他
     type: 地點
     evidence: 16、19節；即伯利恆，拉結死葬之處
-  - name: 伯利恆
+  - name: 伯利恆（猶大）
     type: 地點
     evidence: 19節；以法他的新名，日後基督降生之地
+    surfaces:
+      - {phrase: 伯利恆, verses: [19]}
   - name: 以得臺
     type: 地點
     evidence: 21節；牧羊臺／瞭望臺，以色列支搭帳棚之處

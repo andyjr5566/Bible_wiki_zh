@@ -1,0 +1,1521 @@
+OpenAI Codex v0.162.1
+--------
+workdir: C:\Obsidian\Hermes\scripture
+model: gpt-6-luna
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: xhigh
+reasoning summaries: none
+session id: 01a13550-955d-7c93-84f0-ebb757177294
+--------
+user
+你是唯讀 evidence reviewer，不得修改任何檔案。請依 agent_evidence_audit_prompt.md 審查下面這個 stage，並照該檔「Verdict」一節的格式，在最後輸出 footer（REVIEW_STAGE／REVIEW_SHA256／REVIEW_REVIEWER／REVIEW_ATTEMPT／REVIEW_STATUS／FINDINGS_COUNT）。
+書卷：約書亞記
+章：19
+stage：link_updates
+sha256：7af5dc40972c9f51cd3e3fa4462e5187932f92371ec93039e826b1cdbbd03abe
+REVIEW_ATTEMPT：1
+變更說明：本輪除 link_updates.yaml 外，以下條目 md 的 ## 主題發展 也在本章更新（development=update），請用 read_wiki_entry 一併審：西緬、西布倫（同住）、以薩迦（價值）、亞設（有福）、拿弗他利、但支派、但、但支派至終定居於何地、猶大支派、洗革拉、約念、伸崙、押煞、迦密、夏瑣、基低斯、瑣拉、以實陶、亭拿（猶大）、以法蓮山地、約書亞、以利亞撒、示羅、拈鬮分地（go.ral）、未得之地、西緬利未受咒詛 (創49_5-7)、摩西的祝福與雅各的祝福。
+
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\andyj_adknr2z\.codex\config.toml): `c:\Users\andyj_adknr2z\.vscode\extensions\vexp.vexp-vscode-1.3.11\dist\mcp-server.cjs` is ignored.
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\andyj_adknr2z\.codex\config.toml): `c:\Users\andyj_adknr2z\.vscode\extensions\vexp.vexp-vscode-1.3.11\dist\mcp-server.cjs` is ignored.
+warning: failed to parse hooks config C:\Obsidian\Hermes\scripture\.codex\hooks.json: unknown field `_cc_bridge_version`, expected `description` or `hooks` at line 2 column 22
+codex
+我會先用 vexp 的 `run_pipeline` 載入約書亞記 19 章的審查脈絡，再依 evidence audit 規範唯讀核對 payload、指定條目與來源證據；不會修改檔案。
+mcp: vexp/get_context_capsule started
+mcp: vexp/get_context_capsule (failed)
+MCP tool call requires approval, but approval policy is never
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath 'agent_evidence_audit_prompt.md' -Raw" in C:\Obsidian\Hermes\scripture
+ succeeded in 100ms:
+# Evidence Audit Protocol
+
+ä½ æ˜¯æœ¬å°ˆæ¡ˆçš„ **Evidence Reviewer**ã€‚é è¨­ reviewer æ˜¯ Codexï¼›Codex é¡åº¦ï¼æœå‹™ä¸å¯ç”¨æ™‚ç”± Antigravity æŽ¥æ‰‹ã€‚ä½ ä¸æ˜¯ç¬¬äºŒå€‹ä½œè€…ï¼šåªæŸ¥æ ¸ Claude å·²å®Œæˆã€å°šæœªæ­£å¼è½åœ°çš„ payloadï¼ŒM3 å¦æŸ¥é‡è¦æ¢ç›®æ˜¯å¦æ¼æŽ‰ã€‚Audit å° Claude-authored content **read-only**ï¼›findings äº¤å›ž Claude ä¿®ã€‚
+
+**é€™å€‹ read-only æ˜¯æŠ€è¡“é™åˆ¶ï¼Œä¸åªæ˜¯éµå®ˆç´„å®šã€‚** æœ¬ audit å‘¼å«åœ¨ `--sandbox read-only`ï¼ˆCodexï¼‰æˆ– deny-write settingsï¼ˆAntigravityï¼‰ä¸‹åŸ·è¡Œï¼Œå› æ­¤åœ¨ CLI å±¤å°±ä¸å…·å‚™å¯«å…¥èƒ½åŠ›ï¼Œä¸æ˜¯ã€Œæœ‰èƒ½åŠ›ä½†é¸æ“‡ä¸å¯«ã€ã€‚å®Œæˆ audit å¾ŒæŠŠ findings ä»¥ç´”æ–‡å­—å›žå‚³çµ¦ orchestratorï¼Œç”± orchestratorï¼ˆæœ‰å¯«å…¥æ¬Šé™çš„é‚£ä¸€å´ï¼‰è¨˜éŒ„ verdictã€é©…å‹• Claude ä¿®ç¨¿â€”â€”reviewer æœ¬èº«ä¸å¯«ä»»ä½•æª”æ¡ˆï¼ŒåŒ…æ‹¬ä¸å¯« `agent_review.yaml`ã€‚
+
+**åŒä¸€ç« å›ºå®šåŒä¸€å€‹ reviewer session/threadï¼Œä¸è¦æ¯æ¬¡ attempt éƒ½é–‹æ–°çš„ã€‚** M3 Attempt 1ã€M3 Attempt 2ã€M6ã€link_updates çš„æ‰€æœ‰ review å‘¼å«ï¼Œéƒ½ç”¨ `--resume {threadId}`ï¼ˆCodexï¼‰æˆ–å»¶çºŒåŒä¸€ `agy` conversationï¼ˆAntigravityï¼‰æŽ¥çºŒåŒä¸€å€‹ threadï¼›åªæœ‰æ› reviewerï¼ˆCodexâ†”Antigravity äº¤æŽ¥ï¼‰æˆ–æ‰¾ä¸åˆ°å¯å»¶çºŒçš„èˆŠ thread æ™‚æ‰é–‹æ–°çš„ã€‚Read-only sandbox åœ¨æ•´å€‹ thread ç”Ÿå‘½é€±æœŸå…§ä¿æŒä¸è®Šï¼Œresume æ™‚ä¸éœ€è¦ã€ä¹Ÿä¸æ‡‰è©²é‡æ–°æŒ‡å®š sandboxï¼ˆCodex resume æœ¬ä¾†å°±æœƒæ²¿ç”¨åŽŸ session çš„ sandboxï¼‰ã€‚é€™æ¨£ reviewer èƒ½è¨˜å¾—è‡ªå·±å‰ä¸€è¼ªæŒ‡å‡ºéŽä»€éº¼ã€ä¸Šä¸€è¼ª attempt èªªäº†ä»€éº¼ï¼Œä¸å¿…æ¯æ¬¡é‡æ–°è®€æ•´ç« ä¸Šä¸‹æ–‡ã€‚
+
+å…ˆè®€ `AGENTS.md`ã€‚å‘¼å«æ™‚ï¼ç‹€æ…‹æª”æœƒæä¾›ï¼š`book`ã€`chapter`ã€`stage`ã€`sha256`ã€`review_attempts`ã€‚å…ˆç¢ºèª `.tmp/ç¬¬xç« /agent_review.yaml` çš„ stage hash èˆ‡ç›®å‰å…§å®¹ä¸€è‡´ï¼›ä¸ä¸€è‡´å°± `BLOCKED`ã€‚
+
+## å…©æ¬¡ review é ç®—ï¼ˆç¡¬é™åˆ¶ï¼‰
+
+**æ¯å€‹ stageï¼ˆm3 / m6 / link_updatesï¼‰æœ€å¤šåªæœ‰ 2 æ¬¡ substantive reviewï¼ŒCodex èˆ‡ Antigravity å…±ç”¨åŒä¸€é ç®—ï¼›æ› reviewer ä¸æœƒé‡ç½®ã€‚**
+
+- Attempt 1/2ï¼šåšå®Œæ•´ auditã€‚ä¸€æ¬¡åˆ—é½Šæ‰€æœ‰æœƒå½±éŸ¿æ­£ç¢ºæ€§ã€è­‰æ“šé‚Šç•Œæˆ–é‡è¦å®Œæ•´æ€§çš„ findingsï¼›ä¸è¦æŠŠå¯ä»¥ç¾åœ¨æŒ‡å‡ºçš„å•é¡Œç•™åˆ°ä¸‹ä¸€è¼ªã€‚
+- Attempt 2/2ï¼šé€™æ˜¯**æœ€å¾Œä¸€æ¬¡ reviewer æ©Ÿæœƒ**ã€‚å…ˆè¤‡æ ¸ä¸Šä¸€è¼ªä¿®æ­£ï¼Œå†ä¸€æ¬¡åˆ—é½Šä»å­˜åœ¨æˆ–ä¿®ç¨¿æ–°å¼•å…¥çš„æ‰€æœ‰ material findingsã€‚ä¸è¦è¦æ±‚ Round 3ã€‚
+- ä¸èŠ± review é ç®—åœ¨ç´”æ–‡é¢¨ã€æŽªè¾­åå¥½ã€å¯æœ‰å¯ç„¡çš„ã€Œæ›´å®Œæ•´ã€å»ºè­°ã€‚
+- Attempt 2 è‹¥ä» `CHANGES_REQUIRED`ï¼ŒClaude æœƒåšæœ€å¾Œä¸€æ¬¡ä¿®æ­£ï¼›ä¹‹å¾Œ `util/agent_review.py submit` å°æ–° hash å»ºç«‹æ˜Žç¤º `FORCED PASS`ï¼Œ**ç¦æ­¢ç¬¬ä¸‰æ¬¡ reviewer å‘¼å«**ã€‚
+- `BLOCKED`ï¼ˆä¾‹å¦‚ reviewer quotaï¼tool failureï¼ä¾†æºä¸å¯è®€ï¼‰ä¸æ˜¯ substantive reviewï¼Œä¸æ¶ˆè€—æ¬¡æ•¸ï¼›å¯æ”¹ç”±å¦ä¸€ reviewer æŽ¥æ‰‹åŒä¸€ hashã€‚
+
+ä½ çš„è²¬ä»»å› æ­¤æ˜¯ï¼š**å‰å…©æ¬¡å°±æŠŠçœŸæ­£é‡è¦çš„å•é¡ŒæŠ“å®Œï¼Œä¸ç”¨ç„¡é™ä¾†å›žã€‚**
+
+### Attempt 1 å¼·åˆ¶ scope checklistï¼ˆå¯« verdict å‰é€é …èµ°éŽï¼‰
+
+Attempt 1 çš„é ç®—æœ€å®¹æ˜“è¢«æ–‡é¢¨åå¥½ç¨€é‡‹ï¼Œå°Žè‡´çœŸå•é¡Œç•™åˆ° Attempt 2ã€å† forced passã€‚å‹•æ‰‹å‰å…ˆç¢ºèªé€™ä¸€è¼ªå·²æ¶µè“‹ï¼š
+
+- [ ] **å¿ å¯¦åº¦**ï¼šæ¯å€‹æ­¸æ–¼ä¾†æºçš„äº‹å¯¦ï¼å¼•æ–‡ï¼ç¿»è­¯ï¼è½‰è¿°éƒ½å°ç…§éŽè©²ä¾†æº rawã€‚
+- [ ] **è­‰æ“šé‚Šç•Œ**ï¼šSTEP åªç”¨ä¾†æ”¯æŒå­—å½¢ï¼lemmaï¼Strongï¼morphologyï¼æœ¬ç¯€è­¯ç¾©ï¼ç°¡è¦ç¾©åŸŸï¼›æ²’æœ‰æ‹¿ lexicon ç¾©åŸŸæˆ– STEP absence ç•¶ç¥žå­¸çµè«–ã€‚
+- [ ] **m3 æ¢ç›®å®Œæ•´åº¦**ï¼ˆm3 å¿…åšï¼‰ï¼š`link_plan.yaml` çš„ `C_new_formal` éƒ½æœ‰å¯¦éš› payloadï¼›ä¸”æŽƒéŽå››å¥— Commentaryï¼‹ç¶“æ–‡ï¼‹STEPï¼‹`link_candidates.yaml`ï¼‹`candidate_similarity.md`ï¼Œç¢ºèªæ²’æœ‰ã€Œä¾†æºæ˜Žç¢ºæåˆ°ã€å€¼å¾—è·¨ç« ç´¯ç©ã€ç„¡æ—¢æœ‰æ¢ç›®æ‰¿æŽ¥ã€çš„é‡è¦å€™é¸æ•´å€‹æ¼æŽ‰ã€‚
+- [ ] **ä¸€è‡´æ€§**ï¼šm6ï¼link_updates å°ç…§å·²æ ¸å‡†çš„ä¸Šæ¸¸ï¼ˆm3ï¼m6ï¼‰ï¼Œæ²’æœ‰å£“å¹³ Commentary åˆ†æ­§ã€æ²’æŠŠå–®ç« å…§å®¹å¯«æˆè·¨ç« ä¸»é¡Œç™¼å±•ã€‚
+- [ ] findings å·²ä¸€æ¬¡åˆ—é½Šï¼Œæ²’æœ‰ã€Œé€™å€‹ç•™åˆ°ä¸‹ä¸€è¼ªå†èªªã€ã€‚
+
+ç´”æ–‡é¢¨ã€å¯æœ‰å¯ç„¡çš„ã€Œæ›´å®Œæ•´ã€ä¸åˆ—å…¥ findingsï¼Œä¹Ÿä¸å› æ­¤è¦æ±‚ Attempt 2ã€‚
+
+## è­‰æ“šä¾†æº
+
+- ç¶“æ–‡æœ¬æ–‡ï¼äº¤å‰å¼•è¨» â†’ `raw_scripture/`
+- Commentary attributionï¼è§£ç¶“ â†’ æœ¬ç«  `source_manifest.md` å®£å‘Š OK çš„ CTã€GTã€KingCommentsã€BibleHub `raw_data/`
+- åŽŸæ–‡å­—å½¢ã€lemmaã€Strong / Extended Strongã€morphologyã€context glossã€lexicon ç¾©åŸŸ â†’ æ­£å¼ STEP evidence / receipt / projectionï¼›éœ€è¦æ™‚ç”¨å…è¨±çš„ç²¾ç¢º STEP query
+- å°ˆæ¡ˆè¦å‰‡ â†’ `AGENTS.md` èˆ‡ç•¶æ¬¡æ­£å¼ prompt/schema
+
+STEP æ˜¯åŽŸæ–‡è­‰æ“šå±¤ï¼Œä¸æ˜¯ç¬¬äº”å®¶ Commentaryã€‚lexicon ç¾©åŸŸä¸èƒ½è‡ªå‹•å¯«æˆæœ¬ç¯€ç¢ºå®šç¾©ï¼Œmorphology ä¸èƒ½è‡ªè¡ŒæŽ¨å‡ºç¥žå­¸çµè«–ï¼ŒSTEP absence ä¹Ÿä¸èƒ½ç”¨ä¾†å¦å®š Commentary å»¶ä¼¸ã€‚
+
+### Attribution fidelity
+
+å‡¡æŠŠå…§å®¹æ­¸æ–¼æŸä¸€ä¾†æºï¼Œéƒ½ç›´æŽ¥å°ç…§è©²ä¾†æºåˆ¤æ–·å¿ å¯¦åº¦ï¼š
+
+- åŒèªžè¨€ç›´æŽ¥å¼•æ–‡ï¼šæ–‡å­—å…§å®¹é ˆå¿ å¯¦ï¼Œç¯€éŒ„ä¸å¾—æ”¹è®ŠåŽŸæ„æˆ–æ‹¼æŽ¥æˆä¾†æºæ²’æœ‰çš„å¥å­ã€‚
+- è·¨èªžè¨€ç¿»è­¯ï¼šæ¯”è¼ƒèªžç¾©ï¼Œä¸è¦æ±‚ä¸­æ–‡å­—ä¸²å‡ºç¾åœ¨è‹±æ–‡ä¾†æºï¼›ä¸å¾—å¢žåŠ ã€åˆªé™¤ã€å¼·åŒ–ã€å¼±åŒ–æˆ–åè½‰ä¾†æºçš„ä¸»å¼µã€ç¯„åœã€å¦å®šã€å› æžœèˆ‡ä¸ç¢ºå®šç¨‹åº¦ã€‚
+- å…·åè½‰è¿°ï¼šä¸è¦æ±‚é€å­—ï¼Œä½†å…§å®¹å¿…é ˆç”±ä¾†æºæ”¯æŒï¼Œä¸”ä¸èƒ½æŠŠæŸä¸€å®¶èªªæ³•æ”¹æŽ›çµ¦å¦ä¸€å®¶ã€‚
+- ä¸å› æ¨™é»žæˆ–å¼•è™Ÿæœ¬èº«åˆ¤å®šæ˜¯å¦å±¬ç›´æŽ¥å¼•æ–‡ï¼›åªæœ‰ä¾†æº attribution èˆ‡å¯¦éš›ä¾†æºä¸ç¬¦æ™‚æ‰å½¢æˆ findingã€‚å–®ç´”å­—ä¸²å›žæŸ¥ä¸åˆ°ï¼Œä¸è¶³ä»¥æ§‹æˆ findingã€‚
+
+## Stage ç¯„åœ
+
+### m3
+
+åŒæ™‚åš **å…§å®¹å¿ å¯¦åº¦ + æ¢ç›®å®Œæ•´åº¦**ï¼š
+
+- æŸ¥ `entry_content/*.yaml` çš„é‡è¦äº‹å¯¦ã€ä¾†æº attributionã€å¼•æ–‡ï¼ç¿»è­¯ï¼è½‰è¿°ã€æ•¸å­—ã€ç¶“æ–‡ã€åŽŸæ–‡ã€åˆ†æ­§èˆ‡ç•°ç« æ±¡æŸ“ã€‚
+- å°ç…§ `link_plan.yaml` çš„ `C_new_formal`ï¼Œç¢ºèªè¨ˆç•«å…§æ¢ç›®éƒ½æœ‰å¯¦éš› M3 payloadã€‚
+- å†å°ç…§æœ¬ç« å››å¥— Commentaryã€ç¶“æ–‡ã€ç›¸é—œ STEPã€`link_candidates.yaml`ã€`candidate_similarity.md`ã€`link_plan.yaml` èˆ‡æ—¢æœ‰ wikiï¼Œæ‰¾å‡ºæ˜¯å¦æœ‰ã€Œä¾†æºæ˜Žç¢ºæåˆ°ã€å…·ç ”è®€åƒ¹å€¼ã€å€¼å¾—è·¨ç« ç´¯ç©ã€æœ‰å…§å®¹å¯æ‰¿è¼‰ã€åˆæ²’æœ‰æ—¢æœ‰æ¢ç›®æ‰¿æŽ¥ã€çš„é‡è¦å€™é¸æ•´å€‹æ¼æŽ‰ã€‚
+- ä¸ç‚ºåŠŸèƒ½è©žã€å–®æ¬¡è–„å¼±æåŠã€Strong ç·¨è™Ÿæœ¬èº«æˆ–åŒç¾©æ—¢æœ‰æ¢ç›®å¦å»ºé ã€‚
+
+`missing entry candidate` é¡å¤–å¯«ï¼šSuggested entryã€Evidenceã€Why materialã€Existing coverage checkã€Fix directionã€‚è‹¥æ ¹å› åœ¨ candidate å±¤ï¼Œè¦æ±‚ Claude å›ž `link_candidates.yaml` ä¿®ï¼Œä¹‹å¾Œç”± orchestrator é‡è·‘ similarity â†’ resolve â†’ promptsï¼›ä¸è¦ç¹žéŽæµç¨‹ç¡¬å¡žå­¤ç«‹ M3 YAMLã€‚
+
+### m6
+
+æŸ¥ `chapter_content.yaml`ï¼Œä¸¦åƒç…§å·²é€šéŽ M3ï¼ševidence fidelityã€M3/M6 consistencyã€æ˜¯å¦å£“å¹³ Commentary åˆ†æ­§ã€æ˜¯å¦æ¼æŽ‰æœƒè®“æœ¬ç« æ•´ç†ç”¢ç”Ÿæ˜Žé¡¯åå·®çš„é‡è¦ nuanceã€‚
+
+### å·®ç•°è¤‡æ ¸ï¼ˆreview_mode: deltaï¼‰
+
+`agent_review.py status` é¡¯ç¤º `delta-review-pending` æ™‚ï¼Œæœ¬ stage çš„æª”æ¡ˆè‡ªä¸Šæ¬¡ PASS å¾Œæ²’æœ‰æ”¹ï¼Œåªæœ‰ä¸Šæ¸¸ï¼ˆM3ï¼M6ï¼‰æ”¹äº†ã€‚åªæŸ¥ä¸Šæ¸¸ä¿®æ”¹æœ‰æ²’æœ‰è®“æœ¬ stage å…§å®¹å¤±æº–ï¼ˆä¾‹å¦‚ M3 æ¢ç›®åæˆ–å®šç¾©æ”¹äº†ï¼ŒM6 æœ¬ç« æ•´ç†çš„é€£çµèˆ‡æ•˜è¿°æ˜¯å¦ä»å°å¾—ä¸Šï¼‰ï¼›ä¸é‡åšæ•´ä»½ auditã€‚é€™æ¬¡å¯©æŸ¥ä¸è¨ˆå…¥å…©æ¬¡é¡åº¦ã€‚
+
+### link_updates
+
+æŸ¥ `link_updates.yaml`ï¼Œå¿…è¦æ™‚è®€ `review_evidence.md` èˆ‡è¢«æ›´æ–°æ—¢æœ‰æ¢ç›®ï¼š`summary/relation` æ˜¯å¦å¿ æ–¼ä¾†æºã€`overview_review` çš„ keep/update æ˜¯å¦åˆç†ã€å–®ç« å…§å®¹æ˜¯å¦è¢«èª¤å¯«æˆè·¨ç« ä¸»é¡Œç™¼å±•ã€æ˜¯å¦åŠ å…¥ç„¡ä¾†æºåŽŸæ–‡ï¼ç¥žå­¸ï¼è§£ç¶“å²ã€‚
+
+## Finding åˆ†é¡ž
+
+åªç”¨ï¼š
+
+- `overstated`
+- `unsupported`
+- `source mismatch`
+- `quotation mismatch`
+- `missing nuance`
+- `missing entry candidate`
+- `original-language overreach`
+- `cross-chapter contamination`
+
+å®Œå…¨æœ‰æ”¯æŒçš„å…§å®¹ä¸ç”¨é€æ¢åˆ—ã€‚æ¯å€‹éž PASS finding åªå¯«ï¼šTargetã€åˆ†é¡žã€Issueã€å¯é©—è­‰ Evidenceã€æœ€å° Fix directionã€‚ä¸è¦ä»£ Claude é‡å¯«æ•´æ®µã€‚
+
+### èˆ‰è­‰æ ¼å¼ï¼ˆç¡¬æ€§ï¼‰
+
+reviewer çš„ finding æ›¾å‡ºç¾æ•´æ¢ç·¨é€ çš„ç´€éŒ„ï¼ˆé™„çš„ã€Œé€å­—å¼•å¥ã€åœ¨ raw å…¨æŸ¥ç„¡ï¼‰ã€‚å› æ­¤ï¼š
+
+- æ¯å€‹ finding çš„ **Evidence å¿…é ˆæ˜¯å¯æ©Ÿæ¢°è¤‡æ ¸çš„å…·é«”éŒ¨é»ž**ï¼š`raw_data/<æª”å>` æˆ– `raw_scripture/...` çš„**è¡Œè™Ÿ**ï¼‹**é€å­—å…§å®¹**ï¼ˆç…§æŠ„ï¼Œä¸æ”¹æ¨™é»žï¼‰ã€‚ã€ŒæŸå®¶æ²’æœ‰èªªã€é€™ç¨®å¦å®šå¼ï¼Œè¦é™„ä¸Šä½ å¯¦éš› grep éŽçš„æª”åèˆ‡é—œéµè©žã€‚
+- **`missing`ï¼`quotation mismatch`ï¼`source mismatch` é¡ž findingï¼šé€å‡ºå‰ï¼ŒEvidence è£¡å¼•åˆ°çš„æ¯ä¸€æ®µé€å­—å…§å®¹éƒ½è¦å…ˆ `grep -F` æ‰“éŽä¸€é**ï¼ˆåœ¨æŽ›åä¾†æºèˆ‡ä½ è²ç¨±çš„å¯¦éš›ä¾†æºå…©é‚Šéƒ½æ‰“ï¼‰ã€‚æŸ¥ç„¡å‡ºè™•çš„å¼•å¥ä¸å¾—å¯«é€² findingã€‚
+- æ¨™åˆ°ã€Œæ‡‰é€£æ—¢æœ‰æ¢ç›®ã€æ™‚ï¼Œå…ˆç¢ºèªé‚£å€‹æ¢ç›®ååœ¨åº«è£¡çœŸçš„å­˜åœ¨ï¼ˆ`search_wiki_entries`ï¼‰ï¼Œè³‡æ–™å¤¾ï¼åˆ†é¡žåä¹Ÿè¦å¯«å°ã€‚
+- orchestrator ä»£è¨˜ verdict å‰ï¼Œæœƒå° `missing` é¡ž finding é€æ¢ `grep -F` æŠ½æŸ¥ï¼›æŸ¥ä¸åˆ°çš„ finding ä¸æŽ¡ç´ã€‚
+
+## Verdict
+
+reviewer åœ¨å”¯è®€ sandbox è£¡è·‘ä¸äº†å¯«å…¥æŒ‡ä»¤ï¼Œæ‰€ä»¥è‡ªå·±ä¸åŸ·è¡Œ `agent_review.py verdict`ã€‚audit çµæŸæ™‚åªè¦æ¸…æ¥šè¼¸å‡ºä¸‹é¢é€™æ®µï¼Œç”± orchestratorï¼ˆæœ‰å¯«å…¥æ¬Šé™çš„é‚£ä¸€å´ï¼‰ä¾é€™æ®µè¼¸å‡ºä»£ç‚ºè¨˜éŒ„ï¼š
+
+```text
+python util/agent_review.py verdict æ›¸å ç«  stage <pass|changes_required|blocked> \
+  --sha <ç›®å‰ sha> --reviewer <codex|antigravity> --findings-count N
+```
+
+è‹¥ orchestrator ä»£è¨˜æ™‚å…§å®¹å·²è¢« Claude æ”¹å‹•ã€sha å°ä¸ä¸Šï¼Œ**ä¸è¦æ”¾æŽ‰é€™æ¬¡ attempt**ï¼š
+ç”¨ reviewer footer çš„ `REVIEW_SHA256` è£œè¨˜â€”â€”
+
+```text
+python util/agent_review.py verdict æ›¸å ç«  stage <status> \
+  --sha <REVIEW_SHA256> --observed-sha <REVIEW_SHA256> --reviewer <...> --findings-count N
+```
+
+è£œè¨˜çš„ attempt ç…§ç®—ã€æ¨™ `late_recorded`ï¼Œä½†åªæŽ›åœ¨ reviewer ç•¶æ™‚çœ‹éŽçš„ sha ä¸Šï¼Œ
+ä¸è¿½èªç›®å‰å…§å®¹â€”â€”ç›®å‰ç‰ˆæœ¬ä»è¦é‡æ–° submit æ‰éŽ gateï¼ˆé¡åº¦ç”¨ç›¡å‰‡ FORCED PASSï¼‰ã€‚
+
+æœ€å¾Œè¼¸å‡ºï¼š
+
+```text
+REVIEW_STAGE: <m3|m6|link_updates>
+REVIEW_SHA256: <sha>
+REVIEW_REVIEWER: <codex|antigravity>
+REVIEW_ATTEMPT: <1|2>
+REVIEW_STATUS: <PASS|CHANGES_REQUIRED|BLOCKED>
+FINDINGS_COUNT: <æ•´æ•¸>
+```
+
+Attempt 2/2 å¾Œä¸å¾—å†è¦æ±‚ reviewer è¤‡æ ¸ã€‚è‹¥ä»æœ‰ findingsï¼Œæ¸…æ¥šä¸€æ¬¡åˆ—å®Œï¼Œäº¤ Claude æœ€å¾Œä¿®æ­£ï¼Œè®“ç¨‹å¼èµ° `FORCED PASS`ã€‚
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath 'agent_evidence_audit_prompt.md' -Encoding utf8 -Raw" in C:\Obsidian\Hermes\scripture
+ succeeded in 75ms:
+# Evidence Audit Protocol
+
+你是本專案的 **Evidence Reviewer**。預設 reviewer 是 Codex；Codex 額度／服務不可用時由 Antigravity 接手。你不是第二個作者：只查核 Claude 已完成、尚未正式落地的 payload，M3 另查重要條目是否漏掉。Audit 對 Claude-authored content **read-only**；findings 交回 Claude 修。
+
+**這個 read-only 是技術限制，不只是遵守約定。** 本 audit 呼叫在 `--sandbox read-only`（Codex）或 deny-write settings（Antigravity）下執行，因此在 CLI 層就不具備寫入能力，不是「有能力但選擇不寫」。完成 audit 後把 findings 以純文字回傳給 orchestrator，由 orchestrator（有寫入權限的那一側）記錄 verdict、驅動 Claude 修稿——reviewer 本身不寫任何檔案，包括不寫 `agent_review.yaml`。
+
+**同一章固定同一個 reviewer session/thread，不要每次 attempt 都開新的。** M3 Attempt 1、M3 Attempt 2、M6、link_updates 的所有 review 呼叫，都用 `--resume {threadId}`（Codex）或延續同一 `agy` conversation（Antigravity）接續同一個 thread；只有換 reviewer（Codex↔Antigravity 交接）或找不到可延續的舊 thread 時才開新的。Read-only sandbox 在整個 thread 生命週期內保持不變，resume 時不需要、也不應該重新指定 sandbox（Codex resume 本來就會沿用原 session 的 sandbox）。這樣 reviewer 能記得自己前一輪指出過什麼、上一輪 attempt 說了什麼，不必每次重新讀整章上下文。
+
+先讀 `AGENTS.md`。呼叫時／狀態檔會提供：`book`、`chapter`、`stage`、`sha256`、`review_attempts`。先確認 `.tmp/第x章/agent_review.yaml` 的 stage hash 與目前內容一致；不一致就 `BLOCKED`。
+
+## 兩次 review 預算（硬限制）
+
+**每個 stage（m3 / m6 / link_updates）最多只有 2 次 substantive review，Codex 與 Antigravity 共用同一預算；換 reviewer 不會重置。**
+
+- Attempt 1/2：做完整 audit。一次列齊所有會影響正確性、證據邊界或重要完整性的 findings；不要把可以現在指出的問題留到下一輪。
+- Attempt 2/2：這是**最後一次 reviewer 機會**。先複核上一輪修正，再一次列齊仍存在或修稿新引入的所有 material findings。不要要求 Round 3。
+- 不花 review 預算在純文風、措辭偏好、可有可無的「更完整」建議。
+- Attempt 2 若仍 `CHANGES_REQUIRED`，Claude 會做最後一次修正；之後 `util/agent_review.py submit` 對新 hash 建立明示 `FORCED PASS`，**禁止第三次 reviewer 呼叫**。
+- `BLOCKED`（例如 reviewer quota／tool failure／來源不可讀）不是 substantive review，不消耗次數；可改由另一 reviewer 接手同一 hash。
+
+你的責任因此是：**前兩次就把真正重要的問題抓完，不用無限來回。**
+
+### Attempt 1 強制 scope checklist（寫 verdict 前逐項走過）
+
+Attempt 1 的預算最容易被文風偏好稀釋，導致真問題留到 Attempt 2、再 forced pass。動手前先確認這一輪已涵蓋：
+
+- [ ] **忠實度**：每個歸於來源的事實／引文／翻譯／轉述都對照過該來源 raw。
+- [ ] **證據邊界**：STEP 只用來支持字形／lemma／Strong／morphology／本節譯義／簡要義域；沒有拿 lexicon 義域或 STEP absence 當神學結論。
+- [ ] **m3 條目完整度**（m3 必做）：`link_plan.yaml` 的 `C_new_formal` 都有實際 payload；且掃過四套 Commentary＋經文＋STEP＋`link_candidates.yaml`＋`candidate_similarity.md`，確認沒有「來源明確提到、值得跨章累積、無既有條目承接」的重要候選整個漏掉。
+- [ ] **一致性**：m6／link_updates 對照已核准的上游（m3／m6），沒有壓平 Commentary 分歧、沒把單章內容寫成跨章主題發展。
+- [ ] findings 已一次列齊，沒有「這個留到下一輪再說」。
+
+純文風、可有可無的「更完整」不列入 findings，也不因此要求 Attempt 2。
+
+## 證據來源
+
+- 經文本文／交叉引註 → `raw_scripture/`
+- Commentary attribution／解經 → 本章 `source_manifest.md` 宣告 OK 的 CT、GT、KingComments、BibleHub `raw_data/`
+- 原文字形、lemma、Strong / Extended Strong、morphology、context gloss、lexicon 義域 → 正式 STEP evidence / receipt / projection；需要時用允許的精確 STEP query
+- 專案規則 → `AGENTS.md` 與當次正式 prompt/schema
+
+STEP 是原文證據層，不是第五家 Commentary。lexicon 義域不能自動寫成本節確定義，morphology 不能自行推出神學結論，STEP absence 也不能用來否定 Commentary 延伸。
+
+### Attribution fidelity
+
+凡把內容歸於某一來源，都直接對照該來源判斷忠實度：
+
+- 同語言直接引文：文字內容須忠實，節錄不得改變原意或拼接成來源沒有的句子。
+- 跨語言翻譯：比較語義，不要求中文字串出現在英文來源；不得增加、刪除、強化、弱化或反轉來源的主張、範圍、否定、因果與不確定程度。
+- 具名轉述：不要求逐字，但內容必須由來源支持，且不能把某一家說法改掛給另一家。
+- 不因標點或引號本身判定是否屬直接引文；只有來源 attribution 與實際來源不符時才形成 finding。單純字串回查不到，不足以構成 finding。
+
+## Stage 範圍
+
+### m3
+
+同時做 **內容忠實度 + 條目完整度**：
+
+- 查 `entry_content/*.yaml` 的重要事實、來源 attribution、引文／翻譯／轉述、數字、經文、原文、分歧與異章污染。
+- 對照 `link_plan.yaml` 的 `C_new_formal`，確認計畫內條目都有實際 M3 payload。
+- 再對照本章四套 Commentary、經文、相關 STEP、`link_candidates.yaml`、`candidate_similarity.md`、`link_plan.yaml` 與既有 wiki，找出是否有「來源明確提到、具研讀價值、值得跨章累積、有內容可承載、又沒有既有條目承接」的重要候選整個漏掉。
+- 不為功能詞、單次薄弱提及、Strong 編號本身或同義既有條目另建頁。
+
+`missing entry candidate` 額外寫：Suggested entry、Evidence、Why material、Existing coverage check、Fix direction。若根因在 candidate 層，要求 Claude 回 `link_candidates.yaml` 修，之後由 orchestrator 重跑 similarity → resolve → prompts；不要繞過流程硬塞孤立 M3 YAML。
+
+### m6
+
+查 `chapter_content.yaml`，並參照已通過 M3：evidence fidelity、M3/M6 consistency、是否壓平 Commentary 分歧、是否漏掉會讓本章整理產生明顯偏差的重要 nuance。
+
+### 差異複核（review_mode: delta）
+
+`agent_review.py status` 顯示 `delta-review-pending` 時，本 stage 的檔案自上次 PASS 後沒有改，只有上游（M3／M6）改了。只查上游修改有沒有讓本 stage 內容失準（例如 M3 條目名或定義改了，M6 本章整理的連結與敘述是否仍對得上）；不重做整份 audit。這次審查不計入兩次額度。
+
+### link_updates
+
+查 `link_updates.yaml`，必要時讀 `review_evidence.md` 與被更新既有條目：`summary/relation` 是否忠於來源、`overview_review` 的 keep/update 是否合理、單章內容是否被誤寫成跨章主題發展、是否加入無來源原文／神學／解經史。
+
+## Finding 分類
+
+只用：
+
+- `overstated`
+- `unsupported`
+- `source mismatch`
+- `quotation mismatch`
+- `missing nuance`
+- `missing entry candidate`
+- `original-language overreach`
+- `cross-chapter contamination`
+
+完全有支持的內容不用逐條列。每個非 PASS finding 只寫：Target、分類、Issue、可驗證 Evidence、最小 Fix direction。不要代 Claude 重寫整段。
+
+### 舉證格式（硬性）
+
+reviewer 的 finding 曾出現整條編造的紀錄（附的「逐字引句」在 raw 全查無）。因此：
+
+- 每個 finding 的 **Evidence 必須是可機械複核的具體錨點**：`raw_data/<檔名>` 或 `raw_scripture/...` 的**行號**＋**逐字內容**（照抄，不改標點）。「某家沒有說」這種否定式，要附上你實際 grep 過的檔名與關鍵詞。
+- **`missing`／`quotation mismatch`／`source mismatch` 類 finding：送出前，Evidence 裡引到的每一段逐字內容都要先 `grep -F` 打過一遍**（在掛名來源與你聲稱的實際來源兩邊都打）。查無出處的引句不得寫進 finding。
+- 標到「應連既有條目」時，先確認那個條目名在庫裡真的存在（`search_wiki_entries`），資料夾／分類名也要寫對。
+- orchestrator 代記 verdict 前，會對 `missing` 類 finding 逐條 `grep -F` 抽查；查不到的 finding 不採納。
+
+## Verdict
+
+reviewer 在唯讀 sandbox 裡跑不了寫入指令，所以自己不執行 `agent_review.py verdict`。audit 結束時只要清楚輸出下面這段，由 orchestrator（有寫入權限的那一側）依這段輸出代為記錄：
+
+```text
+python util/agent_review.py verdict 書名 章 stage <pass|changes_required|blocked> \
+  --sha <目前 sha> --reviewer <codex|antigravity> --findings-count N
+```
+
+若 orchestrator 代記時內容已被 Claude 改動、sha 對不上，**不要放掉這次 attempt**：
+用 reviewer footer 的 `REVIEW_SHA256` 補記——
+
+```text
+python util/agent_review.py verdict 書名 章 stage <status> \
+  --sha <REVIEW_SHA256> --observed-sha <REVIEW_SHA256> --reviewer <...> --findings-count N
+```
+
+補記的 attempt 照算、標 `late_recorded`，但只掛在 reviewer 當時看過的 sha 上，
+不追認目前內容——目前版本仍要重新 submit 才過 gate（額度用盡則 FORCED PASS）。
+
+最後輸出：
+
+```text
+REVIEW_STAGE: <m3|m6|link_updates>
+REVIEW_SHA256: <sha>
+REVIEW_REVIEWER: <codex|antigravity>
+REVIEW_ATTEMPT: <1|2>
+REVIEW_STATUS: <PASS|CHANGES_REQUIRED|BLOCKED>
+FINDINGS_COUNT: <整數>
+```
+
+Attempt 2/2 後不得再要求 reviewer 複核。若仍有 findings，清楚一次列完，交 Claude 最後修正，讓程式走 `FORCED PASS`。
+
+
+codex
+審查規範要求先核對 stage hash，再比對 `link_updates.yaml`、來源佐證與所有受影響條目的實際主題發展。我已讀到規範；vexp 的首次呼叫因工具端要求核准而未執行（目前核准政策不允許），我會按具名產物與專案 MCP 的唯讀介面繼續，不做廣泛程式碼搜尋。
+mcp: hermes-scripture/get_chapter_status started
+mcp: hermes-scripture/get_chapter_status (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/search_wiki_entries started
+mcp: hermes-scripture/search_wiki_entries (completed)
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$p='"'06 約書亞記/.tmp/第19章/link_updates.yaml'; Get-FileHash -LiteralPath "'$p -Algorithm SHA256; Get-Content -LiteralPath '"'06 約書亞記/.tmp/第19章/agent_review.yaml' -Encoding utf8 -Raw; Get-Content -LiteralPath '06 約書亞記/.tmp/第19章/review_evidence.md' -Encoding utf8 -Raw" in C:\Obsidian\Hermes\scripture
+ succeeded in 246ms:
+
+Algorithm       Hash                                                                   Path                            
+---------       ----                                                                   ----                            
+SHA256          A96BA3093F42845FC29526EEEC9A4ECC3782AC453949DD730BC7D2698D2C97CF       C:\Obsidian\Hermes\scripture\...
+version: 2
+book: 約書亞記
+chapter: 19
+stages:
+  m3:
+    round: 2
+    revision: 3
+    sha256: d40d59c0d3c702cc48416a2d6c3e5d6c2bfc2953c53329fb10504797d5e52b79
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 57ff68c060adabadeb19e1c815e273ae51b7017958bcd4bec548814f078ddbc5
+      verdict: changes_required
+      findings_count: 3
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: d40d59c0d3c702cc48416a2d6c3e5d6c2bfc2953c53329fb10504797d5e52b79
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    thread_id: 01a13530-f584-7660-9e1e-f083ef8cb220
+    hash_inputs:
+    - entry_content/亞革悉（亞設）.yaml
+    - entry_content/亭拿西拉.yaml
+    - entry_content/他泊山.yaml
+    - entry_content/伯利恆（西布倫）.yaml
+    - entry_content/基順河.yaml
+    - entry_content/巴拉比珥.yaml
+    - entry_content/拿哈拉.yaml
+    - entry_content/推羅.yaml
+    - entry_content/撒拿音的橡樹.yaml
+    - entry_content/書念.yaml
+    - entry_content/沙魯險.yaml
+    - entry_content/約帕.yaml
+    - entry_content/約書亞最後分得地業.yaml
+    - entry_content/耶斯列（以薩迦）.yaml
+    - entry_content/迦步勒.yaml
+    - entry_content/迦特希弗.yaml
+    own_sha256: d40d59c0d3c702cc48416a2d6c3e5d6c2bfc2953c53329fb10504797d5e52b79
+    verdict_sha: d40d59c0d3c702cc48416a2d6c3e5d6c2bfc2953c53329fb10504797d5e52b79
+    findings_count: 0
+  m6:
+    round: 2
+    revision: 2
+    sha256: 450335fdf75a116944c64c5d9001c8532800daacd523e14648fcf3c9ac2dd108
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: d4c5d7b170e5f530e7bd76d154acad144e81cc8af589c268dbad5ba0ebffd236
+      verdict: changes_required
+      findings_count: 1
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: 450335fdf75a116944c64c5d9001c8532800daacd523e14648fcf3c9ac2dd108
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    thread_id: 01a1353b-e1a9-74b3-9a96-e81ab51a973e
+    hash_inputs:
+    - parent:m3=d40d59c0d3c702cc48416a2d6c3e5d6c2bfc2953c53329fb10504797d5e52b79
+    - chapter_content.yaml
+    own_sha256: 9d88f664772c2a9a5ddc946af2b15fd0c683a4675ba7ba5e0c36adddb356f80e
+    verdict_sha: 450335fdf75a116944c64c5d9001c8532800daacd523e14648fcf3c9ac2dd108
+    findings_count: 0
+  link_updates:
+    round: 1
+    revision: 1
+    sha256: 7af5dc40972c9f51cd3e3fa4462e5187932f92371ec93039e826b1cdbbd03abe
+    claude: ready
+    reviewer_status: pending
+    reviewer_agent: null
+    review_attempts: 0
+    forced_pass: false
+    review_history: []
+    hash_inputs:
+    - parent:m3=d40d59c0d3c702cc48416a2d6c3e5d6c2bfc2953c53329fb10504797d5e52b79
+    - parent:m6=450335fdf75a116944c64c5d9001c8532800daacd523e14648fcf3c9ac2dd108
+    - link_updates.yaml
+    own_sha256: 1395fe86740cae6e781c4dd583abf77dde8e0bd065f5a0e09908da0f9b346a13
+
+# B 類累積審查證據：約書亞記 第19章
+
+判 overview_review 前讀這一份，不必逐一開啟每個目標條目。
+【異常條目（空白／累積過多）】給出完整定義大綱與主題發展段落索引，供深入審查；
+【正常條目（無異常信號）】給出緊湊現況摘要（正常條目 YAML 已預設 keep，若無重大突破不需改動）。
+索引是分流用的：只要判斷不是單純 keep，就開條目原檔再確認。
+填 already_covered 一定要開檔逐字節錄 covered_by；條目本身欠帳而本章只有一句帶過的提及，填 standing_debt（會記進欠帳清單）。
+
+## 西緬
+`link_folder/人物/西緬.md`　signals：first_in_book　累積 13 章：創世記 29,34,35,42,43,49 ／ 出埃及記 1,6 ／ 民數記 1,2,25,26,34
+- **定義**（50 字）：首段「雅各與利亞所生的第二個兒子。」
+- **主題發展**（2 段／309 字）：包含小標題「一個名字沒有轉化成祝福」等
+
+## 西布倫（同住）
+`link_folder/人物/西布倫（同住）.md`　signals：first_in_book　累積 9 章：創世記 30,35,49 ／ 出埃及記 1 ／ 民數記 1,2,26,34 ／ 申命記 33
+- **定義**（65 字）：首段「利亞所生的第六子（雅各第十子），名字意為「同住/居處」。」
+- **主題發展**（7 段／421 字）：包含小標題「創30：字義與諧音、第六個兒子，同一個盼望」等
+
+## 以薩迦（價值）
+`link_folder/人物/以薩迦（價值）.md`　signals：無　累積 10 章：創世記 30,35,49 ／ 出埃及記 1 ／ 民數記 1,2,26,34 ／ 申命記 33 ／ 約書亞記 17
+- **定義**（61 字）：首段「利亞所生的第五子（雅各第九子），名字意為「價值/工價/報酬」。」
+- **主題發展**（3 段／389 字）：首段「以薩迦在創世記裡只有出生和祝福。」
+
+## 亞設（有福）
+`link_folder/人物/亞設（有福）.md`　signals：無　累積 10 章：創世記 30,35,49 ／ 出埃及記 1 ／ 民數記 1,2,26,34 ／ 申命記 33 ／ 約書亞記 17
+- **定義**（59 字）：首段「利亞使女悉帕所生的次子（雅各第八子），名字意為「有福/歡樂」。」
+- **主題發展**（6 段／443 字）：包含小標題「創30：字義與利亞的話、這是第幾層的喜樂」等
+
+## 拿弗他利
+`link_folder/人物/拿弗他利.md`　signals：first_in_book　累積 10 章：創世記 30,35,49 ／ 出埃及記 1 ／ 民數記 1,2,26,34 ／ 申命記 33,34
+- **定義**（258 字）：首段「雅各第六子，拉結使女辟拉所生的第二子（創30:7-8）。」
+- **主題發展**（1 段／66 字）：首段「- 使女代孕在族長家庭中的普遍性 - 名字含義反映母親屬靈/情緒掙扎 - 支派地理位置與救恩史關聯（加利利 = 外邦人的加利利、大光照耀黑暗⋯」
+
+## 但支派
+`link_folder/人物/但支派.md`　signals：first_in_book　累積 8 章：出埃及記 31,35,38 ／ 民數記 1,2,26,34 ／ 申命記 33
+- **定義**（102 字）：首段「但支派是以色列十二支派之一，亞何利亞伯即出自此支派。」
+- **主題發展**（1 段／92 字）：首段「在出埃及記中，但支派因亞何利亞伯被選召而參與了會幕的建造。」
+
+## 但
+`link_folder/地點/但.md`　signals：first_in_book　累積 2 章：創世記 14 ／ 申命記 34
+- **定義**（88 字）：首段「但（Dan），原名拉億，位於迦南地最北端。」
+- **主題發展**（1 段／33 字）：首段「- 創世記十四章稱「但」，但此地當時應稱拉億，「但」之名為後來的更新」
+
+## 但支派至終定居於何地
+`link_folder/解經爭議/但支派至終定居於何地.md`　signals：first_in_book、development_blank　累積 1 章：民數記 26
+
+### 定義（755 字，索引；要逐字內容請開條目原檔）
+民數記26:42-43：但的眾子只有書含一族，卻共有六萬四千四百名——是十二支派中人數第二多的。CT 指出這比民1:39 的六萬二千七百名增加了一千七百名。
+- GT 收錄的艾基斯《舊約聖經難題彙編》用一整篇處理這個支派後來的去向。　〔205 字〕
+- 於是有了北遷：六百個但人北上攻取拉億，把城改名為「但」，成了十二支派地業中最北之點，也是「從但到別是巴」這句成語的由來。　〔100 字〕
+- GT《聖經精讀本》講的是同一段歷史，但把重點放在原因。　〔145 字〕
+- CT 只作數字紀錄　〔116 字〕
+- 分歧在哪。　〔113 字〕
+
+### 主題發展：空白
+
+## 猶大支派
+`link_folder/人物/猶大支派.md`　signals：無　累積 15 章：創世記 49 ／ 出埃及記 31,35,38 ／ 民數記 1,2,26,32,34 ／ 申命記 33,34 ／ 約書亞記 7,14,15,18
+- **定義**（147 字）：首段「猶大支派是雅各第四子猶大的後裔所成的支派。」
+- **主題發展**（1 段／120 字）：首段「猶大支派的敘事沿兩條線推進：王權線——創49:10 圭不離猶大的應許經大衛家指向彌賽亞；事奉線——出31、35章顯明首位被神的靈充滿的巧匠比⋯」
+
+## 別是巴
+`link_folder/地點/別是巴.md`　signals：many_accumulations　累積 6 章：創世記 21,22,26,28,46 ／ 約書亞記 15
+
+### 定義（155 字，全文）
+別是巴（Beersheba），原文由「別」（井）和「是巴」（盟誓/七）組成，兼具「盟誓的井」和「七之井」之意。位於迦南地最南端、巴勒斯坦南邊的邊界上。GT《串珠聖經註釋》記它離耶路撒冷約八十公里（五十英里）；GT 李道生《舊約聖經問題總解》則記它在希伯崙城南邊二十里。亞伯拉罕和以撒都曾在此寄居並與非利士王立約。
+
+### 主題發展（5 段／1029 字，段落索引）
+- ### 名字：井加上一個雙關
+- ### 位置與遺址
+- ### 一座城的後續履歷
+- ### 創世記二十一章記了兩口井
+- （小標題以外另有 7 段散文，共 982 字；要內文請開條目原檔）
+
+## 迦南大敗直到何珥瑪
+`link_folder/歷史/迦南大敗直到何珥瑪.md`　signals：無　累積 5 章：民數記 14,21 ／ 申命記 1 ／ 約書亞記 12,15
+- **定義**（585 字）：首段「第45節：「於是亞瑪力人和住在那山上的迦南人都下來擊打他們，把他們殺退了，直到何珥瑪。」
+- **主題發展**（4 段／331 字）：首段「何珥瑪這個名字在目前累積到的幾章裡被用了三次，而三次的意思都不一樣。」
+
+## 洗革拉
+`link_folder/地點/洗革拉.md`　signals：development_blank　累積 1 章：約書亞記 15
+
+### 定義（331 字，全文）
+書15:31 猶大南地的城邑：「洗革拉、麥瑪拿、三撒拿」。書19:5 它又列在西緬的城中。
+
+**名字與位置。** CT 給的原文字義是「迴繞」，說它位於別是巴西北方約22公里、迦薩東南方約24公里；GT《約書亞記研經資料》的字義相同。
+
+**大衛的洗革拉。** GT《綜合解讀》說洗革拉是大衛逃亡後期居住的地方（撒上27:6）。BH 說得更完整：大衛躲避掃羅時，從迦特王亞吉得了洗革拉，成了他的人和他們家眷的家；亞瑪力人焚燒這城、擄走城裡的人，大衛求問耶和華、追趕強盜，把被擄去的全都奪回（撒上30）；洗革拉成了大衛作王之前，信心、領導與倚靠神受試驗的地方。BH 也說它後來劃給了西緬（書19:5），GT《約書亞記研經資料》說書15:21-32 的城鎮在書19:1-9 中給了西緬支派。
+
+### 主題發展：空白
+
+## 南地
+`link_folder/地點/南地.md`　signals：無　累積 8 章：創世記 13,20 ／ 申命記 1,34 ／ 約書亞記 10,11,12,15
+- **定義**（43 字）：首段「原文意為「南，乾燥，乾旱之地」。」
+- **主題發展**（5 段／373 字）：包含小標題「一條反覆出現的南下路線、地理條件」等
+
+## 約念
+`link_folder/地點/約念.md`　signals：development_blank　累積 1 章：約書亞記 12
+
+### 定義（432 字，索引；要逐字內容請開條目原檔）
+書12:22「一個是基低斯王，一個是靠近迦密的約念王」。
+- 位置。　〔114 字〕
+- 考證與長住史。　〔222 字〕
+- 它後來歸誰。　〔68 字〕
+
+### 主題發展：空白
+
+## 伸崙
+`link_folder/地點/伸崙.md`　signals：development_blank　累積 2 章：約書亞記 11,12
+
+### 定義（337 字，全文）
+伸崙是書11:1 加入北方聯軍的城之一，經文只寫「伸崙王」而沒有給名字。
+
+CT 的原文字義給「伸崙」看守、警衛，並說伸崙位於瑪頓的西南方約20公里。GT《約書亞記研經資料》說「伸崙」字義是「守望高處」，一般認為是拿撒勒以西八公里的 Khirbet Sammuniya。GT《串珠聖經注釋》說伸崙於西布倫境。
+
+BH 把它與押煞並列：Shimron and Achshaph joined the growing northern coalition because Israel's advance endangered every Canaanite kingdom that resisted the Lord's command（伸崙與押煞加入這個逐漸擴大的北方聯盟，因為以色列的推進危及每一個抗拒耶和華命令的迦南王國）。
+
+### 主題發展：空白
+
+## 押煞
+`link_folder/地點/押煞.md`　signals：development_blank　累積 2 章：約書亞記 11,12
+
+### 定義（245 字，全文）
+押煞是書11:1 北方聯軍名單上的最後一座城，同樣只寫「押煞王」而沒有名字。
+
+CT 的原文字義給「押煞」咒語，並說押煞位於伸崙的西方約16公里、靠近地中海海岸。GT《約書亞記研經資料》給的字義不同：「我將被迷惑」，並說一般認為此處就是凱桑遺址（Tell Keisan），位於伸崙西北偏北約20公里、距離地中海約5公里。GT《串珠聖經注釋》說押煞在北部沿岸地區、近亞柯之東南。
+
+BH 把伸崙與押煞一起處理，說這個聯盟顯出迦南抵抗力量的強大，卻也為神顯明沒有任何地上勢力的集結能攔阻祂對以色列的應許鋪了路。
+
+### 主題發展：空白
+
+## 迦密
+`link_folder/地點/迦密.md`　signals：development_blank　累積 1 章：約書亞記 12
+
+### 定義（294 字，全文）
+書12:22 用它替另一座城定位：「一個是基低斯王，一個是靠近迦密的約念王」。
+
+CT 說迦密的主峰為迦密山的山脈，從亞柯灣的南岸起，延伸至多坍附近，全長約40公里；原文字義是「花園地」。GT《約書亞記研經資料》在書12:20 也用它替押煞定位，說押煞位於迦密山腳下。
+
+**它日後的名氣。** BH 在約念條下說約念臨近迦密山，俯瞰一片肥沃且具戰略價值的地區，而神後來要在迦密藉以利亞對付巴力的先知、顯明祂的名（王上18）；BH 由此說約念的被攻取確認了這地惟獨屬耶和華，祂不將自己的榮耀與迦南諸神共享。
+
+本章的迦密因此不是被攻取的對象，而是一個方位詞——但那個方位日後會成為以色列史上最著名的對決現場之一。
+
+### 主題發展：空白
+
+## 西頓
+`link_folder/地點/西頓.md`　signals：無　累積 2 章：約書亞記 11,13
+- **定義**（508 字）：首段「西頓在書11:8 出現，作為以色列人追趕北方敗軍的西北終點：「追趕他們到西頓大城，到米斯利弗瑪音，直到東邊米斯巴的平原，將他們擊殺，沒有留下⋯」
+- **主題發展**（2 段／201 字）：首段「西頓在書11 是以色列人追擊到的最遠點，在書13 是還沒得到的地。」
+
+## 夏瑣
+`link_folder/地點/夏瑣.md`　signals：development_blank　累積 2 章：約書亞記 11,12
+
+### 定義（1277 字，索引；要逐字內容請開條目原檔）
+夏瑣是書11 的主角城，也是約書亞在迦南只焚燒過的三座城之一。它在本章出現四次：第1節它的王發起北方聯軍，第10節它被攻取、王被殺，第11節它被焚燒，第13節經文特別聲明只有它被燒。
+- STEP 顯示第13節的地名是 cha.Tzor（H2674G，簡要詞典義 cha.tsor: Hazor）。　〔156 字〕
+- 各家給的座標略有出入：GT《雷氏研讀本》說它在今天已乾涸的戶勒湖西南面約五英里（8公里）、加利利海以北十英里（16公里）以外；G⋯　〔132 字〕
+- GT《約書亞記研經資料》說西元前18~17世紀的馬里文獻和西元前14世紀的亞馬拿文獻都提到此城；1955年有學者成功在「基達廢坵⋯　〔264 字〕
+- CT 把三座被燒的城並排解釋：在迦南諸城中，只有耶利哥、艾城和夏瑣被焚燒——耶利哥是獻給神的初熟果子；艾城是用徹底的得勝來恢復失⋯　〔197 字〕
+- KC 給的理由不同角度：Because it is a mighty city, the human mind might re⋯　〔230 字〕
+- GT《啟導本》說夏瑣城被焚後不久，迦南人曾圖重建，士4:2 記有另一個夏瑣王耶賓起來壓迫以色列人、為女士師底波拉所殺；GT《聖經⋯　〔171 字〕
+
+### 主題發展：空白
+
+## 基低斯
+`link_folder/地點/基低斯.md`　signals：development_blank　累積 1 章：約書亞記 12
+
+### 定義（268 字，全文）
+書12:22「一個是基低斯王，一個是靠近迦密的約念王」。
+
+CT 說基低斯位於夏瑣以北約11公里；原文字義是「聖所」。
+
+**它在哪一個支派境內，兩家說法不同。** GT《串珠聖經注釋》說基低斯在拿弗他利境內東北山區、米倫湖之西北；GT《約書亞記研經資料》卻說基低斯字義是「聖所」、位於以薩迦境內。
+
+**它後來成了逃城。** BH 說基低斯在迦南北部拿弗他利山地，後來被分別出來成為以色列的逃城之一（書20:7）；逃城為誤殺人的提供保護，直到得到公正的審理，也指向那些逃到神那裡尋求憐憫的人所得的庇護。BH 另指出士4:6 底波拉從拿弗他利的基低斯召來巴拉。
+
+### 主題發展：空白
+
+## 瑣拉
+`link_folder/地點/瑣拉.md`　signals：development_blank　累積 1 章：約書亞記 15
+
+### 定義（217 字，全文）
+書15:33 猶大「在高原有以實陶、瑣拉、亞實拿」。瑣拉後來屬但支派（書19:41）。
+
+**名字與位置。** CT 給的原文字義是「大黃蜂」，說它大概是在毗斯加山附近，確實地點不詳；GT《約書亞記研經資料》字義相同。
+
+**參孫的家鄉。** BH 說瑣拉是參孫的家鄉，也是他父親瑪挪亞的葬地（士13:2、16:31）；它列在猶大的城中，反映猶大的產業與但的分地之間緊密而有時重疊的關係。GT《串珠聖經注釋》說以實陶和瑣拉後屬但支派（見士13:25）。
+
+### 主題發展：空白
+
+## 以實陶
+`link_folder/地點/以實陶.md`　signals：development_blank　累積 1 章：約書亞記 15
+
+### 定義（218 字，全文）
+書15:33 猶大「在高原有以實陶、瑣拉、亞實拿」。以實陶與瑣拉後來屬但支派（書19:41）。
+
+**名字與位置。** CT 給的原文字義是「懇求」，說它位於耶路撒冷西方約22公里、基遍西南方約19公里；GT《約書亞記研經資料》字義相同。
+
+**參孫的地方。** GT《串珠聖經注釋》說以實陶和瑣拉後屬但支派（見士13:25）。BH 說以實陶位在猶大與但共有的邊界地帶，參孫早年就與以實陶和瑣拉之間這一帶相連，耶和華的靈在那裡開始感動他（士13:25）。
+
+### 主題發展：空白
+
+## 以革倫
+`link_folder/地點/以革倫.md`　signals：無　累積 2 章：約書亞記 13,15
+- **定義**（456 字）：首段「以革倫是非利士人五座主要城市之一。」
+- **主題發展**（2 段／223 字）：首段「以革倫在書13 是未得之地，在書15 被劃給猶大。」
+
+## 亭拿（猶大）
+`link_folder/地點/亭拿（猶大）.md`　signals：無　累積 2 章：創世記 38 ／ 約書亞記 15
+- **定義**（68 字）：首段「亭拿是創世記38章中猶大上去剪羊毛的地方，他瑪在往亭拿的路上設計與猶大相遇。」
+- **主題發展**（1 段／51 字）：首段「亭拿連結剪羊毛風俗與他瑪事件的轉折。」
+
+## 以法蓮山地
+`link_folder/地點/以法蓮山地.md`　signals：development_blank　累積 1 章：約書亞記 17
+
+### 定義（517 字，索引；要逐字內容請開條目原檔）
+書17:15 約書亞對約瑟的子孫說：「你們如果族大人多，嫌以法蓮山地窄小，就可以上比利洗人、利乏音人之地，在樹林中砍伐樹木。」以法蓮山地是迦南中部的山區，約瑟的子孫就在迦南中部分得遼闊的土地。
+- 範圍。　〔134 字〕
+- 有樹林的山地。　〔180 字〕
+- 嫌它窄小。　〔108 字〕
+
+### 主題發展：空白
+
+## 約書亞
+`link_folder/人物/約書亞.md`　signals：無　累積 33 章：出埃及記 17,24,32,33 ／ 民數記 11,13,14,26,27,31,32,34 ／ 申命記 1,3,31,32,34 ／ 約書亞記 1,2,3,4,5,6,7,8,9,10,11,12,13,14,17,18
+- **定義**（215 字）：首段「約書亞，原名何西阿（民十三16），是嫩的兒子，隸屬以法蓮支派。」
+- **主題發展**（7 段／1159 字）：包含小標題「從接棒的人，到自己俯伏的人、從打仗的人，到分地的人」等
+
+## 以利亞撒
+`link_folder/人物/以利亞撒.md`　signals：many_accumulations　累積 16 章：出埃及記 6 ／ 利未記 10 ／ 民數記 3,4,16,19,20,25,26,27,31,32,34 ／ 申命記 10 ／ 約書亞記 14,17
+
+### 定義（186 字，全文）
+出埃及記6:23「亞倫娶了亞米拿達的女兒……給他生了拿答、亞比戶、以利亞撒、以他瑪。」以利亞撒是亞倫的第三個兒子，後來接續亞倫為大祭司。CT 的原文字義說「以利亞撒」意即「神已幫助」，GT《中文聖經註釋》作「神幫助了或神所造的」。他所娶的是普鐵的女兒——CT 說「聖經中普鐵之名僅在此處出現一次，故不知其出身族系」，GT《中文聖經註釋》也說這名字可能源自埃及文，意義不甚明確。
+
+### 主題發展（1 段／136 字，段落索引）
+- CT 指出以利亞撒接任的緣由：亞倫的兒子拿答和亞比戶因獻凡火被火燒死（利10:1-2），而他們沒有兒子（民3:4），所以以利亞撒⋯　〔136 字〕
+
+## 示羅
+`link_folder/地點/示羅.md`　signals：development_blank　累積 1 章：約書亞記 18
+
+### 定義（1008 字，索引；要逐字內容請開條目原檔）
+書18:1「以色列的全會眾都聚集在示羅，把會幕設立在那裡」。會幕從吉甲遷到這裡，約書亞也在這裡為其餘七個支派拈鬮分地（書18:8-10）。
+- 名字。　〔105 字〕
+- 位置。　〔220 字〕
+- 考古。　〔146 字〕
+- 從吉甲搬到示羅。　〔147 字〕
+- 神選擇立名的地方。　〔149 字〕
+- 後來的命運。　〔172 字〕
+
+### 主題發展：空白
+
+## 會幕（帳幕整體）
+`link_folder/主題/會幕（帳幕整體）.md`　signals：無　累積 25 章：出埃及記 25,26,27,28,29,30,35,36,37,38,39,40 ／ 民數記 1,2,3,4,8,9,10,17,25,31 ／ 申命記 12,31 ／ 約書亞記 18
+- **定義**（254 字）：首段「會幕是神吩咐以色列人在曠野建造、供祂住在百姓中間的可移動聖所。」
+- **主題發展**（2 段／428 字）：包含小標題「從樣式的啟示，到全營的中心」等
+
+## 拈鬮分地（go.ral）
+`link_folder/主題/拈鬮分地（go.ral）.md`　signals：many_accumulations　累積 11 章：民數記 26,32,33,34,36 ／ 約書亞記 13,14,15,16,17,18
+
+### 定義（815 字，索引；要逐字內容請開條目原檔）
+民數記26:52-56 交代分地的原則：人數多的多分、人數少的少分，但地點由拈鬮決定。
+- 兩個原則並用。　〔179 字〕
+- 「拈鬮」在原文是什麼。　〔199 字〕
+- 為什麼用拈鬮。　〔189 字〕
+- 古代近東也這樣分地。　〔140 字〕
+- CT 的一句話。　〔66 字〕
+
+### 主題發展（3 段／401 字，段落索引）
+- 拈鬮分地在民數記先立成原則，到約書亞記才一鬮一鬮拈出來。　〔146 字〕
+- 約書亞記從第13章開始執行。　〔141 字〕
+- 書18 是一個轉折。　〔114 字〕
+
+## 產業（na.cha.lah）
+`link_folder/原文/產業（na.cha.lah）.md`　signals：無　累積 23 章：民數記 27,32,33,34,35,36 ／ 申命記 4,9,10,12,18,19,20,21,32,33 ／ 約書亞記 1,11,13,14,16,17,18
+- **定義**（564 字）：首段「「產業」na.cha.lah 是民數記27:7-11 繼承次序反覆使用的核心詞，STEP 的 exact Strong 是 H5159，簡要⋯」
+- **主題發展**（11 段／1192 字）：包含小標題「申命記：以色列自己也是產業、約書亞記：量出來的一份一份地」等
+
+## 未得之地
+`link_folder/主題/未得之地.md`　signals：many_accumulations　累積 6 章：約書亞記 13,14,15,16,17,18
+
+### 定義（1100 字，索引；要逐字內容請開條目原檔）
+書13:1 耶和華對約書亞說：「你年紀老邁了，還有許多未得之地」，接著在書13:2-6 從南到北把這些地方一區一區點出來。GT《約書亞記研經資料》說這句話直譯是「剩下要去得之地極多」。STEP 顯示「未得」這裡是 le./rish.Ta/h（H3423H，簡要詞典義 ya.rash: to possess: take），本節逐字譯義是 to take possession of it。
+- 清單包括哪幾塊地。　〔247 字〕
+- 為什麼還剩這麼多。　〔266 字〕
+- 還沒得到，照樣分。　〔221 字〕
+- 之後由誰去得。　〔185 字〕
+
+### 主題發展（3 段／474 字，段落索引）
+- 書13:1 神先承認還有許多未得之地，並且吩咐照樣拈鬮分配。　〔128 字〕
+- KC 在後兩個缺口之間看出一點差別：猶大看來至少試過，以法蓮看來連試都沒有試。　〔99 字〕
+- 書17 與書18 又往前推了兩步。　〔247 字〕
+
+## 西緬利未受咒詛 (創49_5-7)
+`link_folder/互文/西緬利未受咒詛 (創49_5-7).md`　signals：first_in_book　累積 2 章：創世記 34,49
+- **定義**（173 字）：首段「雅各臨終對西緬與利未所說的話：「西緬和利未是弟兄；他們的刀劍是殘忍的器具。」
+- **主題發展**（1 段／124 字）：首段「- 人的怒氣不成就神的義（雅1:20），暴力報復雖出於家庭榮譽，卻違背神公義 - 神主權轉化咒詛：利未因出埃及記32忠心事奉，得祭司職分（申⋯」
+
+## 摩西的祝福與雅各的祝福
+`link_folder/主題/摩西的祝福與雅各的祝福.md`　signals：first_in_book、development_blank　累積 1 章：申命記 33
+
+### 定義（812 字，索引；要逐字內容請開條目原檔）
+聖經裡為十二支派逐一祝福的段落只有兩處：創世記49章雅各對十二個兒子說的話，和申命記33章摩西臨終前說的話。四套註釋都把兩者放在一起讀。
+- GT《申命記串珠聖經註釋》說摩西臨終前為以色列各支派祝福、作出一些預言，正像雅各臨終的祝福一樣（參創49章）。　〔138 字〕
+- GT《啟導本聖經申命記註釋》把差別壓成一句：只是摩西的祝福中沒有斥責的話。　〔37 字〕
+- KC 說得更完整：雅各講的是以色列歷史將如何一代一代展開，那份描述其實是這民族在信實上失敗的記錄，對應的是申命記32章的摩西之歌⋯　〔109 字〕
+- GT《聖經精讀本──申命記註解》說此祝福當與創49章的雅各祝福相比較理解，兩者相距450年，根據啟示的漸進性具有進一步發展的形態⋯　〔149 字〕
+- CT 在利未那一段點出最戲劇性的一組對照：雅各與摩西的祝福有很大的差別，在雅各的祝福語中利未是遭咒詛的、將來這族必分散在以色列各⋯　〔157 字〕
+
+### 主題發展：空白
+
+## 約但河
+`link_folder/地點/約但河.md`　signals：無　累積 32 章：創世記 13,32,33 ／ 民數記 22,26,31,32,33,34,35,36 ／ 申命記 1,2,3,4,9,11,27,30,32 ／ 約書亞記 1,2,3,4,5,7,12,13,15,16,17,18
+- **定義**（216 字）：首段「約但河在聖經敘事裡反覆作為一條界線。」
+- **主題發展**（36 段／2632 字）：包含小標題「創32：全章只提一次，卻是禱告的樞紐、創32：「只拿著我的杖」、創32：「兩隊」在十節之內出現三次」等
+
+
+
+
+mcp: hermes-scripture/preview_chapter_link_updates started
+mcp: hermes-scripture/preview_chapter_link_updates (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+codex
+目前 chapter status 的 source read、STEP 驗證與 link_updates 結構檢查都已 PASS；`agent_review.yaml` 的 link_updates hash 與本次指定 SHA 一致，stage 尚待第一次 reviewer verdict。接下來我在逐條檢查 27 個主題發展實文，並整理整個 35 筆 manifest 的 summary／relation，對照本章來源及相關章節證據。
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'python util/agent_review.py status 約書亞記 19 link_updates' in C:\Obsidian\Hermes\scripture
+ exited 1 in 160ms:
+usage: agent_review.py [-h] {submit,verdict,skip,gate,status,summary} ...
+agent_review.py: error: unrecognized arguments: link_updates
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'python util/agent_review.py status --help' in C:\Obsidian\Hermes\scripture
+ succeeded in 123ms:
+usage: agent_review.py status [-h] book chapter
+
+positional arguments:
+  book
+  chapter
+
+options:
+  -h, --help  show this help message and exit
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'python util/agent_review.py status 約書亞記 19' in C:\Obsidian\Hermes\scripture
+ succeeded in 115ms:
+Review status：約書亞記 第19章
+- m3: fresh review_round=2 revision=3 claude=revised reviewer=codex status=pass attempts=2/2 sha256=d40d59c0d3c702cc48416a2d6c3e5d6c2bfc2953c53329fb10504797d5e52b79 thread=01a13530-f584-7660-9e1e-f083ef8cb220
+- m6: fresh review_round=2 revision=2 claude=revised reviewer=codex status=pass attempts=2/2 sha256=450335fdf75a116944c64c5d9001c8532800daacd523e14648fcf3c9ac2dd108 thread=01a1353b-e1a9-74b3-9a96-e81ab51a973e
+- link_updates: fresh review_round=1 revision=1 claude=ready reviewer=none status=pending attempts=0/2 sha256=7af5dc40972c9f51cd3e3fa4462e5187932f92371ec93039e826b1cdbbd03abe
+
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$files=@('"'06 約書亞記/raw_data/ccbiblestudy_CT_joshua_19.txt','06 約書亞記/raw_data/ccbiblestudy_GT_joshua_19.txt','06 約書亞記/raw_data/kingcomments_joshua_19.txt','06 約書亞記/raw_data/biblehub_study_joshua_19.txt'); "'$patterns=@('"'西緬|西布倫|以薩迦|亞設|拿弗他利|但支派|但人|猶大|洗革拉|約念|伸崙|押煞|迦密|夏瑣|基低斯|瑣拉|以實陶|亭拿|約書亞|以利亞撒|示羅|拈鬮|未得','Simeon|Zebulun|Issachar|Asher|Naphtali|Dan|Judah|Ziklag|Jokneam|Shimron|Achshaph|Carmel|Hazor|Kedesh|Zorah|Eshtaol|Timnah|Joshua|Eleazar|Shiloh|lot|unconquered|inheritance'); for("'$i=0;$i -lt $files.Count;$i++){ Select-String -LiteralPath $files[$i] -Pattern $patterns[$i%2] | ForEach-Object { '"'{0}:{1}: {2}' -f "'$_.Path,$_.LineNumber,$_.Line } }' in C:\Obsidian\Hermes\scripture
+ exited 1 in 196ms:
+Select-String : The file C:\Obsidian\Hermes\scripture\06 約書亞記\raw_data\ccbiblestudy_CT_joshua_19.txt cannot be read: Co
+uld not find a part of the path 'C:\Obsidian\Hermes\scripture\06 約書亞記\raw_data\ccbiblestudy_CT_joshua_19.txt'.
+At line:2 char:510
++ ... ount;$i++){ Select-String -LiteralPath $files[$i] -Pattern $patterns[ ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Select-String], ArgumentException
+    + FullyQualifiedErrorId : ProcessingFile,Microsoft.PowerShell.Commands.SelectStringCommand
+ 
+Select-String : The file C:\Obsidian\Hermes\scripture\06 約書亞記\raw_data\ccbiblestudy_GT_joshua_19.txt cannot be read: Co
+uld not find a part of the path 'C:\Obsidian\Hermes\scripture\06 約書亞記\raw_data\ccbiblestudy_GT_joshua_19.txt'.
+At line:2 char:510
++ ... ount;$i++){ Select-String -LiteralPath $files[$i] -Pattern $patterns[ ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Select-String], ArgumentException
+    + FullyQualifiedErrorId : ProcessingFile,Microsoft.PowerShell.Commands.SelectStringCommand
+ 
+Select-String : The file C:\Obsidian\Hermes\scripture\06 約書亞記\raw_data\kingcomments_joshua_19.txt cannot be read: Could
+ not find a part of the path 'C:\Obsidian\Hermes\scripture\06 約書亞記\raw_data\kingcomments_joshua_19.txt'.
+At line:2 char:510
++ ... ount;$i++){ Select-String -LiteralPath $files[$i] -Pattern $patterns[ ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Select-String], ArgumentException
+    + FullyQualifiedErrorId : ProcessingFile,Microsoft.PowerShell.Commands.SelectStringCommand
+ 
+Select-String : The file C:\Obsidian\Hermes\scripture\06 約書亞記\raw_data\biblehub_study_joshua_19.txt cannot be read: Cou
+ld not find a part of the path 'C:\Obsidian\Hermes\scripture\06 約書亞記\raw_data\biblehub_study_joshua_19.txt'.
+At line:2 char:510
++ ... ount;$i++){ Select-String -LiteralPath $files[$i] -Pattern $patterns[ ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Select-String], ArgumentException
+    + FullyQualifiedErrorId : ProcessingFile,Microsoft.PowerShell.Commands.SelectStringCommand
+ 
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "@('06 約書亞記/.tmp/第19章/raw_data/ccbiblestudy_CT_joshua_19.txt','06 約書亞記/第19章/raw_data/ccbiblestudy_CT_joshua_19.txt','raw_data/ccbiblestudy_CT_joshua_19.txt','06 約書亞記/raw_data/ccbiblestudy_CT_joshua_19.txt') | ForEach-Object { '{0} {1}' -f "'$_,(Test-Path -LiteralPath $_) }' in C:\Obsidian\Hermes\scripture
+ succeeded in 81ms:
+06 約書亞記/.tmp/第19章/raw_data/ccbiblestudy_CT_joshua_19.txt False
+06 約書亞記/第19章/raw_data/ccbiblestudy_CT_joshua_19.txt False
+raw_data/ccbiblestudy_CT_joshua_19.txt True
+06 約書亞記/raw_data/ccbiblestudy_CT_joshua_19.txt False
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$files=@('"'raw_data/ccbiblestudy_CT_joshua_19.txt','raw_data/ccbiblestudy_GT_joshua_19.txt','raw_data/kingcomments_joshua_19.txt','raw_data/biblehub_study_joshua_19.txt'); "'$patterns=@('"'西緬|西布倫|以薩迦|亞設|拿弗他利|但支派|但人|猶大|洗革拉|約念|伸崙|押煞|迦密|夏瑣|基低斯|瑣拉|以實陶|亭拿|約書亞|以利亞撒|示羅|拈鬮|未得','Simeon|Zebulun|Issachar|Asher|Naphtali|Dan|Judah|Ziklag|Jokneam|Shimron|Achshaph|Carmel|Hazor|Kedesh|Zorah|Eshtaol|Timnah|Joshua|Eleazar|Shiloh|lot|unconquered|inheritance'); for("'$i=0;$i -lt $files.Count;$i++){ Select-String -LiteralPath $files[$i] -Pattern $patterns[$i%2] | ForEach-Object { $line=$_.Line; if($line.Length -gt 550){$line=$line.Substring(0,550)+'"' [...]'}; '{0}:{1}: {2}' -f "'$_.Path,$_.LineNumber,$line } }' in C:\Obsidian\Hermes\scripture
+ succeeded in 190ms:
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:1: 約書亞記第十九章註解
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:7: 四、西緬支派地業的境界和城邑(1~9節)
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:9: 五、西布倫支派地業的境界和城邑(10~16節)
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:11: 六、以薩迦支派地業的境界和城邑(17~23節)
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:13: 七、亞設支派地業的境界和城邑(24~31節)
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:15: 八、拿弗他利支派地業的境界和城邑(32~39節)
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:17: 九、但支派地業的境界和城邑(40~48節)
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:19: 十、分完地業後約書亞得以法蓮山地的亭拿西拉城(49~51節)
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:23: 【書十九1】「為西緬支派的人，按著宗族，拈出第二鬮。他們所得的地業是在猶大人地業中間。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:26: 〔原文字義〕「西緬」聽見；「猶大」讚美的；「中間」當中，在…中間。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:28: 〔文意註解〕「為西緬支派的人，按著宗族，拈出第二鬮」：『西緬』西緬支派的特點如下：(1)雅各曾預言他們要散居在以色列人中間(參創四十九7)；(2)他們在曠野的巴力毗珥事件中，扮演了主要叛逆角色而遭神懲罰，人口減少了大半(參民二十五14~15；二十六14)，成為人數最少的支派。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:30: 「他們的產業是在猶大人的產業中間」：這是因為：(1)猶大支派所得的地業太大(參9節)；(2)出於神的旨意(拈鬮)，成就雅各的預言(參創四十九7)。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:32: 〔話中之光〕(一)西緬支派因為參與拜偶像邪淫，導致人數減至最少。在拈鬮分配地業時，出於神主宰的安排，被安置在猶大支派的地業中間。從土師記的記載中，我們好像看不見西緬支派確實的去攻取他們所分得的份，他們只是短暫的佔有他們的份，後來散居在以色列中，又遷移到東邊的西珥地(參代上四39~43)。以後到了猶大與以色列分成南北兩國的時候，西緬支派是在北方的十個支派中，他們更失去了在所分到的地上所有的一切。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:34: (二)但是值得留心的，迦南地本身就是應許的恩典。西緬雖是享用不到他們該得的份，但是他們還是活在迦南地，還是分沾著神恩典的豐富。他們雖是在咒詛的形式中經過，但是神沒有把他們拋在恩典以外。這就是神對人的心意。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:57: 【書十九5】「洗革拉、伯瑪加博、哈薩蘇撒、」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:60: 〔原文字義〕「洗革拉」迴繞；「伯瑪加博」戰車之家；「哈薩蘇撒」馬村。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:62: 〔文意註解〕「洗革拉、伯瑪加博、哈薩蘇撒」：『洗革拉』位於別是巴西北方約22公里，迦薩東南方約24公里；『伯瑪加博』位於別是巴東北北方約14公里，希伯崙西南方約26公里；『哈薩蘇撒』位於別是巴北方約12公里，希伯崙西南方約29公里。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:78: 【書十九8】「並有這些城邑四圍一切的村莊，直到巴拉比珥，就是南地的拉瑪。這是西緬支派按著宗族所得的地業。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:85: 「這是西緬支派按著宗族所得的地業」：西緬支派的地業沒有明確的界線。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:87: 【書十九9】「西緬人的地業是從猶大人地業中得來的，因為猶大人的份過多，所以西緬人在他們的地業中得了地業。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:92: 〔文意註解〕「西緬人的地業是從猶大人地業中得來的，因為猶大人的份過多，所以西緬人在他們的地業中得了地業」：意指西緬支派的地業，被猶大支派的地業所包圍。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:94: 【書十九10】「為西布倫人，按著宗族，拈出第三鬮。他們地業的境界是到撒立。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:97: 〔原文字義〕「西布倫」高貴的；「撒立」生還者。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:99: 〔文意註解〕「為西布倫人，按著宗族，拈出第三鬮。他們地業的境界是到撒立」：『撒立』位於約念東方約12公里，米吉多東北方約10公里。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:101: 【書十九11】「往西上到瑪拉拉，達到大巴設，又達到約念前的河。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:104: 〔原文字義〕「瑪拉拉」顫抖；「大巴設」一個山丘地；「約念」人們哀慟；「前」面，臉。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:106: 〔文意註解〕「往西上到瑪拉拉，達到大巴設，又達到約念前的河」：『瑪拉拉』位於約念東方約6公里，米吉多北方約8公里；『大巴設』位於約念東方約3公里，米吉多溪北方約11公里；『約念』位於基順河的南岸，多珥的東北面約20公里，米吉多的西北約11公里；『約念前的河』即指基順河。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:113: 〔文意註解〕「又從撒立往東轉向日出之地，到吉斯綠他泊的境界，又通到大比拉，上到雅非亞」：『撒立』位於約念東方約12公里，米吉多東北方約10公里；『日出之地』即指東方；『吉斯綠他泊』位於約念東方約20公里，米吉多東北方約19公里；『大比拉』位於書念北方約11公里，米吉多東北方約23公里；『雅非亞』位於約念東方約15公里，米吉多東北方約15公里。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:120: 〔文意註解〕「從那裡往東，接連到迦特希弗，至以特加汛，通到臨門，臨門延到尼亞」：『迦特希弗』位於米吉多東北方約22公里，亞柯西南方約31公里；『以特加汛』確實地點不詳，應該在西布倫地界內，靠近拿弗他利地的邊境；『臨門』不同於書十五32的「臨門」，位於亞柯東南方約25公里，約念東北方約23公里；『尼亞』確實地點不詳，可能在臨門北方某處。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:129: 【書十九15】「還有加他、拿哈拉、伸崙、以大拉、伯利恆。共有十二座城，還有屬城的村莊。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:132: 〔原文字義〕「加他」小；「拿哈拉」草場；「伸崙」守望高處；「以大拉」神紀念；「伯利恒」糧食之家。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:134: 〔文意註解〕「還有加他、拿哈拉、伸崙、以大拉、伯利恆。共有十二座城，還有屬城的村莊」：『加他』確實地點不詳；『拿哈拉』位於約念北方約16公里，亞柯南方約13公里，基順河北岸的一座小城；『伸崙』位於約念東北方約9公里，米吉多北方約13公里；『以大拉』確實地點不詳；『伯利恆』不同於耶穌誕生的猶大地「伯利恆」(彌五2)，位於約念北方9公里，米吉多北方約17公里；『共有十二座城』這裡僅列五座城，可能是邊界城，且不一定屬於西布倫的地業。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:136: 【書十九16】「這些城並屬城的村莊，就是西布倫人按著宗族所得的地業。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:139: 〔原文字義〕「西布倫」高貴的。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:141: 〔文意註解〕「這些城並屬城的村莊，就是西布倫人按著宗族所得的地業」：指10~15節所列的諸城，但有些邊界城可能屬於其他支派的地業。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:143: 【書十九17】「為以薩迦人，按著宗族，拈出第四鬮。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:146: 〔原文字義〕「以薩迦」有價值。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:148: 〔文意註解〕「為以薩迦人，按著宗族，拈出第四鬮」：以薩迦支派的地業位於瑪拿西的北面，西布倫的東面，拿弗他利的南面。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:155: 〔文意註解〕「他們的境界是到耶斯列、基蘇律、書念」：『耶斯列』不同於書十五59的「耶斯列」，位於米吉多東南東方約14公里，他納東北方12公里；『基蘇律』位於約念東方約20公里，米吉多東北方約19公里；『書念』位於米吉多東方約14公里，耶斯列北方約4公里。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:185: 【書十九23】「這些城並屬城的村莊，就是以薩迦支派按著宗族所得的地業。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:188: 〔原文字義〕「以薩迦」有價值。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:190: 〔文意註解〕「這些城並屬城的村莊，就是以薩迦支派按著宗族所得的地業」：請參閱17節註解。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:192: 【書十九24】「為亞設支派，按著宗族，拈出第五鬮。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:195: 〔原文字義〕「亞設」快樂的。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:197: 〔文意註解〕「為亞設支派，按著宗族，拈出第五鬮」：亞設支派的地業位於瑪拿西的北面，西布倫和拿弗他利的西面，其西界為地中海。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:199: 【書十九25】「他們的境界是黑甲、哈利、比田、押煞、」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:202: 〔原文字義〕「黑甲」光滑；「哈利」項鍊；「比田」肚腹；「押煞」我將被迷惑。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:204: 〔文意註解〕「他們的境界是黑甲、哈利、比田、押煞」：『黑甲』位於亞柯南方約26公里，約念北方約3公里；『哈利』位於亞柯東南方約17公里，米吉多西北方約22公里；『比田』位於亞柯南方約18公里，約念北方約13公里；『押煞』位於亞柯南方約18公里，米吉多西北方約22公里。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:206: 【書十九26】「亞拉米勒、亞末、米沙勒，往西達到迦密，又到希曷立納，」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:209: 〔原文字義〕「亞拉米勒」王的橡樹；「亞末」耐久的；「米沙勒」懇求；「迦密」花園地；「希曷立納」白中之黑。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:211: 〔文意註解〕「亞拉米勒、亞末、米沙勒，往西達到迦密，又到希曷立納」：『亞拉米勒』確實地點不詳，似應在押煞和亞末之間；『亞末』確實地點不詳，似應在亞亞柯平原內，亞拉米勒和米沙勒之間；『米沙勒』位於亞柯東南方約8公里，約念北方約19公里；『迦密』從亞柯灣南岸起，向東南方延伸的一條山脈，全長約40公里，最寬處約20公里，其主峰迦密山位於約念西北方約11公里；『希曷立納』發源於迦密山西麓的一條小河，向西流入地中海，全長約25公里。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:241: 〔文意註解〕「又有烏瑪、亞弗、利合，共二十二座城，還有屬城的村莊」：『烏瑪』確實地點不詳，可能在亞柯灣某處；『亞弗』不同於書十二18和十三4「亞弗」，位於位於亞柯東南南方約8公里，約念北方約20公里；『利合』不同於28節的「利合」，位於亞柯東南方約7公里，米吉多北方約35公里。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:243: 【書十九31】「這些城並屬城的村莊，就是亞設支派按著宗族所得的地業。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:246: 〔原文字義〕「亞設」快樂的。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:248: 〔文意註解〕「這些城並屬城的村莊，就是亞設支派按著宗族所得的地業」：請參閱24節註解。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:250: 【書十九32】「為拿弗他利人，按著宗族，拈出第六鬮。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:253: 〔原文字義〕「拿弗他利」摔角。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:255: 〔文意註解〕「為拿弗他利人，按著宗族，拈出第六鬮」：拿弗他利支派的地業位於西布倫和以薩迦的北面，亞設的東面，約但河的西面。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:264: 【書十九34】「又轉向西到亞斯納他泊，從那裡通到戶割，南邊到西布倫，西邊到亞設，又向日出之地，達到約但河那裡的猶大。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:269: 〔文意註解〕「又轉向西到亞斯納他泊，從那裡通到戶割」：『亞斯納他泊』位於西丁約念東北方約25公里；『戶割』位於亞柯東方約20公里，基尼烈城西方約26公里
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:271: 「南邊到西布倫，西邊到亞設，又向日出之地，達到約但河那裡的猶大」：『達到約但河那裡的猶大』拿弗他利支派的地業並未與猶大相鄰，本句意指約但河向南流直到死海，猶大地就在死海的西面；另有聖經學者認為猶大是靠近約但河岸的一個城鎮名，但無跡可尋。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:278: 〔文意註解〕「堅固的城，就是西丁、側耳、哈末、拉甲、基尼烈」：『西丁』位於伯善北方約24公里，基尼烈城南方約17公里；『側耳』確實地點不詳，似應在加利利海西面，位於西丁和哈末之間；『哈末』位於伯善北方約30公里，基尼烈城南方約11公里；『拉甲』位於伯善北方約34公里，基尼烈城南方約6公里；『基尼烈』位於伯善北方約41公里，夏瑣南方約17公里。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:280: 【書十九36】「亞大瑪、拉瑪、夏瑣、」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:283: 〔原文字義〕「亞大瑪」地土；「拉瑪」小山丘；「夏瑣」城堡。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:285: 〔文意註解〕「亞大瑪、拉瑪、夏瑣」：『亞大瑪』位於基尼烈城西北方約14公里，夏瑣西南方約19公里；『拉瑪』不同於8節和29節的「拉瑪」，位於基尼烈城西北方約17公里，夏瑣西南方約16公里；『夏瑣』位於基尼烈城北方約17公里，亞柯東北方約45公里。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:287: 【書十九37】「基低斯、以得來、隱夏瑣、」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:290: 〔原文字義〕「基低斯」聖所；「以得來」好的牧草地；「隱夏瑣」夏瑣(城堡)之泉。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:292: 〔文意註解〕「基低斯、以得來、隱夏瑣」：『基低斯』位於夏瑣北方約11公里，但城西南方約18公里；『以得來』不同於書十三31的「以得來」，確實地點不詳，似應在加利利地的北部，隱夏瑣附近；『隱夏瑣』位於夏瑣北方約22公里，基底斯西方約16公里。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:299: 〔文意註解〕「以利穩、密大伊勒、和璉、伯亞納、伯示麥，共十九座城，還有屬城的村莊」：『以利穩』位於夏瑣北方約16公里，基底斯西南方約13公里；『密大伊勒』確實地點不詳，似應在以利穩與和璉之間；『和璉』位於夏瑣西北西方約18公里，亞革悉東方約25公里；『伯亞納』位於夏瑣西南方約23公里，但城西南西方約21公里；『伯示麥』不同於22節和書十五10的「伯示麥」，位於夏瑣西方約20公里，亞革悉東方約22公里；『共十九座城』33~38節所列城鎮合計。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:301: 【書十九39】「這些城並屬城的村莊，就是拿弗他利支派按著宗族所得的地業。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:304: 〔原文字義〕「拿弗他利」摔角。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:306: 〔文意註解〕「這些城並屬城的村莊，就是拿弗他利支派按著宗族所得的地業」：請參閱32節註解。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:308: 【書十九40】「為但支派，按著宗族，拈出第七鬮。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:313: 〔文意註解〕「為但支派，按著宗族，拈出第七鬮」：但支派的地業位於便雅憫的西面直到地中海，南北夾在猶大和以法蓮之間，相較於其他支派，顯得很小。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:315: 【書十九41】「他們地業的境界是瑣拉、以實陶、伊珥示麥、」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:318: 〔原文字義〕「瑣拉」大黃蜂；「以實陶」懇求；「伊珥示麥」太陽神之城。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:320: 〔文意註解〕「他們地業的境界是瑣拉、以實陶、伊珥示麥」：『瑣拉』位於耶路撒冷西方約23公里，梭烈谷中段北岸；『以實陶』位於耶路撒冷西方約22公里，基遍西南方約19公里；『伊珥示麥』位於耶路撒冷西方約24公里，希伯崙西北方約27公里。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:327: 〔文意註解〕「沙拉賓、亞雅崙、伊提拉」：『沙拉賓』位於伯特利西南方約24公里，瑣拉北方約11公里；『亞雅崙』位於基遍西方約15公里，伯示麥北方約11公里；『伊提拉』可能位於亞雅崙東方約5公里，確實地點不詳。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:329: 【書十九43】「以倫、亭拿他、以革倫、」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:332: 〔原文字義〕「以倫」松節油，強大的；「亭拿他」一部分；「以革倫」移民，連根拔起。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:334: 〔文意註解〕「以倫、亭拿他、以革倫」：『以倫』位於耶路撒冷西北方約19公里，伯特利西南方約21公里；『亭拿他』位於耶路撒冷西方約31公里，伯示麥西北方約7公里；『以革倫』位於基色西南方約11公里，亞實突東方約18公里。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:348: 〔文意註解〕「伊胡得、比尼比拉、迦特臨門」：『伊胡得』位於約帕東方約13公里，示羅西方約37公里；『比尼比拉』位於約帕西南方約8公里的海邊；『迦特臨門』位於約帕東北方約7公里半，亞弗西方約12公里。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:357: 【書十九47】「但人的地界，越過原得的地界，因為但人上去攻取利善，用刀擊殺城中的人，得了那城，住在其中，以他們先祖但的名，將利善改名為但。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:362: 〔文意註解〕「但人的地界，越過原得的地界，因為但人上去攻取利善」：『越過原得的地界』指不在相鄰的地方擴充地業，而是到以色列人尚未征服的土地去取得；『利善』是但城的原名，位於加利利海北方約40公里，夏瑣北北東方約27公里。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:364: 「用刀擊殺城中的人，得了那城，住在其中，以他們先祖但的名，將利善改名為但」：本節是約書亞死後所發生的事，故是後人的補遺。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:366: 〔話中之光〕(一)但支派後來沒有順服神的安排去攻取分給他們的沿海平原，卻避難就易，「越過原得的地界」，到北方的黑門山下攻取了神沒有給他們的「利善」。但支派不服神的權柄，叫雅各在預言中不能不「等候神的救恩」(創四十九18)。大災難中十二支派的名單用利未代替了但的名字(參啟七4~8)，可能因為「假基督」就是從但支派出來的。然而先知以西結看到將來國度顯現的時候，但支派還是在國度中有分(參結四十八1)，雖然人總是不停地悖逆，但神仍然用信實和憐憫紀念祂所選召的亞伯拉罕的後裔。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:368: (二)但支派的人覺得所分的地業有些地方不易攻取，所以避難就易，攻取利善，他們知道在那裡較易取勝。在事情容易時，人人皆會信靠神，但在環境看似不利時，就是對我們的信心與勇氣的考驗了。要信靠神，祂的大能足可解決最困難的情勢。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:370: 【書十九48】「這些城並屬城的村莊，就是但支派按著宗族所得的地業。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:375: 〔文意註解〕「這些城並屬城的村莊，就是但支派按著宗族所得的地業」：請參閱40節註解。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:377: 【書十九49】「以色列人按著境界分完了地業，就在他們中間將地給嫩的兒子約書亞為業，」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:380: 〔原文字義〕「地業(原文雙字)」土地(首字)；財產，產業(次字)；「中間」中間，當中；「嫩」魚，後裔；「約書亞」耶和華是拯救。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:382: 〔文意註解〕「以色列人按著境界分完了地業，就在他們中間將地給嫩的兒子約書亞為業」：約書亞的家族一直到以色列人分配完產業之地，仍未有確定的地方可供他們定居下來，這種大公無私的心態，是後世信徒領袖的好榜樣。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:384: 〔話中之光〕(一)約書亞是最後分得土地的。從這個程式中我們可以看出這位領袖人格的高尚。他沒有利用職務的便利以權謀私。他抵制了領袖們經常遭遇的試探，即犧牲弱勢群體來中飽私囊。約書亞雖然在百姓中德高望重，卻把自己的事放在最後。他把民族的利益放在個人的私利之上。約書亞為一切擔任國家或教會公職的人樹立了榜樣。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:386: (二)聖經還提到約書亞未經百姓的同意，絕不將土地占為己有。聖經說以色列人把地給了約書亞。他們愛戴自己的領袖。怪不得在約書亞和與他同工的長老有生之年，以色列人都專心侍奉耶和華(參書二十四31；士二7)。這種無私的服務會引發愛心，反過來會激勵人順從。沒有學會無私服務的人無權擔任領導職位。不求自己的喜悅(羅十五3)的基督，乃是無私服務的偉大榜樣。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:388: (三)「就在他們中間將地給嫩的兒子約書亞為業。」約書亞預表基督，他將地業置於弟兄中間。主耶穌說：「因為無論在那裡，有兩三個人奉我的名聚會，那裡就有我在他們中間」(太十八20)。祂是一切聯合的中心。我們來自不同的地方，有不同的想法與觀念，彼此沒有什麼特別的關係。但是經祂的觸摸，我們都連結起來。我們相交的中心不是講章或主餐甚至禮拜的形式，而是基督本身。讓祂成為你家庭生活的中心，職業生活的中心，甚至在任何的情況之下。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:390: 【書十九50】「是照耶和華的吩咐，將約書亞所求的城，就是以法蓮山地的亭拿西拉城，給了他。他就修那城，住在其中。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:393: 〔原文字義〕「以法蓮」我將獲雙倍果子；兩堆灰燼；「亭拿西拉」太陽的一部分，豐盛的一部分。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:395: 〔文意註解〕「是照耶和華的吩咐，將約書亞所求的城，就是以法蓮山地的亭拿西拉城，給了他」：『約書亞所求的城』注意他不是求好的城，而是求別的家族沒有看中的城；『亭拿西拉』位於伯特利西北方約15公里，示羅西南方約19公里。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:399: 【書十九51】「這就是祭司以利亞撒和嫩的兒子約書亞，並以色列各支派的族長，在示羅會幕門口，耶和華面前，拈鬮所分的地業。這樣，他們把地分完了。」
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:402: 〔原文字義〕「以利亞撒」神已幫助；「示羅」安歇之地。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:404: 〔文意註解〕「這就是祭司以利亞撒和嫩的兒子約書亞，並以色列各支派的族長」：『各支派的族長』指九支派半的首領，加上以利亞撒和約書亞，共有十二個人。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:406: 「在示羅會幕門口，耶和華面前，拈鬮所分的地業。這樣，他們把地分完了」：分配地業的事宜是在示羅進行的(參書十八1)。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:414: 一、西緬支派地業的境界和城邑(1~9節)：
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:416: 1.「為西緬支派的人，按著宗族，拈出第二鬮。他們所得的地業是在猶大人地業中間。…因為猶大人的份過多」(1，9節)：西緬支派的地業是在猶大人地業中間。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:420: 二、西布倫支派地業的境界和城邑(10~16節)：
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:422: 1.「為西布倫人，按著宗族，拈出第三鬮。他們地業的境界是到撒立。…達到約念前的河。…又從撒立往東轉向日出之地，…通到伊弗他伊勒谷」(11~14節)：西布倫支派的地業是被以薩迦、亞設、拿弗他利三支派包圍。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:426: 三、以薩迦支派地業的境界和城邑(17~23節)：
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:428: 1.「為以薩迦人，按著宗族，拈出第四鬮。他們的境界是到耶斯列…書念…拉璧、基善」(17~21節)：以薩迦支派的地業是被瑪拿西、拿弗他利、西布倫三支派包圍。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:432: 四、亞設支派地業的境界和城邑(24~31節)：
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:434: 1.「為亞設支派，按著宗族，拈出第五鬮。「他們的境界是黑甲…往西達到迦密…轉向日出之地…直到西頓大城」(24~28節)：亞設支派的地業是在瑪拿西支派的北面，西布倫和拿弗他利兩支派的西面。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:438: 五、拿弗他利支派地業的境界和城邑(32~39節)：
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:440: 1「為拿弗他利人，按著宗族，拈出第六鬮。他們的境界是從希利弗…其終點是約但河…南邊到西布倫，西邊到亞設」(32~34節)：拿弗他利支派的地業是在以薩迦支派的北面，西布倫和亞設兩支派的東面，以約但河為東界。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:442: 2「堅固的城，就是…基尼烈…拉瑪、夏瑣…伯示麥，共十九座城」(35~39節)：共有十九座城。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:444: 六、但支派地業的境界和城邑(40~48節)：
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:446: 1.「為但支派，按著宗族，拈出第七鬮。他們地業的境界是瑣拉、以實陶…以革倫…並約帕對面的地界」(40~46節)：但支派的地業是在猶大支派的北面，便雅憫和以法蓮的西面，瑪拿西支派的南面，以地中海為西界。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:448: 2.「但人的地界，越過原得的地界，因為但人上去攻取利善，…將利善改名為但」(47~48節)：但支派另外攻取拿弗他利支派地業東北方的利善(拉億)。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:450: 七、約書亞得以法蓮山地的亭拿西拉城(49~51節)：
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:452: 1.「以色列人…在他們中間將地給嫩的兒子約書亞為業，是照耶和華的吩咐，將約書亞所求的城，就是以法蓮山地的亭拿西拉城，給了他」(49~50節)：約書亞得以法蓮山地的亭拿西拉城為業。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:454: 2.「這就是祭司以利亞撒和嫩的兒子約書亞，並以色列各支派的族長，在示羅會幕門口，耶和華面前，拈鬮所分的地業」(51節)：以利亞撒和約書亞在示羅會幕門口，耶和華面前，拈鬮分配地業。
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:457: 黃迦勒《基督徒文摘解經系列──約書亞記註解》
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_CT_joshua_19.txt:459: 參考書目：請參閱「約書亞記提要」末尾處
+C:\Obsidian\Hermes\scripture\raw_data\ccbiblestudy_GT_joshua_19.txt:450: ●「約旦河那裏的猶大」：Judah, the Jordan。七十士譯本(LXX) 缺「那裏的猶大」。可能在約旦河（the Jordan）北端有一個名叫猶大的城鎮（不同於猶大支派）。
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1: Simeon’s Inheritance
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:3: Joshua 19:1
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:5: The second lot came out for the clans of the tribe of Simeon:
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:6: Israel’s inheritance was apportioned by lot before the LORD, acknowledging His authority over the land He had promised to Abraham’s descendants. Simeon, Jacob’s second son by Leah, received its portion according to its clans, preserving both tribal identity and family inheritance.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:8: Num 26:12-14 These were the descendants of Simeon by their clans:…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:10: Jos 18:10 And Joshua cast lots for them in the presence of the LORD…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:12: Gen 49:5-7 Simeon and Levi are brothers; their swords are weapons…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:14: Their inheritance lay within the territory of Judah
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:15: Simeon’s cities were assigned from Judah’s extensive southern territory, since Judah’s allotment proved larger than its population required (Joshua 19:9). The arrangement fulfilled Jacob’s prophecy that Simeon would be scattered in Israel (Genesis 49:7), yet it also provided the tribe with a secure place among God’s people. Simeon remained connected to Judah throughout Israel’s history and shared in the life and defense of the southern kingdom.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:17: Jdg 1:3 Then the men of Judah said to their brothers the Simeonites…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:19: Jdg 1:17 Then the men of Judah went with their brothers…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:23: Joshua 19:2
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:26: Beersheba stood at Israel’s southern extremity and remained closely linked with Abraham and Isaac, who worshiped the Lord there and dealt with Abimelech (Genesis 21:31–33; 26:23–25). Its inclusion in Simeon’s inheritance placed the tribe within land long associated with God’s covenant faithfulness. “Sheba” may designate the same settlement or a related locality.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:35: Moladah lay in the Negev, among the towns assigned to Simeon within Judah’s larger territory. Simeon’s scattered inheritance fulfilled Jacob’s earlier prophecy while preserving the tribe’s place among God’s people (Genesis 49:7).
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:43: Joshua 19:3
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:46: A settlement in the Negev, Hazar-shual, meaning “village of the fox,” assigned to Simeon from Judah’s extensive territory. Its later appearance in Nehemiah 11:27 shows that the region remained inhabited after the exile, preserving Israel’s connection to the land God had given.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:55: Also called Bilhah in 1 Chronicles 4:29, Balah belonged to Simeon’s scattered towns within southern Judah. Simeon’s inheritance fulfilled God’s provision for every tribe while binding Simeon’s life and security closely to Judah.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:59: 2Sa 6:2 And he and all his troops set out for Baale of Judah…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:61: 1Ch 13:6 David and all Israel went up to Baalah of Judah…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:70: Joshua 19:4
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:73: Eltolad, meaning “God’s kindred” or “God’s generation,” lay among the towns assigned to Simeon within Judah’s southern territory. Simeon’s inheritance consisted of cities inside Judah because Judah’s original allotment proved larger than the tribe required (Joshua 19:9). The arrangement displayed Israel’s unity under God’s distribution of the land.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:80: Bethul, meaning “house of God,” was another Simeonite town in the Negev, a dry region suited to herding and seasonal movement. Its identification is uncertain, though it may be connected with Bethuel or Chesil in parallel lists (Joshua 15:30; 1 Chronicles 4:30). Even small and now-unidentified towns stood within the covenant inheritance God gave His people.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:82: 1Ch 4:30 Bethuel, Hormah, Ziklag,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:93: Jdg 1:17 Then the men of Judah went with their brothers…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:95: Joshua 19:5
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:97: Ziklag,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:98: These southern towns belonged to Simeon’s inheritance within Judah’s larger territory. Ziklag later became David’s refuge while fleeing Saul, granted to him by Achish of Gath. From Ziklag, David learned of Saul’s death, and there he sought the Lord after the Amalekites raided the city and carried away the families of David and his men.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:100: 1Ch 4:30 Bethuel, Hormah, Ziklag,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:102: Jos 15:31 Ziklag, Madmannah, Sansannah,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:104: 1Sa 27:6 That day Achish gave him Ziklag, and to this day…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:107: Beth-marcaboth, meaning “house of chariots,” suggests a place associated with military strength or chariotry. This name indicates the possible presence of a chariot station or a place where chariots were kept or manufactured. The mention of chariots is significant in the biblical context, as they were a symbol of military power and might, often associated with the Canaanites and later the Egyptians. The Israelites’ encounters with chariots, such as in the battle against Sisera (Judges 4:3), highlight the challenges they faced in conquering the  [...]
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:114: Hazar-susah, meaning “village of horses,” indicates a settlement associated with horse breeding or stabling. Horses were valuable assets in ancient warfare and transportation, and their presence in a settlement would signify wealth and strategic importance. The mention of horses connects to the broader biblical narrative where horses and chariots are often seen as symbols of earthly power, which the Israelites were cautioned against relying on instead of trusting in God (Psalm 20:7). The location of Hazar-susah is not definitively known, but it [...]
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:116: 1Ch 4:30-33 Bethuel, Hormah, Ziklag,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:120: Joshua 19:6
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:123: Beth-lebaoth, “house of lions,” stood among Simeon’s southern settlements within Judah’s larger inheritance. Its name suggests a place of strength or protection, possibly indicating a fortified settlement. God provided Simeon with inhabited places and pasturelands even though the tribe received no separate territory outside Judah.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:127: 1Ch 4:30 Bethuel, Hormah, Ziklag,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:132: Sharuhen occupied a strategic position in the Negev approaches toward Egypt and had a history as a fortified stronghold. Egyptian records associate the city with major military activity during the early New Kingdom, confirming the importance of controlling this southern corridor. Its inclusion in Simeon’s inheritance placed Israel near a vital boundary region requiring vigilance and faithful stewardship.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:141: The recorded number preserves the ordered distribution of the land among Israel’s tribes. Differences between the stated total and the names in the list may reflect alternate names, associated settlements, or textual transmission, yet the allotment itself is presented as a real and defined inheritance granted by the Lord.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:150: The principal towns depended upon surrounding villages, fields, wells, flocks, and grazing lands. Simeon’s inheritance supplied the setting for ordinary covenant life: families raising children, tending herds, cultivating the land, and worshiping the God who had brought Israel into the promised land.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:152: Jos 13:23 And the border of the Reubenites was the bank of the Jordan…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:154: Jos 13:28 This was the inheritance of the clans of the Gadites,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:158: Joshua 19:7
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:161: Ain, meaning “spring” or “fountain,” was one of Simeon’s towns within the larger territory of Judah. Its association with a spring points to the importance of dependable water in the southern land, where settlements and flocks depended on such sources.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:168: Rimmon, “pomegranate,” was likely joined with Ain in later references as En-rimmon, “spring of Rimmon.” The town remained inhabited after the exile, when people of Judah resettled in the Negev region (Nehemiah 11:29).
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:172: Neh 11:29 in En-rimmon, Zorah, Jarmuth,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:175: Ether belonged to Simeon’s inheritance in the southern borderlands. The name Ether means abundance or plenty. Though little else is recorded of the town, its inclusion shows that God’s provision for Simeon extended to smaller communities as well as prominent cities.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:182: Ashan, meaning smoke or cloud, appears in related tribal and Levitical lists, reflecting the close connection between Simeon’s territory and Judah’s land. Levitical cities among these settlements ensured that worship, instruction in God’s law, and priestly ministry remained accessible throughout Israel.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:184: Jos 15:33-47 These were in the foothills: Eshtaol, Zorah, Ashnah,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:189: The listed towns served as centers for surrounding villages, fields, families, and herds. Simeon received its inheritance within Judah because Judah’s original allotment was larger than needed, demonstrating God’s orderly care for every tribe.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:193: Num 35:2 Command the Israelites to give, from the inheritance…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:197: Joshua 19:8
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:200: Simeon’s inheritance included the smaller settlements dependent on the principal towns. These villages supported the region’s agricultural and pastoral life and ensured that the clans possessed the land and resources needed to dwell securely.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:207: Baalath-beer (“Lord of the well”) marked the southern reach of Simeon’s territory in the Negev, a dry region where access to water was essential. Its inclusion shows that the allotment extended to the boundary settlements as well as the more populated towns.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:213: This was the inheritance of the clans of the tribe of Simeon.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:214: Simeon received its cities within Judah’s larger territory because Judah’s allotment proved more extensive than needed (Joshua 19:9). The arrangement fulfilled Israel’s division of the promised land while also reflecting Jacob’s prophecy that Simeon would be scattered in Israel (Genesis 49:5–7).
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:218: Num 26:12-14 These were the descendants of Simeon by their clans:…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:220: Gen 49:5-7 Simeon and Levi are brothers; their swords are weapons…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:222: Joshua 19:9
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:224: The inheritance of the Simeonites was taken from the territory of Judah,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:225: Simeon received no separate block of land alongside the other tribes but cities and surrounding pasturelands within Judah’s southern allotment. Jacob had foretold that Simeon would be scattered in Israel because of the violence of Simeon and Levi at Shechem (Genesis 49:5–7). Levi’s scattering became a sacred service among the tribes, while Simeon’s inheritance within Judah reflected diminished tribal influence. Yet the Lord did not abandon Simeon; He gave the tribe a recognized place in the Promised Land.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:227: Jdg 1:3 Then the men of Judah said to their brothers the Simeonites…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:229: Jos 15:1-12 Now the allotment for the clans of the tribe of Judah…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:231: because the share for Judah’s descendants was too large for them.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:232: Judah’s territory extended broadly across southern Canaan, from the wilderness near the Dead Sea to the Mediterranean coast. Its size corresponded to Judah’s population and its leading role among Israel, but the allotment exceeded the tribe’s immediate need. The distribution of part of Judah’s inheritance to Simeon displayed God’s wise provision and Israel’s responsibility to share covenant blessings rather than preserve excess for itself.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:234: Num 26:22 These were the clans of Judah, and their registration…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:238: So the Simeonites received an inheritance within Judah’s portion.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:239: Simeon’s towns were concentrated in the Negev and southern region of Judah (Joshua 19:2–8). The tribe retained its genealogy and identity, though it became closely associated with Judah and later appears among Judah’s cities and settlements (1 Chronicles 4:27–43). This arrangement strengthened the connection between the tribes and anticipated Judah’s later prominence under David. God’s faithfulness was evident even in Simeon’s reduced position: every tribe received its appointed inheritance according to His promise.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:243: Jdg 1:17 Then the men of Judah went with their brothers…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:247: Zebulun’s Inheritance
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:249: Joshua 19:10
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:251: The third lot came up for the clans of the tribe of Zebulun:
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:252: The land was distributed before the Lord by lot, so Zebulun’s inheritance was received as God’s appointed portion rather than gained by human preference or power (Numbers 26:55–56; Joshua 18:6–10). Zebulun, Leah’s sixth son, received territory in northern Canaan among the tribes that would later be associated with Galilee.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:254: Jos 18:10 And Joshua cast lots for them in the presence of the LORD…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:256: Num 26:55-56 Indeed, the land must be divided by lot;…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:260: The border of their inheritance stretched as far as Sarid.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:261: Sarid marked part of Zebulun’s southern boundary, though its precise location is no longer certain. Zebulun’s territory lay near productive valleys and important travel routes, providing opportunities consistent with Jacob’s blessing concerning commerce and access toward the coast (Genesis 49:13). In later generations, the region of Zebulun became closely connected with Galilee, where Jesus was raised and began His public ministry. Isaiah’s promise that light would shine upon the land of Zebulun found its fullest fulfillment in Christ’s ministr [...]
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:263: Gen 49:13 Zebulun shall dwell by the seashore and become a harbor…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:265: Deu 33:18-19 Concerning Zebulun he said: “Rejoice, Zebulun,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:269: Joshua 19:11
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:272: Zebulun’s boundary advanced toward the Mediterranean region, marking the inheritance God assigned to the tribe. Maralah is otherwise unknown, yet its inclusion preserves the precision of the land God gave His people. Even lesser-known places stood within the faithful fulfillment of His covenant.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:281: Dabbesheth, meaning “hump” or “hill,” served as a recognizable boundary point, probably associated with a hill or raised feature in the landscape. Israel’s inheritance was not an abstract promise but a defined possession, apportioned among the tribes under God’s direction.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:283: Jos 21:28 From the tribe of Issachar they were given Kishion,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:285: 1Ch 6:72 From the tribe of Issachar they were given Kedesh, Daberath,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:287: and met the brook east of Jokneam.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:288: The brook formed a natural border near Jokneam, a city associated with the defeated Canaanite kings and later given to the Levites (Joshua 12:22; 21:34). The boundary therefore recalled both Israel’s victory through God’s power and the provision made for worship and instruction within the land.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:296: Joshua 19:12
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:299: Sarid served as a boundary point within Zebulun’s inheritance in Lower Galilee, a fertile and strategically important region.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:301: Deu 33:18 Concerning Zebulun he said: “Rejoice, Zebulun,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:303: Gen 49:13 Zebulun shall dwell by the seashore and become a harbor…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:305: Jdg 1:30 Zebulun failed to drive out the inhabitants of Kitron…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:308: The carefully marked boundary shows that Israel’s tribal inheritance came by God’s appointment, fulfilling His promise to give the land to Abraham’s descendants.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:316: along the border of Chisloth-tabor
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:317: Chisloth-tabor lay near Mount Tabor, later associated with Deborah and Barak’s victory over Sisera’s army. God’s past deliverance in the region testified that the land belonged to Him before it was entrusted to Zebulun.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:319: Jdg 4:6 She summoned Barak son of Abinoam from Kedesh in Naphtali…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:328: Jos 21:28 From the tribe of Issachar they were given Kishion,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:330: 1Ch 6:72 From the tribe of Issachar they were given Kedesh, Daberath,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:333: Japhia was likely near Nazareth in the hill country of Galilee. Zebulun’s inheritance therefore included territory connected with the region where Jesus would later live and begin His public ministry.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:341: Joshua 19:13
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:344: The boundary of Zebulun continued toward the rising sun, marking the inheritance assigned by the Lord through Joshua. Every measured line testified that Israel’s settlement in Canaan rested on God’s covenant faithfulness, not merely military conquest.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:348: Jos 18:12 On the north side their border began at the Jordan,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:353: Gath-hepher later became known as the hometown of Jonah, the prophet whom God sent to Nineveh (2 Kings 14:25; Jonah 1:1). Jonah’s ministry connected this small town in Zebulun with God’s concern for the nations beyond Israel.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:362: Eth-kazin stood among the towns that defined Zebulun’s allotted territory. Its preservation in the boundary record shows the care with which Israel’s inheritance was established, leaving no tribe without a defined portion in the land God had promised.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:364: Deu 33:18-19 Concerning Zebulun he said: “Rejoice, Zebulun,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:366: Jdg 5:18 Zebulun was a people who risked their lives…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:371: Rimmon marked another point along Zebulun’s border, likely in the hill country of Lower Galilee. The land’s boundaries gave the tribe a secure place among its brethren and provided the setting for its families, towns, worship, and service in Israel.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:380: The changing course of the boundary reflects an actual, carefully determined division of the land. God gave each tribe its inheritance according to His order, preserving both the unity of Israel and the distinct stewardship entrusted to every tribe.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:388: Joshua 19:14
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:391: Neah served as a recognized landmark on Zebulun’s northern boundary. Though its precise location is now uncertain, its inclusion reflects an actual territorial survey carried out when Joshua distributed the land at Shiloh. Israel’s inheritance was assigned by God, yet its borders were carefully established for orderly possession and peaceful coexistence among the tribes.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:398: Hannathon marked another point along Zebulun’s northern frontier. The name Hannathon means “gracious” or “favored.” The town appears to have been an established settlement in Lower Galilee and is likely reflected in ancient Near Eastern geographical records. Such named locations anchored Zebulun’s inheritance in the real landscape God had promised to give Israel.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:404: Jdg 1:30 Zebulun failed to drive out the inhabitants of Kitron…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:407: The Valley of Iphtah-el, meaning “God opens,” formed part of the boundary between Zebulun and the neighboring tribal lands, including Asher. Its designation as the boundary’s endpoint shows that each tribe received a defined inheritance under God’s covenant faithfulness. The detailed boundaries testify that the Lord’s promise of land was not symbolic alone, but fulfilled in identifiable places for His people.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:413: Joshua 19:15
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:416: Kattath belonged to Zebulun’s inheritance in the fertile region of Lower Galilee. Though its precise location is no longer known, its inclusion shows that God’s allotment embraced smaller settlements as well as prominent towns. Every boundary and city testified that the land was received as a covenant gift, not merely gained by Israel’s strength.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:420: Deu 33:18-19 Concerning Zebulun he said: “Rejoice, Zebulun,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:423: Nahalal later became one of the cities assigned to the Levites (Joshua 21:35). God placed Levites among the tribes so that worship, instruction in His law, and the ministry of the sanctuary would remain woven into Israel’s daily life. Zebulun’s inheritance therefore included provision for those set apart to serve the Lord.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:425: Jdg 1:30 Zebulun failed to drive out the inhabitants of Kitron…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:431: Shimron,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:432: Shimron had been ruled by a Canaanite king whose forces joined the northern coalition defeated by Joshua (Joshua 11:1; 12:20). Its presence within Zebulun’s territory marked the fulfillment of God’s promise to dispossess the Canaanite nations and give their land to Israel. The city stood as evidence that the Lord had gone before His people in battle.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:434: Jos 11:1 Now when Jabin king of Hazor heard about these things…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:436: Jos 12:20 the king of Shimron-meron, one; the king of Achshaph, one;
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:439: Idalah formed part of the detailed record of Zebulun’s possession. Such careful identification of cities preserved the tribe’s rightful inheritance and demonstrated the orderliness of God’s provision. Israel’s place in the land rested upon the Lord’s faithfulness to His covenant with Abraham, Isaac, and Jacob.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:441: Gen 49:13 Zebulun shall dwell by the seashore and become a harbor…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:448: Bethlehem of Zebulun was a Galilean town, distinct from Bethlehem of Judah, the city of David and the birthplace of the Messiah. The shared name reflects the ordinary use of place names throughout Israel, while the distinction preserves the unique biblical importance of Bethlehem in Judah.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:457: The cities and their surrounding villages made up a settled inheritance where Zebulun’s families could live, cultivate the land, raise their children, and worship the Lord. The complete record confirms that God fulfilled His promise to establish Israel in the land He had pledged to their fathers.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:459: Jos 21:40 In all, twelve cities were allotted to the clans of Merari,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:465: Joshua 19:16
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:467: This was the inheritance of the clans of the tribe of Zebulun,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:468: Zebulun received its allotted territory in the lower Galilee region, surrounded by the lands of several fellow tribes. The inheritance confirmed God’s faithfulness to His covenant promise that Abraham’s descendants would possess Canaan. As Jacob’s sixth son by Leah, Zebulun became the father of a distinct tribal community whose land placed it near important routes connecting the Mediterranean coast, the Jezreel Valley, and the Sea of Galilee. Isaiah later identified this region with “the land of Zebulun,” and Matthew saw its association with Ga [...]
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:470: Deu 33:18-19 Concerning Zebulun he said: “Rejoice, Zebulun,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:472: Gen 49:13 Zebulun shall dwell by the seashore and become a harbor…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:477: The towns and surrounding settlements gave Zebulun’s clans places for homes, agriculture, worship, defense, and trade. Israel’s inheritance was not merely a geographic possession but a covenant gift requiring faithful stewardship under the Lord. Each village belonged within the ordered life of the tribe, reminding Israel that the land, its produce, and its security ultimately came from God.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:485: Issachar’s Inheritance
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:487: Joshua 19:17
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:489: The fourth lot came out
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:490: The allotment was determined before the LORD at Shiloh through Eleazar the priest, Joshua, and Israel’s tribal leaders. Issachar received the fourth inheritance, following Judah, Simeon, and Zebulun. The lot upheld God’s sovereign direction over the land He had promised to Abraham’s descendants, for “the decision is from the LORD” (Proverbs 16:33).
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:492: Num 26:55-56 Indeed, the land must be divided by lot;…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:494: Jos 18:10 And Joshua cast lots for them in the presence of the LORD…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:496: Pro 16:33 The lot is cast into the lap, but its every decision…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:499: Issachar’s inheritance was assigned among its family divisions, preserving each household’s place within the covenant community. Land was not merely economic property; it was a God-given inheritance tied to family identity, worship, responsibility, and future generations.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:501: Num 33:54 And you are to divide the land by lot according to your clans…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:505: of the tribe of Issachar:
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:506: Issachar, Leah’s fifth son, received territory in and around the fertile Jezreel Valley and Lower Galilee. Its productive fields and strategic location contributed to the tribe’s later importance in Israel’s history. Men of Issachar were recognized for understanding the times and knowing what Israel should do (1 Chronicles 12:32), demonstrating that God’s gifts to His people included both material provision and wisdom for faithful service.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:508: Gen 49:14-15 Issachar is a strong donkey, lying down between sheepfolds…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:510: Num 26:23-25 These were the descendants of Issachar by their clans:…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:512: Joshua 19:18
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:515: Jezreel, meaning “God sows,” stood at the eastern end of the fertile valley that bore its name, within Issachar’s inheritance. Its commanding location overlooked major routes through northern Israel and later became associated with Ahab’s royal residence, Naboth’s faithful refusal to surrender his vineyard, and God’s judgment upon Ahab’s house. Hosea also used Jezreel to portray both divine scattering in judgment and future restoration under God’s covenant mercy.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:523: Chesulloth,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:524: Chesulloth, meaning “loins” or “flanks,” lay in the hill country bordering the Jezreel Valley, near the approaches to Mount Tabor. Its inclusion among Issachar’s towns reflects the tribe’s possession of productive farmland and strategic highlands in a region repeatedly affected by Israel’s wars and deliverance.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:526: Jdg 4:6-14 She summoned Barak son of Abinoam from Kedesh in Naphtali…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:541: Joshua 19:19
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:544: Hapharaim, meaning “two pits” or “double pit,” belonged to the network of towns granted to Issachar in the fertile heartland of northern Israel. Its inclusion testifies to the concrete fulfillment of God’s promise to give Israel an inheritance in the land.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:546: Deu 33:23 Concerning Naphtali he said: “Naphtali is abounding with…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:550: Mat 4:15 Land of Zebulun and land of Naphtali, the Way of the Sea…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:553: Shion, meaning “ruin” or “desolation,” stood among the communities through which Issachar’s families were settled and sustained. Even places otherwise unknown in later history remained known to God and formed part of Israel’s covenant inheritance.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:555: Jdg 4:6 She summoned Barak son of Abinoam from Kedesh in Naphtali…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:557: Jos 20:7 So they set apart Kedesh in Galilee in the hill country…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:559: Jdg 4:10 where he summoned Zebulun and Naphtali…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:562: Anaharath, meaning “answer” or “response,” completed another portion of Issachar’s recorded territory. The careful preservation of such names shows that the Lord’s provision extended to particular towns, fields, households, and generations within His people.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:564: 1Ch 6:76 And from the tribe of Naphtali they were given Kedesh…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:566: Jdg 1:33 Naphtali failed to drive out the inhabitants…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:570: Joshua 19:20
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:573: Rabbith belonged to Issachar’s inheritance in the fertile Jezreel region, though its exact site is unknown. Its inclusion among the boundary towns records God’s careful fulfillment of the land promised to Israel.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:575: 1Ch 6:72 From the tribe of Issachar they were given Kedesh, Daberath,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:577: Jos 17:11 Within Issachar and Asher, Manasseh was assigned Beth-shean,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:582: Kishion was later assigned to the Levites among Issachar’s towns (Joshua 21:28). Levites living within the tribal territories provided instruction in God’s law and kept worship and covenant faithfulness before the nation.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:584: Jos 21:28-29 From the tribe of Issachar they were given Kishion,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:591: Ebez cannot be identified with certainty today, yet it was known to the original recipients of the allotment. Even lesser-known towns formed part of the inheritance God gave His people, showing that His provision extended throughout the land.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:597: Jdg 5:15 The princes of Issachar were with Deborah,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:599: Joshua 19:21
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:602: Remeth is a town located in the territory allotted to the tribe of Issachar. The name “Remeth” means “height” or “elevation,” suggesting its geographical positioning. This town is also referred to as “Jarmuth” in some biblical texts, indicating a possible dual name or a change over time. The location of Remeth is not precisely identified today, but it is believed to have been situated in the fertile Jezreel Valley, an area known for its agricultural productivity. This region’s fertility would have been significant for the tribe of Issachar, kno [...]
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:606: 1Ch 6:72 From the tribe of Issachar they were given Kedesh, Daberath,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:608: Jos 21:28 From the tribe of Issachar they were given Kishion,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:611: En-gannim, meaning “spring of gardens,” indicates a place with abundant water sources, making it ideal for cultivation and settlement. This town is identified with the modern-day Jenin, located at the northern edge of the West Bank. En-gannim’s strategic location at the crossroads of major trade routes would have made it an important site for commerce and interaction with neighboring regions. The presence of gardens and springs aligns with the biblical imagery of a land flowing with milk and honey, symbolizing God’s provision and blessing.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:615: Jos 17:11 Within Issachar and Asher, Manasseh was assigned Beth-shean,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:629: Its precise site is unknown, but Beth-pazzez, meaning “house of dispersion,” completed part of the inheritance entrusted to Issachar. The detailed record of these towns shows that the Promised Land was not an abstract blessing but a real inheritance of fields, homes, springs, and communities, given by the Lord to His covenant people.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:637: Joshua 19:22
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:640: Mount Tabor stood prominently in lower Galilee and served as a recognizable boundary marker for Issachar’s inheritance. Its height and central location made it strategically important in later Israelite history. Christian tradition associates Mount Tabor with the Transfiguration of Jesus, though the Gospels do not name the mountain.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:642: Jdg 4:6 She summoned Barak son of Abinoam from Kedesh in Naphtali…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:649: Shahazumah is known only from this boundary description. Its inclusion shows that God’s allotment of the land was defined with care, extending even to lesser-known settlements and landmarks.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:651: Jos 21:28 From the tribe of Issachar they were given Kishion,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:653: 1Ch 6:72 From the tribe of Issachar they were given Kedesh, Daberath,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:658: Beth-shemesh, “house of the sun,” was located within Issachar’s territory and should not be confused with the Beth-shemesh in Judah where the Philistines returned the ark of the covenant. The name may preserve evidence of earlier Canaanite sun worship, yet the land belonged to the Lord and was given to Israel for faithful covenant life.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:666: and ended at the Jordan.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:667: The Jordan formed Issachar’s eastern boundary. The river recalled Israel’s entrance into the Promised Land under Joshua and testified that the inheritance had been received by God’s power, not by Israel’s strength.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:669: Num 34:12 Then the border will go down along the Jordan…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:671: Deu 3:17 The Jordan River in the Arabah bordered it…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:673: Jos 13:23 And the border of the Reubenites was the bank of the Jordan…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:676: Issachar received established towns together with the surrounding villages and agricultural lands needed to sustain its people. The detailed division of the land confirms the Lord’s faithfulness to His promise to give Abraham’s descendants the land of Canaan.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:684: Joshua 19:23
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:686: This was the inheritance of the clans of the tribe of Issachar,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:687: Issachar received its allotted portion in the fertile Jezreel Valley and surrounding regions, an area well suited for grain, vineyards, and livestock. The land fulfilled God’s covenant promise to Abraham and gave each clan within Issachar a lasting place among the tribes of Israel. Jacob had portrayed Issachar as a strong donkey content to bear burdens in a good land (Genesis 49:14–15), and the tribe’s inheritance reflects both agricultural abundance and the labor required to cultivate and defend it. The division by clans preserved family ident [...]
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:689: Num 26:55-56 Indeed, the land must be divided by lot;…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:693: Jos 18:10 And Joshua cast lots for them in the presence of the LORD…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:696: The named towns, including Jezreel, Shunem, and Chesulloth, served as centers of settlement for the farming communities spread throughout Issachar’s territory. Jezreel later became prominent in Israel’s monarchy, particularly during the reigns of Ahab and Jezebel, showing that the land assigned in Joshua’s day remained central to Israel’s history. Cities provided places of administration, protection, trade, and public worship, while villages sustained the daily agricultural life of the people. God’s careful distribution of the land established  [...]
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:698: Jos 13:23 And the border of the Reubenites was the bank of the Jordan…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:700: Jos 13:28 This was the inheritance of the clans of the Gadites,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:704: Asher’s Inheritance
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:706: Joshua 19:24
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:708: The fifth lot came out
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:709: Asher received its inheritance after Judah, Simeon, Zebulun, and Issachar. The casting of lots under Joshua’s leadership placed the division of Canaan under the Lord’s sovereign direction, ensuring that each tribe received the portion appointed for it.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:711: Jos 18:10 And Joshua cast lots for them in the presence of the LORD…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:713: Num 26:55-56 Indeed, the land must be divided by lot;…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:715: Num 33:54 And you are to divide the land by lot according to your clans…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:717: for the clans of the tribe of Asher:
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:718: Asher, descended from Jacob’s son by Zilpah, received fertile territory in the northern coastal region of Canaan. Its land included rich agricultural areas suited for olive production, in keeping with Jacob’s blessing that Asher would provide “royal delicacies” and Moses’ blessing concerning abundant oil. Yet Asher did not fully drive out the Canaanite inhabitants of several cities, a failure that later exposed the tribe to continued pagan influence and compromise.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:720: Num 26:44-47 These were the descendants of Asher by their clans:…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:722: Gen 49:20 Asher’s food will be rich; he shall provide royal delicacies…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:724: Deu 33:24-25 And concerning Asher he said: “May Asher be the most favored…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:726: Joshua 19:25
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:729: Helkath stood within Asher’s allotted inheritance and was later assigned to the Gershonite Levites as a city for their service (Joshua 21:31). The distribution of such places showed that worship and instruction were to remain woven into the life of every tribe.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:735: Deu 33:24-25 And concerning Asher he said: “May Asher be the most favored…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:738: Hali, meaning “necklace” or “ornament,” belonged to the northern portion of Canaan assigned to Asher. Asher’s inheritance included fertile land and access to coastal routes, yet the tribe was called to possess its inheritance in faithful obedience to the Lord.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:740: Jdg 1:31-32 Asher failed to drive out the inhabitants of Acco, Sidon,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:745: Beten, meaning “belly” or “womb,” was among the towns marking Asher’s territory. Its location is no longer certain, but its inclusion records the care with which the Lord established boundaries for His people and fulfilled His promise to give Israel the land.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:747: Jdg 5:17 Gilead remained beyond the Jordan.…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:751: Gen 49:20 Asher’s food will be rich; he shall provide royal delicacies…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:753: Achshaph,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:754: Achshaph had been a royal Canaanite city whose king joined Jabin’s northern coalition against Joshua (Joshua 11:1). The Lord gave victory over that coalition, and Achshaph became part of the land entrusted to Asher, testifying that Israel’s inheritance rested upon God’s faithfulness and power.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:756: Jos 11:1 Now when Jabin king of Hazor heard about these things…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:758: Jos 12:20 the king of Shimron-meron, one; the king of Achshaph, one;
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:760: Joshua 19:26
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:763: These towns formed part of Asher’s allotted inheritance in northern Israel. Though their locations are no longer certain and they receive no further biblical attention, their inclusion records the careful fulfillment of the Lord’s promise to give each tribe its appointed possession. God’s faithfulness extended to villages as well as to prominent cities, establishing Asher within the land promised to Israel.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:765: Jos 21:30 From the tribe of Asher they were given Mishal, Abdon,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:767: 1Ch 6:74 From the tribe of Asher they were given Mashal, Abdon,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:769: Jdg 1:31 Asher failed to drive out the inhabitants of Acco, Sidon,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:771: On the west the border touched Carmel
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:772: Mount Carmel marked an important boundary near the Mediterranean coast, joining fertile agricultural lands with a strategic ridge overlooking major travel routes. Centuries later, Carmel became the setting for Elijah’s confrontation with the prophets of Baal, where the Lord demonstrated His authority over the false gods associated with fertility and rain (1 Kings 18). The boundary of Asher thus included territory whose richness testified to the Lord’s provision.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:774: 1Ki 18:19 Now summon all Israel to meet me on Mount Carmel,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:778: 2Ki 4:25 So she set out and went to the man of God at Mount Carmel…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:781: Shihor-libnath—whose name suggests a water source, with Shihor meaning “black” or “dark” and Libnath possibly meaning “whiteness”—was likely a stream, coastal landmark, or settlement near Carmel that helped define Asher’s western border. Its exact location has not been securely identified, yet it served a definite purpose in Israel’s inheritance. The detailed boundaries preserved in Joshua show that the land was not seized at random but distributed under God’s direction among the tribes.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:789: Joshua 19:27
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:792: Beth-dagon, meaning “house of Dagon,” marked a place associated with Dagon, a chief Philistine god. Its presence along Asher’s boundary shows that Israel’s inheritance lay beside peoples devoted to false worship. God gave Israel defined land and a distinct calling, yet the tribes would continually face the temptation to accommodate the religions and practices of their neighbors.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:798: touched Zebulun and the Valley of Iphtah-el,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:799: Asher’s border met the territory of Zebulun, demonstrating that each tribal inheritance formed part of one unified covenant land. The Valley of Iphtah-el provided a recognizable natural landmark for the boundary. God’s distribution of the land was neither vague nor accidental; each tribe received an appointed place within Israel.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:801: Deu 33:18-19 Concerning Zebulun he said: “Rejoice, Zebulun,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:803: Gen 49:13 Zebulun shall dwell by the seashore and become a harbor…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:806: The northward course identified further settlements that secured Asher’s allotted territory. Such details preserved the tribe’s inheritance and affirmed the faithfulness of God in bringing Israel into the land promised to Abraham, Isaac, and Jacob. The land was a gift to be possessed in obedience, not merely a possession to be enjoyed.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:813: Cabul, meaning “bound” or “displeasing,” lay in the region later associated with Solomon’s dealings with Hiram of Tyre, when Solomon gave Hiram towns in Galilee as payment for materials and labor used in building the temple and royal projects (1 Kings 9:10–13). The proximity of Tyre and other Phoenician centers gave Asher opportunities for trade and influence, but also exposed Israel to foreign alliances and idolatry.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:819: Joshua 19:28
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:822: Ebron marked part of Asher’s northern inheritance in the land promised to Israel. The detailed boundary record affirms that each tribe received an appointed portion under God’s covenant provision.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:824: Jos 21:30 From the tribe of Asher they were given Mishal, Abdon,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:826: 1Ch 6:74 From the tribe of Asher they were given Mashal, Abdon,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:829: Rehob belonged within Asher’s allotted territory, yet Asher later failed to drive out its Canaanite inhabitants (Judges 1:31). Israel’s incomplete obedience left pagan populations in the land and exposed later generations to spiritual compromise.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:833: Jdg 1:31 Asher failed to drive out the inhabitants of Acco, Sidon,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:836: Hammon formed another point along Asher’s boundary. Its inclusion preserves the historical reality of Israel’s settlement and shows the care taken in establishing each tribe’s inheritance.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:838: 1Ch 6:76 And from the tribe of Naphtali they were given Kedesh…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:840: Jos 21:32 And from the tribe of Naphtali they were given…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:843: Kanah, meaning “reed” or “place of reeds,” helped define Asher’s border near the northern reaches of the land. God’s promises were not vague grants but were fulfilled through real places, boundaries, and tribal possessions.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:850: Greater Sidon was a powerful Phoenician city north of Israel’s territory. Asher’s proximity to Sidon placed the tribe beside a wealthy maritime culture marked by idolatry, creating both economic contact and continuing pressure to remain faithful to the Lord.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:858: Joshua 19:29
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:861: Ramah marked another change in the northern boundary of Asher and should not be confused with other biblical towns bearing the same name. The careful record of each turn shows that Asher’s inheritance was a real and defined gift from the Lord, not a vague claim upon the land.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:863: 1Ki 15:17 Baasha king of Israel went to war against Judah…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:870: Tyre was a powerful Phoenician city, renowned for its defenses, trade, and seafaring influence. Its place on Asher’s boundary brought Israel into close contact with a wealthy Canaanite culture. Asher later failed to drive out all the inhabitants of its territory, and the tribe lived among the Canaanites of the region (Judges 1:31–32).
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:879: Hosah marked the boundary’s movement toward the coast, though its precise location is no longer known. The inclusion of such places preserves the historical reality of Israel’s tribal allotments and the faithfulness of God in giving each tribe its appointed inheritance.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:888: The Mediterranean Sea formed Asher’s western boundary near Achzib, a coastal settlement north of Acco. Access to the sea offered opportunities for travel and commerce, yet it also placed Asher beside Phoenician cities whose prosperity and idolatry would test Israel’s covenant faithfulness.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:890: Jdg 1:31 Asher failed to drive out the inhabitants of Acco, Sidon,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:892: Jdg 5:17 Gilead remained beyond the Jordan.…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:896: Joshua 19:30
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:899: Ummah belonged to the inheritance assigned to Asher in the northern land of Canaan. Its precise location is uncertain, yet its inclusion in the boundary record confirms that God’s promise of a settled inheritance extended to communities both prominent and obscure.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:901: Deu 33:24-25 And concerning Asher he said: “May Asher be the most favored…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:903: Gen 49:20 Asher’s food will be rich; he shall provide royal delicacies…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:906: Aphek was likely a fortified site within Asher’s territory, though its exact identification remains debated. Other places named Aphek appear in accounts of Israel’s conflicts with the Philistines and Syrians, reminding readers that the land of promise still required faith, obedience, and perseverance amid hostile powers.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:915: Rehob was another Asherite city, possibly connected with Beth-rehob in the far north near the approaches to Lebanon. Its name means “broad” or “spacious.” Its place in Asher’s inheritance reflects the breadth of the territory God gave His people, including fertile valleys, coastal routes, and strategic northern settlements.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:919: Jdg 1:31 Asher failed to drive out the inhabitants of Acco, Sidon,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:921: 1Ch 6:74-75 From the tribe of Asher they were given Mashal, Abdon,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:924: The detailed count records a real and ordered distribution of the land among Israel’s tribes. God did not merely promise Canaan in general terms; He apportioned cities, villages, fields, and boundaries for the life of His covenant people. Asher’s inheritance testified to the Lord’s faithfulness, even though later generations would be responsible to live faithfully within what He had given.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:930: Joshua 19:31
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:932: This was the inheritance of the clans of the tribe of Asher,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:933: Asher, meaning “happy” or “blessed,” received its allotted territory in the northern part of Canaan, extending along the Mediterranean coast and into fertile inland regions. The inheritance was assigned by lot under Joshua’s leadership, showing that Israel’s settlement in the land rested on the Lord’s covenant faithfulness rather than human ambition. Jacob had foretold abundance for Asher, and Moses later blessed the tribe with rich provisions and oil (Genesis 49:20; Deuteronomy 33:24–25). Its coastal location gave Asher access to productive fa [...]
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:935: Num 26:55-56 Indeed, the land must be divided by lot;…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:939: Jos 14:2 Their inheritance was assigned by lot for the nine tribes…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:942: The listed towns formed the settled communities within Asher’s tribal boundaries, providing places for families, agriculture, worship, and defense. Asher’s territory reached areas associated with Sidon and Tyre, though the tribe did not fully remove the Canaanite inhabitants from several coastal cities (Judges 1:31–32). Israel’s incomplete obedience allowed pagan populations to remain in the land, creating spiritual and political pressures in later generations. God had faithfully given Asher a rich inheritance, but the tribe’s lasting security  [...]
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:950: Naphtali’s Inheritance
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:952: Joshua 19:32
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:954: The sixth lot came out
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:955: The allotment of the land by lot took place before the LORD at Shiloh under the leadership of Joshua and Eleazar, showing that Israel’s inheritance was received from God rather than seized by tribal ambition. Though the lot was cast by human hands, its outcome rested in the Lord’s sovereign purpose.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:957: Jos 18:10 And Joshua cast lots for them in the presence of the LORD…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:959: Num 26:55-56 Indeed, the land must be divided by lot;…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:961: Pro 16:33 The lot is cast into the lap, but its every decision…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:963: for the clans of the tribe of Naphtali:
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:964: Naphtali, descended from Jacob’s sixth son by Bilhah, received territory in northern Canaan, including much of Galilee and areas near the Sea of Galilee. Its fertile valleys and major trade routes made the region strategically important and frequently vulnerable to invasion. Centuries later, the land of Naphtali became associated with the promised light of Isaiah 9:1–2, fulfilled when Jesus began His public ministry in Galilee (Matthew 4:13–16).
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:966: Num 26:48-50 These were the descendants of Naphtali by their clans:…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:968: Deu 33:23 Concerning Naphtali he said: “Naphtali is abounding with…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:970: Gen 49:21 Naphtali is a doe set free that bears beautiful fawns.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:972: Joshua 19:33
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:975: Heleph marked the beginning of Naphtali’s allotted inheritance in the land promised by God to Abraham’s descendants. Although its precise location is uncertain, the boundary record testifies that Naphtali received a real and defined portion within the covenant land.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:984: The great tree served as a recognized landmark in a landscape where prominent natural features helped preserve tribal boundaries. Zaanannim later appears near Kedesh, where Heber the Kenite camped during the days of Deborah and Barak (Judges 4:11), linking Naphtali’s territory with the conflict in which the Lord delivered Israel from Sisera.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:990: Jos 24:26 Joshua recorded these things in the Book of the Law of God.…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:993: Adami-nekeb and Jabneel marked successive points along Naphtali’s border. Their inclusion shows the care taken to protect each tribe’s inheritance and to prevent confusion over the land entrusted to them by the Lord.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:997: Jdg 1:31 Asher failed to drive out the inhabitants of Acco, Sidon,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1010: and ending at the Jordan.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1011: The Jordan River completed the eastern limit of Naphtali’s territory. Israel had crossed that river under Joshua’s leadership to enter the Promised Land, and it continued to stand as a lasting reminder that the tribes lived in an inheritance received by God’s grace and governed by His covenant.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1015: Num 34:12 Then the border will go down along the Jordan…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1017: Deu 3:17 The Jordan River in the Arabah bordered it…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1019: Joshua 19:34
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1031: Hukkok provided another fixed marker in the carefully defined inheritance given to Naphtali. Israel’s tribal boundaries reflected God’s faithful fulfillment of His promise to give the land to the descendants of Abraham.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1035: Jos 18:12 On the north side their border began at the Jordan,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1039: touching Zebulun on the south side,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1040: Zebulun formed Naphtali’s southern neighbor. The lands of Zebulun and Naphtali later became closely associated with the ministry of Jesus in Galilee, fulfilling Isaiah’s promise that light would dawn in this region (Isaiah 9:1–2; Matthew 4:13–16).
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1046: Deu 33:18-19 Concerning Zebulun he said: “Rejoice, Zebulun,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1048: Asher on the west,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1049: Asher bordered Naphtali toward the Mediterranean coastal region. The adjoining territories enabled the tribes to share the resources and responsibilities of life in the Promised Land.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1051: Jdg 5:17 Gilead remained beyond the Jordan.…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1053: Jdg 1:31-32 Asher failed to drive out the inhabitants of Acco, Sidon,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1055: Deu 33:24-25 And concerning Asher he said: “May Asher be the most favored…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1057: and Judah at the Jordan on the east.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1058: Judah’s principal inheritance lay far south of Naphtali, making this boundary reference difficult to identify geographically. The Jordan nevertheless stood as Israel’s eastern frontier and as a lasting witness to the Lord’s power in bringing His people into their inheritance.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1066: Joshua 19:35
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1069: Naphtali’s inheritance included strongholds that guarded the northern approaches to Israel and helped secure the tribe’s settled life in the land God had given. Walls, gates, and towers provided defense in times of invasion while also serving the ordinary needs of government, trade, and refuge.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1078: Ziddim stood within Naphtali’s network of defended settlements, though its precise location is no longer known. Its preservation in the territorial record testifies to the completeness of God’s provision for every part of the tribe’s inheritance.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1080: Deu 33:23 Concerning Naphtali he said: “Naphtali is abounding with…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1082: Jdg 4:6 She summoned Barak son of Abinoam from Kedesh in Naphtali…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1084: Mat 4:15 Land of Zebulun and land of Naphtali, the Way of the Sea…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1087: Zer was another fortified place in Naphtali’s territory. Even cities otherwise unknown in Scripture belonged to the ordered distribution of the land and contributed to Israel’s security in the north.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1096: Jos 21:32 And from the tribe of Naphtali they were given…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1098: 1Ch 6:76 And from the tribe of Naphtali they were given Kedesh…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1110: Chinnereth was located near the lake later called the Sea of Galilee, also known as the Sea of Chinnereth. The fertile land and abundant waters of this area made it a fruitful inheritance for Naphtali, and centuries later the same region witnessed many of Jesus’ works, teachings, and calls to discipleship.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1112: Deu 3:17 The Jordan River in the Arabah bordered it…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1118: Joshua 19:36
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1121: Adamah is a town mentioned in the allotment of land to the tribe of Naphtali. Its name means “red earth,” which may indicate the type of soil found in the area. The location of Adamah is not precisely known today, but it is believed to have been situated in the northern part of the land of Israel. This town’s mention highlights the detailed nature of the land distribution among the tribes, emphasizing God’s promise to Abraham regarding the land (Genesis 15:18-21).
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1130: Ramah, meaning “height” or “high place,” is a common name for several locations in the Bible. The Ramah mentioned here is likely a town in the territory of Naphtali. Its elevated position would have made it a strategic location for defense and communication. Ramah is often associated with places of worship or judgment, as seen in other biblical references (1 Samuel 7:17). The name itself can symbolize spiritual elevation or closeness to God.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1134: 1Ki 15:17 Baasha king of Israel went to war against Judah…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1138: Hazor,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1139: Hazor was a significant Canaanite city and later a major Israelite city. It is one of the largest archaeological sites in Israel, located in the Upper Galilee region. Hazor was a powerful city-state before the Israelite conquest, as described in Joshua 11, where Joshua defeated its king, Jabin. The city’s destruction fulfilled God’s command to take possession of the land. Hazor’s prominence in the biblical narrative underscores the theme of God’s sovereignty and the fulfillment of His promises to Israel.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1143: Jos 11:1 Now when Jabin king of Hazor heard about these things…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1147: Joshua 19:37
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1149: Kedesh,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1150: Kedesh became one of the six cities of refuge, where a person accused of unintentional killing could remain protected until judgment was rendered. Located in Naphtali, it was also the home of Barak, whom Deborah summoned to lead Israel against Sisera’s army (Judges 4:6). Kedesh joined justice with mercy, pointing to the safety God provides for those who flee to Him.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1152: Jos 20:7 So they set apart Kedesh in Galilee in the hill country…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1154: Jos 21:32 And from the tribe of Naphtali they were given…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1156: Jdg 4:6 She summoned Barak son of Abinoam from Kedesh in Naphtali…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1159: Edrei was among the towns assigned to Naphtali and must be distinguished from Edrei in Bashan, where Israel defeated Og, king of Bashan (Numbers 21:33–35). Its inclusion confirms the careful fulfillment of God’s promise to give Israel the land of Canaan as an inheritance.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1167: En-hazor,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1168: En-hazor was another settlement within Naphtali’s inheritance, likely associated with a spring or water source. Such provisions were essential for life, agriculture, and settlement, revealing God’s practical care as He established each tribe in its allotted territory.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1170: Jos 11:10 At that time Joshua turned back and captured Hazor…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1172: Jos 11:1 Now when Jabin king of Hazor heard about these things…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1176: Joshua 19:38
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1179: Iron is a city located in the territory allotted to the tribe of Naphtali. Its exact location is uncertain, but it is believed to be in the northern region of ancient Israel. The name “Iron” may be derived from a root meaning “place of wild goats,” suggesting a rugged terrain. This city is part of the inheritance given to Naphtali, one of the twelve tribes of Israel, as they settled in the Promised Land. The allocation of cities like Iron reflects the fulfillment of God’s promise to Abraham regarding the land.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1185: Jos 20:7 So they set apart Kedesh in Galilee in the hill country…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1188: Migdal-el, meaning “tower of God,” is another city within Naphtali’s inheritance. The name suggests a place of strength or fortification, possibly indicating a strategic location. Towers were often used for defense and as watchpoints in ancient times. The mention of Migdal-el highlights the importance of security and divine protection for the Israelites as they established themselves in Canaan. This city is not frequently mentioned elsewhere in Scripture, but its inclusion underscores the comprehensive nature of the land distribution.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1197: Horem is a lesser-known city in the biblical record, and its precise location remains unidentified. The name may mean “consecrated” or “devoted,” which could imply a religious or cultural significance. The listing of Horem among the cities of Naphtali demonstrates the thoroughness of the tribal allotments and the diversity of the regions they encompassed. Each city, regardless of its prominence, played a role in the overall settlement and development of the Israelite nation.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1203: Jdg 1:17 Then the men of Judah went with their brothers…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1208: Jdg 1:33 Naphtali failed to drive out the inhabitants…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1215: Naphtali’s Beth-shemesh, meaning “house of the sun,” was distinct from the better-known city in Judah associated with the return of the ark and the priestly allotment. Like Beth-anath, it remained inhabited by Canaanites under Naphtali’s control, revealing the unfinished character of the conquest.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1224: The numbered cities and surrounding villages provided Naphtali with places for defense, worship, farming, and family life. The detailed allotment records the fulfillment of God’s promise to give Israel the land, while the later failure to remove the Canaanites warns that receiving God’s gifts requires continued faithfulness to His command.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1232: Joshua 19:39
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1234: This was the inheritance of the clans of the tribe of Naphtali,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1235: Naphtali received its appointed portion in northern Canaan, a fertile and strategically important region near the Sea of Galilee and the upper Jordan Valley. The allotment fulfilled the Lord’s covenant promise to Abraham and gave each clan a lasting place within Israel.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1237: Ezk 48:3-4 Naphtali will have one portion bordering the territory…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1244: The named towns provided homes, farmland, defense, worship, and trade for Naphtali’s families. Hazor became a major center in the region. Centuries later, Naphtali’s territory formed part of Galilee, where Jesus began His public ministry and fulfilled Isaiah’s promise that light would dawn in the land once marked by oppression (Isaiah 9:1–2; Matthew 4:13–16).
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1246: Jos 13:23 And the border of the Reubenites was the bank of the Jordan…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1248: Jos 13:28 This was the inheritance of the clans of the Gadites,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1252: Dan’s Inheritance
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1254: Joshua 19:40
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1256: The seventh lot
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1257: The seventh allotment was assigned under the Lord’s direction through the casting of lots before Him at Shiloh. Israel’s inheritance was not treated as a human arrangement but as a gift ordered by God.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1264: The outcome of the lot revealed the portion appointed for Daniel Proverbs 16:33 affirms that the lot may be cast by men, yet its decision is from the Lord.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1266: Pro 16:33 The lot is cast into the lap, but its every decision…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1268: Act 1:26 Then they cast lots, and the lot fell to Matthias.…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1273: Dan’s inheritance belonged to the families descended from Dan, Jacob’s son by Bilhah. The land was distributed in a way that preserved tribal and family identity within the covenant nation.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1275: Num 33:54 And you are to divide the land by lot according to your clans…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1277: Num 26:55-56 Indeed, the land must be divided by lot;…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1279: Jos 18:10 And Joshua cast lots for them in the presence of the LORD…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1281: of the tribe of Dan:
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1282: Daniel received territory in the central coastal region of Canaan, bordering powerful Philistine cities. Continued pressure from the Philistines led many Danites to seek land farther north, an event recorded in Judges 18. Their later migration shows both the difficulty of possessing the land and the need for Israel to trust and obey the Lord fully.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1284: Num 26:42-43 These were the descendants of Dan by their clans:…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1288: Gen 49:16-17 Dan shall provide justice for his people.…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1290: Joshua 19:41
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1292: The territory of their inheritance
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1293: This phrase refers to the land allotted to the tribe of Daniel as part of the division of Canaan among the twelve tribes of Israel. The concept of inheritance is significant in biblical theology, symbolizing God’s promise and faithfulness to His people. The land was a tangible representation of God’s covenant with Abraham, Isaac, and Jacob, and it was meant to be a perpetual possession for the Israelites. This inheritance also foreshadows the spiritual inheritance believers receive through Christ, as mentioned in Ephesians 1:11.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1295: Jos 13:7 Now therefore divide this land as an inheritance…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1301: included Zorah,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1302: Zorah is a town located in the Shephelah region of Judah, near the border with the tribe of Daniel It is historically significant as the birthplace of Samson, one of the judges of Israel (Judges 13:2). Zorah’s location on the border highlights the challenges the tribe of Daniel faced in securing their territory, as they were often in conflict with the Philistines. The town’s mention here underscores the ongoing struggle for the Israelites to fully possess the land God had given them.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1304: Jos 15:33 These were in the foothills: Eshtaol, Zorah, Ashnah,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1306: Jdg 13:2 Now there was a man from Zorah named Manoah,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1310: Eshtaol,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1311: Eshtaol is another town in the territory of Dan, closely associated with Zorah. It is also linked to the story of Samson, as it was one of the places where the Spirit of the Lord began to stir him (Judges 13:25). The proximity of Eshtaol to Zorah suggests a shared cultural and historical context, with both towns playing a role in the narrative of Israel’s judges. The mention of Eshtaol emphasizes the importance of local communities in the unfolding of God’s plan for His people.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1320: Ir-shemesh, meaning “city of the sun,” is identified with Beth-shemesh, a town on the border of Judah and Daniel It was a Levitical city, indicating its religious significance (Joshua 21:16). The name suggests a possible Canaanite influence, as sun worship was common in the region. However, its inclusion in the Israelite inheritance signifies the transformation of the land from pagan practices to the worship of Yahweh. The town’s history includes the return of the Ark of the Covenant by the Philistines (1 Samuel 6:12-15), highlighting its role  [...]
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1328: Joshua 19:42
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1331: Shaalabbin, meaning “place of foxes” or “place of jackals,” lay within Dan’s difficult western inheritance, where Amorite and Philistine pressure hindered Israel’s settlement. It is later associated with the places where the Amorites remained entrenched (Judges 1:35), showing that God’s granted inheritance still required faithful obedience and perseverance to possess.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1338: Aijalon stood in a strategic valley route between the coastal plain and the hill country. Joshua’s command for the moon to stand still over the Valley of Aijalon occurred during Israel’s victory over the Amorite coalition (Joshua 10:12). The town later became a Levitical city (Joshua 21:24), joining Israel’s military history with the worship and instruction of God’s people.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1342: 2Ch 11:10 Zorah, Aijalon, and Hebron, the fortified cities…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1347: Ithlah is known only from Dan’s territorial list, yet its inclusion confirms the careful fulfillment of the land distribution commanded by the Lord. Even settlements otherwise unknown to later history belonged within the covenant inheritance given to the tribe of Dan.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1349: Jdg 18:2 So the Danites sent out five men from their clans…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1353: Jdg 1:34 The Amorites forced the Danites into the hill country…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1355: Joshua 19:43
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1358: Elon is one of the towns listed in the territory allotted to the tribe of Daniel The name Elon means “oak” or “terebinth,” which are significant trees in biblical symbolism, often representing strength and endurance. Elon is not frequently mentioned in the Bible, but its inclusion in the list of Danite cities highlights the tribe’s initial inheritance before their eventual migration northward. The location of Elon is not definitively identified today, but it is believed to have been situated in the lowland region of Judah, an area known for its [...]
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1364: Timnah,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1365: Timnah is a town with a rich biblical history, appearing in several narratives. It is perhaps most famously associated with Samson, who sought a Philistine wife from Timnah (Judges 14:1-2). This connection underscores the town’s proximity to Philistine territory and the cultural interactions between the Israelites and Philistines. Timnah is also mentioned in the context of Judah’s encounter with his daughter-in-law Tamar (Genesis 38:12-14). Archaeologically, Timnah is identified with Tel Batash, where excavations have revealed evidence of Phili [...]
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1367: Jdg 14:1 One day Samson went down to Timnah, where he saw…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1374: Ekron was one of the five major Philistine cities and is frequently mentioned in the context of Israel’s battles with the Philistines. It was a significant urban center and a hub of Philistine power. The Ark of the Covenant was brought to Ekron after being captured by the Philistines, leading to a series of plagues that forced its return to Israel (1 Samuel 5:10-12). Ekron’s inclusion in the Danite territory list reflects the initial Israelite claim over the region, although the Philistines maintained control for much of the period. Archaeologi [...]
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1382: Joshua 19:44
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1385: Eltekeh, meaning “God is my fear,” stood within Dan’s allotted territory and was later assigned to the Kohathite Levites as a city for their dwelling (Joshua 21:23). Its presence among the Levitical cities shows that worship, instruction, and covenant life were to be established throughout Israel’s inheritance.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1387: Jos 21:23 From the tribe of Dan they were given Elteke, Gibbethon,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1394: 1Ki 15:27 Then Baasha son of Ahijah of the house of Issachar…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1396: 1Ki 16:15 In the twenty-seventh year of Asa’s reign over Judah,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1401: Baalath remained an important Danite settlement and was fortified by Solomon during his building projects (1 Kings 9:18). Its name, meaning “mistress” or “lady,” and setting among Canaanite influences reminded Israel that possession of the land required continued faithfulness to the Lord rather than accommodation to the religion of surrounding peoples.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1403: 1Ki 9:18 Baalath, and Tamar in the Wilderness of Judah,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1407: Joshua 19:45
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1410: Jehud belonged to Dan’s inheritance in the fertile coastal plain, where Israel was called to establish a secure life under the Lord’s covenant. Though its site is not certain, its inclusion testifies to the detailed fulfillment of God’s promise to give each tribe its appointed portion.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1412: Jdg 1:34-35 The Amorites forced the Danites into the hill country…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1416: Rev 7:5-8 From the tribe of Judah 12,000 were sealed,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1419: Bene-berak, meaning “sons of lightning,” lay near the territory later associated with modern Bnei Brak. Dan’s towns occupied a strategic region exposed to Philistine pressure, reminding Israel that receiving God’s gifts also required faithfulness and courage to possess them.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1428: Gath-rimmon, meaning “winepress of the pomegranate,” was later assigned to the Kohathite Levites as a Levitical city (Joshua 21:24). The town’s agricultural setting could support those devoted to the service of the Lord, showing that Israel’s inheritance was ordered not merely for settlement but for worship and covenant life.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1436: Joshua 19:46
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1446: Rakkon belonged to Dan’s coastal inheritance, though its precise site is no longer known. The towns named in Dan’s allotment show that the Lord gave the tribe a real and defined inheritance, including productive land and access to the Mediterranean region.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1453: Joppa was an ancient port on the Mediterranean coast and gave Daniel access to trade, travel, and maritime resources. Later, Jonah departed from Joppa in flight from God’s call, and Peter received there the vision that opened the way for the gospel’s witness among Gentiles. Dan’s inheritance was rich in opportunity, yet Philistine pressure hindered the tribe’s possession of much of its land, reminding Israel that God’s gifts were to be received through faithful obedience.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1461: Joshua 19:47
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1463: (Later, when the territory of the Danites was lost to them,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1464: Dan’s original inheritance lay near the Philistine plain, where hostile peoples resisted Israel’s settlement. Judges 1:34 records that the Amorites confined the Danites to the hill country, revealing the cost of Israel’s incomplete conquest and the tribe’s failure to secure the land allotted by the Lord.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1466: Jdg 1:34 The Amorites forced the Danites into the hill country…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1470: Jdg 18:2 So the Danites sent out five men from their clans…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1473: Leshem, also called Laish, stood far north near the headwaters of the Jordan. Judges 18 recounts how Danite spies found the city and led their tribe to seek a new inheritance rather than continue pressing into their assigned territory.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1479: Jdg 18:11 So six hundred Danites departed from Zorah and Eshtaol…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1482: The Danites destroyed the inhabitants and seized the city, which had lived in security and isolation from its allies. The account records a military victory, yet it also stands within the troubled pattern of Judges, where Israel repeatedly acted according to its own judgment rather than faithfully carrying out God’s purposes.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1491: The tribe established a northern settlement far from its original allotment. Daniel became Israel’s northern boundary marker in the familiar description, “from Daniel to Beersheba.”
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1493: Jdg 18:29 They named it Dan, after their forefather Dan…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1497: and renamed it after their father Dan.)
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1498: The new name declared Danite possession and preserved the memory of Jacob’s son Daniel (meaning “judge”). Yet the city later became associated with idolatry, as Judges 18 records, showing that possession of land could not replace covenant faithfulness to the Lord.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1502: Gen 49:16 Dan shall provide justice for his people.…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1504: Deu 33:22 Concerning Dan he said: “Dan is a lion’s cub,…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1506: Joshua 19:48
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1508: This was the inheritance of the clans of the tribe of Dan,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1509: Daniel received a defined portion in the central coastal region of Canaan, west of Benjamin and north of Judah. The allotment fulfilled God’s covenant promise to give Israel the land, yet Dan’s later history reveals the cost of failing to drive out its enemies. Pressed by the Amorites and Philistines, many Danites abandoned their assigned territory and captured Laish in the north, renaming it Daniel (Judges 18).
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1515: Num 26:55-56 Indeed, the land must be divided by lot;…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1518: The listed cities formed centers of defense, commerce, judgment, and worship, while the surrounding villages sustained the tribe through agriculture and local community life. God’s detailed provision extended to both fortified towns and rural settlements, giving Daniel all that was needed to establish a secure inheritance in the land.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1524: Jdg 1:34-35 The Amorites forced the Danites into the hill country…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1526: Joshua’s Inheritance
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1528: Joshua 19:49
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1531: The allotments, assigned by lot before the Lord at Shiloh, completed the major division of Canaan among Israel’s tribes. God’s promise to Abraham that his descendants would possess the land had come to visible fulfillment. Israel had moved from wilderness wandering into an ordered national life, with each tribe receiving a place of inheritance under God’s covenant.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1535: Jos 11:23 So Joshua took the entire land, as the LORD had spoken…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1539: the Israelites gave Joshua son of Nun an inheritance among them,
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1540: Joshua received his portion only after the people had been provided for, displaying the humility and faithfulness that marked his leadership. By the Lord’s command, he received Timnath-serah in Ephraim’s hill country and rebuilt the city for his home. Joshua’s name, Yeshua, means “the Lord is salvation,” and his selfless service anticipates Christ, who humbled Himself to secure an eternal inheritance for His people.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1542: Jos 24:30 And they buried him in the land of his inheritance…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1544: Jdg 2:9 They buried him in the land of his inheritance…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1548: Joshua 19:50
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1551: Israel’s distribution of the land proceeded under God’s authority, fulfilling His covenant promise to Abraham and His word through Moses. Joshua received no private advantage apart from the Lord’s direction.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1557: Deu 34:9 Now Joshua son of Nun was filled with the spirit of wisdom…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1560: The people honored Joshua’s long and faithful service by granting him an inheritance after the tribes had received their portions. Timnath-serah, called Timnath-heres in Judges 2:9, became the home and later the burial place of Israel’s servant-leader.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1562: Jos 24:30 And they buried him in the land of his inheritance…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1564: Jdg 2:9 They buried him in the land of his inheritance…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1567: Joshua belonged to the tribe of Ephraim, and his inheritance lay within its rugged central territory. From this region, near Shiloh where the tabernacle stood, Israel’s life of worship and national order would be centered for generations.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1576: Joshua asked for a city within his own tribal region rather than claiming a royal portion or the richest territory. His request reflects the humility of a man who had led Israel in conquest yet remained content with the Lord’s provision.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1585: Joshua restored Timnath-serah and made it his home, entering the rest God had promised after years of wilderness wandering and warfare. His settled inheritance foreshadows the lasting rest God gives His people through the greater Joshua, Jesus Christ.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1593: Joshua 19:51
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1595: These are the inheritances
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1596: The allotted territories gave each tribe a permanent place within the land God had promised to Abraham, Isaac, and Jacob. Israel received the land as God’s gift, not merely as the result of military conquest, and each inheritance carried the responsibility to live faithfully under the Lord’s covenant.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1600: Num 33:54 And you are to divide the land by lot according to your clans…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1604: that Eleazar the priest, Joshua son of Nun, and the heads of the families
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1605: Eleazar represented the priestly authority established through Aaron, while Joshua carried the leadership entrusted to him by Moses. The tribal heads represented their clans and protected the interests of their people. Their united service joined worship, civil order, and tribal accountability under God’s authority.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1613: distributed by lot to the tribes of Israel
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1614: The casting of lots placed the final determination in the Lord’s hands, preventing Israel’s strongest tribes or leaders from claiming territory by preference or influence. Each tribe received its appointed portion according to God’s purpose, while Levi received no tribal territory as its primary inheritance because the Lord and His priestly service were its inheritance.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1616: Jos 14:2 Their inheritance was assigned by lot for the nine tribes…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1620: Pro 16:33 The lot is cast into the lap, but its every decision…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1622: at Shiloh
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1623: Shiloh became Israel’s central sanctuary after the land was subdued. The Tent of Meeting and the ark remained there for much of the period of the judges, making Shiloh the gathering place for national worship, judgment, and covenantal decisions. Its location in Ephraim’s territory also placed the sanctuary among the tribes settled in the central highlands.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1625: Jos 18:1 Then the whole congregation of Israel assembled at Shiloh.…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1632: The division of the land took place under the searching authority of the covenant God who had brought Israel out of Egypt and into Canaan. The inheritance belonged ultimately to Him, and Israel’s possession of it depended on obedient faith rather than military strength alone.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1634: Jos 18:8 As the men got up to go out, Joshua commanded them…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1636: Num 27:21 He shall stand before Eleazar the priest…
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1641: The entrance of the tabernacle was the appointed place where Israel drew near to God through priestly ministry. Conducting the allotments there declared that the nation’s boundaries, leadership, and future were to be ordered by the Lord’s presence.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1650: The completion of the allotments marked the fulfillment of God’s long-standing promise to give Abraham’s descendants the land of Canaan. Israel had moved from wilderness wandering into settled life, yet each tribe still needed to drive out remaining enemies and guard its inheritance through continued obedience to the Lord.
+C:\Obsidian\Hermes\scripture\raw_data\biblehub_study_joshua_19.txt:1652: Jos 11:23 So Joshua took the entire land, as the LORD had spoken…
+
+mcp: hermes-scripture/query_step_context started
+mcp: hermes-scripture/query_step_context (completed)
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$chs=11,12,13,14,15,17,18; $bases=@('"'ccbiblestudy_CT_joshua_{0}.txt','ccbiblestudy_GT_joshua_{0}.txt','kingcomments_joshua_{0}.txt','biblehub_study_joshua_{0}.txt'); foreach("'$c in $chs){ foreach($b in $bases){ $p='"'raw_data/'+("'$b -f $c); if(Test-Path -LiteralPath $p){'"'OK '+"'$p}else{'"'MISSING '+"'$p} } }' in C:\Obsidian\Hermes\scripture
+ succeeded in 103ms:
+OK raw_data/ccbiblestudy_CT_joshua_11.txt
+OK raw_data/ccbiblestudy_GT_joshua_11.txt
+OK raw_data/kingcomments_joshua_11.txt
+OK raw_data/biblehub_study_joshua_11.txt
+OK raw_data/ccbiblestudy_CT_joshua_12.txt
+OK raw_data/ccbiblestudy_GT_joshua_12.txt
+OK raw_data/kingcomments_joshua_12.txt
+OK raw_data/biblehub_study_joshua_12.txt
+OK raw_data/ccbiblestudy_CT_joshua_13.txt
+OK raw_data/ccbiblestudy_GT_joshua_13.txt
+OK raw_data/kingcomments_joshua_13.txt
+OK raw_data/biblehub_study_joshua_13.txt
+OK raw_data/ccbiblestudy_CT_joshua_14.txt
+OK raw_data/ccbiblestudy_GT_joshua_14.txt
+OK raw_data/kingcomments_joshua_14.txt
+OK raw_data/biblehub_study_joshua_14.txt
+OK raw_data/ccbiblestudy_CT_joshua_15.txt
+OK raw_data/ccbiblestudy_GT_joshua_15.txt
+OK raw_data/kingcomments_joshua_15.txt
+OK raw_data/biblehub_study_joshua_15.txt
+OK raw_data/ccbiblestudy_CT_joshua_17.txt
+OK raw_data/ccbiblestudy_GT_joshua_17.txt
+OK raw_data/kingcomments_joshua_17.txt
+OK raw_data/biblehub_study_joshua_17.txt
+OK raw_data/ccbiblestudy_CT_joshua_18.txt
+OK raw_data/ccbiblestudy_GT_joshua_18.txt
+OK raw_data/kingcomments_joshua_18.txt
+OK raw_data/biblehub_study_joshua_18.txt
+
+codex
+已完成 Attempt 1 唯讀審查：stage hash 與狀態檔一致；核對了 `link_updates.yaml` 的 35 筆更新、27 個指定條目的主題發展，以及本章來源與 STEP 第 47 節證據。未發現需修正的證據或內容問題。
+
+REVIEW_STAGE: link_updates  
+REVIEW_SHA256: 7af5dc40972c9f51cd3e3fa4462e5187932f92371ec93039e826b1cdbbd03abe  
+REVIEW_REVIEWER: codex  
+REVIEW_ATTEMPT: 1  
+REVIEW_STATUS: PASS  
+FINDINGS_COUNT: 0
+tokens used
+189,008
+已完成 Attempt 1 唯讀審查：stage hash 與狀態檔一致；核對了 `link_updates.yaml` 的 35 筆更新、27 個指定條目的主題發展，以及本章來源與 STEP 第 47 節證據。未發現需修正的證據或內容問題。
+
+REVIEW_STAGE: link_updates  
+REVIEW_SHA256: 7af5dc40972c9f51cd3e3fa4462e5187932f92371ec93039e826b1cdbbd03abe  
+REVIEW_REVIEWER: codex  
+REVIEW_ATTEMPT: 1  
+REVIEW_STATUS: PASS  
+FINDINGS_COUNT: 0

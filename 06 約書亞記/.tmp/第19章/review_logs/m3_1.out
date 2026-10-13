@@ -1,0 +1,2344 @@
+OpenAI Codex v0.162.1
+--------
+workdir: C:\Obsidian\Hermes\scripture
+model: gpt-6-luna
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: xhigh
+reasoning summaries: none
+session id: 01a13530-f584-7660-9e1e-f083ef8cb220
+--------
+user
+你是唯讀 evidence reviewer，不得修改任何檔案。請依 agent_evidence_audit_prompt.md 審查下面這個 stage，並照該檔「Verdict」一節的格式，在最後輸出 footer（REVIEW_STAGE／REVIEW_SHA256／REVIEW_REVIEWER／REVIEW_ATTEMPT／REVIEW_STATUS／FINDINGS_COUNT）。
+書卷：約書亞記
+章：19
+stage：m3
+sha256：57ff68c060adabadeb19e1c815e273ae51b7017958bcd4bec548814f078ddbc5
+REVIEW_ATTEMPT：1
+
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\andyj_adknr2z\.codex\config.toml): `c:\Users\andyj_adknr2z\.vscode\extensions\vexp.vexp-vscode-1.3.11\dist\mcp-server.cjs` is ignored.
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\andyj_adknr2z\.codex\config.toml): `c:\Users\andyj_adknr2z\.vscode\extensions\vexp.vexp-vscode-1.3.11\dist\mcp-server.cjs` is ignored.
+warning: failed to parse hooks config C:\Obsidian\Hermes\scripture\.codex\hooks.json: unknown field `_cc_bridge_version`, expected `description` or `hooks` at line 2 column 22
+codex
+我會先依專案規則跑 vexp `run_pipeline`，接著讀取 evidence audit SOP 與指定 M3 產物，保持唯讀並按指定格式提交 verdict。
+mcp: vexp/run_pipeline started
+mcp: vexp/run_pipeline (failed)
+MCP tool call requires approval, but approval policy is never
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -Raw -LiteralPath 'agent_evidence_audit_prompt.md'" in C:\Obsidian\Hermes\scripture
+ succeeded in 166ms:
+# Evidence Audit Protocol
+
+ä½ æ˜¯æœ¬å°ˆæ¡ˆçš„ **Evidence Reviewer**ã€‚é è¨­ reviewer æ˜¯ Codexï¼›Codex é¡åº¦ï¼æœå‹™ä¸å¯ç”¨æ™‚ç”± Antigravity æŽ¥æ‰‹ã€‚ä½ ä¸æ˜¯ç¬¬äºŒå€‹ä½œè€…ï¼šåªæŸ¥æ ¸ Claude å·²å®Œæˆã€å°šæœªæ­£å¼è½åœ°çš„ payloadï¼ŒM3 å¦æŸ¥é‡è¦æ¢ç›®æ˜¯å¦æ¼æŽ‰ã€‚Audit å° Claude-authored content **read-only**ï¼›findings äº¤å›ž Claude ä¿®ã€‚
+
+**é€™å€‹ read-only æ˜¯æŠ€è¡“é™åˆ¶ï¼Œä¸åªæ˜¯éµå®ˆç´„å®šã€‚** æœ¬ audit å‘¼å«åœ¨ `--sandbox read-only`ï¼ˆCodexï¼‰æˆ– deny-write settingsï¼ˆAntigravityï¼‰ä¸‹åŸ·è¡Œï¼Œå› æ­¤åœ¨ CLI å±¤å°±ä¸å…·å‚™å¯«å…¥èƒ½åŠ›ï¼Œä¸æ˜¯ã€Œæœ‰èƒ½åŠ›ä½†é¸æ“‡ä¸å¯«ã€ã€‚å®Œæˆ audit å¾ŒæŠŠ findings ä»¥ç´”æ–‡å­—å›žå‚³çµ¦ orchestratorï¼Œç”± orchestratorï¼ˆæœ‰å¯«å…¥æ¬Šé™çš„é‚£ä¸€å´ï¼‰è¨˜éŒ„ verdictã€é©…å‹• Claude ä¿®ç¨¿â€”â€”reviewer æœ¬èº«ä¸å¯«ä»»ä½•æª”æ¡ˆï¼ŒåŒ…æ‹¬ä¸å¯« `agent_review.yaml`ã€‚
+
+**åŒä¸€ç« å›ºå®šåŒä¸€å€‹ reviewer session/threadï¼Œä¸è¦æ¯æ¬¡ attempt éƒ½é–‹æ–°çš„ã€‚** M3 Attempt 1ã€M3 Attempt 2ã€M6ã€link_updates çš„æ‰€æœ‰ review å‘¼å«ï¼Œéƒ½ç”¨ `--resume {threadId}`ï¼ˆCodexï¼‰æˆ–å»¶çºŒåŒä¸€ `agy` conversationï¼ˆAntigravityï¼‰æŽ¥çºŒåŒä¸€å€‹ threadï¼›åªæœ‰æ› reviewerï¼ˆCodexâ†”Antigravity äº¤æŽ¥ï¼‰æˆ–æ‰¾ä¸åˆ°å¯å»¶çºŒçš„èˆŠ thread æ™‚æ‰é–‹æ–°çš„ã€‚Read-only sandbox åœ¨æ•´å€‹ thread ç”Ÿå‘½é€±æœŸå…§ä¿æŒä¸è®Šï¼Œresume æ™‚ä¸éœ€è¦ã€ä¹Ÿä¸æ‡‰è©²é‡æ–°æŒ‡å®š sandboxï¼ˆCodex resume æœ¬ä¾†å°±æœƒæ²¿ç”¨åŽŸ session çš„ sandboxï¼‰ã€‚é€™æ¨£ reviewer èƒ½è¨˜å¾—è‡ªå·±å‰ä¸€è¼ªæŒ‡å‡ºéŽä»€éº¼ã€ä¸Šä¸€è¼ª attempt èªªäº†ä»€éº¼ï¼Œä¸å¿…æ¯æ¬¡é‡æ–°è®€æ•´ç« ä¸Šä¸‹æ–‡ã€‚
+
+å…ˆè®€ `AGENTS.md`ã€‚å‘¼å«æ™‚ï¼ç‹€æ…‹æª”æœƒæä¾›ï¼š`book`ã€`chapter`ã€`stage`ã€`sha256`ã€`review_attempts`ã€‚å…ˆç¢ºèª `.tmp/ç¬¬xç« /agent_review.yaml` çš„ stage hash èˆ‡ç›®å‰å…§å®¹ä¸€è‡´ï¼›ä¸ä¸€è‡´å°± `BLOCKED`ã€‚
+
+## å…©æ¬¡ review é ç®—ï¼ˆç¡¬é™åˆ¶ï¼‰
+
+**æ¯å€‹ stageï¼ˆm3 / m6 / link_updatesï¼‰æœ€å¤šåªæœ‰ 2 æ¬¡ substantive reviewï¼ŒCodex èˆ‡ Antigravity å…±ç”¨åŒä¸€é ç®—ï¼›æ› reviewer ä¸æœƒé‡ç½®ã€‚**
+
+- Attempt 1/2ï¼šåšå®Œæ•´ auditã€‚ä¸€æ¬¡åˆ—é½Šæ‰€æœ‰æœƒå½±éŸ¿æ­£ç¢ºæ€§ã€è­‰æ“šé‚Šç•Œæˆ–é‡è¦å®Œæ•´æ€§çš„ findingsï¼›ä¸è¦æŠŠå¯ä»¥ç¾åœ¨æŒ‡å‡ºçš„å•é¡Œç•™åˆ°ä¸‹ä¸€è¼ªã€‚
+- Attempt 2/2ï¼šé€™æ˜¯**æœ€å¾Œä¸€æ¬¡ reviewer æ©Ÿæœƒ**ã€‚å…ˆè¤‡æ ¸ä¸Šä¸€è¼ªä¿®æ­£ï¼Œå†ä¸€æ¬¡åˆ—é½Šä»å­˜åœ¨æˆ–ä¿®ç¨¿æ–°å¼•å…¥çš„æ‰€æœ‰ material findingsã€‚ä¸è¦è¦æ±‚ Round 3ã€‚
+- ä¸èŠ± review é ç®—åœ¨ç´”æ–‡é¢¨ã€æŽªè¾­åå¥½ã€å¯æœ‰å¯ç„¡çš„ã€Œæ›´å®Œæ•´ã€å»ºè­°ã€‚
+- Attempt 2 è‹¥ä» `CHANGES_REQUIRED`ï¼ŒClaude æœƒåšæœ€å¾Œä¸€æ¬¡ä¿®æ­£ï¼›ä¹‹å¾Œ `util/agent_review.py submit` å°æ–° hash å»ºç«‹æ˜Žç¤º `FORCED PASS`ï¼Œ**ç¦æ­¢ç¬¬ä¸‰æ¬¡ reviewer å‘¼å«**ã€‚
+- `BLOCKED`ï¼ˆä¾‹å¦‚ reviewer quotaï¼tool failureï¼ä¾†æºä¸å¯è®€ï¼‰ä¸æ˜¯ substantive reviewï¼Œä¸æ¶ˆè€—æ¬¡æ•¸ï¼›å¯æ”¹ç”±å¦ä¸€ reviewer æŽ¥æ‰‹åŒä¸€ hashã€‚
+
+ä½ çš„è²¬ä»»å› æ­¤æ˜¯ï¼š**å‰å…©æ¬¡å°±æŠŠçœŸæ­£é‡è¦çš„å•é¡ŒæŠ“å®Œï¼Œä¸ç”¨ç„¡é™ä¾†å›žã€‚**
+
+### Attempt 1 å¼·åˆ¶ scope checklistï¼ˆå¯« verdict å‰é€é …èµ°éŽï¼‰
+
+Attempt 1 çš„é ç®—æœ€å®¹æ˜“è¢«æ–‡é¢¨åå¥½ç¨€é‡‹ï¼Œå°Žè‡´çœŸå•é¡Œç•™åˆ° Attempt 2ã€å† forced passã€‚å‹•æ‰‹å‰å…ˆç¢ºèªé€™ä¸€è¼ªå·²æ¶µè“‹ï¼š
+
+- [ ] **å¿ å¯¦åº¦**ï¼šæ¯å€‹æ­¸æ–¼ä¾†æºçš„äº‹å¯¦ï¼å¼•æ–‡ï¼ç¿»è­¯ï¼è½‰è¿°éƒ½å°ç…§éŽè©²ä¾†æº rawã€‚
+- [ ] **è­‰æ“šé‚Šç•Œ**ï¼šSTEP åªç”¨ä¾†æ”¯æŒå­—å½¢ï¼lemmaï¼Strongï¼morphologyï¼æœ¬ç¯€è­¯ç¾©ï¼ç°¡è¦ç¾©åŸŸï¼›æ²’æœ‰æ‹¿ lexicon ç¾©åŸŸæˆ– STEP absence ç•¶ç¥žå­¸çµè«–ã€‚
+- [ ] **m3 æ¢ç›®å®Œæ•´åº¦**ï¼ˆm3 å¿…åšï¼‰ï¼š`link_plan.yaml` çš„ `C_new_formal` éƒ½æœ‰å¯¦éš› payloadï¼›ä¸”æŽƒéŽå››å¥— Commentaryï¼‹ç¶“æ–‡ï¼‹STEPï¼‹`link_candidates.yaml`ï¼‹`candidate_similarity.md`ï¼Œç¢ºèªæ²’æœ‰ã€Œä¾†æºæ˜Žç¢ºæåˆ°ã€å€¼å¾—è·¨ç« ç´¯ç©ã€ç„¡æ—¢æœ‰æ¢ç›®æ‰¿æŽ¥ã€çš„é‡è¦å€™é¸æ•´å€‹æ¼æŽ‰ã€‚
+- [ ] **ä¸€è‡´æ€§**ï¼šm6ï¼link_updates å°ç…§å·²æ ¸å‡†çš„ä¸Šæ¸¸ï¼ˆm3ï¼m6ï¼‰ï¼Œæ²’æœ‰å£“å¹³ Commentary åˆ†æ­§ã€æ²’æŠŠå–®ç« å…§å®¹å¯«æˆè·¨ç« ä¸»é¡Œç™¼å±•ã€‚
+- [ ] findings å·²ä¸€æ¬¡åˆ—é½Šï¼Œæ²’æœ‰ã€Œé€™å€‹ç•™åˆ°ä¸‹ä¸€è¼ªå†èªªã€ã€‚
+
+ç´”æ–‡é¢¨ã€å¯æœ‰å¯ç„¡çš„ã€Œæ›´å®Œæ•´ã€ä¸åˆ—å…¥ findingsï¼Œä¹Ÿä¸å› æ­¤è¦æ±‚ Attempt 2ã€‚
+
+## è­‰æ“šä¾†æº
+
+- ç¶“æ–‡æœ¬æ–‡ï¼äº¤å‰å¼•è¨» â†’ `raw_scripture/`
+- Commentary attributionï¼è§£ç¶“ â†’ æœ¬ç«  `source_manifest.md` å®£å‘Š OK çš„ CTã€GTã€KingCommentsã€BibleHub `raw_data/`
+- åŽŸæ–‡å­—å½¢ã€lemmaã€Strong / Extended Strongã€morphologyã€context glossã€lexicon ç¾©åŸŸ â†’ æ­£å¼ STEP evidence / receipt / projectionï¼›éœ€è¦æ™‚ç”¨å…è¨±çš„ç²¾ç¢º STEP query
+- å°ˆæ¡ˆè¦å‰‡ â†’ `AGENTS.md` èˆ‡ç•¶æ¬¡æ­£å¼ prompt/schema
+
+STEP æ˜¯åŽŸæ–‡è­‰æ“šå±¤ï¼Œä¸æ˜¯ç¬¬äº”å®¶ Commentaryã€‚lexicon ç¾©åŸŸä¸èƒ½è‡ªå‹•å¯«æˆæœ¬ç¯€ç¢ºå®šç¾©ï¼Œmorphology ä¸èƒ½è‡ªè¡ŒæŽ¨å‡ºç¥žå­¸çµè«–ï¼ŒSTEP absence ä¹Ÿä¸èƒ½ç”¨ä¾†å¦å®š Commentary å»¶ä¼¸ã€‚
+
+### Attribution fidelity
+
+å‡¡æŠŠå…§å®¹æ­¸æ–¼æŸä¸€ä¾†æºï¼Œéƒ½ç›´æŽ¥å°ç…§è©²ä¾†æºåˆ¤æ–·å¿ å¯¦åº¦ï¼š
+
+- åŒèªžè¨€ç›´æŽ¥å¼•æ–‡ï¼šæ–‡å­—å…§å®¹é ˆå¿ å¯¦ï¼Œç¯€éŒ„ä¸å¾—æ”¹è®ŠåŽŸæ„æˆ–æ‹¼æŽ¥æˆä¾†æºæ²’æœ‰çš„å¥å­ã€‚
+- è·¨èªžè¨€ç¿»è­¯ï¼šæ¯”è¼ƒèªžç¾©ï¼Œä¸è¦æ±‚ä¸­æ–‡å­—ä¸²å‡ºç¾åœ¨è‹±æ–‡ä¾†æºï¼›ä¸å¾—å¢žåŠ ã€åˆªé™¤ã€å¼·åŒ–ã€å¼±åŒ–æˆ–åè½‰ä¾†æºçš„ä¸»å¼µã€ç¯„åœã€å¦å®šã€å› æžœèˆ‡ä¸ç¢ºå®šç¨‹åº¦ã€‚
+- å…·åè½‰è¿°ï¼šä¸è¦æ±‚é€å­—ï¼Œä½†å…§å®¹å¿…é ˆç”±ä¾†æºæ”¯æŒï¼Œä¸”ä¸èƒ½æŠŠæŸä¸€å®¶èªªæ³•æ”¹æŽ›çµ¦å¦ä¸€å®¶ã€‚
+- ä¸å› æ¨™é»žæˆ–å¼•è™Ÿæœ¬èº«åˆ¤å®šæ˜¯å¦å±¬ç›´æŽ¥å¼•æ–‡ï¼›åªæœ‰ä¾†æº attribution èˆ‡å¯¦éš›ä¾†æºä¸ç¬¦æ™‚æ‰å½¢æˆ findingã€‚å–®ç´”å­—ä¸²å›žæŸ¥ä¸åˆ°ï¼Œä¸è¶³ä»¥æ§‹æˆ findingã€‚
+
+## Stage ç¯„åœ
+
+### m3
+
+åŒæ™‚åš **å…§å®¹å¿ å¯¦åº¦ + æ¢ç›®å®Œæ•´åº¦**ï¼š
+
+- æŸ¥ `entry_content/*.yaml` çš„é‡è¦äº‹å¯¦ã€ä¾†æº attributionã€å¼•æ–‡ï¼ç¿»è­¯ï¼è½‰è¿°ã€æ•¸å­—ã€ç¶“æ–‡ã€åŽŸæ–‡ã€åˆ†æ­§èˆ‡ç•°ç« æ±¡æŸ“ã€‚
+- å°ç…§ `link_plan.yaml` çš„ `C_new_formal`ï¼Œç¢ºèªè¨ˆç•«å…§æ¢ç›®éƒ½æœ‰å¯¦éš› M3 payloadã€‚
+- å†å°ç…§æœ¬ç« å››å¥— Commentaryã€ç¶“æ–‡ã€ç›¸é—œ STEPã€`link_candidates.yaml`ã€`candidate_similarity.md`ã€`link_plan.yaml` èˆ‡æ—¢æœ‰ wikiï¼Œæ‰¾å‡ºæ˜¯å¦æœ‰ã€Œä¾†æºæ˜Žç¢ºæåˆ°ã€å…·ç ”è®€åƒ¹å€¼ã€å€¼å¾—è·¨ç« ç´¯ç©ã€æœ‰å…§å®¹å¯æ‰¿è¼‰ã€åˆæ²’æœ‰æ—¢æœ‰æ¢ç›®æ‰¿æŽ¥ã€çš„é‡è¦å€™é¸æ•´å€‹æ¼æŽ‰ã€‚
+- ä¸ç‚ºåŠŸèƒ½è©žã€å–®æ¬¡è–„å¼±æåŠã€Strong ç·¨è™Ÿæœ¬èº«æˆ–åŒç¾©æ—¢æœ‰æ¢ç›®å¦å»ºé ã€‚
+
+`missing entry candidate` é¡å¤–å¯«ï¼šSuggested entryã€Evidenceã€Why materialã€Existing coverage checkã€Fix directionã€‚è‹¥æ ¹å› åœ¨ candidate å±¤ï¼Œè¦æ±‚ Claude å›ž `link_candidates.yaml` ä¿®ï¼Œä¹‹å¾Œç”± orchestrator é‡è·‘ similarity â†’ resolve â†’ promptsï¼›ä¸è¦ç¹žéŽæµç¨‹ç¡¬å¡žå­¤ç«‹ M3 YAMLã€‚
+
+### m6
+
+æŸ¥ `chapter_content.yaml`ï¼Œä¸¦åƒç…§å·²é€šéŽ M3ï¼ševidence fidelityã€M3/M6 consistencyã€æ˜¯å¦å£“å¹³ Commentary åˆ†æ­§ã€æ˜¯å¦æ¼æŽ‰æœƒè®“æœ¬ç« æ•´ç†ç”¢ç”Ÿæ˜Žé¡¯åå·®çš„é‡è¦ nuanceã€‚
+
+### å·®ç•°è¤‡æ ¸ï¼ˆreview_mode: deltaï¼‰
+
+`agent_review.py status` é¡¯ç¤º `delta-review-pending` æ™‚ï¼Œæœ¬ stage çš„æª”æ¡ˆè‡ªä¸Šæ¬¡ PASS å¾Œæ²’æœ‰æ”¹ï¼Œåªæœ‰ä¸Šæ¸¸ï¼ˆM3ï¼M6ï¼‰æ”¹äº†ã€‚åªæŸ¥ä¸Šæ¸¸ä¿®æ”¹æœ‰æ²’æœ‰è®“æœ¬ stage å…§å®¹å¤±æº–ï¼ˆä¾‹å¦‚ M3 æ¢ç›®åæˆ–å®šç¾©æ”¹äº†ï¼ŒM6 æœ¬ç« æ•´ç†çš„é€£çµèˆ‡æ•˜è¿°æ˜¯å¦ä»å°å¾—ä¸Šï¼‰ï¼›ä¸é‡åšæ•´ä»½ auditã€‚é€™æ¬¡å¯©æŸ¥ä¸è¨ˆå…¥å…©æ¬¡é¡åº¦ã€‚
+
+### link_updates
+
+æŸ¥ `link_updates.yaml`ï¼Œå¿…è¦æ™‚è®€ `review_evidence.md` èˆ‡è¢«æ›´æ–°æ—¢æœ‰æ¢ç›®ï¼š`summary/relation` æ˜¯å¦å¿ æ–¼ä¾†æºã€`overview_review` çš„ keep/update æ˜¯å¦åˆç†ã€å–®ç« å…§å®¹æ˜¯å¦è¢«èª¤å¯«æˆè·¨ç« ä¸»é¡Œç™¼å±•ã€æ˜¯å¦åŠ å…¥ç„¡ä¾†æºåŽŸæ–‡ï¼ç¥žå­¸ï¼è§£ç¶“å²ã€‚
+
+## Finding åˆ†é¡ž
+
+åªç”¨ï¼š
+
+- `overstated`
+- `unsupported`
+- `source mismatch`
+- `quotation mismatch`
+- `missing nuance`
+- `missing entry candidate`
+- `original-language overreach`
+- `cross-chapter contamination`
+
+å®Œå…¨æœ‰æ”¯æŒçš„å…§å®¹ä¸ç”¨é€æ¢åˆ—ã€‚æ¯å€‹éž PASS finding åªå¯«ï¼šTargetã€åˆ†é¡žã€Issueã€å¯é©—è­‰ Evidenceã€æœ€å° Fix directionã€‚ä¸è¦ä»£ Claude é‡å¯«æ•´æ®µã€‚
+
+### èˆ‰è­‰æ ¼å¼ï¼ˆç¡¬æ€§ï¼‰
+
+reviewer çš„ finding æ›¾å‡ºç¾æ•´æ¢ç·¨é€ çš„ç´€éŒ„ï¼ˆé™„çš„ã€Œé€å­—å¼•å¥ã€åœ¨ raw å…¨æŸ¥ç„¡ï¼‰ã€‚å› æ­¤ï¼š
+
+- æ¯å€‹ finding çš„ **Evidence å¿…é ˆæ˜¯å¯æ©Ÿæ¢°è¤‡æ ¸çš„å…·é«”éŒ¨é»ž**ï¼š`raw_data/<æª”å>` æˆ– `raw_scripture/...` çš„**è¡Œè™Ÿ**ï¼‹**é€å­—å…§å®¹**ï¼ˆç…§æŠ„ï¼Œä¸æ”¹æ¨™é»žï¼‰ã€‚ã€ŒæŸå®¶æ²’æœ‰èªªã€é€™ç¨®å¦å®šå¼ï¼Œè¦é™„ä¸Šä½ å¯¦éš› grep éŽçš„æª”åèˆ‡é—œéµè©žã€‚
+- **`missing`ï¼`quotation mismatch`ï¼`source mismatch` é¡ž findingï¼šé€å‡ºå‰ï¼ŒEvidence è£¡å¼•åˆ°çš„æ¯ä¸€æ®µé€å­—å…§å®¹éƒ½è¦å…ˆ `grep -F` æ‰“éŽä¸€é**ï¼ˆåœ¨æŽ›åä¾†æºèˆ‡ä½ è²ç¨±çš„å¯¦éš›ä¾†æºå…©é‚Šéƒ½æ‰“ï¼‰ã€‚æŸ¥ç„¡å‡ºè™•çš„å¼•å¥ä¸å¾—å¯«é€² findingã€‚
+- æ¨™åˆ°ã€Œæ‡‰é€£æ—¢æœ‰æ¢ç›®ã€æ™‚ï¼Œå…ˆç¢ºèªé‚£å€‹æ¢ç›®ååœ¨åº«è£¡çœŸçš„å­˜åœ¨ï¼ˆ`search_wiki_entries`ï¼‰ï¼Œè³‡æ–™å¤¾ï¼åˆ†é¡žåä¹Ÿè¦å¯«å°ã€‚
+- orchestrator ä»£è¨˜ verdict å‰ï¼Œæœƒå° `missing` é¡ž finding é€æ¢ `grep -F` æŠ½æŸ¥ï¼›æŸ¥ä¸åˆ°çš„ finding ä¸æŽ¡ç´ã€‚
+
+## Verdict
+
+reviewer åœ¨å”¯è®€ sandbox è£¡è·‘ä¸äº†å¯«å…¥æŒ‡ä»¤ï¼Œæ‰€ä»¥è‡ªå·±ä¸åŸ·è¡Œ `agent_review.py verdict`ã€‚audit çµæŸæ™‚åªè¦æ¸…æ¥šè¼¸å‡ºä¸‹é¢é€™æ®µï¼Œç”± orchestratorï¼ˆæœ‰å¯«å…¥æ¬Šé™çš„é‚£ä¸€å´ï¼‰ä¾é€™æ®µè¼¸å‡ºä»£ç‚ºè¨˜éŒ„ï¼š
+
+```text
+python util/agent_review.py verdict æ›¸å ç«  stage <pass|changes_required|blocked> \
+  --sha <ç›®å‰ sha> --reviewer <codex|antigravity> --findings-count N
+```
+
+è‹¥ orchestrator ä»£è¨˜æ™‚å…§å®¹å·²è¢« Claude æ”¹å‹•ã€sha å°ä¸ä¸Šï¼Œ**ä¸è¦æ”¾æŽ‰é€™æ¬¡ attempt**ï¼š
+ç”¨ reviewer footer çš„ `REVIEW_SHA256` è£œè¨˜â€”â€”
+
+```text
+python util/agent_review.py verdict æ›¸å ç«  stage <status> \
+  --sha <REVIEW_SHA256> --observed-sha <REVIEW_SHA256> --reviewer <...> --findings-count N
+```
+
+è£œè¨˜çš„ attempt ç…§ç®—ã€æ¨™ `late_recorded`ï¼Œä½†åªæŽ›åœ¨ reviewer ç•¶æ™‚çœ‹éŽçš„ sha ä¸Šï¼Œ
+ä¸è¿½èªç›®å‰å…§å®¹â€”â€”ç›®å‰ç‰ˆæœ¬ä»è¦é‡æ–° submit æ‰éŽ gateï¼ˆé¡åº¦ç”¨ç›¡å‰‡ FORCED PASSï¼‰ã€‚
+
+æœ€å¾Œè¼¸å‡ºï¼š
+
+```text
+REVIEW_STAGE: <m3|m6|link_updates>
+REVIEW_SHA256: <sha>
+REVIEW_REVIEWER: <codex|antigravity>
+REVIEW_ATTEMPT: <1|2>
+REVIEW_STATUS: <PASS|CHANGES_REQUIRED|BLOCKED>
+FINDINGS_COUNT: <æ•´æ•¸>
+```
+
+Attempt 2/2 å¾Œä¸å¾—å†è¦æ±‚ reviewer è¤‡æ ¸ã€‚è‹¥ä»æœ‰ findingsï¼Œæ¸…æ¥šä¸€æ¬¡åˆ—å®Œï¼Œäº¤ Claude æœ€å¾Œä¿®æ­£ï¼Œè®“ç¨‹å¼èµ° `FORCED PASS`ã€‚
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$OutputEncoding = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); Get-Content -Raw -Encoding UTF8 -LiteralPath '"'agent_evidence_audit_prompt.md'; Get-ChildItem -LiteralPath '.tmp' -Directory | Select-Object -ExpandProperty Name" in C:\Obsidian\Hermes\scripture
+ succeeded in 261ms:
+# Evidence Audit Protocol
+
+你是本專案的 **Evidence Reviewer**。預設 reviewer 是 Codex；Codex 額度／服務不可用時由 Antigravity 接手。你不是第二個作者：只查核 Claude 已完成、尚未正式落地的 payload，M3 另查重要條目是否漏掉。Audit 對 Claude-authored content **read-only**；findings 交回 Claude 修。
+
+**這個 read-only 是技術限制，不只是遵守約定。** 本 audit 呼叫在 `--sandbox read-only`（Codex）或 deny-write settings（Antigravity）下執行，因此在 CLI 層就不具備寫入能力，不是「有能力但選擇不寫」。完成 audit 後把 findings 以純文字回傳給 orchestrator，由 orchestrator（有寫入權限的那一側）記錄 verdict、驅動 Claude 修稿——reviewer 本身不寫任何檔案，包括不寫 `agent_review.yaml`。
+
+**同一章固定同一個 reviewer session/thread，不要每次 attempt 都開新的。** M3 Attempt 1、M3 Attempt 2、M6、link_updates 的所有 review 呼叫，都用 `--resume {threadId}`（Codex）或延續同一 `agy` conversation（Antigravity）接續同一個 thread；只有換 reviewer（Codex↔Antigravity 交接）或找不到可延續的舊 thread 時才開新的。Read-only sandbox 在整個 thread 生命週期內保持不變，resume 時不需要、也不應該重新指定 sandbox（Codex resume 本來就會沿用原 session 的 sandbox）。這樣 reviewer 能記得自己前一輪指出過什麼、上一輪 attempt 說了什麼，不必每次重新讀整章上下文。
+
+先讀 `AGENTS.md`。呼叫時／狀態檔會提供：`book`、`chapter`、`stage`、`sha256`、`review_attempts`。先確認 `.tmp/第x章/agent_review.yaml` 的 stage hash 與目前內容一致；不一致就 `BLOCKED`。
+
+## 兩次 review 預算（硬限制）
+
+**每個 stage（m3 / m6 / link_updates）最多只有 2 次 substantive review，Codex 與 Antigravity 共用同一預算；換 reviewer 不會重置。**
+
+- Attempt 1/2：做完整 audit。一次列齊所有會影響正確性、證據邊界或重要完整性的 findings；不要把可以現在指出的問題留到下一輪。
+- Attempt 2/2：這是**最後一次 reviewer 機會**。先複核上一輪修正，再一次列齊仍存在或修稿新引入的所有 material findings。不要要求 Round 3。
+- 不花 review 預算在純文風、措辭偏好、可有可無的「更完整」建議。
+- Attempt 2 若仍 `CHANGES_REQUIRED`，Claude 會做最後一次修正；之後 `util/agent_review.py submit` 對新 hash 建立明示 `FORCED PASS`，**禁止第三次 reviewer 呼叫**。
+- `BLOCKED`（例如 reviewer quota／tool failure／來源不可讀）不是 substantive review，不消耗次數；可改由另一 reviewer 接手同一 hash。
+
+你的責任因此是：**前兩次就把真正重要的問題抓完，不用無限來回。**
+
+### Attempt 1 強制 scope checklist（寫 verdict 前逐項走過）
+
+Attempt 1 的預算最容易被文風偏好稀釋，導致真問題留到 Attempt 2、再 forced pass。動手前先確認這一輪已涵蓋：
+
+- [ ] **忠實度**：每個歸於來源的事實／引文／翻譯／轉述都對照過該來源 raw。
+- [ ] **證據邊界**：STEP 只用來支持字形／lemma／Strong／morphology／本節譯義／簡要義域；沒有拿 lexicon 義域或 STEP absence 當神學結論。
+- [ ] **m3 條目完整度**（m3 必做）：`link_plan.yaml` 的 `C_new_formal` 都有實際 payload；且掃過四套 Commentary＋經文＋STEP＋`link_candidates.yaml`＋`candidate_similarity.md`，確認沒有「來源明確提到、值得跨章累積、無既有條目承接」的重要候選整個漏掉。
+- [ ] **一致性**：m6／link_updates 對照已核准的上游（m3／m6），沒有壓平 Commentary 分歧、沒把單章內容寫成跨章主題發展。
+- [ ] findings 已一次列齊，沒有「這個留到下一輪再說」。
+
+純文風、可有可無的「更完整」不列入 findings，也不因此要求 Attempt 2。
+
+## 證據來源
+
+- 經文本文／交叉引註 → `raw_scripture/`
+- Commentary attribution／解經 → 本章 `source_manifest.md` 宣告 OK 的 CT、GT、KingComments、BibleHub `raw_data/`
+- 原文字形、lemma、Strong / Extended Strong、morphology、context gloss、lexicon 義域 → 正式 STEP evidence / receipt / projection；需要時用允許的精確 STEP query
+- 專案規則 → `AGENTS.md` 與當次正式 prompt/schema
+
+STEP 是原文證據層，不是第五家 Commentary。lexicon 義域不能自動寫成本節確定義，morphology 不能自行推出神學結論，STEP absence 也不能用來否定 Commentary 延伸。
+
+### Attribution fidelity
+
+凡把內容歸於某一來源，都直接對照該來源判斷忠實度：
+
+- 同語言直接引文：文字內容須忠實，節錄不得改變原意或拼接成來源沒有的句子。
+- 跨語言翻譯：比較語義，不要求中文字串出現在英文來源；不得增加、刪除、強化、弱化或反轉來源的主張、範圍、否定、因果與不確定程度。
+- 具名轉述：不要求逐字，但內容必須由來源支持，且不能把某一家說法改掛給另一家。
+- 不因標點或引號本身判定是否屬直接引文；只有來源 attribution 與實際來源不符時才形成 finding。單純字串回查不到，不足以構成 finding。
+
+## Stage 範圍
+
+### m3
+
+同時做 **內容忠實度 + 條目完整度**：
+
+- 查 `entry_content/*.yaml` 的重要事實、來源 attribution、引文／翻譯／轉述、數字、經文、原文、分歧與異章污染。
+- 對照 `link_plan.yaml` 的 `C_new_formal`，確認計畫內條目都有實際 M3 payload。
+- 再對照本章四套 Commentary、經文、相關 STEP、`link_candidates.yaml`、`candidate_similarity.md`、`link_plan.yaml` 與既有 wiki，找出是否有「來源明確提到、具研讀價值、值得跨章累積、有內容可承載、又沒有既有條目承接」的重要候選整個漏掉。
+- 不為功能詞、單次薄弱提及、Strong 編號本身或同義既有條目另建頁。
+
+`missing entry candidate` 額外寫：Suggested entry、Evidence、Why material、Existing coverage check、Fix direction。若根因在 candidate 層，要求 Claude 回 `link_candidates.yaml` 修，之後由 orchestrator 重跑 similarity → resolve → prompts；不要繞過流程硬塞孤立 M3 YAML。
+
+### m6
+
+查 `chapter_content.yaml`，並參照已通過 M3：evidence fidelity、M3/M6 consistency、是否壓平 Commentary 分歧、是否漏掉會讓本章整理產生明顯偏差的重要 nuance。
+
+### 差異複核（review_mode: delta）
+
+`agent_review.py status` 顯示 `delta-review-pending` 時，本 stage 的檔案自上次 PASS 後沒有改，只有上游（M3／M6）改了。只查上游修改有沒有讓本 stage 內容失準（例如 M3 條目名或定義改了，M6 本章整理的連結與敘述是否仍對得上）；不重做整份 audit。這次審查不計入兩次額度。
+
+### link_updates
+
+查 `link_updates.yaml`，必要時讀 `review_evidence.md` 與被更新既有條目：`summary/relation` 是否忠於來源、`overview_review` 的 keep/update 是否合理、單章內容是否被誤寫成跨章主題發展、是否加入無來源原文／神學／解經史。
+
+## Finding 分類
+
+只用：
+
+- `overstated`
+- `unsupported`
+- `source mismatch`
+- `quotation mismatch`
+- `missing nuance`
+- `missing entry candidate`
+- `original-language overreach`
+- `cross-chapter contamination`
+
+完全有支持的內容不用逐條列。每個非 PASS finding 只寫：Target、分類、Issue、可驗證 Evidence、最小 Fix direction。不要代 Claude 重寫整段。
+
+### 舉證格式（硬性）
+
+reviewer 的 finding 曾出現整條編造的紀錄（附的「逐字引句」在 raw 全查無）。因此：
+
+- 每個 finding 的 **Evidence 必須是可機械複核的具體錨點**：`raw_data/<檔名>` 或 `raw_scripture/...` 的**行號**＋**逐字內容**（照抄，不改標點）。「某家沒有說」這種否定式，要附上你實際 grep 過的檔名與關鍵詞。
+- **`missing`／`quotation mismatch`／`source mismatch` 類 finding：送出前，Evidence 裡引到的每一段逐字內容都要先 `grep -F` 打過一遍**（在掛名來源與你聲稱的實際來源兩邊都打）。查無出處的引句不得寫進 finding。
+- 標到「應連既有條目」時，先確認那個條目名在庫裡真的存在（`search_wiki_entries`），資料夾／分類名也要寫對。
+- orchestrator 代記 verdict 前，會對 `missing` 類 finding 逐條 `grep -F` 抽查；查不到的 finding 不採納。
+
+## Verdict
+
+reviewer 在唯讀 sandbox 裡跑不了寫入指令，所以自己不執行 `agent_review.py verdict`。audit 結束時只要清楚輸出下面這段，由 orchestrator（有寫入權限的那一側）依這段輸出代為記錄：
+
+```text
+python util/agent_review.py verdict 書名 章 stage <pass|changes_required|blocked> \
+  --sha <目前 sha> --reviewer <codex|antigravity> --findings-count N
+```
+
+若 orchestrator 代記時內容已被 Claude 改動、sha 對不上，**不要放掉這次 attempt**：
+用 reviewer footer 的 `REVIEW_SHA256` 補記——
+
+```text
+python util/agent_review.py verdict 書名 章 stage <status> \
+  --sha <REVIEW_SHA256> --observed-sha <REVIEW_SHA256> --reviewer <...> --findings-count N
+```
+
+補記的 attempt 照算、標 `late_recorded`，但只掛在 reviewer 當時看過的 sha 上，
+不追認目前內容——目前版本仍要重新 submit 才過 gate（額度用盡則 FORCED PASS）。
+
+最後輸出：
+
+```text
+REVIEW_STAGE: <m3|m6|link_updates>
+REVIEW_SHA256: <sha>
+REVIEW_REVIEWER: <codex|antigravity>
+REVIEW_ATTEMPT: <1|2>
+REVIEW_STATUS: <PASS|CHANGES_REQUIRED|BLOCKED>
+FINDINGS_COUNT: <整數>
+```
+
+Attempt 2/2 後不得再要求 reviewer 複核。若仍有 findings，清楚一次列完，交 Claude 最後修正，讓程式走 `FORCED PASS`。
+
+01 創世記
+step_backfill
+
+mcp: hermes-scripture/get_chapter_status started
+mcp: hermes-scripture/get_chapter_status (completed)
+codex
+章狀態 MCP 回報 16 個 M3 payload 已完成，且來源閱讀回執與 STEP 驗證通過；這不等於本次內容審查通過。我正在核對 review SHA、候選清單、payload 與原始來源。 vexp 入口因工具要求核准而無法執行；章節唯讀 MCP 可用。
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$OutputEncoding = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); Get-Content -Raw -Encoding UTF8 -LiteralPath '"'06 約書亞記/.tmp/第19章/agent_review.yaml'; Get-Content -Raw -Encoding UTF8 -LiteralPath '06 約書亞記/.tmp/第19章/link_plan.yaml'; Get-ChildItem -LiteralPath '06 約書亞記/.tmp/第19章/entry_content' -File | Select-Object -ExpandProperty Name" in C:\Obsidian\Hermes\scripture
+ succeeded in 126ms:
+version: 2
+book: 約書亞記
+chapter: 19
+stages:
+  m3:
+    round: 1
+    revision: 1
+    sha256: 57ff68c060adabadeb19e1c815e273ae51b7017958bcd4bec548814f078ddbc5
+    claude: ready
+    reviewer_status: pending
+    reviewer_agent: null
+    review_attempts: 0
+    forced_pass: false
+    review_history: []
+    hash_inputs:
+    - entry_content/亞革悉（亞設）.yaml
+    - entry_content/亭拿西拉.yaml
+    - entry_content/他泊山.yaml
+    - entry_content/伯利恆（西布倫）.yaml
+    - entry_content/基順河.yaml
+    - entry_content/巴拉比珥.yaml
+    - entry_content/拿哈拉.yaml
+    - entry_content/推羅.yaml
+    - entry_content/撒拿音的橡樹.yaml
+    - entry_content/書念.yaml
+    - entry_content/沙魯險.yaml
+    - entry_content/約帕.yaml
+    - entry_content/約書亞最後分得地業.yaml
+    - entry_content/耶斯列（以薩迦）.yaml
+    - entry_content/迦步勒.yaml
+    - entry_content/迦特希弗.yaml
+    own_sha256: 57ff68c060adabadeb19e1c815e273ae51b7017958bcd4bec548814f078ddbc5
+
+book: 約書亞記
+chapter: 19
+A_use_directly: []
+B_needs_update:
+- name: 西緬
+  suggested_type: 人物
+  evidence: 第1-9節西緬支派拈出第二鬮，地業在猶大人地業中間，因為猶大人的分過多；CT：巴力毗珥事件後成為人數最少的支派，散居、遷往西珥（代上4:39-43）；GT《綜合解讀》：人口從59,300人劇降到22,200人；GT《聖經精讀本》：逐漸被猶大同化，應驗創49:5-7；KC：Simeon
+    acts according to the voice of Judah；BH：雅各的預言與利未的分散對照
+  surfaces:
+  - phrase: 西緬
+    verses:
+    - 1
+    - 8
+    - 9
+  match_type: exact
+  existing_title: 西緬
+  existing_path: link_folder/人物/西緬.md
+- name: 西布倫（同住）
+  suggested_type: 人物
+  evidence: 第10-16節西布倫拈出第三鬮；CT：只列五座城卻說十二座城；GT《聖經精讀本》《綜合解讀》、華爾頓：下加利利，拿撒勒是定位點，與創49:13「住在海口」的關係；KC：說它西臨地中海、東到提比哩亞海；BH：賽9:1-2
+    與太4:13-16
+  surfaces:
+  - phrase: 西布倫
+    verses:
+    - 10
+    - 16
+    - 27
+    - 34
+  match_type: exact
+  existing_title: 西布倫（同住）
+  existing_path: link_folder/人物/西布倫（同住）.md
+- name: 以薩迦（價值）
+  suggested_type: 人物
+  evidence: 第17-23節以薩迦拈出第四鬮；GT《聖經精讀本》《綜合解讀》：耶斯列平原的肥沃農田，應驗創49:14-15；GT 華爾頓：本區極不穩定、很具戰略性，杜得模斯三世與薛提一世的年表；KC、BH：陀拉與巴沙出自以薩迦
+  surfaces:
+  - phrase: 以薩迦
+    verses:
+    - 17
+    - 23
+  match_type: exact
+  existing_title: 以薩迦（價值）
+  existing_path: link_folder/人物/以薩迦（價值）.md
+- name: 亞設（有福）
+  suggested_type: 人物
+  evidence: 第24-31節亞設拈出第五鬮；GT《聖經精讀本》《綜合解讀》：亞柯平原的肥沃土地，應驗創49:20；GT 華爾頓：可能只是理論上而非實際上的疆界；KC：女先知亞拿出自亞設（路2:36-38）；BH：亞設未能趕出迦南人（士1:31-32）
+  surfaces:
+  - phrase: 亞設
+    verses:
+    - 24
+    - 31
+    - 34
+  match_type: exact
+  existing_title: 亞設（有福）
+  existing_path: link_folder/人物/亞設（有福）.md
+- name: 拿弗他利
+  suggested_type: 人物
+  evidence: 第32-39節拿弗他利拈出第六鬮；CT：達到約但河那裡的猶大一句的兩種解釋；GT《聖經精讀本》：夏瑣在此境內，很早陷入偶像崇拜（士1:33）；GT《綜合解讀》：加利利海與迦百農在拿弗他利境內；KC、BH：賽9:1-2
+    的大光
+  surfaces:
+  - phrase: 拿弗他利
+    verses:
+    - 32
+    - 39
+  match_type: exact
+  existing_title: 拿弗他利
+  existing_path: link_folder/人物/拿弗他利.md
+- name: 但支派
+  suggested_type: 人物
+  evidence: 第40-48節但拈出第七鬮，第47節但人的地界越過原得的地界；CT：地業相較其他支派顯得很小，第47節是約書亞死後的事、後人的補遺，〔話中之光〕避難就易；GT《聖經精讀本》：但支派最後一個分得產業，他們沒有抱怨艱苦的環境；GT《研經資料》：因趕不出迦南人被迫居住山地（士1:34-35）；KC：Dan
+    becomes the first tribe to introduce idolatry（士18:30）；BH：非利士人的壓力使許多但人北遷（士18）
+  surfaces:
+  - phrase: 但支派
+    verses:
+    - 40
+    - 48
+  - phrase: 但人
+    verses:
+    - 47
+  match_type: exact
+  existing_title: 但支派
+  existing_path: link_folder/人物/但支派.md
+- name: 但
+  suggested_type: 地點
+  evidence: 第47節「但人上去攻取利善……以他們先祖但的名將利善改名為但」；CT：利善是但城的原名，加利利海北方約40公里；GT《啟導本》《聖經精讀本》：在米倫湖北，巴勒斯坦的北界，「從但到別是巴」指以色列全地，耶羅波安在但設金牛犢；GT《綜合解讀》：凱撒利亞腓立比就在但東面6公里；BH：Leshem
+    又稱 Laish
+  surfaces:
+  - phrase: 利善
+    verses:
+    - 47
+  match_type: exact
+  existing_title: 但
+  existing_path: link_folder/地點/但.md
+- name: 但支派至終定居於何地
+  suggested_type: 解經爭議
+  evidence: 第40-47節但的原得地界與北遷利善；GT《研經資料》：19:47 的遷徙發生在士師時代，可能是編輯時加的附註；GT《聖經精讀本》：兩個原因：人口多而地少、地業內外都有強盛的亞摩利人與非利士人；CT：越過原得的地界指到以色列人尚未征服的土地去取得
+  match_type: exact
+  existing_title: 但支派至終定居於何地
+  existing_path: link_folder/解經爭議/但支派至終定居於何地.md
+- name: 猶大支派
+  suggested_type: 人物
+  evidence: 第1、9節西緬的地業在猶大人地業中間，因為猶大人的分過多；KC：猶大有地多過能自己維持的；BH：猶大的分超過支派的需要，分給西緬
+  surfaces:
+  - phrase: 猶大人
+    verses:
+    - 1
+    - 9
+  match_type: exact
+  existing_title: 猶大支派
+  existing_path: link_folder/人物/猶大支派.md
+- name: 別是巴
+  suggested_type: 地點
+  evidence: 第2節「別是巴（或名示巴）」；CT：希伯崙西南方約40公里；GT《綜合解讀》：亞伯拉罕和以撒挖井的地方、南地的主要城市；GT《研經資料》：示巴可能是抄本訛誤，保留就有14座城、與第6節總結不符；BH：以色列的南端
+  surfaces:
+  - phrase: 別是巴
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 別是巴
+  existing_path: link_folder/地點/別是巴.md
+- name: 迦南大敗直到何珥瑪
+  suggested_type: 歷史
+  evidence: 第4節「伊利多拉、比土力、何珥瑪」；CT：字義「庇護所」，別是巴東方約11公里；BH：以色列在何珥瑪先因擅自上去而敗（民14:40-45），後來許願毀滅得勝（民21:1-3）
+  surfaces:
+  - phrase: 何珥瑪
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 迦南大敗直到何珥瑪
+  existing_path: link_folder/歷史/迦南大敗直到何珥瑪.md
+- name: 洗革拉
+  suggested_type: 地點
+  evidence: 第5節「洗革拉、伯瑪加博、哈薩蘇撒」；CT：別是巴西北方約22公里；BH：後來成為大衛逃避掃羅時的避難所，由迦特王亞吉賜給他（撒上27:6）
+  surfaces:
+  - phrase: 洗革拉
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 洗革拉
+  existing_path: link_folder/地點/洗革拉.md
+- name: 南地
+  suggested_type: 地點
+  evidence: 第8節「就是南地的拉瑪」；GT《研經資料》：本段的城市大都在尼革（南地），以帖、亞珊在薩非拉（高原）
+  surfaces:
+  - phrase: 南地
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 南地
+  existing_path: link_folder/地點/南地.md
+- name: 約念
+  suggested_type: 地點
+  evidence: 第11節「又達到約念前的河」；CT：約念位於基順河的南岸，約念前的河即指基順河；BH：與被擊敗的迦南王有關、後來給了利未人（書12:22；21:34）
+  surfaces:
+  - phrase: 約念
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 約念
+  existing_path: link_folder/地點/約念.md
+- name: 伸崙
+  suggested_type: 地點
+  evidence: 第15節「還有加他、拿哈拉、伸崙」；CT：約念東北方約9公里，字義「守望高處」；BH：伸崙曾有迦南王加入約書亞所擊敗的北方聯盟（書11:1；12:20）
+  surfaces:
+  - phrase: 伸崙
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 伸崙
+  existing_path: link_folder/地點/伸崙.md
+- name: 押煞
+  suggested_type: 地點
+  evidence: 第25節「黑甲、哈利、比田、押煞」；CT：亞柯南方約18公里；GT 華爾頓、《研經資料》：杜得模斯三世攻取迦南城鎮的名單包括押煞；BH：押煞王加入耶賓的北方聯盟（書11:1）
+  surfaces:
+  - phrase: 押煞
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 押煞
+  existing_path: link_folder/地點/押煞.md
+- name: 迦密
+  suggested_type: 地點
+  evidence: 第26節「往西達到迦密」；CT：從亞柯灣南岸起向東南延伸的山脈，全長約40公里；GT《綜合解讀》《聖經精讀本》、BH：以利亞與巴力先知較量的地方（王上18）
+  surfaces:
+  - phrase: 迦密
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 迦密
+  existing_path: link_folder/地點/迦密.md
+- name: 西頓
+  suggested_type: 地點
+  evidence: 第28節「直到西頓大城」；CT：推羅北方約34公里的地中海港口；GT《串珠》：雖在亞設抽籤得地的範圍，但這城沒有被攻取；GT《綜合解讀》：一直沒有被亞設支派攻取（士1:31）；BH：富裕而拜偶像的航海文化
+  surfaces:
+  - phrase: 西頓
+    verses:
+    - 28
+  match_type: exact
+  existing_title: 西頓
+  existing_path: link_folder/地點/西頓.md
+- name: 夏瑣
+  suggested_type: 地點
+  evidence: 第36節「亞大瑪、拉瑪、夏瑣」；CT：基尼烈城北方約17公里；GT《綜合解讀》：被約書亞燒毀後又被迦南人佔領，耶賓欺壓以色列人二十年（士4:3）；GT《聖經精讀本》：夏瑣王之居所在拿弗他利境內（11:10）；BH：以色列最大的考古遺址之一
+  surfaces:
+  - phrase: 夏瑣
+    verses:
+    - 36
+  match_type: exact
+  existing_title: 夏瑣
+  existing_path: link_folder/地點/夏瑣.md
+- name: 基低斯
+  suggested_type: 地點
+  evidence: 第37節「基低斯、以得來、隱夏瑣」；CT：夏瑣北方約11公里，字義「聖所」；GT《綜合解讀》：巴拉來自基低斯（士4:6）；GT 華爾頓：在今日已被排乾之胡列湖的北面；BH：後來成為六座逃城之一（書20:7），巴拉的家鄉
+  surfaces:
+  - phrase: 基低斯
+    verses:
+    - 37
+  match_type: exact
+  existing_title: 基低斯
+  existing_path: link_folder/地點/基低斯.md
+- name: 瑣拉
+  suggested_type: 地點
+  evidence: 第41節「瑣拉、以實陶、伊珥示麥」；CT：耶路撒冷西方約23公里；GT《綜合解讀》《研經資料》：參孫的家鄉（士13:2；16:31）；KC：Zorah
+    and Eshtaol are known from the history of Samson（士13:25）；BH：參孫的出生地
+  surfaces:
+  - phrase: 瑣拉
+    verses:
+    - 41
+  match_type: exact
+  existing_title: 瑣拉
+  existing_path: link_folder/地點/瑣拉.md
+- name: 以實陶
+  suggested_type: 地點
+  evidence: 第41節「瑣拉、以實陶」；CT：耶路撒冷西方約22公里，字義「懇求」；KC、BH：耶和華的靈在瑣拉和以實陶中間感動參孫（士13:25）
+  surfaces:
+  - phrase: 以實陶
+    verses:
+    - 41
+  match_type: exact
+  existing_title: 以實陶
+  existing_path: link_folder/地點/以實陶.md
+- name: 以革倫
+  suggested_type: 地點
+  evidence: 第43節「以倫、亭拿他、以革倫」；CT：基色西南方約11公里；GT《綜合解讀》：非利士人五城中最北的一個；BH：非利士五大城之一，約櫃被送到以革倫（撒上5:10-12），Tel
+    Miqne 發現大型神廟與橄欖油業
+  surfaces:
+  - phrase: 以革倫
+    verses:
+    - 43
+  match_type: exact
+  existing_title: 以革倫
+  existing_path: link_folder/地點/以革倫.md
+- name: 亭拿（猶大）
+  suggested_type: 地點
+  evidence: 第43節「以倫、亭拿他、以革倫」；CT：耶路撒冷西方約31公里，伯示麥西北方約7公里；GT《研經資料》、華爾頓：應該是亭拿，伯示麥西北的巴塔希遺址；BH：Timnah，參孫向亭拿的非利士女子求親（士14:1-2），Tel
+    Batash；書15:10 猶大北界上的亭拿是同一地
+  surfaces:
+  - phrase: 亭拿他
+    verses:
+    - 43
+  match_type: exact
+  existing_title: 亭拿（猶大）
+  existing_path: link_folder/地點/亭拿（猶大）.md
+- name: 以法蓮山地
+  suggested_type: 地點
+  evidence: 第50節「以法蓮山地的亭拿西拉城」；BH：約書亞屬以法蓮支派，產業在以法蓮崎嶇的中部山地，靠近示羅；KC：在同時代人不願住的山地（書17:15-16）
+  surfaces:
+  - phrase: 以法蓮山地
+    verses:
+    - 50
+  match_type: exact
+  existing_title: 以法蓮山地
+  existing_path: link_folder/地點/以法蓮山地.md
+- name: 約書亞
+  suggested_type: 人物
+  evidence: 第49-51節分完地業後以色列人將亭拿西拉給約書亞為業，他修城住在其中；第51節約書亞與以利亞撒、各支派族長在示羅拈鬮分地；CT、GT《聖經精讀本》、KC、BH：他最後才得自己的分；KC：以利亞撒排在約書亞前面
+  surfaces:
+  - phrase: 約書亞
+    verses:
+    - 49
+    - 50
+    - 51
+  match_type: exact
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 以利亞撒
+  suggested_type: 人物
+  evidence: 第51節「這就是祭司以利亞撒和嫩的兒子約書亞」；KC：這個結語幾乎和分地開始那一節（書14:1）一樣，以利亞撒排在前面，領導要有祭司的心；GT《啟導本》：主持分地的人是摩西預先指定的（民34:17-19）；BH：以利亞撒代表亞倫傳下的祭司權柄
+  surfaces:
+  - phrase: 以利亞撒
+    verses:
+    - 51
+  match_type: exact
+  existing_title: 以利亞撒
+  existing_path: link_folder/人物/以利亞撒.md
+- name: 示羅
+  suggested_type: 地點
+  evidence: 第51節「在示羅會幕門口，耶和華面前，拈鬮所分的地業」；CT：字義「安歇之地」，分配地業是在示羅進行的（書18:1）；BH：士師時代會幕與約櫃大多在示羅
+  surfaces:
+  - phrase: 示羅
+    verses:
+    - 51
+  match_type: exact
+  existing_title: 示羅
+  existing_path: link_folder/地點/示羅.md
+- name: 會幕（帳幕整體）
+  suggested_type: 主題
+  evidence: 第51節「在示羅會幕門口」；KC：in the tent of meeting this may become manifest；BH：會幕門口是以色列藉祭司親近神的指定地點，在那裡拈鬮表明國家的疆界由耶和華的同在決定
+  surfaces:
+  - phrase: 會幕
+    verses:
+    - 51
+  match_type: exact
+  existing_title: 會幕（帳幕整體）
+  existing_path: link_folder/主題/會幕（帳幕整體）.md
+- name: 拈鬮分地（go.ral）
+  suggested_type: 主題
+  evidence: 第1、10、17、24、32、40節第二到第七鬮，第51節「拈鬮所分的地業。這樣，他們把地分完了」；GT《綜合解讀》：雖然還有許多未得之地，他們已在信心中完成了神所交托的任務；GT《研經資料》：分地是摩西死前預先指定的（民34:17-19）；BH：拈鬮防止最強的支派或領袖按喜好取地
+  surfaces:
+  - phrase: 拈鬮
+    verses:
+    - 51
+  match_type: exact
+  existing_title: 拈鬮分地（go.ral）
+  existing_path: link_folder/主題/拈鬮分地（go.ral）.md
+- name: 產業（na.cha.lah）
+  suggested_type: 原文
+  evidence: 全章反覆「所得的地業」「按著宗族所得的地業」；第49節地業給約書亞為業；CT 第49節：「地業(原文雙字)」土地(首字)；財產，產業(次字)
+  match_type: exact
+  existing_title: 產業（na.cha.lah）
+  existing_path: link_folder/原文/產業（na.cha.lah）.md
+- name: 未得之地
+  suggested_type: 主題
+  evidence: 第28-29節亞設的境界直到西頓大城、堅固城推羅，第47節但人的地界越過原得的地界；GT 華爾頓、《研經資料》：提及推羅和西頓並不表示這些地方已被佔領，本段可能只是理論上而非實際上的疆界；GT《串珠》：西頓沒有被攻取；GT《綜合解讀》：雖然此時還有許多未得之地，但是他們仍然照著神的吩咐把地分完了；BH：各支派仍需趕出剩下的仇敵
+  match_type: exact
+  existing_title: 未得之地
+  existing_path: link_folder/主題/未得之地.md
+- name: 西緬利未受咒詛 (創49_5-7)
+  suggested_type: 互文
+  evidence: 第1、9節西緬的地業在猶大人地業中間；CT：成就雅各的預言（創49:7）；GT《聖經精讀本》《綜合解讀》、《雷氏研讀本》：應驗了雅各對西緬支派的預言；KC：西緬融入猶大、幾乎失去身分，利未人分散在各城成為百姓的祝福；BH：利未的分散成了聖職，西緬的分散反映支派影響力減弱
+  match_type: exact
+  existing_title: 西緬利未受咒詛 (創49_5-7)
+  existing_path: link_folder/互文/西緬利未受咒詛 (創49_5-7).md
+- name: 摩西的祝福與雅各的祝福
+  suggested_type: 主題
+  evidence: 第10-39節西布倫、以薩迦、亞設、拿弗他利的地業；GT《綜合解讀》：逐一說各支派的地應驗了創49 與申33 的預言；GT《聖經精讀本》：西布倫的境界似乎不符合雅各說的住在海口，以經商解釋；GT
+    華爾頓、《研經資料》：西布倫與海岸惟一的關聯好像是和亞柯之間的貿易，似乎不合創49:13、申33:18-19；KC：說西布倫西臨地中海，合乎創49:13；BH：亞設的王的美味與油（創49:20；申33:24-25）
+  match_type: exact
+  existing_title: 摩西的祝福與雅各的祝福
+  existing_path: link_folder/主題/摩西的祝福與雅各的祝福.md
+- name: 約但河
+  suggested_type: 地點
+  evidence: 第22、33、34節以薩迦、拿弗他利的地界「直通到約但河為止」「通到約但河」「達到約但河那裡的猶大」；CT：約但河那裡的猶大的兩種解釋；GT《研經資料》：七十士譯本缺「那裏的猶大」；GT《綜合解讀》：可能指河東睚珥的城邑（代上2:22）；BH：約但河是以色列的東界
+  surfaces:
+  - phrase: 約但河
+    verses:
+    - 22
+    - 33
+    - 34
+  match_type: exact
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
+C_new_formal:
+- name: 迦特希弗
+  suggested_type: 地點
+  evidence: 第13節「從那裡往東，接連到迦特希弗」；CT：字義「礦區的榨酒機」，米吉多東北方約22公里；GT《綜合解讀》《研經資料》：先知約拿的家鄉（王下14:25）；BH：約拿的家鄉，把西布倫這個小鎮連到神對列國的關心
+  surfaces:
+  - phrase: 迦特希弗
+    verses:
+    - 13
+  target_path: link_folder/地點/迦特希弗.md
+  semantic_hint:
+  - title: 迦特
+    score: 0.407
+    type: 地點
+- name: 伯利恆（西布倫）
+  suggested_type: 地點
+  evidence: 第15節「以大拉、伯利恆，共十二座城」；CT：不同於猶大地的伯利恆（彌5:2），約念北方9公里；GT《啟導本》《串珠》：不是大衛家鄉的伯利恆，在拿撒勒西北約11公里；GT《綜合解讀》、華爾頓、BH：士師以比贊的家鄉與葬地（士12:8-10），附近阿拉伯村落保存
+    Beit Lahm 之名
+  surfaces:
+  - phrase: 伯利恆
+    verses:
+    - 15
+  target_path: link_folder/地點/伯利恆（西布倫）.md
+- name: 書念
+  suggested_type: 地點
+  evidence: 第18節「耶斯列、基蘇律、書念」；CT：字義「倍覺安息之地」，米吉多東方約14公里；GT 華爾頓、《研經資料》：耶斯列東北的索倫（Solem）；GT《聖經精讀本》《綜合解讀》、KC、BH：以利沙在書念使婦人的兒子復活（王下4:8-37），非利士人在此紮營攻掃羅（撒上28:4），亞比煞是書念的童女（王上1:3）
+  surfaces:
+  - phrase: 書念
+    verses:
+    - 18
+  target_path: link_folder/地點/書念.md
+- name: 耶斯列（以薩迦）
+  suggested_type: 地點
+  evidence: 第18節「他們的境界是到耶斯列」；CT：不同於書15:56 的耶斯列，米吉多東南東方約14公里，字義「神栽種」；GT 華爾頓：基利波山西北的澤林（Zer'in）；GT《聖經精讀本》《綜合解讀》、KC、BH：亞哈的宮殿與拿伯的葡萄園（王上21:1）
+  surfaces:
+  - phrase: 耶斯列
+    verses:
+    - 18
+  target_path: link_folder/地點/耶斯列（以薩迦）.md
+  semantic_hint:
+  - title: 耶斯列（猶大）
+    score: 0.515
+    type: 地點
+  - title: 以薩迦（價值）
+    score: 0.477
+    type: 人物
+  - title: 以薩迦（報酬）
+    score: 0.428
+    type: 原文
+- name: 他泊山
+  suggested_type: 地點
+  evidence: 第22節「又達到他泊、沙哈洗瑪、伯示麥」，第12節吉斯綠他泊、第34節亞斯納他泊；CT：他泊字義「石墩」，確實地點不詳，可能位於他泊山附近；GT《串珠》：大概近他泊山；GT《綜合解讀》：他泊就是他泊山，底波拉聚集以色列人之處（士4:12）；GT
+    華爾頓：他泊山是拿弗他利地業的主要基準點；BH：下加利利顯著的界標，基督教傳統把它與登山變像連在一起，但福音書沒有寫出山名
+  surfaces:
+  - phrase: 他泊
+    verses:
+    - 22
+  target_path: link_folder/地點/他泊山.md
+- name: 基順河
+  suggested_type: 地點
+  evidence: 第11節「又達到約念前的河」；CT：約念前的河即指基順河；GT《啟導本》《研經資料》：約念前的河指基順河；GT《綜合解讀》：流經耶斯列平原，底波拉在這裡打敗西西拉（士4:7）；BH：引士5:21
+    基順古河把敵人沖沒、王上18:40 以利亞在基順河殺巴力先知
+  target_path: link_folder/地點/基順河.md
+  semantic_hint:
+  - title: 基訓
+    score: 0.421
+    type: 地點
+- name: 推羅
+  suggested_type: 地點
+  evidence: 第29節「轉到拉瑪和堅固城推羅」；CT：字義「巖石」，亞柯北方約41公里；GT《串珠》：推羅城一半在大陸、一半在海島，「堅固城推羅」大概指海島部分；GT
+    華爾頓、《研經資料》：提及推羅和西頓並不表示這些地方已被佔領；GT《綜合解讀》：主耶穌到推羅西頓境內（可7:24）；BH：強大的腓尼基城，亞設後來未能趕出（士1:31-32）
+  surfaces:
+  - phrase: 推羅
+    verses:
+    - 29
+  target_path: link_folder/地點/推羅.md
+- name: 亞革悉（亞設）
+  suggested_type: 地點
+  evidence: 第29節「靠近亞革悉一帶地方，直通到海」；CT：不同於書15:44 的亞革悉，亞柯北方約13公里；GT 華爾頓、《研經資料》：雖然分給亞設卻從來沒有被攻取（士1:31），中銅時代到羅馬時期的貿易中心，主前701年毀於西拿基立，不可與書15:44
+    猶大的同名城混淆；BH：亞柯以北的沿海聚落
+  surfaces:
+  - phrase: 亞革悉
+    verses:
+    - 29
+  target_path: link_folder/地點/亞革悉（亞設）.md
+  semantic_hint:
+  - title: 亞設（有福）
+    score: 0.513
+    type: 人物
+  - title: 亞干
+    score: 0.43
+    type: 人物
+  - title: 塞特
+    score: 0.423
+    type: 人物
+- name: 約帕
+  suggested_type: 地點
+  evidence: 第46節「並約帕對面的地界」；CT：字義「美麗的」，耶路撒冷西北方約55公里的海岸港口；GT《綜合解讀》：所羅門與所羅巴伯建殿的香柏木浮海運到這裡（代下2:16；拉3:7），約拿在這裡坐船逃往他施（拿1:3），彼得在這裡叫大比大復活並看見異象（徒9:43）；BH：同樣列出約拿與彼得，並說非利士人的壓力使但未能佔有大部分地業
+  surfaces:
+  - phrase: 約帕
+    verses:
+    - 46
+  target_path: link_folder/地點/約帕.md
+- name: 亭拿西拉
+  suggested_type: 地點
+  evidence: 第50節「將約書亞所求的城，就是以法蓮山地的亭拿西拉城，給了他。他就修那城，住在其中」；CT：字義「太陽的一部分，豐盛的一部分」，他不是求好的城、而是求別的家族沒有看中的城，修那城暗示當時相當荒廢；GT《啟導本》《研經資料》、華爾頓：又名亭拿希烈（士2:9），約書亞葬在此地（書24:30），蒂布納廢墟，約書亞家族的政治飛地，「西拉」是「剩餘」的意思；GT《聖經精讀本》：「修」原文與「重新建築」相近；KC：意思是
+    abundant portion，在同時代人不願住的山地（書17:15-16）；BH：約書亞後來的家與葬地
+  surfaces:
+  - phrase: 亭拿西拉
+    verses:
+    - 50
+  target_path: link_folder/地點/亭拿西拉.md
+- name: 約書亞最後分得地業
+  suggested_type: 事件
+  evidence: 第49-50節以色列人按著境界分完了地業，就在他們中間將地給約書亞為業，是照耶和華的吩咐；CT：約書亞的家族一直到分配完才有定居之地，是後世信徒領袖的好榜樣，〔話中之光〕他沒有利用職務的便利以權謀私；GT《聖經精讀本》：以色列人分地以迦勒為始（書14:6-15）、以約書亞為終，真正領袖的三個特質；GT《綜合解讀》：兩位專心跟從神的老弟兄首尾呼應；GT《啟導本》《研經資料》：「照耶和華的吩咐」或暗示神當年已應許此地，如同希伯崙給迦勒；KC：迦勒第一個、約書亞最後一個得地業，出於謙虛等到眾人都得了；BH：約書亞在百姓都得了之後才得自己的分
+  target_path: link_folder/事件/約書亞最後分得地業.md
+  semantic_hint:
+  - title: 未得之地
+    score: 0.504
+    type: 主題
+  - title: 七支派勘地分作七分
+    score: 0.489
+    type: 事件
+  - title: 約瑟子孫嫌分地太少
+    score: 0.478
+    type: 事件
+- name: 沙魯險
+  suggested_type: 地點
+  evidence: 第6節「伯利巴勿、沙魯險，共十三座城」；CT：字義「恩典的避難所」，別是巴西方約35公里、迦薩之南約23公里；GT《串珠》：可能就是書15:32
+    的實忻，扼守以色列地南面通往埃及大路的重鎮；BH：埃及新王國初期的記錄把它與重大軍事行動連在一起
+  surfaces:
+  - phrase: 沙魯險
+    verses:
+    - 6
+  target_path: link_folder/地點/沙魯險.md
+- name: 巴拉比珥
+  suggested_type: 地點
+  evidence: 第8節「直到巴拉比珥，就是南地的拉瑪」；CT：字義「井的女主人」，別是巴南方約29公里，南地的拉瑪就是巴拉比珥的別名；GT 華爾頓、《研經資料》：可能與書15:24
+    的比亞綠相同（代上4:33 的巴力），「南地的拉瑪」表示這是邱壇或祭儀地點（撒上30:27 南地拉末）；BH：西緬在南地的南端
+  surfaces:
+  - phrase: 巴拉比珥
+    verses:
+    - 8
+  target_path: link_folder/地點/巴拉比珥.md
+- name: 撒拿音的橡樹
+  suggested_type: 地點
+  evidence: 第33節「他們的境界是從希利弗、從撒拿音的橡樹」；CT：確實地點不詳，應在撒拿音附近；GT《研經資料》：「橡樹」原文是「篤耨香樹」；GT 華爾頓：拿弗他利南界的爭議在於撒拿音的橡樹位置不明（士4:11），以之為南界的看法可能性最高；BH：基尼人希百在撒拿音橡樹旁支搭帳棚（士4:11），把拿弗他利地與底波拉、巴拉的戰役連起來
+  surfaces:
+  - phrase: 撒拿音的橡樹
+    verses:
+    - 33
+  target_path: link_folder/地點/撒拿音的橡樹.md
+  semantic_hint:
+  - title: 摩利橡樹
+    score: 0.423
+    type: 背景
+- name: 迦步勒
+  suggested_type: 地點
+  evidence: 第27節「也通到迦步勒的左邊」；CT：字義「結合」，亞柯東南方約12公里；GT 華爾頓：今日的卡布勒（Kabul）；BH：所羅門把加利利的城給推羅王希蘭作工料的報酬（王上9:10-13），亞設因靠近推羅得了貿易機會，也暴露在外邦結盟與偶像之下
+  surfaces:
+  - phrase: 迦步勒
+    verses:
+    - 27
+  target_path: link_folder/地點/迦步勒.md
+- name: 拿哈拉
+  suggested_type: 地點
+  evidence: 第15節「還有加他、拿哈拉、伸崙」；CT：字義「草場」，約念北方約16公里，基順河北岸的一座小城；GT 華爾頓、《研經資料》：納珥遺址，西布倫與海岸惟一的關聯是它和亞柯之間的貿易，可能經由拿哈拉進行，但西布倫的領土並不延伸到地中海；BH：後來成為利未人的城（書21:35）
+  surfaces:
+  - phrase: 拿哈拉
+    verses:
+    - 15
+  target_path: link_folder/地點/拿哈拉.md
+  semantic_hint:
+  - title: 拿拉
+    score: 0.44
+    type: 地點
+D_new_candidate: []
+E_skip: []
+
+亞革悉（亞設）.yaml
+亭拿西拉.yaml
+他泊山.yaml
+伯利恆（西布倫）.yaml
+基順河.yaml
+巴拉比珥.yaml
+拿哈拉.yaml
+推羅.yaml
+撒拿音的橡樹.yaml
+書念.yaml
+沙魯險.yaml
+約帕.yaml
+約書亞最後分得地業.yaml
+耶斯列（以薩迦）.yaml
+迦步勒.yaml
+迦特希弗.yaml
+
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$OutputEncoding = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); Get-Content -Raw -Encoding UTF8 -LiteralPath '"'06 約書亞記/.tmp/第19章/read_log.md'; Test-Path -LiteralPath '06 約書亞記/.tmp/第19章/raw_data/ccbiblestudy_CT_joshua_19.txt'; Get-ChildItem -LiteralPath '06 約書亞記/.tmp/第19章/raw_data' -File | Select-Object -ExpandProperty Name" in C:\Obsidian\Hermes\scripture
+ exited 1 in 236ms:
+# 第19章 四套 Commentary 全文閱讀回執
+
+## raw_data/ccbiblestudy_CT_joshua_19.txt
+- 行數：459
+- 引句：(2)他們在曠野的巴力毗珥事件中，扮演了主要叛逆角色而遭神懲罰，人口減少了大半(參民二十五14~15；二十六14)，成為人數最少的支派
+- 引句：『共有十二座城』這裡僅列五座城，可能是邊界城，且不一定屬於西布倫的地業
+- 引句：『約書亞所求的城』注意他不是求好的城，而是求別的家族沒有看中的城
+
+## raw_data/ccbiblestudy_GT_joshua_19.txt
+- 行數：667
+- 引句：西緬支派的人口從59,300人劇降到22,200人（民一23；二十六14）
+- 引句：提及推羅和西頓並不表示這些地方已被佔領。本段的可能只是理論上而非實際上的疆界。
+- 引句：亭拿西拉雖在以法蓮境內，卻是約書亞家族專有的政治飛地（即獨立地區）。
+
+## raw_data/kingcomments_joshua_19.txt
+- 行數：75
+- 引句：Judah acts according to the voice of God, Simeon acts according to the voice of Judah.
+- 引句：Thus Dan becomes the first tribe to introduce idolatry (Jdg 18:30).
+- 引句：Also here, when Joshua and Eleazar are mentioned together again, Eleazar comes first.
+
+## raw_data/biblehub_study_joshua_19.txt
+- 行數：1656
+- 引句：Hormah therefore bore lasting witness that God’s promises are received through obedient faith, not human resolve.
+- 引句：Gath-hepher later became known as the hometown of Jonah, the prophet whom God sent to Nineveh (2 Kings 14:25; Jonah 1:1).
+- 引句：Timnath-serah, called Timnath-heres in Judges 2:9, became the home and later the burial place of Israel’s servant-leader.
+
+False
+Get-ChildItem : Cannot find path 'C:\Obsidian\Hermes\scripture\06 約書亞記\.tmp\第19章\raw_data' because it does not exist.
+At line:2 char:243
++ ... ua_19.txt'; Get-ChildItem -LiteralPath '06 約書亞記/.tmp/第19章/raw_data' - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Obsidian\Her...p\第19章\raw_data:String) [Get-ChildItem], ItemNotFound 
+   Exception
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+ 
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$OutputEncoding = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); Test-Path -LiteralPath '"'06 約書亞記/raw_data/ccbiblestudy_CT_joshua_19.txt'; Test-Path -LiteralPath 'raw_data/ccbiblestudy_CT_joshua_19.txt'; Test-Path -LiteralPath '06 約書亞記/.tmp/第19章/../raw_data/ccbiblestudy_CT_joshua_19.txt'" in C:\Obsidian\Hermes\scripture
+ succeeded in 69ms:
+False
+True
+False
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$OutputEncoding = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); Select-String -LiteralPath '"'raw_data/ccbiblestudy_CT_joshua_19.txt' -Pattern '迦特希弗|伯利恆|書念|耶斯列|他泊|約念前的河|推羅|亞革悉|約帕|亭拿西拉|沙魯險|巴拉比珥|撒拿音|迦步勒|拿哈拉|第十九章.*49|大公無私'; Select-String -LiteralPath 'raw_data/ccbiblestudy_GT_joshua_19.txt' -Pattern '迦特希弗|伯利恆|書念|耶斯列|他泊|約念前的河|推羅|亞革悉|約帕|亭拿西拉|沙魯險|巴拉比珥|撒拿音|迦步勒|拿哈拉|第十九章.*49|大公無私'" in C:\Obsidian\Hermes\scripture
+ succeeded in 273ms:
+
+raw_data\ccbiblestudy_CT_joshua_19.txt:19:十、分完地業後約書亞得以法蓮山地的亭拿西拉城(49~51節)
+raw_data\ccbiblestudy_CT_joshua_19.txt:64:【書十九6】「伯利巴勿、沙魯險，共十三座城，還有屬城的村莊；」
+raw_data\ccbiblestudy_CT_joshua_19.txt:67:〔原文字義〕「伯利巴勿」母獅之家；「沙魯險」恩典的避難所。
+raw_data\ccbiblestudy_CT_joshua_19.txt:69:〔文意註解〕「伯利巴勿、沙魯險，共十三座城，還有屬城的村莊」：『伯利巴勿』確實地點不詳，可能位於南地某處；『沙魯險』位於別是巴西方約35公里，迦薩之南方約
+23公里。
+raw_data\ccbiblestudy_CT_joshua_19.txt:78:【書十九8】「並有這些城邑四圍一切的村莊，直到巴拉比珥，就是南地的拉瑪。這是西緬支派按著宗族所得的地業。」
+raw_data\ccbiblestudy_CT_joshua_19.txt:81:〔原文字義〕「巴拉比珥」井的女主人；「拉瑪」小山丘。
+raw_data\ccbiblestudy_CT_joshua_19.txt:83:〔文意註解〕「並有這些城邑四圍一切的村莊，直到巴拉比珥，就是南地的拉瑪」：『巴拉比珥』位於別是巴南方約29公里，他瑪西南方約39公里；『南地的拉瑪』就是巴
+拉比珥的別名。
+raw_data\ccbiblestudy_CT_joshua_19.txt:101:【書十九11】「往西上到瑪拉拉，達到大巴設，又達到約念前的河。」
+raw_data\ccbiblestudy_CT_joshua_19.txt:106:〔文意註解〕「往西上到瑪拉拉，達到大巴設，又達到約念前的河」：『瑪拉拉』位於約念東方約6公里，米吉多北方約8公里；『大巴設』位於約念東方約3公里，米吉多
+溪北方約11公里；『約念』位於基順河的南岸，多珥的東北面約20公里，米吉多的西北約11公里；『約念前的河』即指基順河。
+raw_data\ccbiblestudy_CT_joshua_19.txt:108:【書十九12】「又從撒立往東轉向日出之地，到吉斯綠他泊的境界，又通到大比拉，上到雅非亞。」
+raw_data\ccbiblestudy_CT_joshua_19.txt:111:〔原文字義〕「撒立」生還者；「吉斯綠他泊」他泊(石墩)的側腹；「大比拉」話語；「雅非亞」照耀。
+raw_data\ccbiblestudy_CT_joshua_19.txt:113:〔文意註解〕「又從撒立往東轉向日出之地，到吉斯綠他泊的境界，又通到大比拉，上到雅非亞」：『撒立』位於約念東方約12公里，米吉多東北方約10公里；『日出之
+地』即指東方；『吉斯綠他泊』位於約念東方約20公里，米吉多東北方約19公里；『大比拉』位於書念北方約11公里，米吉多東北方約23公里；『雅非亞』位於約念東方約15公里，米吉多東北方約15公里。
+raw_data\ccbiblestudy_CT_joshua_19.txt:115:【書十九13】「從那裡往東，接連到迦特希弗，至以特加汛，通到臨門，臨門延到尼亞。」
+raw_data\ccbiblestudy_CT_joshua_19.txt:118:〔原文字義〕「迦特希弗」礦區的榨酒機；「以特加汛」審判時期；「臨門」石榴樹；「尼亞」震動。
+raw_data\ccbiblestudy_CT_joshua_19.txt:120:〔文意註解〕「從那裡往東，接連到迦特希弗，至以特加汛，通到臨門，臨門延到尼亞」：『迦特希弗』位於米吉多東北方約22公里，亞柯西南方約31公里；『以特加汛
+』確實地點不詳，應該在西布倫地界內，靠近拿弗他利地的邊境；『臨門』不同於書十五32的「臨門」，位於亞柯東南方約25公里，約念東北方約23公里；『尼亞』確實地點不詳，可能在臨門北方某處。
+raw_data\ccbiblestudy_CT_joshua_19.txt:129:【書十九15】「還有加他、拿哈拉、伸崙、以大拉、伯利恆。共有十二座城，還有屬城的村莊。」
+raw_data\ccbiblestudy_CT_joshua_19.txt:132:〔原文字義〕「加他」小；「拿哈拉」草場；「伸崙」守望高處；「以大拉」神紀念；「伯利恒」糧食之家。
+raw_data\ccbiblestudy_CT_joshua_19.txt:134:〔文意註解〕「還有加他、拿哈拉、伸崙、以大拉、伯利恆。共有十二座城，還有屬城的村莊」：『加他』確實地點不詳；『拿哈拉』位於約念北方約16公里，亞柯南方約
+13公里，基順河北岸的一座小城；『伸崙』位於約念東北方約9公里，米吉多北方約13公里；『以大拉』確實地點不詳；『伯利恆』不同於耶穌誕生的猶大地「伯利恆」(彌五2)，位於約念北方9公里，米吉多北方約17公里；『共有十二座城』這裡僅列五座城，
+可能是邊界城，且不一定屬於西布倫的地業。
+raw_data\ccbiblestudy_CT_joshua_19.txt:150:【書十九18】「他們的境界是到耶斯列、基蘇律、書念、」
+raw_data\ccbiblestudy_CT_joshua_19.txt:153:〔原文字義〕「耶斯列」神栽種；「基蘇律」側翼；「書念」倍覺安息之地。
+raw_data\ccbiblestudy_CT_joshua_19.txt:155:〔文意註解〕「他們的境界是到耶斯列、基蘇律、書念」：『耶斯列』不同於書十五59的「耶斯列」，位於米吉多東南東方約14公里，他納東北方12公里；『基蘇律』
+位於約念東方約20公里，米吉多東北方約19公里；『書念』位於米吉多東方約14公里，耶斯列北方約4公里。
+raw_data\ccbiblestudy_CT_joshua_19.txt:157:【書十九19】「哈弗連、示按、亞拿哈拉、」
+raw_data\ccbiblestudy_CT_joshua_19.txt:160:〔原文字義〕「哈弗連」雙洞；「示按」毀壞；「亞拿哈拉」恐懼的呻吟。
+raw_data\ccbiblestudy_CT_joshua_19.txt:162:〔文意註解〕「哈弗連、示按、亞拿哈拉」：『哈弗連』位於耶斯列東北方約12公里，伯善西北方約13公里；『示按』確實地點不詳，可能位於拿撒路東方約5公里；『
+亞拿哈拉』位於伯善西北方約16公里，基尼烈城西南方約31公里。
+raw_data\ccbiblestudy_CT_joshua_19.txt:169:〔文意註解〕「拉璧、基善、亞別」：『拉璧』位於書念北方約11公里，米吉多東北方約23公里；『基善』位於伯善西北方約20公里，米吉多東北方約22公里；『亞
+別』確實地點不詳，應在以斯得倫平原之內。
+raw_data\ccbiblestudy_CT_joshua_19.txt:176:〔文意註解〕「利篾、隱干寧、隱哈大、伯帕薛」：『利篾』位於伯善北方約10公里，耶斯列東方約18公里；『隱干寧』位於耶斯列南方約12公里，他納東南方約10
+公里；『隱哈大』位於雅比聶南南西方約3公里，伯珊北方約21公里；『伯帕薛』確實地點不詳，似應在隱哈大與他泊之間。
+raw_data\ccbiblestudy_CT_joshua_19.txt:178:【書十九22】「又達到他泊、沙哈洗瑪、伯示麥，直通到約但河為止，共十六座城，還有屬城的村莊。」
+raw_data\ccbiblestudy_CT_joshua_19.txt:181:〔原文字義〕「他泊」石墩；「沙哈洗瑪」面向高地；「伯示麥」太陽之家。
+raw_data\ccbiblestudy_CT_joshua_19.txt:183:〔文意註解〕「又達到他泊、沙哈洗瑪、伯示麥，直通到約但河為止，共十六座城，還有屬城的村莊」：『他泊』確實地點不詳，可能位於他泊山附近；『沙哈洗瑪』確實地
+點不詳，可能位於他泊山之東，約但河之西；『伯示麥』不同於書十五10的「伯示麥」，位於伯善北方約20公里，耶斯列東南方約22公里；『共十六座城』指16~22節合計。
+raw_data\ccbiblestudy_CT_joshua_19.txt:213:【書十九27】「轉向日出之地，到伯大袞，達到細步綸，往北到伊弗他伊勒谷，到伯以墨和尼業，也通到迦步勒的左邊。」
+raw_data\ccbiblestudy_CT_joshua_19.txt:216:〔原文字義〕「伯大袞」大袞的住所；「細步綸」高貴的；「伊弗他伊勒」神打開；「伯以墨」山谷之家；「尼業」被神移動；「迦步勒」結合。
+raw_data\ccbiblestudy_CT_joshua_19.txt:220:「往北到伊弗他伊勒谷，到伯以墨和尼業，也通到迦步勒的左邊」：『伊弗他伊勒谷』確實地點不詳，可能位於哈拿頓和臨門北方，自東向西，長約15公里的谷地；『伯以
+墨』位於亞柯東北方約6公里，距離地中海約7公里；『尼業』位於亞柯東方約13公里，基尼烈城西方約31公里；『迦步勒』位於亞柯東南方約12公里，基尼烈城西方約31公里。
+raw_data\ccbiblestudy_CT_joshua_19.txt:227:〔文意註解〕「又到義伯崙、利合、哈們、加拿，直到西頓大城」：『義伯崙』位於亞柯北北東方約16公里，推羅南方約26公里；『利合』位於亞革悉東北方約18公里
+，推羅東南方約18公里；『哈們』位於亞革悉北方約10公里，推羅南方約10公里；『加拿』位於推羅東南方約13公里，距離地中海約9公里；『西頓』位於推羅北方約34公里的地中海港口。
+raw_data\ccbiblestudy_CT_joshua_19.txt:229:【書十九29】「轉到拉瑪和堅固城推羅，又轉到何薩，靠近亞革悉一帶地方，直通到海；」
+raw_data\ccbiblestudy_CT_joshua_19.txt:232:〔原文字義〕「拉瑪」小山丘；「堅固」有防禦工事；「推羅」巖石；「何薩」庇護；「亞革悉」欺騙。
+raw_data\ccbiblestudy_CT_joshua_19.txt:234:〔文意註解〕「轉到拉瑪和堅固城推羅，又轉到何薩，靠近亞革悉一帶地方，直通到海」：『拉瑪』位於推羅東南方約21公里，亞革悉東北方約22公里；『推羅』位於亞
+柯北方約41公里，西頓南方約34公里；『何薩』位於推羅東南南方約2公里半，可能屬於推羅大城的一區；『亞革悉』不同於書十五44的「亞革悉」，位於亞柯北方約13公里，推羅南方約27公里。
+raw_data\ccbiblestudy_CT_joshua_19.txt:257:【書十九33】「他們的境界是從希利弗、從撒拿音的橡樹，從亞大米尼吉和雅比聶，直到拉共，通到約但河。」
+raw_data\ccbiblestudy_CT_joshua_19.txt:260:〔原文字義〕「希利弗」交換；「撒拿音」移動；「亞大米尼吉」可耕之田，高地洞穴；「雅比聶」神導致建造；「拉共」設防。
+raw_data\ccbiblestudy_CT_joshua_19.txt:262:〔文意註解〕「他們的境界是從希利弗、從撒拿音的橡樹，從亞大米尼吉和雅比聶，直到拉共，通到約但河」：『希利弗』位於耶斯列東北方約19公里，基尼烈城西南方約
+20公里；『撒拿音』位於伯善北方約33公里，基尼烈城西南方約11公里；『撒拿音的橡樹』確實地點不詳，應在撒拿音附近；『亞大米尼吉』位於基尼烈城西南南方約15公里，隱多珥東北方約14公里；『雅比聶』不同於書十五11的「雅比聶」，位於伯善北方
+約22公里，基尼烈城南方約19公里；『拉共』位於雅比聶東方約4公里，耶斯列北方約12公里。
+raw_data\ccbiblestudy_CT_joshua_19.txt:264:【書十九34】「又轉向西到亞斯納他泊，從那裡通到戶割，南邊到西布倫，西邊到亞設，又向日出之地，達到約但河那裡的猶大。」
+raw_data\ccbiblestudy_CT_joshua_19.txt:267:〔原文字義〕「亞斯納他泊」他泊(石墩)山頂；「戶割」指定的。
+raw_data\ccbiblestudy_CT_joshua_19.txt:269:〔文意註解〕「又轉向西到亞斯納他泊，從那裡通到戶割」：『亞斯納他泊』位於西丁約念東北方約25公里；『戶割』位於亞柯東方約20公里，基尼烈城西方約26公里
+raw_data\ccbiblestudy_CT_joshua_19.txt:299:〔文意註解〕「以利穩、密大伊勒、和璉、伯亞納、伯示麥，共十九座城，還有屬城的村莊」：『以利穩』位於夏瑣北方約16公里，基底斯西南方約13公里；『密大伊勒
+』確實地點不詳，似應在以利穩與和璉之間；『和璉』位於夏瑣西北西方約18公里，亞革悉東方約25公里；『伯亞納』位於夏瑣西南方約23公里，但城西南西方約21公里；『伯示麥』不同於22節和書十五10的「伯示麥」，位於夏瑣西方約20公里，亞革悉東
+方約22公里；『共十九座城』33~38節所列城鎮合計。
+raw_data\ccbiblestudy_CT_joshua_19.txt:341:〔文意註解〕「伊利提基、基比頓、巴拉」：『伊利提基』位於約帕南方約16公里，亞實突北方約18公里；『基比頓』位於亞實突東北方約22公里，基遍西方約31公
+里；『巴拉』不同於3節的「巴拉」，位於亞實突東北方約13公里，以革倫西北方約8公里。
+raw_data\ccbiblestudy_CT_joshua_19.txt:348:〔文意註解〕「伊胡得、比尼比拉、迦特臨門」：『伊胡得』位於約帕東方約13公里，示羅西方約37公里；『比尼比拉』位於約帕西南方約8公里的海邊；『迦特臨門』
+位於約帕東北方約7公里半，亞弗西方約12公里。
+raw_data\ccbiblestudy_CT_joshua_19.txt:350:【書十九46】「美耶昆、拉昆，並約帕對面的地界。」
+raw_data\ccbiblestudy_CT_joshua_19.txt:353:〔原文字義〕「美耶昆」黃潮；「拉昆」神殿；「約帕」美麗的；「對面」對面，前面。
+raw_data\ccbiblestudy_CT_joshua_19.txt:355:〔文意註解〕「美耶昆、拉昆，並約帕對面的地界」：『美耶昆』確實地點不詳，可能是加拿河支流美耶昆河的某處河案；『拉昆』確實地點不詳，可能是約帕北方10公里
+處一處廢墟；『約帕』位於耶路撒冷西北方約55公里，加薩北方79公里的海岸港口。
+raw_data\ccbiblestudy_CT_joshua_19.txt:382:〔文意註解〕「以色列人按著境界分完了地業，就在他們中間將地給嫩的兒子約書亞為業」：約書亞的家族一直到以色列人分配完產業之地，仍未有確定的地方可供他們定居
+下來，這種大公無私的心態，是後世信徒領袖的好榜樣。
+raw_data\ccbiblestudy_CT_joshua_19.txt:390:【書十九50】「是照耶和華的吩咐，將約書亞所求的城，就是以法蓮山地的亭拿西拉城，給了他。他就修那城，住在其中。」
+raw_data\ccbiblestudy_CT_joshua_19.txt:393:〔原文字義〕「以法蓮」我將獲雙倍果子；兩堆灰燼；「亭拿西拉」太陽的一部分，豐盛的一部分。
+raw_data\ccbiblestudy_CT_joshua_19.txt:395:〔文意註解〕「是照耶和華的吩咐，將約書亞所求的城，就是以法蓮山地的亭拿西拉城，給了他」：『約書亞所求的城』注意他不是求好的城，而是求別的家族沒有看中的城
+；『亭拿西拉』位於伯特利西北方約15公里，示羅西南方約19公里。
+raw_data\ccbiblestudy_CT_joshua_19.txt:418:2.「就是別是巴…何珥瑪…共十三座城，…共四座城，…直到巴拉比珥，就是南地的拉瑪」(2~8節)：共十七座城。
+raw_data\ccbiblestudy_CT_joshua_19.txt:422:1.「為西布倫人，按著宗族，拈出第三鬮。他們地業的境界是到撒立。…達到約念前的河。…又從撒立往東轉向日出之地，…通到伊弗他伊勒谷」(11~14節)：西布
+倫支派的地業是被以薩迦、亞設、拿弗他利三支派包圍。
+raw_data\ccbiblestudy_CT_joshua_19.txt:428:1.「為以薩迦人，按著宗族，拈出第四鬮。他們的境界是到耶斯列…書念…拉璧、基善」(17~21節)：以薩迦支派的地業是被瑪拿西、拿弗他利、西布倫三支派包圍
+。
+raw_data\ccbiblestudy_CT_joshua_19.txt:446:1.「為但支派，按著宗族，拈出第七鬮。他們地業的境界是瑣拉、以實陶…以革倫…並約帕對面的地界」(40~46節)：但支派的地業是在猶大支派的北面，便雅憫和
+以法蓮的西面，瑪拿西支派的南面，以地中海為西界。
+raw_data\ccbiblestudy_CT_joshua_19.txt:450:七、約書亞得以法蓮山地的亭拿西拉城(49~51節)：
+raw_data\ccbiblestudy_CT_joshua_19.txt:452:1.「以色列人…在他們中間將地給嫩的兒子約書亞為業，是照耶和華的吩咐，將約書亞所求的城，就是以法蓮山地的亭拿西拉城，給了他」(49~50節)：約書亞得以
+法蓮山地的亭拿西拉城為業。
+raw_data\ccbiblestudy_GT_joshua_19.txt:66:「伯利巴勿」與「沙魯險」：可能分別是「利巴勿」和「實忻」（參1532）。
+raw_data\ccbiblestudy_GT_joshua_19.txt:68:沙魯險乃扼守以色列地南面通往埃及大路的重鎮。――《串珠聖經注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:72:●「沙魯險」：字義是「恩典的避難所」。── 約書亞記研經資料(蔡哲民等)
+raw_data\ccbiblestudy_GT_joshua_19.txt:87:●「巴拉比珥」：字義是「井的女主人」。此地可能與 15:24 的「比亞綠」相同（見
+raw_data\ccbiblestudy_GT_joshua_19.txt:92:【書十九8 巴拉比珥】此地可能與十五章24節的比亞綠相同（見：代上四33的巴力），其位置大概是在別是巴的東鄰。「南地的拉瑪」一語（即「尼革的高地」）表示這
+是一個邱壇，或進行祭儀的地點（見：撒上三十27；和合本：「南地拉末」）。——華爾頓《約書亞記背景注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:112:西布倫所得之地：包括耶斯列谷之西部及下加利利的中段。――《串珠聖經注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:116:10-16節是西布倫支派產業的範圍，位於耶斯列平原西部及下加利利的中部。雖然西布倫的地不在地中海沿岸，但耶斯列平原有古代國際貿易路線「沿海的路」（賽九1
+）通過，應驗了雅各的預言「西布倫必住在海口，必成為停船的海口；他的境界必延到西頓」（創四十九13），以及摩西的預言「他們要吸取海裡的豐富，並沙中所藏的珍寶」（申三十三19）。具體位置和範圍參見地圖。──
+raw_data\ccbiblestudy_GT_joshua_19.txt:122:【書十九10~16 西布倫的分】拿撒勒之名雖未出現，卻是這分地業的定位點。邊界和大部分的城市都是以這個城市為軸心，往東、西延伸。北界是在提比哩亞以西約十
+二哩，拿撒勒西北六哩的臨門（今日的龍曼納〔Rummaneh〕）。撒立──大概是拿撒勒東南五哩的沙杜德遺址（Tell Shadud）──是另一個面西的定位點，邊界由此沿著基順河延伸，直到約念為止（見：書十二22）。東極遠達以薩迦的領土，即拿
+撒勒東南兩哩左右。在此提及的地點有大比拉（他泊山附近的達布裡葉〔Daburiyeh〕）和雅非亞（拿撒勒東南面的亞法〔Yafa〕）。西布倫與海岸惟一的關聯（雖則似乎不合創四十九13和申三十三18～19），是它和亞柯之間的貿易，這貿易可能是透
+過附近的城市拿哈拉（納珥遺址〔Tell en~Nahl〕）進行。但西布倫的領土並不延伸到地中海。——華爾頓《約書亞記背景注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:126:“約念前的河”指基順河。――《啟導本聖經約書亞記註釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:128:「約念前的河」（11節）指基順河，流經耶斯列平原。女先知底波拉在這裡打敗西西拉（士四7）。── 約書亞記綜合解讀
+raw_data\ccbiblestudy_GT_joshua_19.txt:134:●「約念前的河」：指「基順河」。可參考 12:22。「前」可能是指「東面」。「約念」字義是「人們哀慟」。──
+raw_data\ccbiblestudy_GT_joshua_19.txt:139:「吉斯綠他泊」：可能是「基蘇律」（18），在拿撒勒東南三公里（二英里），座落於西布倫與以薩迦接壤的邊界。
+raw_data\ccbiblestudy_GT_joshua_19.txt:141:「大比拉」：在他泊山之西北。
+raw_data\ccbiblestudy_GT_joshua_19.txt:145:●「吉斯綠他泊」：字義是「他泊的側腹」。
+raw_data\ccbiblestudy_GT_joshua_19.txt:147:●「大比拉」：字義是「話語」。是他泊山附近的達布裡葉(Daburiyeh)。
+raw_data\ccbiblestudy_GT_joshua_19.txt:157:●「迦特希弗」：字義是「礦區的榨酒機」。此城是約拿的故鄉。
+raw_data\ccbiblestudy_GT_joshua_19.txt:175:「拿哈拉」：在亞柯以南。
+raw_data\ccbiblestudy_GT_joshua_19.txt:177:「伯利恒」：不是位於猶大境內，而是在拿哈拉之西北。
+raw_data\ccbiblestudy_GT_joshua_19.txt:186:●「拿哈拉」：字義是「草場」。納珥遺址〔Tell en~Nahl〕。
+raw_data\ccbiblestudy_GT_joshua_19.txt:188:◎西布倫的領土並沒有延伸到地中海，而且西布倫與海岸惟一的關聯好像是它和亞柯之間的貿易，這貿易可能是透過附近的城市「拿哈拉」進行。但這似乎不合創 49:1
+3 和 申 33:18-19 的記載。
+raw_data\ccbiblestudy_GT_joshua_19.txt:194:●「伯利恆」：並非耶路撒冷附近的伯利恆，此城位於拿撒勒西北11公里。字義是「麵包(糧食)之家」。士師以比贊埋葬於此（ 士 12:9-10 ）。這附近目前
+尚有一個阿拉伯人的村落，保存了貝特拉恒（Beit~Lahm）之名。
+raw_data\ccbiblestudy_GT_joshua_19.txt:198:【書十九15 伯利恒】這個位於西布倫之拿哈拉西北的城市，與南部猶大境內的伯利恒並不相同。士師以比贊埋葬於此（士十二9～10）。時至今日，這附近尚有一條阿
+拉伯人的村落，保存了貝特拉恒（Beit~Lahm）之名。——華爾頓《約書亞記背景注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:206:【書十九17~23】“以薩迦”的領土在瑪拿西以北，從西面的他泊山延伸至加利利海南端。――《約書亞記雷氏研讀本》
+raw_data\ccbiblestudy_GT_joshua_19.txt:210:以薩迦支派的產業: 以薩迦支派的領土內包括Esdraelon平原的肥沃農田,這應驗了雅各與摩西的預言(創49:14,15;申34:18)。以薩迦支派的耶
+斯列地有亞哈的宮殿,附近則有拿伯的葡萄園(王上21:1,2)。位於摩利(Moreh)的書念城因曾供給以利沙的女子居住在此地而揚名(王下4:8-37),源於他泊山而流入地中海的基順河則以士師巴拉獲勝之地而著稱(士4:12-16)。並且,士師
+陀拉與巴沙王皆出生在以薩迦支派(士10:1;王上15:27)。
+raw_data\ccbiblestudy_GT_joshua_19.txt:213:17-23節是以薩迦支派產業的範圍，在下加利利南部。以薩迦的人口僅次於猶大和但支派，雖然土地面積不大，但卻包括迦南地最肥沃的耶斯列平原，土地肥美，物產豐
+富，應驗了雅各的預言「以薩迦是個強壯的驢，臥在羊圈之中。他以安靜為佳，以肥地為美」（創四十九14-15），以及摩西的預言：「以薩迦啊，在你帳棚裡可以快樂」（申三十三18）。耶斯列平原有古代國際貿易路線沿海大道（Via Maris）通過，是
+商隊必經之路，也是經常發生爭戰的地方，可能因此以薩迦支派常做負重運貨的工作，應驗了雅各的預言「低肩背重，成為服苦的僕人」（創四十九15）。具體位置和範圍參見地圖。── 約書亞記綜合解讀
+raw_data\ccbiblestudy_GT_joshua_19.txt:215:◎ 19:17-23 提到的是以薩迦支派分得的土地。這段經文對其區域並沒有確實的描述，但主要是在瑪拿西以北，亞設以東，拿弗他利以南的耶斯列谷(相當肥沃)
+之內。其北界從他泊山，延伸到約但河和加利利海南面不遠的部分。──
+raw_data\ccbiblestudy_GT_joshua_19.txt:218:【書十九17~23 以薩迦的分】這片土地主要是在瑪拿西以北，亞設以東，拿弗他利以南的耶斯列穀之內。其北界從他泊山，延伸到約但河加利利海南面不遠的部分。本
+區極不穩定，並且很具戰略性，埃及法老杜得模斯三世（提及亞拿哈拉、基善）和薛提一世（提及利篾＝耶末，大概與伯善以北六哩的雅爾穆塔山〔Mount Yarmuta〕相同）的年表都反映了這一點。其他位置已經確認的地點如下：耶斯列是基利波山西北的澤
+林（Zer'in）；基蘇律即吉斯綠他泊（書十九12），是拿撒勒東南兩哩的伊克薩珥（Iksal）；書念是耶斯列東北三哩的索倫（Solem）。——華爾頓《約書亞記背景注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:224:「書念」：在耶斯列之東北。――《串珠聖經注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:226:「耶斯列」（18節）的意思是「神播種」，位於基利波山西北山麓、耶斯列平原南端。後來亞哈王在這裡建了宮殿，附近則有拿伯的葡萄園（王上二十一1）。耶斯列平原
+是著名的古戰場，也是主耶穌再來時「哈米吉多頓」（啟十六16）決戰的戰場，南面的「耶斯列」與北面的拿撒勒隔著耶斯列平原可以互相望見。
+raw_data\ccbiblestudy_GT_joshua_19.txt:228:「書念」（18節）位於耶斯列平原，非利士人在這裡紮營與掃羅爭戰，先知以利沙在這裡使書念婦人的兒子復活（王下四8），書念的童女亞比煞伺候老年大衛（王上一3
+）。主耶穌特地來到書念北面的拿因，使寡婦的兒子復活，讓人聯想到以利沙的神跡，所以歸榮耀與神說：「有大先知在我們中間興起來了」（路七11）。── 約書亞記綜合解讀
+raw_data\ccbiblestudy_GT_joshua_19.txt:230:●「耶斯列」：字義是「神栽種」。可能是基利波山西北的澤林（Zer'in）。
+raw_data\ccbiblestudy_GT_joshua_19.txt:232:●「基蘇律」：字義是「側翼」。可能是吉斯綠他泊（ 19:12 ），是拿撒勒東南三公里的伊克薩珥（Iksal）。
+raw_data\ccbiblestudy_GT_joshua_19.txt:234:●「書念」：字義是「倍覺安息之地」，位於拿撒勒東南方11公里，他泊山以南八公里處。耶斯列東北五公里的索倫（Solem）。── 約書亞記研經資料(蔡哲民等
+)
+raw_data\ccbiblestudy_GT_joshua_19.txt:244:●「亞拿哈拉」：字義是「恐懼的呻吟」。── 約書亞記研經資料(蔡哲民等)
+raw_data\ccbiblestudy_GT_joshua_19.txt:258:「隱干寧」：在伯善以西，耶斯列平原盡南。――《串珠聖經注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:270:「他泊」：大概近他泊山。――《串珠聖經注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:272:「他泊」（22節）就是他泊山，可能就是主耶穌登山變像的地方，也是女先知底波拉聚集以色列人與迦南人爭戰的地方（士四12）。
+raw_data\ccbiblestudy_GT_joshua_19.txt:277:●「他泊」：字義是「石墩」。
+raw_data\ccbiblestudy_GT_joshua_19.txt:289:【書十九24~31】“亞設”定居在地中海沿岸，從迦密山向北伸展至推羅，即腓尼基人居住的地方。――《約書亞記雷氏研讀本》
+raw_data\ccbiblestudy_GT_joshua_19.txt:291:亞設所得之地：範圍由迦密山至北面推羅、西頓沿地中海岸，是寬二十公里的地帶。――《串珠聖經注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:293:亞設支派的產業: 亞設支派所得的產業是加利利西邊的傾斜地區。他們的領土達到西頓與推羅兩個城邦的沿岸,與整個亞柯平原與加利利的西部傾斜之地相連。亞設分得如
+此肥沃的農作物產地,亦應驗了雅各的預言(創49:20)。此支派中未曾出現一個士師,僅供參考。――《聖經精讀本──約書亞記註解》
+raw_data\ccbiblestudy_GT_joshua_19.txt:298:◎ 19:24-31 提到的是亞設支派分得的土地。亞設享有一條沿地中海很長的海岸線，其區域的位於亞柯平原，在西布倫和拿弗他利的西面，往北延伸到腓尼基海港
+推羅、西頓。
+raw_data\ccbiblestudy_GT_joshua_19.txt:303:【書十九24~31 亞設的分】亞設位於亞柯平原，在西布倫和拿弗他利的西面，往北延伸到腓尼基海港推羅、西頓。這地區在埃及的王室年表中也有很顯著的地位。杜得
+模斯三世攻取迦南城鎮的名單包括黑甲（大概是哈爾巴吉遺址〔Tell el~Harbaj〕或凱西斯遺址〔Tell el~Qassis〕）、押煞（見：書十一1）、米沙勒（在迦密山附近）、亞拉米勒；蘭塞二世的名單則有加拿（推羅東南七哩）。其他位置
+已經確認的地點如下：迦步勒是卡布勒（Kabul）；義伯侖是亞柯東北十哩的阿布代廢墟（Khirbet 'Abdeh）；烏瑪可能是亞柯；利合（十九30；有別於十九28的利合）可能是亞柯東面七哩的加爾比遺址〔Tell al~Gharbi）。提及
+推羅和西頓並不表示這些地方已被佔領。本段的可能只是理論上而非實際上的疆界。然而屬於這些城邦的鄉村可能在不同的時代，受以色列所控制。——華爾頓《約書亞記背景注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:345:●「迦步勒」：字義是「結合」。位於約在Akko的西方十六公里，現今之「Kabul」。── 約書亞記研經資料(蔡哲民等)
+raw_data\ccbiblestudy_GT_joshua_19.txt:353:「加拿」：在推羅東南十一公里（七英里）。
+raw_data\ccbiblestudy_GT_joshua_19.txt:357:「西頓大城」（28節）是腓尼基人的城市，一直沒有被亞設支派攻取（士一31）。推羅是腓尼基人的城市，一半在大陸上，另一半在海島上，「堅固城推羅」（29節）
+可能指海島的部分。主耶穌曾到「推羅、西頓的境內」（可七24），醫治外邦婦人的女兒，顯明救恩將臨到外邦人。── 約書亞記綜合解讀
+raw_data\ccbiblestudy_GT_joshua_19.txt:366:●「加拿」：字義是「蘆葦」。推羅東南約十一公里。
+raw_data\ccbiblestudy_GT_joshua_19.txt:368:●「西頓」：字義是「打獵」，是位於推羅北方的地中海岸旁的腓尼基古城。── 約書亞記研經資料(蔡哲民等)
+raw_data\ccbiblestudy_GT_joshua_19.txt:372:推羅城分為兩部分，一半在大陸上，另一半在海島上。這措施是為了防止敵人進攻時全城遭殲滅。所謂「堅固城推羅」大概是指海島的部分。
+raw_data\ccbiblestudy_GT_joshua_19.txt:374:「亞革悉」：在推羅與亞柯之間。
+raw_data\ccbiblestudy_GT_joshua_19.txt:376:「一帶地方」：原文可能是另一地名──亞黑拉（參士2:31），這城位於推羅以北六公里（四英里）。――《串珠聖經注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:382:◎ 19:29 提及泰爾(推羅)和西頓並不表示這些地方已被佔領。本段可能只是理論上而非實際上的疆界，然而屬於這些城邦的鄉村可能在不同的時代受以色列所控制
+。
+raw_data\ccbiblestudy_GT_joshua_19.txt:386:●「亞革悉」：字義是「欺騙」。位於亞柯北面，雖然分給亞設支派卻從來沒有被攻取（ 士
+raw_data\ccbiblestudy_GT_joshua_19.txt:390:【書十九29 亞革悉】位於亞柯北面的亞革悉雖然分給亞設支派，卻從來沒有被他們攻取（士一31）。遺址的挖掘證明從中銅器時代第一期到羅馬時期，當地是個興隆的
+貿易中心。它幾度被洗劫，然後又再重建。主前八世紀是其全盛時期，直到主前七○一年毀於西拿基立手下為止。此地不可與十五章44節中位於薩非拉，分給猶大的同名城市混淆。——華爾頓《約書亞記背景注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:413:拿弗他利所得之地：包括加利利東部直到約但河谷和加利利海；南面達他泊山，耶斯列谷。這一帶土地頗為肥沃。――《串珠聖經注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:419:◎ 19:32-39 提到拿弗他利支派分得的土地。大半在加利利海以北，他泊山是本支派地業的主要基準點。其中基尼烈（ 19:35 ）就是後來的加利利。──
+ 約書亞記研經資料(蔡哲民等)
+raw_data\ccbiblestudy_GT_joshua_19.txt:421:【書十九32~39 拿弗他利的分】他泊山是本支派地業的主要基準點。拿弗他利的南界沿著法賈斯河谷（Wadi
+raw_data\ccbiblestudy_GT_joshua_19.txt:422:Fajjas）往東，直到約但河為止。這一點也略有爭議，原因是「撒拿音的橡樹」位置不明（見：士四11），但以之為南界的看法可能性最高。在這界線上的位置已經
+認定的地點如下：希利弗（他泊山附近的阿巴塔特廢墟〔Khirbet 'Arbathath〕）、亞大米尼吉（特珥廢墟）、雅比聶（納安遺址〔Tell en~Na'am〕）、拉共（曼蘇拉廢墟〔Khirbet el~Mansurah〕）。戶割的確實
+位置頗有爭議，但大部分學者考證為加利利海西岸的雅庫克（Yaquq）。其他位置已經確認的地點如下：亞大瑪大概是約但河流入加利利海之處西北兩哩半的哈賈爾達姆（Hajar ed~Damm）；以利穩是黎巴嫩邊界上的雅龍（Yarun）；有關夏瑣的討
+論，可參看十一章1節的注釋；基低斯是在今日已被排幹之胡列湖（Lake Huleh）的北面。——華爾頓《約書亞記背景注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:426:「希利弗」：可能在他泊山麓。――《串珠聖經注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:428:●「希利弗」：字義是「交換」。可能是他泊山附近的阿巴塔特廢墟〔Khirbet
+raw_data\ccbiblestudy_GT_joshua_19.txt:431:●「撒拿音」：字義是「移動」。
+raw_data\ccbiblestudy_GT_joshua_19.txt:444:「亞斯納他泊」：在他泊山麓。――《串珠聖經注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:446:●「亞斯納他泊」：字義是「他泊山頂」。
+raw_data\ccbiblestudy_GT_joshua_19.txt:452:◎ 19:34 提到拿弗他利的南界沿著法賈斯河谷（Wadi Fajjas）往東，直到約旦河為止。這一點略有爭議，原因是「撒拿音的橡樹」位置不明（見：
+raw_data\ccbiblestudy_GT_joshua_19.txt:521:◎ 19:40-48 提到的是但支派分得的土地。但支派在便雅憫以西，所領的土地細小但肥沃，從梭烈溪到約帕旁的雅康河，雖然分到了頗為廣大的一片土地，他們實
+際佔用的大概不會超過其中一小部分，絕大部分的地區一開始是非利士人控制，後來則是被亞述人所控制。直到所羅門年間，這地才屬於所羅門的南區，並為猶大的一部分。
+raw_data\ccbiblestudy_GT_joshua_19.txt:527:【書十九40~48 但支派的分】但支派在便雅憫以西，從梭烈溪到約帕旁的雅康河，雖然分到了頗為廣大的一片土地，他們實際佔用的，大概不會超過其中一小部分。大
+部分的地區初時受非利士人，後來則被亞述人所控制。所羅門年間這地屬於他的南區，並為猶大的一部分。原屬於但的伯示麥（魯梅雷遺址）就是一例，它後來被列為猶大境內的利未人城邑（二十一16）。其他屬於但支派的地點如下：沙拉賓在基色以東，大概是瑟珥比
+特（Selbit；見：士一35）；亞雅侖（曾在亞馬拿文獻中提及）大概是基色東面五哩的雅洛（Yalo）；亭拿他是伯示麥西北五哩的巴塔希遺址；基比頓曾在杜得模斯三世戰事表中提及，大概是默拉特遺址（Tell el~Melat）；比尼比拉曾在西拿
+基立的年表中出現，位於接近約帕之阿拉伯村落凱裡亞（el~Kheiriyah）的附近；拉昆可能是一條河，也可能是約帕附近的雷凱特遺址（Tell er~Reqqeit）。——華爾頓《約書亞記背景注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:577:●「伊胡得」：字義是「美麗」。位於Baalath與Bene-Berak之間,離約帕1公里遠。
+raw_data\ccbiblestudy_GT_joshua_19.txt:579:●「比尼比拉」：字義是「閃電之子」。曾在西拿基立的年表中出現，位於接近約帕之阿拉伯村落凱裡亞（el~Kheiriyah）的附近。
+raw_data\ccbiblestudy_GT_joshua_19.txt:585:「約帕」（46節）是地中海的重要港口，所羅門王建造聖殿和所羅巴伯重建聖殿的香柏樹，都是從黎巴嫩浮海運到這裡（代下二16；拉三7），然後運往耶路撒冷；先知
+約拿在這裡坐船去他施，逃避前往尼尼微（拿一3）；使徒彼得在這裡叫大比大復活，並看見異象，開始向外邦人傳福音（徒九43）。──
+raw_data\ccbiblestudy_GT_joshua_19.txt:590:●「拉昆」：字義是「神殿」。可能是一條河，也可能是約帕附近的雷凱特遺址（Tell
+raw_data\ccbiblestudy_GT_joshua_19.txt:593:●「約帕」：字義是「美麗的」。── 約書亞記研經資料(蔡哲民等)
+raw_data\ccbiblestudy_GT_joshua_19.txt:617:【書十九49~50】土地分配完畢後，百姓把以法蓮山地的“亭拿西拉城”給了約書亞，該城在呂大（羅德）東北約十二英里（19公里）以外。――《約書亞記雷氏研讀
+本》
+raw_data\ccbiblestudy_GT_joshua_19.txt:621:「亭拿西拉」：見士2:9注。――《串珠聖經注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:623:繼以色列十二支派分得產業的事件之後,在這裡記錄了約書亞得亭拿西拉為業的事件。一般認為,“亭拿西拉”與位於示劍西南約11.2公里處的今日毗勒貝他那是同一個
+地方。約書亞在分得此地之後重修了那城。“修”的原文與“重新建築”相近,暗示那城已極其荒廢。我們可藉著本文的事件,從約書亞身上發現作為真正領袖的特質:①不論是從地位上還是從業績上,約書亞都當第一個分得產業,但他在所有百姓之後求得了自己的份;
+②他雖擁有領袖的權柄,但並沒有獨斷地取自己的產業,反而謙卑地在百姓面前求得產業;③他放棄自己的私欲,毫無抱怨地接受了荒廢之地。――《聖經精讀本──約書亞記註解》
+raw_data\ccbiblestudy_GT_joshua_19.txt:627:“亭拿西拉”又名“亭拿希烈”（士二9）。位於以法蓮山地，為約書亞所得的私人地業，以志其功績。約書亞住在這裡直到死日，而且葬在此地（二十四30；士二9）。
+“是照耶和華的吩咐”一語或暗示耶和華神在約書亞作探子偵察迦南時，已允將此地賜給他，就象將希伯侖賜給迦勒一樣（十四13；十五13）。――《啟導本聖經約書亞記註釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:631:●「亭拿西拉」：字義是「太陽的一部分」或「豐盛的一部分」。位在示羅西南17.6公里。此城又名「亭拿希烈」（
+raw_data\ccbiblestudy_GT_joshua_19.txt:632:士 2:9 ），地名上的差異可能與地業分配有關。亭拿西拉原在以法蓮境內(位於以法蓮山地)，不過在全體支派各得土地之後，分給約書亞的私人地業（即獨立地區）
+，為的是表彰他的功績。約書亞住在這裡直到死時，而且葬在此地（24:30；士 2:9 ）。
+raw_data\ccbiblestudy_GT_joshua_19.txt:634:●「亭拿西拉」這地被考證應該是示劍西南約十九公里的蒂布納廢墟（Khirbet
+raw_data\ccbiblestudy_GT_joshua_19.txt:639:【書十九50 亭拿西拉】這城又稱亭拿希烈（士二9），是在全體支派各得土地之後，分給約書亞的地業。地名上的差異可能與地業分配有關，因為「西拉」是「剩餘」的
+意思。這個通俗詞源可能改變了原有的地名。亭拿西拉雖在以法蓮境內，卻是約書亞家族專有的政治飛地（即獨立地區）。這地被考證為示劍西南約十二哩的蒂布納廢墟（Khirbet Tibnah）。當地的挖掘證明了鐵器時代第一期曾經有人在此大事定居重建（
+見：書十九50）。——華爾頓《約書亞記背景注釋》
+raw_data\ccbiblestudy_GT_joshua_19.txt:665:４ 誰最後分得地業？亭拿西拉似是個荒蕪的地方，會帶給得主特別的好處麽？由此看來，得主給我們什麽榜樣？
+
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$OutputEncoding = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); Select-String -LiteralPath '"'raw_data/kingcomments_joshua_19.txt' -Pattern 'Kishon|Jokneam|Tabor|Shunem|Jezreel|Tyre|Bethlehem|Joshua|Timnath|Joppa|Cabul|Nahalal|Zaanannim|Gath-hepher'; Select-String -LiteralPath 'raw_data/biblehub_study_joshua_19.txt' -Pattern 'Kishon|Jokneam|Tabor|Shunem|Jezreel|Tyre|Bethlehem|Joshua|Timnath|Joppa|Cabul|Nahalal|Zaanannim|Gath-hepher'" in C:\Obsidian\Hermes\scripture
+ succeeded in 410ms:
+
+raw_data\kingcomments_joshua_19.txt:1:Joshua 19
+raw_data\kingcomments_joshua_19.txt:9:This chapter ends with the inheritance of Joshua. He is assigned this by the Isra
+elites, by “the command of the LORD” (verses 49-50). This is wonderful. Christ, in the picture of Joshua, has divided t
+he land among God’s people. As proof of our gratitude to Christ, we as God’s people may give Him an inheritance in our 
+midst. In the meetings of the believers – in “the tent of meeting” (verse 51) – this may become manifest.
+raw_data\kingcomments_joshua_19.txt:41:Another well-known place is Jezreel. Naboth lives there (1Kgs 21:1). His neighbo
+r is the mighty, wicked king Ahab, who has set his sights on Naboth’s inheritance. By the attempt of Ahab to get the in
+heritance of Naboth in his possession, the great appreciation Naboth has for the inheritance comes to the fore: “Now it
+ came about after these things that Naboth the Jezreelite had a vineyard which [was] in Jezreel beside the palace of Ah
+ab king of Samaria. Ahab spoke to Naboth, saying, “Give me your vineyard, that I may have it for a vegetable garden bec
+ause it is close beside my house, and I will give you a better vineyard than it in its place; if you like, I will give 
+you the price of it in money.” But Naboth said to Ahab, “The LORD forbid me that I should give you the inheritance of m
+y fathers”” (1Kgs 21:1-3).
+raw_data\kingcomments_joshua_19.txt:63:49 - 50 The Inheritance of Joshua
+raw_data\kingcomments_joshua_19.txt:65:Caleb was the first to receive his inheritance even before the tribes are alloca
+ted their inheritance. Now, when all tribes have received their inheritance, Joshua is the last to receive his inherita
+nce. Out of modesty he waited until all had it. This is a big difference with some leaders today who use their position
+ and influence to benefit themselves and their own families as much as possible.
+raw_data\kingcomments_joshua_19.txt:67:He receives his inheritance as a gift from the Israelites. It is the part that n
+o one has claimed yet. It is the part he wishes. He does not let himself to be crowned king. He dwells among his people
+ as one of them. This is how he owns his inheritance. Joshua is herein a picture of the Lord Jesus. The Lord Jesus also
+ waits with the questioning of His property or inheritance (Psa 2:8) until all who now belong to His people have receiv
+ed their inheritances.
+raw_data\kingcomments_joshua_19.txt:69:Joshua asks for Timnath-serah, which means ‘abundant portion’. It lies in the mo
+untain range, the territory where his contemporaries do not want to dwell (Jos 17:15-16). With his choice he sets a goo
+d example to them.
+raw_data\kingcomments_joshua_19.txt:73:This conclusion is almost similar to the verse with which the division begins (J
+os 14:1). Also here, when Joshua and Eleazar are mentioned together again, Eleazar comes first. Each leadership is good
+ leadership only when practiced in a priestly mind. That is why the priest comes first. A priest is someone who is used
+ to being in the presence of God.
+raw_data\biblehub_study_joshua_19.txt:3:Joshua 19:1
+raw_data\biblehub_study_joshua_19.txt:10:Jos 18:10 And Joshua cast lots for them in the presence of the LORD…
+raw_data\biblehub_study_joshua_19.txt:15:Simeon’s cities were assigned from Judah’s extensive southern territory, since
+ Judah’s allotment proved larger than its population required (Joshua 19:9). The arrangement fulfilled Jacob’s prophecy
+ that Simeon would be scattered in Israel (Genesis 49:7), yet it also provided the tribe with a secure place among God’
+s people. Simeon remained connected to Judah throughout Israel’s history and shared in the life and defense of the sout
+hern kingdom.
+raw_data\biblehub_study_joshua_19.txt:23:Joshua 19:2
+raw_data\biblehub_study_joshua_19.txt:43:Joshua 19:3
+raw_data\biblehub_study_joshua_19.txt:70:Joshua 19:4
+raw_data\biblehub_study_joshua_19.txt:73:Eltolad, meaning “God’s kindred” or “God’s generation,” lay among the towns as
+signed to Simeon within Judah’s southern territory. Simeon’s inheritance consisted of cities inside Judah because Judah
+’s original allotment proved larger than the tribe required (Joshua 19:9). The arrangement displayed Israel’s unity und
+er God’s distribution of the land.
+raw_data\biblehub_study_joshua_19.txt:80:Bethul, meaning “house of God,” was another Simeonite town in the Negev, a dry
+ region suited to herding and seasonal movement. Its identification is uncertain, though it may be connected with Bethu
+el or Chesil in parallel lists (Joshua 15:30; 1 Chronicles 4:30). Even small and now-unidentified towns stood within th
+e covenant inheritance God gave His people.
+raw_data\biblehub_study_joshua_19.txt:95:Joshua 19:5
+raw_data\biblehub_study_joshua_19.txt:120:Joshua 19:6
+raw_data\biblehub_study_joshua_19.txt:158:Joshua 19:7
+raw_data\biblehub_study_joshua_19.txt:197:Joshua 19:8
+raw_data\biblehub_study_joshua_19.txt:214:Simeon received its cities within Judah’s larger territory because Judah’s al
+lotment proved more extensive than needed (Joshua 19:9). The arrangement fulfilled Israel’s division of the promised la
+nd while also reflecting Jacob’s prophecy that Simeon would be scattered in Israel (Genesis 49:5–7).
+raw_data\biblehub_study_joshua_19.txt:222:Joshua 19:9
+raw_data\biblehub_study_joshua_19.txt:239:Simeon’s towns were concentrated in the Negev and southern region of Judah (J
+oshua 19:2–8). The tribe retained its genealogy and identity, though it became closely associated with Judah and later 
+appears among Judah’s cities and settlements (1 Chronicles 4:27–43). This arrangement strengthened the connection betwe
+en the tribes and anticipated Judah’s later prominence under David. God’s faithfulness was evident even in Simeon’s red
+uced position: every tribe received its appointed inheritance according to His promise.
+raw_data\biblehub_study_joshua_19.txt:249:Joshua 19:10
+raw_data\biblehub_study_joshua_19.txt:252:The land was distributed before the Lord by lot, so Zebulun’s inheritance was
+ received as God’s appointed portion rather than gained by human preference or power (Numbers 26:55–56; Joshua 18:6–10)
+. Zebulun, Leah’s sixth son, received territory in northern Canaan among the tribes that would later be associated with
+ Galilee.
+raw_data\biblehub_study_joshua_19.txt:254:Jos 18:10 And Joshua cast lots for them in the presence of the LORD…
+raw_data\biblehub_study_joshua_19.txt:269:Joshua 19:11
+raw_data\biblehub_study_joshua_19.txt:287:and met the brook east of Jokneam.
+raw_data\biblehub_study_joshua_19.txt:288:The brook formed a natural border near Jokneam, a city associated with the de
+feated Canaanite kings and later given to the Levites (Joshua 12:22; 21:34). The boundary therefore recalled both Israe
+l’s victory through God’s power and the provision made for worship and instruction within the land.
+raw_data\biblehub_study_joshua_19.txt:292:Jdg 5:21 The River Kishon swept them away, the ancient river,…
+raw_data\biblehub_study_joshua_19.txt:296:Joshua 19:12
+raw_data\biblehub_study_joshua_19.txt:316:along the border of Chisloth-tabor
+raw_data\biblehub_study_joshua_19.txt:317:Chisloth-tabor lay near Mount Tabor, later associated with Deborah and Barak’
+s victory over Sisera’s army. God’s past deliverance in the region testified that the land belonged to Him before it wa
+s entrusted to Zebulun.
+raw_data\biblehub_study_joshua_19.txt:326:Daberath stood near the routes of the Jezreel Valley and was later assigned a
+s a Levitical city. The presence of Levitical towns among the tribes helped preserve worship and instruction throughout
+ Israel.
+raw_data\biblehub_study_joshua_19.txt:341:Joshua 19:13
+raw_data\biblehub_study_joshua_19.txt:344:The boundary of Zebulun continued toward the rising sun, marking the inherita
+nce assigned by the Lord through Joshua. Every measured line testified that Israel’s settlement in Canaan rested on God
+’s covenant faithfulness, not merely military conquest.
+raw_data\biblehub_study_joshua_19.txt:352:to Gath-hepher
+raw_data\biblehub_study_joshua_19.txt:353:Gath-hepher later became known as the hometown of Jonah, the prophet whom God
+ sent to Nineveh (2 Kings 14:25; Jonah 1:1). Jonah’s ministry connected this small town in Zebulun with God’s concern f
+or the nations beyond Israel.
+raw_data\biblehub_study_joshua_19.txt:388:Joshua 19:14
+raw_data\biblehub_study_joshua_19.txt:391:Neah served as a recognized landmark on Zebulun’s northern boundary. Though i
+ts precise location is now uncertain, its inclusion reflects an actual territorial survey carried out when Joshua distr
+ibuted the land at Shiloh. Israel’s inheritance was assigned by God, yet its borders were carefully established for ord
+erly possession and peaceful coexistence among the tribes.
+raw_data\biblehub_study_joshua_19.txt:413:Joshua 19:15
+raw_data\biblehub_study_joshua_19.txt:422:Nahalal,
+raw_data\biblehub_study_joshua_19.txt:423:Nahalal later became one of the cities assigned to the Levites (Joshua 21:35)
+. God placed Levites among the tribes so that worship, instruction in His law, and the ministry of the sanctuary would 
+remain woven into Israel’s daily life. Zebulun’s inheritance therefore included provision for those set apart to serve 
+the Lord.
+raw_data\biblehub_study_joshua_19.txt:427:Jos 21:35 Dimnah, and Nahalal—four cities…
+raw_data\biblehub_study_joshua_19.txt:432:Shimron had been ruled by a Canaanite king whose forces joined the northern c
+oalition defeated by Joshua (Joshua 11:1; 12:20). Its presence within Zebulun’s territory marked the fulfillment of God
+’s promise to dispossess the Canaanite nations and give their land to Israel. The city stood as evidence that the Lord 
+had gone before His people in battle.
+raw_data\biblehub_study_joshua_19.txt:447:and Bethlehem.
+raw_data\biblehub_study_joshua_19.txt:448:Bethlehem of Zebulun was a Galilean town, distinct from Bethlehem of Judah, t
+he city of David and the birthplace of the Messiah. The shared name reflects the ordinary use of place names throughout
+ Israel, while the distinction preserves the unique biblical importance of Bethlehem in Judah.
+raw_data\biblehub_study_joshua_19.txt:450:Jdg 12:8-10 After Jephthah, Ibzan of Bethlehem judged Israel.…
+raw_data\biblehub_study_joshua_19.txt:452:Mic 5:2 But you, Bethlehem Ephrathah, who are small…
+raw_data\biblehub_study_joshua_19.txt:454:Mat 2:1-6 After Jesus was born in Bethlehem in Judea,…
+raw_data\biblehub_study_joshua_19.txt:465:Joshua 19:16
+raw_data\biblehub_study_joshua_19.txt:468:Zebulun received its allotted territory in the lower Galilee region, surround
+ed by the lands of several fellow tribes. The inheritance confirmed God’s faithfulness to His covenant promise that Abr
+aham’s descendants would possess Canaan. As Jacob’s sixth son by Leah, Zebulun became the father of a distinct tribal c
+ommunity whose land placed it near important routes connecting the Mediterranean coast, the Jezreel Valley, and the Sea
+ of Galilee. Isaiah later identified this region with “the land of Zebulun,” and Matthew saw its association with Galil
+ee as part of the setting in which Jesus brought light to those dwelling in darkness (Isaiah 9:1–2; Matthew 4:13–16).
+raw_data\biblehub_study_joshua_19.txt:487:Joshua 19:17
+raw_data\biblehub_study_joshua_19.txt:490:The allotment was determined before the LORD at Shiloh through Eleazar the pr
+iest, Joshua, and Israel’s tribal leaders. Issachar received the fourth inheritance, following Judah, Simeon, and Zebul
+un. The lot upheld God’s sovereign direction over the land He had promised to Abraham’s descendants, for “the decision 
+is from the LORD” (Proverbs 16:33).
+raw_data\biblehub_study_joshua_19.txt:494:Jos 18:10 And Joshua cast lots for them in the presence of the LORD…
+raw_data\biblehub_study_joshua_19.txt:506:Issachar, Leah’s fifth son, received territory in and around the fertile Jezr
+eel Valley and Lower Galilee. Its productive fields and strategic location contributed to the tribe’s later importance 
+in Israel’s history. Men of Issachar were recognized for understanding the times and knowing what Israel should do (1 C
+hronicles 12:32), demonstrating that God’s gifts to His people included both material provision and wisdom for faithful
+ service.
+raw_data\biblehub_study_joshua_19.txt:512:Joshua 19:18
+raw_data\biblehub_study_joshua_19.txt:514:Their territory included Jezreel,
+raw_data\biblehub_study_joshua_19.txt:515:Jezreel, meaning “God sows,” stood at the eastern end of the fertile valley t
+hat bore its name, within Issachar’s inheritance. Its commanding location overlooked major routes through northern Isra
+el and later became associated with Ahab’s royal residence, Naboth’s faithful refusal to surrender his vineyard, and Go
+d’s judgment upon Ahab’s house. Hosea also used Jezreel to portray both divine scattering in judgment and future restor
+ation under God’s covenant mercy.
+raw_data\biblehub_study_joshua_19.txt:517:1Ki 21:1-16 Some time after these events, Naboth the Jezreelite…
+raw_data\biblehub_study_joshua_19.txt:519:2Ki 9:30-37 Now when Jehu arrived in Jezreel, Jezebel heard of it.…
+raw_data\biblehub_study_joshua_19.txt:524:Chesulloth, meaning “loins” or “flanks,” lay in the hill country bordering th
+e Jezreel Valley, near the approaches to Mount Tabor. Its inclusion among Issachar’s towns reflects the tribe’s possess
+ion of productive farmland and strategic highlands in a region repeatedly affected by Israel’s wars and deliverance.
+raw_data\biblehub_study_joshua_19.txt:530:Psa 89:12 North and south You created; Tabor and Hermon…
+raw_data\biblehub_study_joshua_19.txt:532:Shunem,
+raw_data\biblehub_study_joshua_19.txt:533:Shunem, on the slope of the Hill of Moreh, became the setting for the Shunamm
+ite woman’s generous care for Elisha and the Lord’s restoration of her son to life. It also stood near the Philistine c
+amp before Saul’s final battle at Gilboa. The town’s history joins scenes of national tragedy with God’s power to give 
+life, calling His people to trust Him amid both loss and uncertainty.
+raw_data\biblehub_study_joshua_19.txt:535:2Ki 4:8-37 One day Elisha went to Shunem, and a prominent woman…
+raw_data\biblehub_study_joshua_19.txt:539:1Sa 28:4-5 The Philistines gathered together and camped at Shunem…
+raw_data\biblehub_study_joshua_19.txt:541:Joshua 19:19
+raw_data\biblehub_study_joshua_19.txt:570:Joshua 19:20
+raw_data\biblehub_study_joshua_19.txt:573:Rabbith belonged to Issachar’s inheritance in the fertile Jezreel region, tho
+ugh its exact site is unknown. Its inclusion among the boundary towns records God’s careful fulfillment of the land pro
+mised to Israel.
+raw_data\biblehub_study_joshua_19.txt:582:Kishion was later assigned to the Levites among Issachar’s towns (Joshua 21:2
+8). Levites living within the tribal territories provided instruction in God’s law and kept worship and covenant faithf
+ulness before the nation.
+raw_data\biblehub_study_joshua_19.txt:588:Jdg 5:21 The River Kishon swept them away, the ancient river,…
+raw_data\biblehub_study_joshua_19.txt:599:Joshua 19:21
+raw_data\biblehub_study_joshua_19.txt:602:Remeth is a town located in the territory allotted to the tribe of Issachar. 
+The name “Remeth” means “height” or “elevation,” suggesting its geographical positioning. This town is also referred to
+ as “Jarmuth” in some biblical texts, indicating a possible dual name or a change over time. The location of Remeth is 
+not precisely identified today, but it is believed to have been situated in the fertile Jezreel Valley, an area known f
+or its agricultural productivity. This region’s fertility would have been significant for the tribe of Issachar, known 
+for its agricultural prowess.
+raw_data\biblehub_study_joshua_19.txt:637:Joshua 19:22
+raw_data\biblehub_study_joshua_19.txt:639:The border reached Tabor,
+raw_data\biblehub_study_joshua_19.txt:640:Mount Tabor stood prominently in lower Galilee and served as a recognizable b
+oundary marker for Issachar’s inheritance. Its height and central location made it strategically important in later Isr
+aelite history. Christian tradition associates Mount Tabor with the Transfiguration of Jesus, though the Gospels do not
+ name the mountain.
+raw_data\biblehub_study_joshua_19.txt:644:Jdg 4:12 When Sisera was told that Barak had gone up Mount Tabor…
+raw_data\biblehub_study_joshua_19.txt:646:Psa 89:12 North and south You created; Tabor and Hermon…
+raw_data\biblehub_study_joshua_19.txt:667:The Jordan formed Issachar’s eastern boundary. The river recalled Israel’s en
+trance into the Promised Land under Joshua and testified that the inheritance had been received by God’s power, not by 
+Israel’s strength.
+raw_data\biblehub_study_joshua_19.txt:684:Joshua 19:23
+raw_data\biblehub_study_joshua_19.txt:687:Issachar received its allotted portion in the fertile Jezreel Valley and surr
+ounding regions, an area well suited for grain, vineyards, and livestock. The land fulfilled God’s covenant promise to 
+Abraham and gave each clan within Issachar a lasting place among the tribes of Israel. Jacob had portrayed Issachar as 
+a strong donkey content to bear burdens in a good land (Genesis 49:14–15), and the tribe’s inheritance reflects both ag
+ricultural abundance and the labor required to cultivate and defend it. The division by clans preserved family identity
+, property rights, and covenant responsibility within Israel.
+raw_data\biblehub_study_joshua_19.txt:693:Jos 18:10 And Joshua cast lots for them in the presence of the LORD…
+raw_data\biblehub_study_joshua_19.txt:696:The named towns, including Jezreel, Shunem, and Chesulloth, served as centers
+ of settlement for the farming communities spread throughout Issachar’s territory. Jezreel later became prominent in Is
+rael’s monarchy, particularly during the reigns of Ahab and Jezebel, showing that the land assigned in Joshua’s day rem
+ained central to Israel’s history. Cities provided places of administration, protection, trade, and public worship, whi
+le villages sustained the daily agricultural life of the people. God’s careful distribution of the land established Isr
+ael in Canaan as a people with homes, families, boundaries, and a shared calling to live faithfully before Him.
+raw_data\biblehub_study_joshua_19.txt:706:Joshua 19:24
+raw_data\biblehub_study_joshua_19.txt:709:Asher received its inheritance after Judah, Simeon, Zebulun, and Issachar. Th
+e casting of lots under Joshua’s leadership placed the division of Canaan under the Lord’s sovereign direction, ensurin
+g that each tribe received the portion appointed for it.
+raw_data\biblehub_study_joshua_19.txt:711:Jos 18:10 And Joshua cast lots for them in the presence of the LORD…
+raw_data\biblehub_study_joshua_19.txt:726:Joshua 19:25
+raw_data\biblehub_study_joshua_19.txt:729:Helkath stood within Asher’s allotted inheritance and was later assigned to t
+he Gershonite Levites as a city for their service (Joshua 21:31). The distribution of such places showed that worship a
+nd instruction were to remain woven into the life of every tribe.
+raw_data\biblehub_study_joshua_19.txt:754:Achshaph had been a royal Canaanite city whose king joined Jabin’s northern c
+oalition against Joshua (Joshua 11:1). The Lord gave victory over that coalition, and Achshaph became part of the land 
+entrusted to Asher, testifying that Israel’s inheritance rested upon God’s faithfulness and power.
+raw_data\biblehub_study_joshua_19.txt:760:Joshua 19:26
+raw_data\biblehub_study_joshua_19.txt:781:Shihor-libnath—whose name suggests a water source, with Shihor meaning “black
+” or “dark” and Libnath possibly meaning “whiteness”—was likely a stream, coastal landmark, or settlement near Carmel t
+hat helped define Asher’s western border. Its exact location has not been securely identified, yet it served a definite
+ purpose in Israel’s inheritance. The detailed boundaries preserved in Joshua show that the land was not seized at rand
+om but distributed under God’s direction among the tribes.
+raw_data\biblehub_study_joshua_19.txt:789:Joshua 19:27
+raw_data\biblehub_study_joshua_19.txt:812:passing Cabul on the left.
+raw_data\biblehub_study_joshua_19.txt:813:Cabul, meaning “bound” or “displeasing,” lay in the region later associated w
+ith Solomon’s dealings with Hiram of Tyre, when Solomon gave Hiram towns in Galilee as payment for materials and labor 
+used in building the temple and royal projects (1 Kings 9:10–13). The proximity of Tyre and other Phoenician centers ga
+ve Asher opportunities for trade and influence, but also exposed Israel to foreign alliances and idolatry.
+raw_data\biblehub_study_joshua_19.txt:819:Joshua 19:28
+raw_data\biblehub_study_joshua_19.txt:858:Joshua 19:29
+raw_data\biblehub_study_joshua_19.txt:869:as far as the fortified city of Tyre,
+raw_data\biblehub_study_joshua_19.txt:870:Tyre was a powerful Phoenician city, renowned for its defenses, trade, and se
+afaring influence. Its place on Asher’s boundary brought Israel into close contact with a wealthy Canaanite culture. As
+her later failed to drive out all the inhabitants of its territory, and the tribe lived among the Canaanites of the reg
+ion (Judges 1:31–32).
+raw_data\biblehub_study_joshua_19.txt:872:2Sa 24:7 They went toward the fortress of Tyre…
+raw_data\biblehub_study_joshua_19.txt:876:Ezk 26:4 They will destroy the walls of Tyre and demolish her towers.…
+raw_data\biblehub_study_joshua_19.txt:896:Joshua 19:30
+raw_data\biblehub_study_joshua_19.txt:930:Joshua 19:31
+raw_data\biblehub_study_joshua_19.txt:933:Asher, meaning “happy” or “blessed,” received its allotted territory in the n
+orthern part of Canaan, extending along the Mediterranean coast and into fertile inland regions. The inheritance was as
+signed by lot under Joshua’s leadership, showing that Israel’s settlement in the land rested on the Lord’s covenant fai
+thfulness rather than human ambition. Jacob had foretold abundance for Asher, and Moses later blessed the tribe with ri
+ch provisions and oil (Genesis 49:20; Deuteronomy 33:24–25). Its coastal location gave Asher access to productive farml
+and, trade routes, and valuable resources.
+raw_data\biblehub_study_joshua_19.txt:942:The listed towns formed the settled communities within Asher’s tribal boundar
+ies, providing places for families, agriculture, worship, and defense. Asher’s territory reached areas associated with 
+Sidon and Tyre, though the tribe did not fully remove the Canaanite inhabitants from several coastal cities (Judges 1:3
+1–32). Israel’s incomplete obedience allowed pagan populations to remain in the land, creating spiritual and political 
+pressures in later generations. God had faithfully given Asher a rich inheritance, but the tribe’s lasting security dep
+ended upon living faithfully within the covenant.
+raw_data\biblehub_study_joshua_19.txt:952:Joshua 19:32
+raw_data\biblehub_study_joshua_19.txt:955:The allotment of the land by lot took place before the LORD at Shiloh under t
+he leadership of Joshua and Eleazar, showing that Israel’s inheritance was received from God rather than seized by trib
+al ambition. Though the lot was cast by human hands, its outcome rested in the Lord’s sovereign purpose.
+raw_data\biblehub_study_joshua_19.txt:957:Jos 18:10 And Joshua cast lots for them in the presence of the LORD…
+raw_data\biblehub_study_joshua_19.txt:972:Joshua 19:33
+raw_data\biblehub_study_joshua_19.txt:983:and the great tree of Zaanannim,
+raw_data\biblehub_study_joshua_19.txt:984:The great tree served as a recognized landmark in a landscape where prominent
+ natural features helped preserve tribal boundaries. Zaanannim later appears near Kedesh, where Heber the Kenite camped
+ during the days of Deborah and Barak (Judges 4:11), linking Naphtali’s territory with the conflict in which the Lord d
+elivered Israel from Sisera.
+raw_data\biblehub_study_joshua_19.txt:990:Jos 24:26 Joshua recorded these things in the Book of the Law of God.…
+raw_data\biblehub_study_joshua_19.txt:1011:The Jordan River completed the eastern limit of Naphtali’s territory. Israel
+ had crossed that river under Joshua’s leadership to enter the Promised Land, and it continued to stand as a lasting re
+minder that the tribes lived in an inheritance received by God’s grace and governed by His covenant.
+raw_data\biblehub_study_joshua_19.txt:1019:Joshua 19:34
+raw_data\biblehub_study_joshua_19.txt:1021:Then the border turned westward to Aznoth-tabor
+raw_data\biblehub_study_joshua_19.txt:1022:Mount Tabor marked an important point in the tribal boundaries of Galilee. C
+hristian tradition associates Mount Tabor with Christ’s transfiguration, where His glory was revealed to Peter, James, 
+and John (Matthew 17:1–9).
+raw_data\biblehub_study_joshua_19.txt:1028:Psa 89:12 North and south You created; Tabor and Hermon…
+raw_data\biblehub_study_joshua_19.txt:1066:Joshua 19:35
+raw_data\biblehub_study_joshua_19.txt:1118:Joshua 19:36
+raw_data\biblehub_study_joshua_19.txt:1139:Hazor was a significant Canaanite city and later a major Israelite city. It 
+is one of the largest archaeological sites in Israel, located in the Upper Galilee region. Hazor was a powerful city-st
+ate before the Israelite conquest, as described in Joshua 11, where Joshua defeated its king, Jabin. The city’s destruc
+tion fulfilled God’s command to take possession of the land. Hazor’s prominence in the biblical narrative underscores t
+he theme of God’s sovereignty and the fulfillment of His promises to Israel.
+raw_data\biblehub_study_joshua_19.txt:1147:Joshua 19:37
+raw_data\biblehub_study_joshua_19.txt:1170:Jos 11:10 At that time Joshua turned back and captured Hazor…
+raw_data\biblehub_study_joshua_19.txt:1176:Joshua 19:38
+raw_data\biblehub_study_joshua_19.txt:1232:Joshua 19:39
+raw_data\biblehub_study_joshua_19.txt:1254:Joshua 19:40
+raw_data\biblehub_study_joshua_19.txt:1279:Jos 18:10 And Joshua cast lots for them in the presence of the LORD…
+raw_data\biblehub_study_joshua_19.txt:1290:Joshua 19:41
+raw_data\biblehub_study_joshua_19.txt:1320:Ir-shemesh, meaning “city of the sun,” is identified with Beth-shemesh, a to
+wn on the border of Judah and Daniel It was a Levitical city, indicating its religious significance (Joshua 21:16). The
+ name suggests a possible Canaanite influence, as sun worship was common in the region. However, its inclusion in the I
+sraelite inheritance signifies the transformation of the land from pagan practices to the worship of Yahweh. The town’s
+ history includes the return of the Ark of the Covenant by the Philistines (1 Samuel 6:12-15), highlighting its role in
+ Israel’s religious life.
+raw_data\biblehub_study_joshua_19.txt:1328:Joshua 19:42
+raw_data\biblehub_study_joshua_19.txt:1338:Aijalon stood in a strategic valley route between the coastal plain and the 
+hill country. Joshua’s command for the moon to stand still over the Valley of Aijalon occurred during Israel’s victory 
+over the Amorite coalition (Joshua 10:12). The town later became a Levitical city (Joshua 21:24), joining Israel’s mili
+tary history with the worship and instruction of God’s people.
+raw_data\biblehub_study_joshua_19.txt:1355:Joshua 19:43
+raw_data\biblehub_study_joshua_19.txt:1382:Joshua 19:44
+raw_data\biblehub_study_joshua_19.txt:1385:Eltekeh, meaning “God is my fear,” stood within Dan’s allotted territory and
+ was later assigned to the Kohathite Levites as a city for their dwelling (Joshua 21:23). Its presence among the Leviti
+cal cities shows that worship, instruction, and covenant life were to be established throughout Israel’s inheritance.
+raw_data\biblehub_study_joshua_19.txt:1407:Joshua 19:45
+raw_data\biblehub_study_joshua_19.txt:1428:Gath-rimmon, meaning “winepress of the pomegranate,” was later assigned to t
+he Kohathite Levites as a Levitical city (Joshua 21:24). The town’s agricultural setting could support those devoted to
+ the service of the Lord, showing that Israel’s inheritance was ordered not merely for settlement but for worship and c
+ovenant life.
+raw_data\biblehub_study_joshua_19.txt:1436:Joshua 19:46
+raw_data\biblehub_study_joshua_19.txt:1439:Me-jarkon likely stood near the Yarkon River north of Joppa. Its waters woul
+d have been especially valuable in the coastal plain, providing refreshment and supporting settlement in a land where d
+ependable water meant life and fruitfulness.
+raw_data\biblehub_study_joshua_19.txt:1452:including the territory across from Joppa.
+raw_data\biblehub_study_joshua_19.txt:1453:Joppa was an ancient port on the Mediterranean coast and gave Daniel access 
+to trade, travel, and maritime resources. Later, Jonah departed from Joppa in flight from God’s call, and Peter receive
+d there the vision that opened the way for the gospel’s witness among Gentiles. Dan’s inheritance was rich in opportuni
+ty, yet Philistine pressure hindered the tribe’s possession of much of its land, reminding Israel that God’s gifts were
+ to be received through faithful obedience.
+raw_data\biblehub_study_joshua_19.txt:1461:Joshua 19:47
+raw_data\biblehub_study_joshua_19.txt:1506:Joshua 19:48
+raw_data\biblehub_study_joshua_19.txt:1526:Joshua’s Inheritance
+raw_data\biblehub_study_joshua_19.txt:1528:Joshua 19:49
+raw_data\biblehub_study_joshua_19.txt:1535:Jos 11:23 So Joshua took the entire land, as the LORD had spoken…
+raw_data\biblehub_study_joshua_19.txt:1539:the Israelites gave Joshua son of Nun an inheritance among them,
+raw_data\biblehub_study_joshua_19.txt:1540:Joshua received his portion only after the people had been provided for, dis
+playing the humility and faithfulness that marked his leadership. By the Lord’s command, he received Timnath-serah in E
+phraim’s hill country and rebuilt the city for his home. Joshua’s name, Yeshua, means “the Lord is salvation,” and his 
+selfless service anticipates Christ, who humbled Himself to secure an eternal inheritance for His people.
+raw_data\biblehub_study_joshua_19.txt:1548:Joshua 19:50
+raw_data\biblehub_study_joshua_19.txt:1551:Israel’s distribution of the land proceeded under God’s authority, fulfillin
+g His covenant promise to Abraham and His word through Moses. Joshua received no private advantage apart from the Lord’
+s direction.
+raw_data\biblehub_study_joshua_19.txt:1557:Deu 34:9 Now Joshua son of Nun was filled with the spirit of wisdom…
+raw_data\biblehub_study_joshua_19.txt:1559:They gave him the city of Timnath-serah
+raw_data\biblehub_study_joshua_19.txt:1560:The people honored Joshua’s long and faithful service by granting him an inh
+eritance after the tribes had received their portions. Timnath-serah, called Timnath-heres in Judges 2:9, became the ho
+me and later the burial place of Israel’s servant-leader.
+raw_data\biblehub_study_joshua_19.txt:1567:Joshua belonged to the tribe of Ephraim, and his inheritance lay within its 
+rugged central territory. From this region, near Shiloh where the tabernacle stood, Israel’s life of worship and nation
+al order would be centered for generations.
+raw_data\biblehub_study_joshua_19.txt:1576:Joshua asked for a city within his own tribal region rather than claiming a 
+royal portion or the richest territory. His request reflects the humility of a man who had led Israel in conquest yet r
+emained content with the Lord’s provision.
+raw_data\biblehub_study_joshua_19.txt:1585:Joshua restored Timnath-serah and made it his home, entering the rest God ha
+d promised after years of wilderness wandering and warfare. His settled inheritance foreshadows the lasting rest God gi
+ves His people through the greater Joshua, Jesus Christ.
+raw_data\biblehub_study_joshua_19.txt:1593:Joshua 19:51
+raw_data\biblehub_study_joshua_19.txt:1604:that Eleazar the priest, Joshua son of Nun, and the heads of the families
+raw_data\biblehub_study_joshua_19.txt:1605:Eleazar represented the priestly authority established through Aaron, while 
+Joshua carried the leadership entrusted to him by Moses. The tribal heads represented their clans and protected the int
+erests of their people. Their united service joined worship, civil order, and tribal accountability under God’s authori
+ty.
+raw_data\biblehub_study_joshua_19.txt:1634:Jos 18:8 As the men got up to go out, Joshua commanded them…
+raw_data\biblehub_study_joshua_19.txt:1652:Jos 11:23 So Joshua took the entire land, as the LORD had spoken…
+
+
+
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/query_step_context started
+mcp: hermes-scripture/query_step_context (completed)
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$OutputEncoding = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); Get-Content -Raw -Encoding UTF8 -LiteralPath '"'06 約書亞記/.tmp/第19章/candidate_existence.md'; Get-Content -Raw -Encoding UTF8 -LiteralPath '06 約書亞記/.tmp/第19章/candidate_similarity.md'" in C:\Obsidian\Hermes\scripture
+ succeeded in 73ms:
+# 約書亞記 第19章 候選存在性掃描
+
+search_wiki_entries(queries=[...]) 兩批共 78 個查詢（本章支派、地名與相關概念）。
+
+## unmatched（確認新建）
+沙魯險、巴拉比珥、迦特希弗、書念、他泊（山）、基順（河）、推羅、約帕、亭拿西拉（城）、撒拿音（的橡樹）、迦步勒、拿哈拉
+
+## 有 match，逐一判斷
+- 伯利恆 → 既有「伯利恆」是猶大的伯利恆（創35:19、48:7，以法他）。本章第15節是西布倫的伯利恆，CT、GT、BH 都說不同於猶大的伯利恆，是同名不同實體。依 AGENTS.md 同名分檔規則，既有條目以 rename_markdown.py 改名為「伯利恆（猶大）」，同步創35、創48 章 md（經文顯示保留「伯利恆」）與 .tmp payload；_config/link_homonyms.yaml 登記「伯利恆」；本章新建「伯利恆（西布倫）」
+- 亞革悉 → 只命中「基悉」的 alias（創38:5 基悉＝書15:44 猶大的亞革悉）。本章第29節是亞設的亞革悉，CT 與 GT 華爾頓都說不可與書15:44 的同名城混淆。移除基悉的 alias「亞革悉」，同名表登記「亞革悉」（基悉／亞革悉（亞設）），本章新建「亞革悉（亞設）」
+- 耶斯列 → 只有「耶斯列（猶大）」與「耶斯列平原」。本章第18節是以薩迦的耶斯列，CT 說不同於書15:56；同名表登記「耶斯列」，新建「耶斯列（以薩迦）」
+- 西緬、西布倫、以薩迦、亞設、拿弗他利 → 支派在民數記、申命記一直累積在祖先人物條目（西緬、西布倫（同住）、以薩迦（價值）、亞設（有福）、拿弗他利），照此 B 類累積
+- 但 → 「但支派」（人物，B）與「但」（地點，alias 拉億，定義已寫書19:47，B）；北遷的去向另有「但支派至終定居於何地」（B）
+- 何珥瑪 → 「迦南大敗直到何珥瑪」的 alias；書15:30 已照此累積，本章同
+- 亭拿 → 「亭拿（猶大）」；第43節的「亭拿他」GT《研經資料》說應該是亭拿，BH 也作 Timnah（Tel Batash），即書15:10 猶大北界上的亭拿，B 類並宣告 surface「亭拿他」
+- 基低斯 → 書12:22 的基低斯（夏瑣以北約11公里），與本章第37節相同，B
+- 迦密 → 迦密山脈（書12:22），B
+- 以得來 → 既有條目是巴珊的以得來，CT、BH 都說第37節的以得來不同，不連
+- 亞弗 → 既有條目是書12:18 的亞弗，CT 說第30節的亞弗不同，不連
+- 拉瑪 → 只有「拉瑪（便雅憫）」，本章第29、36節的拉瑪都不同，不連
+- 伯示麥 → 只有「伯示麥（猶大）」，第22、38節的伯示麥 CT、GT 都說不同，不連；GT《綜合解讀》的太陽神崇拜一說寫進本章整理
+- 加拿 → 只命中「加拿河」（書16:8），第28節是亞設的城，不連
+- 亞雅崙 → 只有「亞雅崙谷」（書10:12），第42節是城，不連；本章整理以純文字提及
+- 基尼烈 → 只有「基尼烈湖」，第35節是拿弗他利的堅固城（CT 給了城的位置），不連
+- 會幕、拈鬮、產業、未得之地、以法蓮山地、示羅、以利亞撒、約書亞、猶大支派、別是巴、洗革拉、南地、約念、伸崙、押煞、西頓、夏瑣、瑣拉、以實陶、以革倫、約但河 → 既有條目，B
+- 其餘城名（摩拉大、哈薩書亞、以森、伊利多拉、比土力、伯瑪加博、哈薩蘇撒、伯利巴勿、亞因、利門、以帖、亞珊、撒立、瑪拉拉、大巴設、吉斯綠他泊、大比拉、雅非亞、以特加汛、臨門、尼亞、哈拿頓、伊弗他伊勒谷、加他、以大拉、基蘇律、哈弗連、示按、亞拿哈拉、拉璧、基善、亞別、利篾、隱干寧、隱哈大、伯帕薛、沙哈洗瑪、黑甲、哈利、比田、亞拉米勒、亞末、米沙勒、希曷立納、伯大袞、細步綸、伯以墨、尼業、義伯崙、利合、哈們、何薩、烏瑪、希利弗、亞大米尼吉、雅比聶、拉共、亞斯納他泊、戶割、西丁、側耳、哈末、拉甲、亞大瑪、隱夏瑣、以利穩、密大伊勒、和璉、伯亞納、伊珥示麥、沙拉賓、伊提拉、以倫、伊利提基、基比頓、伊胡得、比尼比拉、迦特臨門、美耶昆、拉昆）→ 來源多半只給位置或字義，不建條目，本章整理以純文字處理
+
+<!-- candidate_similarity_meta
+schema_version: 1
+book: 約書亞記
+chapter: 19
+candidate_sha256: bcce14ee04e62ef19f2e8714f7eb961893c220ecab39b1889b65c4fe7dd4f546
+candidate_identity_sha256: 85e4ffa990ac8342da8064bc7d364cbd564e5474da42a213fedd4075666147ef
+embedding_model: nvidia/nemotron-3-embed-1b
+embedding_index_fingerprint: a40f4dc58dab6b87
+link_index_sha256: ca3b7aa270536f9d235a38842cd650b991aa14d73cdd3d63f37857e192c7c04b
+homonyms_sha256: 3cfbd1fa19e80d506d0e3d3ca9c7f78368ca41bc263bd86fcf5dda6109f2933d
+rerank_model: none
+rerank_policy_version: 2026.08.4
+calibration_sha256: f63b1218023371bbbece396422aa7a02025bba0da119b49cae75232755734211
+rerank_status: disabled
+rerankable_candidates: 14
+rerank_attempted: 0
+rerank_succeeded: 0
+rerank_retrieve_top_k: 20
+rerank_score_observed: none
+-->
+
+# 候選語義近鄰報告：約書亞記 第19章
+
+- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：未啟用 (僅檢索)（未校準/保守模式）｜全庫 3347 條
+- 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 5 名再由 Reranker 重排，取前 5 名顯示。
+  治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
+  重排模型未校準時，⚠ 由檢索相似度規則（≥0.50 且 top-1 非同實體）決定，重排名次只當附加證據。
+  字面解析：列 resolver 實際比對結果——標「請確認」者務必人工核實。
+
+## 摘要：需要判斷的項目
+
+- 迦特希弗：⚠ 相似度居中（0.50 ≤ 0.571 < 0.70），最近鄰為 [[迦特]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+- 書念：⚠ 相似度居中（0.50 ≤ 0.599 < 0.70），最近鄰為 [[約念]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+- 他泊山：⚠ 相似度居中（0.50 ≤ 0.588 < 0.70），最近鄰為 [[西乃山]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+- 基順河：⚠ 相似度居中（0.50 ≤ 0.568 < 0.70），最近鄰為 [[基列]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+- 推羅：⚠ 相似度居中（0.50 ≤ 0.516 < 0.70），最近鄰為 [[押煞]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+- 亞革悉（亞設）：⚠ 相似度居中（0.50 ≤ 0.564 < 0.70），最近鄰為 [[亞述]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+- 約帕：⚠ 相似度居中（0.50 ≤ 0.523 < 0.70），最近鄰為 [[迦巴勒]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+- 亭拿西拉：⚠ 相似度居中（0.50 ≤ 0.574 < 0.70），最近鄰為 [[他納]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+- 約書亞最後分得地業：⚠ 相似度居中（0.50 ≤ 0.681 < 0.70），最近鄰為 [[迦勒求得希伯崙]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+- 沙魯險：⚠ 相似度居中（0.50 ≤ 0.594 < 0.70），最近鄰為 [[書珥]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+- 巴拉比珥：⚠ 相似度居中（0.50 ≤ 0.588 < 0.70），最近鄰為 [[巴拉（便雅憫）]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+- 撒拿音的橡樹：⚠ 近鄰分類不相容（候選=地點 vs 條目=背景），若確為同實體請確認是否改用 [[摩利橡樹]]
+- 迦步勒：⚠ 相似度居中（0.50 ≤ 0.625 < 0.70），最近鄰為 [[迦巴勒]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+- 拿哈拉：⚠ 相似度居中（0.50 ≤ 0.636 < 0.70），最近鄰為 [[拿拉]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+- 迦特希弗：⚠ 內文提及：[[西布倫（同住）]]（引用本章同節）——可能是同一實體的不同譯名，確認是否改走 B 類累積
+- 書念：⚠ 內文提及：[[約書]]、[[西乃之約]]、[[以薩迦（價值）]]、[[亞設（有福）]]（內文含候選名；引用本章同節）——可能是同一實體的不同譯名，確認是否改走 B 類累積
+- 他泊山：⚠ 內文提及：[[耶斯列平原]]、[[隱多珥]]、[[伯示麥（猶大）]]、[[以薩迦（價值）]] 等 7 個（內文含候選名；引用本章同節）——可能是同一實體的不同譯名，確認是否改走 B 類累積
+- 基順河：⚠ 內文提及：[[約念]]、[[西布倫（同住）]]（內文含候選名；引用本章同節）——可能是同一實體的不同譯名，確認是否改走 B 類累積
+- 推羅：⚠ 內文提及：[[未得之地]]、[[但支派]]、[[迦南人]]、[[舍客勒]] 等 8 個（內文含候選名；引用本章同節）——可能是同一實體的不同譯名，確認是否改走 B 類累積
+- 亞革悉（亞設）：⚠ 內文提及：[[基伊拉]]、[[基悉]]、[[瑪利沙]]、[[亞設（有福）]]（內文含候選名；引用本章同節）——可能是同一實體的不同譯名，確認是否改走 B 類累積
+- 約帕：⚠ 內文提及：[[亞弗]]、[[吉甲的戈印]]（內文含候選名）——可能是同一實體的不同譯名，確認是否改走 B 類累積
+- 亭拿西拉：⚠ 內文提及：[[約書亞]]、[[迦勒求得希伯崙]]（引用本章同節）——可能是同一實體的不同譯名，確認是否改走 B 類累積
+- 約書亞最後分得地業：⚠ 內文提及：[[約書亞]]、[[迦勒求得希伯崙]]（引用本章同節）——可能是同一實體的不同譯名，確認是否改走 B 類累積
+- 沙魯險：⚠ 內文提及：[[摩西的祝福為何漏掉西緬]]、[[西緬]]、[[西緬利未受咒詛 (創49_5-7)]]（引用本章同節）——可能是同一實體的不同譯名，確認是否改走 B 類累積
+- 巴拉比珥：⚠ 內文提及：[[摩西的祝福為何漏掉西緬]]、[[西緬]]、[[西緬利未受咒詛 (創49_5-7)]]（引用本章同節）——可能是同一實體的不同譯名，確認是否改走 B 類累積
+- 撒拿音的橡樹：⚠ 內文提及：[[拿弗他利]]（引用本章同節）——可能是同一實體的不同譯名，確認是否改走 B 類累積
+- 迦步勒：⚠ 內文提及：[[亞設（有福）]]（引用本章同節）——可能是同一實體的不同譯名，確認是否改走 B 類累積
+- 拿哈拉：⚠ 內文提及：[[西布倫（同住）]]（引用本章同節）——可能是同一實體的不同譯名，確認是否改走 B 類累積
+
+只需細看上面列出的候選（下方同名小節有近鄰表）。
+字面直接對上既有條目、不需判斷：37 個（伯利恆（西布倫）、耶斯列（以薩迦）、西緬、西布倫（同住）、以薩迦（價值）、亞設（有福）、拿弗他利、但支派、但、但支派至終定居於何地、猶大支派、別是巴、迦南大敗直到何珥瑪、洗革拉、南地、約念、伸崙、押煞、迦密、西頓、夏瑣、基低斯、瑣拉、以實陶、以革倫、亭拿（猶大）、以法蓮山地、約書亞、以利亞撒、示羅、會幕（帳幕整體）、拈鬮分地（go.ral）、產業（na.cha.lah）、未得之地、西緬利未受咒詛 (創49_5-7)、摩西的祝福與雅各的祝福、約但河）
+
+## 迦特希弗（地點）
+query:
+- 待建立詞：迦特希弗
+- 出現位置：約書亞記 第19章
+- 候選類型：地點
+- 本章上下文：第13節「從那裡往東，接連到迦特希弗」；CT：字義「礦區的榨酒機」，米吉多東北方約22公里；GT《綜合解讀》《研經資料》：先知約拿的家鄉（王下14:25）；BH：約拿的家鄉，把西布倫這個小鎮連到神對列國的關心
+- 經文用詞：迦特希弗
+
+字面解析：無字面對應 → 新建（C）
+
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 迦特 | 0.571 | link_folder/地點/迦特.md |
+| 2 | 約念 | 0.544 | link_folder/地點/約念.md |
+| 3 | 加低斯 | 0.542 | link_folder/地點/加低斯.md |
+| 4 | 撒分 | 0.534 | link_folder/地點/撒分.md |
+| 5 | 迦南地 | 0.531 | link_folder/地點/迦南地.md |
+
+判定：⚠ 相似度居中（0.50 ≤ 0.571 < 0.70），最近鄰為 [[迦特]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+
+## 伯利恆（西布倫）（地點）
+字面解析：對上既有「伯利恆（猶大）」（base，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[伯利恆（猶大）]]（同名／字面對應）
+
+## 書念（地點）
+query:
+- 待建立詞：書念
+- 出現位置：約書亞記 第19章
+- 候選類型：地點
+- 本章上下文：第18節「耶斯列、基蘇律、書念」；CT：字義「倍覺安息之地」，米吉多東方約14公里；GT 華爾頓、《研經資料》：耶斯列東北的索倫（Solem）；GT《聖經精讀本》《綜合解讀》、KC、BH：以利沙在書念使婦人的兒子復活（王下4:8-37），非利士人在此紮營攻掃羅（撒上28:4），亞比煞是書念的童女（王上1:3）
+- 經文用詞：書念
+
+字面解析：無字面對應 → 新建（C）
+
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 約念 | 0.599 | link_folder/地點/約念.md |
+| 2 | 基低斯 | 0.568 | link_folder/地點/基低斯.md |
+| 3 | 以伯蓮 | 0.555 | link_folder/地點/以伯蓮.md |
+| 4 | 示羅 | 0.554 | link_folder/地點/示羅.md |
+| 5 | 書珥 | 0.546 | link_folder/地點/書珥.md |
+
+判定：⚠ 相似度居中（0.50 ≤ 0.599 < 0.70），最近鄰為 [[約念]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+
+## 耶斯列（以薩迦）（地點）
+字面解析：對上既有「耶斯列（猶大）」（base，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[耶斯列（猶大）]]（同名／字面對應）
+
+## 他泊山（地點）
+query:
+- 待建立詞：他泊山
+- 出現位置：約書亞記 第19章
+- 候選類型：地點
+- 本章上下文：第22節「又達到他泊、沙哈洗瑪、伯示麥」，第12節吉斯綠他泊、第34節亞斯納他泊；CT：他泊字義「石墩」，確實地點不詳，可能位於他泊山附近；GT《串珠》：大概近他泊山；GT《綜合解讀》：他泊就是他泊山，底波拉聚集以色列人之處（士4:12）；GT 華爾頓：他泊山是拿弗他利地業的主要基準點；BH：下加利利顯著的界標，基督教傳統把它與登山變像連在一起，但福音書沒有寫出山名
+- 經文用詞：他泊
+
+字面解析：無字面對應 → 新建（C）
+
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 西乃山 | 0.588 | link_folder/地點/西乃山.md |
+| 2 | 何烈山 | 0.573 | link_folder/地點/何烈山.md |
+| 3 | 何烈 | 0.572 | link_folder/地點/何烈.md |
+| 4 | 迦密 | 0.569 | link_folder/地點/迦密.md |
+| 5 | 伯特利 | 0.564 | link_folder/地點/伯特利.md |
+
+判定：⚠ 相似度居中（0.50 ≤ 0.588 < 0.70），最近鄰為 [[西乃山]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+
+## 基順河（地點）
+query:
+- 待建立詞：基順河
+- 出現位置：約書亞記 第19章
+- 候選類型：地點
+- 本章上下文：第11節「又達到約念前的河」；CT：約念前的河即指基順河；GT《啟導本》《研經資料》：約念前的河指基順河；GT《綜合解讀》：流經耶斯列平原，底波拉在這裡打敗西西拉（士4:7）；BH：引士5:21 基順古河把敵人沖沒、王上18:40 以利亞在基順河殺巴力先知
+
+字面解析：無字面對應 → 新建（C）
+
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 基列 | 0.568 | link_folder/地點/基列.md |
+| 2 | 基訓 | 0.558 | link_folder/地點/基訓.md |
+| 3 | 約念 | 0.555 | link_folder/地點/約念.md |
+| 4 | 基遍 | 0.547 | link_folder/地點/基遍.md |
+| 5 | 「伯拉大河」名稱 | 0.546 | link_folder/原文/「伯拉大河」名稱.md |
+
+判定：⚠ 相似度居中（0.50 ≤ 0.568 < 0.70），最近鄰為 [[基列]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+
+## 推羅（地點）
+query:
+- 待建立詞：推羅
+- 出現位置：約書亞記 第19章
+- 候選類型：地點
+- 本章上下文：第29節「轉到拉瑪和堅固城推羅」；CT：字義「巖石」，亞柯北方約41公里；GT《串珠》：推羅城一半在大陸、一半在海島，「堅固城推羅」大概指海島部分；GT 華爾頓、《研經資料》：提及推羅和西頓並不表示這些地方已被佔領；GT《綜合解讀》：主耶穌到推羅西頓境內（可7:24）；BH：強大的腓尼基城，亞設後來未能趕出（士1:31-32）
+- 經文用詞：推羅
+
+字面解析：無字面對應 → 新建（C）
+
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 押煞 | 0.516 | link_folder/地點/押煞.md |
+| 2 | 西頓 | 0.516 | link_folder/地點/西頓.md |
+| 3 | 拉瑪（便雅憫） | 0.507 | link_folder/地點/拉瑪（便雅憫）.md |
+| 4 | 伯曷拉 | 0.487 | link_folder/地點/伯曷拉.md |
+| 5 | 拉巴前的亞羅珥 | 0.484 | link_folder/地點/拉巴前的亞羅珥.md |
+
+判定：⚠ 相似度居中（0.50 ≤ 0.516 < 0.70），最近鄰為 [[押煞]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+
+## 亞革悉（亞設）（地點）
+query:
+- 待建立詞：亞革悉（亞設）
+- 出現位置：約書亞記 第19章
+- 候選類型：地點
+- 本章上下文：第29節「靠近亞革悉一帶地方，直通到海」；CT：不同於書15:44 的亞革悉，亞柯北方約13公里；GT 華爾頓、《研經資料》：雖然分給亞設卻從來沒有被攻取（士1:31），中銅時代到羅馬時期的貿易中心，主前701年毀於西拿基立，不可與書15:44 猶大的同名城混淆；BH：亞柯以北的沿海聚落
+- 經文用詞：亞革悉
+
+字面解析：無字面對應 → 新建（C）
+
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 亞述 | 0.564 | link_folder/地點/亞述.md |
+| 2 | 亞實基倫 | 0.555 | link_folder/地點/亞實基倫.md |
+| 3 | 亞實突 | 0.543 | link_folder/地點/亞實突.md |
+| 4 | 以革倫 | 0.540 | link_folder/地點/以革倫.md |
+| 5 | 亞斯她錄 | 0.525 | link_folder/地點/亞斯她錄.md |
+
+判定：⚠ 相似度居中（0.50 ≤ 0.564 < 0.70），最近鄰為 [[亞述]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+
+## 約帕（地點）
+query:
+- 待建立詞：約帕
+- 出現位置：約書亞記 第19章
+- 候選類型：地點
+- 本章上下文：第46節「並約帕對面的地界」；CT：字義「美麗的」，耶路撒冷西北方約55公里的海岸港口；GT《綜合解讀》：所羅門與所羅巴伯建殿的香柏木浮海運到這裡（代下2:16；拉3:7），約拿在這裡坐船逃往他施（拿1:3），彼得在這裡叫大比大復活並看見異象（徒9:43）；BH：同樣列出約拿與彼得，並說非利士人的壓力使但未能佔有大部分地業
+- 經文用詞：約帕
+
+字面解析：無字面對應 → 新建（C）
+
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 迦巴勒 | 0.523 | link_folder/地點/迦巴勒.md |
+| 2 | 伯曷拉 | 0.503 | link_folder/地點/伯曷拉.md |
+| 3 | 迦巴 | 0.496 | link_folder/地點/迦巴.md |
+| 4 | 基低斯 | 0.493 | link_folder/地點/基低斯.md |
+| 5 | 押煞 | 0.493 | link_folder/地點/押煞.md |
+
+判定：⚠ 相似度居中（0.50 ≤ 0.523 < 0.70），最近鄰為 [[迦巴勒]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+
+## 亭拿西拉（地點）
+query:
+- 待建立詞：亭拿西拉
+- 出現位置：約書亞記 第19章
+- 候選類型：地點
+- 本章上下文：第50節「將約書亞所求的城，就是以法蓮山地的亭拿西拉城，給了他。他就修那城，住在其中」；CT：字義「太陽的一部分，豐盛的一部分」，他不是求好的城、而是求別的家族沒有看中的城，修那城暗示當時相當荒廢；GT《啟導本》《研經資料》、華爾頓：又名亭拿希烈（士2:9），約書亞葬在此地（書24:30），蒂布納廢墟，約書亞家族的政治飛地，「西拉」是「剩餘」的意思；GT《聖經精讀本》：「修」原文與「重新建築」相近；KC：意思是 abundant portion，在同時代人不願住的山地（書17:15-16）；BH：約書亞後來的家與葬地
+- 經文用詞：亭拿西拉
+
+字面解析：無字面對應 → 新建（C）
+
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 他納 | 0.574 | link_folder/地點/他納.md |
+| 2 | 立拿 | 0.565 | link_folder/地點/立拿.md |
+| 3 | 亞拿伯 | 0.561 | link_folder/地點/亞拿伯.md |
+| 4 | 底璧（城） | 0.547 | link_folder/地點/底璧（城）.md |
+| 5 | 伯寧拉 | 0.546 | link_folder/地點/伯寧拉.md |
+
+判定：⚠ 相似度居中（0.50 ≤ 0.574 < 0.70），最近鄰為 [[他納]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+
+## 約書亞最後分得地業（事件）
+query:
+- 待建立詞：約書亞最後分得地業
+- 出現位置：約書亞記 第19章
+- 候選類型：事件
+- 本章上下文：第49-50節以色列人按著境界分完了地業，就在他們中間將地給約書亞為業，是照耶和華的吩咐；CT：約書亞的家族一直到分配完才有定居之地，是後世信徒領袖的好榜樣，〔話中之光〕他沒有利用職務的便利以權謀私；GT《聖經精讀本》：以色列人分地以迦勒為始（書14:6-15）、以約書亞為終，真正領袖的三個特質；GT《綜合解讀》：兩位專心跟從神的老弟兄首尾呼應；GT《啟導本》《研經資料》：「照耶和華的吩咐」或暗示神當年已應許此地，如同希伯崙給迦勒；KC：迦勒第一個、約書亞最後一個得地業，出於謙虛等到眾人都得了；BH：約書亞在百姓都得了之後才得自己的分
+
+字面解析：無字面對應 → 新建（C）
+
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 迦勒求得希伯崙 | 0.681 | link_folder/事件/迦勒求得希伯崙.md |
+| 2 | 未得之地 | 0.644 | link_folder/主題/未得之地.md |
+| 3 | 約書亞 | 0.639 | link_folder/人物/約書亞.md |
+| 4 | 七支派勘地分作七分 | 0.623 | link_folder/事件/七支派勘地分作七分.md |
+| 5 | 分地的十位支派首領 | 0.612 | link_folder/主題/分地的十位支派首領.md |
+
+判定：⚠ 相似度居中（0.50 ≤ 0.681 < 0.70），最近鄰為 [[迦勒求得希伯崙]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+
+## 沙魯險（地點）
+query:
+- 待建立詞：沙魯險
+- 出現位置：約書亞記 第19章
+- 候選類型：地點
+- 本章上下文：第6節「伯利巴勿、沙魯險，共十三座城」；CT：字義「恩典的避難所」，別是巴西方約35公里、迦薩之南約23公里；GT《串珠》：可能就是書15:32 的實忻，扼守以色列地南面通往埃及大路的重鎮；BH：埃及新王國初期的記錄把它與重大軍事行動連在一起
+- 經文用詞：沙魯險
+
+字面解析：無字面對應 → 新建（C）
+
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 書珥 | 0.594 | link_folder/地點/書珥.md |
+| 2 | 迦薩 | 0.549 | link_folder/地點/迦薩.md |
+| 3 | 伯巴力勉 | 0.548 | link_folder/地點/伯巴力勉.md |
+| 4 | 加低斯 | 0.544 | link_folder/地點/加低斯.md |
+| 5 | 夏瑣 | 0.542 | link_folder/地點/夏瑣.md |
+
+判定：⚠ 相似度居中（0.50 ≤ 0.594 < 0.70），最近鄰為 [[書珥]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+
+## 巴拉比珥（地點）
+query:
+- 待建立詞：巴拉比珥
+- 出現位置：約書亞記 第19章
+- 候選類型：地點
+- 本章上下文：第8節「直到巴拉比珥，就是南地的拉瑪」；CT：字義「井的女主人」，別是巴南方約29公里，南地的拉瑪就是巴拉比珥的別名；GT 華爾頓、《研經資料》：可能與書15:24 的比亞綠相同（代上4:33 的巴力），「南地的拉瑪」表示這是邱壇或祭儀地點（撒上30:27 南地拉末）；BH：西緬在南地的南端
+- 經文用詞：巴拉比珥
+
+字面解析：無字面對應 → 新建（C）
+
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 巴拉（便雅憫） | 0.588 | link_folder/地點/巴拉（便雅憫）.md |
+| 2 | 伯巴力勉 | 0.576 | link_folder/地點/伯巴力勉.md |
+| 3 | 別是巴 | 0.574 | link_folder/地點/別是巴.md |
+| 4 | 拉瑪（便雅憫） | 0.565 | link_folder/地點/拉瑪（便雅憫）.md |
+| 5 | 毘奪（巴蘭的本鄉） | 0.540 | link_folder/地點/毘奪（巴蘭的本鄉）.md |
+
+判定：⚠ 相似度居中（0.50 ≤ 0.588 < 0.70），最近鄰為 [[巴拉（便雅憫）]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+
+## 撒拿音的橡樹（地點）
+query:
+- 待建立詞：撒拿音的橡樹
+- 出現位置：約書亞記 第19章
+- 候選類型：地點
+- 本章上下文：第33節「他們的境界是從希利弗、從撒拿音的橡樹」；CT：確實地點不詳，應在撒拿音附近；GT《研經資料》：「橡樹」原文是「篤耨香樹」；GT 華爾頓：拿弗他利南界的爭議在於撒拿音的橡樹位置不明（士4:11），以之為南界的看法可能性最高；BH：基尼人希百在撒拿音橡樹旁支搭帳棚（士4:11），把拿弗他利地與底波拉、巴拉的戰役連起來
+- 經文用詞：撒拿音的橡樹
+
+字面解析：無字面對應 → 新建（C）
+
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 摩利橡樹 | 0.573 | link_folder/背景/摩利橡樹.md |
+| 2 | 垂絲柳樹 | 0.542 | link_folder/背景/垂絲柳樹.md |
+| 3 | 撒迦 | 0.532 | link_folder/地點/撒迦.md |
+| 4 | 迦南四境的地名考據 | 0.528 | link_folder/背景/迦南四境的地名考據.md |
+| 5 | 幔利 | 0.526 | link_folder/地點/幔利.md |
+
+判定：⚠ 近鄰分類不相容（候選=地點 vs 條目=背景），若確為同實體請確認是否改用 [[摩利橡樹]]
+
+## 迦步勒（地點）
+query:
+- 待建立詞：迦步勒
+- 出現位置：約書亞記 第19章
+- 候選類型：地點
+- 本章上下文：第27節「也通到迦步勒的左邊」；CT：字義「結合」，亞柯東南方約12公里；GT 華爾頓：今日的卡布勒（Kabul）；BH：所羅門把加利利的城給推羅王希蘭作工料的報酬（王上9:10-13），亞設因靠近推羅得了貿易機會，也暴露在外邦結盟與偶像之下
+- 經文用詞：迦步勒
+
+字面解析：無字面對應 → 新建（C）
+
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 迦巴勒 | 0.625 | link_folder/地點/迦巴勒.md |
+| 2 | 迦巴 | 0.596 | link_folder/地點/迦巴.md |
+| 3 | 迦薩 | 0.532 | link_folder/地點/迦薩.md |
+| 4 | 迦密 | 0.521 | link_folder/地點/迦密.md |
+| 5 | 吉甲的戈印 | 0.517 | link_folder/地點/吉甲的戈印.md |
+
+判定：⚠ 相似度居中（0.50 ≤ 0.625 < 0.70），最近鄰為 [[迦巴勒]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+
+## 拿哈拉（地點）
+query:
+- 待建立詞：拿哈拉
+- 出現位置：約書亞記 第19章
+- 候選類型：地點
+- 本章上下文：第15節「還有加他、拿哈拉、伸崙」；CT：字義「草場」，約念北方約16公里，基順河北岸的一座小城；GT 華爾頓、《研經資料》：納珥遺址，西布倫與海岸惟一的關聯是它和亞柯之間的貿易，可能經由拿哈拉進行，但西布倫的領土並不延伸到地中海；BH：後來成為利未人的城（書21:35）
+- 經文用詞：拿哈拉
+
+字面解析：無字面對應 → 新建（C）
+
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 拿拉 | 0.636 | link_folder/地點/拿拉.md |
+| 2 | 雅挪哈 | 0.556 | link_folder/地點/雅挪哈.md |
+| 3 | 伯寧拉 | 0.556 | link_folder/地點/伯寧拉.md |
+| 4 | 立拿 | 0.545 | link_folder/地點/立拿.md |
+| 5 | 細列哈沙轄 | 0.544 | link_folder/地點/細列哈沙轄.md |
+
+判定：⚠ 相似度居中（0.50 ≤ 0.636 < 0.70），最近鄰為 [[拿拉]]——此區間真對應與無對應分數重疊，需逐一人工判斷
+
+## 西緬（人物）
+字面解析：對上既有「西緬」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[西緬]]（同名／字面對應）
+
+## 西布倫（同住）（人物）
+字面解析：對上既有「西布倫（同住）」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[西布倫（同住）]]（同名／字面對應）
+
+## 以薩迦（價值）（人物）
+字面解析：對上既有「以薩迦（價值）」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[以薩迦（價值）]]（同名／字面對應）
+
+## 亞設（有福）（人物）
+字面解析：對上既有「亞設（有福）」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[亞設（有福）]]（同名／字面對應）
+
+## 拿弗他利（人物）
+字面解析：對上既有「拿弗他利」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[拿弗他利]]（同名／字面對應）
+
+## 但支派（人物）
+字面解析：對上既有「但支派」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[但支派]]（同名／字面對應）
+
+## 但（地點）
+字面解析：對上既有「但」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[但]]（同名／字面對應）
+
+## 但支派至終定居於何地（解經爭議）
+字面解析：對上既有「但支派至終定居於何地」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[但支派至終定居於何地]]（同名／字面對應）
+
+## 猶大支派（人物）
+字面解析：對上既有「猶大支派」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[猶大支派]]（同名／字面對應）
+
+## 別是巴（地點）
+字面解析：對上既有「別是巴」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[別是巴]]（同名／字面對應）
+
+## 迦南大敗直到何珥瑪（歷史）
+字面解析：對上既有「迦南大敗直到何珥瑪」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[迦南大敗直到何珥瑪]]（同名／字面對應）
+
+## 洗革拉（地點）
+字面解析：對上既有「洗革拉」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[洗革拉]]（同名／字面對應）
+
+## 南地（地點）
+字面解析：對上既有「南地」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[南地]]（同名／字面對應）
+
+## 約念（地點）
+字面解析：對上既有「約念」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[約念]]（同名／字面對應）
+
+## 伸崙（地點）
+字面解析：對上既有「伸崙」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[伸崙]]（同名／字面對應）
+
+## 押煞（地點）
+字面解析：對上既有「押煞」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[押煞]]（同名／字面對應）
+
+## 迦密（地點）
+字面解析：對上既有「迦密」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[迦密]]（同名／字面對應）
+
+## 西頓（地點）
+字面解析：對上既有「西頓」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[西頓]]（同名／字面對應）
+
+## 夏瑣（地點）
+字面解析：對上既有「夏瑣」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[夏瑣]]（同名／字面對應）
+
+## 基低斯（地點）
+字面解析：對上既有「基低斯」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[基低斯]]（同名／字面對應）
+
+## 瑣拉（地點）
+字面解析：對上既有「瑣拉」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[瑣拉]]（同名／字面對應）
+
+## 以實陶（地點）
+字面解析：對上既有「以實陶」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[以實陶]]（同名／字面對應）
+
+## 以革倫（地點）
+字面解析：對上既有「以革倫」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[以革倫]]（同名／字面對應）
+
+## 亭拿（猶大）（地點）
+字面解析：對上既有「亭拿（猶大）」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[亭拿（猶大）]]（同名／字面對應）
+
+## 以法蓮山地（地點）
+字面解析：對上既有「以法蓮山地」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[以法蓮山地]]（同名／字面對應）
+
+## 約書亞（人物）
+字面解析：對上既有「約書亞」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[約書亞]]（同名／字面對應）
+
+## 以利亞撒（人物）
+字面解析：對上既有「以利亞撒」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[以利亞撒]]（同名／字面對應）
+
+## 示羅（地點）
+字面解析：對上既有「示羅」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[示羅]]（同名／字面對應）
+
+## 會幕（帳幕整體）（主題）
+字面解析：對上既有「會幕（帳幕整體）」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[會幕（帳幕整體）]]（同名／字面對應）
+
+## 拈鬮分地（go.ral）（主題）
+字面解析：對上既有「拈鬮分地（go.ral）」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[拈鬮分地（go.ral）]]（同名／字面對應）
+
+## 產業（na.cha.lah）（原文）
+字面解析：對上既有「產業（na.cha.lah）」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[產業（na.cha.lah）]]（同名／字面對應）
+
+## 未得之地（主題）
+字面解析：對上既有「未得之地」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[未得之地]]（同名／字面對應）
+
+## 西緬利未受咒詛 (創49_5-7)（互文）
+字面解析：對上既有「西緬利未受咒詛 (創49_5-7)」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[西緬利未受咒詛 (創49_5-7)]]（同名／字面對應）
+
+## 摩西的祝福與雅各的祝福（主題）
+字面解析：對上既有「摩西的祝福與雅各的祝福」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[摩西的祝福與雅各的祝福]]（同名／字面對應）
+
+## 約但河（地點）
+字面解析：對上既有「約但河」（exact，將歸 A/B 累積）
+判定：✅ 建議使用既有條目 [[約但河]]（同名／字面對應）
+
+## 候選互查（本章內部，⚠＝彼此相似 ≥ 0.8）
+（無 ≥ 門檻的配對）
+
+## 內文提及（link_folder 內文掃描）
+對將新建（C）的候選，掃既有條目內文（排除 frontmatter 與本章自己的累積區塊）：
+(a) 內文含候選名的條目；(b) 內文引用本章該候選所在經節的條目。有命中表示可能是**同一實體的不同譯名**（標題／alias／語義近鄰看不到），請逐一確認。
+
+### 迦特希弗（地點）
+(b) 內文引用本章經節（約書亞記第19章 第13節）：共 1 個條目
+- [[西布倫（同住）]]（人物，引到第13節）：…這段預言過了約450年才藉拈鬮的方式實現（民26:55；書19:10-16）。 <!-- accumulation:創世記:49:…
+
+### 書念（地點）
+(a) 內文含候選名「書念」：共 2 個條目
+- [[約書]]（神學）：…重點：出二十四4「摩西將耶和華的命令都寫上」、7「又將約書念給百姓聽」——「約書」這個名稱正是來自本節。GT《丁道爾…
+- [[西乃之約]]（神學）：…展  西乃之約在出24章透過立約儀式正式確立——摩西將約書念給百姓聽，百姓說「耶和華所吩咐的，我們都必遵行」（出24…
+(b) 內文引用本章經節（約書亞記第19章 第18節）：共 2 個條目
+- [[以薩迦（價值）]]（人物，引到第18節）：…關聯：CT 說以薩迦支派所分得的土地在約但河谷的西北部（書19:17-23），土地肥美、物產豐富，但他們可能沒有設法趕出境內的迦南…
+- [[亞設（有福）]]（人物，引到第18節）：…T《聖經精讀本》說亞設與以薩迦是在瑪拿西之後才分得產業（書19:17-31）；GT《綜合解讀》說「亞設和以薩迦境內」可能代指亞柯平…
+
+### 他泊山（地點）
+(a) 內文含候選名「他泊山」：共 2 個條目
+- [[耶斯列平原]]（地點）：…吉多以東的一片平原，略呈三角形，三邊各約30公里，約念、他泊山和以伯蓮分別在三角的頂端；字義是「神栽種」。GT《約書亞…
+- [[隱多珥]]（地點）：…迦和亞設境內分得的城裡有「隱多珥和屬隱多珥的鎮市」。它在他泊山附近，和同一節靠海的多珥是兩座不同的城。  **名字。*…
+(b) 內文引用本章經節（約書亞記第19章 第12節、第22節、第34節）：共 5 個條目
+- [[伯示麥（猶大）]]（地點，引到第22節）：…字後面加上（猶大），是因為 GT《綜合解讀》指出以薩迦（書19:22）和拿弗他利（書19:38）也各有一座伯示麥。  **名…
+- [[以薩迦（價值）]]（人物，引到第22節）：…關聯：CT 說以薩迦支派所分得的土地在約但河谷的西北部（書19:17-23），土地肥美、物產豐富，但他們可能沒有設法趕出境內的迦南…
+- [[西布倫（同住）]]（人物，引到第12節）：…這段預言過了約450年才藉拈鬮的方式實現（民26:55；書19:10-16）。 <!-- accumulation:創世記:49:…
+- [[拿弗他利]]（人物，引到第34節）：…族群後成為以色列十二支派之一，分得迦南地北部加利利地區（書19:32-39），地理位置使其受外邦影響大（賽9:1「從前神使西布倫地…
+- [[亞設（有福）]]（人物，引到第22節）：…T《聖經精讀本》說亞設與以薩迦是在瑪拿西之後才分得產業（書19:17-31）；GT《綜合解讀》說「亞設和以薩迦境內」可能代指亞柯平…
+
+### 基順河（地點）
+(a) 內文含候選名「基順河」：共 1 個條目
+- [[約念]]（地點）：…靠近迦密的約念王」。  **位置。** CT 說約念位於基順河的南岸，多珥的東北面約20公里，米吉多的西北約11公里；…
+(b) 內文引用本章經節（約書亞記第19章 第11節）：共 2 個條目
+- [[約念]]（地點，引到第11節）：…（Wadi Milh）流入耶斯列谷之處、西布倫邊界之上（書19:11、書21:34）的約念遺址（Tell Yoqneam）；…
+- [[西布倫（同住）]]（人物，引到第11節）：…這段預言過了約450年才藉拈鬮的方式實現（民26:55；書19:10-16）。 <!-- accumulation:創世記:49:…
+
+### 推羅（地點）
+(a) 內文含候選名「推羅」：共 7 個條目
+- [[未得之地]]（主題）：…撒上27:8）、非利士人五個城邦（書13:2-3）、包括推羅和西頓在內的腓尼基海岸（書13:4），以及從黑門山向北一…
+- [[但支派]]（人物）：…樣本。KC 指出這個模式在正典裡重複出現：所羅門建殿時，推羅王差來的巧匠戶蘭之母也是但支派的女子（代下2:13-14…
+- [[迦南人]]（人物）：…GT《聖經精讀本》說「迦南人的全地」指腓尼基，亦即西頓和推羅及米亞拉一帶。 - 與本章關聯：本章用「迦南人之地」當作…
+- [[舍客勒]]（原文）：…季拉』是巴比倫的重量單位」，而「根據《他勒目》，前者即『推羅舍客勒』」；GT《舊約背景註釋》給出考古實測：「考古學家…
+- [[米亞拉]]（地點）：…《聖經精讀本》說本節「迦南人的全地」指腓尼基，亦即西頓和推羅及米亞拉一帶。BH 說米亞拉位在與西頓相關的地區，西頓是…
+- [[西頓]]（地點）：…GT《約書亞記研經資料》說「西頓」字義是「打獵」，是位於推羅北方的地中海岸旁的腓尼基古城。  GT《丁道爾聖經注釋》…
+- [[古代近東立約]]（背景）：…約簽署時或會召請神明作為協議的見證（* 亞述王以撒哈頓與推羅之巴力簽署條約時，召請「七神」），並且為每一神祇築壇獻祭…
+(b) 內文引用本章經節（約書亞記第19章 第29節）：共 1 個條目
+- [[亞設（有福）]]（人物，引到第29節）：…- 與本章關聯：CT 說亞設支派分得的土地靠近地中海（書19:24-31），農地肥沃、物產豐盛，並指出「且出君王的美味」亦可譯為…
+
+### 亞革悉（亞設）（地點）
+(a) 內文含候選名「亞革悉」：共 3 個條目
+- [[基伊拉]]（地點）：…## 定義  書15:44 猶大高原的城：「基伊拉、亞革悉、瑪利沙」。  **名字與位置。** CT 給的原文字義…
+- [[基悉]]（地點）：…創世記38章中示拉出生時猶大所在的地方。來源指出基悉又名亞革悉，位於亞杜蘭附近。  ## 按書卷累積  ### 創世記…
+- [[瑪利沙]]（地點）：…## 定義  書15:44 猶大高原的城：「基伊拉、亞革悉、瑪利沙，共九座城」。  **名字與位置。** CT 給…
+(b) 內文引用本章經節（約書亞記第19章 第29節）：共 1 個條目
+- [[亞設（有福）]]（人物，引到第29節）：…- 與本章關聯：CT 說亞設支派分得的土地靠近地中海（書19:24-31），農地肥沃、物產豐盛，並指出「且出君王的美味」亦可譯為…
+
+### 約帕（地點）
+(a) 內文含候選名「約帕」：共 2 個條目
+- [[亞弗]]（地點）：…因此我們不能確定到底是哪個「亞弗」。CT 給的定位是位於約帕的東北東方約18公里、示羅的西面約35公里；原文字義是「…
+- [[吉甲的戈印]]（地點）：…處的吉甲與約書亞的總部所在地吉甲不同地點，此處的吉甲位於約帕的東北面約20公里；CT 給的原文字義是「吉甲」滾動，滾…
+
+### 亭拿西拉（地點）
+(b) 內文引用本章經節（約書亞記第19章 第50節）：共 2 個條目
+- [[約書亞]]（人物，引到第50節）：…伴。GT《綜合解讀》說分配地業從迦勒開始、到約書亞結束（書19:49-50），兩人首尾呼應。 <!-- accumulation:…
+- [[迦勒求得希伯崙]]（事件，引到第50節）：…配地業正是從迦勒開始（書14:6-15），到約書亞結束（書19:49-50），這兩位專心跟從神的人首尾呼應。GT《啟導本》與《雷氏…
+
+### 約書亞最後分得地業（事件）
+(b) 內文引用本章經節（約書亞記第19章 第49節、第50節）：共 2 個條目
+- [[約書亞]]（人物，引到第49、50節）：…伴。GT《綜合解讀》說分配地業從迦勒開始、到約書亞結束（書19:49-50），兩人首尾呼應。 <!-- accumulation:…
+- [[迦勒求得希伯崙]]（事件，引到第49、50節）：…配地業正是從迦勒開始（書14:6-15），到約書亞結束（書19:49-50），這兩位專心跟從神的人首尾呼應。GT《啟導本》與《雷氏…
+
+### 沙魯險（地點）
+(b) 內文引用本章經節（約書亞記第19章 第6節）：共 3 個條目
+- [[摩西的祝福為何漏掉西緬]]（解經爭議，引到第6節）：…祝福中未提西緬支派，可能因為西緬的分地是在猶大支派境內（書十九1～9）。KC 說西緬缺席，那可能是因為他的地業屬於猶大的地業…
+- [[西緬]]（人物，引到第6節）：…應驗方面，CT 說西緬支派只能在猶大支派的境內得著地業（書19:1-9）；GT 丁良才補上兩點：西緬支派後來成了最小的支派（民…
+- [[西緬利未受咒詛 (創49_5-7)]]（互文，引到第6節）：…散」（5-7節） - 咒詛應驗：西緬支派領地在猶大境內（書19:1-9），後併入猶大（代上4:24-43）；利未支派無產業、分…
+
+### 巴拉比珥（地點）
+(b) 內文引用本章經節（約書亞記第19章 第8節）：共 3 個條目
+- [[摩西的祝福為何漏掉西緬]]（解經爭議，引到第8節）：…祝福中未提西緬支派，可能因為西緬的分地是在猶大支派境內（書十九1～9）。KC 說西緬缺席，那可能是因為他的地業屬於猶大的地業…
+- [[西緬]]（人物，引到第8節）：…應驗方面，CT 說西緬支派只能在猶大支派的境內得著地業（書19:1-9）；GT 丁良才補上兩點：西緬支派後來成了最小的支派（民…
+- [[西緬利未受咒詛 (創49_5-7)]]（互文，引到第8節）：…散」（5-7節） - 咒詛應驗：西緬支派領地在猶大境內（書19:1-9），後併入猶大（代上4:24-43）；利未支派無產業、分…
+
+### 撒拿音的橡樹（地點）
+(b) 內文引用本章經節（約書亞記第19章 第33節）：共 1 個條目
+- [[拿弗他利]]（人物，引到第33節）：…族群後成為以色列十二支派之一，分得迦南地北部加利利地區（書19:32-39），地理位置使其受外邦影響大（賽9:1「從前神使西布倫地…
+
+### 迦步勒（地點）
+(b) 內文引用本章經節（約書亞記第19章 第27節）：共 1 個條目
+- [[亞設（有福）]]（人物，引到第27節）：…- 與本章關聯：CT 說亞設支派分得的土地靠近地中海（書19:24-31），農地肥沃、物產豐盛，並指出「且出君王的美味」亦可譯為…
+
+### 拿哈拉（地點）
+(b) 內文引用本章經節（約書亞記第19章 第15節）：共 1 個條目
+- [[西布倫（同住）]]（人物，引到第15節）：…這段預言過了約450年才藉拈鬮的方式實現（民26:55；書19:10-16）。 <!-- accumulation:創世記:49:…
+
+
+mcp: hermes-scripture/query_step_context started
+mcp: hermes-scripture/query_step_context (completed)
+mcp: hermes-scripture/search_wiki_entries started
+mcp: hermes-scripture/search_wiki_entries (completed)
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$OutputEncoding = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); $kc='"'raw_data/kingcomments_joshua_19.txt'; "'$ct='"'raw_data/ccbiblestudy_CT_joshua_19.txt'; "'$gt='"'raw_data/ccbiblestudy_GT_joshua_19.txt'; "'$bh='"'raw_data/biblehub_study_joshua_19.txt'; '--- CT Shunem matches ---'; Select-String -SimpleMatch -LiteralPath "'$ct -Pattern '"'書念' | ForEach-Object { \""'${($_.LineNumber)}:$($_.Line)" }; '"'--- KC Shunem/Kishon/Jokneam/Tyre match counts ---'; foreach("'$p in @('"'Shunem','Kishon','Jokneam','Tyre')) { "'$h=@(Select-String -SimpleMatch -LiteralPath $kc -Pattern $p); "${p}: $($h.Count)" }; '"'--- BH Jokneam/Kishon ---'; Select-String -SimpleMatch -LiteralPath "'$bh -Pattern '"'Jokneam','Kishon' | ForEach-Object { \""'${($_.LineNumber)}:$($_.Line)" }; '"'--- GT Tyre boundary passages ---'; Select-String -SimpleMatch -LiteralPath "'$gt -Pattern '"'提及推羅和西頓並不表示','一半在大陸上','推羅是腓尼基人的城市' | ForEach-Object { \""'${($_.LineNumber)}:$($_.Line)" }; '"'--- BH Tyre passage ---'; Select-String -SimpleMatch -LiteralPath "'$bh -Pattern '"'Tyre was a powerful Phoenician city' | ForEach-Object { \""'${($_.LineNumber)}:$($_.Line)" }; '"'--- CT Tyre hits ---'; Select-String -SimpleMatch -LiteralPath "'$ct -Pattern '"'推羅' | ForEach-Object { \""'${($_.LineNumber)}:$($_.Line)" }' in C:\Obsidian\Hermes\scripture
+ succeeded in 134ms:
+--- CT Shunem matches ---
+:〔文意註解〕「又從撒立往東轉向日出之地，到吉斯綠他泊的境界，又通到大比拉，上到雅非亞」：『撒立』位於約念東方約12公里，米吉多東北方約10公里；『日出之地』即指東方；『吉斯綠他泊』位於約念東方約20公里，米吉多東北方約19公里；『大比拉』位於書念北方約11公里，米吉多東北方約23公里；『雅非亞』位於約念東方約15公里，米吉多東北方約15公里。
+:【書十九18】「他們的境界是到耶斯列、基蘇律、書念、」
+:〔原文字義〕「耶斯列」神栽種；「基蘇律」側翼；「書念」倍覺安息之地。
+:〔文意註解〕「他們的境界是到耶斯列、基蘇律、書念」：『耶斯列』不同於書十五59的「耶斯列」，位於米吉多東南東方約14公里，他納東北方12公里；『基蘇律』位於約念東方約20公里，米吉多東北方約19公里；『書念』位於米吉多東方約14公里，耶斯列北方約4公里。
+:〔文意註解〕「拉璧、基善、亞別」：『拉璧』位於書念北方約11公里，米吉多東北方約23公里；『基善』位於伯善西北方約20公里，米吉多東北方約22公里；『亞別』確實地點不詳，應在以斯得倫平原之內。
+:1.「為以薩迦人，按著宗族，拈出第四鬮。他們的境界是到耶斯列…書念…拉璧、基善」(17~21節)：以薩迦支派的地業是被瑪拿西、拿弗他利、西布倫三支派包圍。
+--- KC Shunem/Kishon/Jokneam/Tyre match counts ---
+Shunem: 0
+Kishon: 0
+Jokneam: 0
+Tyre: 0
+--- BH Jokneam/Kishon ---
+:and met the brook east of Jokneam.
+:The brook formed a natural border near Jokneam, a city associated with the defeated Canaanite kings and later given to the Levites (Joshua 12:22; 21:34). The boundary therefore recalled both Israel’s victory through God’s power and the provision made for worship and instruction within the land.
+:Jdg 5:21 The River Kishon swept them away, the ancient river,…
+:Jdg 5:21 The River Kishon swept them away, the ancient river,…
+--- GT Tyre boundary passages ---
+:【書十九24~31 亞設的分】亞設位於亞柯平原，在西布倫和拿弗他利的西面，往北延伸到腓尼基海港推羅、西頓。這地區在埃及的王室年表中也有很顯著的地位。杜得模斯三世攻取迦南城鎮的名單包括黑甲（大概是哈爾巴吉遺址〔Tell el~Harbaj〕或凱西斯遺址〔Tell el~Qassis〕）、押煞（見：書十一1）、米沙勒（在迦密山附近）、亞拉米勒；蘭塞二世的名單則有加拿（推羅東南七哩）。其他位置已經確認的地點如下：迦步勒是卡布勒（Kabul）；義伯侖是亞柯東北十哩的阿布代廢墟（Khirbet 'Abdeh）；烏瑪可能是亞柯；利合（十九30；有別於十九28的利合）可能是亞柯東面七哩的加爾比遺址〔Tell al~Gharbi）。提及推羅和西頓並不表示這些地方已被佔領。本段的可能只是理論上而非實際上的疆界。然而屬於這些城邦的鄉村可能在不同的時代，受以色列所控制。——華爾頓《約書亞記背景注釋》
+:「西頓大城」（28節）是腓尼基人的城市，一直沒有被亞設支派攻取（士一31）。推羅是腓尼基人的城市，一半在大陸上，另一半在海島上，「堅固城推羅」（29節）可能指海島的部分。主耶穌曾到「推羅、西頓的境內」（可七24），醫治外邦婦人的女兒，顯明救恩將臨到外邦人。── 約書亞記綜合解讀
+:推羅城分為兩部分，一半在大陸上，另一半在海島上。這措施是為了防止敵人進攻時全城遭殲滅。所謂「堅固城推羅」大概是指海島的部分。
+--- BH Tyre passage ---
+:Tyre was a powerful Phoenician city, renowned for its defenses, trade, and seafaring influence. Its place on Asher’s boundary brought Israel into close contact with a wealthy Canaanite culture. Asher later failed to drive out all the inhabitants of its territory, and the tribe lived among the Canaanites of the region (Judges 1:31–32).
+--- CT Tyre hits ---
+:〔文意註解〕「又到義伯崙、利合、哈們、加拿，直到西頓大城」：『義伯崙』位於亞柯北北東方約16公里，推羅南方約26公里；『利合』位於亞革悉東北方約18公里，推羅東南方約18公里；『哈們』位於亞革悉北方約10公里，推羅南方約10公里；『加拿』位於推羅東南方約13公里，距離地中海約9公里；『西頓』位於推羅北方約34公里的地中海港口。
+:【書十九29】「轉到拉瑪和堅固城推羅，又轉到何薩，靠近亞革悉一帶地方，直通到海；」
+:〔原文字義〕「拉瑪」小山丘；「堅固」有防禦工事；「推羅」巖石；「何薩」庇護；「亞革悉」欺騙。
+:〔文意註解〕「轉到拉瑪和堅固城推羅，又轉到何薩，靠近亞革悉一帶地方，直通到海」：『拉瑪』位於推羅東南方約21公里，亞革悉東北方約22公里；『推羅』位於亞柯北方約41公里，西頓南方約34公里；『何薩』位於推羅東南南方約2公里半，可能屬於推羅大城的一區；『亞革悉』不同於書十五44的「亞革悉」，位於亞柯北方約13公里，推羅南方約27公里。
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$OutputEncoding = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); $files=@('"'raw_data/ccbiblestudy_CT_joshua_19.txt','raw_data/ccbiblestudy_GT_joshua_19.txt','raw_data/kingcomments_joshua_19.txt','raw_data/biblehub_study_joshua_19.txt'); "'$patterns=@('"'『約念前的河』即指基順河','“約念前的河”指基順河','「約念前的河」（11節）指基順河','and met the brook east of Jokneam.','Jdg 5:21 The River Kishon swept them away','提及推羅和西頓並不表示','Asher later failed to drive out all the inhabitants','『推羅』位於亞柯北方約41公里','書十九18】','『書念』位於米吉多東方約14公里'); foreach("'$f in $files){foreach($p in $patterns){$h=@(Select-String -SimpleMatch -LiteralPath $f -Pattern $p);foreach($m in $h){$line=$m.Line.Replace('"'\\','\\\\'); \""'${f}:$($m.LineNumber):$line"}}}; '"'--- No-hit term counts ---'; foreach("'$x in @(@('"'raw_data/kingcomments_joshua_19.txt','Shunem'),@('raw_data/kingcomments_joshua_19.txt','Kishon'),@('raw_data/kingcomments_joshua_19.txt','Tyre'))){"'$h=@(Select-String -SimpleMatch -LiteralPath $x[0] -Pattern $x[1]); "$($x[0]) keyword=$($x[1]) hits=$($h.Count)"}' in C:\Obsidian\Hermes\scripture
+ succeeded in 167ms:
+raw_data/ccbiblestudy_CT_joshua_19.txt:106:〔文意註解〕「往西上到瑪拉拉，達到大巴設，又達到約念前的河」：『瑪拉拉』位於約念東方約6公里，米吉多北方約8公里；『大巴設』位於約念東方約3公里，米吉多溪北方約11公里；『約念』位於基順河的南岸，多珥的東北面約20公里，米吉多的西北約11公里；『約念前的河』即指基順河。
+raw_data/ccbiblestudy_CT_joshua_19.txt:234:〔文意註解〕「轉到拉瑪和堅固城推羅，又轉到何薩，靠近亞革悉一帶地方，直通到海」：『拉瑪』位於推羅東南方約21公里，亞革悉東北方約22公里；『推羅』位於亞柯北方約41公里，西頓南方約34公里；『何薩』位於推羅東南南方約2公里半，可能屬於推羅大城的一區；『亞革悉』不同於書十五44的「亞革悉」，位於亞柯北方約13公里，推羅南方約27公里。
+raw_data/ccbiblestudy_CT_joshua_19.txt:150:【書十九18】「他們的境界是到耶斯列、基蘇律、書念、」
+raw_data/ccbiblestudy_CT_joshua_19.txt:155:〔文意註解〕「他們的境界是到耶斯列、基蘇律、書念」：『耶斯列』不同於書十五59的「耶斯列」，位於米吉多東南東方約14公里，他納東北方12公里；『基蘇律』位於約念東方約20公里，米吉多東北方約19公里；『書念』位於米吉多東方約14公里，耶斯列北方約4公里。
+raw_data/ccbiblestudy_GT_joshua_19.txt:126:“約念前的河”指基順河。――《啟導本聖經約書亞記註釋》
+raw_data/ccbiblestudy_GT_joshua_19.txt:128:「約念前的河」（11節）指基順河，流經耶斯列平原。女先知底波拉在這裡打敗西西拉（士四7）。── 約書亞記綜合解讀
+raw_data/ccbiblestudy_GT_joshua_19.txt:303:【書十九24~31 亞設的分】亞設位於亞柯平原，在西布倫和拿弗他利的西面，往北延伸到腓尼基海港推羅、西頓。這地區在埃及的王室年表中也有很顯著的地位。杜得模斯三世攻取迦南城鎮的名單包括黑甲（大概是哈爾巴吉遺址〔Tell el~Harbaj〕或凱西斯遺址〔Tell el~Qassis〕）、押煞（見：書十一1）、米沙勒（在迦密山附近）、亞拉米勒；蘭塞二世的名單則有加拿（推羅東南七哩）。其他位置已經確認的地點如下：迦步勒是卡布勒（Kabul）；義伯侖是亞柯東北十哩的阿布代廢墟（Khirbet 'Abdeh）；烏瑪可能是亞柯；利合（十九30；有別於十九28的利合）可能是亞柯東面七哩的加爾比遺址〔Tell al~Gharbi）。提及推羅和西頓並不表示這些地方已被佔領。本段的可能只是理論上而非實際上的疆界。然而屬於這些城邦的鄉村可能在不同的時代，受以色列所控制。——華爾頓《約書亞記背景注釋》
+raw_data/ccbiblestudy_GT_joshua_19.txt:220:【書十九18】
+raw_data/biblehub_study_joshua_19.txt:287:and met the brook east of Jokneam.
+raw_data/biblehub_study_joshua_19.txt:292:Jdg 5:21 The River Kishon swept them away, the ancient river,…
+raw_data/biblehub_study_joshua_19.txt:588:Jdg 5:21 The River Kishon swept them away, the ancient river,…
+raw_data/biblehub_study_joshua_19.txt:870:Tyre was a powerful Phoenician city, renowned for its defenses, trade, and seafaring influence. Its place on Asher’s boundary brought Israel into close contact with a wealthy Canaanite culture. Asher later failed to drive out all the inhabitants of its territory, and the tribe lived among the Canaanites of the region (Judges 1:31–32).
+--- No-hit term counts ---
+raw_data/kingcomments_joshua_19.txt keyword=Shunem hits=0
+raw_data/kingcomments_joshua_19.txt keyword=Kishon hits=0
+raw_data/kingcomments_joshua_19.txt keyword=Tyre hits=0
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$OutputEncoding = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); Select-String -LiteralPath '"'raw_data/kingcomments_joshua_19.txt' -Pattern 'woman|Shun|Sunem|Elisha'; Select-String -LiteralPath 'raw_data/ccbiblestudy_CT_joshua_19.txt' -SimpleMatch -Pattern '書念' | ForEach-Object { "'$_.LineNumber.ToString() + '"':' + "'$_.Line }' in C:\Obsidian\Hermes\scripture
+ succeeded in 130ms:
+
+raw_data\kingcomments_joshua_19.txt:39:Tola, one of the judges, is of that tribe (Jdg 10:1), as is Baasha, one of the k
+ings of Israel (1Kgs 15:27). A well-known place in that tribe is Sunem, where the God-fearing woman lives who gives hos
+pitality to Elisha (2Kgs 4:8).
+113:〔文意註解〕「又從撒立往東轉向日出之地，到吉斯綠他泊的境界，又通到大比拉，上到雅非亞」：『撒立』位於約念東方約12公里，米吉多東北方約10公里；『日出之地』即指東方；『吉斯綠他泊』位於約念東方約20公里，米吉多東北方約19公里；『大比拉』位於書念北方約11公里，米吉多東北方約23公里；『雅非亞』位於約念東方約15公里，米吉多東北方約15公里。
+150:【書十九18】「他們的境界是到耶斯列、基蘇律、書念、」
+153:〔原文字義〕「耶斯列」神栽種；「基蘇律」側翼；「書念」倍覺安息之地。
+155:〔文意註解〕「他們的境界是到耶斯列、基蘇律、書念」：『耶斯列』不同於書十五59的「耶斯列」，位於米吉多東南東方約14公里，他納東北方12公里；『基蘇律』位於約念東方約20公里，米吉多東北方約19公里；『書念』位於米吉多東方約14公里，耶斯列北方約4公里。
+169:〔文意註解〕「拉璧、基善、亞別」：『拉璧』位於書念北方約11公里，米吉多東北方約23公里；『基善』位於伯善西北方約20公里，米吉多東北方約22公里；『亞別』確實地點不詳，應在以斯得倫平原之內。
+428:1.「為以薩迦人，按著宗族，拈出第四鬮。他們的境界是到耶斯列…書念…拉璧、基善」(17~21節)：以薩迦支派的地業是被瑪拿西、拿弗他利、西布倫三支派包圍。
+
+
+
+codex
+SHA 與 `.tmp/第19章/agent_review.yaml` 的 M3 hash 一致；`C_new_formal` 的 16 個條目都有 payload，STEP machine validation 為 PASS。候選檢視未發現另一項重要漏項。vexp `run_pipeline` 因工具要求核准而遭拒；我改用章節唯讀 MCP 與指定 raw 檔完成審查，全程未修改檔案。
+
+### Findings
+
+1. **Target:** `entry_content/書念.yaml` 的累積 relation  
+   **分類：** `overstated`  
+   **Issue：**「四套註釋都用後來的歷史說明」把 CT 也列入共識；CT 對書念只提供詞義與位置。  
+   **Evidence：** `raw_data/ccbiblestudy_CT_joshua_19.txt:155`：「『書念』位於米吉多東方約14公里，耶斯列北方約4公里。」對 CT 原檔以 `書念` 搜尋，命中行只涉及地名、詞義與位置，沒有後來的歷史事件；KC 則提到書念婦人接待以利沙（`raw_data/kingcomments_joshua_19.txt:39`）。  
+   **Fix direction：** 刪除「四套註釋都」的概括，限定為實際談到後來事件的來源。
+
+2. **Target:** `entry_content/基順河.yaml` 定義首段  
+   **分類：** `overstated`  
+   **Issue：**「各家註釋都說」約念前的河就是基順河，超出來源支持範圍。CT、GT 明確辨認此河；BibleHub 只說「brook east of Jokneam」並列出士5:21，沒有明確把兩者等同；KingComments 搜尋 `Kishon`、`Jokneam` 均為 0 hits。  
+   **Evidence：** `raw_data/ccbiblestudy_CT_joshua_19.txt:106`：「『約念前的河』即指基順河。」；`raw_data/ccbiblestudy_GT_joshua_19.txt:128`：「「約念前的河」（11節）指基順河，流經耶斯列平原。」；`raw_data/biblehub_study_joshua_19.txt:287`：`and met the brook east of Jokneam.`；`raw_data/biblehub_study_joshua_19.txt:292`：`Jdg 5:21 The River Kishon swept them away, the ancient river,…`  
+   **Fix direction：** 把辨認基順河的說法明確歸於 CT、GT；將 BibleHub 的內容表述為相關經文參照。
+
+3. **Target:** `entry_content/推羅.yaml` 的累積 relation  
+   **分類：** `overstated`  
+   **Issue：**「註釋都提醒它沒有真的歸入以色列」把 GT 對推羅、西頓是否被佔領的保留，擴大成來源一致結論。BibleHub 說的是亞設未趕出境內所有居民，並未直接說推羅未被佔領；CT 只提供位置，KingComments 搜尋 `Tyre` 為 0 hits。  
+   **Evidence：** `raw_data/ccbiblestudy_GT_joshua_19.txt:303`：「提及推羅和西頓並不表示這些地方已被佔領。」；`raw_data/biblehub_study_joshua_19.txt:870`：`Asher later failed to drive out all the inhabitants of its territory, and the tribe lived among the Canaanites of the region (Judges 1:31–32).`；`raw_data/ccbiblestudy_CT_joshua_19.txt:234`：「『推羅』位於亞柯北方約41公里，西頓南方約34公里。」  
+   **Fix direction：** 把「未被佔領」的具體判斷限定歸於 GT 所引來源，並保留 BibleHub 談的是亞設境內居民的較廣說法。
+
+REVIEW_STAGE: m3  
+REVIEW_SHA256: 57ff68c060adabadeb19e1c815e273ae51b7017958bcd4bec548814f078ddbc5  
+REVIEW_REVIEWER: codex  
+REVIEW_ATTEMPT: 1  
+REVIEW_STATUS: CHANGES_REQUIRED  
+FINDINGS_COUNT: 3
+tokens used
+229,965
+SHA 與 `.tmp/第19章/agent_review.yaml` 的 M3 hash 一致；`C_new_formal` 的 16 個條目都有 payload，STEP machine validation 為 PASS。候選檢視未發現另一項重要漏項。vexp `run_pipeline` 因工具要求核准而遭拒；我改用章節唯讀 MCP 與指定 raw 檔完成審查，全程未修改檔案。
+
+### Findings
+
+1. **Target:** `entry_content/書念.yaml` 的累積 relation  
+   **分類：** `overstated`  
+   **Issue：**「四套註釋都用後來的歷史說明」把 CT 也列入共識；CT 對書念只提供詞義與位置。  
+   **Evidence：** `raw_data/ccbiblestudy_CT_joshua_19.txt:155`：「『書念』位於米吉多東方約14公里，耶斯列北方約4公里。」對 CT 原檔以 `書念` 搜尋，命中行只涉及地名、詞義與位置，沒有後來的歷史事件；KC 則提到書念婦人接待以利沙（`raw_data/kingcomments_joshua_19.txt:39`）。  
+   **Fix direction：** 刪除「四套註釋都」的概括，限定為實際談到後來事件的來源。
+
+2. **Target:** `entry_content/基順河.yaml` 定義首段  
+   **分類：** `overstated`  
+   **Issue：**「各家註釋都說」約念前的河就是基順河，超出來源支持範圍。CT、GT 明確辨認此河；BibleHub 只說「brook east of Jokneam」並列出士5:21，沒有明確把兩者等同；KingComments 搜尋 `Kishon`、`Jokneam` 均為 0 hits。  
+   **Evidence：** `raw_data/ccbiblestudy_CT_joshua_19.txt:106`：「『約念前的河』即指基順河。」；`raw_data/ccbiblestudy_GT_joshua_19.txt:128`：「「約念前的河」（11節）指基順河，流經耶斯列平原。」；`raw_data/biblehub_study_joshua_19.txt:287`：`and met the brook east of Jokneam.`；`raw_data/biblehub_study_joshua_19.txt:292`：`Jdg 5:21 The River Kishon swept them away, the ancient river,…`  
+   **Fix direction：** 把辨認基順河的說法明確歸於 CT、GT；將 BibleHub 的內容表述為相關經文參照。
+
+3. **Target:** `entry_content/推羅.yaml` 的累積 relation  
+   **分類：** `overstated`  
+   **Issue：**「註釋都提醒它沒有真的歸入以色列」把 GT 對推羅、西頓是否被佔領的保留，擴大成來源一致結論。BibleHub 說的是亞設未趕出境內所有居民，並未直接說推羅未被佔領；CT 只提供位置，KingComments 搜尋 `Tyre` 為 0 hits。  
+   **Evidence：** `raw_data/ccbiblestudy_GT_joshua_19.txt:303`：「提及推羅和西頓並不表示這些地方已被佔領。」；`raw_data/biblehub_study_joshua_19.txt:870`：`Asher later failed to drive out all the inhabitants of its territory, and the tribe lived among the Canaanites of the region (Judges 1:31–32).`；`raw_data/ccbiblestudy_CT_joshua_19.txt:234`：「『推羅』位於亞柯北方約41公里，西頓南方約34公里。」  
+   **Fix direction：** 把「未被佔領」的具體判斷限定歸於 GT 所引來源，並保留 BibleHub 談的是亞設境內居民的較廣說法。
+
+REVIEW_STAGE: m3  
+REVIEW_SHA256: 57ff68c060adabadeb19e1c815e273ae51b7017958bcd4bec548814f078ddbc5  
+REVIEW_REVIEWER: codex  
+REVIEW_ATTEMPT: 1  
+REVIEW_STATUS: CHANGES_REQUIRED  
+FINDINGS_COUNT: 3

@@ -1,0 +1,100 @@
+version: 2
+book: 約書亞記
+chapter: 19
+stages:
+  m3:
+    round: 2
+    revision: 3
+    sha256: d40d59c0d3c702cc48416a2d6c3e5d6c2bfc2953c53329fb10504797d5e52b79
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 57ff68c060adabadeb19e1c815e273ae51b7017958bcd4bec548814f078ddbc5
+      verdict: changes_required
+      findings_count: 3
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: d40d59c0d3c702cc48416a2d6c3e5d6c2bfc2953c53329fb10504797d5e52b79
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    thread_id: 01a13530-f584-7660-9e1e-f083ef8cb220
+    hash_inputs:
+    - entry_content/亞革悉（亞設）.yaml
+    - entry_content/亭拿西拉.yaml
+    - entry_content/他泊山.yaml
+    - entry_content/伯利恆（西布倫）.yaml
+    - entry_content/基順河.yaml
+    - entry_content/巴拉比珥.yaml
+    - entry_content/拿哈拉.yaml
+    - entry_content/推羅.yaml
+    - entry_content/撒拿音的橡樹.yaml
+    - entry_content/書念.yaml
+    - entry_content/沙魯險.yaml
+    - entry_content/約帕.yaml
+    - entry_content/約書亞最後分得地業.yaml
+    - entry_content/耶斯列（以薩迦）.yaml
+    - entry_content/迦步勒.yaml
+    - entry_content/迦特希弗.yaml
+    own_sha256: d40d59c0d3c702cc48416a2d6c3e5d6c2bfc2953c53329fb10504797d5e52b79
+    verdict_sha: d40d59c0d3c702cc48416a2d6c3e5d6c2bfc2953c53329fb10504797d5e52b79
+    findings_count: 0
+  m6:
+    round: 2
+    revision: 2
+    sha256: 450335fdf75a116944c64c5d9001c8532800daacd523e14648fcf3c9ac2dd108
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: d4c5d7b170e5f530e7bd76d154acad144e81cc8af589c268dbad5ba0ebffd236
+      verdict: changes_required
+      findings_count: 1
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: 450335fdf75a116944c64c5d9001c8532800daacd523e14648fcf3c9ac2dd108
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    thread_id: 01a1353b-e1a9-74b3-9a96-e81ab51a973e
+    hash_inputs:
+    - parent:m3=d40d59c0d3c702cc48416a2d6c3e5d6c2bfc2953c53329fb10504797d5e52b79
+    - chapter_content.yaml
+    own_sha256: 9d88f664772c2a9a5ddc946af2b15fd0c683a4675ba7ba5e0c36adddb356f80e
+    verdict_sha: 450335fdf75a116944c64c5d9001c8532800daacd523e14648fcf3c9ac2dd108
+    findings_count: 0
+  link_updates:
+    round: 1
+    revision: 1
+    sha256: 7af5dc40972c9f51cd3e3fa4462e5187932f92371ec93039e826b1cdbbd03abe
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 7af5dc40972c9f51cd3e3fa4462e5187932f92371ec93039e826b1cdbbd03abe
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=d40d59c0d3c702cc48416a2d6c3e5d6c2bfc2953c53329fb10504797d5e52b79
+    - parent:m6=450335fdf75a116944c64c5d9001c8532800daacd523e14648fcf3c9ac2dd108
+    - link_updates.yaml
+    own_sha256: 1395fe86740cae6e781c4dd583abf77dde8e0bd065f5a0e09908da0f9b346a13
+    verdict_sha: 7af5dc40972c9f51cd3e3fa4462e5187932f92371ec93039e826b1cdbbd03abe
+    thread_id: 01a13550-955d-7c93-84f0-ebb757177294
+    findings_count: 0

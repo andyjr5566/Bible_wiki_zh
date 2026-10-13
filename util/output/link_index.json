@@ -5322,6 +5322,14 @@
       "約書亞接續摩西"
     ]
   },
+  "約書亞最後分得地業": {
+    "path": "link_folder/事件/約書亞最後分得地業.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "約書亞最後分得地業",
+    "status": "formal",
+    "aliases": []
+  },
   "約瑟子孫嫌分地太少": {
     "path": "link_folder/事件/約瑟子孫嫌分地太少.md",
     "type": "事件",
@@ -18575,6 +18583,22 @@
     "status": "formal",
     "aliases": []
   },
+  "亞革悉（亞設）": {
+    "path": "link_folder/地點/亞革悉（亞設）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亞革悉（亞設）",
+    "status": "formal",
+    "aliases": []
+  },
+  "亭拿西拉": {
+    "path": "link_folder/地點/亭拿西拉.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亭拿西拉",
+    "status": "formal",
+    "aliases": []
+  },
   "亭拿（猶大）": {
     "path": "link_folder/地點/亭拿（猶大）.md",
     "type": "地點",
@@ -18608,6 +18632,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "他普亞",
+    "status": "formal",
+    "aliases": []
+  },
+  "他泊山": {
+    "path": "link_folder/地點/他泊山.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "他泊山",
     "status": "formal",
     "aliases": []
   },
@@ -18819,15 +18851,23 @@
     "status": "formal",
     "aliases": []
   },
-  "伯利恆": {
-    "path": "link_folder/地點/伯利恆.md",
+  "伯利恆（猶大）": {
+    "path": "link_folder/地點/伯利恆（猶大）.md",
     "type": "地點",
     "secondary_types": [],
-    "title": "伯利恆",
+    "title": "伯利恆（猶大）",
     "status": "formal",
     "aliases": [
       "Bethlehem"
     ]
+  },
+  "伯利恆（西布倫）": {
+    "path": "link_folder/地點/伯利恆（西布倫）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "伯利恆（西布倫）",
+    "status": "formal",
+    "aliases": []
   },
   "伯和崙": {
     "path": "link_folder/地點/伯和崙.md",
@@ -19349,8 +19389,7 @@
     "title": "基悉",
     "status": "formal",
     "aliases": [
-      "Chezib",
-      "亞革悉"
+      "Chezib"
     ]
   },
   "基拉耳": {
@@ -19436,6 +19475,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "基非拉",
+    "status": "formal",
+    "aliases": []
+  },
+  "基順河": {
+    "path": "link_folder/地點/基順河.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基順河",
     "status": "formal",
     "aliases": []
   },
@@ -19635,6 +19682,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "巴力迦得",
+    "status": "formal",
+    "aliases": []
+  },
+  "巴拉比珥": {
+    "path": "link_folder/地點/巴拉比珥.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "巴拉比珥",
     "status": "formal",
     "aliases": []
   },
@@ -19842,6 +19897,14 @@
     "status": "formal",
     "aliases": []
   },
+  "拿哈拉": {
+    "path": "link_folder/地點/拿哈拉.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "拿哈拉",
+    "status": "formal",
+    "aliases": []
+  },
   "拿拉": {
     "path": "link_folder/地點/拿拉.md",
     "type": "地點",
@@ -19855,6 +19918,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "挪得",
+    "status": "formal",
+    "aliases": []
+  },
+  "推羅": {
+    "path": "link_folder/地點/推羅.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "推羅",
     "status": "formal",
     "aliases": []
   },
@@ -19921,6 +19992,14 @@
     "status": "formal",
     "aliases": []
   },
+  "撒拿音的橡樹": {
+    "path": "link_folder/地點/撒拿音的橡樹.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "撒拿音的橡樹",
+    "status": "formal",
+    "aliases": []
+  },
   "撒烈溪": {
     "path": "link_folder/地點/撒烈溪.md",
     "type": "地點",
@@ -19965,6 +20044,14 @@
       "無人之地",
       "隔絕之地"
     ]
+  },
+  "書念": {
+    "path": "link_folder/地點/書念.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "書念",
+    "status": "formal",
+    "aliases": []
   },
   "書珥": {
     "path": "link_folder/地點/書珥.md",
@@ -20158,6 +20245,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "沙微基列亭",
+    "status": "formal",
+    "aliases": []
+  },
+  "沙魯險": {
+    "path": "link_folder/地點/沙魯險.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "沙魯險",
     "status": "formal",
     "aliases": []
   },
@@ -20566,6 +20661,14 @@
       "約旦河"
     ]
   },
+  "約帕": {
+    "path": "link_folder/地點/約帕.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "約帕",
+    "status": "formal",
+    "aliases": []
+  },
   "約念": {
     "path": "link_folder/地點/約念.md",
     "type": "地點",
@@ -20608,6 +20711,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "耶斯列平原",
+    "status": "formal",
+    "aliases": []
+  },
+  "耶斯列（以薩迦）": {
+    "path": "link_folder/地點/耶斯列（以薩迦）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "耶斯列（以薩迦）",
     "status": "formal",
     "aliases": []
   },
@@ -20853,11 +20964,27 @@
     "status": "formal",
     "aliases": []
   },
+  "迦步勒": {
+    "path": "link_folder/地點/迦步勒.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "迦步勒",
+    "status": "formal",
+    "aliases": []
+  },
   "迦特": {
     "path": "link_folder/地點/迦特.md",
     "type": "地點",
     "secondary_types": [],
     "title": "迦特",
+    "status": "formal",
+    "aliases": []
+  },
+  "迦特希弗": {
+    "path": "link_folder/地點/迦特希弗.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "迦特希弗",
     "status": "formal",
     "aliases": []
   },
@@ -36512,7 +36639,7 @@
     "alias_of": "伊拿印"
   },
   "Bethlehem": {
-    "alias_of": "伯利恆"
+    "alias_of": "伯利恆（猶大）"
   },
   "伯珊": {
     "alias_of": "伯善"
@@ -36566,9 +36693,6 @@
     "alias_of": "基博羅哈他瓦"
   },
   "Chezib": {
-    "alias_of": "基悉"
-  },
-  "亞革悉": {
     "alias_of": "基悉"
   },
   "Gerar": {

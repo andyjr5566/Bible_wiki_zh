@@ -1,0 +1,524 @@
+OpenAI Codex v0.162.1
+--------
+workdir: C:\Obsidian\Hermes\scripture
+model: gpt-6-luna
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: xhigh
+reasoning summaries: none
+session id: 01a13530-f584-7660-9e1e-f083ef8cb220
+--------
+user
+你是唯讀 evidence reviewer，不得修改任何檔案。請依 agent_evidence_audit_prompt.md 審查下面這個 stage，並照該檔「Verdict」一節的格式，在最後輸出 footer（REVIEW_STAGE／REVIEW_SHA256／REVIEW_REVIEWER／REVIEW_ATTEMPT／REVIEW_STATUS／FINDINGS_COUNT）。
+書卷：約書亞記
+章：19
+stage：m3
+sha256：d40d59c0d3c702cc48416a2d6c3e5d6c2bfc2953c53329fb10504797d5e52b79
+REVIEW_ATTEMPT：2
+變更說明：依上一輪 3 項 finding 修了書念、基順河、推羅的來源歸屬；另把伯利恆（西布倫）summary 的 BH 歸屬改成只列參照經文。
+
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\andyj_adknr2z\.codex\config.toml): `c:\Users\andyj_adknr2z\.vscode\extensions\vexp.vexp-vscode-1.3.11\dist\mcp-server.cjs` is ignored.
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\andyj_adknr2z\.codex\config.toml): `c:\Users\andyj_adknr2z\.vscode\extensions\vexp.vexp-vscode-1.3.11\dist\mcp-server.cjs` is ignored.
+warning: failed to parse hooks config C:\Obsidian\Hermes\scripture\.codex\hooks.json: unknown field `_cc_bridge_version`, expected `description` or `hooks` at line 2 column 22
+codex
+我會先嘗試 vexp `run_pipeline`，再核對更新後的 M3 hash、三處修正及其 raw 證據，並檢查變更是否引入新問題；全程唯讀。
+mcp: vexp/run_pipeline started
+mcp: vexp/run_pipeline (failed)
+MCP tool call requires approval, but approval policy is never
+context compacted
+codex
+我會依第二次審查範圍，先核對目前 stage hash 與上一輪三處修訂，再檢查伯利恆歸屬變更及受影響來源；全程只讀。前置 vexp 查詢曾因工具要求核准而受阻，我會以可用的唯讀專案工具和具名檔案核對繼續。
+mcp: hermes-scripture/get_chapter_status started
+mcp: hermes-scripture/get_chapter_status (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'Get-Content -Raw -Encoding UTF8 -LiteralPath "06 約書亞記/.tmp/第19章/agent_review.yaml"' in C:\Obsidian\Hermes\scripture
+ succeeded in 252ms:
+version: 2
+book: 約書亞記
+chapter: 19
+stages:
+  m3:
+    round: 2
+    revision: 3
+    sha256: d40d59c0d3c702cc48416a2d6c3e5d6c2bfc2953c53329fb10504797d5e52b79
+    claude: revised
+    reviewer_status: pending
+    reviewer_agent: null
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 57ff68c060adabadeb19e1c815e273ae51b7017958bcd4bec548814f078ddbc5
+      verdict: changes_required
+      findings_count: 3
+      late_recorded: false
+    thread_id: 01a13530-f584-7660-9e1e-f083ef8cb220
+    hash_inputs:
+    - entry_content/亞革悉（亞設）.yaml
+    - entry_content/亭拿西拉.yaml
+    - entry_content/他泊山.yaml
+    - entry_content/伯利恆（西布倫）.yaml
+    - entry_content/基順河.yaml
+    - entry_content/巴拉比珥.yaml
+    - entry_content/拿哈拉.yaml
+    - entry_content/推羅.yaml
+    - entry_content/撒拿音的橡樹.yaml
+    - entry_content/書念.yaml
+    - entry_content/沙魯險.yaml
+    - entry_content/約帕.yaml
+    - entry_content/約書亞最後分得地業.yaml
+    - entry_content/耶斯列（以薩迦）.yaml
+    - entry_content/迦步勒.yaml
+    - entry_content/迦特希弗.yaml
+    own_sha256: d40d59c0d3c702cc48416a2d6c3e5d6c2bfc2953c53329fb10504797d5e52b79
+
+
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+codex
+目前 stage receipt 的 `own_sha256` 與你提供的 hash 一致，且 attempt 1 已記錄 3 項 findings，這次仍是該 stage 的第二次複核。三個已修 payload 中，基順河與推羅的來源歸屬已收窄；我正在核對書念修訂及伯利恆剩餘 BH 說法是否仍由原文直接支持。
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'Select-String -LiteralPath "raw_data/ccbiblestudy_CT_joshua_19.txt" -SimpleMatch -Pattern "書念","約念前的河","推羅","伯利恆" | Select-Object LineNumber,Line | Format-List' in C:\Obsidian\Hermes\scripture
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'Get-Content -Raw -Encoding UTF8 -LiteralPath "agent_evidence_audit_prompt.md"' in C:\Obsidian\Hermes\scripture
+ succeeded in 64ms:
+# Evidence Audit Protocol
+
+你是本專案的 **Evidence Reviewer**。預設 reviewer 是 Codex；Codex 額度／服務不可用時由 Antigravity 接手。你不是第二個作者：只查核 Claude 已完成、尚未正式落地的 payload，M3 另查重要條目是否漏掉。Audit 對 Claude-authored content **read-only**；findings 交回 Claude 修。
+
+**這個 read-only 是技術限制，不只是遵守約定。** 本 audit 呼叫在 `--sandbox read-only`（Codex）或 deny-write settings（Antigravity）下執行，因此在 CLI 層就不具備寫入能力，不是「有能力但選擇不寫」。完成 audit 後把 findings 以純文字回傳給 orchestrator，由 orchestrator（有寫入權限的那一側）記錄 verdict、驅動 Claude 修稿——reviewer 本身不寫任何檔案，包括不寫 `agent_review.yaml`。
+
+**同一章固定同一個 reviewer session/thread，不要每次 attempt 都開新的。** M3 Attempt 1、M3 Attempt 2、M6、link_updates 的所有 review 呼叫，都用 `--resume {threadId}`（Codex）或延續同一 `agy` conversation（Antigravity）接續同一個 thread；只有換 reviewer（Codex↔Antigravity 交接）或找不到可延續的舊 thread 時才開新的。Read-only sandbox 在整個 thread 生命週期內保持不變，resume 時不需要、也不應該重新指定 sandbox（Codex resume 本來就會沿用原 session 的 sandbox）。這樣 reviewer 能記得自己前一輪指出過什麼、上一輪 attempt 說了什麼，不必每次重新讀整章上下文。
+
+先讀 `AGENTS.md`。呼叫時／狀態檔會提供：`book`、`chapter`、`stage`、`sha256`、`review_attempts`。先確認 `.tmp/第x章/agent_review.yaml` 的 stage hash 與目前內容一致；不一致就 `BLOCKED`。
+
+## 兩次 review 預算（硬限制）
+
+**每個 stage（m3 / m6 / link_updates）最多只有 2 次 substantive review，Codex 與 Antigravity 共用同一預算；換 reviewer 不會重置。**
+
+- Attempt 1/2：做完整 audit。一次列齊所有會影響正確性、證據邊界或重要完整性的 findings；不要把可以現在指出的問題留到下一輪。
+- Attempt 2/2：這是**最後一次 reviewer 機會**。先複核上一輪修正，再一次列齊仍存在或修稿新引入的所有 material findings。不要要求 Round 3。
+- 不花 review 預算在純文風、措辭偏好、可有可無的「更完整」建議。
+- Attempt 2 若仍 `CHANGES_REQUIRED`，Claude 會做最後一次修正；之後 `util/agent_review.py submit` 對新 hash 建立明示 `FORCED PASS`，**禁止第三次 reviewer 呼叫**。
+- `BLOCKED`（例如 reviewer quota／tool failure／來源不可讀）不是 substantive review，不消耗次數；可改由另一 reviewer 接手同一 hash。
+
+你的責任因此是：**前兩次就把真正重要的問題抓完，不用無限來回。**
+
+### Attempt 1 強制 scope checklist（寫 verdict 前逐項走過）
+
+Attempt 1 的預算最容易被文風偏好稀釋，導致真問題留到 Attempt 2、再 forced pass。動手前先確認這一輪已涵蓋：
+
+- [ ] **忠實度**：每個歸於來源的事實／引文／翻譯／轉述都對照過該來源 raw。
+- [ ] **證據邊界**：STEP 只用來支持字形／lemma／Strong／morphology／本節譯義／簡要義域；沒有拿 lexicon 義域或 STEP absence 當神學結論。
+- [ ] **m3 條目完整度**（m3 必做）：`link_plan.yaml` 的 `C_new_formal` 都有實際 payload；且掃過四套 Commentary＋經文＋STEP＋`link_candidates.yaml`＋`candidate_similarity.md`，確認沒有「來源明確提到、值得跨章累積、無既有條目承接」的重要候選整個漏掉。
+- [ ] **一致性**：m6／link_updates 對照已核准的上游（m3／m6），沒有壓平 Commentary 分歧、沒把單章內容寫成跨章主題發展。
+- [ ] findings 已一次列齊，沒有「這個留到下一輪再說」。
+
+純文風、可有可無的「更完整」不列入 findings，也不因此要求 Attempt 2。
+
+## 證據來源
+
+- 經文本文／交叉引註 → `raw_scripture/`
+- Commentary attribution／解經 → 本章 `source_manifest.md` 宣告 OK 的 CT、GT、KingComments、BibleHub `raw_data/`
+- 原文字形、lemma、Strong / Extended Strong、morphology、context gloss、lexicon 義域 → 正式 STEP evidence / receipt / projection；需要時用允許的精確 STEP query
+- 專案規則 → `AGENTS.md` 與當次正式 prompt/schema
+
+STEP 是原文證據層，不是第五家 Commentary。lexicon 義域不能自動寫成本節確定義，morphology 不能自行推出神學結論，STEP absence 也不能用來否定 Commentary 延伸。
+
+### Attribution fidelity
+
+凡把內容歸於某一來源，都直接對照該來源判斷忠實度：
+
+- 同語言直接引文：文字內容須忠實，節錄不得改變原意或拼接成來源沒有的句子。
+- 跨語言翻譯：比較語義，不要求中文字串出現在英文來源；不得增加、刪除、強化、弱化或反轉來源的主張、範圍、否定、因果與不確定程度。
+- 具名轉述：不要求逐字，但內容必須由來源支持，且不能把某一家說法改掛給另一家。
+- 不因標點或引號本身判定是否屬直接引文；只有來源 attribution 與實際來源不符時才形成 finding。單純字串回查不到，不足以構成 finding。
+
+## Stage 範圍
+
+### m3
+
+同時做 **內容忠實度 + 條目完整度**：
+
+- 查 `entry_content/*.yaml` 的重要事實、來源 attribution、引文／翻譯／轉述、數字、經文、原文、分歧與異章污染。
+- 對照 `link_plan.yaml` 的 `C_new_formal`，確認計畫內條目都有實際 M3 payload。
+- 再對照本章四套 Commentary、經文、相關 STEP、`link_candidates.yaml`、`candidate_similarity.md`、`link_plan.yaml` 與既有 wiki，找出是否有「來源明確提到、具研讀價值、值得跨章累積、有內容可承載、又沒有既有條目承接」的重要候選整個漏掉。
+- 不為功能詞、單次薄弱提及、Strong 編號本身或同義既有條目另建頁。
+
+`missing entry candidate` 額外寫：Suggested entry、Evidence、Why material、Existing coverage check、Fix direction。若根因在 candidate 層，要求 Claude 回 `link_candidates.yaml` 修，之後由 orchestrator 重跑 similarity → resolve → prompts；不要繞過流程硬塞孤立 M3 YAML。
+
+### m6
+
+查 `chapter_content.yaml`，並參照已通過 M3：evidence fidelity、M3/M6 consistency、是否壓平 Commentary 分歧、是否漏掉會讓本章整理產生明顯偏差的重要 nuance。
+
+### 差異複核（review_mode: delta）
+
+`agent_review.py status` 顯示 `delta-review-pending` 時，本 stage 的檔案自上次 PASS 後沒有改，只有上游（M3／M6）改了。只查上游修改有沒有讓本 stage 內容失準（例如 M3 條目名或定義改了，M6 本章整理的連結與敘述是否仍對得上）；不重做整份 audit。這次審查不計入兩次額度。
+
+### link_updates
+
+查 `link_updates.yaml`，必要時讀 `review_evidence.md` 與被更新既有條目：`summary/relation` 是否忠於來源、`overview_review` 的 keep/update 是否合理、單章內容是否被誤寫成跨章主題發展、是否加入無來源原文／神學／解經史。
+
+## Finding 分類
+
+只用：
+
+- `overstated`
+- `unsupported`
+- `source mismatch`
+- `quotation mismatch`
+- `missing nuance`
+- `missing entry candidate`
+- `original-language overreach`
+- `cross-chapter contamination`
+
+完全有支持的內容不用逐條列。每個非 PASS finding 只寫：Target、分類、Issue、可驗證 Evidence、最小 Fix direction。不要代 Claude 重寫整段。
+
+### 舉證格式（硬性）
+
+reviewer 的 finding 曾出現整條編造的紀錄（附的「逐字引句」在 raw 全查無）。因此：
+
+- 每個 finding 的 **Evidence 必須是可機械複核的具體錨點**：`raw_data/<檔名>` 或 `raw_scripture/...` 的**行號**＋**逐字內容**（照抄，不改標點）。「某家沒有說」這種否定式，要附上你實際 grep 過的檔名與關鍵詞。
+- **`missing`／`quotation mismatch`／`source mismatch` 類 finding：送出前，Evidence 裡引到的每一段逐字內容都要先 `grep -F` 打過一遍**（在掛名來源與你聲稱的實際來源兩邊都打）。查無出處的引句不得寫進 finding。
+- 標到「應連既有條目」時，先確認那個條目名在庫裡真的存在（`search_wiki_entries`），資料夾／分類名也要寫對。
+- orchestrator 代記 verdict 前，會對 `missing` 類 finding 逐條 `grep -F` 抽查；查不到的 finding 不採納。
+
+## Verdict
+
+reviewer 在唯讀 sandbox 裡跑不了寫入指令，所以自己不執行 `agent_review.py verdict`。audit 結束時只要清楚輸出下面這段，由 orchestrator（有寫入權限的那一側）依這段輸出代為記錄：
+
+```text
+python util/agent_review.py verdict 書名 章 stage <pass|changes_required|blocked> \
+  --sha <目前 sha> --reviewer <codex|antigravity> --findings-count N
+```
+
+若 orchestrator 代記時內容已被 Claude 改動、sha 對不上，**不要放掉這次 attempt**：
+用 reviewer footer 的 `REVIEW_SHA256` 補記——
+
+```text
+python util/agent_review.py verdict 書名 章 stage <status> \
+  --sha <REVIEW_SHA256> --observed-sha <REVIEW_SHA256> --reviewer <...> --findings-count N
+```
+
+補記的 attempt 照算、標 `late_recorded`，但只掛在 reviewer 當時看過的 sha 上，
+不追認目前內容——目前版本仍要重新 submit 才過 gate（額度用盡則 FORCED PASS）。
+
+最後輸出：
+
+```text
+REVIEW_STAGE: <m3|m6|link_updates>
+REVIEW_SHA256: <sha>
+REVIEW_REVIEWER: <codex|antigravity>
+REVIEW_ATTEMPT: <1|2>
+REVIEW_STATUS: <PASS|CHANGES_REQUIRED|BLOCKED>
+FINDINGS_COUNT: <整數>
+```
+
+Attempt 2/2 後不得再要求 reviewer 複核。若仍有 findings，清楚一次列完，交 Claude 最後修正，讓程式走 `FORCED PASS`。
+
+
+ succeeded in 194ms:
+
+
+LineNumber : 101
+Line       : 【書十九11】「往西上到瑪拉拉，達到大巴設，又達到約念前的河。」
+
+LineNumber : 106
+Line       : 〔文意註解〕「往西上到瑪拉拉，達到大巴設，又達到約念前的河」：『瑪拉拉』位於約念東方約6公里，米吉多北方約8公里；『大巴設』位於約念東方約3公里，米吉多溪北方約11公里；『約念』位於基順河的南岸，多珥的東北面約2
+             0公里，米吉多的西北約11公里；『約念前的河』即指基順河。
+
+LineNumber : 113
+Line       : 〔文意註解〕「又從撒立往東轉向日出之地，到吉斯綠他泊的境界，又通到大比拉，上到雅非亞」：『撒立』位於約念東方約12公里，米吉多東北方約10公里；『日出之地』即指東方；『吉斯綠他泊』位於約念東方約20公里，米吉多東
+             北方約19公里；『大比拉』位於書念北方約11公里，米吉多東北方約23公里；『雅非亞』位於約念東方約15公里，米吉多東北方約15公里。
+
+LineNumber : 129
+Line       : 【書十九15】「還有加他、拿哈拉、伸崙、以大拉、伯利恆。共有十二座城，還有屬城的村莊。」
+
+LineNumber : 134
+Line       : 〔文意註解〕「還有加他、拿哈拉、伸崙、以大拉、伯利恆。共有十二座城，還有屬城的村莊」：『加他』確實地點不詳；『拿哈拉』位於約念北方約16公里，亞柯南方約13公里，基順河北岸的一座小城；『伸崙』位於約念東北方約9公
+             里，米吉多北方約13公里；『以大拉』確實地點不詳；『伯利恆』不同於耶穌誕生的猶大地「伯利恆」(彌五2)，位於約念北方9公里，米吉多北方約17公里；『共有十二座城』這裡僅列五座城，可能是邊界城，且不一定屬於西布倫的
+             地業。
+
+LineNumber : 150
+Line       : 【書十九18】「他們的境界是到耶斯列、基蘇律、書念、」
+
+LineNumber : 153
+Line       : 〔原文字義〕「耶斯列」神栽種；「基蘇律」側翼；「書念」倍覺安息之地。
+
+LineNumber : 155
+Line       : 〔文意註解〕「他們的境界是到耶斯列、基蘇律、書念」：『耶斯列』不同於書十五59的「耶斯列」，位於米吉多東南東方約14公里，他納東北方12公里；『基蘇律』位於約念東方約20公里，米吉多東北方約19公里；『書念』位於
+             米吉多東方約14公里，耶斯列北方約4公里。
+
+LineNumber : 169
+Line       : 〔文意註解〕「拉璧、基善、亞別」：『拉璧』位於書念北方約11公里，米吉多東北方約23公里；『基善』位於伯善西北方約20公里，米吉多東北方約22公里；『亞別』確實地點不詳，應在以斯得倫平原之內。
+
+LineNumber : 227
+Line       : 〔文意註解〕「又到義伯崙、利合、哈們、加拿，直到西頓大城」：『義伯崙』位於亞柯北北東方約16公里，推羅南方約26公里；『利合』位於亞革悉東北方約18公里，推羅東南方約18公里；『哈們』位於亞革悉北方約10公里，推
+             羅南方約10公里；『加拿』位於推羅東南方約13公里，距離地中海約9公里；『西頓』位於推羅北方約34公里的地中海港口。
+
+LineNumber : 229
+Line       : 【書十九29】「轉到拉瑪和堅固城推羅，又轉到何薩，靠近亞革悉一帶地方，直通到海；」
+
+LineNumber : 232
+Line       : 〔原文字義〕「拉瑪」小山丘；「堅固」有防禦工事；「推羅」巖石；「何薩」庇護；「亞革悉」欺騙。
+
+LineNumber : 234
+Line       : 〔文意註解〕「轉到拉瑪和堅固城推羅，又轉到何薩，靠近亞革悉一帶地方，直通到海」：『拉瑪』位於推羅東南方約21公里，亞革悉東北方約22公里；『推羅』位於亞柯北方約41公里，西頓南方約34公里；『何薩』位於推羅東南南
+             方約2公里半，可能屬於推羅大城的一區；『亞革悉』不同於書十五44的「亞革悉」，位於亞柯北方約13公里，推羅南方約27公里。
+
+LineNumber : 422
+Line       : 1.「為西布倫人，按著宗族，拈出第三鬮。他們地業的境界是到撒立。…達到約念前的河。…又從撒立往東轉向日出之地，…通到伊弗他伊勒谷」(11~14節)：西布倫支派的地業是被以薩迦、亞設、拿弗他利三支派包圍。
+
+LineNumber : 428
+Line       : 1.「為以薩迦人，按著宗族，拈出第四鬮。他們的境界是到耶斯列…書念…拉璧、基善」(17~21節)：以薩迦支派的地業是被瑪拿西、拿弗他利、西布倫三支派包圍。
+
+
+
+
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'Select-String -LiteralPath "raw_data/biblehub_study_joshua_19.txt" -SimpleMatch -Pattern "Shunem","brook east of Jokneam","Kishon","Tyre","Bethlehem of Zebulun","Jdg 12:8-10" | Select-Object LineNumber,Line | Format-List' in C:\Obsidian\Hermes\scripture
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'Select-String -LiteralPath "raw_data/ccbiblestudy_GT_joshua_19.txt" -SimpleMatch -Pattern "書念","約念前的河","基順河","推羅","伯利恆" | Select-Object LineNumber,Line | Format-List' in C:\Obsidian\Hermes\scripture
+ succeeded in 0ms:
+
+
+LineNumber : 287
+Line       : and met the brook east of Jokneam.
+
+LineNumber : 292
+Line       : Jdg 5:21 The River Kishon swept them away, the ancient river,…
+
+LineNumber : 448
+Line       : Bethlehem of Zebulun was a Galilean town, distinct from Bethlehem of Judah, the city of David and the 
+             birthplace of the Messiah. The shared name reflects the ordinary use of place names throughout Israel, 
+             while the distinction preserves the unique biblical importance of Bethlehem in Judah.
+
+LineNumber : 450
+Line       : Jdg 12:8-10 After Jephthah, Ibzan of Bethlehem judged Israel.…
+
+LineNumber : 532
+Line       : Shunem,
+
+LineNumber : 533
+Line       : Shunem, on the slope of the Hill of Moreh, became the setting for the Shunammite woman’s generous care 
+             for Elisha and the Lord’s restoration of her son to life. It also stood near the Philistine camp before 
+             Saul’s final battle at Gilboa. The town’s history joins scenes of national tragedy with God’s power to 
+             give life, calling His people to trust Him amid both loss and uncertainty.
+
+LineNumber : 535
+Line       : 2Ki 4:8-37 One day Elisha went to Shunem, and a prominent woman…
+
+LineNumber : 539
+Line       : 1Sa 28:4-5 The Philistines gathered together and camped at Shunem…
+
+LineNumber : 588
+Line       : Jdg 5:21 The River Kishon swept them away, the ancient river,…
+
+LineNumber : 696
+Line       : The named towns, including Jezreel, Shunem, and Chesulloth, served as centers of settlement for the 
+             farming communities spread throughout Issachar’s territory. Jezreel later became prominent in Israel’s 
+             monarchy, particularly during the reigns of Ahab and Jezebel, showing that the land assigned in Joshua’s 
+             day remained central to Israel’s history. Cities provided places of administration, protection, trade, 
+             and public worship, while villages sustained the daily agricultural life of the people. God’s careful 
+             distribution of the land established Israel in Canaan as a people with homes, families, boundaries, and a 
+             shared calling to live faithfully before Him.
+
+LineNumber : 813
+Line       : Cabul, meaning “bound” or “displeasing,” lay in the region later associated with Solomon’s dealings with 
+             Hiram of Tyre, when Solomon gave Hiram towns in Galilee as payment for materials and labor used in 
+             building the temple and royal projects (1 Kings 9:10–13). The proximity of Tyre and other Phoenician 
+             centers gave Asher opportunities for trade and influence, but also exposed Israel to foreign alliances 
+             and idolatry.
+
+LineNumber : 869
+Line       : as far as the fortified city of Tyre,
+
+LineNumber : 870
+Line       : Tyre was a powerful Phoenician city, renowned for its defenses, trade, and seafaring influence. Its place 
+             on Asher’s boundary brought Israel into close contact with a wealthy Canaanite culture. Asher later 
+             failed to drive out all the inhabitants of its territory, and the tribe lived among the Canaanites of the 
+             region (Judges 1:31–32).
+
+LineNumber : 872
+Line       : 2Sa 24:7 They went toward the fortress of Tyre…
+
+LineNumber : 876
+Line       : Ezk 26:4 They will destroy the walls of Tyre and demolish her towers.…
+
+LineNumber : 942
+Line       : The listed towns formed the settled communities within Asher’s tribal boundaries, providing places for 
+             families, agriculture, worship, and defense. Asher’s territory reached areas associated with Sidon and 
+             Tyre, though the tribe did not fully remove the Canaanite inhabitants from several coastal cities (Judges 
+             1:31–32). Israel’s incomplete obedience allowed pagan populations to remain in the land, creating 
+             spiritual and political pressures in later generations. God had faithfully given Asher a rich 
+             inheritance, but the tribe’s lasting security depended upon living faithfully within the covenant.
+
+
+
+
+ succeeded in 0ms:
+
+
+LineNumber : 122
+Line       : 【書十九10~16 西布倫的分】拿撒勒之名雖未出現，卻是這分地業的定位點。邊界和大部分的城市都是以這個城市為軸心，往東、西延伸。北界是在提比哩亞以西約十二哩，拿撒勒西北六哩的臨門（今日的龍曼納〔Rummaneh〕
+             ）。撒立──大概是拿撒勒東南五哩的沙杜德遺址（Tell Shadud）──是另一個面西的定位點，邊界由此沿著基順河延伸，直到約念為止（見：書十二22）。東極遠達以薩迦的領土，即拿撒勒東南兩哩左右。在此提及的地點有
+             大比拉（他泊山附近的達布裡葉〔Daburiyeh〕）和雅非亞（拿撒勒東南面的亞法〔Yafa〕）。西布倫與海岸惟一的關聯（雖則似乎不合創四十九13和申三十三18～19），是它和亞柯之間的貿易，這貿易可能是透過附近的
+             城市拿哈拉（納珥遺址〔Tell en~Nahl〕）進行。但西布倫的領土並不延伸到地中海。——華爾頓《約書亞記背景注釋》
+
+LineNumber : 126
+Line       : “約念前的河”指基順河。――《啟導本聖經約書亞記註釋》
+
+LineNumber : 128
+Line       : 「約念前的河」（11節）指基順河，流經耶斯列平原。女先知底波拉在這裡打敗西西拉（士四7）。── 約書亞記綜合解讀
+
+LineNumber : 134
+Line       : ●「約念前的河」：指「基順河」。可參考 12:22。「前」可能是指「東面」。「約念」字義是「人們哀慟」。──
+
+LineNumber : 194
+Line       : ●「伯利恆」：並非耶路撒冷附近的伯利恆，此城位於拿撒勒西北11公里。字義是「麵包(糧食)之家」。士師以比贊埋葬於此（ 士 12:9-10 
+             ）。這附近目前尚有一個阿拉伯人的村落，保存了貝特拉恒（Beit~Lahm）之名。
+
+LineNumber : 210
+Line       : 以薩迦支派的產業: 以薩迦支派的領土內包括Esdraelon平原的肥沃農田,這應驗了雅各與摩西的預言(創49:14,15;申34:18)。以薩迦支派的耶斯列地有亞哈的宮殿,附近則有拿伯的葡萄園(王上21:1,2)
+             。位於摩利(Moreh)的書念城因曾供給以利沙的女子居住在此地而揚名(王下4:8-37),源於他泊山而流入地中海的基順河則以士師巴拉獲勝之地而著稱(士4:12-16)。並且,士師陀拉與巴沙王皆出生在以薩迦支派(士
+             10:1;王上15:27)。
+
+LineNumber : 218
+Line       : 【書十九17~23 以薩迦的分】這片土地主要是在瑪拿西以北，亞設以東，拿弗他利以南的耶斯列穀之內。其北界從他泊山，延伸到約但河加利利海南面不遠的部分。本區極不穩定，並且很具戰略性，埃及法老杜得模斯三世（提及亞拿哈
+             拉、基善）和薛提一世（提及利篾＝耶末，大概與伯善以北六哩的雅爾穆塔山〔Mount Yarmuta〕相同）的年表都反映了這一點。其他位置已經確認的地點如下：耶斯列是基利波山西北的澤林（Zer'in）；基蘇律即吉斯綠
+             他泊（書十九12），是拿撒勒東南兩哩的伊克薩珥（Iksal）；書念是耶斯列東北三哩的索倫（Solem）。——華爾頓《約書亞記背景注釋》
+
+LineNumber : 224
+Line       : 「書念」：在耶斯列之東北。――《串珠聖經注釋》
+
+LineNumber : 228
+Line       : 「書念」（18節）位於耶斯列平原，非利士人在這裡紮營與掃羅爭戰，先知以利沙在這裡使書念婦人的兒子復活（王下四8），書念的童女亞比煞伺候老年大衛（王上一3）。主耶穌特地來到書念北面的拿因，使寡婦的兒子復活，讓人聯想
+             到以利沙的神跡，所以歸榮耀與神說：「有大先知在我們中間興起來了」（路七11）。── 約書亞記綜合解讀
+
+LineNumber : 234
+Line       : ●「書念」：字義是「倍覺安息之地」，位於拿撒勒東南方11公里，他泊山以南八公里處。耶斯列東北五公里的索倫（Solem）。── 約書亞記研經資料(蔡哲民等)
+
+LineNumber : 289
+Line       : 【書十九24~31】“亞設”定居在地中海沿岸，從迦密山向北伸展至推羅，即腓尼基人居住的地方。――《約書亞記雷氏研讀本》
+
+LineNumber : 291
+Line       : 亞設所得之地：範圍由迦密山至北面推羅、西頓沿地中海岸，是寬二十公里的地帶。――《串珠聖經注釋》
+
+LineNumber : 293
+Line       : 亞設支派的產業: 亞設支派所得的產業是加利利西邊的傾斜地區。他們的領土達到西頓與推羅兩個城邦的沿岸,與整個亞柯平原與加利利的西部傾斜之地相連。亞設分得如此肥沃的農作物產地,亦應驗了雅各的預言(創49:20)。此支
+             派中未曾出現一個士師,僅供參考。――《聖經精讀本──約書亞記註解》
+
+LineNumber : 298
+Line       : ◎ 19:24-31 提到的是亞設支派分得的土地。亞設享有一條沿地中海很長的海岸線，其區域的位於亞柯平原，在西布倫和拿弗他利的西面，往北延伸到腓尼基海港推羅、西頓。
+
+LineNumber : 303
+Line       : 【書十九24~31 
+             亞設的分】亞設位於亞柯平原，在西布倫和拿弗他利的西面，往北延伸到腓尼基海港推羅、西頓。這地區在埃及的王室年表中也有很顯著的地位。杜得模斯三世攻取迦南城鎮的名單包括黑甲（大概是哈爾巴吉遺址〔Tell 
+             el~Harbaj〕或凱西斯遺址〔Tell el~Qassis〕）、押煞（見：書十一1）、米沙勒（在迦密山附近）、亞拉米勒；蘭塞二世的名單則有加拿（推羅東南七哩）。其他位置已經確認的地點如下：迦步勒是卡布勒（Ka
+             bul）；義伯侖是亞柯東北十哩的阿布代廢墟（Khirbet 'Abdeh）；烏瑪可能是亞柯；利合（十九30；有別於十九28的利合）可能是亞柯東面七哩的加爾比遺址〔Tell 
+             al~Gharbi）。提及推羅和西頓並不表示這些地方已被佔領。本段的可能只是理論上而非實際上的疆界。然而屬於這些城邦的鄉村可能在不同的時代，受以色列所控制。——華爾頓《約書亞記背景注釋》
+
+LineNumber : 353
+Line       : 「加拿」：在推羅東南十一公里（七英里）。
+
+LineNumber : 357
+Line       : 「西頓大城」（28節）是腓尼基人的城市，一直沒有被亞設支派攻取（士一31）。推羅是腓尼基人的城市，一半在大陸上，另一半在海島上，「堅固城推羅」（29節）可能指海島的部分。主耶穌曾到「推羅、西頓的境內」（可七24）
+             ，醫治外邦婦人的女兒，顯明救恩將臨到外邦人。── 約書亞記綜合解讀
+
+LineNumber : 366
+Line       : ●「加拿」：字義是「蘆葦」。推羅東南約十一公里。
+
+LineNumber : 368
+Line       : ●「西頓」：字義是「打獵」，是位於推羅北方的地中海岸旁的腓尼基古城。── 約書亞記研經資料(蔡哲民等)
+
+LineNumber : 372
+Line       : 推羅城分為兩部分，一半在大陸上，另一半在海島上。這措施是為了防止敵人進攻時全城遭殲滅。所謂「堅固城推羅」大概是指海島的部分。
+
+LineNumber : 374
+Line       : 「亞革悉」：在推羅與亞柯之間。
+
+LineNumber : 376
+Line       : 「一帶地方」：原文可能是另一地名──亞黑拉（參士2:31），這城位於推羅以北六公里（四英里）。――《串珠聖經注釋》
+
+LineNumber : 382
+Line       : ◎ 19:29 提及泰爾(推羅)和西頓並不表示這些地方已被佔領。本段可能只是理論上而非實際上的疆界，然而屬於這些城邦的鄉村可能在不同的時代受以色列所控制。
+
+
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'Select-String -LiteralPath "raw_data/kingcomments_joshua_19.txt" -SimpleMatch -Pattern "Sunem","Shunem","Kishon","Jokneam","Tyre" | Select-Object LineNumber,Line | Format-List' in C:\Obsidian\Hermes\scripture
+ succeeded in 82ms:
+
+
+LineNumber : 39
+Line       : Tola, one of the judges, is of that tribe (Jdg 10:1), as is Baasha, one of the kings of Israel (1Kgs 
+             15:27). A well-known place in that tribe is Sunem, where the God-fearing woman lives who gives 
+             hospitality to Elisha (2Kgs 4:8).
+
+
+
+
+codex
+來源核對確認了書念改稿：CT 只提供詞義與位置，後來歷史的說法明確歸給 GT、KC、BH；先前的過度概括已修正。現在再精核伯利恆 payload 中以比贊的出處和其餘原文資料標註，避免只憑摘要判定。
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command '$p="raw_data/ccbiblestudy_GT_joshua_19.txt"; $a=[System.IO.File]::ReadAllLines((Resolve-Path -LiteralPath $p),[System.Text.Encoding]::UTF8); for($i=0;$i -lt $a.Length;$i++){if($a[$i].Contains("以比贊") -or ($i -ge 190 -and $i -le 196)){[Console]::WriteLine(("{0}:{1}: {2}" -f $p,($i+1),$a[$i]))}}' in C:\Obsidian\Hermes\scripture
+ succeeded in 0ms:
+raw_data/ccbiblestudy_GT_joshua_19.txt:181: 西布倫的「伯利恒」（15節）不是猶大支派的大衛家鄉伯利恒，而是士師以比贊的家鄉（士十二8）。「以比贊之後，有西布倫人以倫，作以色列的士師十年」（士十二11）。──
+raw_data/ccbiblestudy_GT_joshua_19.txt:191: 
+raw_data/ccbiblestudy_GT_joshua_19.txt:192: ●「以大拉」：字義是「神的記念」。
+raw_data/ccbiblestudy_GT_joshua_19.txt:193: 
+raw_data/ccbiblestudy_GT_joshua_19.txt:194: ●「伯利恆」：並非耶路撒冷附近的伯利恆，此城位於拿撒勒西北11公里。字義是「麵包(糧食)之家」。士師以比贊埋葬於此（ 士 12:9-10 ）。這附近目前尚有一個阿拉伯人的村落，保存了貝特拉恒（Beit~Lahm）之名。
+raw_data/ccbiblestudy_GT_joshua_19.txt:195: 
+raw_data/ccbiblestudy_GT_joshua_19.txt:196: ◎ 19:15 提到西布倫的領土內有12座城市，但是只有5座在這整段提及，可能是抄本文字佚失導致。── 約書亞記研經資料(蔡哲民等)
+raw_data/ccbiblestudy_GT_joshua_19.txt:197: 
+raw_data/ccbiblestudy_GT_joshua_19.txt:198: 【書十九15 伯利恒】這個位於西布倫之拿哈拉西北的城市，與南部猶大境內的伯利恒並不相同。士師以比贊埋葬於此（士十二9～10）。時至今日，這附近尚有一條阿拉伯人的村落，保存了貝特拉恒（Beit~Lahm）之名。——華爾頓《約書亞記背景注釋》
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command '$ps=@("raw_data/ccbiblestudy_CT_joshua_19.txt","raw_data/kingcomments_joshua_19.txt","raw_data/biblehub_study_joshua_19.txt"); foreach($p in $ps){$a=[System.IO.File]::ReadAllLines((Resolve-Path -LiteralPath $p),[System.Text.Encoding]::UTF8); for($i=0;$i -lt $a.Length;$i++){if($a[$i].Contains("Ibzan") -or $a[$i].Contains("Bethlehem")){[Console]::WriteLine(("{0}:{1}: {2}" -f $p,($i+1),$a[$i]))}}}' in C:\Obsidian\Hermes\scripture
+ succeeded in 105ms:
+raw_data/biblehub_study_joshua_19.txt:447: and Bethlehem.
+raw_data/biblehub_study_joshua_19.txt:448: Bethlehem of Zebulun was a Galilean town, distinct from Bethlehem of Judah, the city of David and the birthplace of the Messiah. The shared name reflects the ordinary use of place names throughout Israel, while the distinction preserves the unique biblical importance of Bethlehem in Judah.
+raw_data/biblehub_study_joshua_19.txt:450: Jdg 12:8-10 After Jephthah, Ibzan of Bethlehem judged Israel.…
+raw_data/biblehub_study_joshua_19.txt:452: Mic 5:2 But you, Bethlehem Ephrathah, who are small…
+raw_data/biblehub_study_joshua_19.txt:454: Mat 2:1-6 After Jesus was born in Bethlehem in Judea,…
+
+mcp: hermes-scripture/query_step_context started
+mcp: hermes-scripture/query_step_context (completed)
+mcp: hermes-scripture/query_step_context started
+mcp: hermes-scripture/query_step_context (completed)
+mcp: hermes-scripture/check_manual_payloads started
+mcp: hermes-scripture/check_manual_payloads (completed)
+codex
+已核對 stage hash 與 review receipt 一致。上一輪三項來源歸屬問題均已修正；伯利恆 summary 對 BH 的說法也限於列出參照經文。M3 條目完整度複核未發現新的 material finding。
+
+REVIEW_STAGE: m3  
+REVIEW_SHA256: d40d59c0d3c702cc48416a2d6c3e5d6c2bfc2953c53329fb10504797d5e52b79  
+REVIEW_REVIEWER: codex  
+REVIEW_ATTEMPT: 2  
+REVIEW_STATUS: PASS  
+FINDINGS_COUNT: 0
+tokens used
+307,600
+已核對 stage hash 與 review receipt 一致。上一輪三項來源歸屬問題均已修正；伯利恆 summary 對 BH 的說法也限於列出參照經文。M3 條目完整度複核未發現新的 material finding。
+
+REVIEW_STAGE: m3  
+REVIEW_SHA256: d40d59c0d3c702cc48416a2d6c3e5d6c2bfc2953c53329fb10504797d5e52b79  
+REVIEW_REVIEWER: codex  
+REVIEW_ATTEMPT: 2  
+REVIEW_STATUS: PASS  
+FINDINGS_COUNT: 0

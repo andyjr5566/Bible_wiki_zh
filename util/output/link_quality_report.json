@@ -1,7 +1,7 @@
 {
-  "total_warnings": 253,
+  "total_warnings": 256,
   "critical_count": 0,
-  "warning_count": 253,
+  "warning_count": 256,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -9,6 +9,13 @@
       "source": "約書亞記/第11章.md",
       "target": "心裡剛硬",
       "message": "同一 alias「心裡剛硬」指向多個 target: 勉勵他使他膽壯（cha.zaq、a.mats）, 法老心剛硬"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "約書亞記/第19章.md",
+      "target": "但",
+      "message": "同一 alias「但」指向多個 target: 但, 但支派"
     },
     {
       "type": "alias_target_conflict",
@@ -156,6 +163,13 @@
       "source": "link_folder/人物/以利亞撒.md",
       "target": "第10章",
       "message": "同一 alias「第10章」指向多個 target: 03 利未記/第10章, 05 申命記/第10章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/以利亞撒.md",
+      "target": "第19章",
+      "message": "同一 alias「第19章」指向多個 target: 04 民數記/第19章, 06 約書亞記/第19章"
     },
     {
       "type": "alias_target_conflict",
@@ -1374,6 +1388,13 @@
       "source": "link_folder/原文/產業（na.cha.lah）.md",
       "target": "第18章",
       "message": "同一 alias「第18章」指向多個 target: 05 申命記/第18章, 06 約書亞記/第18章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/原文/產業（na.cha.lah）.md",
+      "target": "第19章",
+      "message": "同一 alias「第19章」指向多個 target: 05 申命記/第19章, 06 約書亞記/第19章"
     },
     {
       "type": "alias_target_conflict",

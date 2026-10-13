@@ -1,0 +1,539 @@
+book: 約書亞記
+chapter: 19
+A_use_directly: []
+B_needs_update:
+- name: 西緬
+  suggested_type: 人物
+  evidence: 第1-9節西緬支派拈出第二鬮，地業在猶大人地業中間，因為猶大人的分過多；CT：巴力毗珥事件後成為人數最少的支派，散居、遷往西珥（代上4:39-43）；GT《綜合解讀》：人口從59,300人劇降到22,200人；GT《聖經精讀本》：逐漸被猶大同化，應驗創49:5-7；KC：Simeon
+    acts according to the voice of Judah；BH：雅各的預言與利未的分散對照
+  surfaces:
+  - phrase: 西緬
+    verses:
+    - 1
+    - 8
+    - 9
+  match_type: exact
+  existing_title: 西緬
+  existing_path: link_folder/人物/西緬.md
+- name: 西布倫（同住）
+  suggested_type: 人物
+  evidence: 第10-16節西布倫拈出第三鬮；CT：只列五座城卻說十二座城；GT《聖經精讀本》《綜合解讀》、華爾頓：下加利利，拿撒勒是定位點，與創49:13「住在海口」的關係；KC：說它西臨地中海、東到提比哩亞海；BH：賽9:1-2
+    與太4:13-16
+  surfaces:
+  - phrase: 西布倫
+    verses:
+    - 10
+    - 16
+    - 27
+    - 34
+  match_type: exact
+  existing_title: 西布倫（同住）
+  existing_path: link_folder/人物/西布倫（同住）.md
+- name: 以薩迦（價值）
+  suggested_type: 人物
+  evidence: 第17-23節以薩迦拈出第四鬮；GT《聖經精讀本》《綜合解讀》：耶斯列平原的肥沃農田，應驗創49:14-15；GT 華爾頓：本區極不穩定、很具戰略性，杜得模斯三世與薛提一世的年表；KC、BH：陀拉與巴沙出自以薩迦
+  surfaces:
+  - phrase: 以薩迦
+    verses:
+    - 17
+    - 23
+  match_type: exact
+  existing_title: 以薩迦（價值）
+  existing_path: link_folder/人物/以薩迦（價值）.md
+- name: 亞設（有福）
+  suggested_type: 人物
+  evidence: 第24-31節亞設拈出第五鬮；GT《聖經精讀本》《綜合解讀》：亞柯平原的肥沃土地，應驗創49:20；GT 華爾頓：可能只是理論上而非實際上的疆界；KC：女先知亞拿出自亞設（路2:36-38）；BH：亞設未能趕出迦南人（士1:31-32）
+  surfaces:
+  - phrase: 亞設
+    verses:
+    - 24
+    - 31
+    - 34
+  match_type: exact
+  existing_title: 亞設（有福）
+  existing_path: link_folder/人物/亞設（有福）.md
+- name: 拿弗他利
+  suggested_type: 人物
+  evidence: 第32-39節拿弗他利拈出第六鬮；CT：達到約但河那裡的猶大一句的兩種解釋；GT《聖經精讀本》：夏瑣在此境內，很早陷入偶像崇拜（士1:33）；GT《綜合解讀》：加利利海與迦百農在拿弗他利境內；KC、BH：賽9:1-2
+    的大光
+  surfaces:
+  - phrase: 拿弗他利
+    verses:
+    - 32
+    - 39
+  match_type: exact
+  existing_title: 拿弗他利
+  existing_path: link_folder/人物/拿弗他利.md
+- name: 但支派
+  suggested_type: 人物
+  evidence: 第40-48節但拈出第七鬮，第47節但人的地界越過原得的地界；CT：地業相較其他支派顯得很小，第47節是約書亞死後的事、後人的補遺，〔話中之光〕避難就易；GT《聖經精讀本》：但支派最後一個分得產業，他們沒有抱怨艱苦的環境；GT《研經資料》：因趕不出迦南人被迫居住山地（士1:34-35）；KC：Dan
+    becomes the first tribe to introduce idolatry（士18:30）；BH：非利士人的壓力使許多但人北遷（士18）
+  surfaces:
+  - phrase: 但支派
+    verses:
+    - 40
+    - 48
+  - phrase: 但人
+    verses:
+    - 47
+  match_type: exact
+  existing_title: 但支派
+  existing_path: link_folder/人物/但支派.md
+- name: 但
+  suggested_type: 地點
+  evidence: 第47節「但人上去攻取利善……以他們先祖但的名將利善改名為但」；CT：利善是但城的原名，加利利海北方約40公里；GT《啟導本》《聖經精讀本》：在米倫湖北，巴勒斯坦的北界，「從但到別是巴」指以色列全地，耶羅波安在但設金牛犢；GT《綜合解讀》：凱撒利亞腓立比就在但東面6公里；BH：Leshem
+    又稱 Laish
+  surfaces:
+  - phrase: 利善
+    verses:
+    - 47
+  match_type: exact
+  existing_title: 但
+  existing_path: link_folder/地點/但.md
+- name: 但支派至終定居於何地
+  suggested_type: 解經爭議
+  evidence: 第40-47節但的原得地界與北遷利善；GT《研經資料》：19:47 的遷徙發生在士師時代，可能是編輯時加的附註；GT《聖經精讀本》：兩個原因：人口多而地少、地業內外都有強盛的亞摩利人與非利士人；CT：越過原得的地界指到以色列人尚未征服的土地去取得
+  match_type: exact
+  existing_title: 但支派至終定居於何地
+  existing_path: link_folder/解經爭議/但支派至終定居於何地.md
+- name: 猶大支派
+  suggested_type: 人物
+  evidence: 第1、9節西緬的地業在猶大人地業中間，因為猶大人的分過多；KC：猶大有地多過能自己維持的；BH：猶大的分超過支派的需要，分給西緬
+  surfaces:
+  - phrase: 猶大人
+    verses:
+    - 1
+    - 9
+  match_type: exact
+  existing_title: 猶大支派
+  existing_path: link_folder/人物/猶大支派.md
+- name: 別是巴
+  suggested_type: 地點
+  evidence: 第2節「別是巴（或名示巴）」；CT：希伯崙西南方約40公里；GT《綜合解讀》：亞伯拉罕和以撒挖井的地方、南地的主要城市；GT《研經資料》：示巴可能是抄本訛誤，保留就有14座城、與第6節總結不符；BH：以色列的南端
+  surfaces:
+  - phrase: 別是巴
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 別是巴
+  existing_path: link_folder/地點/別是巴.md
+- name: 迦南大敗直到何珥瑪
+  suggested_type: 歷史
+  evidence: 第4節「伊利多拉、比土力、何珥瑪」；CT：字義「庇護所」，別是巴東方約11公里；BH：以色列在何珥瑪先因擅自上去而敗（民14:40-45），後來許願毀滅得勝（民21:1-3）
+  surfaces:
+  - phrase: 何珥瑪
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 迦南大敗直到何珥瑪
+  existing_path: link_folder/歷史/迦南大敗直到何珥瑪.md
+- name: 洗革拉
+  suggested_type: 地點
+  evidence: 第5節「洗革拉、伯瑪加博、哈薩蘇撒」；CT：別是巴西北方約22公里；BH：後來成為大衛逃避掃羅時的避難所，由迦特王亞吉賜給他（撒上27:6）
+  surfaces:
+  - phrase: 洗革拉
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 洗革拉
+  existing_path: link_folder/地點/洗革拉.md
+- name: 南地
+  suggested_type: 地點
+  evidence: 第8節「就是南地的拉瑪」；GT《研經資料》：本段的城市大都在尼革（南地），以帖、亞珊在薩非拉（高原）
+  surfaces:
+  - phrase: 南地
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 南地
+  existing_path: link_folder/地點/南地.md
+- name: 約念
+  suggested_type: 地點
+  evidence: 第11節「又達到約念前的河」；CT：約念位於基順河的南岸，約念前的河即指基順河；BH：與被擊敗的迦南王有關、後來給了利未人（書12:22；21:34）
+  surfaces:
+  - phrase: 約念
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 約念
+  existing_path: link_folder/地點/約念.md
+- name: 伸崙
+  suggested_type: 地點
+  evidence: 第15節「還有加他、拿哈拉、伸崙」；CT：約念東北方約9公里，字義「守望高處」；BH：伸崙曾有迦南王加入約書亞所擊敗的北方聯盟（書11:1；12:20）
+  surfaces:
+  - phrase: 伸崙
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 伸崙
+  existing_path: link_folder/地點/伸崙.md
+- name: 押煞
+  suggested_type: 地點
+  evidence: 第25節「黑甲、哈利、比田、押煞」；CT：亞柯南方約18公里；GT 華爾頓、《研經資料》：杜得模斯三世攻取迦南城鎮的名單包括押煞；BH：押煞王加入耶賓的北方聯盟（書11:1）
+  surfaces:
+  - phrase: 押煞
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 押煞
+  existing_path: link_folder/地點/押煞.md
+- name: 迦密
+  suggested_type: 地點
+  evidence: 第26節「往西達到迦密」；CT：從亞柯灣南岸起向東南延伸的山脈，全長約40公里；GT《綜合解讀》《聖經精讀本》、BH：以利亞與巴力先知較量的地方（王上18）
+  surfaces:
+  - phrase: 迦密
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 迦密
+  existing_path: link_folder/地點/迦密.md
+- name: 西頓
+  suggested_type: 地點
+  evidence: 第28節「直到西頓大城」；CT：推羅北方約34公里的地中海港口；GT《串珠》：雖在亞設抽籤得地的範圍，但這城沒有被攻取；GT《綜合解讀》：一直沒有被亞設支派攻取（士1:31）；BH：富裕而拜偶像的航海文化
+  surfaces:
+  - phrase: 西頓
+    verses:
+    - 28
+  match_type: exact
+  existing_title: 西頓
+  existing_path: link_folder/地點/西頓.md
+- name: 夏瑣
+  suggested_type: 地點
+  evidence: 第36節「亞大瑪、拉瑪、夏瑣」；CT：基尼烈城北方約17公里；GT《綜合解讀》：被約書亞燒毀後又被迦南人佔領，耶賓欺壓以色列人二十年（士4:3）；GT《聖經精讀本》：夏瑣王之居所在拿弗他利境內（11:10）；BH：以色列最大的考古遺址之一
+  surfaces:
+  - phrase: 夏瑣
+    verses:
+    - 36
+  match_type: exact
+  existing_title: 夏瑣
+  existing_path: link_folder/地點/夏瑣.md
+- name: 基低斯
+  suggested_type: 地點
+  evidence: 第37節「基低斯、以得來、隱夏瑣」；CT：夏瑣北方約11公里，字義「聖所」；GT《綜合解讀》：巴拉來自基低斯（士4:6）；GT 華爾頓：在今日已被排乾之胡列湖的北面；BH：後來成為六座逃城之一（書20:7），巴拉的家鄉
+  surfaces:
+  - phrase: 基低斯
+    verses:
+    - 37
+  match_type: exact
+  existing_title: 基低斯
+  existing_path: link_folder/地點/基低斯.md
+- name: 瑣拉
+  suggested_type: 地點
+  evidence: 第41節「瑣拉、以實陶、伊珥示麥」；CT：耶路撒冷西方約23公里；GT《綜合解讀》《研經資料》：參孫的家鄉（士13:2；16:31）；KC：Zorah
+    and Eshtaol are known from the history of Samson（士13:25）；BH：參孫的出生地
+  surfaces:
+  - phrase: 瑣拉
+    verses:
+    - 41
+  match_type: exact
+  existing_title: 瑣拉
+  existing_path: link_folder/地點/瑣拉.md
+- name: 以實陶
+  suggested_type: 地點
+  evidence: 第41節「瑣拉、以實陶」；CT：耶路撒冷西方約22公里，字義「懇求」；KC、BH：耶和華的靈在瑣拉和以實陶中間感動參孫（士13:25）
+  surfaces:
+  - phrase: 以實陶
+    verses:
+    - 41
+  match_type: exact
+  existing_title: 以實陶
+  existing_path: link_folder/地點/以實陶.md
+- name: 以革倫
+  suggested_type: 地點
+  evidence: 第43節「以倫、亭拿他、以革倫」；CT：基色西南方約11公里；GT《綜合解讀》：非利士人五城中最北的一個；BH：非利士五大城之一，約櫃被送到以革倫（撒上5:10-12），Tel
+    Miqne 發現大型神廟與橄欖油業
+  surfaces:
+  - phrase: 以革倫
+    verses:
+    - 43
+  match_type: exact
+  existing_title: 以革倫
+  existing_path: link_folder/地點/以革倫.md
+- name: 亭拿（猶大）
+  suggested_type: 地點
+  evidence: 第43節「以倫、亭拿他、以革倫」；CT：耶路撒冷西方約31公里，伯示麥西北方約7公里；GT《研經資料》、華爾頓：應該是亭拿，伯示麥西北的巴塔希遺址；BH：Timnah，參孫向亭拿的非利士女子求親（士14:1-2），Tel
+    Batash；書15:10 猶大北界上的亭拿是同一地
+  surfaces:
+  - phrase: 亭拿他
+    verses:
+    - 43
+  match_type: exact
+  existing_title: 亭拿（猶大）
+  existing_path: link_folder/地點/亭拿（猶大）.md
+- name: 以法蓮山地
+  suggested_type: 地點
+  evidence: 第50節「以法蓮山地的亭拿西拉城」；BH：約書亞屬以法蓮支派，產業在以法蓮崎嶇的中部山地，靠近示羅；KC：在同時代人不願住的山地（書17:15-16）
+  surfaces:
+  - phrase: 以法蓮山地
+    verses:
+    - 50
+  match_type: exact
+  existing_title: 以法蓮山地
+  existing_path: link_folder/地點/以法蓮山地.md
+- name: 約書亞
+  suggested_type: 人物
+  evidence: 第49-51節分完地業後以色列人將亭拿西拉給約書亞為業，他修城住在其中；第51節約書亞與以利亞撒、各支派族長在示羅拈鬮分地；CT、GT《聖經精讀本》、KC、BH：他最後才得自己的分；KC：以利亞撒排在約書亞前面
+  surfaces:
+  - phrase: 約書亞
+    verses:
+    - 49
+    - 50
+    - 51
+  match_type: exact
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 以利亞撒
+  suggested_type: 人物
+  evidence: 第51節「這就是祭司以利亞撒和嫩的兒子約書亞」；KC：這個結語幾乎和分地開始那一節（書14:1）一樣，以利亞撒排在前面，領導要有祭司的心；GT《啟導本》：主持分地的人是摩西預先指定的（民34:17-19）；BH：以利亞撒代表亞倫傳下的祭司權柄
+  surfaces:
+  - phrase: 以利亞撒
+    verses:
+    - 51
+  match_type: exact
+  existing_title: 以利亞撒
+  existing_path: link_folder/人物/以利亞撒.md
+- name: 示羅
+  suggested_type: 地點
+  evidence: 第51節「在示羅會幕門口，耶和華面前，拈鬮所分的地業」；CT：字義「安歇之地」，分配地業是在示羅進行的（書18:1）；BH：士師時代會幕與約櫃大多在示羅
+  surfaces:
+  - phrase: 示羅
+    verses:
+    - 51
+  match_type: exact
+  existing_title: 示羅
+  existing_path: link_folder/地點/示羅.md
+- name: 會幕（帳幕整體）
+  suggested_type: 主題
+  evidence: 第51節「在示羅會幕門口」；KC：in the tent of meeting this may become manifest；BH：會幕門口是以色列藉祭司親近神的指定地點，在那裡拈鬮表明國家的疆界由耶和華的同在決定
+  surfaces:
+  - phrase: 會幕
+    verses:
+    - 51
+  match_type: exact
+  existing_title: 會幕（帳幕整體）
+  existing_path: link_folder/主題/會幕（帳幕整體）.md
+- name: 拈鬮分地（go.ral）
+  suggested_type: 主題
+  evidence: 第1、10、17、24、32、40節第二到第七鬮，第51節「拈鬮所分的地業。這樣，他們把地分完了」；GT《綜合解讀》：雖然還有許多未得之地，他們已在信心中完成了神所交托的任務；GT《研經資料》：分地是摩西死前預先指定的（民34:17-19）；BH：拈鬮防止最強的支派或領袖按喜好取地
+  surfaces:
+  - phrase: 拈鬮
+    verses:
+    - 51
+  match_type: exact
+  existing_title: 拈鬮分地（go.ral）
+  existing_path: link_folder/主題/拈鬮分地（go.ral）.md
+- name: 產業（na.cha.lah）
+  suggested_type: 原文
+  evidence: 全章反覆「所得的地業」「按著宗族所得的地業」；第49節地業給約書亞為業；CT 第49節：「地業(原文雙字)」土地(首字)；財產，產業(次字)
+  match_type: exact
+  existing_title: 產業（na.cha.lah）
+  existing_path: link_folder/原文/產業（na.cha.lah）.md
+- name: 未得之地
+  suggested_type: 主題
+  evidence: 第28-29節亞設的境界直到西頓大城、堅固城推羅，第47節但人的地界越過原得的地界；GT 華爾頓、《研經資料》：提及推羅和西頓並不表示這些地方已被佔領，本段可能只是理論上而非實際上的疆界；GT《串珠》：西頓沒有被攻取；GT《綜合解讀》：雖然此時還有許多未得之地，但是他們仍然照著神的吩咐把地分完了；BH：各支派仍需趕出剩下的仇敵
+  match_type: exact
+  existing_title: 未得之地
+  existing_path: link_folder/主題/未得之地.md
+- name: 西緬利未受咒詛 (創49_5-7)
+  suggested_type: 互文
+  evidence: 第1、9節西緬的地業在猶大人地業中間；CT：成就雅各的預言（創49:7）；GT《聖經精讀本》《綜合解讀》、《雷氏研讀本》：應驗了雅各對西緬支派的預言；KC：西緬融入猶大、幾乎失去身分，利未人分散在各城成為百姓的祝福；BH：利未的分散成了聖職，西緬的分散反映支派影響力減弱
+  match_type: exact
+  existing_title: 西緬利未受咒詛 (創49_5-7)
+  existing_path: link_folder/互文/西緬利未受咒詛 (創49_5-7).md
+- name: 摩西的祝福與雅各的祝福
+  suggested_type: 主題
+  evidence: 第10-39節西布倫、以薩迦、亞設、拿弗他利的地業；GT《綜合解讀》：逐一說各支派的地應驗了創49 與申33 的預言；GT《聖經精讀本》：西布倫的境界似乎不符合雅各說的住在海口，以經商解釋；GT
+    華爾頓、《研經資料》：西布倫與海岸惟一的關聯好像是和亞柯之間的貿易，似乎不合創49:13、申33:18-19；KC：說西布倫西臨地中海，合乎創49:13；BH：亞設的王的美味與油（創49:20；申33:24-25）
+  match_type: exact
+  existing_title: 摩西的祝福與雅各的祝福
+  existing_path: link_folder/主題/摩西的祝福與雅各的祝福.md
+- name: 約但河
+  suggested_type: 地點
+  evidence: 第22、33、34節以薩迦、拿弗他利的地界「直通到約但河為止」「通到約但河」「達到約但河那裡的猶大」；CT：約但河那裡的猶大的兩種解釋；GT《研經資料》：七十士譯本缺「那裏的猶大」；GT《綜合解讀》：可能指河東睚珥的城邑（代上2:22）；BH：約但河是以色列的東界
+  surfaces:
+  - phrase: 約但河
+    verses:
+    - 22
+    - 33
+    - 34
+  match_type: exact
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
+C_new_formal:
+- name: 迦特希弗
+  suggested_type: 地點
+  evidence: 第13節「從那裡往東，接連到迦特希弗」；CT：字義「礦區的榨酒機」，米吉多東北方約22公里；GT《綜合解讀》《研經資料》：先知約拿的家鄉（王下14:25）；BH：約拿的家鄉，把西布倫這個小鎮連到神對列國的關心
+  surfaces:
+  - phrase: 迦特希弗
+    verses:
+    - 13
+  target_path: link_folder/地點/迦特希弗.md
+  semantic_hint:
+  - title: 迦特
+    score: 0.407
+    type: 地點
+- name: 伯利恆（西布倫）
+  suggested_type: 地點
+  evidence: 第15節「以大拉、伯利恆，共十二座城」；CT：不同於猶大地的伯利恆（彌5:2），約念北方9公里；GT《啟導本》《串珠》：不是大衛家鄉的伯利恆，在拿撒勒西北約11公里；GT《綜合解讀》、華爾頓、BH：士師以比贊的家鄉與葬地（士12:8-10），附近阿拉伯村落保存
+    Beit Lahm 之名
+  surfaces:
+  - phrase: 伯利恆
+    verses:
+    - 15
+  target_path: link_folder/地點/伯利恆（西布倫）.md
+- name: 書念
+  suggested_type: 地點
+  evidence: 第18節「耶斯列、基蘇律、書念」；CT：字義「倍覺安息之地」，米吉多東方約14公里；GT 華爾頓、《研經資料》：耶斯列東北的索倫（Solem）；GT《聖經精讀本》《綜合解讀》、KC、BH：以利沙在書念使婦人的兒子復活（王下4:8-37），非利士人在此紮營攻掃羅（撒上28:4），亞比煞是書念的童女（王上1:3）
+  surfaces:
+  - phrase: 書念
+    verses:
+    - 18
+  target_path: link_folder/地點/書念.md
+- name: 耶斯列（以薩迦）
+  suggested_type: 地點
+  evidence: 第18節「他們的境界是到耶斯列」；CT：不同於書15:56 的耶斯列，米吉多東南東方約14公里，字義「神栽種」；GT 華爾頓：基利波山西北的澤林（Zer'in）；GT《聖經精讀本》《綜合解讀》、KC、BH：亞哈的宮殿與拿伯的葡萄園（王上21:1）
+  surfaces:
+  - phrase: 耶斯列
+    verses:
+    - 18
+  target_path: link_folder/地點/耶斯列（以薩迦）.md
+  semantic_hint:
+  - title: 耶斯列（猶大）
+    score: 0.515
+    type: 地點
+  - title: 以薩迦（價值）
+    score: 0.477
+    type: 人物
+  - title: 以薩迦（報酬）
+    score: 0.428
+    type: 原文
+- name: 他泊山
+  suggested_type: 地點
+  evidence: 第22節「又達到他泊、沙哈洗瑪、伯示麥」，第12節吉斯綠他泊、第34節亞斯納他泊；CT：他泊字義「石墩」，確實地點不詳，可能位於他泊山附近；GT《串珠》：大概近他泊山；GT《綜合解讀》：他泊就是他泊山，底波拉聚集以色列人之處（士4:12）；GT
+    華爾頓：他泊山是拿弗他利地業的主要基準點；BH：下加利利顯著的界標，基督教傳統把它與登山變像連在一起，但福音書沒有寫出山名
+  surfaces:
+  - phrase: 他泊
+    verses:
+    - 22
+  target_path: link_folder/地點/他泊山.md
+- name: 基順河
+  suggested_type: 地點
+  evidence: 第11節「又達到約念前的河」；CT：約念前的河即指基順河；GT《啟導本》《研經資料》：約念前的河指基順河；GT《綜合解讀》：流經耶斯列平原，底波拉在這裡打敗西西拉（士4:7）；BH：引士5:21
+    基順古河把敵人沖沒、王上18:40 以利亞在基順河殺巴力先知
+  target_path: link_folder/地點/基順河.md
+  semantic_hint:
+  - title: 基訓
+    score: 0.421
+    type: 地點
+- name: 推羅
+  suggested_type: 地點
+  evidence: 第29節「轉到拉瑪和堅固城推羅」；CT：字義「巖石」，亞柯北方約41公里；GT《串珠》：推羅城一半在大陸、一半在海島，「堅固城推羅」大概指海島部分；GT
+    華爾頓、《研經資料》：提及推羅和西頓並不表示這些地方已被佔領；GT《綜合解讀》：主耶穌到推羅西頓境內（可7:24）；BH：強大的腓尼基城，亞設後來未能趕出（士1:31-32）
+  surfaces:
+  - phrase: 推羅
+    verses:
+    - 29
+  target_path: link_folder/地點/推羅.md
+- name: 亞革悉（亞設）
+  suggested_type: 地點
+  evidence: 第29節「靠近亞革悉一帶地方，直通到海」；CT：不同於書15:44 的亞革悉，亞柯北方約13公里；GT 華爾頓、《研經資料》：雖然分給亞設卻從來沒有被攻取（士1:31），中銅時代到羅馬時期的貿易中心，主前701年毀於西拿基立，不可與書15:44
+    猶大的同名城混淆；BH：亞柯以北的沿海聚落
+  surfaces:
+  - phrase: 亞革悉
+    verses:
+    - 29
+  target_path: link_folder/地點/亞革悉（亞設）.md
+  semantic_hint:
+  - title: 亞設（有福）
+    score: 0.513
+    type: 人物
+  - title: 亞干
+    score: 0.43
+    type: 人物
+  - title: 塞特
+    score: 0.423
+    type: 人物
+- name: 約帕
+  suggested_type: 地點
+  evidence: 第46節「並約帕對面的地界」；CT：字義「美麗的」，耶路撒冷西北方約55公里的海岸港口；GT《綜合解讀》：所羅門與所羅巴伯建殿的香柏木浮海運到這裡（代下2:16；拉3:7），約拿在這裡坐船逃往他施（拿1:3），彼得在這裡叫大比大復活並看見異象（徒9:43）；BH：同樣列出約拿與彼得，並說非利士人的壓力使但未能佔有大部分地業
+  surfaces:
+  - phrase: 約帕
+    verses:
+    - 46
+  target_path: link_folder/地點/約帕.md
+- name: 亭拿西拉
+  suggested_type: 地點
+  evidence: 第50節「將約書亞所求的城，就是以法蓮山地的亭拿西拉城，給了他。他就修那城，住在其中」；CT：字義「太陽的一部分，豐盛的一部分」，他不是求好的城、而是求別的家族沒有看中的城，修那城暗示當時相當荒廢；GT《啟導本》《研經資料》、華爾頓：又名亭拿希烈（士2:9），約書亞葬在此地（書24:30），蒂布納廢墟，約書亞家族的政治飛地，「西拉」是「剩餘」的意思；GT《聖經精讀本》：「修」原文與「重新建築」相近；KC：意思是
+    abundant portion，在同時代人不願住的山地（書17:15-16）；BH：約書亞後來的家與葬地
+  surfaces:
+  - phrase: 亭拿西拉
+    verses:
+    - 50
+  target_path: link_folder/地點/亭拿西拉.md
+- name: 約書亞最後分得地業
+  suggested_type: 事件
+  evidence: 第49-50節以色列人按著境界分完了地業，就在他們中間將地給約書亞為業，是照耶和華的吩咐；CT：約書亞的家族一直到分配完才有定居之地，是後世信徒領袖的好榜樣，〔話中之光〕他沒有利用職務的便利以權謀私；GT《聖經精讀本》：以色列人分地以迦勒為始（書14:6-15）、以約書亞為終，真正領袖的三個特質；GT《綜合解讀》：兩位專心跟從神的老弟兄首尾呼應；GT《啟導本》《研經資料》：「照耶和華的吩咐」或暗示神當年已應許此地，如同希伯崙給迦勒；KC：迦勒第一個、約書亞最後一個得地業，出於謙虛等到眾人都得了；BH：約書亞在百姓都得了之後才得自己的分
+  target_path: link_folder/事件/約書亞最後分得地業.md
+  semantic_hint:
+  - title: 未得之地
+    score: 0.504
+    type: 主題
+  - title: 七支派勘地分作七分
+    score: 0.489
+    type: 事件
+  - title: 約瑟子孫嫌分地太少
+    score: 0.478
+    type: 事件
+- name: 沙魯險
+  suggested_type: 地點
+  evidence: 第6節「伯利巴勿、沙魯險，共十三座城」；CT：字義「恩典的避難所」，別是巴西方約35公里、迦薩之南約23公里；GT《串珠》：可能就是書15:32
+    的實忻，扼守以色列地南面通往埃及大路的重鎮；BH：埃及新王國初期的記錄把它與重大軍事行動連在一起
+  surfaces:
+  - phrase: 沙魯險
+    verses:
+    - 6
+  target_path: link_folder/地點/沙魯險.md
+- name: 巴拉比珥
+  suggested_type: 地點
+  evidence: 第8節「直到巴拉比珥，就是南地的拉瑪」；CT：字義「井的女主人」，別是巴南方約29公里，南地的拉瑪就是巴拉比珥的別名；GT 華爾頓、《研經資料》：可能與書15:24
+    的比亞綠相同（代上4:33 的巴力），「南地的拉瑪」表示這是邱壇或祭儀地點（撒上30:27 南地拉末）；BH：西緬在南地的南端
+  surfaces:
+  - phrase: 巴拉比珥
+    verses:
+    - 8
+  target_path: link_folder/地點/巴拉比珥.md
+- name: 撒拿音的橡樹
+  suggested_type: 地點
+  evidence: 第33節「他們的境界是從希利弗、從撒拿音的橡樹」；CT：確實地點不詳，應在撒拿音附近；GT《研經資料》：「橡樹」原文是「篤耨香樹」；GT 華爾頓：拿弗他利南界的爭議在於撒拿音的橡樹位置不明（士4:11），以之為南界的看法可能性最高；BH：基尼人希百在撒拿音橡樹旁支搭帳棚（士4:11），把拿弗他利地與底波拉、巴拉的戰役連起來
+  surfaces:
+  - phrase: 撒拿音的橡樹
+    verses:
+    - 33
+  target_path: link_folder/地點/撒拿音的橡樹.md
+  semantic_hint:
+  - title: 摩利橡樹
+    score: 0.423
+    type: 背景
+- name: 迦步勒
+  suggested_type: 地點
+  evidence: 第27節「也通到迦步勒的左邊」；CT：字義「結合」，亞柯東南方約12公里；GT 華爾頓：今日的卡布勒（Kabul）；BH：所羅門把加利利的城給推羅王希蘭作工料的報酬（王上9:10-13），亞設因靠近推羅得了貿易機會，也暴露在外邦結盟與偶像之下
+  surfaces:
+  - phrase: 迦步勒
+    verses:
+    - 27
+  target_path: link_folder/地點/迦步勒.md
+- name: 拿哈拉
+  suggested_type: 地點
+  evidence: 第15節「還有加他、拿哈拉、伸崙」；CT：字義「草場」，約念北方約16公里，基順河北岸的一座小城；GT 華爾頓、《研經資料》：納珥遺址，西布倫與海岸惟一的關聯是它和亞柯之間的貿易，可能經由拿哈拉進行，但西布倫的領土並不延伸到地中海；BH：後來成為利未人的城（書21:35）
+  surfaces:
+  - phrase: 拿哈拉
+    verses:
+    - 15
+  target_path: link_folder/地點/拿哈拉.md
+  semantic_hint:
+  - title: 拿拉
+    score: 0.44
+    type: 地點
+D_new_candidate: []
+E_skip: []
+locked_at: '2026-10-13T12:26:35Z'
