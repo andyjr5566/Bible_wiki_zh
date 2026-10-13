@@ -5314,6 +5314,14 @@
       "約書亞接續摩西"
     ]
   },
+  "約瑟子孫嫌分地太少": {
+    "path": "link_folder/事件/約瑟子孫嫌分地太少.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "約瑟子孫嫌分地太少",
+    "status": "formal",
+    "aliases": []
+  },
   "耶和華擊打百姓的瘟疫": {
     "path": "link_folder/事件/耶和華擊打百姓的瘟疫.md",
     "type": "事件",
@@ -11593,6 +11601,14 @@
     "type": "人物",
     "secondary_types": [],
     "title": "亞摩利人",
+    "status": "formal",
+    "aliases": []
+  },
+  "亞比以謝（瑪拿西宗族）": {
+    "path": "link_folder/人物/亞比以謝（瑪拿西宗族）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞比以謝（瑪拿西宗族）",
     "status": "formal",
     "aliases": []
   },
@@ -18595,6 +18611,14 @@
     "status": "formal",
     "aliases": []
   },
+  "以伯蓮": {
+    "path": "link_folder/地點/以伯蓮.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "以伯蓮",
+    "status": "formal",
+    "aliases": []
+  },
   "以倘": {
     "path": "link_folder/地點/以倘.md",
     "type": "地點",
@@ -18692,6 +18716,14 @@
       "Ephrathah"
     ]
   },
+  "以法蓮山地": {
+    "path": "link_folder/地點/以法蓮山地.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "以法蓮山地",
+    "status": "formal",
+    "aliases": []
+  },
   "以琳": {
     "path": "link_folder/地點/以琳.md",
     "type": "地點",
@@ -18788,6 +18820,16 @@
     "title": "伯和崙",
     "status": "formal",
     "aliases": []
+  },
+  "伯善": {
+    "path": "link_folder/地點/伯善.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "伯善",
+    "status": "formal",
+    "aliases": [
+      "伯珊"
+    ]
   },
   "伯寧拉": {
     "path": "link_folder/地點/伯寧拉.md",
@@ -20467,6 +20509,14 @@
     "status": "formal",
     "aliases": []
   },
+  "耶斯列平原": {
+    "path": "link_folder/地點/耶斯列平原.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "耶斯列平原",
+    "status": "formal",
+    "aliases": []
+  },
   "耶斯列（猶大）": {
     "path": "link_folder/地點/耶斯列（猶大）.md",
     "type": "地點",
@@ -20722,6 +20772,22 @@
     "type": "地點",
     "secondary_types": [],
     "title": "除皮山（吉比亞特哈拉羅）",
+    "status": "formal",
+    "aliases": []
+  },
+  "隱他普亞": {
+    "path": "link_folder/地點/隱他普亞.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "隱他普亞",
+    "status": "formal",
+    "aliases": []
+  },
+  "隱多珥": {
+    "path": "link_folder/地點/隱多珥.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "隱多珥",
     "status": "formal",
     "aliases": []
   },
@@ -21934,6 +22000,16 @@
     "aliases": [
       "石頭是鐵"
     ]
+  },
+  "鐵車": {
+    "path": "link_folder/文化/鐵車.md",
+    "type": "文化",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "鐵車",
+    "status": "formal",
+    "aliases": []
   },
   "雙語命名_亞蘭語伊迦爾撒哈杜他_希伯來語迦累得": {
     "path": "link_folder/文化/雙語命名_亞蘭語伊迦爾撒哈杜他_希伯來語迦累得.md",
@@ -29763,6 +29839,16 @@
     "status": "formal",
     "aliases": []
   },
+  "三處山岡指哪三處": {
+    "path": "link_folder/解經爭議/三處山岡指哪三處.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "地點"
+    ],
+    "title": "三處山岡指哪三處",
+    "status": "formal",
+    "aliases": []
+  },
   "上天下地的神是否一神信仰之爭": {
     "path": "link_folder/解經爭議/上天下地的神是否一神信仰之爭.md",
     "type": "解經爭議",
@@ -36325,6 +36411,9 @@
   },
   "Bethlehem": {
     "alias_of": "伯利恆"
+  },
+  "伯珊": {
+    "alias_of": "伯善"
   },
   "拉億": {
     "alias_of": "但"

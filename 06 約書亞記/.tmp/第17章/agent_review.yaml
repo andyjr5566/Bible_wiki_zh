@@ -1,0 +1,94 @@
+version: 2
+book: 約書亞記
+chapter: 17
+stages:
+  m3:
+    round: 2
+    revision: 2
+    sha256: 87c4f8559bec90b4de3222ebe23a54767743ed2e02939045ca9e714f9c3172e6
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: f2b1c6410d10c9456a8bb27df8936b1360c6d6186f9e36f241043fb2fa5d9644
+      verdict: changes_required
+      findings_count: 1
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: 87c4f8559bec90b4de3222ebe23a54767743ed2e02939045ca9e714f9c3172e6
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    thread_id: 01a133f1-f147-7950-87a1-94b357c3253f
+    hash_inputs:
+    - entry_content/三處山岡指哪三處.yaml
+    - entry_content/亞比以謝（瑪拿西宗族）.yaml
+    - entry_content/以伯蓮.yaml
+    - entry_content/以法蓮山地.yaml
+    - entry_content/伯善.yaml
+    - entry_content/約瑟子孫嫌分地太少.yaml
+    - entry_content/耶斯列平原.yaml
+    - entry_content/鐵車.yaml
+    - entry_content/隱他普亞.yaml
+    - entry_content/隱多珥.yaml
+    own_sha256: 87c4f8559bec90b4de3222ebe23a54767743ed2e02939045ca9e714f9c3172e6
+    verdict_sha: 87c4f8559bec90b4de3222ebe23a54767743ed2e02939045ca9e714f9c3172e6
+    findings_count: 0
+  m6:
+    round: 1
+    revision: 1
+    sha256: d4fd95c6aa15a3cc6d89dee704127f2ab876093e48fe9d610d7e4810ef0f7f76
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: d4fd95c6aa15a3cc6d89dee704127f2ab876093e48fe9d610d7e4810ef0f7f76
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=87c4f8559bec90b4de3222ebe23a54767743ed2e02939045ca9e714f9c3172e6
+    - chapter_content.yaml
+    own_sha256: 598aa2e3df3ab57de94d440c12b596dcbc3756fb988e6e8355c4e7b9d930a601
+    verdict_sha: d4fd95c6aa15a3cc6d89dee704127f2ab876093e48fe9d610d7e4810ef0f7f76
+    thread_id: 01a133f1-f147-7950-87a1-94b357c3253f
+    findings_count: 0
+  link_updates:
+    round: 2
+    revision: 2
+    sha256: c3299ced356b4a1d8f22f944177bd06712f03672f12a35c5ed1939de02c8003f
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: dbbb44a01dc0cc8c21c1789769a366982f2a215012091d16bc2845f04391ce05
+      verdict: changes_required
+      findings_count: 2
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: c3299ced356b4a1d8f22f944177bd06712f03672f12a35c5ed1939de02c8003f
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    thread_id: 01a133f1-f147-7950-87a1-94b357c3253f
+    hash_inputs:
+    - parent:m3=87c4f8559bec90b4de3222ebe23a54767743ed2e02939045ca9e714f9c3172e6
+    - parent:m6=d4fd95c6aa15a3cc6d89dee704127f2ab876093e48fe9d610d7e4810ef0f7f76
+    - link_updates.yaml
+    own_sha256: 97005712b84a22def8c2fcd6d61a6243d4b74733af4ef849ec9f4179b89e13ad
+    verdict_sha: c3299ced356b4a1d8f22f944177bd06712f03672f12a35c5ed1939de02c8003f
+    findings_count: 0

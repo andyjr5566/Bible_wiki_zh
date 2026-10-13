@@ -1,0 +1,479 @@
+book: 約書亞記
+chapter: 17
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。正確形狀：從前幾章講起、把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；本章的細節與引句留在本章 summary，主題發展不再重述一遍。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 瑪拿西
+  path: link_folder/人物/瑪拿西.md
+  summary: 第1-13節瑪拿西支派的地業：第1節瑪吉得了河東的基列和巴珊，第2-6節河西按六個宗族和西羅非哈的女兒分十分地，第7-10節地界，第11-13節在以薩迦和亞設境內的城卻趕不出迦南人。STEP 語言資料：第1節「長子」是 be.Khor（H1060）。CT 說瑪拿西是肉身次序的長子，長子名分改歸以法蓮；GT《綜合解讀》說他仍分得兩分產業，河東河西都有地；GT《啟導本》說瑪拿西分得的地之大僅次於猶大，且肥沃過之。
+  relation: 第13章寫了河東那一半，本章寫河西這一半：瑪拿西是唯一在約但河兩邊都有地的支派。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 19
+    - 20
+    definition: keep
+    development: keep
+- title: 約瑟
+  path: link_folder/人物/約瑟.md
+  summary: 第1節「瑪拿西是約瑟的長子」，第14-18節「約瑟的子孫」嫌只得一鬮一段之地，第17節約書亞對「約瑟家，就是以法蓮和瑪拿西人」說話。KC 說猶大得了整個南部，以法蓮和瑪拿西得了整個北部，可見約瑟子孫的特殊地位；GT《綜合解讀》說約瑟的子孫因祖宗約瑟敬畏神而享受更大的恩典，卻把恩典當作理所當然。
+  relation: 第16章劃出約瑟子孫的整塊地，本章結尾約瑟的子孫為這塊地向約書亞抱怨。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 23
+    - 24
+    definition: keep
+    development: keep
+- title: 以法蓮
+  path: link_folder/人物/以法蓮.md
+  summary: 第8-10節他普亞城和加拿河以南歸以法蓮，第9節在瑪拿西城邑中有些城歸以法蓮，第17節約書亞對以法蓮和瑪拿西說話。KC 說以法蓮被算作長子，所以先得產業；GT《綜合解讀》說以法蓮在瑪拿西境內有他普亞城，是因為兩支派同屬一鬮一段之地；GT《綜合解讀》與 BH 都說約書亞自己就屬以法蓮支派。
+  relation: 第16章是以法蓮自己的地界，本章從瑪拿西那一邊再把兩支派的交錯寫一次。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 11
+    - 12
+    definition: keep
+    development: &id001
+      decision: keep
+      basis: standing_debt
+- title: 瑪吉
+  path: link_folder/人物/瑪吉.md
+  summary: 第1節「瑪拿西的長子基列之父瑪吉，因為是勇士，就得了基列和巴珊」。STEP 語言資料：「勇士」是 'ish mil.cha.Mah（H376G＋H4421），「基列之父」的 ha./gil.'Ad 標作 H1568H，族名複數形。CT 說瑪吉是瑪拿西唯一的兒子，KC 也說他看來是；GT《研經資料》說代上7:14 記載瑪吉並非長子，可能後來被立為長子，又說瑪吉此時應已去世，意思是他的後代驍勇善戰（民32:39-40）；GT《綜合解讀》說瑪吉一族承擔防守邊界巴珊的任務。
+  relation: 民32 瑪吉的子孫佔了基列，本章回頭交代他們得地的理由：因為是戰士。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 4
+    - 5
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: *id001
+- title: 基列
+  path: link_folder/地點/基列.md
+  summary: 第1節瑪吉「得了基列和巴珊」，第5節「約但河東的基列和巴珊地」，第6節「基列地是屬瑪拿西其餘的子孫」。CT 說是基列地的北半部和巴珊全地（申3:13）；GT《研經資料》說字義是「多岩之地」，位於約但河東。同章第1節的「基列之父」與第3節的「基列的孫子」是人名，不是這個地區。
+  relation: 本章基列是瑪拿西河東那一半的產業，與河西的十分地相對。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development: keep
+- title: 巴珊
+  path: link_folder/地點/巴珊.md
+  summary: 第1、5節「基列和巴珊」。GT《研經資料》說巴珊位於約但河東的極北之處，涵蓋目前的戈蘭高地，土壤肥沃，宜農也適於畜牧；GT《綜合解讀》說瑪吉一族承擔防守邊界巴珊的任務；BH 說基列與巴珊提供了牧場與堅固的城。
+  relation: 本章巴珊再次以瑪拿西河東產業的身分出現。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 10
+    - 11
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 瑪拿西半支派為何留在河東
+  path: link_folder/解經爭議/瑪拿西半支派為何留在河東.md
+  summary: 第1節瑪吉因為是勇士就得了基列和巴珊。KC 說流便、迦得要河東是因為牲畜多，瑪吉經文沒說，大概也有許多牲畜，而且他是戰士，對流便、迦得是一大助力；GT《聖經精讀本》說瑪吉的子孫征服巴珊與基列之後，為了幫助兄弟支派而帶頭渡過約但河。
+  relation: 本章回頭補了瑪吉一族留在河東的線索：KC 從牲畜和戰力推想，GT《聖經精讀本》則強調他們仍過河幫助兄弟。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: *id001
+- title: 長子名分
+  path: link_folder/主題/長子名分.md
+  summary: 第1節「瑪拿西是約瑟的長子」。CT 說這是指肉身出生的次序，長子名分卻被雅各改歸以法蓮（創48:17-20）；KC 說以法蓮被算作長子（創48:13-20）；GT《研經資料》說瑪拿西是長子，這解釋了為什麼約瑟的子孫有雙重產業，一部分在河東，一部分在河西；BH 引申21:15-17。
+  relation: 第16章是約瑟因長子名分得雙份，本章是瑪拿西身為長子卻排在弟弟之後。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 以法蓮在瑪拿西以上
+  path: link_folder/神學/以法蓮在瑪拿西以上.md
+  summary: 第1節起才寫瑪拿西的地業。GT《雷氏研讀本》說約瑟的長子瑪拿西被幼子以法蓮搶先分得土地（創48:14）；KC 說以法蓮被算作長子，所以先得產業；BH 說第8節他普亞城歸以法蓮，也合乎雅各把以法蓮放在前面的祝福。GT《綜合解讀》則說以法蓮只是影響力更大，瑪拿西仍分得兩分產業。
+  relation: 第16章以法蓮先分，本章瑪拿西後分；GT《綜合解讀》提醒，先後不等於多寡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 拈鬮分地（go.ral）
+  path: link_folder/主題/拈鬮分地（go.ral）.md
+  summary: 第1節「他的支派拈鬮所得之地」，第2節「按著宗族拈鬮分地」，第14、17節「一鬮一段之地」「不可僅有一鬮之地」。STEP 語言資料：第14節 go.Ral 'e.Chad ve./Che.vel 'e.Chad（H1486＋H2256M）。KC 說瑪拿西這一鬮分成以法蓮和瑪拿西兩份；CT 說拈鬮時把一個半支派視為一個整體，然後才分開。
+  relation: 第16章約瑟的子孫合拈一鬮，本章他們就為這「一鬮」向約書亞抱怨。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development: *id001
+- title: 家室與宗族
+  path: link_folder/主題/家室與宗族.md
+  summary: 第2節「瑪拿西其餘的子孫，按著宗族拈鬮分地」，列出亞比以謝、希勒、亞斯列、示劍、希弗、示米大六個宗族。CT 說這六個宗族都是瑪拿西六個曾孫的後裔（民26:29-32），男丁通常是分配產業的對象；GT《研經資料》說「玄孫」「曾孫」「孫子」「兒子」原文都相同，字義是「兒子」「子孫」。
+  relation: 本章是分地時最清楚看到宗族單位的一處：六個宗族之外，還有西羅非哈的五個女兒各得一分。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 西羅非哈的女兒
+  path: link_folder/人物/西羅非哈的女兒.md
+  summary: 第3-6節西羅非哈的五個女兒來到以利亞撒、約書亞和眾首領面前，約書亞照耶和華所吩咐的，在她們伯叔中把產業分給她們。CT 與 GT《啟導本》說摩西死前確立了有條件的女子繼承權，條件是只嫁本族人（民27:6、36:10）；KC 說她們刻意選擇在河西「我們弟兄中」得地，有雙重的信心；GT《聖經精讀本》說她們沒有放棄自己的權利與責任；CT 話中之光說合理的要求不可用「事無先例」來拒絕。
+  relation: 民27 她們得到判決，民36 加上嫁本族的條件，本章她們實際得了地業。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:26
+      - 民數記:27
+      - 民數記:36
+      - 約書亞記:17
+- title: 女兒承受產業的條例
+  path: link_folder/主題/女兒承受產業的條例.md
+  summary: 第4節「耶和華曾吩咐摩西在我們弟兄中分給我們產業」，第6節「瑪拿西的孫女們在瑪拿西的孫子中得了產業」。GT《聖經精讀本》說就原則而言女性沒有權利繼承父或夫的產業，後來才承認女性在沒有兒子的家庭中有繼承權（民27:4-7；36:1-12），西羅非哈的女兒只能嫁給本支派的人（民36:8）；GT《綜合解讀》說古代中東只有兒子有承受產業的權利，並引加3:26 說新約信徒都有承受神產業的權利；BH 說這保護了可能被忽略的家庭。
+  relation: 民27 立下的條例，本章第一次照著執行。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 以利亞撒
+  path: link_folder/人物/以利亞撒.md
+  summary: 第4節西羅非哈的女兒「來到祭司以利亞撒和嫩的兒子約書亞並眾首領面前」。KC 說書中約書亞和以利亞撒四次並提（書14:1、17:4、19:51、21:1），以利亞撒總是在前；BH 說以利亞撒代表在神律法之下的祭司監督。
+  relation: 第14章以利亞撒和約書亞一同主持分地，本章他們一同受理西羅非哈女兒的請求。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 15
+    - 16
+    definition: keep
+    development: keep
+- title: 約書亞
+  path: link_folder/人物/約書亞.md
+  summary: 第4節約書亞照耶和華所吩咐的把產業分給西羅非哈的女兒，第14-18節約瑟的子孫向他抱怨，他要他們上山砍伐樹林、趕出有鐵車的迦南人。GT《綜合解讀》說約書亞也是以法蓮支派的一員，卻沒有遷就以法蓮和瑪拿西；BH 也說他屬以法蓮，卻不偏袒自己的支派；KC 說約書亞有智慧，看出他們缺少投入與信心，沒有被他們誤導。
+  relation: 本章約書亞的回答被 GT 與 KC 看重：他沒有多給地，而是要約瑟的子孫自己去得。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 31
+    - 32
+    definition: keep
+    development: *id001
+- title: 分地的十位支派首領
+  path: link_folder/主題/分地的十位支派首領.md
+  summary: 第4節西羅非哈的女兒來到「祭司以利亞撒和嫩的兒子約書亞並眾首領面前」。STEP 語言資料：「眾首領」是 ha./ne.si.'Im（H5387A，leader）。BH 說他們來到以色列公認的屬靈、國家與支派權柄面前，以利亞撒代表祭司的監督，約書亞以摩西繼承人的身分主持分地。
+  relation: 第14章首領們與以利亞撒、約書亞一同主持分地，本章他們一同受理西羅非哈女兒的請求。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: *id001
+- title: 產業（na.cha.lah）
+  path: link_folder/原文/產業（na.cha.lah）.md
+  summary: 第4節兩次、第6節、第14節「產業」「為業」。STEP 語言資料：第4、6、14節都是 na.cha.Lah（H5159），第6節「得了產業」前面的動詞是 na.cha.Lu（H5157）。BH 說女兒們的請求不是出於個人喜好，而是根據耶和華的命令。
+  relation: 本章的產業詞彙落在兩件事上：女兒們按照摩西的判例得產業，約瑟的子孫嫌自己的產業太小。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 21
+    - 22
+    definition: keep
+    development: *id001
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: 第5節「除了約但河東的基列和巴珊地之外，還有十分地歸瑪拿西」。BH 說瑪拿西在河兩邊的產業把河東支派和住在迦南的支派連在一起，雖然被約但河隔開，仍是同一個民。
+  relation: 本章約但河是瑪拿西兩半之間的分界。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 30
+    - 31
+    definition: keep
+    development: keep
+- title: 示劍（城）
+  path: link_folder/地點/示劍（城）.md
+  summary: 第7節瑪拿西的境界「到示劍前的密米他」。STEP 語言資料：這裡的「示劍」是 she.Khem（H7927G），和第2節宗族名的 She.khem（H7928G）不同。CT 說示劍位於耶路撒冷北方約48公里；GT《研經資料》說它在以巴路山和基利心山之間的山谷中；GT《串珠》說「前」的意思是「東」；BH 說示劍是亞伯拉罕在迦南第一座壇的地方，約書亞後來也在這裡召集眾支派（書24:1）。
+  relation: 本章示劍只是瑪拿西地界上的參照點，第一次在約書亞記分地的經文裡出現。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development: *id001
+- title: 密米他
+  path: link_folder/地點/密米他.md
+  summary: 第7節瑪拿西的境界「到示劍前的密米他」。CT 說密米他位於示劍南方約5公里；GT《串珠》說示劍前的密米他是瑪拿西的南界；BH 說它靠近示劍。
+  relation: 第16章密米他是以法蓮北界的轉折處，本章它是瑪拿西的南界。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:16
+      - 約書亞記:17
+- title: 他普亞
+  path: link_folder/地點/他普亞.md
+  summary: 第8節「他普亞地歸瑪拿西，只是瑪拿西境界上的他普亞城歸以法蓮子孫」。CT 說他普亞地指他普亞城的鄰接地，他普亞城位於示劍南方約15公里；GT 所引華爾頓與《研經資料》說兩支派的領土有時會重疊；GT《綜合解讀》說這是因為兩支派同屬一鬮一段之地；BH 說城歸以法蓮合乎雅各使以法蓮在前的祝福。
+  relation: 第16章他普亞是以法蓮地界的起點，本章城和周圍的地分屬兩個支派。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:12
+      - 約書亞記:16
+      - 約書亞記:17
+- title: 加拿河
+  path: link_folder/地點/加拿河.md
+  summary: 第9節「其界下到加拿河的南邊」，「瑪拿西的地界是在河北直通到海為止」。CT 說加拿河的北邊歸瑪拿西，南邊歸以法蓮；BH 說這條溪是容易辨認的地標，清楚的界線可以避免日後的爭端。
+  relation: 第16章從以法蓮這邊寫到加拿河，本章從瑪拿西那邊寫：河南歸以法蓮，河北歸瑪拿西。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:16
+      - 約書亞記:17
+- title: 大海（地中海）
+  path: link_folder/地點/大海（地中海）.md
+  summary: 第9、10節「直通到海為止」「以海為界」。CT 說「以海為界」是指以地中海為西界；BH 說海岸讓約瑟支派連上主要的貿易路線，但沿海平原也讓以色列與非利士人等民族發生衝突。
+  relation: 本章大海是瑪拿西的西界。
+  overview_review:
+    signals:
+    - development_blank
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development: *id001
+- title: 亞設（有福）
+  path: link_folder/人物/亞設（有福）.md
+  summary: 第10節「北邊到亞設」，第11節「瑪拿西在以薩迦和亞設境內」有些城。CT 說亞設在瑪拿西的西北，以薩迦在東北；第7節「從亞設起」，CT 說是指亞設支派所分得之地的境界，BH 卻說那是邊界上的一個點，不是北方的亞設支派。GT《聖經精讀本》說亞設與以薩迦是在瑪拿西之後才分得產業（書19:17-31）；GT《綜合解讀》說「亞設和以薩迦境內」可能代指亞柯平原和耶斯列平原。
+  relation: 本章亞設是瑪拿西北邊的鄰居，瑪拿西還有幾座城在亞設境內。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 9
+    - 10
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 以薩迦（價值）
+  path: link_folder/人物/以薩迦（價值）.md
+  summary: 第10節「東邊到以薩迦」，第11節「瑪拿西在以薩迦和亞設境內」有伯善等城。CT 說以薩迦在瑪拿西的東北；BH 說以薩迦在東邊肥沃的耶斯列谷一帶；GT《聖經精讀本》說以薩迦是在瑪拿西之後才分得產業。GT《研經資料》算人數時提到以薩迦有64,300人（民26:25），擁有的土地卻少得多。
+  relation: 本章以薩迦是瑪拿西東邊的鄰居，伯善等城雖在以薩迦境內，卻分給瑪拿西。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development: *id001
+- title: 多珥
+  path: link_folder/地點/多珥.md
+  summary: 第11節「多珥的居民和屬多珥的鎮市」。CT 說多珥位於米吉多西方約25公里，迦密山西麓的海邊；GT 所引華爾頓說分給瑪拿西的城除多珥以外全在以斯德倫平原；GT《研經資料》說它在迦密山南面的沿海；BH 的譯文作 Dor (that is, Naphath)，說它是港口城市；GT《雷氏研讀本》說「三處山岡」也可能是在說明多珥是拿法特多珥。
+  relation: 書12 多珥王被擊敗，本章多珥分給了瑪拿西，第12節卻說瑪拿西不能趕出這些城的居民。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:11
+      - 約書亞記:12
+      - 約書亞記:17
+- title: 他納
+  path: link_folder/地點/他納.md
+  summary: 第11節「他納的居民和屬他納的鎮市」。CT 說他納位於米吉多東南方約8公里；GT 所引華爾頓說是米吉多西北四哩的蒂因尼克遺址，GT《研經資料》作米吉多西北6.5公里；GT《聖經精讀本》說他納是西連沙侖平原、東北接耶斯列平原、北通亞柯平原的商道要地，瑪拿西更加強盛之後才得以佔領（士1:27-28）；BH 說底波拉之歌記迦南諸王在他納附近戰敗（士5:19）。CT 把他納算作「三處山岡」之一。
+  relation: 書12 他納王被擊敗，本章他納分給了瑪拿西，卻沒能趕出那裡的迦南人。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:12
+      - 約書亞記:17
+- title: 米吉多
+  path: link_folder/地點/米吉多.md
+  summary: 第11節「米吉多的居民和屬米吉多的鎮市」。CT 說米吉多位於他納西北方約8公里，米吉多平原的西緣；GT 所引華爾頓與《研經資料》說是穆特瑟林遺址；GT《綜合解讀》說它是控制耶斯列平原和古代國際貿易路線沿海大道的重要城市，主耶穌再來時的「哈米吉多頓」（啟16:16）決戰將在這裡進行；BH 說它控制連接埃及與美索不達米亞的主要國際大道，名字後來反映在哈米吉多頓。
+  relation: 書12 米吉多王被擊敗，本章米吉多分給了瑪拿西，卻沒能趕出那裡的迦南人。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:12
+      - 約書亞記:17
+- title: 迦南人
+  path: link_folder/人物/迦南人.md
+  summary: '第12節「迦南人偏要住在那地」，第13節「使迦南人做苦工」，第16、18節住平原的迦南人都有鐵車。STEP 語言資料：「偏要」是 va/i.Yo.''el（H2974，ya.al: be willing，本節譯義 he was determined）；GT《研經資料》引猶太版英文聖經作 stubbornly remained。CT 說住平原的迦南人多散居在沿海一帶平原；BH 說迦南人的抵抗是真的，卻也顯出以色列信心與順服的不完全。'
+  relation: 第16章基色的迦南人作了苦工，本章伯善到米吉多一帶的迦南人也是如此，而且他們有鐵車。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 19
+    - 20
+    definition: keep
+    development: keep
+- title: 趕出（ya.rash）
+  path: link_folder/原文/趕出（ya.rash）.md
+  summary: 第12節「不能趕出」，第13節「沒有把他們全然趕出」，第18節「你也能把他們趕出去」。STEP 語言資料：第12節 le./ho.Rish（H3423H，前接 ya.khe.Lu「能夠」的否定），第13節 ve./ho.Resh lo' ho.ri.Sh/o（H3423H 不定詞獨立形接完成式），第18節 to.Rish（H3423H）。CT 說「全然趕出」原文是兩個相同的字；KC 說瑪拿西沒有取得這些城，是因為缺少力量，也就是缺少信心；GT《聖經精讀本》說他們征服初期曾一馬當先（書4:12），如今卻因信仰懈怠而不能驅逐殘餘勢力。
+  relation: 同一個動詞在本章用了三種口氣：不能趕出、沒有全然趕出、你也能趕出。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 苦工（mas）
+  path: link_folder/原文/苦工（mas）.md
+  summary: 第13節「及至以色列人強盛了，就使迦南人做苦工，沒有把他們全然趕出」。STEP 語言資料：la./Mas（H4522，本節譯義 forced labor）。CT 說「作苦工」原文是「進貢」，動機是貪圖眼前的好處；GT《雷氏研讀本》說約瑟的子孫沒有把境內的迦南人消滅，卻要求他們進貢；GT《研經資料》說是「奴工隊」「勞工隊」；BH 說瑪拿西把迦南人留作勞力來源，是把經濟利益放在全心順服之上（申7:1-5、20:16-18）。
+  relation: 第16章以法蓮叫基色的迦南人作苦工，本章瑪拿西也這樣做，而且是在以色列人強盛之後。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:16
+      - 約書亞記:17
+- title: 未得之地
+  path: link_folder/主題/未得之地.md
+  summary: 第12節瑪拿西子孫不能趕出伯善、以伯蓮、多珥、隱多珥、他納、米吉多的居民。GT《啟導本》與《研經資料》說分給瑪拿西的這些鎮市這時尚未取得；GT《研經資料》說這表示以色列人並沒有完全征服迦南人（士1:27-29）；GT《綜合解讀》說神把產業分給我們的同時，也把未得之地分給了我們。
+  relation: 第16章以法蓮留下基色，本章瑪拿西留下耶斯列平原周圍一整串城。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 比利洗人
+  path: link_folder/人物/比利洗人.md
+  summary: 第15節「就可以上比利洗人、利乏音人之地」。CT 說比利洗人居住在迦南地中部山地，與迦南人相鄰（創13:7）；GT《研經資料》說原意是「屬於某一村莊的人」「鄉村人」，應該是住城市的迦南人之外的另一個民族；GT《串珠》說他們居河西；BH 說比利洗人和利乏音人的存在使擴張充滿危險。
+  relation: 本章比利洗人住在約瑟子孫該去開墾的山林裡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 利乏音人
+  path: link_folder/人物/利乏音人.md
+  summary: 第15節「比利洗人、利乏音人之地」。CT 說利乏音人不屬迦南七族，居住在約但河兩岸山地，身軀高大；GT《串珠》說利乏音人在河東（書12:4、13:12），但這名也出現於河西（書15:8）；GT《研經資料》說是「巨人」的意思；BH 說他們是以身量出名的戰士。
+  relation: 前幾章利乏音人在河東，本章他們出現在河西以法蓮的山林裡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 砍斷馬的蹄筋與焚燒車輛
+  path: link_folder/主題/砍斷馬的蹄筋與焚燒車輛.md
+  summary: 第16、18節迦南人都有鐵車。GT《綜合解讀》說，雖然迦南人有鐵車，以色列人只要照著神所吩咐的去行，照樣能「砍斷他們馬的蹄筋，用火焚燒他們的車輛」（書11:9）；BH 在第18節列出書11:4-6。
+  relation: 書11 約書亞照吩咐毀了北方聯軍的車輛，本章 GT《綜合解讀》拿那一次來回答約瑟子孫對鐵車的懼怕。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 迦勒求得希伯崙
+  path: link_folder/事件/迦勒求得希伯崙.md
+  summary: 第14-18節約瑟的子孫嫌分地太少。GT《綜合解讀》說猶大支派八十五歲的迦勒憑著信心爭取最危險的希伯崙（書14:6-15），約瑟的子孫卻只想坐享其成；GT《研經資料》也說對照書14:6-15 猶大支派不落人後地爭取最危險的地方，跟約瑟的子孫只想分好處，高下立判。
+  relation: 本章 GT 兩家拿迦勒當對照，看約瑟子孫的抱怨。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep

@@ -16,6 +16,13 @@
       "fingerprint": "8cf900acaec72e3f"
     },
     {
+      "path": "link_folder/人物/約書亞.md",
+      "title": "約書亞",
+      "deferred_at": "約書亞記:17",
+      "accumulated": 32,
+      "fingerprint": "113fd98a82782ead"
+    },
+    {
       "path": "link_folder/人物/雅各.md",
       "title": "雅各",
       "deferred_at": "申命記:32",
@@ -28,13 +35,6 @@
       "deferred_at": "申命記:33",
       "accumulated": 32,
       "fingerprint": "8b435232342a0a0b"
-    },
-    {
-      "path": "link_folder/人物/約書亞.md",
-      "title": "約書亞",
-      "deferred_at": "約書亞記:10",
-      "accumulated": 27,
-      "fingerprint": "cd0494598acb217b"
     },
     {
       "path": "link_folder/地點/約但河.md",
@@ -86,6 +86,13 @@
       "fingerprint": "8db7c5a9b2395261"
     },
     {
+      "path": "link_folder/原文/產業（na.cha.lah）.md",
+      "title": "產業（na.cha.lah）",
+      "deferred_at": "約書亞記:17",
+      "accumulated": 22,
+      "fingerprint": "54f8d2cfc0f1a89c"
+    },
+    {
       "path": "link_folder/人物/流便.md",
       "title": "流便",
       "deferred_at": "申命記:11",
@@ -107,13 +114,6 @@
       "fingerprint": "21a96a6ae8904261"
     },
     {
-      "path": "link_folder/原文/產業（na.cha.lah）.md",
-      "title": "產業（na.cha.lah）",
-      "deferred_at": "約書亞記:1",
-      "accumulated": 17,
-      "fingerprint": "accea2d0a9fc5eac"
-    },
-    {
       "path": "link_folder/地點/耶利哥.md",
       "title": "耶利哥",
       "deferred_at": "約書亞記:9",
@@ -133,6 +133,13 @@
       "deferred_at": "申命記:10",
       "accumulated": 14,
       "fingerprint": "640fcdb83be2ea4b"
+    },
+    {
+      "path": "link_folder/人物/以法蓮.md",
+      "title": "以法蓮",
+      "deferred_at": "約書亞記:17",
+      "accumulated": 12,
+      "fingerprint": "97f10e1675810761"
     },
     {
       "path": "link_folder/人物/便雅憫.md",
@@ -177,25 +184,25 @@
       "fingerprint": "a6c9ba2670666904"
     },
     {
+      "path": "link_folder/主題/拈鬮分地（go.ral）.md",
+      "title": "拈鬮分地（go.ral）",
+      "deferred_at": "約書亞記:17",
+      "accumulated": 10,
+      "fingerprint": "d40898d575e06a89"
+    },
+    {
+      "path": "link_folder/人物/以薩迦（價值）.md",
+      "title": "以薩迦（價值）",
+      "deferred_at": "約書亞記:17",
+      "accumulated": 10,
+      "fingerprint": "27d39740c05f72c4"
+    },
+    {
       "path": "link_folder/神學/分別為聖.md",
       "title": "分別為聖",
       "deferred_at": "申命記:22",
       "accumulated": 10,
       "fingerprint": "97ca38afc5174c56"
-    },
-    {
-      "path": "link_folder/主題/拈鬮分地（go.ral）.md",
-      "title": "拈鬮分地（go.ral）",
-      "deferred_at": "約書亞記:16",
-      "accumulated": 9,
-      "fingerprint": "69536c5e2c45d449"
-    },
-    {
-      "path": "link_folder/人物/以薩迦（價值）.md",
-      "title": "以薩迦（價值）",
-      "deferred_at": "申命記:33",
-      "accumulated": 9,
-      "fingerprint": "d51d4327523c2d05"
     },
     {
       "path": "link_folder/原文/皂莢木.md",
@@ -331,6 +338,13 @@
       "fingerprint": "dc5f8f4b39f57349"
     },
     {
+      "path": "link_folder/地點/大海（地中海）.md",
+      "title": "大海（地中海）",
+      "deferred_at": "約書亞記:17",
+      "accumulated": 7,
+      "fingerprint": "a783d991babc99e2"
+    },
+    {
       "path": "link_folder/地點/希伯崙.md",
       "title": "希伯崙",
       "deferred_at": "約書亞記:12",
@@ -343,6 +357,13 @@
       "deferred_at": "約書亞記:12",
       "accumulated": 7,
       "fingerprint": "d90a5f52990af040"
+    },
+    {
+      "path": "link_folder/地點/示劍（城）.md",
+      "title": "示劍（城）",
+      "deferred_at": "約書亞記:17",
+      "accumulated": 7,
+      "fingerprint": "e29b086599296810"
     },
     {
       "path": "link_folder/地點/鹽海.md",
@@ -359,11 +380,11 @@
       "fingerprint": "e273bfa01f9862ad"
     },
     {
-      "path": "link_folder/地點/大海（地中海）.md",
-      "title": "大海（地中海）",
-      "deferred_at": "約書亞記:16",
+      "path": "link_folder/解經爭議/瑪拿西半支派為何留在河東.md",
+      "title": "瑪拿西半支派為何留在河東",
+      "deferred_at": "約書亞記:17",
       "accumulated": 6,
-      "fingerprint": "dd76ff3faa062700"
+      "fingerprint": "b29f49a2678fc91c"
     },
     {
       "path": "link_folder/主題/平安祭的三類（感謝祭、還願祭、甘心祭）.md",
@@ -373,25 +394,18 @@
       "fingerprint": "a9205c3ff70c789b"
     },
     {
+      "path": "link_folder/人物/瑪吉.md",
+      "title": "瑪吉",
+      "deferred_at": "約書亞記:17",
+      "accumulated": 5,
+      "fingerprint": "8f4acda96a5fa73e"
+    },
+    {
       "path": "link_folder/地點/亞羅珥.md",
       "title": "亞羅珥",
       "deferred_at": "約書亞記:13",
       "accumulated": 5,
       "fingerprint": "156ab27d00cf1335"
-    },
-    {
-      "path": "link_folder/解經爭議/瑪拿西半支派為何留在河東.md",
-      "title": "瑪拿西半支派為何留在河東",
-      "deferred_at": "約書亞記:13",
-      "accumulated": 5,
-      "fingerprint": "d2356ada20894fe5"
-    },
-    {
-      "path": "link_folder/人物/瑪吉.md",
-      "title": "瑪吉",
-      "deferred_at": "約書亞記:13",
-      "accumulated": 4,
-      "fingerprint": "7a590a297d04b390"
     },
     {
       "path": "link_folder/地點/亞斯她錄.md",
@@ -427,6 +441,13 @@
       "deferred_at": "約書亞記:13",
       "accumulated": 4,
       "fingerprint": "4e563fc21838ac33"
+    },
+    {
+      "path": "link_folder/主題/分地的十位支派首領.md",
+      "title": "分地的十位支派首領",
+      "deferred_at": "約書亞記:17",
+      "accumulated": 3,
+      "fingerprint": "d6f5d396577a0743"
     },
     {
       "path": "link_folder/事件/地破裂吞吃可拉與大坍亞比蘭之家與其財物.md",
@@ -555,13 +576,6 @@
       "fingerprint": "e98246815b5fac95"
     },
     {
-      "path": "link_folder/主題/分地的十位支派首領.md",
-      "title": "分地的十位支派首領",
-      "deferred_at": "約書亞記:14",
-      "accumulated": 2,
-      "fingerprint": "8955cbdb6fe16739"
-    },
-    {
       "path": "link_folder/主題/利未人的四十八座城.md",
       "title": "利未人的四十八座城",
       "deferred_at": "約書亞記:14",
@@ -574,6 +588,13 @@
       "deferred_at": "申命記:13",
       "accumulated": 2,
       "fingerprint": "9a0c00268aa74477"
+    },
+    {
+      "path": "link_folder/主題/砍斷馬的蹄筋與焚燒車輛.md",
+      "title": "砍斷馬的蹄筋與焚燒車輛",
+      "deferred_at": "約書亞記:17",
+      "accumulated": 2,
+      "fingerprint": "fdf0cc591e9d5b67"
     },
     {
       "path": "link_folder/主題/迦南四境.md",
@@ -667,13 +688,6 @@
       "fingerprint": "4811e169a8c4e64f"
     },
     {
-      "path": "link_folder/地點/他普亞.md",
-      "title": "他普亞",
-      "deferred_at": "約書亞記:16",
-      "accumulated": 2,
-      "fingerprint": "1f105bf89d8eab6d"
-    },
-    {
       "path": "link_folder/地點/以革倫.md",
       "title": "以革倫",
       "deferred_at": "約書亞記:15",
@@ -711,13 +725,6 @@
     {
       "path": "link_folder/地點/夏瑣.md",
       "title": "夏瑣",
-      "deferred_at": "約書亞記:12",
-      "accumulated": 2,
-      "fingerprint": "bee2026f10c5c0bb"
-    },
-    {
-      "path": "link_folder/地點/多珥.md",
-      "title": "多珥",
       "deferred_at": "約書亞記:12",
       "accumulated": 2,
       "fingerprint": "bee2026f10c5c0bb"
