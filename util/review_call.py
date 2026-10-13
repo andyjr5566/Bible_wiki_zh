@@ -127,6 +127,9 @@ def build_global_prompt(book: str, chapter: int, *, note: str | None = None) -> 
         "2. 內容失衡（某些主題篇幅畸重或畸輕，或散文與圖表比例失當）。",
         "3. M3／M6 之間、或本章與跨章條目之間的不一致（同一事實說法不同、定義與累積區塊矛盾）。",
         "wording 偏好、文風、可有可無的「更完整」建議一律不算 finding。每個 finding 附可機械複核的錨點。",
+        "讀檔可用 MCP：read_chapter_artifact 的 artifact 可傳 entry_content/<條目名>.yaml 與 chapter.md"
+        "（渲染後的章 md）；read_chapter_source 與 read_chapter_artifact 都有 start_character，"
+        "長檔照回傳的 next_start_character 分段讀到 truncated=false 為止。",
         "最後一行請輸出 `GLOBAL_REVIEW: PASS` 或 `GLOBAL_REVIEW: CHANGES_REQUIRED`。",
     ]
     if note:

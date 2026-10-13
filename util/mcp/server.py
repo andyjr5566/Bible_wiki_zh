@@ -87,6 +87,13 @@ _CHAPTER_ARTIFACTS = {
 }
 _ENTRY_ARTIFACT_RE = re.compile(r"^entry_content/[^/\\]+\.yaml$")
 _MANUAL_ENTRY_PROMPT_RE = re.compile(r"^manual/entry_batch_\d+\.prompt\.md$")
+# 渲染後的章文（書卷資料夾的 第X章.md）：artifact 傳 "chapter.md"
+_RENDERED_CHAPTER_ARTIFACT = "chapter.md"
+_ARTIFACT_PATTERNS = (
+    "entry_content/<條目名>.yaml",
+    "manual/entry_batch_<N>.prompt.md",
+    "chapter.md（渲染後的 第X章.md）",
+)
 
 # --- lint_chapter_content rules -------------------------------------------------
 # Each rule below was measured against the whole corpus (2,694 rendered md files)
@@ -195,15 +202,22 @@ def _chapter_context(book: str, chapter: int) -> tuple[str, Path, Path]:
     return canonical, directory, directory / ".tmp" / f"第{chapter}章"
 
 
-def _bounded_content(path: Path, max_characters: int) -> Dict[str, Any]:
+def _bounded_content(path: Path, max_characters: int, start_character: int = 0) -> Dict[str, Any]:
+    """讀一段檔案內容；長檔以 start_character 分段續讀（回傳 next_start_character）。"""
     content = path.read_text(encoding="utf-8")
     limit = _safe_limit(max_characters)
-    return {
+    start = max(0, int(start_character or 0))
+    end = min(len(content), start + limit)
+    result = {
         "path": _relative_to_root(path),
-        "content": content[:limit],
-        "truncated": len(content) > limit,
+        "content": content[start:end],
+        "start_character": start,
+        "truncated": end < len(content),
         "total_characters": len(content),
     }
+    if end < len(content):
+        result["next_start_character"] = end
+    return result
 
 
 def _load_entry_index() -> Dict[str, Any]:
@@ -1534,25 +1548,42 @@ def read_chapter_artifact(
     chapter: int,
     artifact: str,
     max_characters: int = _DEFAULT_READ_CHARS,
+    start_character: int = 0,
 ) -> Dict[str, Any]:
-    """Read a whitelisted `.tmp/第X章` workflow artifact, never an arbitrary file."""
+    """Read a whitelisted `.tmp/第X章` workflow artifact, never an arbitrary file.
+
+    Also reads ``entry_content/<name>.yaml``, ``manual/entry_batch_<N>.prompt.md`` and
+    ``chapter.md`` (the rendered ``第X章.md``).  Long files are paged with
+    ``start_character``; follow ``next_start_character`` until ``truncated`` is false.
+    """
     try:
-        canonical, _directory, tmp = _chapter_context(book, chapter)
+        canonical, directory, tmp = _chapter_context(book, chapter)
         normalized = artifact.replace("\\", "/")
+        if normalized in {_RENDERED_CHAPTER_ARTIFACT, f"第{chapter}章.md"}:
+            path = directory / f"第{chapter}章.md"
+            if not path.is_file():
+                return _error("找不到渲染後的章文", artifact=normalized)
+            result = _bounded_content(path, max_characters, start_character)
+            result.update({"success": True, "book": canonical, "chapter": chapter})
+            return result
         allowed = (
             normalized in _CHAPTER_ARTIFACTS
             or _ENTRY_ARTIFACT_RE.fullmatch(normalized)
             or _MANUAL_ENTRY_PROMPT_RE.fullmatch(normalized)
         )
         if not allowed:
-            return _error("artifact 不在允許清單", allowed_artifacts=sorted(_CHAPTER_ARTIFACTS))
+            return _error(
+                "artifact 不在允許清單",
+                allowed_artifacts=sorted(_CHAPTER_ARTIFACTS),
+                allowed_patterns=list(_ARTIFACT_PATTERNS),
+            )
         relative = Path(normalized)
         if relative.is_absolute() or ".." in relative.parts:
             return _error("artifact 必須是安全的相對路徑")
         path = (tmp / relative).resolve()
         if not _is_under(path, tmp) or not path.is_file():
             return _error("找不到允許的章節產物", artifact=normalized)
-        result = _bounded_content(path, max_characters)
+        result = _bounded_content(path, max_characters, start_character)
         result.update({"success": True, "book": canonical, "chapter": chapter})
         return result
     except (OSError, ValueError) as exc:
@@ -1565,6 +1596,7 @@ def read_chapter_source(
     chapter: int,
     source: str = "scripture",
     max_characters: int = _DEFAULT_READ_CHARS,
+    start_character: int = 0,
 ) -> Dict[str, Any]:
     """Read local scripture or one source declared ``OK`` by this chapter's manifest.
 
@@ -1573,6 +1605,8 @@ def read_chapter_source(
     that manifest are unavailable through this MCP tool.
     Structured STEP original-language sources cannot be read raw through this tool;
     use ``find_step_candidates`` or ``query_step_context`` instead.
+    Long sources are paged with ``start_character``; follow ``next_start_character``
+    until ``truncated`` is false, so a full commentary can be read without truncation.
     """
     try:
         canonical, _directory, tmp = _chapter_context(book, chapter)
@@ -1580,7 +1614,7 @@ def read_chapter_source(
             path = ROOT_DIR / "raw_scripture" / canonical / f"第{chapter}章.txt"
             if not path.is_file():
                 return _error("找不到本地經文", path=_relative_to_root(path))
-            result = _bounded_content(path, max_characters)
+            result = _bounded_content(path, max_characters, start_character)
             result.update({"success": True, "source": "scripture"})
             return result
 
@@ -1615,7 +1649,7 @@ def read_chapter_source(
                 continue
             if not _is_under(resolved, allowed_root) or not resolved.is_file():
                 return _error("manifest 指向的來源檔案不在 raw_data/ 或不存在", source=label)
-            result = _bounded_content(resolved, max_characters)
+            result = _bounded_content(resolved, max_characters, start_character)
             result.update({"success": True, "source": label})
             return result
         return _error("source 不在本章 manifest 的 OK 清單", available_sources=choices)

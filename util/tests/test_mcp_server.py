@@ -480,6 +480,54 @@ class StepContextToolTests(unittest.TestCase):
             self.assertTrue(result["success"])
             self.assertIn("CT commentary body", result["content"])
 
+    def test_read_chapter_source_pages_long_commentary(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "raw_data").mkdir()
+            body = "".join(str(i % 10) for i in range(2500))
+            (root / "raw_data" / "bh.txt").write_text(body, encoding="utf-8")
+            tmp = root / "01 創世記" / ".tmp" / "第1章"
+            tmp.mkdir(parents=True)
+            (tmp / "source_manifest.md").write_text(
+                "| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |\n"
+                "|---|---|---|---|---|\n"
+                "| BH | 研經註解 | https://x/bh | raw_data/bh.txt | OK |\n",
+                encoding="utf-8",
+            )
+            with patch.object(server, "ROOT_DIR", root):
+                first = server.read_chapter_source("創世記", 1, source="BH", max_characters=1000)
+                second = server.read_chapter_source(
+                    "創世記", 1, source="BH", max_characters=1000,
+                    start_character=first["next_start_character"])
+                last = server.read_chapter_source(
+                    "創世記", 1, source="BH", max_characters=1000, start_character=2000)
+            self.assertTrue(first["truncated"])
+            self.assertEqual(1000, first["next_start_character"])
+            self.assertEqual(body[1000:2000], second["content"])
+            self.assertFalse(last["truncated"])
+            self.assertNotIn("next_start_character", last)
+            self.assertEqual(body, first["content"] + second["content"] + last["content"])
+
+    def test_read_chapter_artifact_reads_rendered_chapter_and_entry_payload(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            book = root / "01 創世記"
+            (book / ".tmp" / "第1章" / "entry_content").mkdir(parents=True)
+            (book / "第1章.md").write_text("# 創世記 第1章\n", encoding="utf-8")
+            (book / ".tmp" / "第1章" / "entry_content" / "光.yaml").write_text(
+                "name: 光\n", encoding="utf-8")
+            with patch.object(server, "ROOT_DIR", root):
+                chapter_md = server.read_chapter_artifact("創世記", 1, "chapter.md")
+                by_name = server.read_chapter_artifact("創世記", 1, "第1章.md")
+                entry = server.read_chapter_artifact("創世記", 1, "entry_content/光.yaml")
+                refused = server.read_chapter_artifact("創世記", 1, "../第2章.md")
+            self.assertTrue(chapter_md["success"])
+            self.assertIn("創世記 第1章", chapter_md["content"])
+            self.assertTrue(by_name["success"])
+            self.assertTrue(entry["success"])
+            self.assertFalse(refused["success"])
+            self.assertIn("chapter.md（渲染後的 第X章.md）", refused["allowed_patterns"])
+
     def test_find_step_candidates_tool(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

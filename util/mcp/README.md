@@ -11,8 +11,8 @@
 | `get_chapter_status` | 依 `check_chapter_files.build_checks` 回報管線缺口與續作指令。 | 否 |
 | `search_wiki_entries` | 查 canonical link index 的 title、alias、主分類與 secondary types；傳 `queries` 可一次掃整章候選清單（見下方「開章前的候選存在性掃描」）。 | 否 |
 | `read_wiki_entry` | 只讀取索引中的 `link_folder/**/*.md` 條目。 | 否 |
-| `read_chapter_artifact` | 只讀取白名單內的 `.tmp/第X章` payload／manual prompt。 | 否 |
-| `read_chapter_source` | 讀本地經文或該章 manifest 宣告為 OK 的 raw_data 來源。 | 否 |
+| `read_chapter_artifact` | 只讀取白名單內的 `.tmp/第X章` payload／manual prompt；另可讀 `entry_content/<條目名>.yaml` 與 `chapter.md`（渲染後的 `第X章.md`）。長檔用 `start_character` 分段。 | 否 |
+| `read_chapter_source` | 讀本地經文或該章 manifest 宣告為 OK 的 raw_data 來源；長檔用 `start_character` 分段，照 `next_start_character` 讀到 `truncated=false`。 | 否 |
 | `query_step_context` | 只查本章 manifest 宣告的本地 STEP；支援 verses/range、exact Extended Strong、word，回傳 compact projection＋machine receipt。 | 否 |
 | `lint_chapter_content` | 對**傳入文字**做 M6／M3 格式檢查，不讀任何路徑。 | 否 |
 | `scan_unsourced_tokens` | 以全庫 raw_data 補掃該章節點條目與渲染 md 的希伯來字母／拉丁音譯／簡體字。 | 否 |
