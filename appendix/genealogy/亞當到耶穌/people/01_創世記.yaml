@@ -1,0 +1,1406 @@
+- id: 夏娃
+  sex: f
+  names:
+    - {as: 夏娃, ref: 創3:20}
+  spouses:
+    - {id: 亞當, ref: 創3:20}
+- id: 該隱
+  sex: m
+  names:
+    - {as: 該隱, ref: 創4:1-25}
+  parents:
+    - {id: 亞當, ref: 創4:1-25}
+    - {id: 夏娃, ref: 創4:1-2, role: 母}
+- id: 亞伯
+  sex: m
+  names:
+    - {as: 亞伯, ref: 創4:1-25}
+  parents:
+    - {id: 亞當, ref: 創4:1-25}
+    - {id: 夏娃, ref: 創4:1-2, role: 母}
+- id: 塞特
+  sex: m
+  parents:
+    - {id: 亞當, ref: 創4:25}
+    - {id: 亞當, ref: 創5:3}
+- id: 以挪士
+  parents:
+    - {id: 塞特, ref: 創4:26}
+    - {id: 塞特, ref: 創5:6}
+- id: 以諾#該隱
+  sex: m
+  names:
+    - {as: 以諾, ref: 創4:17}
+  parents:
+    - {id: 該隱, ref: 創4:17}
+- id: 以拿
+  sex: m
+  names:
+    - {as: 以拿, ref: 創4:18}
+  parents:
+    - {id: 以諾#該隱, ref: 創4:18}
+- id: 米戶雅利
+  sex: m
+  names:
+    - {as: 米戶雅利, ref: 創4:18}
+  parents:
+    - {id: 以拿, ref: 創4:18}
+- id: 瑪土撒利
+  sex: m
+  names:
+    - {as: 瑪土撒利, ref: 創4:18}
+  parents:
+    - {id: 米戶雅利, ref: 創4:18}
+- id: 拉麥#瑪土撒利
+  sex: m
+  names:
+    - {as: 拉麥, ref: 創4:18}
+  parents:
+    - {id: 瑪土撒利, ref: 創4:18}
+- id: 亞大#拉麥
+  sex: f
+  names:
+    - {as: 亞大, ref: 創4:19}
+  spouses:
+    - {id: 拉麥#瑪土撒利, ref: 創4:19}
+- id: 洗拉
+  sex: f
+  names:
+    - {as: 洗拉, ref: 創4:19}
+  spouses:
+    - {id: 拉麥#瑪土撒利, ref: 創4:19}
+- id: 雅八
+  sex: m
+  names:
+    - {as: 雅八, ref: 創4:19-20}
+  parents:
+    - {id: 拉麥#瑪土撒利, ref: 創4:19-20}
+    - {id: 亞大#拉麥, ref: 創4:20, role: 母}
+- id: 猶八
+  sex: m
+  names:
+    - {as: 猶八, ref: 創4:21}
+  siblings:
+    - {id: 雅八, ref: 創4:21}
+- id: 土八該隱
+  sex: m
+  names:
+    - {as: 土八該隱, ref: 創4:19-22}
+  parents:
+    - {id: 拉麥#瑪土撒利, ref: 創4:19-22}
+    - {id: 洗拉, ref: 創4:22, role: 母}
+- id: 拿瑪
+  sex: f
+  names:
+    - {as: 拿瑪, ref: 創4:22}
+  siblings:
+    - {id: 土八該隱, ref: 創4:22}
+- id: 該南
+  parents:
+    - {id: 以挪士, ref: 創5:9}
+- id: 瑪勒列
+  parents:
+    - {id: 該南, ref: 創5:12}
+- id: 雅列
+  parents:
+    - {id: 瑪勒列, ref: 創5:15}
+- id: 以諾
+  parents:
+    - {id: 雅列, ref: 創5:18}
+- id: 瑪土撒拉
+  parents:
+    - {id: 以諾, ref: 創5:21}
+- id: 拉麥
+  parents:
+    - {id: 瑪土撒拉, ref: 創5:25}
+- id: 挪亞
+  parents:
+    - {id: 拉麥, ref: 創5:28-29}
+- id: 閃
+  sex: m
+  parents:
+    - {id: 挪亞, ref: 創5:32}
+    - {id: 挪亞, ref: 創6:10}
+    - {id: 挪亞, ref: 創9:18}
+- id: 含
+  sex: m
+  parents:
+    - {id: 挪亞, ref: 創5:32}
+    - {id: 挪亞, ref: 創6:10}
+    - {id: 挪亞, ref: 創9:18}
+- id: 雅弗
+  sex: m
+  parents:
+    - {id: 挪亞, ref: 創5:32}
+    - {id: 挪亞, ref: 創6:10}
+    - {id: 挪亞, ref: 創9:18}
+- id: 迦南
+  sex: m
+  parents:
+    - {id: 含, ref: 創9:18}
+    - {id: 含, ref: 創10:6}
+- id: 歌篾
+  parents:
+    - {id: 雅弗, ref: 創10:2}
+- id: 瑪各
+  parents:
+    - {id: 雅弗, ref: 創10:2}
+- id: 瑪代
+  parents:
+    - {id: 雅弗, ref: 創10:2}
+- id: 雅完
+  parents:
+    - {id: 雅弗, ref: 創10:2}
+- id: 土巴
+  parents:
+    - {id: 雅弗, ref: 創10:2}
+- id: 米設
+  parents:
+    - {id: 雅弗, ref: 創10:2}
+- id: 提拉
+  parents:
+    - {id: 雅弗, ref: 創10:2}
+- id: 亞實基拿
+  parents:
+    - {id: 歌篾, ref: 創10:3}
+- id: 低法
+  names:
+    - {as: 利法, ref: 創10:3}
+  parents:
+    - {id: 歌篾, ref: 創10:3}
+- id: 陀迦瑪
+  parents:
+    - {id: 歌篾, ref: 創10:3}
+- id: 以利沙
+  parents:
+    - {id: 雅完, ref: 創10:4}
+- id: 他施
+  parents:
+    - {id: 雅完, ref: 創10:4}
+- id: 基提
+  parents:
+    - {id: 雅完, ref: 創10:4}
+- id: 多單
+  parents:
+    - {id: 雅完, ref: 創10:4}
+- id: 古實
+  parents:
+    - {id: 含, ref: 創10:6}
+- id: 麥西
+  parents:
+    - {id: 含, ref: 創10:6}
+- id: 弗
+  parents:
+    - {id: 含, ref: 創10:6}
+- id: 西巴
+  parents:
+    - {id: 古實, ref: 創10:7}
+- id: 哈腓拉
+  parents:
+    - {id: 古實, ref: 創10:7}
+- id: 撒弗他
+  parents:
+    - {id: 古實, ref: 創10:7}
+- id: 拉瑪
+  parents:
+    - {id: 古實, ref: 創10:7}
+- id: 撒弗提迦
+  parents:
+    - {id: 古實, ref: 創10:7}
+- id: 示巴#拉瑪
+  parents:
+    - {id: 拉瑪, ref: 創10:7}
+- id: 底但#拉瑪
+  parents:
+    - {id: 拉瑪, ref: 創10:7}
+- id: 寧錄
+  parents:
+    - {id: 古實, ref: 創10:8}
+- id: 路低人
+  parents:
+    - {id: 麥西, ref: 創10:13-14}
+- id: 亞拿米人
+  parents:
+    - {id: 麥西, ref: 創10:13-14}
+- id: 利哈比人
+  parents:
+    - {id: 麥西, ref: 創10:13-14}
+- id: 拿弗土希人
+  parents:
+    - {id: 麥西, ref: 創10:13-14}
+- id: 帕斯魯細人
+  parents:
+    - {id: 麥西, ref: 創10:13-14}
+- id: 迦斯路希人
+  parents:
+    - {id: 麥西, ref: 創10:13-14}
+- id: 迦斐託人
+  parents:
+    - {id: 麥西, ref: 創10:13-14}
+- id: 西頓
+  parents:
+    - {id: 迦南, ref: 創10:15-18}
+- id: 赫
+  parents:
+    - {id: 迦南, ref: 創10:15-18}
+- id: 耶布斯人
+  parents:
+    - {id: 迦南, ref: 創10:15-18}
+- id: 亞摩利人
+  parents:
+    - {id: 迦南, ref: 創10:15-18}
+- id: 革迦撒人
+  parents:
+    - {id: 迦南, ref: 創10:15-18}
+- id: 希未人
+  parents:
+    - {id: 迦南, ref: 創10:15-18}
+- id: 亞基人
+  parents:
+    - {id: 迦南, ref: 創10:15-18}
+- id: 西尼人
+  parents:
+    - {id: 迦南, ref: 創10:15-18}
+- id: 亞瓦底人
+  parents:
+    - {id: 迦南, ref: 創10:15-18}
+- id: 洗瑪利人
+  parents:
+    - {id: 迦南, ref: 創10:15-18}
+- id: 哈馬人
+  parents:
+    - {id: 迦南, ref: 創10:15-18}
+- id: 以攔
+  parents:
+    - {id: 閃, ref: 創10:22}
+- id: 亞述
+  parents:
+    - {id: 閃, ref: 創10:22}
+- id: 亞法撒
+  parents:
+    - {id: 閃, ref: 創10:22}
+    - {id: 閃, ref: 創11:10}
+- id: 路德
+  parents:
+    - {id: 閃, ref: 創10:22}
+- id: 亞蘭
+  parents:
+    - {id: 閃, ref: 創10:22}
+- id: 烏斯
+  parents:
+    - {id: 亞蘭, ref: 創10:23}
+- id: 戶勒
+  parents:
+    - {id: 亞蘭, ref: 創10:23}
+- id: 基帖
+  parents:
+    - {id: 亞蘭, ref: 創10:23}
+- id: 米設#閃
+  names:
+    - {as: 瑪施, ref: 創10:23}
+  parents:
+    - {id: 亞蘭, ref: 創10:23}
+- id: 沙拉
+  parents:
+    - {id: 亞法撒, ref: 創10:24}
+    - {id: 亞法撒, ref: 創11:12}
+- id: 希伯
+  parents:
+    - {id: 沙拉, ref: 創10:24}
+    - {id: 沙拉, ref: 創11:14}
+- id: 法勒
+  parents:
+    - {id: 希伯, ref: 創10:25}
+    - {id: 希伯, ref: 創11:16}
+- id: 約坍
+  parents:
+    - {id: 希伯, ref: 創10:25}
+- id: 亞摩答
+  parents:
+    - {id: 約坍, ref: 創10:26-29}
+- id: 沙列
+  parents:
+    - {id: 約坍, ref: 創10:26-29}
+- id: 哈薩瑪非
+  parents:
+    - {id: 約坍, ref: 創10:26-29}
+- id: 耶拉
+  parents:
+    - {id: 約坍, ref: 創10:26-29}
+- id: 哈多蘭
+  parents:
+    - {id: 約坍, ref: 創10:26-29}
+- id: 烏薩
+  parents:
+    - {id: 約坍, ref: 創10:26-29}
+- id: 德拉
+  parents:
+    - {id: 約坍, ref: 創10:26-29}
+- id: 以巴錄
+  names:
+    - {as: 俄巴路, ref: 創10:28}
+  parents:
+    - {id: 約坍, ref: 創10:26-29}
+- id: 亞比瑪利
+  parents:
+    - {id: 約坍, ref: 創10:26-29}
+- id: 示巴#約坍
+  parents:
+    - {id: 約坍, ref: 創10:26-29}
+- id: 阿斐
+  parents:
+    - {id: 約坍, ref: 創10:26-29}
+- id: 哈腓拉#約坍
+  parents:
+    - {id: 約坍, ref: 創10:26-29}
+- id: 約巴
+  parents:
+    - {id: 約坍, ref: 創10:26-29}
+- id: 拉吳
+  parents:
+    - {id: 法勒, ref: 創11:18}
+- id: 西鹿
+  parents:
+    - {id: 拉吳, ref: 創11:20}
+- id: 拿鶴
+  parents:
+    - {id: 西鹿, ref: 創11:22}
+- id: 他拉
+  parents:
+    - {id: 拿鶴, ref: 創11:24}
+- id: 亞伯拉罕
+  sex: m
+  names:
+    - {as: 亞伯蘭, ref: 創11:26}
+  parents:
+    - {id: 他拉, ref: 創11:26}
+- id: 拿鶴#他拉
+  sex: m
+  names:
+    - {as: 拿鶴, ref: 創11:26}
+  parents:
+    - {id: 他拉, ref: 創11:26}
+- id: 哈蘭#他拉
+  sex: m
+  names:
+    - {as: 哈蘭, ref: 創11:26}
+  parents:
+    - {id: 他拉, ref: 創11:26}
+- id: 羅得
+  sex: m
+  names:
+    - {as: 羅得, ref: 創11:31}
+  parents:
+    - {id: 哈蘭#他拉, ref: 創11:27}
+  kin:
+    - {id: 他拉, rel: 孫子, ref: 創11:31}
+    - {id: 亞伯拉罕, rel: 姪兒, ref: 創12:5}
+- id: 密迦
+  sex: f
+  names:
+    - {as: 密迦, ref: 創11:29}
+  parents:
+    - {id: 哈蘭#他拉, ref: 創11:29}
+  spouses:
+    - {id: 拿鶴#他拉, ref: 創11:29}
+- id: 亦迦
+  sex: f
+  names:
+    - {as: 亦迦, ref: 創11:29}
+  parents:
+    - {id: 哈蘭#他拉, ref: 創11:29}
+- id: 撒拉
+  sex: f
+  names:
+    - {as: 撒萊, ref: 創11:29}
+    - {as: 撒拉, ref: 創17:15}
+  spouses:
+    - {id: 亞伯拉罕, ref: 創11:29}
+  kin:
+    - {id: 他拉, rel: 兒婦, ref: 創11:31}
+    - {id: 亞伯拉罕, rel: 妹子, ref: 創20:2}
+- id: 夏甲
+  sex: f
+  names:
+    - {as: 夏甲, ref: 創16:1}
+  spouses:
+    - {id: 亞伯拉罕, ref: 創16:3}
+- id: 以實瑪利
+  sex: m
+  parents:
+    - {id: 亞伯拉罕, ref: 創16:15}
+    - {id: 夏甲, ref: 創16:15-16, role: 母}
+    - {id: 亞伯拉罕, ref: 創25:12}
+    - {id: 夏甲, ref: 創25:12-13, role: 母}
+- id: 摩押
+  sex: m
+  names:
+    - {as: 摩押, ref: 創19:36-38}
+  parents:
+    - {id: 羅得, ref: 創19:36-38}
+- id: 便亞米
+  sex: m
+  names:
+    - {as: 便亞米, ref: 創19:36-38}
+  parents:
+    - {id: 羅得, ref: 創19:36-38}
+- id: 以撒
+  sex: m
+  parents:
+    - {id: 亞伯拉罕, ref: 創21:2-3}
+    - {id: 撒拉, ref: 創21:3, role: 母}
+    - {id: 亞伯拉罕, ref: 創25:19}
+- id: 烏斯#拿鶴
+  sex: m
+  names:
+    - {as: 烏斯, ref: 創22:21}
+  parents:
+    - {id: 拿鶴#他拉, ref: 創22:20-23}
+    - {id: 密迦, ref: 創22:20-21, role: 母}
+- id: 布斯#拿鶴
+  sex: m
+  names:
+    - {as: 布斯, ref: 創22:21}
+  parents:
+    - {id: 拿鶴#他拉, ref: 創22:20-23}
+    - {id: 密迦, ref: 創22:20-21, role: 母}
+- id: 基母利
+  sex: m
+  names:
+    - {as: 基母利, ref: 創22:20-23}
+  parents:
+    - {id: 拿鶴#他拉, ref: 創22:20-23}
+    - {id: 密迦, ref: 創22:20-21, role: 母}
+- id: 基薛
+  sex: m
+  names:
+    - {as: 基薛, ref: 創22:20-23}
+  parents:
+    - {id: 拿鶴#他拉, ref: 創22:20-23}
+    - {id: 密迦, ref: 創22:20-22, role: 母}
+- id: 哈瑣
+  sex: m
+  names:
+    - {as: 哈瑣, ref: 創22:20-23}
+  parents:
+    - {id: 拿鶴#他拉, ref: 創22:20-23}
+    - {id: 密迦, ref: 創22:20-22, role: 母}
+- id: 必達
+  sex: m
+  names:
+    - {as: 必達, ref: 創22:20-23}
+  parents:
+    - {id: 拿鶴#他拉, ref: 創22:20-23}
+    - {id: 密迦, ref: 創22:20-22, role: 母}
+- id: 益拉
+  sex: m
+  names:
+    - {as: 益拉, ref: 創22:20-23}
+  parents:
+    - {id: 拿鶴#他拉, ref: 創22:20-23}
+    - {id: 密迦, ref: 創22:20-22, role: 母}
+- id: 彼土利
+  sex: m
+  names:
+    - {as: 彼土利, ref: 創22:20-23}
+  parents:
+    - {id: 拿鶴#他拉, ref: 創22:20-23}
+    - {id: 密迦, ref: 創22:20-22, role: 母}
+    - {id: 拿鶴#他拉, ref: 創24:15}
+    - {id: 密迦, ref: 創24:15-16, role: 母}
+    - {id: 拿鶴#他拉, ref: 創24:24}
+    - {id: 密迦, ref: 創24:24-25, role: 母}
+  kin:
+    - {id: 以色列, rel: 外祖, ref: 創28:1-2}
+- id: 亞蘭#基母利
+  sex: m
+  names:
+    - {as: 亞蘭, ref: 創22:21}
+  parents:
+    - {id: 基母利, ref: 創22:21}
+- id: 利百加
+  sex: f
+  names:
+    - {as: 利百加, ref: 創22:22}
+  parents:
+    - {id: 彼土利, ref: 創22:22}
+    - {id: 彼土利, ref: 創24:15}
+  spouses:
+    - {id: 以撒, ref: 創24:67}
+- id: 流瑪
+  sex: f
+  names:
+    - {as: 流瑪, ref: 創22:24}
+  spouses:
+    - {id: 拿鶴#他拉, ref: 創22:24}
+- id: 提八
+  names:
+    - {as: 提八, ref: 創22:24}
+  parents:
+    - {id: 拿鶴#他拉, ref: 創22:24}
+    - {id: 流瑪, ref: 創22:23-24, role: 母}
+- id: 迦含
+  names:
+    - {as: 迦含, ref: 創22:24}
+  parents:
+    - {id: 拿鶴#他拉, ref: 創22:24}
+    - {id: 流瑪, ref: 創22:23-24, role: 母}
+- id: 他轄
+  names:
+    - {as: 他轄, ref: 創22:24}
+  parents:
+    - {id: 拿鶴#他拉, ref: 創22:24}
+    - {id: 流瑪, ref: 創22:23-24, role: 母}
+- id: 瑪迦#拿鶴
+  names:
+    - {as: 瑪迦, ref: 創22:24}
+  parents:
+    - {id: 拿鶴#他拉, ref: 創22:24}
+    - {id: 流瑪, ref: 創22:23-24, role: 母}
+- id: 拉班
+  sex: m
+  names:
+    - {as: 拉班, ref: 創28:5}
+  parents:
+    - {id: 彼土利, ref: 創28:5}
+  kin:
+    - {id: 以色列, rel: 母舅, ref: 創28:5}
+    - {id: 以掃, rel: 母舅, ref: 創28:5}
+  descends:
+    - {id: 拿鶴#他拉, ref: 創29:5, generations: 2}
+- id: 以色列
+  sex: m
+  names:
+    - {as: 雅各, ref: 創25:26}
+  parents:
+    - {id: 以撒, ref: 創25:19-26}
+    - {id: 利百加, ref: 創25:20-26, role: 母}
+  kin:
+    - {id: 拉班, rel: 外甥, ref: 創29:13}
+- id: 以掃
+  sex: m
+  names:
+    - {as: 以東, ref: 創25:30}
+    - {as: 以東, ref: 創36:1}
+  parents:
+    - {id: 以撒, ref: 創25:19-26}
+    - {id: 利百加, ref: 創25:19-25, role: 母}
+- id: 基土拉
+  sex: f
+  names:
+    - {as: 基土拉, ref: 創25:1}
+  spouses:
+    - {id: 亞伯拉罕, ref: 創25:1}
+- id: 心蘭
+  parents:
+    - {id: 亞伯拉罕, ref: 創25:1-2}
+    - {id: 基土拉, ref: 創25:2, role: 母}
+- id: 約珊
+  parents:
+    - {id: 亞伯拉罕, ref: 創25:1-2}
+    - {id: 基土拉, ref: 創25:2, role: 母}
+- id: 米但
+  parents:
+    - {id: 亞伯拉罕, ref: 創25:1-2}
+    - {id: 基土拉, ref: 創25:2, role: 母}
+- id: 米甸
+  parents:
+    - {id: 亞伯拉罕, ref: 創25:1-2}
+    - {id: 基土拉, ref: 創25:2, role: 母}
+- id: 伊施巴
+  parents:
+    - {id: 亞伯拉罕, ref: 創25:1-2}
+    - {id: 基土拉, ref: 創25:2, role: 母}
+- id: 書亞
+  parents:
+    - {id: 亞伯拉罕, ref: 創25:1-2}
+    - {id: 基土拉, ref: 創25:2, role: 母}
+- id: 示巴#約珊
+  parents:
+    - {id: 約珊, ref: 創25:3}
+- id: 底但#約珊
+  parents:
+    - {id: 約珊, ref: 創25:3}
+- id: 亞書利族
+  kind: people
+  names:
+    - {as: 亞書利族, ref: 創25:3}
+  descends:
+    - {id: 底但#約珊, ref: 創25:3}
+- id: 利都是族
+  kind: people
+  names:
+    - {as: 利都是族, ref: 創25:3}
+  descends:
+    - {id: 底但#約珊, ref: 創25:3}
+- id: 利烏米族
+  kind: people
+  names:
+    - {as: 利烏米族, ref: 創25:3}
+  descends:
+    - {id: 底但#約珊, ref: 創25:3}
+- id: 以法
+  parents:
+    - {id: 米甸, ref: 創25:4}
+- id: 以弗
+  parents:
+    - {id: 米甸, ref: 創25:4}
+- id: 哈諾
+  parents:
+    - {id: 米甸, ref: 創25:4}
+- id: 亞比大
+  parents:
+    - {id: 米甸, ref: 創25:4}
+- id: 以勒大
+  parents:
+    - {id: 米甸, ref: 創25:4}
+- id: 尼拜約
+  parents:
+    - {id: 以實瑪利, ref: 創25:13-15}
+- id: 基達
+  parents:
+    - {id: 以實瑪利, ref: 創25:13-15}
+- id: 押德別
+  names:
+    - {as: 亞德別, ref: 創25:13}
+  parents:
+    - {id: 以實瑪利, ref: 創25:13-15}
+- id: 米比衫
+  parents:
+    - {id: 以實瑪利, ref: 創25:13-15}
+- id: 米施瑪
+  parents:
+    - {id: 以實瑪利, ref: 創25:13-15}
+- id: 度瑪
+  parents:
+    - {id: 以實瑪利, ref: 創25:13-15}
+- id: 瑪撒
+  parents:
+    - {id: 以實瑪利, ref: 創25:13-15}
+- id: 哈達
+  names:
+    - {as: 哈大, ref: 創25:15}
+  parents:
+    - {id: 以實瑪利, ref: 創25:13-15}
+- id: 提瑪
+  parents:
+    - {id: 以實瑪利, ref: 創25:13-15}
+- id: 伊突
+  parents:
+    - {id: 以實瑪利, ref: 創25:13-15}
+- id: 拿非施
+  parents:
+    - {id: 以實瑪利, ref: 創25:13-15}
+- id: 基底瑪
+  parents:
+    - {id: 以實瑪利, ref: 創25:13-15}
+- id: 猶滴
+  sex: f
+  names:
+    - {as: 猶滴, ref: 創26:34}
+  parents:
+    - {id: 比利#赫人, ref: 創26:34}
+  spouses:
+    - {id: 以掃, ref: 創26:34}
+- id: 巴實抹#以倫
+  sex: f
+  names:
+    - {as: 巴實抹, ref: 創26:34}
+  parents:
+    - {id: 以倫#赫人, ref: 創26:34}
+  spouses:
+    - {id: 以掃, ref: 創26:34}
+- id: 瑪哈拉
+  sex: f
+  names:
+    - {as: 瑪哈拉, ref: 創28:9}
+  parents:
+    - {id: 以實瑪利, ref: 創28:9}
+  spouses:
+    - {id: 以掃, ref: 創28:8-9}
+- id: 亞大#以倫
+  sex: f
+  names:
+    - {as: 亞大, ref: 創36:2}
+  parents:
+    - {id: 以倫#赫人, ref: 創36:2}
+  spouses:
+    - {id: 以掃, ref: 創36:2}
+  maybe_same:
+    - {id: 巴實抹#以倫, refs: [創36:2, 創26:34]}
+- id: 阿何利巴瑪#亞拿
+  sex: f
+  names:
+    - {as: 阿何利巴瑪, ref: 創36:2}
+  parents:
+    - {id: 亞拿#祭便, ref: 創36:2}
+  spouses:
+    - {id: 以掃, ref: 創36:2}
+  descends:
+    - {id: 祭便, ref: 創36:2, generations: 2}
+  maybe_same:
+    - {id: 猶滴, refs: [創36:2, 創26:34]}
+- id: 巴實抹#以實瑪利
+  sex: f
+  names:
+    - {as: 巴實抹, ref: 創36:3}
+  parents:
+    - {id: 以實瑪利, ref: 創36:3}
+  spouses:
+    - {id: 以掃, ref: 創36:2-3}
+  maybe_same:
+    - {id: 瑪哈拉, refs: [創36:3, 創28:9]}
+- id: 比利#赫人
+  sex: m
+  names:
+    - {as: 比利, ref: 創26:34}
+- id: 以倫#赫人
+  sex: m
+  names:
+    - {as: 以倫, ref: 創26:34}
+- id: 亞拿#祭便
+  names:
+    - {as: 亞拿, ref: 創36:24}
+  parents:
+    - {id: 祭便, ref: 創36:24}
+- id: 祭便
+  parents:
+    - {id: 西珥, ref: 創36:20-21}
+- id: 以利法
+  parents:
+    - {id: 以掃, ref: 創36:10}
+    - {id: 亞大#以倫, ref: 創36:10-11, role: 母}
+- id: 流珥
+  parents:
+    - {id: 以掃, ref: 創36:10}
+    - {id: 巴實抹#以實瑪利, ref: 創36:10-11, role: 母}
+- id: 耶烏施
+  parents:
+    - {id: 以掃, ref: 創36:14}
+    - {id: 阿何利巴瑪#亞拿, ref: 創36:14-15, role: 母}
+- id: 雅蘭
+  parents:
+    - {id: 以掃, ref: 創36:14}
+    - {id: 阿何利巴瑪#亞拿, ref: 創36:14-15, role: 母}
+- id: 可拉#以掃
+  names:
+    - {as: 可拉, ref: 創36:14}
+  parents:
+    - {id: 以掃, ref: 創36:14}
+    - {id: 阿何利巴瑪#亞拿, ref: 創36:14-15, role: 母}
+- id: 提幔
+  parents:
+    - {id: 以利法, ref: 創36:11}
+- id: 阿抹
+  parents:
+    - {id: 以利法, ref: 創36:11}
+- id: 洗玻
+  parents:
+    - {id: 以利法, ref: 創36:11}
+- id: 迦坦
+  parents:
+    - {id: 以利法, ref: 創36:11}
+- id: 基納斯
+  parents:
+    - {id: 以利法, ref: 創36:11}
+- id: 亭納#以利法的妾
+  sex: f
+  names:
+    - {as: 亭納, ref: 創36:12}
+  spouses:
+    - {id: 以利法, ref: 創36:12}
+  maybe_same:
+    - {id: 亭納, refs: [創36:12, 代上1:36]}
+- id: 亞瑪力
+  parents:
+    - {id: 以利法, ref: 創36:12}
+    - {id: 亭納#以利法的妾, ref: 創36:12-13, role: 母}
+- id: 拿哈
+  parents:
+    - {id: 流珥, ref: 創36:13}
+- id: 謝拉#流珥
+  names:
+    - {as: 謝拉, ref: 創36:13}
+  parents:
+    - {id: 流珥, ref: 創36:13}
+- id: 沙瑪
+  parents:
+    - {id: 流珥, ref: 創36:13}
+- id: 米撒
+  parents:
+    - {id: 流珥, ref: 創36:13}
+- id: 羅坍
+  parents:
+    - {id: 西珥, ref: 創36:20-21}
+- id: 朔巴
+  parents:
+    - {id: 西珥, ref: 創36:20-21}
+- id: 亞拿
+  parents:
+    - {id: 西珥, ref: 創36:20-21}
+- id: 底順
+  parents:
+    - {id: 西珥, ref: 創36:20-21}
+- id: 以察
+  parents:
+    - {id: 西珥, ref: 創36:20-21}
+- id: 底珊
+  parents:
+    - {id: 西珥, ref: 創36:20-21}
+- id: 何利
+  parents:
+    - {id: 羅坍, ref: 創36:22}
+- id: 荷幔
+  names:
+    - {as: 希幔, ref: 創36:22}
+  parents:
+    - {id: 羅坍, ref: 創36:22}
+- id: 亭納#羅坍
+  sex: f
+  siblings:
+    - {id: 羅坍, ref: 創36:22}
+- id: 亞勒文
+  parents:
+    - {id: 朔巴, ref: 創36:23}
+- id: 瑪拿轄
+  parents:
+    - {id: 朔巴, ref: 創36:23}
+- id: 以巴錄#朔巴
+  names:
+    - {as: 以巴錄, ref: 創36:23}
+  parents:
+    - {id: 朔巴, ref: 創36:23}
+- id: 示非
+  names:
+    - {as: 示玻, ref: 創36:23}
+  parents:
+    - {id: 朔巴, ref: 創36:23}
+- id: 阿南
+  parents:
+    - {id: 朔巴, ref: 創36:23}
+- id: 亞雅
+  parents:
+    - {id: 祭便, ref: 創36:24}
+- id: 底順#亞拿
+  names:
+    - {as: 底順, ref: 創36:25}
+  parents:
+    - {id: 亞拿, ref: 創36:25}
+- id: 哈默蘭
+  names:
+    - {as: 欣但, ref: 創36:26}
+  parents:
+    - {id: 底順, ref: 創36:26}
+- id: 伊是班
+  parents:
+    - {id: 底順, ref: 創36:26}
+- id: 益蘭
+  parents:
+    - {id: 底順, ref: 創36:26}
+- id: 基蘭
+  parents:
+    - {id: 底順, ref: 創36:26}
+- id: 辟罕
+  parents:
+    - {id: 以察, ref: 創36:27}
+- id: 撒番
+  parents:
+    - {id: 以察, ref: 創36:27}
+- id: 亞干#以察
+  names:
+    - {as: 亞干, ref: 創36:27}
+  parents:
+    - {id: 以察, ref: 創36:27}
+- id: 烏斯#底珊
+  names:
+    - {as: 烏斯, ref: 創36:28}
+  parents:
+    - {id: 底珊, ref: 創36:28}
+- id: 亞蘭#底珊
+  names:
+    - {as: 亞蘭, ref: 創36:28}
+  parents:
+    - {id: 底珊, ref: 創36:28}
+- id: 比珥
+  sex: m
+  names:
+    - {as: 比珥, ref: 創36:32}
+- id: 謝拉#波斯拉人
+  sex: m
+  names:
+    - {as: 謝拉, ref: 創36:33}
+- id: 比達
+  sex: m
+  names:
+    - {as: 比達, ref: 創36:35}
+- id: 亞革波
+  sex: m
+  names:
+    - {as: 亞革波, ref: 創36:38}
+- id: 比拉#以東王
+  names:
+    - {as: 比拉, ref: 創36:32}
+  parents:
+    - {id: 比珥, ref: 創36:32}
+- id: 約巴#以東王
+  names:
+    - {as: 約巴, ref: 創36:33}
+  parents:
+    - {id: 謝拉#波斯拉人, ref: 創36:33}
+- id: 哈達#比達
+  names:
+    - {as: 哈達, ref: 創36:35}
+  parents:
+    - {id: 比達, ref: 創36:35}
+- id: 巴勒哈南
+  parents:
+    - {id: 亞革波, ref: 創36:38}
+- id: 米希他別
+  sex: f
+  names:
+    - {as: 米希他別, ref: 創36:39}
+  parents:
+    - {id: 瑪特列, ref: 創36:39}
+  spouses:
+    - {id: 哈達#巴伊, ref: 創36:39}
+  descends:
+    - {id: 米薩合, ref: 創36:39, generations: 2}
+- id: 瑪特列
+  sex: m
+  names:
+    - {as: 瑪特列, ref: 創36:39}
+- id: 米薩合
+  sex: m
+  names:
+    - {as: 米薩合, ref: 創36:39}
+- id: 哈達#巴伊
+  names:
+    - {as: 哈達, ref: 創36:39}
+- id: 利亞
+  sex: f
+  names:
+    - {as: 利亞, ref: 創29:16}
+  parents:
+    - {id: 拉班, ref: 創29:16}
+  spouses:
+    - {id: 以色列, ref: 創29:23}
+- id: 拉結
+  sex: f
+  names:
+    - {as: 拉結, ref: 創29:16}
+  parents:
+    - {id: 拉班, ref: 創29:16}
+  spouses:
+    - {id: 以色列, ref: 創29:28}
+- id: 辟拉
+  sex: f
+  names:
+    - {as: 辟拉, ref: 創29:29}
+  spouses:
+    - {id: 以色列, ref: 創30:4}
+- id: 悉帕
+  sex: f
+  names:
+    - {as: 悉帕, ref: 創29:24}
+  spouses:
+    - {id: 以色列, ref: 創30:9}
+- id: 底拿
+  sex: f
+  names:
+    - {as: 底拿, ref: 創34:1}
+  parents:
+    - {id: 以色列, ref: 創34:1}
+    - {id: 以色列, ref: 創46:15}
+    - {id: 利亞, ref: 創34:1-2, role: 母}
+    - {id: 利亞, ref: 創46:15-16, role: 母}
+- id: 流便
+  sex: m
+  parents:
+    - {id: 以色列, ref: 創35:22-26}
+    - {id: 利亞, ref: 創29:31-35, role: 母}
+    - {id: 利亞, ref: 創35:23, role: 母}
+- id: 西緬
+  sex: m
+  parents:
+    - {id: 以色列, ref: 創35:22-26}
+    - {id: 利亞, ref: 創29:31-35, role: 母}
+    - {id: 利亞, ref: 創35:23, role: 母}
+  kin:
+    - {id: 底拿, rel: 哥哥, ref: 創34:25}
+- id: 利未
+  sex: m
+  parents:
+    - {id: 以色列, ref: 創35:22-26}
+    - {id: 利亞, ref: 創29:31-35, role: 母}
+    - {id: 利亞, ref: 創35:23, role: 母}
+  kin:
+    - {id: 底拿, rel: 哥哥, ref: 創34:25}
+- id: 猶大
+  sex: m
+  parents:
+    - {id: 以色列, ref: 創35:22-26}
+    - {id: 利亞, ref: 創29:31-35, role: 母}
+    - {id: 利亞, ref: 創35:23, role: 母}
+- id: 以薩迦
+  sex: m
+  parents:
+    - {id: 以色列, ref: 創35:22-26}
+    - {id: 利亞, ref: 創30:17-18, role: 母}
+    - {id: 利亞, ref: 創35:23, role: 母}
+- id: 西布倫
+  sex: m
+  parents:
+    - {id: 以色列, ref: 創35:22-26}
+    - {id: 利亞, ref: 創30:19-20, role: 母}
+    - {id: 利亞, ref: 創35:23, role: 母}
+- id: 但
+  sex: m
+  parents:
+    - {id: 以色列, ref: 創35:22-26}
+    - {id: 辟拉, ref: 創30:5-6, role: 母}
+    - {id: 辟拉, ref: 創35:25, role: 母}
+- id: 約瑟
+  sex: m
+  parents:
+    - {id: 以色列, ref: 創35:22-26}
+    - {id: 拉結, ref: 創30:22-24, role: 母}
+    - {id: 拉結, ref: 創35:24, role: 母}
+    - {id: 以色列, ref: 創37:2}
+- id: 便雅憫
+  sex: m
+  names:
+    - {as: 便俄尼, ref: 創35:18}
+  parents:
+    - {id: 以色列, ref: 創35:22-26}
+    - {id: 拉結, ref: 創35:16-18, role: 母}
+    - {id: 拉結, ref: 創35:24, role: 母}
+- id: 拿弗他利
+  sex: m
+  parents:
+    - {id: 以色列, ref: 創35:22-26}
+    - {id: 辟拉, ref: 創30:7-8, role: 母}
+    - {id: 辟拉, ref: 創35:25, role: 母}
+- id: 迦得
+  sex: m
+  parents:
+    - {id: 以色列, ref: 創35:22-26}
+    - {id: 悉帕, ref: 創30:10-11, role: 母}
+    - {id: 悉帕, ref: 創35:26, role: 母}
+- id: 亞設
+  sex: m
+  parents:
+    - {id: 以色列, ref: 創35:22-26}
+    - {id: 悉帕, ref: 創30:12-13, role: 母}
+    - {id: 悉帕, ref: 創35:26, role: 母}
+- id: 書亞的女兒
+  sex: f
+  names:
+    - {as: 書亞的女兒, ref: 創38:12}
+  parents:
+    - {id: 書亞#迦南人, ref: 創38:2}
+  spouses:
+    - {id: 猶大, ref: 創38:2}
+- id: 他瑪#猶大的兒婦
+  sex: f
+  names:
+    - {as: 他瑪, ref: 創38:6}
+  spouses:
+    - {id: 珥, ref: 創38:6}
+  kin:
+    - {id: 猶大, rel: 兒婦, ref: 創38:11}
+- id: 書亞#迦南人
+  sex: m
+  names:
+    - {as: 書亞, ref: 創38:2}
+- id: 珥
+  sex: m
+  parents:
+    - {id: 猶大, ref: 創38:2-3}
+    - {id: 書亞的女兒, ref: 創38:2-4, role: 母}
+    - {id: 猶大, ref: 創46:12}
+- id: 俄南
+  sex: m
+  parents:
+    - {id: 猶大, ref: 創38:2-4}
+    - {id: 書亞的女兒, ref: 創38:2-5, role: 母}
+    - {id: 猶大, ref: 創46:12}
+- id: 示拉
+  sex: m
+  parents:
+    - {id: 猶大, ref: 創38:2-5}
+    - {id: 書亞的女兒, ref: 創38:2-6, role: 母}
+    - {id: 猶大, ref: 創46:12}
+- id: 法勒斯
+  sex: m
+  parents:
+    - {id: 猶大, ref: 創38:24-30}
+    - {id: 他瑪#猶大的兒婦, ref: 創38:27-29, role: 母}
+    - {id: 猶大, ref: 創46:12}
+- id: 謝拉
+  sex: m
+  parents:
+    - {id: 猶大, ref: 創38:24-30}
+    - {id: 他瑪#猶大的兒婦, ref: 創38:27-30, role: 母}
+    - {id: 猶大, ref: 創46:12}
+- id: 亞西納
+  sex: f
+  names:
+    - {as: 亞西納, ref: 創41:45}
+  parents:
+    - {id: 波提非拉, ref: 創41:45}
+  spouses:
+    - {id: 約瑟, ref: 創41:45}
+- id: 波提非拉
+  sex: m
+  names:
+    - {as: 波提非拉, ref: 創41:45}
+- id: 瑪拿西#支派
+  sex: m
+  parents:
+    - {id: 約瑟, ref: 創41:50-52}
+    - {id: 亞西納, ref: 創41:50-51, role: 母}
+    - {id: 約瑟, ref: 創46:20}
+    - {id: 亞西納, ref: 創46:20-21, role: 母}
+    - {id: 約瑟, ref: 創48:1}
+- id: 以法蓮
+  sex: m
+  parents:
+    - {id: 約瑟, ref: 創41:50-52}
+    - {id: 亞西納, ref: 創41:50-53, role: 母}
+    - {id: 約瑟, ref: 創46:20}
+    - {id: 亞西納, ref: 創46:20-21, role: 母}
+    - {id: 約瑟, ref: 創48:1}
+- id: 哈諾#流便
+  names:
+    - {as: 哈諾, ref: 創46:9}
+  parents:
+    - {id: 流便, ref: 創46:9}
+- id: 法路
+  parents:
+    - {id: 流便, ref: 創46:9}
+- id: 希斯倫
+  parents:
+    - {id: 流便, ref: 創46:9}
+- id: 迦米#流便
+  names:
+    - {as: 迦米, ref: 創46:9}
+  parents:
+    - {id: 流便, ref: 創46:9}
+- id: 耶母利
+  names:
+    - {as: 耶母利, ref: 創46:10}
+  parents:
+    - {id: 西緬, ref: 創46:10}
+  maybe_same:
+    - {id: 尼母利, refs: [創46:10, 代上4:24]}
+- id: 雅憫#西緬
+  names:
+    - {as: 雅憫, ref: 創46:10}
+  parents:
+    - {id: 西緬, ref: 創46:10}
+- id: 阿轄
+  names:
+    - {as: 阿轄, ref: 創46:10}
+  parents:
+    - {id: 西緬, ref: 創46:10}
+  maybe_same:
+    - {id: 雅立, refs: [創46:10, 代上4:24]}
+- id: 雅斤#西緬
+  names:
+    - {as: 雅斤, ref: 創46:10}
+  parents:
+    - {id: 西緬, ref: 創46:10}
+- id: 瑣轄#西緬
+  names:
+    - {as: 瑣轄, ref: 創46:10}
+  parents:
+    - {id: 西緬, ref: 創46:10}
+- id: 掃羅#西緬
+  names:
+    - {as: 掃羅, ref: 創46:10}
+  parents:
+    - {id: 西緬, ref: 創46:10}
+- id: 革順
+  parents:
+    - {id: 利未, ref: 創46:11}
+- id: 哥轄
+  parents:
+    - {id: 利未, ref: 創46:11}
+- id: 米拉利
+  parents:
+    - {id: 利未, ref: 創46:11}
+- id: 希斯崙
+  names:
+    - {as: 希斯倫, ref: 創46:12}
+  parents:
+    - {id: 法勒斯, ref: 創46:12}
+- id: 哈母勒
+  parents:
+    - {id: 法勒斯, ref: 創46:12}
+- id: 陀拉
+  parents:
+    - {id: 以薩迦, ref: 創46:13}
+- id: 普瓦
+  parents:
+    - {id: 以薩迦, ref: 創46:13}
+- id: 約伯#以薩迦
+  names:
+    - {as: 約伯, ref: 創46:13}
+  parents:
+    - {id: 以薩迦, ref: 創46:13}
+  maybe_same:
+    - {id: 雅述, refs: [創46:13, 代上7:1]}
+- id: 伸崙
+  parents:
+    - {id: 以薩迦, ref: 創46:13}
+- id: 西烈
+  names:
+    - {as: 西烈, ref: 創46:14}
+  parents:
+    - {id: 西布倫, ref: 創46:14}
+- id: 以倫#西布倫
+  names:
+    - {as: 以倫, ref: 創46:14}
+  parents:
+    - {id: 西布倫, ref: 創46:14}
+- id: 雅利
+  names:
+    - {as: 雅利, ref: 創46:14}
+  parents:
+    - {id: 西布倫, ref: 創46:14}
+- id: 洗非芸
+  names:
+    - {as: 洗非芸, ref: 創46:16}
+  parents:
+    - {id: 迦得, ref: 創46:16}
+- id: 哈基
+  names:
+    - {as: 哈基, ref: 創46:16}
+  parents:
+    - {id: 迦得, ref: 創46:16}
+- id: 書尼
+  names:
+    - {as: 書尼, ref: 創46:16}
+  parents:
+    - {id: 迦得, ref: 創46:16}
+- id: 以斯本#迦得
+  names:
+    - {as: 以斯本, ref: 創46:16}
+  parents:
+    - {id: 迦得, ref: 創46:16}
+- id: 以利#迦得
+  names:
+    - {as: 以利, ref: 創46:16}
+  parents:
+    - {id: 迦得, ref: 創46:16}
+- id: 亞羅底
+  names:
+    - {as: 亞羅底, ref: 創46:16}
+  parents:
+    - {id: 迦得, ref: 創46:16}
+- id: 亞列利
+  names:
+    - {as: 亞列利, ref: 創46:16}
+  parents:
+    - {id: 迦得, ref: 創46:16}
+- id: 音拿
+  parents:
+    - {id: 亞設, ref: 創46:17}
+- id: 亦施瓦
+  parents:
+    - {id: 亞設, ref: 創46:17}
+- id: 亦施韋
+  parents:
+    - {id: 亞設, ref: 創46:17}
+- id: 比利亞#亞設
+  names:
+    - {as: 比利亞, ref: 創46:17}
+  parents:
+    - {id: 亞設, ref: 創46:17}
+- id: 西拉
+  sex: f
+  parents:
+    - {id: 亞設, ref: 創46:17}
+- id: 希別
+  parents:
+    - {id: 比利亞#亞設, ref: 創46:17}
+- id: 瑪結
+  parents:
+    - {id: 比利亞#亞設, ref: 創46:17}
+- id: 比拉#便雅憫
+  parents:
+    - {id: 便雅憫, ref: 創46:21}
+- id: 比結
+  parents:
+    - {id: 便雅憫, ref: 創46:21}
+- id: 亞實別
+  parents:
+    - {id: 便雅憫, ref: 創46:21}
+- id: 基拉#便雅憫
+  names:
+    - {as: 基拉, ref: 創46:21}
+  parents:
+    - {id: 便雅憫, ref: 創46:21}
+  maybe_same:
+    - {id: 基拉#甲, refs: [創46:21, 代上8:3]}
+    - {id: 基拉#乙, refs: [創46:21, 代上8:5]}
+    - {id: 基拉#以忽, refs: [創46:21, 代上8:7]}
+- id: 乃幔#便雅憫
+  names:
+    - {as: 乃幔, ref: 創46:21}
+  parents:
+    - {id: 便雅憫, ref: 創46:21}
+  maybe_same:
+    - {id: 乃幔, refs: [創46:21, 代上8:4]}
+    - {id: 乃幔#以忽, refs: [創46:21, 代上8:7]}
+- id: 以希
+  names:
+    - {as: 以希, ref: 創46:21}
+  parents:
+    - {id: 便雅憫, ref: 創46:21}
+  maybe_same:
+    - {id: 亞希蘭, refs: [創46:21, 民26:38]}
+    - {id: 亞黑, refs: [創46:21, 代上7:12]}
+- id: 羅實
+  names:
+    - {as: 羅實, ref: 創46:21}
+  parents:
+    - {id: 便雅憫, ref: 創46:21}
+- id: 母平
+  names:
+    - {as: 母平, ref: 創46:21}
+  parents:
+    - {id: 便雅憫, ref: 創46:21}
+- id: 戶平
+  names:
+    - {as: 戶平, ref: 創46:21}
+  parents:
+    - {id: 便雅憫, ref: 創46:21}
+- id: 亞勒
+  names:
+    - {as: 亞勒, ref: 創46:21}
+  parents:
+    - {id: 便雅憫, ref: 創46:21}
+- id: 戶伸#但
+  names:
+    - {as: 戶伸, ref: 創46:23}
+  parents:
+    - {id: 但, ref: 創46:23}
+  maybe_same:
+    - {id: 戶伸, refs: [創46:23, 代上7:12]}
+- id: 雅薛
+  parents:
+    - {id: 拿弗他利, ref: 創46:24}
+- id: 沽尼
+  parents:
+    - {id: 拿弗他利, ref: 創46:24}
+- id: 耶色
+  parents:
+    - {id: 拿弗他利, ref: 創46:24}
+- id: 示冷
+  names:
+    - {as: 示冷, ref: 創46:24}
+  parents:
+    - {id: 拿弗他利, ref: 創46:24}
+  maybe_same:
+    - {id: 沙龍#拿弗他利, refs: [創46:24, 代上7:13]}

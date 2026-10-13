@@ -1,0 +1,1490 @@
+# 03 列王到被擄後：王上、王下、代下的王室父母，與被擄後的人物
+# 代上 1–9 已有的人沿用原 id，只補新寫法與新出處的 parents
+
+# ───────────── 猶大諸王（沿用代上 id）─────────────
+- id: 羅波安
+  parents:
+    - {id: 所羅門, ref: 王上11:43}
+    - {id: 所羅門, ref: 王上14:21}
+    - {id: 所羅門, ref: 代下9:31}
+    - {id: 拿瑪#羅波安之母, ref: 王上14:21, role: 母}
+    - {id: 拿瑪#羅波安之母, ref: 王上14:31, role: 母}
+    - {id: 拿瑪#羅波安之母, ref: 代下12:13, role: 母}
+
+- id: 拿瑪#羅波安之母
+  sex: f
+  names:
+    - {as: 拿瑪, ref: 王上14:21}
+
+- id: 亞比雅
+  names:
+    - {as: 亞比央, ref: 王上14:31}
+  parents:
+    - {id: 羅波安, ref: 王上14:31}
+    - {id: 羅波安, ref: 代下12:16}
+    - {id: 瑪迦#押沙龍的女兒, ref: 王上15:1-2, role: 母}
+    - {id: 瑪迦#押沙龍的女兒, ref: 代下11:20, role: 母}
+    - {id: 瑪迦#押沙龍的女兒, ref: 代下11:22, role: 母}
+    - {id: 瑪迦#押沙龍的女兒, ref: 代下13:1-2, role: 母}
+
+- id: 瑪迦#押沙龍的女兒
+  sex: f
+  names:
+    - {as: 瑪迦, ref: 王上15:2}
+    - {as: 米該亞, ref: 代下13:2}
+  parents:
+    - {id: 押沙龍#瑪迦之父, ref: 王上15:2}
+    - {id: 押沙龍#瑪迦之父, ref: 代下11:20}
+    - {id: 烏列#基比亞人, ref: 代下13:2}
+  spouses:
+    - {id: 羅波安, ref: 代下11:21}
+  kin:
+    - {id: 亞撒, rel: 祖母, ref: 王上15:9-10}
+    - {id: 亞撒, rel: 祖母, ref: 代下15:16}
+  same_person: {basis: 經文標明又作瑪迦, refs: [代下13:2]}
+
+- id: 押沙龍#瑪迦之父
+  sex: m
+  names:
+    - {as: 押沙龍, ref: 王上15:2}
+  maybe_same:
+    - {id: 押沙龍, refs: [王上15:2, 代上3:2]}
+
+- id: 烏列#基比亞人
+  sex: m
+  names:
+    - {as: 烏列, ref: 代下13:2}
+
+- id: 亞撒
+  parents:
+    - {id: 亞比雅, ref: 王上15:8}
+    - {id: 亞比雅, ref: 代下14:1}
+
+- id: 約沙法
+  parents:
+    - {id: 亞撒, ref: 王上15:24}
+    - {id: 亞撒, ref: 王上22:41}
+    - {id: 亞撒, ref: 代下17:1}
+    - {id: 阿蘇巴#示利希的女兒, ref: 王上22:42, role: 母}
+    - {id: 阿蘇巴#示利希的女兒, ref: 代下20:31, role: 母}
+
+- id: 阿蘇巴#示利希的女兒
+  sex: f
+  names:
+    - {as: 阿蘇巴, ref: 王上22:42}
+  parents:
+    - {id: 示利希, ref: 王上22:42}
+    - {id: 示利希, ref: 代下20:31}
+
+- id: 示利希
+  sex: m
+  names:
+    - {as: 示利希, ref: 王上22:42}
+
+- id: 約蘭
+  parents:
+    - {id: 約沙法, ref: 王上22:50}
+    - {id: 約沙法, ref: 王下8:16}
+    - {id: 約沙法, ref: 代下21:1}
+
+# 約沙法的其他兒子（代下21:2）
+- id: 亞撒利雅#約沙法之子甲
+  sex: m
+  names:
+    - {as: 亞撒利雅, ref: 代下21:2}
+  parents:
+    - {id: 約沙法, ref: 代下21:2}
+
+- id: 耶歇#約沙法之子
+  sex: m
+  names:
+    - {as: 耶歇, ref: 代下21:2}
+  parents:
+    - {id: 約沙法, ref: 代下21:2}
+
+- id: 撒迦利雅#約沙法之子
+  sex: m
+  names:
+    - {as: 撒迦利雅, ref: 代下21:2}
+  parents:
+    - {id: 約沙法, ref: 代下21:2}
+
+- id: 亞撒利雅#約沙法之子乙
+  sex: m
+  names:
+    - {as: 亞撒利雅, ref: 代下21:2}
+  parents:
+    - {id: 約沙法, ref: 代下21:2}
+
+- id: 米迦勒#約沙法之子
+  sex: m
+  names:
+    - {as: 米迦勒, ref: 代下21:2}
+  parents:
+    - {id: 約沙法, ref: 代下21:2}
+
+- id: 示法提雅#約沙法之子
+  sex: m
+  names:
+    - {as: 示法提雅, ref: 代下21:2}
+  parents:
+    - {id: 約沙法, ref: 代下21:2}
+
+- id: 亞哈謝
+  names:
+    - {as: 約哈斯, ref: 代下21:17}
+    - {as: 亞撒利雅, ref: 代下22:6}
+  parents:
+    - {id: 約蘭, ref: 王下8:24}
+    - {id: 約蘭, ref: 王下8:25}
+    - {id: 約蘭, ref: 代下22:1}
+    - {id: 亞他利雅#亞哈謝之母, ref: 王下8:25-26, role: 母}
+    - {id: 亞他利雅#亞哈謝之母, ref: 代下22:2, role: 母}
+    - {id: 亞他利雅#亞哈謝之母, ref: 代下22:10, role: 母}
+
+- id: 亞他利雅#亞哈謝之母
+  sex: f
+  names:
+    - {as: 亞他利雅, ref: 王下8:26}
+  descends:
+    - {id: 暗利#以色列王, generations: 2, ref: 王下8:26}
+    - {id: 暗利#以色列王, generations: 2, ref: 代下22:2}
+
+- id: 約示巴
+  sex: f
+  names:
+    - {as: 約示巴, ref: 王下11:2}
+  parents:
+    - {id: 約蘭, ref: 王下11:2}
+    - {id: 約蘭, ref: 代下22:11}
+  spouses:
+    - {id: 耶何耶大#祭司, ref: 代下22:11}
+
+- id: 耶何耶大#祭司
+  sex: m
+  names:
+    - {as: 耶何耶大, ref: 代下22:11}
+
+- id: 撒迦利亞#耶何耶大之子
+  sex: m
+  names:
+    - {as: 撒迦利亞, ref: 代下24:20}
+  parents:
+    - {id: 耶何耶大#祭司, ref: 代下24:20}
+    - {id: 耶何耶大#祭司, ref: 代下24:22}
+
+- id: 約阿施
+  parents:
+    - {id: 亞哈謝, ref: 王下11:2}
+    - {id: 亞哈謝, ref: 代下22:11}
+    - {id: 西比亞, ref: 王下12:1, role: 母}
+    - {id: 西比亞, ref: 代下24:1, role: 母}
+
+- id: 西比亞
+  sex: f
+  names:
+    - {as: 西比亞, ref: 王下12:1}
+
+- id: 亞瑪謝
+  parents:
+    - {id: 約阿施, ref: 王下14:1}
+    - {id: 約阿施, ref: 代下25:25}
+    - {id: 約耶但, ref: 王下14:1-2, role: 母}
+    - {id: 約耶但, ref: 代下25:1, role: 母}
+  descends:
+    - {id: 亞哈謝, generations: 2, ref: 王下14:13}
+    - {id: 亞哈謝, generations: 2, ref: 代下25:23}
+
+- id: 約耶但
+  sex: f
+  names:
+    - {as: 約耶但, ref: 王下14:2}
+
+- id: 亞撒利雅#猶大王
+  names:
+    - {as: 亞撒利雅, ref: 王下14:21}
+    - {as: 烏西雅, ref: 王下14:21}
+  parents:
+    - {id: 亞瑪謝, ref: 王下14:21}
+    - {id: 亞瑪謝, ref: 王下15:1}
+    - {id: 亞瑪謝, ref: 代下26:1}
+    - {id: 耶可利雅, ref: 王下15:1-2, role: 母}
+    - {id: 耶可利雅, ref: 代下26:3, role: 母}
+
+- id: 耶可利雅
+  sex: f
+  names:
+    - {as: 耶可利雅, ref: 王下15:2}
+
+- id: 約坦
+  parents:
+    - {id: 亞撒利雅#猶大王, ref: 王下15:7}
+    - {id: 亞撒利雅#猶大王, ref: 王下15:32}
+    - {id: 亞撒利雅#猶大王, ref: 代下26:23}
+    - {id: 耶路沙, ref: 王下15:32-33, role: 母}
+    - {id: 耶路沙, ref: 代下27:1, role: 母}
+
+- id: 耶路沙
+  sex: f
+  names:
+    - {as: 耶路沙, ref: 王下15:33}
+  parents:
+    - {id: 撒督#耶路沙之父, ref: 王下15:33}
+    - {id: 撒督#耶路沙之父, ref: 代下27:1}
+
+- id: 撒督#耶路沙之父
+  sex: m
+  names:
+    - {as: 撒督, ref: 王下15:33}
+
+- id: 亞哈斯
+  parents:
+    - {id: 約坦, ref: 王下15:38}
+    - {id: 約坦, ref: 王下16:1}
+    - {id: 約坦, ref: 代下27:9}
+    - {id: 約坦, ref: 賽7:1}
+  descends:
+    - {id: 亞撒利雅#猶大王, generations: 2, ref: 賽7:1}
+
+- id: 希西家
+  parents:
+    - {id: 亞哈斯, ref: 王下16:20}
+    - {id: 亞哈斯, ref: 王下18:1}
+    - {id: 亞哈斯, ref: 代下28:27}
+    - {id: 亞比#希西家之母, ref: 王下18:1-2, role: 母}
+    - {id: 亞比#希西家之母, ref: 代下29:1, role: 母}
+
+- id: 亞比#希西家之母
+  sex: f
+  names:
+    - {as: 亞比, ref: 王下18:2}
+    - {as: 亞比雅, ref: 代下29:1}
+  same_person: {basis: 平行經文位置相同, refs: [王下18:2, 代下29:1]}
+  parents:
+    - {id: 撒迦利雅#亞比之父, ref: 王下18:2}
+    - {id: 撒迦利雅#亞比之父, ref: 代下29:1}
+
+- id: 撒迦利雅#亞比之父
+  sex: m
+  names:
+    - {as: 撒迦利雅, ref: 王下18:2}
+
+- id: 瑪拿西#猶大王
+  parents:
+    - {id: 希西家, ref: 王下20:21}
+    - {id: 希西家, ref: 代下32:33}
+    - {id: 希西家, ref: 耶15:4}
+    - {id: 協西巴, ref: 王下21:1, role: 母}
+
+- id: 協西巴
+  sex: f
+  names:
+    - {as: 協西巴, ref: 王下21:1}
+
+- id: 亞們
+  parents:
+    - {id: 瑪拿西#猶大王, ref: 王下21:18}
+    - {id: 瑪拿西#猶大王, ref: 代下33:20}
+    - {id: 米舒利密, ref: 王下21:19, role: 母}
+
+- id: 米舒利密
+  sex: f
+  names:
+    - {as: 米舒利密, ref: 王下21:19}
+  parents:
+    - {id: 哈魯斯, ref: 王下21:19}
+
+- id: 哈魯斯
+  sex: m
+  names:
+    - {as: 哈魯斯, ref: 王下21:19}
+
+- id: 約西亞
+  parents:
+    - {id: 亞們, ref: 王下21:24}
+    - {id: 亞們, ref: 王下21:26}
+    - {id: 亞們, ref: 代下33:25}
+    - {id: 亞們, ref: 耶1:2}
+    - {id: 亞們, ref: 耶25:3}
+    - {id: 亞們, ref: 番1:1}
+    - {id: 耶底大, ref: 王下22:1, role: 母}
+
+- id: 耶底大
+  sex: f
+  names:
+    - {as: 耶底大, ref: 王下22:1}
+  parents:
+    - {id: 亞大雅#耶底大之父, ref: 王下22:1}
+
+- id: 亞大雅#耶底大之父
+  sex: m
+  names:
+    - {as: 亞大雅, ref: 王下22:1}
+
+- id: 沙龍#約西亞
+  sex: m
+  names:
+    - {as: 約哈斯, ref: 王下23:30}
+  parents:
+    - {id: 約西亞, ref: 耶22:11}
+    - {id: 約西亞, ref: 王下23:30}
+    - {id: 約西亞, ref: 代下36:1}
+    - {id: 哈慕他, ref: 王下23:31, role: 母}
+
+- id: 哈慕他
+  sex: f
+  names:
+    - {as: 哈慕他, ref: 王下23:31}
+  parents:
+    - {id: 耶利米#哈慕他之父, ref: 王下23:31}
+    - {id: 耶利米#哈慕他之父, ref: 王下24:18}
+    - {id: 耶利米#哈慕他之父, ref: 耶52:1}
+
+- id: 耶利米#哈慕他之父
+  sex: m
+  names:
+    - {as: 耶利米, ref: 王下23:31}
+
+- id: 約雅敬
+  names:
+    - {as: 以利亞敬, ref: 王下23:34}
+    - {as: 以利雅敬, ref: 代下36:4}
+  parents:
+    - {id: 約西亞, ref: 王下23:34}
+    - {id: 約西亞, ref: 耶1:3}
+    - {id: 約西亞, ref: 耶26:1}
+    - {id: 約西亞, ref: 耶36:1}
+    - {id: 西布大, ref: 王下23:36, role: 母}
+  kin:
+    - {id: 沙龍#約西亞, rel: 哥哥, ref: 代下36:4}
+
+- id: 西布大
+  sex: f
+  names:
+    - {as: 西布大, ref: 王下23:36}
+  parents:
+    - {id: 毘大雅#西布大之父, ref: 王下23:36}
+
+- id: 毘大雅#西布大之父
+  sex: m
+  names:
+    - {as: 毘大雅, ref: 王下23:36}
+
+- id: 耶哥尼雅
+  names:
+    - {as: 約雅斤, ref: 王下24:6}
+    - {as: 哥尼雅, ref: 耶22:24}
+  parents:
+    - {id: 約雅敬, ref: 王下24:6}
+    - {id: 約雅敬, ref: 代下36:8}
+    - {id: 約雅敬, ref: 耶22:24}
+    - {id: 約雅敬, ref: 耶24:1}
+    - {id: 約雅敬, ref: 耶28:4}
+    - {id: 約雅敬, ref: 耶37:1}
+    - {id: 尼護施他, ref: 王下24:8, role: 母}
+
+- id: 尼護施他
+  sex: f
+  names:
+    - {as: 尼護施他, ref: 王下24:8}
+  parents:
+    - {id: 以利拿單#尼護施他之父, ref: 王下24:8}
+
+- id: 以利拿單#尼護施他之父
+  sex: m
+  names:
+    - {as: 以利拿單, ref: 王下24:8}
+
+- id: 西底家
+  names:
+    - {as: 瑪探雅, ref: 王下24:17}
+  parents:
+    - {id: 約西亞, ref: 耶1:3}
+    - {id: 約西亞, ref: 耶37:1}
+    - {id: 哈慕他, ref: 王下24:18, role: 母}
+    - {id: 哈慕他, ref: 耶52:1, role: 母}
+  kin:
+    - {id: 耶哥尼雅, rel: 叔叔, ref: 王下24:17}
+    - {id: 耶哥尼雅, rel: 叔叔, ref: 代下36:10}
+  maybe_same:
+    - {id: 西底家#約雅敬, refs: [代上3:15, 代上3:16]}
+
+# ───────────── 所羅門的女兒、羅波安的妻與子 ─────────────
+- id: 他法
+  sex: f
+  names:
+    - {as: 他法, ref: 王上4:11}
+  parents:
+    - {id: 所羅門, ref: 王上4:11}
+  spouses:
+    - {id: 便亞比拿達, ref: 王上4:11}
+
+- id: 便亞比拿達
+  sex: m
+  names:
+    - {as: 便亞比拿達, ref: 王上4:11}
+
+- id: 巴實抹
+  sex: f
+  names:
+    - {as: 巴實抹, ref: 王上4:15}
+  parents:
+    - {id: 所羅門, ref: 王上4:15}
+  spouses:
+    - {id: 亞希瑪斯#拿弗他利, ref: 王上4:15}
+
+- id: 亞希瑪斯#拿弗他利
+  sex: m
+  names:
+    - {as: 亞希瑪斯, ref: 王上4:15}
+
+- id: 瑪哈拉#耶利摩的女兒
+  sex: f
+  names:
+    - {as: 瑪哈拉, ref: 代下11:18}
+  parents:
+    - {id: 耶利摩#大衛之子, ref: 代下11:18}
+  spouses:
+    - {id: 羅波安, ref: 代下11:18}
+
+- id: 耶利摩#大衛之子
+  sex: m
+  names:
+    - {as: 耶利摩, ref: 代下11:18}
+  parents:
+    - {id: 大衛, ref: 代下11:18}
+
+- id: 亞比孩#以利押的女兒
+  sex: f
+  names:
+    - {as: 亞比孩, ref: 代下11:18}
+  parents:
+    - {id: 以利押, ref: 代下11:18}
+  spouses:
+    - {id: 羅波安, ref: 代下11:18}
+
+- id: 耶烏施#羅波安之子
+  sex: m
+  names:
+    - {as: 耶烏施, ref: 代下11:19}
+  parents:
+    - {id: 羅波安, ref: 代下11:18-19}
+
+- id: 示瑪利雅#羅波安之子
+  sex: m
+  names:
+    - {as: 示瑪利雅, ref: 代下11:19}
+  parents:
+    - {id: 羅波安, ref: 代下11:18-19}
+
+- id: 撒罕#羅波安之子
+  sex: m
+  names:
+    - {as: 撒罕, ref: 代下11:19}
+  parents:
+    - {id: 羅波安, ref: 代下11:18-19}
+
+- id: 亞太#羅波安之子
+  sex: m
+  names:
+    - {as: 亞太, ref: 代下11:20}
+  parents:
+    - {id: 羅波安, ref: 代下11:18-20}
+    - {id: 瑪迦#押沙龍的女兒, ref: 代下11:20, role: 母}
+
+- id: 細撒#羅波安之子
+  sex: m
+  names:
+    - {as: 細撒, ref: 代下11:20}
+  parents:
+    - {id: 羅波安, ref: 代下11:18-20}
+    - {id: 瑪迦#押沙龍的女兒, ref: 代下11:20, role: 母}
+
+- id: 示羅密#羅波安之子
+  sex: m
+  names:
+    - {as: 示羅密, ref: 代下11:20}
+  parents:
+    - {id: 羅波安, ref: 代下11:18-20}
+    - {id: 瑪迦#押沙龍的女兒, ref: 代下11:20, role: 母}
+
+# ───────────── 北國以色列諸王 ─────────────
+- id: 耶羅波安#尼八
+  sex: m
+  names:
+    - {as: 耶羅波安, ref: 王上11:26}
+  parents:
+    - {id: 尼八, ref: 王上11:26}
+    - {id: 尼八, ref: 王上12:2}
+    - {id: 洗魯阿, ref: 王上11:26, role: 母}
+  descends:
+    - {id: 以法蓮, ref: 王上11:26}
+
+- id: 尼八
+  sex: m
+  names:
+    - {as: 尼八, ref: 王上11:26}
+
+- id: 洗魯阿
+  sex: f
+  names:
+    - {as: 洗魯阿, ref: 王上11:26}
+
+- id: 亞比雅#耶羅波安之子
+  sex: m
+  names:
+    - {as: 亞比雅, ref: 王上14:1}
+  parents:
+    - {id: 耶羅波安#尼八, ref: 王上14:1}
+
+- id: 拿答#耶羅波安
+  sex: m
+  names:
+    - {as: 拿答, ref: 王上15:25}
+  parents:
+    - {id: 耶羅波安#尼八, ref: 王上14:20}
+    - {id: 耶羅波安#尼八, ref: 王上15:25}
+
+- id: 巴沙
+  sex: m
+  names:
+    - {as: 巴沙, ref: 王上15:27}
+  parents:
+    - {id: 亞希雅#巴沙之父, ref: 王上15:27}
+    - {id: 亞希雅#巴沙之父, ref: 王上15:33}
+    - {id: 亞希雅#巴沙之父, ref: 王上21:22}
+
+- id: 亞希雅#巴沙之父
+  sex: m
+  names:
+    - {as: 亞希雅, ref: 王上15:27}
+
+- id: 以拉#巴沙
+  sex: m
+  names:
+    - {as: 以拉, ref: 王上16:8}
+  parents:
+    - {id: 巴沙, ref: 王上16:6}
+    - {id: 巴沙, ref: 王上16:8}
+
+- id: 提比尼
+  sex: m
+  names:
+    - {as: 提比尼, ref: 王上16:21}
+  parents:
+    - {id: 基納, ref: 王上16:21}
+    - {id: 基納, ref: 王上16:22}
+
+- id: 基納
+  sex: m
+  names:
+    - {as: 基納, ref: 王上16:21}
+
+- id: 暗利#以色列王
+  sex: m
+  names:
+    - {as: 暗利, ref: 王上16:23}
+
+- id: 亞哈
+  sex: m
+  names:
+    - {as: 亞哈, ref: 王上16:29}
+  parents:
+    - {id: 暗利#以色列王, ref: 王上16:28}
+    - {id: 暗利#以色列王, ref: 王上16:29}
+    - {id: 暗利#以色列王, ref: 王上16:30}
+  spouses:
+    - {id: 耶洗別, ref: 王上16:30-31}
+
+- id: 耶洗別
+  sex: f
+  names:
+    - {as: 耶洗別, ref: 王上16:31}
+  parents:
+    - {id: 謁巴力, ref: 王上16:31}
+
+- id: 謁巴力
+  sex: m
+  names:
+    - {as: 謁巴力, ref: 王上16:31}
+
+- id: 亞哈謝#亞哈
+  sex: m
+  names:
+    - {as: 亞哈謝, ref: 王上22:40}
+  parents:
+    - {id: 亞哈, ref: 王上22:40}
+    - {id: 亞哈, ref: 王上22:49}
+    - {id: 亞哈, ref: 王上22:51}
+
+- id: 約蘭#亞哈
+  sex: m
+  names:
+    - {as: 約蘭, ref: 王下3:1}
+  parents:
+    - {id: 亞哈, ref: 王下3:1}
+    - {id: 亞哈, ref: 王下8:28}
+    - {id: 耶洗別, ref: 王下9:22, role: 母}
+
+- id: 耶戶#約沙法
+  sex: m
+  names:
+    - {as: 耶戶, ref: 王下9:2}
+  parents:
+    - {id: 約沙法#耶戶之父, ref: 王下9:2}
+    - {id: 約沙法#耶戶之父, ref: 王下9:14}
+  descends:
+    - {id: 寧示, generations: 2, ref: 王下9:2}
+    - {id: 寧示, generations: 2, ref: 王上19:16}
+
+- id: 約沙法#耶戶之父
+  sex: m
+  names:
+    - {as: 約沙法, ref: 王下9:2}
+
+- id: 寧示
+  sex: m
+  names:
+    - {as: 寧示, ref: 王下9:2}
+
+- id: 約哈斯#耶戶
+  sex: m
+  names:
+    - {as: 約哈斯, ref: 王下13:1}
+  parents:
+    - {id: 耶戶#約沙法, ref: 王下10:35}
+    - {id: 耶戶#約沙法, ref: 王下13:1}
+
+- id: 約阿施#約哈斯
+  sex: m
+  names:
+    - {as: 約阿施, ref: 王下13:10}
+  parents:
+    - {id: 約哈斯#耶戶, ref: 王下13:9}
+    - {id: 約哈斯#耶戶, ref: 王下13:10}
+    - {id: 約哈斯#耶戶, ref: 王下13:25}
+    - {id: 約哈斯#耶戶, ref: 王下14:1}
+
+- id: 耶羅波安#約阿施
+  sex: m
+  names:
+    - {as: 耶羅波安, ref: 王下14:23}
+  parents:
+    - {id: 約阿施#約哈斯, ref: 王下14:16}
+    - {id: 約阿施#約哈斯, ref: 王下14:23}
+    - {id: 約阿施#約哈斯, ref: 王下14:27}
+    - {id: 約阿施#約哈斯, ref: 何1:1}
+    - {id: 約阿施#約哈斯, ref: 摩1:1}
+
+- id: 撒迦利雅#耶羅波安
+  sex: m
+  names:
+    - {as: 撒迦利雅, ref: 王下15:8}
+  parents:
+    - {id: 耶羅波安#約阿施, ref: 王下14:29}
+    - {id: 耶羅波安#約阿施, ref: 王下15:8}
+
+- id: 沙龍#雅比
+  sex: m
+  names:
+    - {as: 沙龍, ref: 王下15:10}
+  parents:
+    - {id: 雅比, ref: 王下15:10}
+    - {id: 雅比, ref: 王下15:13}
+    - {id: 雅比, ref: 王下15:14}
+
+- id: 雅比
+  sex: m
+  names:
+    - {as: 雅比, ref: 王下15:10}
+
+- id: 米拿現
+  sex: m
+  names:
+    - {as: 米拿現, ref: 王下15:14}
+  parents:
+    - {id: 迦底, ref: 王下15:14}
+    - {id: 迦底, ref: 王下15:17}
+
+- id: 迦底
+  sex: m
+  names:
+    - {as: 迦底, ref: 王下15:14}
+
+- id: 比加轄
+  sex: m
+  names:
+    - {as: 比加轄, ref: 王下15:22}
+  parents:
+    - {id: 米拿現, ref: 王下15:22}
+    - {id: 米拿現, ref: 王下15:23}
+
+- id: 比加
+  sex: m
+  names:
+    - {as: 比加, ref: 王下15:25}
+  parents:
+    - {id: 利瑪利, ref: 王下15:25}
+    - {id: 利瑪利, ref: 王下15:27}
+    - {id: 利瑪利, ref: 王下16:5}
+    - {id: 利瑪利, ref: 代下28:6}
+
+- id: 利瑪利
+  sex: m
+  names:
+    - {as: 利瑪利, ref: 王下15:25}
+
+- id: 何細亞
+  sex: m
+  names:
+    - {as: 何細亞, ref: 王下15:30}
+  parents:
+    - {id: 以拉#何細亞之父, ref: 王下15:30}
+    - {id: 以拉#何細亞之父, ref: 王下17:1}
+    - {id: 以拉#何細亞之父, ref: 王下18:1}
+    - {id: 以拉#何細亞之父, ref: 王下18:9}
+
+- id: 以拉#何細亞之父
+  sex: m
+  names:
+    - {as: 以拉, ref: 王下15:30}
+
+# ───────────── 被擄後 ─────────────
+- id: 所羅巴伯
+  parents:
+    - {id: 撒拉鐵, ref: 拉3:2}
+    - {id: 撒拉鐵, ref: 拉3:8}
+    - {id: 撒拉鐵, ref: 拉5:2}
+    - {id: 撒拉鐵, ref: 該1:1}
+    - {id: 撒拉鐵, ref: 該1:12}
+    - {id: 撒拉鐵, ref: 該1:14}
+    - {id: 撒拉鐵, ref: 該2:2}
+    - {id: 撒拉鐵, ref: 該2:23}
+    - {id: 撒拉鐵, ref: 尼12:1}
+
+- id: 約薩達#耶書亞之父
+  names:
+    - {as: 約薩達, ref: 拉3:2}
+    - {as: 約撒答, ref: 該1:1}
+    - {as: 約撒達, ref: 尼12:26}
+  maybe_same:
+    - {id: 約薩答, refs: [拉3:2, 代上6:14]}
+
+- id: 耶書亞#約薩答
+  sex: m
+  names:
+    - {as: 耶書亞, ref: 拉3:2}
+    - {as: 約書亞, ref: 該1:1}
+  parents:
+    - {id: 約薩達#耶書亞之父, ref: 拉3:2}
+    - {id: 約薩達#耶書亞之父, ref: 拉3:8}
+    - {id: 約薩達#耶書亞之父, ref: 拉5:2}
+    - {id: 約薩達#耶書亞之父, ref: 該1:1}
+    - {id: 約薩達#耶書亞之父, ref: 該1:12}
+    - {id: 約薩達#耶書亞之父, ref: 該1:14}
+    - {id: 約薩達#耶書亞之父, ref: 該2:2}
+    - {id: 約薩達#耶書亞之父, ref: 該2:4}
+    - {id: 約薩達#耶書亞之父, ref: 亞6:11}
+
+- id: 約雅金#耶書亞
+  sex: m
+  names:
+    - {as: 約雅金, ref: 尼12:10}
+  parents:
+    - {id: 耶書亞#約薩答, ref: 尼12:10}
+    - {id: 耶書亞#約薩答, ref: 尼12:26}
+  descends:
+    - {id: 約薩達#耶書亞之父, generations: 2, ref: 尼12:26}
+
+- id: 以利亞實#約雅金
+  sex: m
+  names:
+    - {as: 以利亞實, ref: 尼12:10}
+  parents:
+    - {id: 約雅金#耶書亞, ref: 尼12:10}
+
+- id: 耶何耶大#以利亞實
+  sex: m
+  names:
+    - {as: 耶何耶大, ref: 尼12:10}
+  parents:
+    - {id: 以利亞實#約雅金, ref: 尼12:10}
+
+- id: 約拿單#耶何耶大
+  sex: m
+  names:
+    - {as: 約拿單, ref: 尼12:11}
+  parents:
+    - {id: 耶何耶大#以利亞實, ref: 尼12:11}
+
+- id: 押杜亞
+  sex: m
+  names:
+    - {as: 押杜亞, ref: 尼12:11}
+  parents:
+    - {id: 約拿單#耶何耶大, ref: 尼12:11}
+
+- id: 約哈難#以利亞實
+  sex: m
+  names:
+    - {as: 約哈難, ref: 尼12:23}
+  parents:
+    - {id: 以利亞實#約雅金, ref: 尼12:23}
+    - {id: 以利亞實#約雅金, ref: 拉10:6}
+  maybe_same:
+    - {id: 約拿單#耶何耶大, refs: [尼12:23, 尼12:11]}
+
+# 以斯拉的家譜（拉7:1-5），接到亞倫
+- id: 以斯拉#西萊雅
+  sex: m
+  names:
+    - {as: 以斯拉, ref: 拉7:1}
+  parents:
+    - {id: 西萊雅, ref: 拉7:1}
+
+- id: 西萊雅
+  parents:
+    - {id: 亞撒利雅#希勒家, ref: 拉7:1}
+
+- id: 亞撒利雅#希勒家
+  parents:
+    - {id: 希勒家, ref: 拉7:1}
+
+- id: 希勒家
+  parents:
+    - {id: 沙龍#撒督, ref: 拉7:2}
+
+- id: 沙龍#撒督
+  parents:
+    - {id: 撒督#亞希突, ref: 拉7:2}
+
+- id: 撒督#亞希突
+  parents:
+    - {id: 亞希突#亞瑪利雅, ref: 拉7:2}
+
+- id: 亞希突#亞瑪利雅
+  parents:
+    - {id: 亞瑪利雅#亞撒利雅, ref: 拉7:3}
+
+- id: 亞瑪利雅#亞撒利雅
+  parents:
+    - {id: 亞撒利雅#米拉約之子, ref: 拉7:3}
+
+- id: 亞撒利雅#米拉約之子
+  sex: m
+  names:
+    - {as: 亞撒利雅, ref: 拉7:3}
+  parents:
+    - {id: 米拉約, ref: 拉7:3}
+
+- id: 米拉約
+  parents:
+    - {id: 西拉希雅, ref: 拉7:4}
+
+- id: 西拉希雅
+  parents:
+    - {id: 烏西, ref: 拉7:4}
+
+- id: 烏西
+  parents:
+    - {id: 布基, ref: 拉7:4}
+
+- id: 布基
+  parents:
+    - {id: 亞比書, ref: 拉7:5}
+
+- id: 亞比書
+  parents:
+    - {id: 非尼哈, ref: 拉7:5}
+
+- id: 非尼哈
+  parents:
+    - {id: 以利亞撒, ref: 拉7:5}
+
+- id: 以利亞撒
+  parents:
+    - {id: 亞倫, ref: 拉7:5}
+
+# 尼11:11 管理神殿的家系，與代上9:11 的名單對照
+- id: 西萊雅#希勒家
+  sex: m
+  names:
+    - {as: 西萊雅, ref: 尼11:11}
+  parents:
+    - {id: 希勒家#9:11, ref: 尼11:11}
+  maybe_same:
+    - {id: 亞薩利雅, refs: [尼11:11, 代上9:11]}
+
+- id: 希勒家#9:11
+  parents:
+    - {id: 米書蘭#撒督, ref: 尼11:11}
+
+- id: 米書蘭#撒督
+  parents:
+    - {id: 撒督#9:11, ref: 尼11:11}
+
+- id: 撒督#9:11
+  parents:
+    - {id: 米拉約#9:11, ref: 尼11:11}
+
+- id: 米拉約#9:11
+  parents:
+    - {id: 亞希突#9:11, ref: 尼11:11}
+
+# 尼11:12 祭司亞大雅的家系，與代上9:12 的名單對照
+- id: 巴施戶珥
+  parents:
+    - {id: 瑪基雅#9:12, ref: 尼11:12}
+
+- id: 撒迦利亞#巴施戶珥
+  sex: m
+  names:
+    - {as: 撒迦利亞, ref: 尼11:12}
+  parents:
+    - {id: 巴施戶珥, ref: 尼11:12}
+
+- id: 暗洗#撒迦利亞
+  sex: m
+  names:
+    - {as: 暗洗, ref: 尼11:12}
+  parents:
+    - {id: 撒迦利亞#巴施戶珥, ref: 尼11:12}
+
+- id: 毘拉利#暗洗
+  sex: m
+  names:
+    - {as: 毘拉利, ref: 尼11:12}
+  parents:
+    - {id: 暗洗#撒迦利亞, ref: 尼11:12}
+
+- id: 耶羅罕#巴施戶珥
+  parents:
+    - {id: 毘拉利#暗洗, ref: 尼11:12}
+
+- id: 亞大雅#耶羅罕
+  parents:
+    - {id: 耶羅罕#巴施戶珥, ref: 尼11:12}
+
+# 尼11:15 利未人示瑪雅的家系，與代上9:14 的名單對照
+- id: 哈沙比雅#9:14
+  parents:
+    - {id: 布尼, ref: 尼11:15}
+
+- id: 布尼
+  sex: m
+  names:
+    - {as: 布尼, ref: 尼11:15}
+
+- id: 押利甘
+  parents:
+    - {id: 哈沙比雅#9:14, ref: 尼11:15}
+
+- id: 哈述
+  parents:
+    - {id: 押利甘, ref: 尼11:15}
+
+- id: 示瑪雅#哈述
+  parents:
+    - {id: 哈述, ref: 尼11:15}
+
+# 尼11:4 法勒斯的後裔亞他雅
+- id: 亞他雅
+  sex: m
+  names:
+    - {as: 亞他雅, ref: 尼11:4}
+  parents:
+    - {id: 烏西雅#亞他雅之父, ref: 尼11:4}
+  descends:
+    - {id: 法勒斯, ref: 尼11:4}
+
+- id: 烏西雅#亞他雅之父
+  sex: m
+  names:
+    - {as: 烏西雅, ref: 尼11:4}
+  parents:
+    - {id: 撒迦利雅#烏西雅之父, ref: 尼11:4}
+
+- id: 撒迦利雅#烏西雅之父
+  sex: m
+  names:
+    - {as: 撒迦利雅, ref: 尼11:4}
+  parents:
+    - {id: 亞瑪利雅#撒迦利雅之父, ref: 尼11:4}
+
+- id: 亞瑪利雅#撒迦利雅之父
+  sex: m
+  names:
+    - {as: 亞瑪利雅, ref: 尼11:4}
+  parents:
+    - {id: 示法提雅#亞瑪利雅之父, ref: 尼11:4}
+
+- id: 示法提雅#亞瑪利雅之父
+  sex: m
+  names:
+    - {as: 示法提雅, ref: 尼11:4}
+  parents:
+    - {id: 瑪勒列#示法提雅之父, ref: 尼11:4}
+
+- id: 瑪勒列#示法提雅之父
+  sex: m
+  names:
+    - {as: 瑪勒列, ref: 尼11:4}
+
+# 尼12:35 亞薩的後人
+- id: 撒迦利亞#約拿單
+  sex: m
+  names:
+    - {as: 撒迦利亞, ref: 尼12:35}
+  parents:
+    - {id: 約拿單#示瑪雅, ref: 尼12:35}
+
+- id: 約拿單#示瑪雅
+  sex: m
+  names:
+    - {as: 約拿單, ref: 尼12:35}
+  parents:
+    - {id: 示瑪雅#瑪他尼, ref: 尼12:35}
+
+- id: 示瑪雅#瑪他尼
+  sex: m
+  names:
+    - {as: 示瑪雅, ref: 尼12:35}
+  parents:
+    - {id: 瑪他尼#米該亞, ref: 尼12:35}
+
+- id: 瑪他尼#米該亞
+  sex: m
+  names:
+    - {as: 瑪他尼, ref: 尼12:35}
+  parents:
+    - {id: 米該亞#撒刻, ref: 尼12:35}
+
+- id: 米該亞#撒刻
+  sex: m
+  names:
+    - {as: 米該亞, ref: 尼12:35}
+  parents:
+    - {id: 撒刻#亞薩, ref: 尼12:35}
+
+- id: 撒刻#亞薩
+  sex: m
+  names:
+    - {as: 撒刻, ref: 尼12:35}
+  parents:
+    - {id: 亞薩, ref: 尼12:35}
+
+# 撒迦利亞、西番雅、耶利米、以西結
+- id: 撒迦利亞#比利家
+  sex: m
+  names:
+    - {as: 撒迦利亞, ref: 亞1:1}
+  parents:
+    - {id: 比利家#撒迦利亞之父, ref: 亞1:1}
+    - {id: 比利家#撒迦利亞之父, ref: 亞1:7}
+  descends:
+    - {id: 易多#撒迦利亞之祖, generations: 2, ref: 亞1:1}
+    - {id: 易多#撒迦利亞之祖, generations: 2, ref: 拉5:1}
+    - {id: 易多#撒迦利亞之祖, generations: 2, ref: 拉6:14}
+
+- id: 比利家#撒迦利亞之父
+  sex: m
+  names:
+    - {as: 比利家, ref: 亞1:1}
+
+- id: 易多#撒迦利亞之祖
+  sex: m
+  names:
+    - {as: 易多, ref: 亞1:1}
+
+- id: 西番雅#古示
+  sex: m
+  names:
+    - {as: 西番雅, ref: 番1:1}
+  parents:
+    - {id: 古示, ref: 番1:1}
+  descends:
+    - {id: 基大利#西番雅之祖, generations: 2, ref: 番1:1}
+    - {id: 亞瑪利雅#西番雅之曾祖, generations: 3, ref: 番1:1}
+    - {id: 希西家#番1:1, generations: 4, ref: 番1:1}
+
+- id: 希西家#番1:1
+  sex: m
+  names:
+    - {as: 希西家, ref: 番1:1}
+  maybe_same:
+    - {id: 希西家, refs: [番1:1, 王下18:1]}
+
+- id: 古示
+  sex: m
+  names:
+    - {as: 古示, ref: 番1:1}
+
+- id: 基大利#西番雅之祖
+  sex: m
+  names:
+    - {as: 基大利, ref: 番1:1}
+
+- id: 亞瑪利雅#西番雅之曾祖
+  sex: m
+  names:
+    - {as: 亞瑪利雅, ref: 番1:1}
+
+- id: 耶利米#希勒家
+  sex: m
+  names:
+    - {as: 耶利米, ref: 耶1:1}
+  parents:
+    - {id: 希勒家#亞拿突, ref: 耶1:1}
+
+- id: 希勒家#亞拿突
+  sex: m
+  names:
+    - {as: 希勒家, ref: 耶1:1}
+
+- id: 沙龍#耶利米之叔
+  sex: m
+  names:
+    - {as: 沙龍, ref: 耶32:7}
+  kin:
+    - {id: 耶利米#希勒家, rel: 叔叔, ref: 耶32:6-7}
+
+- id: 哈拿篾
+  sex: m
+  names:
+    - {as: 哈拿篾, ref: 耶32:7}
+  parents:
+    - {id: 沙龍#耶利米之叔, ref: 耶32:7}
+  kin:
+    - {id: 耶利米#希勒家, rel: 叔叔的兒子, ref: 耶32:8}
+
+- id: 以西結
+  sex: m
+  names:
+    - {as: 以西結, ref: 結1:3}
+  parents:
+    - {id: 布西, ref: 結1:3}
+
+- id: 布西
+  sex: m
+  names:
+    - {as: 布西, ref: 結1:3}
+
+# 末底改與以斯帖
+- id: 末底改
+  sex: m
+  names:
+    - {as: 末底改, ref: 斯2:5}
+  parents:
+    - {id: 睚珥#末底改之父, ref: 斯2:5}
+  descends:
+    - {id: 示每#末底改之祖, generations: 2, ref: 斯2:5}
+    - {id: 基士#末底改之曾祖, generations: 3, ref: 斯2:5}
+
+- id: 睚珥#末底改之父
+  sex: m
+  names:
+    - {as: 睚珥, ref: 斯2:5}
+
+- id: 示每#末底改之祖
+  sex: m
+  names:
+    - {as: 示每, ref: 斯2:5}
+
+- id: 基士#末底改之曾祖
+  sex: m
+  names:
+    - {as: 基士, ref: 斯2:5}
+
+- id: 以斯帖
+  sex: f
+  names:
+    - {as: 以斯帖, ref: 斯2:7}
+    - {as: 哈大沙, ref: 斯2:7}
+  parents:
+    - {id: 亞比孩#以斯帖之父, ref: 斯2:15}
+    - {id: 亞比孩#以斯帖之父, ref: 斯9:29}
+  kin:
+    - {id: 末底改, rel: 叔叔的女兒, ref: 斯2:7}
+    - {id: 末底改, rel: 收為自己女兒, ref: 斯2:15}
+  same_person: {basis: 經文標明後名以斯帖, refs: [斯2:7]}
+
+- id: 亞比孩#以斯帖之父
+  sex: m
+  names:
+    - {as: 亞比孩, ref: 斯2:15}
+  kin:
+    - {id: 末底改, rel: 叔叔, ref: 斯2:15}
+- id: 利哈比雅
+  sex: m
+  names:
+    - {as: 利哈比雅, ref: 代上23:17}
+  parents:
+    - {id: 以利以謝#摩西, ref: 代上23:15-17}
+    - {id: 以利以謝#摩西, ref: 代上26:25}
+- id: 耶篩亞#利哈比雅
+  sex: m
+  names:
+    - {as: 耶篩亞, ref: 代上26:25}
+  parents:
+    - {id: 利哈比雅, ref: 代上26:25}
+- id: 約蘭#耶篩亞
+  sex: m
+  names:
+    - {as: 約蘭, ref: 代上26:25}
+  parents:
+    - {id: 耶篩亞#利哈比雅, ref: 代上26:25}
+- id: 細基利#約蘭
+  sex: m
+  names:
+    - {as: 細基利, ref: 代上26:25}
+  parents:
+    - {id: 約蘭#耶篩亞, ref: 代上26:25}
+- id: 示羅密#細基利
+  sex: m
+  names:
+    - {as: 示羅密, ref: 代上26:25}
+  parents:
+    - {id: 細基利#約蘭, ref: 代上26:25}
+- id: 細布業#革舜
+  sex: m
+  names:
+    - {as: 細布業, ref: 代上23:16}
+  parents:
+    - {id: 革舜, ref: 代上23:15-16}
+    - {id: 革舜, ref: 代上26:24}
+- id: 以利亞撒#抹利
+  sex: m
+  names:
+    - {as: 以利亞撒, ref: 代上23:21}
+  parents:
+    - {id: 抹利, ref: 代上23:21}
+    - {id: 抹利, ref: 代上24:28}
+- id: 基士#抹利
+  sex: m
+  names:
+    - {as: 基士, ref: 代上23:21}
+  parents:
+    - {id: 抹利, ref: 代上23:21}
+- id: 亞比孩#亞比述的妻
+  sex: f
+  names:
+    - {as: 亞比孩, ref: 代上2:29}
+  spouses:
+    - {id: 亞比述, ref: 代上2:29}
+- id: 亞辦
+  parents:
+    - {id: 亞比孩#亞比述的妻, ref: 代上2:29, role: 母}
+- id: 摩利
+  parents:
+    - {id: 亞比孩#亞比述的妻, ref: 代上2:29, role: 母}
+- id: 以法#迦勒的妾
+  sex: f
+  names:
+    - {as: 以法, ref: 代上2:46}
+  spouses:
+    - {id: 基路拜, ref: 代上2:46}
+- id: 哈蘭
+  parents:
+    - {id: 以法#迦勒的妾, ref: 代上2:46, role: 母}
+- id: 摩撒
+  parents:
+    - {id: 以法#迦勒的妾, ref: 代上2:46, role: 母}
+- id: 迦謝
+  parents:
+    - {id: 以法#迦勒的妾, ref: 代上2:46, role: 母}
+- id: 瑪迦#迦勒的妾
+  sex: f
+  names:
+    - {as: 瑪迦, ref: 代上2:48}
+  spouses:
+    - {id: 基路拜, ref: 代上2:48}
+- id: 示別
+  parents:
+    - {id: 瑪迦#迦勒的妾, ref: 代上2:48, role: 母}
+- id: 特哈拿
+  parents:
+    - {id: 瑪迦#迦勒的妾, ref: 代上2:48, role: 母}
+- id: 瑪迦#瑪吉的妻
+  sex: f
+  names:
+    - {as: 瑪迦, ref: 代上7:16}
+  spouses:
+    - {id: 瑪吉, ref: 代上7:15}
+    - {id: 瑪吉, ref: 代上7:16}
+- id: 毘利施
+  parents:
+    - {id: 瑪迦#瑪吉的妻, ref: 代上7:16, role: 母}
+- id: 亞撒利雅#撒督
+  sex: m
+  names:
+    - {as: 亞撒利雅, ref: 王上4:2}
+  parents:
+    - {id: 撒督, ref: 王上4:2}
+  maybe_same:
+    - {id: 亞撒利雅#亞希瑪斯, refs: [王上4:2, 代上6:9]}
+- id: 雅哈悉
+  sex: m
+  names:
+    - {as: 雅哈悉, ref: 代下20:14}
+  parents:
+    - {id: 撒迦利雅#雅哈悉之父, ref: 代下20:14}
+  descends:
+    - {id: 比拿雅#雅哈悉之祖父, ref: 代下20:14, generations: 2}
+    - {id: 耶利#雅哈悉之曾祖, ref: 代下20:14, generations: 3}
+    - {id: 瑪探雅#雅哈悉之高祖, ref: 代下20:14, generations: 4}
+    - {id: 亞薩, ref: 代下20:14}
+- id: 撒迦利雅#雅哈悉之父
+  sex: m
+  names:
+    - {as: 撒迦利雅, ref: 代下20:14}
+- id: 比拿雅#雅哈悉之祖父
+  sex: m
+  names:
+    - {as: 比拿雅, ref: 代下20:14}
+- id: 耶利#雅哈悉之曾祖
+  sex: m
+  names:
+    - {as: 耶利, ref: 代下20:14}
+- id: 瑪探雅#雅哈悉之高祖
+  sex: m
+  names:
+    - {as: 瑪探雅, ref: 代下20:14}
+- id: 撒底#亞薩
+  sex: m
+  names:
+    - {as: 撒底, ref: 尼11:17}
+  parents:
+    - {id: 亞薩, ref: 尼11:17}
+  maybe_same:
+    - {id: 細基利#亞薩, refs: [尼11:17, 代上9:15]}
+- id: 米迦#撒底
+  sex: m
+  names:
+    - {as: 米迦, ref: 尼11:17}
+  parents:
+    - {id: 撒底#亞薩, ref: 尼11:17}
+  maybe_same:
+    - {id: 米迦#細基利, refs: [尼11:17, 代上9:15]}
+- id: 瑪他尼#米迦
+  sex: m
+  names:
+    - {as: 瑪他尼, ref: 尼11:17}
+  parents:
+    - {id: 米迦#撒底, ref: 尼11:17}
+    - {id: 米迦#撒底, ref: 尼11:22}
+  maybe_same:
+    - {id: 瑪探雅, refs: [尼11:17, 代上9:15]}
+- id: 哈沙比雅#瑪他尼
+  sex: m
+  names:
+    - {as: 哈沙比雅, ref: 尼11:22}
+  parents:
+    - {id: 瑪他尼#米迦, ref: 尼11:22}
+- id: 巴尼#哈沙比雅
+  sex: m
+  names:
+    - {as: 巴尼, ref: 尼11:22}
+  parents:
+    - {id: 哈沙比雅#瑪他尼, ref: 尼11:22}
+- id: 烏西#巴尼
+  sex: m
+  names:
+    - {as: 烏西, ref: 尼11:22}
+  parents:
+    - {id: 巴尼#哈沙比雅, ref: 尼11:22}
+  descends:
+    - {id: 亞薩, ref: 尼11:22}
+- id: 布基雅#希幔
+  sex: m
+  names:
+    - {as: 布基雅, ref: 代上25:4}
+  parents:
+    - {id: 希幔, ref: 代上25:4}
+- id: 瑪探雅#希幔
+  sex: m
+  names:
+    - {as: 瑪探雅, ref: 代上25:4}
+  parents:
+    - {id: 希幔, ref: 代上25:4}
+- id: 烏薛#希幔
+  sex: m
+  names:
+    - {as: 烏薛, ref: 代上25:4}
+  parents:
+    - {id: 希幔, ref: 代上25:4}
+- id: 細布業#希幔
+  sex: m
+  names:
+    - {as: 細布業, ref: 代上25:4}
+  parents:
+    - {id: 希幔, ref: 代上25:4}
+- id: 耶利摩#希幔
+  sex: m
+  names:
+    - {as: 耶利摩, ref: 代上25:4}
+  parents:
+    - {id: 希幔, ref: 代上25:4}
+- id: 哈拿尼雅#希幔
+  sex: m
+  names:
+    - {as: 哈拿尼雅, ref: 代上25:4}
+  parents:
+    - {id: 希幔, ref: 代上25:4}
+- id: 哈拿尼#希幔
+  sex: m
+  names:
+    - {as: 哈拿尼, ref: 代上25:4}
+  parents:
+    - {id: 希幔, ref: 代上25:4}
+- id: 以利亞他#希幔
+  sex: m
+  names:
+    - {as: 以利亞他, ref: 代上25:4}
+  parents:
+    - {id: 希幔, ref: 代上25:4}
+- id: 基大利提#希幔
+  sex: m
+  names:
+    - {as: 基大利提, ref: 代上25:4}
+  parents:
+    - {id: 希幔, ref: 代上25:4}
+- id: 羅幔提‧以謝#希幔
+  sex: m
+  names:
+    - {as: 羅幔提‧以謝, ref: 代上25:4}
+  parents:
+    - {id: 希幔, ref: 代上25:4}
+- id: 約施比加沙#希幔
+  sex: m
+  names:
+    - {as: 約施比加沙, ref: 代上25:4}
+  parents:
+    - {id: 希幔, ref: 代上25:4}
+- id: 瑪羅提#希幔
+  sex: m
+  names:
+    - {as: 瑪羅提, ref: 代上25:4}
+  parents:
+    - {id: 希幔, ref: 代上25:4}
+- id: 何提#希幔
+  sex: m
+  names:
+    - {as: 何提, ref: 代上25:4}
+  parents:
+    - {id: 希幔, ref: 代上25:4}
+- id: 瑪哈秀#希幔
+  sex: m
+  names:
+    - {as: 瑪哈秀, ref: 代上25:4}
+  parents:
+    - {id: 希幔, ref: 代上25:4}
+- id: 約瑟#亞薩
+  sex: m
+  names:
+    - {as: 約瑟, ref: 代上25:2}
+  parents:
+    - {id: 亞薩, ref: 代上25:2}
+    - {id: 亞薩, ref: 代上25:9}
+- id: 米施利米雅
+  parents:
+    - {id: 可利, ref: 代上26:1}
