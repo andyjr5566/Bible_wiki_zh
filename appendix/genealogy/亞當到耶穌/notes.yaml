@@ -1,0 +1,195 @@
+# 經文記載不同的地方（Opus 撰寫）。
+# scripture[].quote 逐字出現在該 ref；text 的「」引句逐字出現在 scripture 的經節；
+# views[].quote 逐字出現在 sources.yaml 該來源的 raw 檔。
+- id: n-two-lines
+  title: 大衛以後分成兩條
+  attach: [所羅門, 拿單]
+  scripture:
+    - {ref: 太1:6, quote: 大衛從烏利亞的妻子生所羅門}
+    - {ref: 路3:31, quote: 拿單是大衛的兒子}
+    - {ref: 代上3:5, quote: 大衛在耶路撒冷所生的兒子是示米亞、朔罷、拿單、所羅門}
+  text: |
+    大衛以後，馬太經所羅門往下，前半段都是猶大的王；路加經拿單往下，從拿單到尼利這一段只有路加記載。
+
+    兩條線到撒拉鐵、所羅巴伯走到同樣的名字，之後又分開，最後都到約瑟。經文沒有說明兩份家譜為什麼走不同的兒子。
+  views:
+    - source: gt-lk3
+      by: 《每日研經叢書》
+      quote: 由亞伯拉罕至大衛一段，二者皆互相吻合；至於大衛至約瑟一段，則差不多完全不同
+      text: 指出兩份家譜從亞伯拉罕到大衛一致，大衛以後幾乎完全不同。
+    - source: ct-lk3
+      quote: 那裏約瑟的祖先是大衛的另一個兒子所羅門，而這裏馬利亞的祖先是大衛的兒子拿單
+      text: 認為馬太的所羅門一線是約瑟的祖先，路加的拿單一線是馬利亞的祖先（見下一則）。
+    - source: bh-lk3
+      quote: "Matthew records Joseph’s royal line through Solomon, while Luke traces David’s line through Nathan."
+      translation: 馬太記的是約瑟經所羅門的王族世系，路加則經拿單追溯大衛的世系。
+      text: 同樣把馬太一線看成約瑟的王族世系。
+
+- id: n-joseph-father
+  title: 約瑟的父親
+  attach: [約瑟#馬利亞的丈夫]
+  scripture:
+    - {ref: 太1:16, quote: 雅各生約瑟，就是馬利亞的丈夫。那稱為基督的耶穌是從馬利亞生的}
+    - {ref: 路3:23, quote: 依人看來，他是約瑟的兒子；約瑟是希里的兒子}
+  text: |
+    馬太寫「雅各生約瑟」，路加寫「約瑟是希里的兒子」。
+
+    兩卷寫到耶穌時都把約瑟和馬利亞分開來交代：馬太說耶穌「是從馬利亞生的」，路加說「依人看來，他是約瑟的兒子」。雅各和希里是什麼關係，經文沒有說明。
+  views:
+    - source: ct-lk3
+      quote: 希里是馬利亞的父親，就是約瑟的岳父。猶太人岳父與女婿的關係有如父子，直稱女婿為『兒子』
+      text: 認為希里是馬利亞的父親，路加稱約瑟為希里的兒子，是女婿的稱呼。
+    - source: gt-mt1
+      by: 艾基斯《新約聖經難題彙編》
+      quote: 路加福音所記，是馬利亞的族譜，由希裡開始。希裡是約瑟的岳父，約瑟自己的父親是雅各
+      text: 看法相同：馬太是約瑟的家譜，路加是馬利亞的家譜。
+    - source: kc-lk3
+      quote: "This can only mean that we have here the genealogy that runs through Mary, as is generally accepted."
+      translation: 這只能表示，這裡是經過馬利亞的家譜，這也是一般所接受的看法。
+      text: 也採馬利亞家譜的看法。
+    - source: bh-lk3
+      quote: "Luke’s genealogy is widely understood to follow Mary’s family line, naming Joseph in relation to Heli as his son-in-law according to genealogical custom."
+      translation: 一般認為路加的家譜走的是馬利亞的家系，依家譜的慣例，把約瑟當作希里的女婿列出。
+      text: 也採馬利亞家譜的看法。
+    - source: gt-lk3
+      by: 蘇佐揚《新約聖經難題》
+      quote: 要證明希裏是馬利亞的父親和約瑟的岳父，並沒有充分的資料，只是大家都願意這樣去推測
+      text: 提醒這個看法缺少直接證據；同一段也介紹另一派認為兩份都是約瑟的家譜。
+    - source: gt-lk3
+      by: 《每日研經叢書》
+      quote: 根據猶太人的婚姻法（申廿五5以下），人死而無子嗣，他的兄弟在情況許可之下，得娶其遺孀為妻以綿延子息
+      text: 介紹另一種解釋：雅各和希里是同母異父的兄弟，約瑟在法律上算雅各的兒子、實際上是希里的兒子。這一段最後說：「對於家譜這個問題，我們只能夠承認我們的無知」。
+
+- id: n-cainan
+  title: 亞法撒和沙拉之間的該南
+  attach: [該南#亞法撒]
+  scripture:
+    - {ref: 創11:12, quote: 亞法撒活到三十五歲，生了沙拉}
+    - {ref: 代上1:18, quote: 亞法撒生沙拉}
+    - {ref: 路3:35-36, quote: 沙拉是該南的兒子；該南是亞法撒的兒子}
+  text: |
+    創世記和歷代志上都是亞法撒直接生沙拉，創世記還記了亞法撒生沙拉時是三十五歲。路加在兩人中間多了一位該南。
+
+    路3:37 另有一位該南，是以挪士的兒子，和這一位是不同的人。
+  views:
+    - source: bh-lk3
+      quote: "Though the Hebrew text of Genesis does not include him, Luke records the inherited genealogy that was known in the Greek Scriptures."
+      translation: 創世記的希伯來文本沒有他，路加記的是希臘文聖經裡流傳的家譜。
+      text: 指出該南出現在七十士譯本（希臘文舊約）的創世記家譜裡，希伯來文本沒有。另外三套註釋沒有討論這一點。
+
+- id: n-three-kings
+  title: 「約蘭生烏西雅」中間的三位王
+  attach: [亞撒利雅#猶大王]
+  scripture:
+    - {ref: 太1:8, quote: 約蘭生烏西雅}
+    - {ref: 代上3:11-12, quote: 約蘭的兒子是亞哈謝；亞哈謝的兒子是約阿施；約阿施的兒子是亞瑪謝；亞瑪謝的兒子是亞撒利雅}
+    - {ref: 王下15:13, quote: 猶大王烏西雅【就是亞撒利雅】}
+  text: |
+    馬太從約蘭直接接到烏西雅。歷代志上在兩人中間還有亞哈謝、約阿施、亞瑪謝三代。
+
+    烏西雅在歷代志上寫作亞撒利雅，列王紀下直接註明「烏西雅【就是亞撒利雅】」。
+  views:
+    - source: ct-mt1
+      quote: 約蘭和亞撒利雅之間被刪除了三代(代上三11~12；王下十五13小字)，或係因為他們離棄神、拜偶像，而被咒詛的結果
+      text: 認為三代是刻意刪去的，原因或許和這幾位王拜偶像有關。
+    - source: gt-mt1
+      by: 《啟導本聖經馬太福音註釋》
+      quote: “生”這個字在原文不單指從父親生，也可以指出自很遠的祖先
+      text: 認為「生」也可以指出自遠祖，所以中間可以隔代。
+    - source: bh-mt1
+      quote: "Matthew omits Ahaziah, Joash, and Amaziah between Joram and Uzziah, using “father” in the sense of ancestor."
+      translation: 馬太在約蘭和烏西雅之間略去亞哈謝、約阿施、亞瑪謝，把「父親」當作祖先的意思來用。
+      text: 看法相同：家譜裡的父子關係可以跨過幾代。
+
+- id: n-jehoiakim
+  title: 約西亞和耶哥尼雅中間的約雅敬
+  attach: [約雅敬]
+  scripture:
+    - {ref: 太1:11, quote: 約西亞生耶哥尼雅和他的弟兄}
+    - {ref: 代上3:15-16, quote: 次子是約雅敬，三子是西底家，四子是沙龍。約雅敬的兒子是耶哥尼雅和西底家}
+  text: |
+    馬太寫約西亞生耶哥尼雅。歷代志上在兩人中間還有一代：約雅敬是約西亞的次子，耶哥尼雅是約雅敬的兒子。
+  views:
+    - source: ct-mt1
+      quote: 約西亞和耶哥尼雅之間有一代被刪除(代上三15~16)，或係因為他和埃及王法老有關
+      text: 認為約雅敬這一代是刻意刪去的，原因或許和他與埃及王法老的關係有關。
+    - source: bh-mt1
+      quote: "Matthew compresses the royal genealogy here: Jeconiah was Josiah’s grandson through Jehoiakim."
+      translation: 馬太在這裡把王族家譜壓縮了：耶哥尼雅是約西亞經約雅敬而來的孫子。
+      text: 說明耶哥尼雅是約西亞的孫子。
+
+- id: n-zerubbabel
+  title: 撒拉鐵和所羅巴伯的父親與兒子
+  attach: [撒拉鐵, 所羅巴伯]
+  scripture:
+    - {ref: 太1:12-13, quote: 耶哥尼雅生撒拉鐵；撒拉鐵生所羅巴伯；所羅巴伯生亞比玉}
+    - {ref: 路3:27, quote: 利撒是所羅巴伯的兒子；所羅巴伯是撒拉鐵的兒子；撒拉鐵是尼利的兒子}
+    - {ref: 代上3:17-19, quote: 毘大雅的兒子是所羅巴伯、示每。所羅巴伯的兒子是米書蘭、哈拿尼雅}
+    - {ref: 拉3:2, quote: 撒拉鐵的兒子所羅巴伯}
+    - {ref: 該1:1, quote: 猶大省長撒拉鐵的兒子所羅巴伯}
+  text: |
+    撒拉鐵的父親有兩種記載：馬太和歷代志上是耶哥尼雅，路加是尼利。
+
+    所羅巴伯的父親，以斯拉記、哈該書、馬太、路加都寫撒拉鐵，只有歷代志上寫毘大雅；歷代志上把撒拉鐵和毘大雅都列為耶哥尼雅的兒子。
+
+    所羅巴伯的兒子，三處寫的名字都不同：歷代志上是米書蘭、哈拿尼雅，馬太是亞比玉，路加是利撒。
+  views:
+    - source: ct-mt1
+      quote: 可能是撒拉鐵早亡無子，其弟毘大雅娶其妻而生所羅巴伯，歸他名下
+      text: 引申25:5-10 的婚姻法，認為可能是撒拉鐵早死沒有兒子，弟弟毘大雅娶了他的妻子生下所羅巴伯，名分上歸在撒拉鐵名下。
+    - source: gt-lk3
+      by: 蘇佐揚《新約聖經難題》
+      quote: 耶哥尼雅無子，可能其女嫁與尼利（路三章27節）而生撒拉鐵，撒拉鐵實際上是耶哥尼雅的外孫
+      text: 介紹一種解釋：撒拉鐵是尼利的兒子、耶哥尼雅的外孫，在王位的承繼上算耶哥尼雅的兒子。
+    - source: bh-lk3
+      quote: "His connection with Shealtiel reflects the complexity of ancient family records, possibly involving inheritance through marriage or legal descent."
+      translation: 尼利和撒拉鐵的關係，反映古代家族紀錄的複雜，可能牽涉到經由婚姻或法定繼承而來的承繼。
+      text: 只說可能和婚姻或法定繼承有關，沒有下定論。
+
+- id: n-fourteen
+  title: 馬太的三個十四代
+  attach: [耶穌]
+  scripture:
+    - {ref: 太1:17, quote: 從亞伯拉罕到大衛共有十四代；從大衛到遷至巴比倫的時候也有十四代；從遷至巴比倫的時候到基督又有十四代}
+  text: |
+    馬太把家譜分成三段，每段都說是十四代。三段的分界是大衛和遷至巴比倫。
+
+    各段怎麼數成十四代，經文沒有說明。
+  views:
+    - source: ct-mt1
+      quote: 三個十四代共計四十二代，但實際僅列四十一代，因其中大衛一人身列第一個十四代之終，和第二個十四代之始
+      text: 認為大衛同時算在第一段和第二段。
+    - source: gt-mt1
+      by: 《馬太福音雷氏研讀本》
+      quote: 第12節把“耶哥尼雅”重複計算，使最後一組保持十四個名字（十四代）
+      text: 認為重複計算的是耶哥尼雅。
+    - source: gt-mt1
+      by: 《啟導本聖經馬太福音註釋》
+      quote: 這種安排極可能與大衛的希伯來文名字有關
+      text: 認為十四可能來自大衛名字的希伯來字母數值。
+    - source: kc-mt1
+      quote: "Forty-two generations are given from Abraham to the Messiah which are divided into three groups of fourteen"
+      translation: 從亞伯拉罕到彌賽亞列出了四十二代，分成三組，每組十四代。
+      text: 照馬太的分段，看三段各代表以色列歷史的一個時期。
+
+- id: n-terah
+  title: 他拉幾歲生亞伯蘭
+  attach: [他拉, 亞伯拉罕]
+  scripture:
+    - {ref: 創11:26, quote: 他拉活到七十歲，生了亞伯蘭、拿鶴、哈蘭}
+    - {ref: 創11:32, quote: 他拉共活了二百零五歲，就死在哈蘭}
+    - {ref: 創12:4, quote: 亞伯蘭出哈蘭的時候年七十五歲}
+    - {ref: 徒7:4, quote: 他父親死了以後，神使他從那裡搬到你們現在所住之地}
+  text: |
+    照字面算，他拉七十歲生亞伯蘭；亞伯蘭七十五歲出哈蘭時，他拉是一百四十五歲，之後還要再活六十年。司提反卻說，亞伯拉罕是在「他父親死了以後」才離開哈蘭。
+
+    年歲時間軸照創世記的字面，以他拉七十歲生亞伯蘭來畫。
+  views:
+    - source: gt-gen11
+      by: 丁良才《創世紀註釋》
+      quote: 以此推算，他拉生亞伯蘭的時候就已經一百三十歲了
+      text: 用徒7:4 和創11:32 推算，認為他拉一百三十歲才生亞伯蘭。
+    - source: gt-gen11
+      by: 賈斯樂郝威《聖經難解經文詮釋手冊》
+      quote: 創十一章26節並不絕對意味他拉70歲時生了亞伯蘭，正確的解釋應是他拉活到70歲之後他生了三個兒子
+      text: 認為創11:26 只說他拉七十歲以後開始生子，亞伯蘭不一定是長子，排在最前面，可能因為他是家中最傑出的兒子。

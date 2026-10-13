@@ -1,0 +1,11 @@
+# 經文以外的資料。commentary 有 raw 檔，引句由程式逐字回查。
+# 網址取自正式流程（OT：各章 .tmp/source_manifest.md；NT：抓檔時用的網址清單 gospel_urls.txt）。
+- {id: ct-mt1, kind: commentary, title: "中文聖經註釋（CT）馬太福音第一章", url: "https://www.ccbiblestudy.org/New%20Testament/40Matt/40CT01.htm", accessed: 2026-10-13, raw: raw_data/ccbiblestudy_CT_matthew_1.txt}
+- {id: gt-mt1, kind: commentary, title: "馬太福音拾穗（GT）第一章", url: "https://www.ccbiblestudy.org/New%20Testament/40Matt/40GT01.htm", accessed: 2026-10-13, raw: raw_data/ccbiblestudy_GT_matthew_1.txt}
+- {id: kc-mt1, kind: commentary, title: "KingComments, Matthew 1", url: "https://www.kingcomments.com/en/bible-studies/Mt/1", accessed: 2026-10-13, raw: raw_data/kingcomments_matthew_1.txt}
+- {id: bh-mt1, kind: commentary, title: "BibleHub Study, Matthew 1", url: "https://biblehub.com/study/matthew/1.htm", accessed: 2026-10-13, raw: raw_data/biblehub_study_matthew_1.txt}
+- {id: ct-lk3, kind: commentary, title: "中文聖經註釋（CT）路加福音第三章", url: "https://www.ccbiblestudy.org/New%20Testament/42Luke/42CT03.htm", accessed: 2026-10-13, raw: raw_data/ccbiblestudy_CT_luke_3.txt}
+- {id: gt-lk3, kind: commentary, title: "路加福音拾穗（GT）第三章", url: "https://www.ccbiblestudy.org/New%20Testament/42Luke/42GT03.htm", accessed: 2026-10-13, raw: raw_data/ccbiblestudy_GT_luke_3.txt}
+- {id: kc-lk3, kind: commentary, title: "KingComments, Luke 3", url: "https://www.kingcomments.com/en/bible-studies/Lk/3", accessed: 2026-10-13, raw: raw_data/kingcomments_luke_3.txt}
+- {id: bh-lk3, kind: commentary, title: "BibleHub Study, Luke 3", url: "https://biblehub.com/study/luke/3.htm", accessed: 2026-10-13, raw: raw_data/biblehub_study_luke_3.txt}
+- {id: gt-gen11, kind: commentary, title: "創世記拾穗（GT）第十一章", url: "https://www.ccbiblestudy.org/Old%20Testament/01Gen/01GT11.htm", accessed: 2026-10-13, raw: raw_data/ccbiblestudy_GT_genesis_11.txt}
