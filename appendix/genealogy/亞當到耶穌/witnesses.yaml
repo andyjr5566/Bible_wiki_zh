@@ -1,0 +1,317 @@
+- id: gen5
+  title: 創世記 5:1-32
+  ref: 創5:1-32
+  line: common
+  direction: down
+  entries:
+    - {id: 亞當}
+    - {id: 塞特}
+    - {id: 以挪士}
+    - {id: 該南}
+    - {id: 瑪勒列}
+    - {id: 雅列}
+    - {id: 以諾}
+    - {id: 瑪土撒拉}
+    - {id: 拉麥}
+    - {id: 挪亞}
+    - {id: 閃, side: true}
+    - {id: 含, side: true}
+    - {id: 雅弗, side: true}
+
+- id: gen11
+  title: 創世記 11:10-26
+  ref: 創11:10-26
+  line: common
+  direction: down
+  entries:
+    - {id: 閃}
+    - {id: 亞法撒}
+    - {id: 沙拉}
+    - {id: 希伯}
+    - {id: 法勒}
+    - {id: 拉吳}
+    - {id: 西鹿}
+    - {id: 拿鶴}
+    - {id: 他拉}
+    - {id: 亞伯拉罕, as: 亞伯蘭}
+    - {id: 拿鶴#他拉, as: 拿鶴, side: true}
+    - {id: 哈蘭#他拉, as: 哈蘭, side: true}
+
+- id: 1chr1a
+  title: 歷代志上 1:1-4
+  ref: 代上1:1-4
+  line: common
+  direction: down
+  entries:
+    - {id: 亞當}
+    - {id: 塞特}
+    - {id: 以挪士}
+    - {id: 該南}
+    - {id: 瑪勒列}
+    - {id: 雅列}
+    - {id: 以諾}
+    - {id: 瑪土撒拉}
+    - {id: 拉麥}
+    - {id: 挪亞}
+    - {id: 閃, side: true}
+    - {id: 含, side: true}
+    - {id: 雅弗, side: true}
+
+- id: 1chr1b
+  title: 歷代志上 1:17-27
+  ref: 代上1:17-27
+  line: common
+  direction: down
+  entries:
+    - {id: 閃}
+    - {id: 以攔, side: true}
+    - {id: 亞述, side: true}
+    - {id: 亞法撒}
+    - {id: 路德, side: true}
+    - {id: 亞蘭, side: true}
+    - {id: 烏斯, side: true}
+    - {id: 戶勒, side: true}
+    - {id: 基帖, side: true}
+    - {id: 米設#閃, as: 米設, side: true}
+    - {id: 沙拉}
+    - {id: 希伯}
+    - {id: 法勒}
+    - {id: 約坍, side: true}
+    - {id: 亞摩答, side: true}
+    - {id: 沙列, side: true}
+    - {id: 哈薩瑪非, side: true}
+    - {id: 耶拉, side: true}
+    - {id: 哈多蘭, side: true}
+    - {id: 烏薩, side: true}
+    - {id: 德拉, side: true}
+    - {id: 以巴錄, side: true}
+    - {id: 亞比瑪利, side: true}
+    - {id: 示巴#約坍, as: 示巴, side: true}
+    - {id: 阿斐, side: true}
+    - {id: 哈腓拉#約坍, as: 哈腓拉, side: true}
+    - {id: 約巴, side: true}
+    - {id: 拉吳}
+    - {id: 西鹿}
+    - {id: 拿鶴}
+    - {id: 他拉}
+    - {id: 亞伯拉罕, as: 亞伯蘭}
+
+- id: ruth4
+  title: 路得記 4:18-22
+  ref: 得4:18-22
+  line: common
+  direction: down
+  entries:
+    - {id: 法勒斯}
+    - {id: 希斯崙}
+    - {id: 蘭}
+    - {id: 亞米拿達}
+    - {id: 拿順}
+    - {id: 撒門}
+    - {id: 波阿斯}
+    - {id: 俄備得}
+    - {id: 耶西}
+    - {id: 大衛}
+
+- id: 1chr2
+  title: 歷代志上 2:5-15
+  ref: 代上2:5-15
+  line: common
+  direction: down
+  entries:
+    - {id: 法勒斯}
+    - {id: 希斯崙}
+    - {id: 哈母勒, side: true}
+    - {id: 耶拉篾, side: true}
+    - {id: 蘭}
+    - {id: 基路拜, side: true}
+    - {id: 亞米拿達}
+    - {id: 拿順}
+    - {id: 撒門}
+    - {id: 波阿斯}
+    - {id: 俄備得}
+    - {id: 耶西}
+    - {id: 以利押, side: true}
+    - {id: 亞比拿達, side: true}
+    - {id: 示米亞, side: true}
+    - {id: 拿坦業, side: true}
+    - {id: 拉代, side: true}
+    - {id: 阿鮮, side: true}
+    - {id: 大衛}
+
+- id: 1chr3
+  title: 歷代志上 3:10-19
+  ref: 代上3:10-19
+  line: 馬太
+  direction: down
+  entries:
+    - {id: 所羅門}
+    - {id: 羅波安}
+    - {id: 亞比雅}
+    - {id: 亞撒}
+    - {id: 約沙法}
+    - {id: 約蘭}
+    - {id: 亞哈謝}
+    - {id: 約阿施}
+    - {id: 亞瑪謝}
+    - {id: 亞撒利雅#猶大王, as: 亞撒利雅}
+    - {id: 約坦}
+    - {id: 亞哈斯}
+    - {id: 希西家}
+    - {id: 瑪拿西#猶大王, as: 瑪拿西}
+    - {id: 亞們}
+    - {id: 約西亞}
+    - {id: 約哈難#約西亞, as: 約哈難, side: true}
+    - {id: 約雅敬}
+    - {id: 西底家, side: true}
+    - {id: 沙龍#約西亞, as: 沙龍, side: true}
+    - {id: 耶哥尼雅}
+    - {id: 西底家#約雅敬, as: 西底家, side: true}
+    - {id: 撒拉鐵, side: true}
+    - {id: 瑪基蘭, side: true}
+    - {id: 毘大雅}
+    - {id: 示拿薩, side: true}
+    - {id: 耶加米, side: true}
+    - {id: 何沙瑪, side: true}
+    - {id: 尼大比雅, side: true}
+    - {id: 所羅巴伯}
+    - {id: 示每#毘大雅, as: 示每, side: true}
+
+- id: mt1
+  title: 馬太福音 1:2-16
+  ref: 太1:2-16
+  line: 馬太
+  direction: down
+  marks: {missing: 馬太未列, extra: 只見馬太}
+  entries:
+    - {id: 亞伯拉罕}
+    - {id: 以撒}
+    - {id: 以色列, as: 雅各}
+    - {id: 猶大}
+    - {id: 他瑪#猶大的兒婦, as: 他瑪, side: true}
+    - {id: 法勒斯}
+    - {id: 謝拉, side: true}
+    - {id: 希斯崙}
+    - {id: 蘭, as: 亞蘭}
+    - {id: 亞米拿達}
+    - {id: 拿順}
+    - {id: 撒門}
+    - {id: 喇合, side: true}
+    - {id: 波阿斯}
+    - {id: 路得, side: true}
+    - {id: 俄備得}
+    - {id: 耶西}
+    - {id: 大衛}
+    - {id: 拔示巴, as: 烏利亞的妻子, side: true}
+    - {id: 所羅門}
+    - {id: 羅波安}
+    - {id: 亞比雅}
+    - {id: 亞撒}
+    - {id: 約沙法}
+    - {id: 約蘭}
+    - {id: 亞撒利雅#猶大王, as: 烏西雅}
+    - {id: 約坦}
+    - {id: 亞哈斯}
+    - {id: 希西家}
+    - {id: 瑪拿西#猶大王, as: 瑪拿西}
+    - {id: 亞們}
+    - {id: 約西亞}
+    - {id: 耶哥尼雅}
+    - {id: 撒拉鐵}
+    - {id: 所羅巴伯}
+    - {id: 亞比玉}
+    - {id: 以利亞敬#亞比玉, as: 以利亞敬}
+    - {id: 亞所}
+    - {id: 撒督#亞所, as: 撒督}
+    - {id: 亞金}
+    - {id: 以律}
+    - {id: 以利亞撒#以律, as: 以利亞撒}
+    - {id: 馬但}
+    - {id: 雅各#馬但, as: 雅各}
+    - {id: 約瑟#馬利亞的丈夫, as: 約瑟}
+    - {id: 馬利亞#耶穌的母親, as: 馬利亞, side: true}
+    - {id: 耶穌}
+
+- id: lk3
+  title: 路加福音 3:23-38
+  ref: 路3:23-38
+  line: 路加
+  direction: up
+  marks: {missing: 路加未列, extra: 只見路加}
+  entries:
+    - {id: 耶穌}
+    - {id: 約瑟#馬利亞的丈夫, as: 約瑟}
+    - {id: 希里}
+    - {id: 瑪塔#路3:24, as: 瑪塔}
+    - {id: 利未#路3:24, as: 利未}
+    - {id: 麥基#路3:24, as: 麥基}
+    - {id: 雅拿}
+    - {id: 約瑟#路3:24, as: 約瑟}
+    - {id: 瑪他提亞#路3:25, as: 瑪他提亞}
+    - {id: 亞摩斯}
+    - {id: 拿鴻}
+    - {id: 以斯利}
+    - {id: 拿該}
+    - {id: 瑪押}
+    - {id: 瑪他提亞#路3:26, as: 瑪他提亞}
+    - {id: 西美}
+    - {id: 約瑟#路3:26, as: 約瑟}
+    - {id: 猶大#路3:26, as: 猶大}
+    - {id: 約亞拿}
+    - {id: 利撒}
+    - {id: 所羅巴伯}
+    - {id: 撒拉鐵}
+    - {id: 尼利}
+    - {id: 麥基#路3:28, as: 麥基}
+    - {id: 亞底}
+    - {id: 哥桑}
+    - {id: 以摩當}
+    - {id: 珥#約細, as: 珥}
+    - {id: 約細}
+    - {id: 以利以謝#約令, as: 以利以謝}
+    - {id: 約令}
+    - {id: 瑪塔#路3:29, as: 瑪塔}
+    - {id: 利未#路3:29, as: 利未}
+    - {id: 西緬#路3:30, as: 西緬}
+    - {id: 猶大#路3:30, as: 猶大}
+    - {id: 約瑟#路3:30, as: 約瑟}
+    - {id: 約南}
+    - {id: 以利亞敬#路3:30, as: 以利亞敬}
+    - {id: 米利亞}
+    - {id: 買南}
+    - {id: 瑪達他}
+    - {id: 拿單}
+    - {id: 大衛}
+    - {id: 耶西}
+    - {id: 俄備得}
+    - {id: 波阿斯}
+    - {id: 撒門}
+    - {id: 拿順}
+    - {id: 亞米拿達}
+    - {id: 蘭, as: 亞蘭}
+    - {id: 希斯崙}
+    - {id: 法勒斯}
+    - {id: 猶大}
+    - {id: 以色列, as: 雅各}
+    - {id: 以撒}
+    - {id: 亞伯拉罕}
+    - {id: 他拉}
+    - {id: 拿鶴}
+    - {id: 西鹿}
+    - {id: 拉吳}
+    - {id: 法勒}
+    - {id: 希伯}
+    - {id: 沙拉}
+    - {id: 該南#亞法撒, as: 該南}
+    - {id: 亞法撒}
+    - {id: 閃}
+    - {id: 挪亞}
+    - {id: 拉麥}
+    - {id: 瑪土撒拉}
+    - {id: 以諾}
+    - {id: 雅列}
+    - {id: 瑪勒列}
+    - {id: 該南}
+    - {id: 以挪士}
+    - {id: 塞特}
+    - {id: 亞當}

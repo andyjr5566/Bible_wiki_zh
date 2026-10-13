@@ -1,0 +1,126 @@
+events:
+  - {id: 洪水, person: 挪亞, age: 六百, ref: 創7:6}
+people:
+  - id: 亞當
+    born: {am: 0}
+    begat_age: {age: 一百三十, child: 塞特, ref: 創5:3}
+    rest: [{years: 八百, ref: 創5:4}]
+    total: {years: 九百三十, ref: 創5:5}
+  - id: 塞特
+    born: {father: 亞當, age: 一百三十, ref: 創5:3}
+    begat_age: {age: 一百零五, child: 以挪士, ref: 創5:6}
+    rest: [{years: 八百零七, ref: 創5:7}]
+    total: {years: 九百一十二, ref: 創5:8}
+  - id: 以挪士
+    born: {father: 塞特, age: 一百零五, ref: 創5:6}
+    begat_age: {age: 九十, child: 該南, ref: 創5:9}
+    rest: [{years: 八百一十五, ref: 創5:10}]
+    total: {years: 九百零五, ref: 創5:11}
+  - id: 該南
+    born: {father: 以挪士, age: 九十, ref: 創5:9}
+    begat_age: {age: 七十, child: 瑪勒列, ref: 創5:12}
+    rest: [{years: 八百四十, ref: 創5:13}]
+    total: {years: 九百一十, ref: 創5:14}
+  - id: 瑪勒列
+    born: {father: 該南, age: 七十, ref: 創5:12}
+    begat_age: {age: 六十五, child: 雅列, ref: 創5:15}
+    rest: [{years: 八百三十, ref: 創5:16}]
+    total: {years: 八百九十五, ref: 創5:17}
+  - id: 雅列
+    born: {father: 瑪勒列, age: 六十五, ref: 創5:15}
+    begat_age: {age: 一百六十二, child: 以諾, ref: 創5:18}
+    rest: [{years: 八百, ref: 創5:19}]
+    total: {years: 九百六十二, ref: 創5:20}
+  - id: 以諾
+    born: {father: 雅列, age: 一百六十二, ref: 創5:18}
+    begat_age: {age: 六十五, child: 瑪土撒拉, ref: 創5:21}
+    rest: [{years: 三百, ref: 創5:22}]
+    total: {years: 三百六十五, ref: 創5:23}
+  - id: 瑪土撒拉
+    born: {father: 以諾, age: 六十五, ref: 創5:21}
+    begat_age: {age: 一百八十七, child: 拉麥, ref: 創5:25}
+    rest: [{years: 七百八十二, ref: 創5:26}]
+    total: {years: 九百六十九, ref: 創5:27}
+  - id: 拉麥
+    born: {father: 瑪土撒拉, age: 一百八十七, ref: 創5:25}
+    begat_age: {age: 一百八十二, child: 挪亞, ref: 創5:28}
+    rest: [{years: 五百九十五, ref: 創5:30}]
+    total: {years: 七百七十七, ref: 創5:31}
+  - id: 挪亞
+    born: {father: 拉麥, age: 一百八十二, ref: 創5:28}
+    begat_age: {age: 五百, child: 閃, ref: 創5:32}
+    total: {years: 九百五十, ref: 創9:29}
+  - id: 閃
+    born: {father: 挪亞, age: 五百, ref: 創5:32}
+    begat_age: {age: 一百, child: 亞法撒, ref: 創11:10}
+    rest: [{years: 五百, ref: 創11:11}]
+  - id: 亞法撒
+    born: {event: 洪水, after: 二, ref: 創11:10}
+    begat_age: {age: 三十五, child: 沙拉, ref: 創11:12}
+    rest: [{years: 四百零三, ref: 創11:13}]
+  - id: 沙拉
+    born: {father: 亞法撒, age: 三十五, ref: 創11:12}
+    begat_age: {age: 三十, child: 希伯, ref: 創11:14}
+    rest: [{years: 四百零三, ref: 創11:15}]
+  - id: 希伯
+    born: {father: 沙拉, age: 三十, ref: 創11:14}
+    begat_age: {age: 三十四, child: 法勒, ref: 創11:16}
+    rest: [{years: 四百三十, ref: 創11:17}]
+  - id: 法勒
+    born: {father: 希伯, age: 三十四, ref: 創11:16}
+    begat_age: {age: 三十, child: 拉吳, ref: 創11:18}
+    rest: [{years: 二百零九, ref: 創11:19}]
+  - id: 拉吳
+    born: {father: 法勒, age: 三十, ref: 創11:18}
+    begat_age: {age: 三十二, child: 西鹿, ref: 創11:20}
+    rest: [{years: 二百零七, ref: 創11:21}]
+  - id: 西鹿
+    born: {father: 拉吳, age: 三十二, ref: 創11:20}
+    begat_age: {age: 三十, child: 拿鶴, ref: 創11:22}
+    rest: [{years: 二百, ref: 創11:23}]
+  - id: 拿鶴
+    born: {father: 西鹿, age: 三十, ref: 創11:22}
+    begat_age: {age: 二十九, child: 他拉, ref: 創11:24}
+    rest: [{years: 一百一十九, ref: 創11:25}]
+  - id: 他拉
+    born: {father: 拿鶴, age: 二十九, ref: 創11:24}
+    begat_age: {age: 七十, child: 亞伯拉罕, ref: 創11:26}
+    total: {years: 二百零五, ref: 創11:32}
+  - id: 亞伯拉罕
+    born: {father: 他拉, age: 七十, ref: 創11:26}
+    begat_age: {age: 一百, child: 以撒, ref: 創21:5}
+    total: {years: 一百七十五, ref: 創25:7}
+    events:
+      - {age: 七十五, ref: 創12:4, label: 出哈蘭}
+      - {age: 八十六, ref: 創16:16, label: 生以實瑪利}
+      - {age: 一百, ref: 創21:5, label: 生以撒}
+  - id: 撒拉
+    born: {derive: {person: 亞伯拉罕, person_age: 一百, ref: 創17:17, this_age: 九十, this_refs: [創17:17]}}
+    total: {years: 一百二十七, ref: 創23:1}
+  - id: 以實瑪利
+    born: {father: 亞伯拉罕, age: 八十六, ref: 創16:16}
+    total: {years: 一百三十七, ref: 創25:17}
+  - id: 以撒
+    born: {father: 亞伯拉罕, age: 一百, ref: 創21:5}
+    begat_age: {age: 六十, child: 以色列, ref: 創25:26}
+    total: {years: 一百八十, ref: 創35:28}
+  - id: 以色列
+    born: {father: 以撒, age: 六十, ref: 創25:26}
+    total: {years: 一百四十七, ref: 創47:28}
+    events:
+      - {age: 一百三十, ref: 創47:9, label: 見法老}
+  - id: 約瑟
+    born: {derive: {person: 以色列, person_age: 一百三十, ref: 創47:9, this_age: [{n: 三十, ref: 創41:46}, {n: 七, ref: 創41:53}, {n: 二, ref: 創45:6}]}}
+    total: {years: 一百一十, ref: 創50:26}
+    events:
+      - {age: 三十, ref: 創41:46, label: 見法老}
+notes:
+  - id: shem
+    refs: 創5:32, 創7:6, 創11:10
+    text: 閃的出生照創5:32「挪亞五百歲生了閃、含、雅弗」來畫；亞法撒的出生照創11:10「洪水以後二年，閃一百歲生了亞法撒」來畫。洪水那年挪亞六百歲，照這兩節算，閃生亞法撒時是一百零二歲，和「閃一百歲」差兩年。創5:32 把三個兒子寫在同一個年歲下，經文沒有說誰先出生。
+  - id: terah
+    refs: 創11:26, 創11:32, 創12:4
+    text: 他拉的兒子照創11:26「他拉活到七十歲，生了亞伯蘭、拿鶴、哈蘭」，以七十歲生亞伯蘭來畫。這樣算，亞伯蘭出哈蘭時他拉還活著，和司提反的說法不同，見「他拉幾歲生亞伯蘭」。
+  - id: joseph
+    refs: 創41:46, 創41:53, 創45:6, 創47:9
+    text: 約瑟的出生是推算的：他見法老時三十歲，七個豐年過去、饑荒又過了二年，雅各下埃及見法老時一百三十歲，所以約瑟出生時雅各九十一歲。
