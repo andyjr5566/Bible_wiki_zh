@@ -300,6 +300,23 @@ def resolve(candidates, index, book, chapter, root=ROOT, homonyms=None):
             plan["D_new_candidate"].append(candidate)
             continue
 
+        # 候選本身就是同名表登記的完整 target、且尚未建檔：直接新建。
+        # 否則下方的基名比對會把「洗拉（便雅憫）」對到同基名的「洗拉（拉麥之妻）」。
+        _, base_options = homonym_options(base_name(name), homonyms)
+        registered = {
+            normalize_name(option["target"]): option["type"] for option in base_options
+        }
+        if normalize_name(name) in registered and name not in index:
+            if registered[normalize_name(name)] != suggested:
+                candidate["note"] = (
+                    f"同名表登記的分類是{registered[normalize_name(name)]}，候選={suggested}"
+                )
+                plan["D_new_candidate"].append(candidate)
+            else:
+                candidate["match_type"] = "homonym_target"
+                plan["C_new_formal"].append(candidate)
+            continue
+
         match_type, matched, title = find_in_index(name, index)
         if match_type == "conflict":
             candidate["note"] = "名稱或 alias 有多重指向"

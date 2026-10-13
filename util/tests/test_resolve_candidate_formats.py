@@ -278,6 +278,55 @@ class TranslitBaseNameMatchTests(unittest.TestCase):
             )
 
 
+class HomonymTargetTests(unittest.TestCase):
+    """同名表登記的新 target 不可被基名比對併到同基名的既有條目。"""
+
+    INDEX = {
+        "洗拉（拉麥之妻）": {
+            "title": "洗拉（拉麥之妻）",
+            "type": "人物",
+            "path": "link_folder/人物/洗拉（拉麥之妻）.md",
+            "secondary_types": [],
+        },
+    }
+    HOMONYMS = {
+        "洗拉": [
+            {"target": "洗拉（拉麥之妻）", "type": "人物"},
+            {"target": "洗拉（便雅憫）", "type": "地點"},
+        ],
+    }
+
+    def _resolve(self, name, type_):
+        candidates = parse_candidates_yaml({"candidates": [{"name": name, "type": type_}]})
+        with tempfile.TemporaryDirectory() as tmp:
+            entry = Path(tmp) / "link_folder" / "人物" / "洗拉（拉麥之妻）.md"
+            entry.parent.mkdir(parents=True)
+            entry.write_text("# 洗拉（拉麥之妻）\n\n## 定義\n\nx\n\n## 按書卷累積\n",
+                             encoding="utf-8")
+            return resolve(candidates, self.INDEX, "約書亞記", "18",
+                           root=Path(tmp), homonyms=self.HOMONYMS)
+
+    def test_registered_new_target_goes_to_c(self):
+        plan = self._resolve("洗拉（便雅憫）", "地點")
+        self.assertEqual(["洗拉（便雅憫）"], [e["name"] for e in plan["C_new_formal"]])
+        self.assertEqual([], plan["D_new_candidate"])
+
+    def test_registered_target_with_wrong_type_goes_to_d(self):
+        plan = self._resolve("洗拉（便雅憫）", "人物")
+        self.assertEqual([], plan["C_new_formal"])
+        self.assertEqual(["洗拉（便雅憫）"], [e["name"] for e in plan["D_new_candidate"]])
+
+    def test_unregistered_qualified_name_still_uses_base_match(self):
+        plan = self._resolve("洗拉（別處）", "地點")
+        self.assertEqual([], plan["C_new_formal"])
+        self.assertEqual("type_conflict", plan["D_new_candidate"][0]["match_type"])
+
+    def test_existing_registered_target_is_not_forced_new(self):
+        plan = self._resolve("洗拉（拉麥之妻）", "人物")
+        self.assertEqual([], plan["C_new_formal"])
+        self.assertEqual(["洗拉（拉麥之妻）"], [e["name"] for e in plan["B_needs_update"]])
+
+
 class PlanLockTests(unittest.TestCase):
     CANDIDATES = parse_candidates_yaml(YAML_DATA)
 
