@@ -170,11 +170,25 @@
       "fingerprint": "d006f4cd7303e9ce"
     },
     {
+      "path": "link_folder/地點/曠野.md",
+      "title": "曠野",
+      "deferred_at": "約書亞記:16",
+      "accumulated": 12,
+      "fingerprint": "a6c9ba2670666904"
+    },
+    {
       "path": "link_folder/神學/分別為聖.md",
       "title": "分別為聖",
       "deferred_at": "申命記:22",
       "accumulated": 10,
       "fingerprint": "97ca38afc5174c56"
+    },
+    {
+      "path": "link_folder/主題/拈鬮分地（go.ral）.md",
+      "title": "拈鬮分地（go.ral）",
+      "deferred_at": "約書亞記:16",
+      "accumulated": 9,
+      "fingerprint": "69536c5e2c45d449"
     },
     {
       "path": "link_folder/人物/以薩迦（價值）.md",
@@ -196,13 +210,6 @@
       "deferred_at": "申命記:10",
       "accumulated": 9,
       "fingerprint": "bde53b40160f2baa"
-    },
-    {
-      "path": "link_folder/主題/拈鬮分地（go.ral）.md",
-      "title": "拈鬮分地（go.ral）",
-      "deferred_at": "約書亞記:15",
-      "accumulated": 8,
-      "fingerprint": "4631ffe1100445ec"
     },
     {
       "path": "link_folder/地點/海（紅海）.md",
@@ -231,6 +238,20 @@
       "deferred_at": "申命記:9",
       "accumulated": 8,
       "fingerprint": "20d3d6244231e753"
+    },
+    {
+      "path": "link_folder/主題/家室與宗族.md",
+      "title": "家室與宗族",
+      "deferred_at": "約書亞記:16",
+      "accumulated": 7,
+      "fingerprint": "2cdf4691fcfd865b"
+    },
+    {
+      "path": "link_folder/主題/長子名分.md",
+      "title": "長子名分",
+      "deferred_at": "約書亞記:16",
+      "accumulated": 7,
+      "fingerprint": "d7863339ad2c0c84"
     },
     {
       "path": "link_folder/事件/兩支派半求河東之地為業.md",
@@ -338,6 +359,13 @@
       "fingerprint": "e273bfa01f9862ad"
     },
     {
+      "path": "link_folder/地點/大海（地中海）.md",
+      "title": "大海（地中海）",
+      "deferred_at": "約書亞記:16",
+      "accumulated": 6,
+      "fingerprint": "dd76ff3faa062700"
+    },
+    {
       "path": "link_folder/主題/平安祭的三類（感謝祭、還願祭、甘心祭）.md",
       "title": "平安祭的三類（感謝祭、還願祭、甘心祭）",
       "deferred_at": "申命記:16",
@@ -350,13 +378,6 @@
       "deferred_at": "約書亞記:13",
       "accumulated": 5,
       "fingerprint": "156ab27d00cf1335"
-    },
-    {
-      "path": "link_folder/地點/大海（地中海）.md",
-      "title": "大海（地中海）",
-      "deferred_at": "約書亞記:15",
-      "accumulated": 5,
-      "fingerprint": "f981c0bed1d0f926"
     },
     {
       "path": "link_folder/解經爭議/瑪拿西半支派為何留在河東.md",
@@ -406,13 +427,6 @@
       "deferred_at": "約書亞記:13",
       "accumulated": 4,
       "fingerprint": "4e563fc21838ac33"
-    },
-    {
-      "path": "link_folder/主題/未得之地.md",
-      "title": "未得之地",
-      "deferred_at": "約書亞記:15",
-      "accumulated": 3,
-      "fingerprint": "494d7a1f7648c1cd"
     },
     {
       "path": "link_folder/事件/地破裂吞吃可拉與大坍亞比蘭之家與其財物.md",
@@ -653,6 +667,13 @@
       "fingerprint": "4811e169a8c4e64f"
     },
     {
+      "path": "link_folder/地點/他普亞.md",
+      "title": "他普亞",
+      "deferred_at": "約書亞記:16",
+      "accumulated": 2,
+      "fingerprint": "1f105bf89d8eab6d"
+    },
+    {
       "path": "link_folder/地點/以革倫.md",
       "title": "以革倫",
       "deferred_at": "約書亞記:15",
@@ -686,13 +707,6 @@
       "deferred_at": "約書亞記:13",
       "accumulated": 2,
       "fingerprint": "84c4f0e47a4d02c4"
-    },
-    {
-      "path": "link_folder/地點/基色.md",
-      "title": "基色",
-      "deferred_at": "約書亞記:12",
-      "accumulated": 2,
-      "fingerprint": "7f8c575a3be72206"
     },
     {
       "path": "link_folder/地點/夏瑣.md",

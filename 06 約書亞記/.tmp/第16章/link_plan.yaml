@@ -1,0 +1,321 @@
+book: 約書亞記
+chapter: 16
+A_use_directly: []
+B_needs_update:
+- name: 約瑟
+  suggested_type: 人物
+  evidence: 第1、4節「約瑟的子孫」「約瑟的兒子瑪拿西、以法蓮」；CT、GT《綜合解讀》、KC：約瑟得長子雙份；KC：約瑟緊接猶大分地
+  surfaces:
+  - phrase: 約瑟
+    verses:
+    - 1
+    - 4
+  match_type: exact
+  existing_title: 約瑟
+  existing_path: link_folder/人物/約瑟.md
+- name: 以法蓮
+  suggested_type: 人物
+  evidence: 第4、5、8、9、10節；GT《綜合解讀》、《精讀本》：以法蓮先被列出；GT：以法蓮所得之地日後成為北國中心；KC：先知以以法蓮代稱十支派之國
+  surfaces:
+  - phrase: 以法蓮
+    verses:
+    - 4
+    - 5
+    - 8
+    - 9
+    - 10
+  match_type: exact
+  existing_title: 以法蓮
+  existing_path: link_folder/人物/以法蓮.md
+- name: 瑪拿西
+  suggested_type: 人物
+  evidence: 第4、9節；GT《精讀本》：瑪拿西在迦南的地是以法蓮的兩倍，所以以法蓮的城邑包在瑪拿西地業中；CT：第4節的瑪拿西指另外半個支派
+  surfaces:
+  - phrase: 瑪拿西
+    verses:
+    - 4
+    - 9
+  match_type: exact
+  existing_title: 瑪拿西
+  existing_path: link_folder/人物/瑪拿西.md
+- name: 收納以法蓮與瑪拿西
+  suggested_type: 歷史
+  evidence: 第4節「約瑟的兒子瑪拿西、以法蓮就得了他們的地業」；GT《雷氏研讀本》《靈修版》、KC、BH：雅各把兩人當作自己的兒子（創48:5），所以約瑟沒有以他的名字稱呼的支派
+  match_type: exact
+  existing_title: 收納以法蓮與瑪拿西
+  existing_path: link_folder/歷史/收納以法蓮與瑪拿西.md
+- name: 以法蓮在瑪拿西以上
+  suggested_type: 神學
+  evidence: 第5節起先列以法蓮的地業；GT《綜合解讀》《精讀本》《研經資料》：因為雅各預言以法蓮比哥哥更大（創48:14,17-20）；BH 引創48:19
+  match_type: exact
+  existing_title: 以法蓮在瑪拿西以上
+  existing_path: link_folder/神學/以法蓮在瑪拿西以上.md
+- name: 長子名分
+  suggested_type: 主題
+  evidence: 第1節「約瑟的子孫拈鬮所得之地」；CT、GT《綜合解讀》、KC：流便失去長子名分，猶大得君王、約瑟得雙份產業（創49:4、創48:22、代上5:1-2）
+  match_type: exact
+  existing_title: 長子名分
+  existing_path: link_folder/主題/長子名分.md
+- name: 拈鬮分地（go.ral）
+  suggested_type: 主題
+  evidence: 第1節「拈鬮所得之地」；GT《綜合解讀》、KC：以法蓮與瑪拿西作為一個整體只拈一鬮（書17:14）；拈鬮順序猶大第一、約瑟第二
+  surfaces:
+  - phrase: 拈鬮
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 拈鬮分地（go.ral）
+  existing_path: link_folder/主題/拈鬮分地（go.ral）.md
+- name: 耶利哥
+  suggested_type: 地點
+  evidence: 第1、7節「靠近耶利哥的約但河」「以耶利哥東邊的水為界」「達到耶利哥」；BH：耶利哥的泉水與綠洲
+  surfaces:
+  - phrase: 耶利哥
+    verses:
+    - 1
+    - 7
+  match_type: exact
+  existing_title: 耶利哥
+  existing_path: link_folder/地點/耶利哥.md
+- name: 約但河
+  suggested_type: 地點
+  evidence: 第1、7節，約瑟子孫地界的東端；CT：耶利哥東邊的水即指約但河
+  surfaces:
+  - phrase: 約但河
+    verses:
+    - 1
+    - 7
+  match_type: exact
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
+- name: 曠野
+  suggested_type: 地點
+  evidence: 第1節「從耶利哥上去，通過山地的曠野，到伯特利」；BH：從約但河谷上到中央山地的崎嶇荒地
+  surfaces:
+  - phrase: 曠野
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 曠野
+  existing_path: link_folder/地點/曠野.md
+- name: 伯特利
+  suggested_type: 地點
+  evidence: 第1、2節；CT：耶路撒冷北方約16公里；GT《綜合解讀》：伯特利城屬便雅憫，是便雅憫與以法蓮的邊界；BH：雅各遇見神的地方
+  surfaces:
+  - phrase: 伯特利
+    verses:
+    - 1
+    - 2
+  match_type: exact
+  existing_title: 伯特利
+  existing_path: link_folder/地點/伯特利.md
+- name: 路斯
+  suggested_type: 地點
+  evidence: 第2節「又從伯特利到路斯」；CT、GT《串珠》《研經資料》：別處路斯就是伯特利，此處顯然有別，可能兩地相鄰、後來路斯併入伯特利；GT《研經資料》：路斯可能是
+    Baytin，伯特利是其東南約950公尺的 Burj Beitin
+  surfaces:
+  - phrase: 路斯
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 路斯
+  existing_path: link_folder/地點/路斯.md
+- name: 伯和崙
+  suggested_type: 地點
+  evidence: 第3節「下伯和崙」、第5節「上伯和崙」；GT《綜合解讀》：下伯和崙在上伯和崙西北約3公里、低200多米，兩者共同控制沿海平原通往中央山地的古道；CT：兩城的位置與海拔；BH：所羅門重建上下伯和崙（王上9:17、代下8:5）
+  surfaces:
+  - phrase: 伯和崙
+    verses:
+    - 3
+    - 5
+  match_type: exact
+  existing_title: 伯和崙
+  existing_path: link_folder/地點/伯和崙.md
+- name: 基色
+  suggested_type: 地點
+  evidence: 第3、10節；GT《啟導本》《綜合解讀》：基色王和軍隊被殲滅（書10:33）而城仍在迦南人手中，直到法老攻取送給所羅門作嫁妝（王上9:16），所羅門重建為堅固城；KC、BH
+  surfaces:
+  - phrase: 基色
+    verses:
+    - 3
+    - 10
+  match_type: exact
+  existing_title: 基色
+  existing_path: link_folder/地點/基色.md
+- name: 大海（地中海）
+  suggested_type: 地點
+  evidence: 第3、8節「通到海為止」「直通到海為止」；CT：海就是地中海；GT《研經資料》：大略的劃分，無法確定以法蓮有無海港
+  surfaces:
+  - phrase: 海
+    verses:
+    - 3
+    - 8
+  match_type: exact
+  existing_title: 大海（地中海）
+  existing_path: link_folder/地點/大海（地中海）.md
+- name: 他普亞
+  suggested_type: 地點
+  evidence: 第8節「從他普亞往西，到加拿河」；CT：示劍南方約15公里；GT 華爾頓、《研經資料》：大概是阿布札拉德酋長遺址（書17:7-8）；BH：他普亞城屬以法蓮、周圍之地屬瑪拿西（書17:8）
+  surfaces:
+  - phrase: 他普亞
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 他普亞
+  existing_path: link_folder/地點/他普亞.md
+- name: 迦南人
+  suggested_type: 人物
+  evidence: 第10節「沒有趕出住基色的迦南人；迦南人卻住在以法蓮人中間」；CT：迦南七族的總稱或其中之一，有時指住在沿海和平原的迦南人
+  surfaces:
+  - phrase: 迦南人
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 迦南人
+  existing_path: link_folder/人物/迦南人.md
+- name: 趕出（ya.rash）
+  suggested_type: 原文
+  evidence: 第10節「他們沒有趕出住基色的迦南人」；STEP ho.Ri.shu（H3423H）；KC：猶大是不能趕出（書15:63），以法蓮看來連試都沒試；GT《精讀本》：有力量卻貪圖安逸；BH
+  surfaces:
+  - phrase: 趕出
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 趕出（ya.rash）
+  existing_path: link_folder/原文/趕出（ya.rash）.md
+- name: 直到今日
+  suggested_type: 主題
+  evidence: 第10節「成為做苦工的僕人，直到今日」
+  surfaces:
+  - phrase: 直到今日
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 直到今日
+  existing_path: link_folder/主題/直到今日.md
+- name: 未得之地
+  suggested_type: 主題
+  evidence: 第10節基色未得；GT《研經資料》：這裡列出以法蓮（16:10）和瑪拿西（17:11-12）未征服的城邑，像前面猶大未趕出耶布斯人一樣（15:63）；BH：以法蓮沒有完全得著產業
+  match_type: exact
+  existing_title: 未得之地
+  existing_path: link_folder/主題/未得之地.md
+- name: 產業（na.cha.lah）
+  suggested_type: 原文
+  evidence: 第5、8、9節「地業」；STEP 第5節 na.cha.la.Ta/m、第8、9節 na.cha.Lat（H5159）；第4節「得了他們的地業」是動詞
+    va/i.yin.cha.Lu（H5157）
+  surfaces:
+  - phrase: 地業
+    verses:
+    - 5
+    - 8
+    - 9
+  match_type: exact
+  existing_title: 產業（na.cha.lah）
+  existing_path: link_folder/原文/產業（na.cha.lah）.md
+- name: 家室與宗族
+  suggested_type: 主題
+  evidence: 第5、8節「按著宗族」；STEP le./mish.pe.cho.Ta/m（H4940）；BH：按宗族分配保存各家應得的地業
+  surfaces:
+  - phrase: 宗族
+    verses:
+    - 5
+    - 8
+  match_type: exact
+  existing_title: 家室與宗族
+  existing_path: link_folder/主題/家室與宗族.md
+C_new_formal:
+- name: 亞他綠亞達
+  suggested_type: 地點
+  evidence: 第2節「至亞他綠」、第5節「東界是亞他綠亞達到上伯和崙」；CT：亞他綠位於耶路撒冷北方約12公里、伯特利南方約4公里，實際位置與亞他綠亞達相同，有人認為亞基人的境界、亞他綠、亞他綠亞達同指一地；GT《研經資料》：第2節的亞他綠在16:5與18:13又被稱為亞他綠亞達，與民32:3,24的亞大錄是同一個原文字但地點不同，字義「王冠」「榮耀之冠」；GT《串珠》：在耶路撒冷以北十三公里，與第7節的亞他綠不同；BH：Ataroth-addar
+    靠近便雅憫邊界
+  surfaces:
+  - phrase: 亞他綠亞達
+    verses:
+    - 5
+  target_path: link_folder/地點/亞他綠亞達.md
+- name: 亞他綠（以法蓮東界）
+  suggested_type: 地點
+  evidence: 第7節「從雅挪哈下到亞他綠」；CT：不同於第2節的亞他綠，位於示劍東南方約20公里、示羅東北方約20公里；GT 華爾頓：大概是迪阿布酋長遺址或瑪劄爾遺址；GT《串珠》：與第2節的亞他綠不同；BH：Ataroth
+    and Naarah 是下到約但河谷的界點
+  surfaces:
+  - phrase: 亞他綠
+    verses:
+    - 7
+  target_path: link_folder/地點/亞他綠（以法蓮東界）.md
+- name: 亞基人（以法蓮邊界）
+  suggested_type: 人物
+  evidence: 第2節「接連到亞基人的境界」；CT：確實地點不詳，有人認為就是亞他綠亞達，字義「冗長」；GT《研經資料》字義「冗長」；BH：似乎是住在以法蓮邊界的地方家族，後來大衛的朋友亞基人戶篩（撒下15:32-37、17:5-14）；STEP
+    ha./'ar.Ki（H757）；創10:17 迦南後裔名單也有「亞基人」，是另一族，所以加限定詞
+  surfaces:
+  - phrase: 亞基人
+    verses:
+    - 2
+  target_path: link_folder/人物/亞基人（以法蓮邊界）.md
+- name: 押利提人
+  suggested_type: 人物
+  evidence: 第3節「往西下到押利提人的境界」；CT：確實地點不詳，可能位於下伯和崙西北方某處，字義「讓他逃脫」；GT《研經資料》字義相同；BH：Japhletites
+    構成以法蓮南界的一段，經上別無記載，參代上7:32-33
+  surfaces:
+  - phrase: 押利提人
+    verses:
+    - 3
+  target_path: link_folder/人物/押利提人.md
+- name: 密米他
+  suggested_type: 地點
+  evidence: 第6節「往西通到北邊的密米他」；CT：示劍南方約5公里、示羅北方約12公里，字義「藏身處」；GT《串珠》：靠近示劍（書17:7）；BH：Michmethath
+    在示劍一帶，也是瑪拿西界線的起點（書17:7）
+  surfaces:
+  - phrase: 密米他
+    verses:
+    - 6
+  target_path: link_folder/地點/密米他.md
+- name: 他納示羅
+  suggested_type: 地點
+  evidence: 第6節「又向東繞到他納示羅」；CT：示劍東南方約11公里、示羅東北方約16公里，字義「接近示羅」；GT《串珠》：示劍東南偏東十一公里；GT
+    華爾頓、《研經資料》：塔納福卡廢墟（Khirbet Ta'nah el-Foqa）；BH：靠近示羅
+  surfaces:
+  - phrase: 他納示羅
+    verses:
+    - 6
+  target_path: link_folder/地點/他納示羅.md
+- name: 雅挪哈
+  suggested_type: 地點
+  evidence: 第6-7節「接連到雅挪哈的東邊；從雅挪哈下到亞他綠」；CT：示劍東南方約9公里，字義「他休憩」；GT 華爾頓、《研經資料》：雅農廢墟（Khirbet
+    Yanun）；BH：大概在現代的 Yanun 附近，確切位置不能肯定
+  surfaces:
+  - phrase: 雅挪哈
+    verses:
+    - 6
+    - 7
+  target_path: link_folder/地點/雅挪哈.md
+- name: 拿拉
+  suggested_type: 地點
+  evidence: 第7節「又到拿拉，達到耶利哥」；CT：耶路撒冷東北方約22公里，耶利哥在拿拉東方約3公里，字義「少女」；GT 華爾頓、《研經資料》：耶利哥附近的吉斯爾遺址（Tell
+    el-Jisr）或梅夫吉爾廢墟；BH
+  surfaces:
+  - phrase: 拿拉
+    verses:
+    - 7
+  target_path: link_folder/地點/拿拉.md
+- name: 加拿河
+  suggested_type: 地點
+  evidence: 第8節「從他普亞往西，到加拿河，直通到海為止」；CT：經常乾涸的旱溪，發源於示劍和示羅之間高約800公尺的山嶺，從東向西流往地中海，在距離海岸約10公里處與雅孔河會合，全長約46公里，字義「蘆葦」；GT《研經資料》字義「蘆葦」；BH：可能是
+    Wadi Qana，書17:9 以法蓮的城在河南、瑪拿西在河北
+  surfaces:
+  - phrase: 加拿河
+    verses:
+    - 8
+  target_path: link_folder/地點/加拿河.md
+- name: 苦工（mas）
+  suggested_type: 原文
+  evidence: 第10節「成為做苦工的僕人」；STEP le./mas-（H4522，taskworker）＋'o.Ved（H5647I）；GT 丁道爾：書17:13
+    的作苦工是 mas，這個字出現在主前十四世紀米吉多首領寫的亞馬拿書信中，後來所羅門也同樣使用（王上4:6、9:21）；GT《研經資料》：「奴工隊」「勞工隊」；CT
+    原文字義「奴工」；BH：forced laborers，預示後世大量使用強迫勞役（王上9:20-21）；KC：以法蓮人或許看到使用迦南人作苦工的好處
+  surfaces:
+  - phrase: 做苦工的僕人
+    verses:
+    - 10
+  target_path: link_folder/原文/苦工（mas）.md
+D_new_candidate: []
+E_skip: []
+locked_at: '2026-10-13T05:55:24Z'

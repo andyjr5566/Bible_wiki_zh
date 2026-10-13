@@ -11506,6 +11506,14 @@
       "亞倫後裔"
     ]
   },
+  "亞基人（以法蓮邊界）": {
+    "path": "link_folder/人物/亞基人（以法蓮邊界）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞基人（以法蓮邊界）",
+    "status": "formal",
+    "aliases": []
+  },
   "亞多尼洗德": {
     "path": "link_folder/人物/亞多尼洗德.md",
     "type": "人物",
@@ -12403,6 +12411,14 @@
       "Jedidiah",
       "耶迪底亞"
     ]
+  },
+  "押利提人": {
+    "path": "link_folder/人物/押利提人.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "押利提人",
+    "status": "formal",
+    "aliases": []
   },
   "押撒": {
     "path": "link_folder/人物/押撒.md",
@@ -17290,6 +17306,18 @@
     "status": "formal",
     "aliases": []
   },
+  "苦工（mas）": {
+    "path": "link_folder/原文/苦工（mas）.md",
+    "type": "原文",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "苦工（mas）",
+    "status": "formal",
+    "aliases": [
+      "mas"
+    ]
+  },
   "苦煉（a.nah）": {
     "path": "link_folder/原文/苦煉（a.nah）.md",
     "type": "原文",
@@ -18288,6 +18316,22 @@
     "status": "formal",
     "aliases": []
   },
+  "亞他綠亞達": {
+    "path": "link_folder/地點/亞他綠亞達.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亞他綠亞達",
+    "status": "formal",
+    "aliases": []
+  },
+  "亞他綠（以法蓮東界）": {
+    "path": "link_folder/地點/亞他綠（以法蓮東界）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亞他綠（以法蓮東界）",
+    "status": "formal",
+    "aliases": []
+  },
   "亞割谷": {
     "path": "link_folder/地點/亞割谷.md",
     "type": "地點",
@@ -18540,6 +18584,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "他納",
+    "status": "formal",
+    "aliases": []
+  },
+  "他納示羅": {
+    "path": "link_folder/地點/他納示羅.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "他納示羅",
     "status": "formal",
     "aliases": []
   },
@@ -18917,6 +18969,14 @@
     "aliases": [
       "加低斯巴尼亞"
     ]
+  },
+  "加拿河": {
+    "path": "link_folder/地點/加拿河.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "加拿河",
+    "status": "formal",
+    "aliases": []
   },
   "北界的何珥山": {
     "path": "link_folder/地點/北界的何珥山.md",
@@ -19366,6 +19426,14 @@
       "Migdol"
     ]
   },
+  "密米他": {
+    "path": "link_folder/地點/密米他.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "密米他",
+    "status": "formal",
+    "aliases": []
+  },
   "尋的曠野": {
     "path": "link_folder/地點/尋的曠野.md",
     "type": "地點",
@@ -19661,6 +19729,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "拉沙崙",
+    "status": "formal",
+    "aliases": []
+  },
+  "拿拉": {
+    "path": "link_folder/地點/拿拉.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "拿拉",
     "status": "formal",
     "aliases": []
   },
@@ -20685,6 +20761,14 @@
     "aliases": [
       "雅博渡口"
     ]
+  },
+  "雅挪哈": {
+    "path": "link_folder/地點/雅挪哈.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "雅挪哈",
+    "status": "formal",
+    "aliases": []
   },
   "雅謝": {
     "path": "link_folder/地點/雅謝.md",
@@ -35902,6 +35986,9 @@
   },
   "神的居住": {
     "alias_of": "舍吉拿（shekinah）"
+  },
+  "mas": {
+    "alias_of": "苦工（mas）"
   },
   "苦煉": {
     "alias_of": "苦煉（a.nah）"

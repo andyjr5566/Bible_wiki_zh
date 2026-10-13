@@ -1,0 +1,100 @@
+version: 2
+book: 約書亞記
+chapter: 16
+stages:
+  m3:
+    round: 2
+    revision: 3
+    sha256: d3927a80cde41117ab4db4740b141068be66bc54d0994c4f7e730f08df5491a8
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 17f77a88cabb2486b9f8c7650f7535d1f2608124134307249358701e58040348
+      verdict: changes_required
+      findings_count: 1
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: d3927a80cde41117ab4db4740b141068be66bc54d0994c4f7e730f08df5491a8
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    thread_id: 01a133c4-67b6-7b11-b0ac-16e4688d947b
+    hash_inputs:
+    - entry_content/亞他綠亞達.yaml
+    - entry_content/亞他綠（以法蓮東界）.yaml
+    - entry_content/亞基人（以法蓮邊界）.yaml
+    - entry_content/他納示羅.yaml
+    - entry_content/加拿河.yaml
+    - entry_content/密米他.yaml
+    - entry_content/押利提人.yaml
+    - entry_content/拿拉.yaml
+    - entry_content/苦工（mas）.yaml
+    - entry_content/雅挪哈.yaml
+    own_sha256: d3927a80cde41117ab4db4740b141068be66bc54d0994c4f7e730f08df5491a8
+    verdict_sha: d3927a80cde41117ab4db4740b141068be66bc54d0994c4f7e730f08df5491a8
+    findings_count: 0
+  m6:
+    round: 2
+    revision: 2
+    sha256: b7b1e368385fddc0a8c41d4c149fea82e91902bf2e6ea521063d48d3dd411823
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 47373c1b388f2e973a95960e3ac5131960e1d3d1cc343328ddaa099abac07119
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: b7b1e368385fddc0a8c41d4c149fea82e91902bf2e6ea521063d48d3dd411823
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    thread_id: 01a133c4-67b6-7b11-b0ac-16e4688d947b
+    hash_inputs:
+    - parent:m3=d3927a80cde41117ab4db4740b141068be66bc54d0994c4f7e730f08df5491a8
+    - chapter_content.yaml
+    own_sha256: ea7af9f96300fdb8a56252c92acec5cfea5eac656a391f4c50b7eb7a52b78c1e
+    verdict_sha: b7b1e368385fddc0a8c41d4c149fea82e91902bf2e6ea521063d48d3dd411823
+    findings_count: 0
+  link_updates:
+    round: 2
+    revision: 4
+    sha256: c8717a7efbea60300f1162d74bdc0d9ece5b0703511ed42ec483cd4b6c9f836b
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 4d3a384259ac0d51e8b0c2aa5e3bb0dc3fb9e1b927673a4a1a6db919c1b6a2e2
+      verdict: changes_required
+      findings_count: 1
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: c8717a7efbea60300f1162d74bdc0d9ece5b0703511ed42ec483cd4b6c9f836b
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    thread_id: 01a133c4-67b6-7b11-b0ac-16e4688d947b
+    hash_inputs:
+    - parent:m3=d3927a80cde41117ab4db4740b141068be66bc54d0994c4f7e730f08df5491a8
+    - parent:m6=b7b1e368385fddc0a8c41d4c149fea82e91902bf2e6ea521063d48d3dd411823
+    - link_updates.yaml
+    own_sha256: 758b40c6138a902b50b0fb1ca2f8b372b3afc217e1733d565cf0d815fce21c44
+    verdict_sha: c8717a7efbea60300f1162d74bdc0d9ece5b0703511ed42ec483cd4b6c9f836b
+    findings_count: 0

@@ -1,0 +1,288 @@
+book: 約書亞記
+chapter: 16
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。正確形狀：從前幾章講起、把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；本章的細節與引句留在本章 summary，主題發展不再重述一遍。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 約瑟
+  path: link_folder/人物/約瑟.md
+  summary: 第1節「約瑟的子孫拈鬮所得之地」，第4節「約瑟的兒子瑪拿西、以法蓮就得了他們的地業」。CT、GT《綜合解讀》與 KC 都說流便失去長子的名分之後，約瑟得著雙份的產業（創48:22、代上5:1-2），所以約瑟的子孫緊接在猶大之後拈鬮；GT《靈修版聖經註釋》說十二支派裡沒有一個用約瑟的名字稱呼，因為他的雙份歸給了兩個兒子。
+  relation: 本章約瑟的名字只出現在「約瑟的子孫」裡：他自己沒有支派，兩個兒子合拈一鬮，得了迦南中部最肥沃的地。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 22
+    - 23
+    definition: keep
+    development: keep
+- title: 以法蓮
+  path: link_folder/人物/以法蓮.md
+  summary: 第4、5、8、9、10節。第5-9節列出以法蓮按著宗族所得的地界，第9節另有些城邑在瑪拿西的地業中，第10節以法蓮沒有趕出住基色的迦南人。GT《綜合解讀》《聖經精讀本》說以法蓮的地先列出，是因為雅各預言他要比哥哥更大（創48:17-20）；GT 多處與 KC 說這塊地後來成為北國的中心，先知常用以法蓮代表北國。KC 說以法蓮人看來連試都沒有試過要趕出迦南人。
+  relation: 本章以法蓮第一次在河西受分地業：地界寫在前，缺口寫在後。GT《綜合解讀》說約書亞就屬於以法蓮支派。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 10
+    - 11
+    definition: keep
+    development: keep
+- title: 瑪拿西
+  path: link_folder/人物/瑪拿西.md
+  summary: 第4節「約瑟的兒子瑪拿西、以法蓮就得了他們的地業」，第9節以法蓮在「瑪拿西人地業中」得了些城邑。CT 說第4節的瑪拿西是另外半個支派；GT《聖經精讀本》說以法蓮有32,500人、瑪拿西有52,700人（民26:34、37），瑪拿西在迦南分得的地是以法蓮的兩倍，所以按均衡的原則，有些城邑劃給了以法蓮。
+  relation: 河東半個支派的地在書13 已經寫過，本章是河西另外半個支派和以法蓮合得的那一鬮；瑪拿西自己的地界要到書17 才寫。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 18
+    - 19
+    definition: keep
+    development: keep
+- title: 收納以法蓮與瑪拿西
+  path: link_folder/歷史/收納以法蓮與瑪拿西.md
+  summary: 第4節「約瑟的兒子瑪拿西、以法蓮就得了他們的地業」。GT《雷氏研讀本》、《靈修版聖經註釋》與 BH 都回到創48:5：雅各把約瑟的兩個兒子當作自己的兒子，他們後來各成一個支派；KC 說的是同一件事，引的是創48:16 雅各為兩個童子的祝福；GT《雷氏研讀本》說應許地仍舊分給十二個支派，因為利未支派沒有分得土地。
+  relation: 創48 的收養，在本章落成兩個支派實際的地業。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 以法蓮在瑪拿西以上
+  path: link_folder/神學/以法蓮在瑪拿西以上.md
+  summary: 第5節起先寫以法蓮的地業，第17章才寫瑪拿西。GT《綜合解讀》、《聖經精讀本》與《研經資料》都說，先提以法蓮是因為雅各祝福時把他放在哥哥之上（創48:14、17-20）；GT《聖經精讀本》又說以法蓮在曠野是西邊陣營的領袖，會幕後來設在以法蓮境內的示羅。
+  relation: 創48 雅各交叉雙手，本章分地的次序照著那次祝福排列。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 長子名分
+  path: link_folder/主題/長子名分.md
+  summary: 第1節約瑟的子孫緊接在猶大之後拈鬮。CT、GT《綜合解讀》與 KC 都說流便失去了長子的名分（創49:4），KC 並說是因為他污穢了父親的床；猶大得著君王的福分，約瑟得著雙份的產業；GT《綜合解讀》引代上5:2「猶大勝過一切弟兄，君王也是從他而出；長子的名分卻歸約瑟」。CT 說猶大和約瑟都不是長子，卻分得了長子的名分。
+  relation: 長子雙份的規矩（申21:17），在本章落成約瑟兩個兒子各得一份地。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development: &id001
+      decision: keep
+      basis: standing_debt
+- title: 拈鬮分地（go.ral）
+  path: link_folder/主題/拈鬮分地（go.ral）.md
+  summary: 第1節「約瑟的子孫拈鬮所得之地」。GT《綜合解讀》說以法蓮和瑪拿西兩個支派作為一個整體，只拈了一鬮（書17:14），拈鬮的順序是猶大第一、約瑟第二；KC 也說兩個支派合起來只拈一次，後來一起為此抱怨。STEP 語言資料：本節是 ha./go.Ral（H1486）。
+  relation: 第15章猶大拈出第一鬮，本章是第二鬮，而且是兩個支派共用的一鬮。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: *id001
+- title: 耶利哥
+  path: link_folder/地點/耶利哥.md
+  summary: 第1節約瑟子孫的地界「從靠近耶利哥的約但河起，以耶利哥東邊的水為界：從耶利哥上去」，第7節以法蓮的東界「達到耶利哥」。CT 說耶利哥東邊的水就是約但河；BH 則說是耶利哥一帶的泉水，在約但河谷裡供應生命，也是地界上很有價值的一段。
+  relation: 以色列人在河西攻下的第一座城，本章成了約瑟子孫地界的起點。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 19
+    - 20
+    definition: keep
+    development: keep
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: 第1節地界「從靠近耶利哥的約但河起」，第7節以法蓮的東界「通到約但河為止」。KC 說約瑟子孫的地從約但河一直到地中海，橫跨全境；BH 說約但河是以法蓮的東界，也記著以色列人神蹟般的過河。
+  relation: 本章約但河是約瑟子孫整塊地的東端。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 29
+    - 30
+    definition: keep
+    development: keep
+- title: 曠野
+  path: link_folder/地點/曠野.md
+  summary: 第1節「從耶利哥上去，通過山地的曠野，到伯特利」。BH 說這條界線從低窪的約但河谷爬上中央山地，經過崎嶇荒涼的地帶。
+  relation: 本章的曠野是耶利哥上到伯特利之間的山地荒野，是約瑟子孫南界的一段。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 11
+    - 12
+    definition: keep
+    development: *id001
+- title: 伯特利
+  path: link_folder/地點/伯特利.md
+  summary: 第1節南界「到伯特利」，第2節「又從伯特利到路斯」。CT 說伯特利位於耶路撒冷北方約16公里；GT《綜合解讀》說伯特利城屬於便雅憫，是便雅憫和以法蓮的邊界；CT 與 GT《串珠》說別處伯特利就是路斯，這裡卻分成兩地，可能兩地相鄰、後來路斯併入伯特利的範圍。BH 說這地界包括了雅各遇見神的地方。
+  relation: 書7、書8 伯特利在艾城旁邊，本章它成了約瑟子孫與便雅憫之間的界點。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 10
+    - 11
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 路斯
+  path: link_folder/地點/路斯.md
+  summary: 第2節「又從伯特利到路斯」。CT 說路斯是伯特利的原名（創28:19；士1:23），但此處顯然有分別，可能兩地相鄰、後來劃歸伯特利範圍內；GT《串珠》說雅各露宿之處可能並非路斯本身，而是鄰近的地方；GT《研經資料》說路斯可能是現代的 Baytin，伯特利則是它東南約950公尺的 Burj Beitin。
+  relation: 創28 路斯是伯特利的舊名，本章兩個名字並列成兩個界點。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 伯和崙
+  path: link_folder/地點/伯和崙.md
+  summary: 第3節南界「到下伯和崙的境界」，第5節以法蓮的地界「到上伯和崙」。CT 說下伯和崙海拔約400公尺、上伯和崙約600公尺；GT《綜合解讀》說下伯和崙在上伯和崙西北約3公里，低了200多米，兩者共同控制從沿海平原通往中央山地的古道；BH 說這條隘口對守住進入以法蓮山地的通道十分重要，所羅門後來重建了上下伯和崙（王上9:17、代下8:5）。
+  relation: 書10 伯和崙是一條追擊的路，本章上下兩城分別成了地界上的點。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:10
+      - 約書亞記:16
+- title: 基色
+  path: link_folder/地點/基色.md
+  summary: 第3節南界「直到基色」，第10節以法蓮「沒有趕出住基色的迦南人」。GT《啟導本》說基色王和軍隊雖被殲滅（書10:33），此城仍在迦南人手中，直到所羅門王時代才藉埃及法老之手攻陷（王上9:16），所羅門重建為駐防城；GT《綜合解讀》說它在耶路撒冷到沿海平原的路上，後來被所羅門建為三個堅固城之一；BH 說它守著沿海平原與山地之間的重要路線。
+  relation: 書10 王被殺而城沒有被攻取，本章城分給了以法蓮，城裡的迦南人卻沒有被趕出。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:10
+      - 約書亞記:12
+      - 約書亞記:16
+- title: 大海（地中海）
+  path: link_folder/地點/大海（地中海）.md
+  summary: 第3節南界「通到海為止」，第8節以法蓮的地界「直通到海為止」。CT 說這海就是地中海；GT《研經資料》說這只是大略的劃分，無法確定以法蓮有沒有海港；BH 說海岸讓以法蓮連上貿易、交通與防衛的路線。
+  relation: 本章大海是約瑟子孫與以法蓮地界的西端。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: *id001
+- title: 他普亞
+  path: link_folder/地點/他普亞.md
+  summary: 第8節「從他普亞往西，到加拿河，直通到海為止」。CT 說他普亞位於示劍南方約15公里；GT 所引華爾頓與《研經資料》說它大概是阿布札拉德酋長遺址（書17:7-8）；BH 說書17:8 把他普亞城歸以法蓮、周圍的地歸瑪拿西。
+  relation: 書12 他普亞王列在被擊敗的王裡，本章它是以法蓮地界往西段的起點。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 迦南人
+  path: link_folder/人物/迦南人.md
+  summary: 第10節「他們沒有趕出住基色的迦南人；迦南人卻住在以法蓮人中間，成為做苦工的僕人，直到今日」。CT 說迦南人是迦南七族的總稱或其中之一，有時特指住在沿海和平原的迦南人；BH 說住在拜偶像的民族中間，讓以色列人受到他們敬拜、習俗與結盟的壓力（士3:5-6）。
+  relation: 本章的迦南人沒有被趕出，而是被編成以法蓮的苦工。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 18
+    - 19
+    definition: keep
+    development: keep
+- title: 趕出（ya.rash）
+  path: link_folder/原文/趕出（ya.rash）.md
+  summary: 第10節「他們沒有趕出住基色的迦南人」。STEP 語言資料：ve./Lo' ho.Ri.shu（H3423H，Vh 形，譯義 they dispossessed，前接否定詞）。KC 說猶大是不能趕出（書15:63），看來至少試過，以法蓮看來連試都沒有試，他們有能力（書17:13）只是沒有那個心；GT《聖經精讀本》說他們雖有力量卻貪圖安逸，違背了神的命令（申7:1-26）。GT《綜合解讀》說以法蓮人沒有把迦南人趕出，後來自己因為違背神的約，「被神趕出了應許之地」（王下18:11-12）。
+  relation: 第15章結尾是猶大不能趕出，本章結尾是以法蓮沒有趕出。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 直到今日
+  path: link_folder/主題/直到今日.md
+  summary: 第10節「迦南人卻住在以法蓮人中間，成為做苦工的僕人，直到今日」。GT《啟導本》說基色一直在迦南人手中，直到所羅門時代才被法老攻陷（王上9:16）。
+  relation: 第15章「直到今日」說耶布斯人還在耶路撒冷，本章說迦南人還在基色作苦工：連續兩章都用這句話記一個沒有完成的征服。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 未得之地
+  path: link_folder/主題/未得之地.md
+  summary: 第10節基色的迦南人沒有被趕出。GT《研經資料》說這裡列出以法蓮與瑪拿西（書17:11-12）未征服的城邑，就像前面猶大未趕出耶布斯人一樣（書15:63），並說這預示了士師時代的混亂；BH 說基色的迦南人還在，表示以法蓮沒有完全得著他們的產業。
+  relation: 第13章列出未得之地，第15章猶大留下耶路撒冷，本章以法蓮留下基色。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:13
+      - 約書亞記:14
+      - 約書亞記:15
+      - 約書亞記:16
+- title: 產業（na.cha.lah）
+  path: link_folder/原文/產業（na.cha.lah）.md
+  summary: 第5、8、9節「地業」。STEP 語言資料：第5節 na.cha.la.Ta/m、第8、9節 na.cha.Lat（H5159，簡要詞典義 inheritance）；第4節「就得了他們的地業」用的是動詞 va/i.yin.cha.Lu（H5157，to inherit）。BH 說以法蓮得這地是耶和華的賞賜，按家族分配，保存各宗族在地上長久的分。
+  relation: 本章名詞與動詞都出現：約瑟的子孫「得了」地業，以法蓮的「地業」按宗族劃界。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 20
+    - 21
+    definition: keep
+    development: keep
+- title: 家室與宗族
+  path: link_folder/主題/家室與宗族.md
+  summary: 第5節「以法蓮子孫的境界，按著宗族所得的」，第8節「這就是以法蓮支派按著宗族所得的地業」。STEP 語言資料：兩處都是 le./mish.pe.cho.Ta/m（H4940，簡要詞典義 family）。BH 說按宗族分配，保存了每個家族應得的地業。
+  relation: 第15章猶大按宗族拈鬮，本章以法蓮的地業也按宗族劃定。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development: *id001
