@@ -9,10 +9,13 @@ export interface CanvasApi {
   el: SVGSVGElement;
   focusPerson(id: string, animate?: boolean): void;
   focusIds(ids: string[], animate?: boolean): void;
+  focusTourIds(ids: string[], avoid: HTMLElement | null, animate?: boolean): Promise<boolean>;
   fitSpine(animate?: boolean): void;
   fitAll(animate?: boolean): void;
   zoom(factor: number): void;
   select(id: string | null): void;
+  setTourHighlights(ids: string[], currentId: string | null, edges: Array<[string, string]>): void;
+  clearTourHighlights(): void;
   setLine(line: CanvasLine): void;
   setTrace(ids: string[], edges: Array<{ from: string; to: string; kind: string }>): void;
   expandFor(id: string): void;
@@ -46,6 +49,9 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
   let currentBox: ViewBox = { x: -500, y: -300, width: 1000, height: 600 };
   let currentLine: CanvasLine = 'both';
   let selected: string | null = null;
+  let tourHighlightIds = new Set<string>();
+  let tourCurrentId: string | null = null;
+  let tourEdgeKeys = new Set<string>();
   let traceIds = new Set<string>();
   let traceEdges = new Set<string>();
   let nodeEls = new Map<string, SVGGElement>();
@@ -58,6 +64,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
   let cullTimer = 0;
   let animationFrame = 0;
   let layoutAnimationFrame = 0;
+  let animationDone: (() => void) | null = null;
 
   const nodeFor = (id: string) => layout.nodes.find((node) => node.id === id);
   const lineFor = (person: Person) => person.lines?.includes('common') ? 'common' : person.lines?.includes('馬太') ? '馬太' : person.lines?.includes('路加') ? '路加' : 'common';
@@ -88,12 +95,22 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     const target: ViewBox = { x: (x0 + x1) / 2 - width / 2, y: (y0 + y1) / 2 - height / 2, width, height };
     animateToBox(target, animate);
   };
-  const animateToBox = (target: ViewBox, animate: boolean) => {
+  const finishAnimation = () => {
+    const done = animationDone;
+    animationDone = null;
+    done?.();
+  };
+  const animateToBox = (target: ViewBox, animate: boolean): Promise<void> => new Promise((resolve) => {
     if (!animate || document.documentElement.dataset.motion === 'off') {
+      cancelAnimationFrame(animationFrame);
+      finishAnimation();
       setViewBox(target);
+      resolve();
       return;
     }
     cancelAnimationFrame(animationFrame);
+    finishAnimation();
+    animationDone = resolve;
     const from = { ...currentBox };
     const start = performance.now();
     const duration = 720;
@@ -107,9 +124,10 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
         height: from.height + (target.height - from.height) * eased,
       });
       if (t < 1) animationFrame = requestAnimationFrame(tick);
+      else finishAnimation();
     };
     animationFrame = requestAnimationFrame(tick);
-  };
+  });
 
   function cullToViewport() {
     const marginX = currentBox.width * 0.12;
@@ -118,6 +136,32 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     const overview = zoomLevel < 0.6;
     nodeLayer.classList.toggle('ag-side-mini', zoomLevel < 0.45);
     nodeLayer.classList.toggle('ag-spine-mini', overview);
+    for (const [id, element] of nodeEls) {
+      const label = element.querySelector<SVGTextElement>('.ag-node-label');
+      const rect = element.querySelector<SVGRectElement>(':scope > rect');
+      const dot = element.querySelector<SVGCircleElement>('.ag-node-dot');
+      const node = nodeFor(id);
+      if (!label || !rect || !node) continue;
+      const emphasized = tourHighlightIds.has(id);
+      label.style.display = emphasized ? 'block' : '';
+      label.style.fontSize = emphasized ? `${13 / zoomLevel}px` : '';
+      if (dot) dot.style.display = emphasized ? 'none' : '';
+      rect.style.display = emphasized ? 'block' : '';
+      if (emphasized) {
+        const labelWidth = label.getComputedTextLength();
+        const width = Math.max(node.rectWidth, labelWidth + 24 / zoomLevel);
+        const height = Math.max(node.rectHeight, 22 / zoomLevel);
+        rect.setAttribute('x', String(node.rectX + (node.rectWidth - width) / 2));
+        rect.setAttribute('y', String(-height / 2));
+        rect.setAttribute('width', String(width));
+        rect.setAttribute('height', String(height));
+      } else {
+        rect.setAttribute('x', String(node.rectX));
+        rect.setAttribute('y', String(-node.height / 2));
+        rect.setAttribute('width', String(node.rectWidth));
+        rect.setAttribute('height', String(node.rectHeight));
+      }
+    }
     segmentLayer.classList.toggle('ag-segment-overview', overview);
     segmentLayer.style.display = overview ? '' : 'none';
     overviewLayer.style.display = 'none';
@@ -224,6 +268,8 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       group.append(collapse);
     }
     if (traceIds.has(node.id)) group.classList.add('ag-trace-node');
+    if (tourHighlightIds.has(node.id)) group.classList.add('ag-node-tour-lit');
+    if (tourCurrentId === node.id) group.classList.add('ag-node-tour-current');
     if (selected === node.id) group.classList.add('ag-node-selected');
     group.addEventListener('click', (event) => {
       event.stopPropagation();
@@ -281,10 +327,10 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       const b = nodesById.get(edge.to);
       if (!a || !b) continue;
       const path = svgEl('path', {
-        class: `ag-edge ag-edge-${edge.kind}${traceEdges.has(`${edge.from}>${edge.to}>${edge.kind}`) ? ' ag-edge-traced' : ''}`,
+        class: `ag-edge ag-edge-${edge.kind}${traceEdges.has(`${edge.from}>${edge.to}>${edge.kind}`) ? ' ag-edge-traced' : ''}${tourEdgeKeys.has(edge.key) ? ' ag-edge-tour-lit' : ''}`,
         d: edgePath(a, b),
         stroke: COLORS[edge.line] ?? COLORS.common,
-        'stroke-width': edge.kind === 'mother' ? 1.1 : edge.kind === 'descends' ? 1.4 : 1.7,
+        'stroke-width': tourEdgeKeys.has(edge.key) ? 4 : edge.kind === 'mother' ? 1.1 : edge.kind === 'descends' ? 1.4 : 1.7,
       });
       path.style.opacity = String(lineOpacity(edge.line));
       edgeLayer.append(path);
@@ -379,9 +425,79 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     fitRect(Math.min(...nodes.map((node) => node.x - node.width / 2)), Math.min(...nodes.map((node) => node.y - node.height / 2)),
       Math.max(...nodes.map((node) => node.x + node.width / 2)), Math.max(...nodes.map((node) => node.y + node.height / 2)), animate, 180);
   };
+  const focusTourIds = (ids: string[], avoid: HTMLElement | null, animate = true): Promise<boolean> => {
+    const nodes = ids.map(nodeFor).filter((node): node is LayoutNode => Boolean(node));
+    if (!nodes.length) return Promise.resolve(false);
+    const bounds = {
+      left: Math.min(...nodes.map((node) => node.x - node.width / 2)),
+      right: Math.max(...nodes.map((node) => node.x + node.width / 2)),
+      top: Math.min(...nodes.map((node) => node.y - node.height / 2)),
+      bottom: Math.max(...nodes.map((node) => node.y + node.height / 2)),
+    };
+    const canvasRect = svg.getBoundingClientRect();
+    const gap = 22;
+    let areas = [{ left: canvasRect.left + 8, top: canvasRect.top + 8, right: canvasRect.right - 8, bottom: canvasRect.bottom - 8 }];
+    const cover = avoid?.getBoundingClientRect();
+    if (cover && cover.left < canvasRect.right && cover.right > canvasRect.left && cover.top < canvasRect.bottom && cover.bottom > canvasRect.top) {
+      const candidates = [
+        { left: canvasRect.left + 8, top: canvasRect.top + 8, right: canvasRect.right - 8, bottom: Math.min(canvasRect.bottom - 8, cover.top - gap) },
+        { left: Math.max(canvasRect.left + 8, cover.right + gap), top: canvasRect.top + 8, right: canvasRect.right - 8, bottom: canvasRect.bottom - 8 },
+        { left: canvasRect.left + 8, top: canvasRect.top + 8, right: Math.min(canvasRect.right - 8, cover.left - gap), bottom: canvasRect.bottom - 8 },
+        { left: canvasRect.left + 8, top: Math.max(canvasRect.top + 8, cover.bottom + gap), right: canvasRect.right - 8, bottom: canvasRect.bottom - 8 },
+      ].filter((area) => area.right - area.left > 100 && area.bottom - area.top > 100);
+      if (candidates.length) areas = candidates;
+    }
+    const padding = 20;
+    const maxLabelWidth = Math.max(...nodes.map((node) => {
+      const person = graph.byId.get(node.id);
+      return person ? [...person.name].reduce((sum, char) => sum + (char.codePointAt(0)! > 0x2e80 ? 13 : 7.5), 0) + 24 : 0;
+    }));
+    const requiredUnits = (area: typeof areas[number]) => Math.max(
+      (bounds.right - bounds.left + padding * 2) / Math.max(1, area.right - area.left - maxLabelWidth),
+      (bounds.bottom - bounds.top + padding * 2) / Math.max(1, area.bottom - area.top - 22),
+    );
+    const area = areas.reduce((best, candidate) => requiredUnits(candidate) < requiredUnits(best) ? candidate : best);
+    // Tour labels stay at 13 screen pixels; 0.2x is the smallest permitted camera scale.
+    const unitsPerPixel = Math.max(0.2, Math.min(5, requiredUnits(area)));
+    const viewWidth = Math.max(1, canvasRect.width) * unitsPerPixel;
+    const viewHeight = Math.max(1, canvasRect.height) * unitsPerPixel;
+    const centerX = (bounds.left + bounds.right) / 2;
+    const centerY = (bounds.top + bounds.bottom) / 2;
+    const areaCenterX = (area.left + area.right) / 2;
+    const areaCenterY = (area.top + area.bottom) / 2;
+    const target = {
+      x: centerX - ((areaCenterX - canvasRect.left) / Math.max(1, canvasRect.width)) * viewWidth,
+      y: centerY - ((areaCenterY - canvasRect.top) / Math.max(1, canvasRect.height)) * viewHeight,
+      width: viewWidth,
+      height: viewHeight,
+    };
+    let screenBounds = {
+      left: canvasRect.left + ((bounds.left - target.x) / viewWidth) * canvasRect.width,
+      right: canvasRect.left + ((bounds.right - target.x) / viewWidth) * canvasRect.width,
+      top: canvasRect.top + ((bounds.top - target.y) / viewHeight) * canvasRect.height,
+      bottom: canvasRect.top + ((bounds.bottom - target.y) / viewHeight) * canvasRect.height,
+    };
+    if (cover && cover.bottom >= canvasRect.bottom - 1 && cover.top > canvasRect.top) {
+      const blockedBottoms = nodes.map((node) => {
+        const left = canvasRect.left + ((node.x - node.width / 2 - target.x) / viewWidth) * canvasRect.width;
+        const right = canvasRect.left + ((node.x + node.width / 2 - target.x) / viewWidth) * canvasRect.width;
+        const top = canvasRect.top + ((node.y - node.height / 2 - target.y) / viewHeight) * canvasRect.height;
+        return { left, right, top, bottom: top + (node.height / viewHeight) * canvasRect.height };
+      }).filter((rect) => rect.left < cover.right && rect.right > cover.left && rect.top < cover.bottom && rect.bottom > cover.top);
+      const shiftUp = Math.max(0, ...blockedBottoms.map((rect) => rect.bottom - (cover.top - gap)));
+      if (shiftUp > 0) {
+        target.y += shiftUp * unitsPerPixel;
+        screenBounds = { ...screenBounds, top: screenBounds.top - shiftUp, bottom: screenBounds.bottom - shiftUp };
+      }
+    }
+    const fitsVisibleArea = screenBounds.left >= area.left - 1 && screenBounds.right <= area.right + 1 &&
+      screenBounds.top >= area.top - 1 && screenBounds.bottom <= area.bottom + 1;
+    return animateToBox(target, animate).then(() => fitsVisibleArea);
+  };
 
   const api: CanvasApi = {
     el: svg,
+    focusTourIds,
     focusPerson(id, animate = true) {
       const node = nodeFor(id);
       if (!node) return;
@@ -405,6 +521,42 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       setViewBox({ x: x - currentBox.width * ratio / 2, y: y - currentBox.height * ratio / 2, width: currentBox.width * ratio, height: currentBox.height * ratio });
     },
     select(id) { selected = id; refresh(); },
+    setTourHighlights(ids, currentId, edges) {
+      tourHighlightIds = new Set(ids);
+      tourCurrentId = currentId;
+      const adjacency = new Map<string, Array<{ id: string; key: string }>>();
+      for (const edge of layout.edges) {
+        adjacency.set(edge.from, [...(adjacency.get(edge.from) ?? []), { id: edge.to, key: edge.key }]);
+        adjacency.set(edge.to, [...(adjacency.get(edge.to) ?? []), { id: edge.from, key: edge.key }]);
+      }
+      tourEdgeKeys = new Set();
+      for (const [from, to] of edges) {
+        const parents = new Map<string, { id: string; key: string } | null>([[from, null]]);
+        const queue = [from];
+        while (queue.length && !parents.has(to)) {
+          const current = queue.shift()!;
+          for (const next of adjacency.get(current) ?? []) {
+            if (parents.has(next.id)) continue;
+            parents.set(next.id, { id: current, key: next.key });
+            queue.push(next.id);
+          }
+        }
+        let current = to;
+        while (parents.has(current) && current !== from) {
+          const step = parents.get(current);
+          if (!step) break;
+          tourEdgeKeys.add(step.key);
+          current = step.id;
+        }
+      }
+      refresh();
+    },
+    clearTourHighlights() {
+      tourHighlightIds.clear();
+      tourCurrentId = null;
+      tourEdgeKeys.clear();
+      refresh();
+    },
     setLine(line) { currentLine = line; refresh(); },
     setTrace(ids, edges) {
       traceIds = new Set(ids);
@@ -494,10 +646,9 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
   };
 
   svg.addEventListener('wheel', (event) => {
-    if (!event.ctrlKey && !event.metaKey) return;
     event.preventDefault();
     const focus = worldPoint(event.clientX, event.clientY);
-    const factor = event.deltaY < 0 ? 1.14 : 0.88;
+    const factor = Math.max(0.72, Math.min(1.4, Math.exp(-event.deltaY * 0.0015)));
     const ratio = 1 / factor;
     setViewBox({
       x: focus.x - (focus.x - currentBox.x) * ratio,

@@ -150,6 +150,19 @@ describe('家譜資料閘門', () => {
     }
   });
 
+  it('每站導覽序列都只用主線人物，且每個人都有版面節點', () => {
+    const graph = buildGraph(DATA);
+    const layout = computeLayout(DATA);
+    const layoutIds = new Set(layout.nodes.map((node) => node.id));
+    for (const stop of DATA.tour) {
+      expect(stop.sequence?.length, `${stop.id}: sequence`).toBeGreaterThan(0);
+      for (const id of stop.sequence ?? []) {
+        expect(graph.spineIds.has(id), `${stop.id}: ${id} should be on the spine`).toBe(true);
+        expect(layoutIds.has(id), `${stop.id}: ${id} should have a layout node`).toBe(true);
+      }
+    }
+  });
+
   it('所有人物、見證、年歲、註記與導覽引用都能在 verses.json 找到', () => {
     for (const ref of allReferenceKeys(DATA)) expect(VERSES[ref], ref).toBeTruthy();
   });

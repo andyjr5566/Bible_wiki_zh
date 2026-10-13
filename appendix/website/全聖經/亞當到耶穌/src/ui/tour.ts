@@ -14,6 +14,7 @@ export function createTour(data: GenealogyData, canvas: CanvasApi, onVerse: (ref
   const stops = data.tour ?? [];
   let at = 0;
   let active = false;
+  let highlightRun = 0;
   const settings = {
     get() { try { return localStorage.getItem('adam-jesus:intro-seen'); } catch { return null; } },
     set() { try { localStorage.setItem('adam-jesus:intro-seen', '1'); } catch { /* 私密模式下不保存導覽狀態 */ } },
@@ -21,11 +22,39 @@ export function createTour(data: GenealogyData, canvas: CanvasApi, onVerse: (ref
 
   const hide = () => layer.replaceChildren();
   const refsOf = (stop: TourStop) => Array.isArray(stop.refs) ? stop.refs : stop.refs ? [stop.refs] : [];
+  const pairsFor = (ids: string[]) => ids.slice(1).map((id, index): [string, string] => [ids[index]!, id]);
+  const revealStop = async (run: number, station: TourStop, ids: string[], card: HTMLElement) => {
+    const fits = await canvas.focusTourIds(ids, card, true);
+    if (!active || run !== highlightRun) return;
+    card.dataset.sequenceFits = String(fits);
+    const sequence = station.sequence?.length ? station.sequence : null;
+    if (!sequence || document.documentElement.dataset.motion === 'off') {
+      canvas.setTourHighlights(ids, null, pairsFor(ids));
+      return;
+    }
+    const lit: string[] = [];
+    const edges: Array<[string, string]> = [];
+    const delay = sequence.length > 10 ? 300 : 450;
+    for (let index = 0; index < sequence.length; index += 1) {
+      if (!active || run !== highlightRun) return;
+      if (document.documentElement.dataset.motion === 'off') {
+        canvas.setTourHighlights(sequence, null, pairsFor(sequence));
+        return;
+      }
+      const id = sequence[index]!;
+      lit.push(id);
+      if (index) edges.push([sequence[index - 1]!, id]);
+      canvas.setTourHighlights(lit, id, edges);
+      if (index < sequence.length - 1) await new Promise((resolve) => window.setTimeout(resolve, delay));
+    }
+  };
   const showStop = () => {
     if (!active || !stops.length) { stop(true); return; }
+    const run = ++highlightRun;
+    canvas.clearTourHighlights();
     const station = stops[at]!;
-    canvas.setTrace(station.focus, []);
-    canvas.focusIds(station.focus, true);
+    canvas.setTrace([], []);
+    const focus = station.sequence?.length ? station.sequence : station.focus;
     const card = h('section', { className: 'ag-tour-card', 'aria-live': 'polite' },
       h('div', { className: 'ag-tour-progress' }, `${String(at + 1).padStart(2, '0')}／${String(stops.length).padStart(2, '0')}`),
       h('h2', {}, station.title),
@@ -39,6 +68,7 @@ export function createTour(data: GenealogyData, canvas: CanvasApi, onVerse: (ref
         }, 'ag-primary-button'),
         button('跳過', () => stop(true), 'ag-text-button')));
     layer.replaceChildren(card);
+    void revealStop(run, station, focus, card);
   };
   const start = () => {
     settings.set();
@@ -49,6 +79,8 @@ export function createTour(data: GenealogyData, canvas: CanvasApi, onVerse: (ref
   };
   const stop = (fit = false) => {
     active = false;
+    highlightRun += 1;
+    canvas.clearTourHighlights();
     canvas.setTrace([], []);
     hide();
     if (fit) canvas.fitSpine(true);

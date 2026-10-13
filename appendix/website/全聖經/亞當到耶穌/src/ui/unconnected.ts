@@ -1,7 +1,7 @@
 import type { Family, GenealogyData, Person } from '../data/types';
 import { buildGraph, firstReference } from '../data/model';
 import { h } from './dom';
-import { createFamilyCard } from './ntfamilies';
+import { createFamilyCard, scrollFamilyNodeIntoView } from './ntfamilies';
 
 interface FamilyGroup {
   root: Person;
@@ -17,7 +17,9 @@ export interface UnattachedGroups {
 export interface UnconnectedFamiliesPage {
   el: HTMLElement;
   hasPerson(id: string): boolean;
+  groupIdFor(id: string): string | null;
   focusPerson(id: string): void;
+  highlightPerson(id: string | null): void;
 }
 
 export function groupUnattachedPeople(data: GenealogyData, graph = buildGraph(data)): UnattachedGroups {
@@ -62,7 +64,7 @@ export function groupUnattachedPeople(data: GenealogyData, graph = buildGraph(da
   return { people, families, singles };
 }
 
-export function createUnconnectedFamilies(data: GenealogyData, onPerson: (id: string) => void, onTree: (id: string) => void): UnconnectedFamiliesPage {
+export function createUnconnectedFamilies(data: GenealogyData, onPerson: (id: string, groupId: string) => void): UnconnectedFamiliesPage {
   const graph = buildGraph(data);
   const unattached = groupUnattachedPeople(data, graph);
   const groupIdByPerson = new Map<string, string>();
@@ -82,7 +84,7 @@ export function createUnconnectedFamilies(data: GenealogyData, onPerson: (id: st
       members: group.members.map((person) => person.id),
       imported: group.root.imported,
     };
-    const card = createFamilyCard(data, family, onPerson, onTree, graph);
+    const card = createFamilyCard(data, family, (personId) => onPerson(personId, id), graph);
     card.dataset.unconnectedGroup = id;
     page.append(card);
   }
@@ -94,8 +96,8 @@ export function createUnconnectedFamilies(data: GenealogyData, onPerson: (id: st
       h('p', { className: 'ag-eyebrow' }, `${unattached.singles.length} 位人物`), h('h2', {}, '其他單獨記載的人'),
       h('ul', {}, ...unattached.singles.map((person) => {
         const ref = firstReference(person);
-        const action = h('button', { className: 'ag-person-link', type: 'button' }, `${person.name}${ref ? `（${ref}）` : ''}`);
-        action.addEventListener('click', () => onPerson(person.id));
+        const action = h('button', { className: 'ag-person-link', type: 'button', 'data-family-person-id': person.id }, `${person.name}${ref ? `（${ref}）` : ''}`);
+        action.addEventListener('click', () => onPerson(person.id, id));
         return h('li', {}, action);
       })));
     page.append(list);
@@ -105,13 +107,24 @@ export function createUnconnectedFamilies(data: GenealogyData, onPerson: (id: st
   return {
     el: page,
     hasPerson: (id) => groupIdByPerson.has(id),
+    groupIdFor: (id) => groupIdByPerson.get(id) ?? null,
+    highlightPerson(id) {
+      const animate = document.documentElement.dataset.motion !== 'off';
+      for (const node of page.querySelectorAll<HTMLElement>('[data-family-person-id]')) {
+        const match = node.dataset.familyPersonId === id;
+        node.classList.toggle('ag-family-node-highlighted', match);
+        node.classList.toggle('ag-family-node-current', match && animate);
+        node.classList.toggle('ag-family-person-highlighted', match);
+        node.classList.toggle('ag-family-person-current', match && animate);
+      }
+    },
     focusPerson(id) {
       const groupId = groupIdByPerson.get(id);
       if (!groupId) return;
       const target = [...page.querySelectorAll<HTMLElement>('[data-unconnected-group]')]
         .find((element) => element.dataset.unconnectedGroup === groupId);
       if (!target) return;
-      page.scrollTo({ top: page.scrollTop + target.getBoundingClientRect().top - page.getBoundingClientRect().top - 20, behavior: 'smooth' });
+      scrollFamilyNodeIntoView(target, id);
     },
   };
 }

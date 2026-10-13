@@ -2653,6 +2653,13 @@ class LineageBuilder:
             for pid in stop.get("focus", []) or []:
                 if pid not in self.people:
                     self.err(where, f"focus 人物不存在：{pid}")
+            # sequence：導覽時依序高亮的人；網站要在畫布上找得到他們，所以限定主線上的人
+            spine_ids = set(self.lines.get("馬太", [])) | set(self.lines.get("路加", []))
+            for pid in stop.get("sequence", []) or []:
+                if pid not in self.people:
+                    self.err(where, f"sequence 人物不存在：{pid}")
+                elif pid not in spine_ids:
+                    self.err(where, f"sequence 只能放主線上的人：{pid}")
             parsed = self.refs(stop.get("refs", ""), where)
             self.check_quotes(str(stop.get("text", "")), parsed, where)
 
@@ -3272,7 +3279,7 @@ class LineageBuilder:
         (output_dir / "genealogy.json").write_text(
             json.dumps(payload, ensure_ascii=False, separators=(",", ":"), default=str), encoding="utf-8")
         (output_dir / "verses.json").write_text(
-            json.dumps(self.refs_used, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+            json.dumps(self.refs_used, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8")
 
 def build_page(data_spec: str, check: bool = False, review: str | None = None,
                print_summary: bool = True, export_json: str | None = None) -> bool:

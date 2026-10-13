@@ -4,6 +4,7 @@ import { button, h, linkButton } from './dom';
 
 export interface CardActions {
   select(id: string): void;
+  tree(id: string): void;
   verse(ref: string): void;
   trace(id: string): void;
   family(id: string): void;
@@ -12,7 +13,7 @@ export interface CardActions {
 
 export interface PersonCard {
   el: HTMLElement;
-  show(person: Person | null): void;
+  show(person: Person | null, treeTargetId?: string | null): void;
   setTraceMessage(message: string, unknownGenerations?: boolean, showFamilyLink?: boolean): void;
 }
 
@@ -68,7 +69,7 @@ export function createPersonCard(data: GenealogyData, actions: CardActions): Per
     section.append(list);
     return section;
   };
-  const show = (person: Person | null) => {
+  const show = (person: Person | null, treeTargetId?: string | null) => {
     current = person;
     traceMessage = '';
     unknownGenerations = false;
@@ -93,6 +94,7 @@ export function createPersonCard(data: GenealogyData, actions: CardActions): Per
             name.as, name.ref ? refButton(name.ref) : null, index < (person.names?.length ?? 0) - 1 ? h('i', {}, '；') : null))),
         firstReference(person) ? h('small', {}, `首見 ${firstReference(person)}`) : null),
     );
+    if (treeTargetId) body.append(button('在家譜樹上看', () => actions.tree(treeTargetId), 'ag-primary-button ag-card-tree-link'));
     const parents = person.parents ?? [];
     const parentSection = h('section', { className: 'ag-card-section' }, h('h3', {}, '父母'));
     if (!parents.length && person.mother_name) parentSection.append(h('p', {}, `母親：${person.mother_name}`));

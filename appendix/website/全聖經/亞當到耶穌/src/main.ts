@@ -34,8 +34,10 @@ const openVerse = (ref: string) => {
 
 let canvas: CanvasApi;
 let card: PersonCard;
+let activeCardPerson: Person | null = null;
 const selectPerson = (person: Person | null) => {
   if (!person) {
+    activeCardPerson = null;
     card.show(null);
     canvas.select(null);
     if (location.hash.startsWith('#p=')) history.replaceState(null, '', `${location.pathname}${location.search}`);
@@ -43,6 +45,7 @@ const selectPerson = (person: Person | null) => {
   }
   page = 'tree';
   applyPage();
+  activeCardPerson = person;
   const focusId = focusIdForPerson(person);
   canvas.select(focusId);
   if (focusId) canvas.focusPerson(focusId, true);
@@ -52,7 +55,13 @@ const selectPerson = (person: Person | null) => {
 
 canvas = createCanvas(data, selectPerson, openNote);
 card = createPersonCard(data, {
-  select: (id) => { const person = graph.byId.get(id); if (person) selectPerson(person); },
+  select: (id) => {
+    const person = graph.byId.get(id);
+    if (!person) return;
+    if (page === 'families' || page === 'unconnected') showFamilyPagePerson(person);
+    else selectPerson(person);
+  },
+  tree: focusTreeTarget,
   verse: openVerse,
   trace: traceToAdam,
   family: openPersonFamily,
@@ -67,8 +76,7 @@ const treePage = h('section', { className: 'ag-workspace ag-page-view', 'data-pa
         h('span', {}, h('i', { className: 'ag-dot ag-dot-matthew' }), '馬太'),
         h('span', {}, h('i', { className: 'ag-dot ag-dot-luke' }), '路加'),
         h('span', {}, h('i', { className: 'ag-dot ag-dot-side' }), '旁支')),
-      h('div', { className: 'ag-canvas-hint' }, '拖曳移動畫布　·　Ctrl＋滾輪縮放　·　觸控可平移與雙指縮放'))),
-  card.el);
+      h('div', { className: 'ag-canvas-hint' }, '拖曳移動畫布 · 滾輪縮放 · 觸控可平移與雙指縮放'))));
 const comparePage = createCompare(data, (id) => {
   const person = graph.byId.get(id);
   if (person) selectPerson(person);
@@ -81,31 +89,69 @@ const notesPage = createNotes(data, VERSES, (id) => {
   const person = graph.byId.get(id);
   if (person) selectPerson(person);
 }, openVerse);
-const familiesPage = createNTFamilies(data, (id) => {
+const familiesPage = createNTFamilies(data, (id, groupId) => {
   const person = graph.byId.get(id);
-  if (person) selectPerson(person);
-}, (id) => {
-  const person = graph.byId.get(id);
-  if (person) selectPerson(person);
+  if (person) showFamilyPagePerson(person, groupId);
 });
-const unconnectedFamiliesPage = createUnconnectedFamilies(data, (id) => {
+const unconnectedFamiliesPage = createUnconnectedFamilies(data, (id, groupId) => {
   const person = graph.byId.get(id);
-  if (person) selectPerson(person);
-}, (id) => {
-  const person = graph.byId.get(id);
-  if (person) selectPerson(person);
+  if (person) showFamilyPagePerson(person, groupId);
 });
 const pageNodes = new Map<PageId, HTMLElement>([
-  ['tree', treePage], ['compare', comparePage], ['ages', agesPage], ['notes', notesPage], ['families', familiesPage], ['unconnected', unconnectedFamiliesPage.el],
+  ['tree', treePage], ['compare', comparePage], ['ages', agesPage], ['notes', notesPage], ['families', familiesPage.el], ['unconnected', unconnectedFamiliesPage.el],
 ]);
 
-function focusPageTarget(container: HTMLElement, selector: string, value: string) {
-  const target = [...container.querySelectorAll<HTMLElement>(selector)].find((element) => element.dataset.familyCardId === value);
+let activeFamilyGroup: string | null = null;
+let activeFamilyPage: PageId | null = null;
+
+function familyPageController(id: PageId) {
+  return id === 'families' ? familiesPage : id === 'unconnected' ? unconnectedFamiliesPage : null;
+}
+
+function showFamilyPagePerson(person: Person, suppliedGroupId?: string) {
+  const controller = familyPageController(page);
+  if (!controller) return;
+  const groupId = suppliedGroupId ?? controller.groupIdFor(person.id);
+  if (groupId && (activeFamilyPage !== page || activeFamilyGroup !== groupId)) controller.focusPerson(person.id);
+  controller.highlightPerson(groupId ? person.id : null);
+  activeFamilyPage = page;
+  activeFamilyGroup = groupId;
+  activeCardPerson = person;
+  card.show(person, treeTargetForPerson(person));
+  history.replaceState(null, '', `${location.pathname}${location.search}#p=${encodeURIComponent(person.id)}`);
+}
+
+function focusTreeTarget(id: string) {
+  const target = graph.byId.get(id);
   if (!target) return;
-  container.scrollTo({ top: container.scrollTop + target.getBoundingClientRect().top - container.getBoundingClientRect().top - 20, behavior: 'smooth' });
+  page = 'tree';
+  applyPage();
+  canvas.expandFor(id);
+  canvas.select(id);
+  canvas.focusPerson(id, true);
+  if (activeCardPerson) history.replaceState(null, '', `${location.pathname}${location.search}#p=${encodeURIComponent(activeCardPerson.id)}`);
+}
+
+function treeTargetForPerson(person: Person): string | null {
+  const reachesSpine = (id: string) => graph.spineIds.has(id) || Boolean(pathToFirstAncestor(id, data, graph)?.ids.some((pathId) => graph.spineIds.has(pathId)));
+  if (reachesSpine(person.id)) return person.id;
+
+  const motherOf = data.persons.find((candidate) => reachesSpine(candidate.id) && (
+    candidate.parents?.some((parent) => parent.id === person.id && /母|mother/i.test(parent.role ?? '')) ||
+    candidate.mother_name === person.name || candidate.mother_name === person.id));
+  if (motherOf) return motherOf.id;
+
+  const spouse = person.spouses?.find((relation) => reachesSpine(relation.id));
+  if (spouse) return spouse.id;
+  const reverseSpouse = data.persons.find((candidate) => reachesSpine(candidate.id) && candidate.spouses?.some((relation) => relation.id === person.id));
+  return reverseSpouse?.id ?? null;
 }
 
 function openPersonFamily(id: string) {
+  card.show(null);
+  activeCardPerson = null;
+  activeFamilyGroup = null;
+  activeFamilyPage = null;
   if (unconnectedFamiliesPage.hasPerson(id)) {
     page = 'unconnected';
     applyPage();
@@ -116,7 +162,7 @@ function openPersonFamily(id: string) {
   if (family) {
     page = 'families';
     applyPage();
-    focusPageTarget(familiesPage, '[data-family-card-id]', family.id);
+    familiesPage.focusPerson(id);
     return;
   }
   page = 'unconnected';
@@ -127,7 +173,17 @@ function chooseSearchPerson(person: Person) {
   if (unconnectedFamiliesPage.hasPerson(person.id)) {
     page = 'unconnected';
     applyPage();
-    unconnectedFamiliesPage.focusPerson(person.id);
+    activeFamilyGroup = null;
+    activeFamilyPage = null;
+    showFamilyPagePerson(person);
+    return;
+  }
+  if (familiesPage.hasPerson(person.id)) {
+    page = 'families';
+    applyPage();
+    activeFamilyGroup = null;
+    activeFamilyPage = null;
+    showFamilyPagePerson(person);
     return;
   }
   selectPerson(person);
@@ -161,7 +217,16 @@ function applyPage() {
 
 const toolbar = createToolbar(data, {
   selectPerson: chooseSearchPerson,
-  setPage(id) { page = id; applyPage(); },
+  setPage(id) {
+    if (id !== page) {
+      activeCardPerson = null;
+      activeFamilyGroup = null;
+      activeFamilyPage = null;
+      card.show(null);
+    }
+    page = id;
+    applyPage();
+  },
   setLine(value) { line = value; canvas.setLine(value); },
   restartTour() { page = 'tree'; applyPage(); tour.start(); },
   zoom: (factor) => canvas.zoom(factor),
@@ -172,6 +237,7 @@ const toolbar = createToolbar(data, {
 const tour = createTour(data, canvas, openVerse);
 const main = h('main', { className: 'ag-main' });
 for (const element of pageNodes.values()) main.append(element);
+main.append(card.el);
 const footer = h('footer', { className: 'ag-footer' },
   h('span', {}, '家譜依資料中的經文記載呈現。'),
   h('span', {}, synthetic ? '合成壓力測試資料' : `${data.persons.length.toLocaleString()} 位人物`));

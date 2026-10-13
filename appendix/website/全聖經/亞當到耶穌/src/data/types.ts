@@ -133,6 +133,7 @@ export interface TourStop {
   id: string;
   title: string;
   focus: string[];
+  sequence?: string[];
   refs: string | string[];
   text: string;
 }
