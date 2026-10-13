@@ -1,0 +1,438 @@
+OpenAI Codex v0.162.1
+--------
+workdir: C:\Obsidian\Hermes\scripture
+model: gpt-6-luna
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: xhigh
+reasoning summaries: none
+session id: 01a134d2-e37e-71a1-9ebf-b74521959365
+--------
+user
+你是唯讀 reviewer，不得修改任何檔案。這是 commit 前的「全局 review」，不是 stage 審查，不佔兩次 reviewer 額度。
+書卷：約書亞記
+章：13
+請通讀這一章目前的 M3 條目內容（.tmp/第x章/entry_content）、M6（chapter_content.yaml）、link_updates.yaml、渲染後的章 md，以及它們連到的 link_folder 既有條目，只找下列問題：
+1. 重大遺漏（來源明確講了、卻沒寫進來的重要內容或該建未建的條目）。
+2. 內容失衡（某些主題篇幅畸重或畸輕，或散文與圖表比例失當）。
+3. M3／M6 之間、或本章與跨章條目之間的不一致（同一事實說法不同、定義與累積區塊矛盾）。
+wording 偏好、文風、可有可無的「更完整」建議一律不算 finding。每個 finding 附可機械複核的錨點。
+讀檔可用 MCP：read_chapter_artifact 的 artifact 可傳 entry_content/<條目名>.yaml 與 chapter.md（渲染後的章 md）；read_chapter_source 與 read_chapter_artifact 都有 start_character，長檔照回傳的 next_start_character 分段讀到 truncated=false 為止。
+最後一行請輸出 `GLOBAL_REVIEW: PASS` 或 `GLOBAL_REVIEW: CHANGES_REQUIRED`。
+補充說明：複核上一輪 finding 的修正：link_folder/地點/迦薩.md 的 ## 主題發展已補書11、13、15。請用 read_wiki_entry 實際讀取該條目並對照累積區塊；同時確認本輪修正沒有引出新的不一致。
+
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\andyj_adknr2z\.codex\config.toml): `c:\Users\andyj_adknr2z\.vscode\extensions\vexp.vexp-vscode-1.3.11\dist\mcp-server.cjs` is ignored.
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\andyj_adknr2z\.codex\config.toml): `c:\Users\andyj_adknr2z\.vscode\extensions\vexp.vexp-vscode-1.3.11\dist\mcp-server.cjs` is ignored.
+warning: failed to parse hooks config C:\Obsidian\Hermes\scripture\.codex\hooks.json: unknown field `_cc_bridge_version`, expected `description` or `hooks` at line 2 column 22
+codex
+我會在本輪重新讀取指定產物與來源，先直接複核迦薩條目修正及其第11、13、15章累積對照，再檢查是否造成新矛盾；全程唯讀，不改檔。
+mcp: vexp/run_pipeline started
+mcp: vexp/run_pipeline (failed)
+MCP tool call requires approval, but approval policy is never
+mcp: hermes-scripture/get_chapter_status started
+mcp: hermes-scripture/get_chapter_status (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+codex
+本輪產物確認 M3 有20條、link_updates 有61筆，M6與渲染章 md 均可完整讀取。現在逐條讀 M3 與 81 個連結目標，並重新讀四套 commentary；迦薩條目修正會與同頁的逐章累積和本輪 link update 一起核對。
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+context compacted
+codex
+四套 commentary 已在本輪完整讀完；目前已逐一讀取多數連結條目，並確認迦薩主題發展已納入書13且與累積區塊一致。我會繼續核對其餘連結條目，特別是基尼烈湖與大型條目的章節區塊。
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+codex
+基尼烈湖條目已直接展開全文核實：主題發展確實涵蓋民34、申3及書11–13五章，書13:27 的迦得地界終點也與累積區塊相合。其餘已讀條目目前未見明顯事實矛盾，我正完成新建地名條目的逐項檢查。
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command '$doc = Get-Content -Raw -LiteralPath '"'link_folder\\人物\\摩西.md'; "'$acc = [regex]::Match($doc, '"'(?s)<"'!-- accumulation:約書亞記:13:start -->(.*?)<!-- accumulation:約書亞記:13:end -->'"'); "'$dev = [regex]::Match($doc, '"'(?s)## 主題發展\\s*(.*?)(?:\\n## |\\z)'); 'ACCUMULATION:'; "'$acc.Value; '"'TOPIC DEVELOPMENT:'; "'$dev.Groups[1].Value' in C:\Obsidian\Hermes\scripture
+ succeeded in 174ms:
+ACCUMULATION:
+
+TOPIC DEVELOPMENT:
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Location; Test-Path -LiteralPath 'link_folder\\人物\\摩西.md'" in C:\Obsidian\Hermes\scripture
+ succeeded in 89ms:
+
+Path                        
+----                        
+C:\Obsidian\Hermes\scripture
+True
+
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command '$doc = Get-Content -Raw -LiteralPath '"'link_folder\\人物\\摩西.md'; 'CHARS=' + "'$doc.Length; $doc.Substring([Math]::Max(0, $doc.Length - 3000))' in C:\Obsidian\Hermes\scripture
+ succeeded in 98ms:
+CHARS=82887
+•™ä¸‹ä¸€å¥æŠ±æ€¨â€”â€”KC æ³¨æ„åˆ°é€™ä¸€é»žï¼Œèªªä»–å¸¶è‘—æ„›æŠŠé ˜å°Žæ¬Šäº¤å‡ºåŽ»ã€‚ä»–æŠŠå¾‹æ³•å¯«å‡ºä¾†äº¤çµ¦ç¥­å¸èˆ‡é•·è€ï¼Œä¸¦ä¸”æ›¿é€™å·æ›¸å®šå¥½æ¯ä¸ƒå¹´å®£è®€ä¸€æ¬¡ã€‚ä»–ç…§ç¥žçš„å©å’å¯«ä¸€ç¯‡æ­Œï¼Œæ•™å°Žç™¾å§“å¿µèª¦ã€‚ä»–æœ€å¾ŒæŠŠæ”¯æ´¾çš„çœ¾é•·è€å’Œå®˜é•·å«é½Šï¼Œå‘¼å¤©å–šåœ°ç‚ºé‚£é¦–æ­Œç«‹ä¸‹è¦‹è­‰ã€‚
+
+==å››æ¨£æ±è¥¿çš„å…±åŒé»žæ˜¯å®ƒå€‘éƒ½ä¸ä¾è³´æ‘©è¥¿é‚„åœ¨ã€‚==æŽ¥ç­äººç”±ç¥žè¦ªè‡ªå›‘å’éŽï¼Œæ›¸æ”¾åœ¨ç´„æ«ƒæ—ï¼Œæ­Œåœ¨ç™¾å§“å£ä¸­ï¼Œè­‰äººæ˜¯å¤©å’Œåœ°ã€‚
+
+GTã€Šè–ç¶“ç²¾è®€æœ¬â”€â”€ç”³å‘½è¨˜è¨»è§£ã€‹æŠŠé€™ä¸€æ®µç¨±ä½œæ‘©è¥¿çš„æœ€å¾Œäº‹å·¥ï¼Œèªªæœ¬æ–‡æç¹ªäº†æ‘©è¥¿çŸ¥é“è‡ªå·±çš„åŽ»æ—¥ä¸é ã€ä¾¿ç«­ç›¡å…¨åŠ›å®Œæˆç¥žå§”ä»»ä»–ä¹‹äº‹çš„å ´é¢ã€‚GTã€Šå•Ÿå°Žæœ¬è–ç¶“ç”³å‘½è¨˜è¨»é‡‹ã€‹è£œä¸Šä¸€å¥æ›´è²¼è¿‘äººçš„è§€å¯Ÿï¼šé›–ç„¶æ‘©è¥¿å³å°‡é›¢ä¸–ï¼Œä½†ä»–æ‰€é—œå¿ƒçš„å»ä¸æ˜¯å€‹äººçš„å¾Œäº‹ï¼Œè€Œæ˜¯ç›¡å®Œæœ€å¾Œçš„è²¬ä»»ã€‚
+
+## ç›¸é—œæ¢ç›®
+
+- [[æš—è˜­]]
+- [[ç´„åŸºåˆ¥]]
+- [[ç±³åˆ©æš—]]
+- [[æ‘©è¥¿åå­—çš„ç”±ä¾†]]
+- [[æ‘©è¥¿æ†‘å·±åŠ›æ–½æ•‘èˆ‡ç¥žçš„æ™‚é–“]]
+- [[ç±³ç”¸æ› é‡Žå°æ‘©è¥¿çš„é å‚™]]
+
+## ä¾†æºä¾æ“š
+
+- å‡ºåŸƒåŠè¨˜2:1-25
+- ä½¿å¾’è¡Œå‚³7:20-29
+- å¸Œä¼¯ä¾†æ›¸11:23-27
+- https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT02.htm
+- https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT02.htm
+- https://www.kingcomments.com/en/bible-studies/Exo/2
+- https://biblehub.com/study/exodus/2.htm
+- https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT01.htm â€” ccbiblestudy è¨»è§£ï¼ˆCTï¼‰æ°‘æ•¸è¨˜ç¬¬1ç« 
+- https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT01.htm â€” ccbiblestudy æ‹¾ç©—ï¼ˆGTï¼‰æ°‘æ•¸è¨˜ç¬¬1ç« 
+- https://www.kingcomments.com/en/bible-studies/Num/1 â€” KingComments æ°‘æ•¸è¨˜ç¬¬1ç« 
+- https://biblehub.com/study/numbers/1.htm â€” BibleHub Study æ°‘æ•¸è¨˜ç¬¬1ç« 
+- https://github.com/STEPBible/STEPBible-Data â€” STEP Bible åŽŸæ–‡è³‡æ–™ï¼ˆCC BY 4.0ï¼‰æ°‘æ•¸è¨˜ç¬¬1ç« 
+- https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT03.htm â€” ccbiblestudy è¨»è§£ï¼ˆCTï¼‰æ°‘æ•¸è¨˜ç¬¬3ç« 
+- https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT03.htm â€” ccbiblestudy æ‹¾ç©—ï¼ˆGTï¼‰æ°‘æ•¸è¨˜ç¬¬3ç« 
+- https://www.kingcomments.com/en/bible-studies/Num/3 â€” KingComments æ°‘æ•¸è¨˜ç¬¬3ç« 
+- https://biblehub.com/study/numbers/3.htm â€” BibleHub Study æ°‘æ•¸è¨˜ç¬¬3ç« 
+- https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT04.htm â€” ccbiblestudy è¨»è§£ï¼ˆCTï¼‰æ°‘æ•¸è¨˜ç¬¬4ç« 
+- https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT04.htm â€” ccbiblestudy æ‹¾ç©—ï¼ˆGTï¼‰æ°‘æ•¸è¨˜ç¬¬4ç« 
+- https://www.kingcomments.com/en/bible-studies/Num/4 â€” KingComments æ°‘æ•¸è¨˜ç¬¬4ç« 
+- https://biblehub.com/study/numbers/4.htm â€” BibleHub Study æ°‘æ•¸è¨˜ç¬¬4ç« 
+- https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT05.htm â€” ccbiblestudy è¨»è§£ï¼ˆCTï¼‰æ°‘æ•¸è¨˜ç¬¬5ç« 
+- https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT05.htm â€” ccbiblestudy æ‹¾ç©—ï¼ˆGTï¼‰æ°‘æ•¸è¨˜ç¬¬5ç« 
+- https://www.kingcomments.com/en/bible-studies/Num/5 â€” KingComments æ°‘æ•¸è¨˜ç¬¬5ç« 
+- https://biblehub.com/study/numbers/5.htm â€” BibleHub Study æ°‘æ•¸è¨˜ç¬¬5ç« 
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command '$doc = [System.IO.File]::ReadAllText((Resolve-Path -LiteralPath '"'link_folder\\人物\\摩西.md'), [System.Text.Encoding]::UTF8); "'$acc = [regex]::Match($doc, '"'(?s)<"'!-- accumulation:約書亞記:13:start -->(.*?)<!-- accumulation:約書亞記:13:end -->'"'); "'$dev = [regex]::Match($doc, '"'(?s)## 主題發展\\s*(.*?)(?:\\n## |\\z)'); 'CHARS=' + "'$doc.Length; '"'ACCUMULATION:'; "'$acc.Value; '"'TOPIC DEVELOPMENT:'; "'$dev.Groups[1].Value' in C:\Obsidian\Hermes\scripture
+ succeeded in 73ms:
+CHARS=35398
+ACCUMULATION:
+<!-- accumulation:約書亞記:13:start -->
+#### [[06 約書亞記/第13章|第13章]]
+- 本章重點：本章一再說河東的產業是摩西所分：第8節稱「耶和華的僕人摩西在約但河東所賜給他們的」，第15、24節說「摩西按著流便支派的宗族分給他們產業」「摩西按著迦得支派的宗族分給他們產業」，第29節說「摩西把產業分給瑪拿西半支派」，第32節總結是摩西在摩押平原所分；第33節則說利未的產業不是摩西給的。
+- 與本章關聯：GT《聖經精讀本》說稱摩西為「耶和華的僕人」暗示分配河東之地合乎神旨意；KC 說第13節沒有趕逐基述人、瑪迦人，不是因為摩西，而是因為百姓不忠。
+<!-- accumulation:約書亞記:13:end -->
+TOPIC DEVELOPMENT:
+摩西的軌跡橫跨四卷書，是一條從拒絕、到中保、再到被超越的預表的線。CT 把他在出埃及記裡的轉折分成三段：首四十年「自以為我能」（徒7:22），次四十年在何烈山前才承認「我不能」（出4:10），末四十年在曠野裡「認識神能」（申3:24）——出2-4章記的正是第一段到第二段的斷點。KC 從出4:13 讀出這個斷點的性質：到那一步已經不能算是異議而是拒絕，而拒絕並不是謙卑；神的回應不是移除他的軟弱，而是以同在與話語賦權他。從出7章他「照樣行了」開始，摩西的角色定型為中保：出17、32 兩次代求（來源屢次讀出這是主耶穌代求職分的預表，來7:25），出19、24 成為約的傳達者與立約者（KC：摩西為使徒、亞倫為大祭司，二人一同預表基督，來3:1），出34 領受神性情的宣告後下山，面皮發光而不自知——GT《丁道爾》說這與施洗約翰、保羅一樣不自知其超卓，正是真屬靈偉人的記號（民12:3）。到利未記，他的角色收窄成純粹的傳達者：利8章他還以過渡期祭司的身分代行獻祭，利9章起祭司職分正式移交亞倫，此後利未記全書、直到民數記，都是「耶和華對摩西說」的授命模式反覆出現——CT 指出這樣的模式在民數記裡至少記載了八十次以上。這條軌跡最後在出40章、被希伯來書明確定位為一個被超越的預表：摩西是神家中忠心的僕人（來3:5），基督卻是治理神家的兒子（來3:6）——KC 說，摩西是主耶穌的圖畫，而主耶穌比摩西更大。
+
+
+### 民數記後半：從中保到被判出局
+
+民數記16-20 這一段，摩西的中保角色被推到極處，也在同一段裡斷掉。可拉黨叛變時他與亞倫俯伏在地為全會眾求情（民16:22），瘟疫發作後又打發亞倫拿香爐跑進會眾中止住災殃（民16:47-48）；民17 十二根杖的試驗、民18 祭司與利未人職分的重申，都是由他接令傳達。
+
+轉折在民20。神吩咐他向磐石說話，他卻斥責百姓為背叛的人、舉手用杖擊打磐石兩下，神因此宣告：「因為你們不信我，不在以色列人眼前尊我為聖，所以你們必不得領這會眾進我所賜給他們的地去。」CT 的〔話中之光〕指出這次失敗的性質不在脾氣本身，而在它牽連了神：「摩西那一次的發脾氣影響到神的自己，把神也拖在裏面，叫以色列人分不清，以為流出水來給我們喝的是神，發脾氣罵我們的也是神。」GT《聖經精讀本──民數記註解》的判語更短：「他把自己的感情高舉在神公義的審判和神的話語之上,這就是摩西的過失。」
+
+值得注意的是這一章同時記下他的另一面。KC 把他在民20 遭遇的五件事列成一串——姊姊米利暗的死、百姓的暴動、自己的失敗與懲罰、以東的拒絕、哥哥亞倫的死——而他在這一連串打擊之後仍然照耶和華所吩咐的行（民20:27），親手為哥哥脫下聖衣。從出2 的「自以為我能」到民20 的失去資格，這條線的收束並不是失敗，而是一個仍然順服、卻不能進去的僕人。
+
+### 從被判不得進地，到把工作交出去
+
+民數記後半那一段結束於摩西被判不得進地。申命記三十一章接的正是那個判詞留下來的問題：既然進不去，他要留下什麼。
+
+這一章記的四件事全都指向同一個方向。他當眾任命約書亞，並且沒有留下一句抱怨——KC 注意到這一點，說他帶著愛把領導權交出去。他把律法寫出來交給祭司與長老，並且替這卷書定好每七年宣讀一次。他照神的吩咐寫一篇歌，教導百姓念誦。他最後把支派的眾長老和官長叫齊，呼天喚地為那首歌立下見證。
+
+==四樣東西的共同點是它們都不依賴摩西還在。==接班人由神親自囑咐過，書放在約櫃旁，歌在百姓口中，證人是天和地。
+
+GT《聖經精讀本──申命記註解》把這一段稱作摩西的最後事工，說本文描繪了摩西知道自己的去日不遠、便竭盡全力完成神委任他之事的場面。GT《啟導本聖經申命記註釋》補上一句更貼近人的觀察：雖然摩西即將離世，但他所關心的卻不是個人的後事，而是盡完最後的責任。
+
+
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+codex
+本輪實際讀完 M3 的 20 個條目、M6、61 項 `link_updates`、渲染章文、四套 commentary 全文，以及本章相關的 81 個連結條目。未發現符合本次範圍的重大遺漏、內容失衡或實質不一致。
+
+迦薩主題發展已涵蓋書11、13、15，且與書13累積區塊及 `link_updates.yaml` 相符；巴力迦得與基尼烈湖的主題發展修正也已複核，未見新矛盾。
+
+GLOBAL_REVIEW: PASS
+tokens used
+951,858
+本輪實際讀完 M3 的 20 個條目、M6、61 項 `link_updates`、渲染章文、四套 commentary 全文，以及本章相關的 81 個連結條目。未發現符合本次範圍的重大遺漏、內容失衡或實質不一致。
+
+迦薩主題發展已涵蓋書11、13、15，且與書13累積區塊及 `link_updates.yaml` 相符；巴力迦得與基尼烈湖的主題發展修正也已複核，未見新矛盾。
+
+GLOBAL_REVIEW: PASS
