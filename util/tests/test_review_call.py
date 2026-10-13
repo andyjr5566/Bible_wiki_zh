@@ -4,6 +4,7 @@
 codex／agy 一律 mock（patch review_call._run_process 等縫），測試不會呼叫任何 reviewer。
 """
 import json
+import os
 import sys
 import tempfile
 import unittest
@@ -84,6 +85,16 @@ class FooterAndModelTests(unittest.TestCase):
                           "-c", 'sandbox_mode="read-only"', "-c", review_call.CODEX_MCP_APPROVAL, "-"], resumed)
         self.assertNotIn("--sandbox", resumed)          # resume 子命令不吃 --sandbox
         self.assertIn('default_tools_approval_mode="approve"', review_call.CODEX_MCP_APPROVAL)
+
+    def test_codex_command_extra_config_from_env(self):
+        root = Path("C:/repo")
+        with patch.dict(os.environ, {"HERMES_CODEX_EXTRA_CONFIG":
+                                          "mcp_servers.node_repl.enabled=false; "}):
+            cmd = review_call.codex_command("codex", root, None)
+        self.assertEqual(["-c", "mcp_servers.node_repl.enabled=false", "-"], cmd[-3:])
+        with patch.dict(os.environ, {"HERMES_CODEX_EXTRA_CONFIG": 'sandbox_mode="danger-full-access"'}):
+            with self.assertRaises(review_call.ReviewCallError):
+                review_call.codex_command("codex", root, "abc")
 
     def test_agy_command(self):
         cmd = review_call.agy_command("PROMPT", "gemini-3.8-flash-high", None)

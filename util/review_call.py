@@ -226,6 +226,14 @@ def codex_command(codex_bin: str, root: Path, thread_id: str | None,
     else:
         cmd = [codex_bin, "exec", "--sandbox", "read-only", "--skip-git-repo-check",
                "-c", CODEX_MCP_APPROVAL, "-C", str(root)]
+    # 額外的 -c 覆寫（分號分隔），例如在 Windows 沙箱 setup 被某個 MCP runtime 卡住時
+    # 只對 reviewer 呼叫停用它：mcp_servers.node_repl.enabled=false。不得用來放寬沙箱。
+    for item in os.environ.get("HERMES_CODEX_EXTRA_CONFIG", "").split(";"):
+        item = item.strip()
+        if item:
+            if item.split("=", 1)[0].strip() in {"sandbox_mode", "sandbox"}:
+                raise ReviewCallError("HERMES_CODEX_EXTRA_CONFIG 不得覆寫沙箱設定")
+            cmd += ["-c", item]
     if last_message_file is not None:
         cmd += ["-o", str(last_message_file)]
     cmd.append("-")
