@@ -9,7 +9,7 @@ export type CanvasLine = 'both' | '馬太' | '路加';
 export interface CanvasApi {
   el: SVGSVGElement;
   focusPerson(id: string, animate?: boolean): void;
-  focusIds(ids: string[], animate?: boolean): void;
+  focusIds(ids: string[], animate?: boolean, minZoom?: number): void;
   focusTourIds(ids: string[], avoid: HTMLElement | null, animate?: boolean): Promise<boolean>;
   fitSpine(animate?: boolean): void;
   fitAll(animate?: boolean): void;
@@ -37,6 +37,8 @@ interface OverviewBand {
 // 縮小到這個比例以下就改畫「總覽」：只畫主線，名字一律用固定的螢幕字級
 const OVERVIEW_ZOOM = 0.6;
 const OVERVIEW_LABEL_PX = 13;
+// 展開旁支後的最小縮放：要讀得到名字，也要高於總覽的門檻
+const READABLE_ZOOM = 0.72;
 interface Pointer { x: number; y: number }
 
 const COLORS: Record<string, string> = { common: 'var(--ag-ink)', '馬太': 'var(--ag-matthew)', '路加': 'var(--ag-luke)' };
@@ -131,7 +133,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     const height = Math.max(1, rect.height) / zoom;
     animateToBox({ x: x - width / 2, y: y - height / 2, width, height }, animate);
   };
-  const fitRect = (x0: number, y0: number, x1: number, y1: number, animate = false, padding = 90, lockAspect = true) => {
+  const fitRect = (x0: number, y0: number, x1: number, y1: number, animate = false, padding = 90, lockAspect = true, minZoom = 0) => {
     const rect = svg.getBoundingClientRect();
     const aspect = Math.max(0.45, rect.width / Math.max(1, rect.height));
     let width = Math.max(160, x1 - x0 + padding * 2);
@@ -141,6 +143,16 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       else width = height * aspect;
     }
     const target: ViewBox = { x: (x0 + x1) / 2 - width / 2, y: (y0 + y1) / 2 - height / 2, width, height };
+    // 展開旁支時不能縮到會變成「總覽」的比例（總覽不畫旁支，使用者會看到空白）：
+    // 太大放不下就維持可讀的比例，從這一組的頂端開始看，其餘用拖曳或捲動看
+    if (minZoom > 0 && rect.height / target.height < minZoom) {
+      const readableHeight = rect.height / minZoom;
+      const readableWidth = readableHeight * (width / height);
+      target.width = readableWidth;
+      target.height = readableHeight;
+      target.x = (x0 + x1) / 2 - readableWidth / 2;
+      target.y = (y1 - y0) + 2 * (padding / 3) <= readableHeight ? (y0 + y1) / 2 - readableHeight / 2 : y0 - padding / 3;
+    }
     animateToBox(target, animate);
   };
   const finishAnimation = () => {
@@ -450,15 +462,18 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       group.append(label);
       const toggle = (event: Event) => {
         event.stopPropagation();
+        const parentId = node.groupParentId ?? '';
         if (expanded.has(node.groupKey!)) {
           expanded.delete(node.groupKey!);
           for (const id of node.groupMembers ?? []) expanded.delete(id);
+          refresh(true);
+          requestAnimationFrame(() => focusIds([parentId], true));
         } else {
+          // 只展開這一層：每個孩子先收著（顯示「+N」），要看他的後代再點他
           expanded.add(node.groupKey!);
-          for (const id of node.groupMembers ?? []) expanded.add(id);
+          refresh(true);
+          requestAnimationFrame(() => focusIds([parentId, ...(node.groupMembers ?? [])], true, READABLE_ZOOM));
         }
-        refresh(true);
-        requestAnimationFrame(() => focusIds(node.groupMembers?.length ? node.groupMembers : [node.groupParentId ?? ''], true));
       };
       group.addEventListener('click', toggle);
       group.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggle(event); } });
@@ -516,7 +531,12 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       collapse.append(svgEl('circle', { r: 10 }), (() => {
         const label = svgEl('text', { 'text-anchor': 'middle', 'dominant-baseline': 'central' }); label.textContent = '−'; return label;
       })());
-      const collapseTree = (event: Event) => { event.stopPropagation(); expanded.delete(node.id); refresh(true); };
+      const collapseTree = (event: Event) => {
+        event.stopPropagation();
+        expanded.delete(node.id);
+        refresh(true);
+        requestAnimationFrame(() => focusIds([node.id], true));
+      };
       collapse.addEventListener('click', collapseTree);
       collapse.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); collapseTree(event); } });
       group.append(collapse);
@@ -531,7 +551,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       if (node.collapsed) {
         expanded.add(node.id);
         refresh(true);
-        requestAnimationFrame(() => focusIds([person.id, ...(graph.children.get(person.id) ?? [])], true));
+        requestAnimationFrame(() => focusIds([person.id, ...(graph.children.get(person.id) ?? [])], true, READABLE_ZOOM));
       } else onSelect(person);
     });
     group.addEventListener('keydown', (event) => {
@@ -655,6 +675,8 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       layoutAnimationFrame = requestAnimationFrame(tick);
     }
     cullToViewport();
+    // 版面變動後如果畫面上一個節點都沒有（例如收合了正在看的那一組），回到主線，不要留一片空白
+    if (!overviewMode && ![...nodeEls.values()].some((element) => element.style.display !== 'none')) fitSpine(animate);
   }
 
   const fitSpine = (animate = false) => {
@@ -670,11 +692,11 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     const centerY = currentBox.y + currentBox.height / 2;
     animateToBox({ x: centerX - width / 2, y: centerY - height / 2, width, height }, animate);
   };
-  const focusIds = (ids: string[], animate = true) => {
+  const focusIds = (ids: string[], animate = true, minZoom = 0) => {
     const nodes = ids.map(nodeFor).filter((node): node is LayoutNode => Boolean(node));
     if (!nodes.length) return;
     fitRect(Math.min(...nodes.map((node) => node.x - node.width / 2)), Math.min(...nodes.map((node) => node.y - node.height / 2)),
-      Math.max(...nodes.map((node) => node.x + node.width / 2)), Math.max(...nodes.map((node) => node.y + node.height / 2)), animate, 180);
+      Math.max(...nodes.map((node) => node.x + node.width / 2)), Math.max(...nodes.map((node) => node.y + node.height / 2)), animate, 180, true, minZoom);
   };
   const focusTourIds = (ids: string[], avoid: HTMLElement | null, animate = true): Promise<boolean> => {
     const nodes = ids.map(nodeFor).filter((node): node is LayoutNode => Boolean(node));
