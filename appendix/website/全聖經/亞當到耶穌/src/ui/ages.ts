@@ -8,7 +8,7 @@ export function createAges(data: GenealogyData, verses: VerseMap, onPerson: (id:
     h('div', { className: 'ag-page-heading' }, h('div', {}, h('p', { className: 'ag-eyebrow' }, '創世後年份'), h('h1', {}, '年歲時間軸')),
       h('p', {}, '橫槓表示經文記載的生與死；點和經節標出父親生子的時間。')));
   if (!people.length) {
-    root.append(h('div', { className: 'ag-empty-state' }, h('strong', {}, '這份資料沒有年歲記錄'), h('p', {}, '時間軸會在 genealogy.json 提供 ages.people 後顯示。')));
+    root.append(h('div', { className: 'ag-empty-state' }, h('strong', {}, '目前沒有年歲資料')));
     return root;
   }
   const graph = buildGraph(data);
@@ -82,7 +82,7 @@ export function createAges(data: GenealogyData, verses: VerseMap, onPerson: (id:
     const text = typeof note === 'string' ? note : typeof note.text === 'string' ? note.text : '';
     if (text) notes.append(h('p', {}, text));
   }
-  if (!data.ages.notes?.length) notes.append(h('p', { className: 'ag-muted' }, '這份資料沒有補充說明。'));
+  if (!data.ages.notes?.length) notes.append(h('p', { className: 'ag-muted' }, '沒有補充說明。'));
   const legend = h('div', { className: 'ag-age-legend' }, h('span', { className: 'ag-age-legend-born' }, '出生'), h('span', { className: 'ag-age-legend-child' }, '生子'), h('span', { className: 'ag-age-legend-died' }, '死亡'));
   root.append(legend, h('div', { className: 'ag-ages-scroll' }, svg), notes);
   return root;

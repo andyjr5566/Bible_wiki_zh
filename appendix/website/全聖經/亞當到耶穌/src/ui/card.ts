@@ -96,7 +96,8 @@ export function createPersonCard(data: GenealogyData, actions: CardActions): Per
     );
     const meaning = person.nameMeaning;
     if (meaning) {
-      const section = h('section', { className: 'ag-card-section ag-name-meaning' }, h('h3', {}, '名字的意思'));
+      const hasMeaning = Boolean(meaning.meaningEn) || meaning.scripture.length > 0;
+      const section = h('section', { className: 'ag-card-section ag-name-meaning' }, h('h3', {}, hasMeaning ? '名字的意思' : '名字的原文'));
       if (meaning.orig) {
         const isGreek = meaning.strong.startsWith('G');
         section.append(h('p', { className: 'ag-name-orig' },
@@ -106,16 +107,14 @@ export function createPersonCard(data: GenealogyData, actions: CardActions): Per
       if (meaning.meaningEn) {
         section.append(h('p', { className: 'ag-name-gloss' }, meaning.meaningZh || meaning.meaningEn,
           meaning.meaningZh ? h('small', {}, `　${meaning.meaningEn}`) : null));
-        if (meaning.via) section.append(h('p', { className: 'ag-name-via' }, `希臘文詞典沒有字義；這是它標明的對應希伯來文名字 ${meaning.via} 的字義。`));
-      } else if (meaning.orig && !meaning.scripture.length) {
-        section.append(h('p', { className: 'ag-muted ag-name-none' }, 'STEP 詞典沒有列這個名字的字義（希臘文名字的詞條通常不附字義）。'));
+        if (meaning.via) section.append(h('p', { className: 'ag-name-via' }, `字義取自對應的希伯來文名字 ${meaning.via}。`));
       }
       for (const item of meaning.scripture) {
         section.append(h('blockquote', { className: 'ag-name-quote' }, `「${item.quote}」`, refButton(item.ref)));
       }
       if (meaning.meaningEn || meaning.orig) {
-        section.append(h('small', { className: 'ag-name-source' }, '原文與字義：STEP Bible 詞典（CC BY 4.0，字義依 BDB 簡編，中文為本站譯）；對位經節 ',
-          refButton(meaning.ref)));
+        section.append(h('small', { className: 'ag-name-source' },
+          meaning.meaningEn ? '原文與字義出處：STEP Bible（CC BY 4.0）；字義中文為本站翻譯。' : '原文出處：STEP Bible（CC BY 4.0）。'));
       }
       body.append(section);
     }

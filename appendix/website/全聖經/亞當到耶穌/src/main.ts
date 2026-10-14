@@ -40,11 +40,11 @@ const openVerse = (ref: string) => {
   const lines = lookupVerses(ref);
   const found = lines.some((line) => line.text);
   const verseBody = !found
-    ? h('p', { className: 'ag-empty-state' }, '這節經文尚未收錄在目前的 verses.json。')
+    ? h('p', { className: 'ag-empty-state' }, '這節經文暫時沒有收錄。')
     : lines.length === 1
       ? h('p', { className: 'ag-verse-text' }, lines[0]!.text!)
       : h('div', { className: 'ag-verse-list' }, ...lines.map((line) => h('p', { className: 'ag-verse-text' },
-        h('span', { className: 'ag-verse-no' }, line.key.replace(/^.*:/, '')), line.text ?? '（這節尚未收錄）')));
+        h('span', { className: 'ag-verse-no' }, line.key.replace(/^.*:/, '')), line.text ?? '（這節暫時沒有收錄）')));
   const dialog = h('section', { className: 'ag-verse-dialog', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'ag-verse-title' },
     h('div', { className: 'ag-dialog-head' }, h('div', {}, h('p', { className: 'ag-eyebrow' }, '經文全文'), h('h2', { id: 'ag-verse-title' }, ref)),
       button('關閉', closeDialog, 'ag-card-close')),
@@ -334,7 +334,7 @@ function noteDialog(note: GenealogyNote): HTMLElement {
     h('div', { className: 'ag-dialog-head' }, h('div', {}, h('p', { className: 'ag-eyebrow' }, '經文不同的地方'), h('h2', { id: 'ag-note-dialog-title' }, note.title)),
       button('關閉', closeDialog, 'ag-card-close')));
   for (const item of note.scripture ?? []) {
-    const text = item.quote ?? VERSES[item.ref] ?? '經文全文尚未收錄。';
+    const text = item.quote ?? VERSES[item.ref] ?? '這節經文暫時沒有收錄。';
     dialog.append(h('blockquote', {}, h('p', {}, `「${text}」`), button(item.ref, () => openVerse(item.ref), 'ag-text-button')));
   }
   if (note.text) dialog.append(h('p', { className: 'ag-note-text' }, note.text));

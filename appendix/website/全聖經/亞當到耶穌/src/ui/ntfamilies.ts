@@ -35,7 +35,7 @@ export function createNTFamilies(data: GenealogyData, onPerson: (id: string, gro
   const families = data.ntFamilies ?? [];
   const groupIdByPerson = new Map<string, string>();
   if (!families.length) {
-    root.append(h('div', { className: 'ag-empty-state' }, h('strong', {}, '新約家族資料尚未加入'), h('p', {}, '這份測試資料沒有 ntFamilies 項目。')));
+    root.append(h('div', { className: 'ag-empty-state' }, h('strong', {}, '目前沒有新約家族資料')));
     return { el: root, hasPerson: () => false, groupIdFor: () => null, focusPerson: () => {}, highlightPerson: () => {} };
   }
   const graph = buildGraph(data);

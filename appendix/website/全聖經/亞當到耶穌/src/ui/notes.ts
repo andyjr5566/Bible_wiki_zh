@@ -8,7 +8,7 @@ export function createNotes(data: GenealogyData, verses: VerseMap, onPerson: (id
       h('p', {}, '並列經文引句與來源說法；點人物名稱回到家譜畫布。')));
   const notes = data.notes ?? [];
   if (!notes.length) {
-    root.append(h('div', { className: 'ag-empty-state' }, h('strong', {}, '目前沒有差異註記'), h('p', {}, '有 notes 資料時會在這裡逐則列出。')));
+    root.append(h('div', { className: 'ag-empty-state' }, h('strong', {}, '目前沒有需要說明的差異')));
     return root;
   }
   for (const item of notes) {
@@ -17,7 +17,7 @@ export function createNotes(data: GenealogyData, verses: VerseMap, onPerson: (id
     const scripture = h('div', { className: 'ag-scripture-pair' });
     for (const entry of (item.scripture ?? []) as NoteScripture[]) {
       const block = h('blockquote', {},
-        entry.quote ? h('p', {}, `「${entry.quote}」`) : h('p', {}, verseText(entry.ref, verses) ?? '經文全文尚未提供。'),
+        entry.quote ? h('p', {}, `「${entry.quote}」`) : h('p', {}, verseText(entry.ref, verses) ?? '這節經文暫時沒有收錄。'),
         linkButton(entry.ref, () => onVerse(entry.ref)));
       scripture.append(block);
     }
