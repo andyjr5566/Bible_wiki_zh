@@ -76,6 +76,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
   const pointers = new Map<number, Pointer>();
   let pinchStart: { distance: number; box: ViewBox; center: Pointer } | null = null;
   let cullTimer = 0;
+  let lastCull = 0;
   let animationFrame = 0;
   let layoutAnimationFrame = 0;
   let animationDone: (() => void) | null = null;
@@ -113,10 +114,19 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     currentBox = { ...box };
     svg.setAttribute('viewBox', `${box.x} ${box.y} ${box.width} ${box.height}`);
     window.clearTimeout(cullTimer);
-    if ((zoomOf(currentBox) < OVERVIEW_ZOOM) !== overviewMode) cullToViewport();
-    else {
-      cullTimer = window.setTimeout(cullToViewport, 140);
-      if (overviewMode) updateOverview();
+    if ((zoomOf(currentBox) < OVERVIEW_ZOOM) !== overviewMode) {
+      lastCull = performance.now();
+      cullToViewport();
+    } else {
+      // 鏡頭移動中也要持續更新哪些節點該顯示（約每 50ms 一次），否則要等動畫停下來新節點才冒出來
+      const now = performance.now();
+      if (now - lastCull >= 50) {
+        lastCull = now;
+        cullToViewport();
+      } else {
+        cullTimer = window.setTimeout(() => { lastCull = performance.now(); cullToViewport(); }, 60);
+        if (overviewMode) updateOverview();
+      }
     }
   };
   // 縮放範圍：最小是整張家譜剛好放進畫面，最大約 4 倍
