@@ -319,7 +319,8 @@ function traceToAdam(id: string) {
   canvas.setTrace(route.ids, drawingEdges);
   canvas.expandPath(route.ids);
   card.setTraceMessage('', route.hasUnknownGenerations);
-  canvas.focusIds(route.ids, true);
+  // 路徑可能一路到亞當、上千個單位高：放不下時以他自己所在的位置為準，往上看祖先
+  canvas.focusIds(route.ids, true, undefined, id);
 }
 
 function openNote(noteId: string) {

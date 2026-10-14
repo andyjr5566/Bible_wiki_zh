@@ -9,7 +9,7 @@ export type CanvasLine = 'both' | '馬太' | '路加';
 export interface CanvasApi {
   el: SVGSVGElement;
   focusPerson(id: string, animate?: boolean): void;
-  focusIds(ids: string[], animate?: boolean, minZoom?: number): void;
+  focusIds(ids: string[], animate?: boolean, minZoom?: number, anchorId?: string): void;
   focusTourIds(ids: string[], avoid: HTMLElement | null, animate?: boolean): Promise<boolean>;
   fitSpine(animate?: boolean): void;
   fitAll(animate?: boolean): void;
@@ -143,7 +143,8 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     const height = Math.max(1, rect.height) / zoom;
     animateToBox({ x: x - width / 2, y: y - height / 2, width, height }, animate);
   };
-  const fitRect = (x0: number, y0: number, x1: number, y1: number, animate = false, padding = 90, lockAspect = true, minZoom = 0) => {
+  const visibleFraction = () => (window.matchMedia('(max-width: 520px)').matches && document.querySelector('.ag-card-open') ? 0.42 : 1);
+  const fitRect = (x0: number, y0: number, x1: number, y1: number, animate = false, padding = 90, lockAspect = true, minZoom = 0, anchor?: { y: number; at: number }) => {
     const rect = svg.getBoundingClientRect();
     const aspect = Math.max(0.45, rect.width / Math.max(1, rect.height));
     let width = Math.max(160, x1 - x0 + padding * 2);
@@ -161,8 +162,13 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       target.width = readableWidth;
       target.height = readableHeight;
       target.x = (x0 + x1) / 2 - readableWidth / 2;
-      target.y = (y1 - y0) + 2 * (padding / 3) <= readableHeight ? (y0 + y1) / 2 - readableHeight / 2 : y0 - padding / 3;
+      if ((y1 - y0) + 2 * (padding / 3) <= readableHeight) target.y = (y0 + y1) / 2 - readableHeight / 2;
+      // 一條很長的路徑放不下時，讓指定的節點落在畫面的 at（0~1）處，其餘往外延伸；沒指定就從頂端開始看
+      else target.y = anchor ? anchor.y - readableHeight * anchor.at * visibleFraction() : y0 - padding / 3;
     }
+    // 手機上人物卡從底部蓋住畫布，要看的東西放在還看得到的上半部
+    const visible = visibleFraction();
+    if (visible < 1 && !(minZoom > 0 && rect.height / target.height < minZoom && anchor)) target.y += target.height * (0.5 - visible / 2);
     animateToBox(target, animate);
   };
   const finishAnimation = () => {
@@ -702,11 +708,12 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     const centerY = currentBox.y + currentBox.height / 2;
     animateToBox({ x: centerX - width / 2, y: centerY - height / 2, width, height }, animate);
   };
-  const focusIds = (ids: string[], animate = true, minZoom = 0) => {
+  const focusIds = (ids: string[], animate = true, minZoom = READABLE_ZOOM, anchorId?: string) => {
     const nodes = ids.map(nodeFor).filter((node): node is LayoutNode => Boolean(node));
     if (!nodes.length) return;
     fitRect(Math.min(...nodes.map((node) => node.x - node.width / 2)), Math.min(...nodes.map((node) => node.y - node.height / 2)),
-      Math.max(...nodes.map((node) => node.x + node.width / 2)), Math.max(...nodes.map((node) => node.y + node.height / 2)), animate, 180, true, minZoom);
+      Math.max(...nodes.map((node) => node.x + node.width / 2)), Math.max(...nodes.map((node) => node.y + node.height / 2)), animate, 180, true, minZoom,
+      anchorId && nodeFor(anchorId) ? { y: nodeFor(anchorId)!.y, at: 0.8 } : undefined);
   };
   const focusTourIds = (ids: string[], avoid: HTMLElement | null, animate = true): Promise<boolean> => {
     const nodes = ids.map(nodeFor).filter((node): node is LayoutNode => Boolean(node));
