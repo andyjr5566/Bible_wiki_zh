@@ -142,7 +142,8 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       const dot = element.querySelector<SVGCircleElement>('.ag-node-dot');
       const node = nodeFor(id);
       if (!label || !rect || !node) continue;
-      const emphasized = tourHighlightIds.has(id);
+      // 只有縮小到字會小於約 13px 時才放大標亮節點的字；已經夠大就維持原本字級，避免亮起後反而變小
+      const emphasized = tourHighlightIds.has(id) && zoomLevel < 13 / 15;
       label.style.display = emphasized ? 'block' : '';
       label.style.fontSize = emphasized ? `${13 / zoomLevel}px` : '';
       if (dot) dot.style.display = emphasized ? 'none' : '';
