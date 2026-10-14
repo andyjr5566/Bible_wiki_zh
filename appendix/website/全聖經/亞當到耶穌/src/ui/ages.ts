@@ -1,5 +1,5 @@
 import type { GenealogyData, Person, VerseMap } from '../data/types';
-import { buildGraph } from '../data/model';
+import { buildGraph, verseText } from '../data/model';
 import { h, svgEl } from './dom';
 
 export function createAges(data: GenealogyData, verses: VerseMap, onPerson: (id: string) => void, onVerse: (ref: string) => void): HTMLElement {
@@ -48,7 +48,7 @@ export function createAges(data: GenealogyData, verses: VerseMap, onPerson: (id:
     group.append(desktopName, mobileName, svgEl('rect', { class: 'ag-age-bar', x: startX, y: y - 7, width: Math.max(2, endX - startX), height: 14, rx: 7 }));
     group.append(svgEl('circle', { class: 'ag-age-born', cx: startX, cy: y, r: 4.5 }), svgEl('circle', { class: 'ag-age-died', cx: endX, cy: y, r: 4.5 }));
     const title = svgEl('title');
-    const refs = (item.refs ?? []).map((ref) => `${ref}${verses[ref] ? `：${verses[ref]}` : ''}`).join('\n');
+    const refs = (item.refs ?? []).map((ref) => `${ref}${verseText(ref, verses) ? `：${verseText(ref, verses)}` : ''}`).join('\n');
     title.textContent = `${person?.name ?? item.id}：出生 ${item.born} 年，死亡 ${item.died} 年，年歲 ${item.total ?? item.died - item.born}${refs ? `\n${refs}` : ''}`;
     group.append(title);
     for (const child of childrenFor(item.id, graph.children, graph.byId)) {

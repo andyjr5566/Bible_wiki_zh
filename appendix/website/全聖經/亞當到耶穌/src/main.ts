@@ -1,5 +1,5 @@
 import './styles.css';
-import { DATA, VERSES, buildGraph, makeSyntheticData, pathToFirstAncestor } from './data/model';
+import { DATA, VERSES, buildGraph, lookupVerses, makeSyntheticData, pathToFirstAncestor } from './data/model';
 import type { GenealogyData, GenealogyNote, Person } from './data/types';
 import { createAges } from './ui/ages';
 import { createCanvas, type CanvasApi } from './ui/canvas';
@@ -22,14 +22,32 @@ const app = document.querySelector<HTMLElement>('#app');
 if (!app) throw new Error('Missing #app root');
 const verseLayer = h('div', { className: 'ag-modal-layer', hidden: true });
 
+const closeDialog = () => { verseLayer.hidden = true; verseLayer.replaceChildren(); };
+// 點視窗外的暗處或按 Esc 也能關閉（按下與放開都要在暗處，避免拖曳選字時誤關）
+const showDialog = (dialog: HTMLElement) => {
+  const scrim = h('div', { className: 'ag-dialog-scrim' }, dialog);
+  let pressedOnScrim = false;
+  scrim.addEventListener('pointerdown', (event) => { pressedOnScrim = event.target === scrim; });
+  scrim.addEventListener('click', (event) => { if (pressedOnScrim && event.target === scrim) closeDialog(); });
+  verseLayer.hidden = false;
+  verseLayer.replaceChildren(scrim);
+};
+document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !verseLayer.hidden) closeDialog(); });
+
 const openVerse = (ref: string) => {
-  const verse = VERSES[ref];
+  const lines = lookupVerses(ref);
+  const found = lines.some((line) => line.text);
+  const verseBody = !found
+    ? h('p', { className: 'ag-empty-state' }, '這節經文尚未收錄在目前的 verses.json。')
+    : lines.length === 1
+      ? h('p', { className: 'ag-verse-text' }, lines[0]!.text!)
+      : h('div', { className: 'ag-verse-list' }, ...lines.map((line) => h('p', { className: 'ag-verse-text' },
+        h('span', { className: 'ag-verse-no' }, line.key.replace(/^.*:/, '')), line.text ?? '（這節尚未收錄）')));
   const dialog = h('section', { className: 'ag-verse-dialog', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'ag-verse-title' },
     h('div', { className: 'ag-dialog-head' }, h('div', {}, h('p', { className: 'ag-eyebrow' }, '經文全文'), h('h2', { id: 'ag-verse-title' }, ref)),
-      button('關閉', () => { verseLayer.hidden = true; verseLayer.replaceChildren(); }, 'ag-card-close')),
-    verse ? h('p', { className: 'ag-verse-text' }, verse) : h('p', { className: 'ag-empty-state' }, '這節經文尚未收錄在目前的 verses.json。'));
-  verseLayer.hidden = false;
-  verseLayer.replaceChildren(h('div', { className: 'ag-dialog-scrim' }, dialog));
+      button('關閉', closeDialog, 'ag-card-close')),
+    verseBody);
+  showDialog(dialog);
 };
 
 let canvas: CanvasApi;
@@ -305,15 +323,13 @@ function traceToAdam(id: string) {
 function openNote(noteId: string) {
   const note = data.notes.find((item) => item.id === noteId);
   if (!note) return;
-  const dialog = noteDialog(note);
-  verseLayer.hidden = false;
-  verseLayer.replaceChildren(h('div', { className: 'ag-dialog-scrim' }, dialog));
+  showDialog(noteDialog(note));
 }
 
 function noteDialog(note: GenealogyNote): HTMLElement {
   const dialog = h('section', { className: 'ag-note-dialog', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'ag-note-dialog-title' },
     h('div', { className: 'ag-dialog-head' }, h('div', {}, h('p', { className: 'ag-eyebrow' }, '經文不同的地方'), h('h2', { id: 'ag-note-dialog-title' }, note.title)),
-      button('關閉', () => { verseLayer.hidden = true; verseLayer.replaceChildren(); }, 'ag-card-close')));
+      button('關閉', closeDialog, 'ag-card-close')));
   for (const item of note.scripture ?? []) {
     const text = item.quote ?? VERSES[item.ref] ?? '經文全文尚未收錄。';
     dialog.append(h('blockquote', {}, h('p', {}, `「${text}」`), button(item.ref, () => openVerse(item.ref), 'ag-text-button')));
@@ -332,8 +348,7 @@ function noteDialog(note: GenealogyNote): HTMLElement {
     const person = graph.byId.get(id);
     if (!person) continue;
     attached.append(button(person.name, () => {
-      verseLayer.hidden = true;
-      verseLayer.replaceChildren();
+      closeDialog();
       selectPerson(person);
     }, 'ag-person-link'));
   }

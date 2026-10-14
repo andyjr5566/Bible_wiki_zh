@@ -4,6 +4,53 @@ import type { GenealogyData, Person, Relation, VerseMap } from './types';
 
 export const DATA = source as unknown as GenealogyData;
 export const VERSES = verseSource as VerseMap;
+/**
+ * 把「代上8:30-31」「創11:10-12:1」「創5:1-3, 路3:38」這類寫法展開成逐節的 key（和 verses.json 一致）。
+ * 跨章的範圍靠 verses.json 有哪些節來判斷章尾；後面的片段沒寫書卷時沿用前一段的書卷。
+ */
+export function expandVerseRefs(ref: string, verses: VerseMap = VERSES): string[] {
+  const keys: string[] = [];
+  let book = '';
+  let chapter = 0;
+  for (const raw of ref.split(/[、，,;；]/)) {
+    const part = raw.trim();
+    if (!part) continue;
+    let match = /^(.*?)(\d+):(\d+)(?:-(?:(\d+):)?(\d+))?$/.exec(part);
+    if (!match) {
+      const bare = /^(\d+)(?:-(\d+))?$/.exec(part);
+      if (!bare || !book) { keys.push(part); continue; }
+      match = [part, book, String(chapter), bare[1]!, undefined, bare[2]] as unknown as RegExpExecArray;
+    }
+    book = match[1]?.trim() || book;
+    chapter = Number(match[2]);
+    const startVerse = Number(match[3]);
+    const endChapter = match[4] ? Number(match[4]) : chapter;
+    const endVerse = match[5] ? Number(match[5]) : startVerse;
+    if (endChapter === chapter) {
+      if (endVerse < startVerse || endVerse - startVerse > 250) { keys.push(part); continue; }
+      for (let verse = startVerse; verse <= endVerse; verse += 1) keys.push(`${book}${chapter}:${verse}`);
+    } else {
+      for (let verse = startVerse; verses[`${book}${chapter}:${verse}`] !== undefined; verse += 1) keys.push(`${book}${chapter}:${verse}`);
+      for (let verse = 1; verse <= endVerse; verse += 1) keys.push(`${book}${endChapter}:${verse}`);
+    }
+    chapter = endChapter;
+  }
+  return keys;
+}
+
+export interface VerseLine { key: string; text: string | null }
+
+/** 逐節取經文全文；verses.json 沒有的節 text 為 null。 */
+export function lookupVerses(ref: string, verses: VerseMap = VERSES): VerseLine[] {
+  return expandVerseRefs(ref, verses).map((key) => ({ key, text: verses[key] ?? null }));
+}
+
+/** 範圍合成一段純文字（供提示文字用）；全部查無時回傳 null。 */
+export function verseText(ref: string, verses: VerseMap = VERSES): string | null {
+  const lines = lookupVerses(ref, verses).filter((line) => line.text);
+  return lines.length ? lines.map((line) => line.text).join('') : null;
+}
+
 export const WIKI_BASE = ((import.meta.env?.VITE_WIKI_BASE as string | undefined) ||
   'https://andyjr5566.github.io/Bible_wiki_zh_website').replace(/\/+$/, '');
 

@@ -308,7 +308,7 @@ a { color: var(--ag-focus); }
 .ag-intro-actions { display: flex; gap: 8px; margin-top: 23px; }
 .ag-verse-dialog { width: min(600px, 100%); }
 .ag-dialog-head { display: flex; justify-content: space-between; align-items: start; gap: 24px; margin-bottom: 18px; }
-.ag-dialog-head .ag-card-close { position: static; flex: 0 0 auto; border: 1px solid var(--ag-border); border-radius: 4px; font-size: calc(12px * var(--ag-fs)); }
+.ag-dialog-head .ag-card-close { width: auto; min-width: 30px; height: auto; min-height: 30px; padding: 3px 10px; white-space: nowrap; position: static; flex: 0 0 auto; border: 1px solid var(--ag-border); border-radius: 4px; font-size: calc(12px * var(--ag-fs)); }
 .ag-verse-dialog h2 { font-size: calc(23px * var(--ag-fs)); }
 .ag-verse-text { font: calc(20px * var(--ag-fs))/2 var(--ag-serif); }
 .ag-note-dialog { width: min(720px, 100%); }
@@ -404,3 +404,7 @@ a { color: var(--ag-focus); }
 .ag-font-size button { flex: 0 0 auto; white-space: nowrap; }
 .ag-font-size button:disabled { opacity: .35; cursor: default; }
 .ag-controls > button { flex: 0 0 auto; white-space: nowrap; }
+
+/* 範圍經文：每節一行，節號縮小 */
+.ag-verse-list .ag-verse-text { margin: 0; }
+.ag-verse-no { margin-right: .5em; color: var(--ag-muted); font: calc(11px * var(--ag-fs)) var(--ag-sans); vertical-align: super; }

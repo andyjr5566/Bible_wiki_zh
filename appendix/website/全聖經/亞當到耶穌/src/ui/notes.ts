@@ -1,5 +1,6 @@
 import type { GenealogyData, NoteScripture, NoteView, VerseMap } from '../data/types';
 import { h, linkButton } from './dom';
+import { verseText } from '../data/model';
 
 export function createNotes(data: GenealogyData, verses: VerseMap, onPerson: (id: string) => void, onVerse: (ref: string) => void): HTMLElement {
   const root = h('section', { className: 'ag-page ag-notes-page' },
@@ -16,7 +17,7 @@ export function createNotes(data: GenealogyData, verses: VerseMap, onPerson: (id
     const scripture = h('div', { className: 'ag-scripture-pair' });
     for (const entry of (item.scripture ?? []) as NoteScripture[]) {
       const block = h('blockquote', {},
-        entry.quote ? h('p', {}, `「${entry.quote}」`) : h('p', {}, verses[entry.ref] ?? '經文全文尚未提供。'),
+        entry.quote ? h('p', {}, `「${entry.quote}」`) : h('p', {}, verseText(entry.ref, verses) ?? '經文全文尚未提供。'),
         linkButton(entry.ref, () => onVerse(entry.ref)));
       scripture.append(block);
     }

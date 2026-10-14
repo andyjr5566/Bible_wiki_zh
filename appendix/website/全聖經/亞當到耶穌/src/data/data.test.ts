@@ -1,21 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { DATA, VERSES, branchRoots, buildGraph, makeSyntheticData, pathToFirstAncestor, searchNameForms, searchPeople } from './model';
+import { DATA, VERSES, branchRoots, expandVerseRefs, lookupVerses, buildGraph, makeSyntheticData, pathToFirstAncestor, searchNameForms, searchPeople } from './model';
 import type { GenealogyData } from './types';
 import { computeLayout } from '../ui/layout';
 import { groupUnattachedPeople } from '../ui/unconnected';
 
-function expandRange(ref: string): string[] {
-  const match = /^(.+?\d+:)(\d+)(?:-(\d+))?$/.exec(ref.trim());
-  if (!match) return [ref.trim()];
-  const start = Number(match[2]);
-  const end = Number(match[3] ?? match[2]);
-  if (end - start > 250) return [ref.trim()];
-  return Array.from({ length: end - start + 1 }, (_, index) => `${match[1]}${start + index}`);
-}
-
 function allReferenceKeys(data: GenealogyData): string[] {
   const refs: string[] = [];
-  const add = (ref?: string) => { if (ref) refs.push(...ref.split(/[、，,;；]/).flatMap(expandRange)); };
+  const add = (ref?: string) => { if (ref) refs.push(...expandVerseRefs(ref)); };
   for (const person of data.persons) {
     for (const name of person.names ?? []) add(name.ref);
     for (const relation of [...(person.parents ?? []), ...(person.spouses ?? []), ...(person.siblings ?? []), ...(person.kin ?? []), ...(person.descends ?? [])]) add(relation.ref);
@@ -144,7 +135,7 @@ describe('家譜資料閘門', () => {
     for (const stop of DATA.tour) {
       for (const focus of stop.focus) expect(ids.has(focus), `${stop.id}: ${focus}`).toBe(true);
       const refs = Array.isArray(stop.refs) ? stop.refs : [stop.refs];
-      for (const ref of refs.flatMap((value) => value.split(/[、，,;；]/).map((part) => part.trim()).filter(Boolean)).flatMap(expandRange)) {
+      for (const ref of refs.flatMap((value) => expandVerseRefs(value))) {
         expect(VERSES[ref], `${stop.id}: ${ref}`).toBeTruthy();
       }
     }
@@ -165,6 +156,31 @@ describe('家譜資料閘門', () => {
 
   it('所有人物、見證、年歲、註記與導覽引用都能在 verses.json 找到', () => {
     for (const ref of allReferenceKeys(DATA)) expect(VERSES[ref], ref).toBeTruthy();
+  });
+
+  it('資訊卡上每一個經文標籤（含範圍、逗號、跨章）都查得到全文', () => {
+    const refs = new Set<string>();
+    const add = (ref?: string) => { if (ref) refs.add(ref); };
+    for (const person of DATA.persons) {
+      for (const name of person.names ?? []) add(name.ref);
+      for (const relation of [...(person.parents ?? []), ...(person.spouses ?? []), ...(person.siblings ?? []), ...(person.kin ?? []), ...(person.descends ?? [])]) add(relation.ref);
+    }
+    for (const witness of DATA.witnesses) add(witness.ref);
+    for (const note of DATA.notes) for (const entry of note.scripture ?? []) add(entry.ref);
+    expect(refs.size).toBeGreaterThan(500);
+    for (const ref of refs) {
+      const lines = lookupVerses(ref);
+      expect(lines.length, ref).toBeGreaterThan(0);
+      expect(lines.filter((line) => !line.text).map((line) => line.key), ref).toEqual([]);
+    }
+  });
+
+  it('經文範圍展開：同章、逗號、跨章', () => {
+    const verses = { '創1:30': 'a', '創1:31': 'b', '創2:1': 'c', '創2:2': 'd', '創3:5': 'e' };
+    expect(expandVerseRefs('創1:30-31', verses)).toEqual(['創1:30', '創1:31']);
+    expect(expandVerseRefs('創1:30-2:2', verses)).toEqual(['創1:30', '創1:31', '創2:1', '創2:2']);
+    expect(expandVerseRefs('創2:1, 創3:5', verses)).toEqual(['創2:1', '創3:5']);
+    expect(expandVerseRefs('創2:1、2', verses)).toEqual(['創2:1', '創2:2']);
   });
 
   it('主線與預設收合旁支的節點框不重疊', () => {
