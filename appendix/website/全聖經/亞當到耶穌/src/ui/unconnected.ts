@@ -112,10 +112,15 @@ export function createUnconnectedFamilies(data: GenealogyData, onPerson: (id: st
       const animate = document.documentElement.dataset.motion !== 'off';
       for (const node of page.querySelectorAll<HTMLElement>('[data-family-person-id]')) {
         const match = node.dataset.familyPersonId === id;
-        node.classList.toggle('ag-family-node-highlighted', match);
-        node.classList.toggle('ag-family-node-current', match && animate);
-        node.classList.toggle('ag-family-person-highlighted', match);
-        node.classList.toggle('ag-family-person-current', match && animate);
+        // 圖上的節點（SVG）和名單上的名字（HTML）用不同的標亮樣式；
+        // 脈衝動畫的 transform 會蓋掉 SVG 節點的位置，所以不能混用
+        if (node instanceof SVGElement) {
+          node.classList.toggle('ag-family-node-highlighted', match);
+          node.classList.toggle('ag-family-node-current', match && animate);
+        } else {
+          node.classList.toggle('ag-family-person-highlighted', match);
+          node.classList.toggle('ag-family-person-current', match && animate);
+        }
       }
     },
     focusPerson(id) {
