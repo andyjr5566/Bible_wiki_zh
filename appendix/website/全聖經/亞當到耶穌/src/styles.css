@@ -408,3 +408,13 @@ a { color: var(--ag-focus); }
 /* 範圍經文：每節一行，節號縮小 */
 .ag-verse-list .ag-verse-text { margin: 0; }
 .ag-verse-no { margin-right: .5em; color: var(--ag-muted); font: calc(11px * var(--ag-fs)) var(--ag-sans); vertical-align: super; }
+
+/* 名字的意思 */
+.ag-name-orig { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; margin: 0 0 6px; }
+.ag-name-orig-text { font: calc(24px * var(--ag-fs)) "SBL Hebrew", "Ezra SIL", "Times New Roman", "Noto Serif Hebrew", serif; color: var(--ag-ink); }
+.ag-name-translit { color: var(--ag-muted); font-size: calc(12px * var(--ag-fs)); }
+.ag-name-gloss { margin: 0 0 8px; font: calc(16px * var(--ag-fs))/1.6 var(--ag-serif); }
+.ag-name-gloss small { color: var(--ag-muted); font-size: calc(12px * var(--ag-fs)); }
+.ag-name-quote { margin: 8px 0; padding: 8px 12px; border-left: 2px solid var(--ag-matthew); background: var(--ag-paper); font: calc(14px * var(--ag-fs))/1.8 var(--ag-serif); }
+.ag-name-source { display: block; margin-top: 6px; color: var(--ag-muted); font-size: calc(10px * var(--ag-fs)); line-height: 1.6; }
+

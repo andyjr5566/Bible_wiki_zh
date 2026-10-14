@@ -1914,6 +1914,9 @@ class LineageBuilder:
         self.notes = self._yaml("notes.yaml", []) or []
         self.tour = self._yaml("tour.yaml", []) or []
         self.sources = self._yaml("sources.yaml", []) or []
+        self.name_meanings = self._yaml("名字字義.yaml", {}) or {}
+        self.name_scripture = self._yaml("名字經文說明.yaml", {}) or {}
+        self.meaning_zh = self._read_tsv("字義中譯.tsv")
         if not isinstance(self.spine_data, dict):
             self.err("spine.yaml", "根節點必須是 mapping")
             self.spine_data = {}
@@ -1934,9 +1937,21 @@ class LineageBuilder:
         self._validate_ages()
         self._validate_families()
         self._validate_tour()
+        self._validate_name_meanings()
 
     def err(self, where: str, msg: str) -> None:
         self.errors.append(f"[{where}] {msg}")
+
+    def _read_tsv(self, name: str) -> dict[str, str]:
+        path = self.dir / name
+        if not path.is_file():
+            return {}
+        rows: dict[str, str] = {}
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if "	" in line:
+                key, value = line.split("	", 1)
+                rows[key.strip()] = value.strip()
+        return rows
 
     def _yaml(self, name: str, default):
         key = Path(name).stem
@@ -2663,6 +2678,74 @@ class LineageBuilder:
             parsed = self.refs(stop.get("refs", ""), where)
             self.check_quotes(str(stop.get("text", "")), parsed, where)
 
+    def _validate_name_meanings(self) -> None:
+        """名字的原文與字義：STEP Bible 機械對位的結果（名字字義.yaml）加上經文自己的說明（名字經文說明.yaml）。"""
+        if not isinstance(self.name_meanings, dict) or not isinstance(self.name_scripture, dict):
+            self.err("名字字義", "根節點必須是 mapping")
+            self.name_meanings, self.name_scripture = {}, {}
+            return
+        for pid, record in self.name_meanings.items():
+            where = f"名字字義.{pid}"
+            if pid not in self.people:
+                self.err(where, "人物不存在")
+                continue
+            if not isinstance(record, dict) or not record.get("orig") or not record.get("strong"):
+                self.err(where, "需要 orig 與 strong")
+                continue
+            self.refs(str(record.get("ref", "")), where)
+            english = str(record.get("meaning_en") or "")
+            if english and english not in self.meaning_zh:
+                self.err(where, f"字義「{english}」缺中譯（字義中譯.tsv）")
+        for pid, items in self.name_scripture.items():
+            where = f"名字經文說明.{pid}"
+            if pid not in self.people:
+                self.err(where, "人物不存在")
+                continue
+            if not isinstance(items, list) or not items:
+                self.err(where, "必須是非空清單")
+                continue
+            for index, item in enumerate(items):
+                here = f"{where}#{index + 1}"
+                if not isinstance(item, dict) or not item.get("ref") or not item.get("quote"):
+                    self.err(here, "需要 ref 與 quote")
+                    continue
+                parsed = self.refs(str(item["ref"]), here)
+                self.need_exact(str(item["quote"]), parsed, here, "引句")
+
+    def name_meaning_of(self, pid: str) -> dict | None:
+        record = self.name_meanings.get(pid)
+        scripture = self.name_scripture.get(pid) or []
+        if not record and not scripture:
+            return None
+        english = str((record or {}).get("meaning_en") or "")
+        return {
+            "orig": (record or {}).get("orig", ""), "translit": (record or {}).get("translit", ""),
+            "strong": (record or {}).get("strong", ""), "nameEn": (record or {}).get("name_en", ""),
+            "meaningEn": english, "meaningZh": self.meaning_zh.get(english, ""),
+            "ref": (record or {}).get("ref", ""),
+            "scripture": [{"ref": item["ref"], "quote": item["quote"]} for item in scripture],
+        }
+
+    def _render_name_meanings(self) -> list[str]:
+        out = ["## 名字的意思", "",
+               "主線上每個名字的原文與字義，取自 STEP Bible 的詞典（STEPBible.org，CC BY 4.0；字義依 Abridged BDB 簡編，中文為本頁譯）。"
+               "詞典只列這個名字常見的字面意思，不一定是經文當下的用意；經文自己交代名字來由的地方，另列在最後一欄。", "",
+               "| 人名 | 原文 | 字義 | 經文自己的說明 |", "|---|---|---|---|"]
+        seen: set[str] = set()
+        for pid in [*self.lines["馬太"], *self.lines["路加"]]:
+            if pid in seen:
+                continue
+            seen.add(pid)
+            info = self.name_meaning_of(pid)
+            if not info:
+                continue
+            original = f"{info['orig']}（{info['translit']}）" if info["orig"] else "—"
+            meaning = f"{info['meaningZh']}（{info['meaningEn']}）" if info["meaningEn"] else "—"
+            says = "<br>".join(f"{item['ref']}：「{item['quote']}」" for item in info["scripture"]) or "—"
+            out.append(f"| {self._name_link(pid)} | {original} | {meaning} | {says} |")
+        out.append("")
+        return out
+
     def _name_link(self, pid: str) -> str:
         person = self.people[pid]
         name = display(pid)
@@ -3167,6 +3250,7 @@ class LineageBuilder:
             out += [f"[互動網站](<{self.data['site']}>)", ""]
         out += self._render_diagrams()
         out += self._render_tables()
+        out += self._render_name_meanings()
         out += self._render_notes()
         out += self._render_ages()
         out += self._render_families()
@@ -3262,6 +3346,7 @@ class LineageBuilder:
                           else [line for line in ("馬太", "路加") if pid in self.lines[line]]),
                 "marks": self.marks_by_person.get(pid, []), "notes": self.notes_by_person.get(pid, []),
                 "imported": person.get("imported"), "anchor": person.get("anchor"),
+                "nameMeaning": self.name_meaning_of(pid),
             })
         segments = [{"id": segment.get("id"), "title": segment.get("title"),
                      "lines": self._segment_routes(segment)}

@@ -94,6 +94,30 @@ export function createPersonCard(data: GenealogyData, actions: CardActions): Per
             name.as, name.ref ? refButton(name.ref) : null, index < (person.names?.length ?? 0) - 1 ? h('i', {}, '；') : null))),
         firstReference(person) ? h('small', {}, `首見 ${firstReference(person)}`) : null),
     );
+    const meaning = person.nameMeaning;
+    if (meaning) {
+      const section = h('section', { className: 'ag-card-section ag-name-meaning' }, h('h3', {}, '名字的意思'));
+      if (meaning.orig) {
+        const isGreek = meaning.strong.startsWith('G');
+        section.append(h('p', { className: 'ag-name-orig' },
+          h('span', { className: 'ag-name-orig-text', lang: isGreek ? 'grc' : 'he', dir: isGreek ? 'ltr' : 'rtl' }, meaning.orig),
+          h('span', { className: 'ag-name-translit' }, `${meaning.translit}　${isGreek ? '希臘文' : '希伯來文'}`)));
+      }
+      if (meaning.meaningEn) {
+        section.append(h('p', { className: 'ag-name-gloss' }, meaning.meaningZh || meaning.meaningEn,
+          meaning.meaningZh ? h('small', {}, `　${meaning.meaningEn}`) : null));
+      } else if (meaning.orig && !meaning.scripture.length) {
+        section.append(h('p', { className: 'ag-muted ag-name-none' }, '詞典沒有列這個名字的字義。'));
+      }
+      for (const item of meaning.scripture) {
+        section.append(h('blockquote', { className: 'ag-name-quote' }, `「${item.quote}」`, refButton(item.ref)));
+      }
+      if (meaning.meaningEn || meaning.orig) {
+        section.append(h('small', { className: 'ag-name-source' }, '原文與字義：STEP Bible 詞典（CC BY 4.0，字義依 BDB 簡編，中文為本站譯）；對位經節 ',
+          refButton(meaning.ref)));
+      }
+      body.append(section);
+    }
     if (treeTargetId) body.append(button('在家譜樹上看', () => actions.tree(treeTargetId), 'ag-primary-button ag-card-tree-link'));
     const parents = person.parents ?? [];
     const parentSection = h('section', { className: 'ag-card-section' }, h('h3', {}, '父母'));

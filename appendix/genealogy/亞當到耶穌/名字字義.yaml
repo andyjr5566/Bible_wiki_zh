@@ -1,0 +1,10490 @@
+# 機器產物：extract_name_meanings.py 依 STEP Bible 對位產生，不手改。
+# 來源：STEP Bible / STEPBible-Data（CC BY 4.0）；詞典簡編依 Abridged BDB。
+乃幔:
+  match: exact
+  meaning_en: pleasantness
+  name_en: Naaman
+  orig: נַעֲמָן
+  ref: 代上8:4
+  strong: H5283H
+  translit: na.a.man
+乃幔#以忽:
+  match: exact
+  meaning_en: pleasantness
+  name_en: Naaman
+  orig: נַעֲמָן
+  ref: 代上8:7
+  strong: H5283J
+  translit: na.a.man
+乃幔#便雅憫:
+  match: exact
+  meaning_en: pleasantness
+  name_en: Naaman
+  orig: נַעֲמָן
+  ref: 創46:21
+  strong: H5283G
+  translit: na.a.man
+于沙希悉:
+  match: exact
+  meaning_en: whose love is returned
+  name_en: Jushab-hesed
+  orig: י֥וּשַׁב חֶ֖סֶד
+  ref: 代上3:20
+  strong: H3142
+  translit: yu.shav che.sed
+亞他利雅:
+  match: exact
+  meaning_en: afflicted of the Lord
+  name_en: Athaliah
+  orig: עֲתַלְיָ֫הוּ
+  ref: 代上8:26
+  strong: H6271H
+  translit: a.tal.yah
+亞他利雅#亞哈謝之母:
+  match: exact
+  meaning_en: afflicted of the Lord
+  name_en: Athaliah
+  orig: עֲתַלְיָ֫הוּ
+  ref: 王下8:26
+  strong: H6271G
+  translit: a.tal.yah
+亞他雅:
+  match: exact
+  meaning_en: Jehovah has helped
+  name_en: Athaiah
+  orig: עֲתָיָה
+  ref: 尼11:4
+  strong: H6265
+  translit: a.ta.yah
+亞伯:
+  match: exact
+  meaning_en: breath
+  name_en: Abel
+  orig: הֶ֫בֶל
+  ref: 創4:2
+  strong: H1893
+  translit: he.vel
+亞伯底:
+  match: exact
+  meaning_en: servant of Jehovah
+  name_en: Abdi
+  orig: עַבְדִּי
+  ref: 代上6:44
+  strong: H5660G
+  translit: av.di
+亞伯拉罕:
+  match: exact
+  meaning_en: father of a multitude
+  name_en: Abraham
+  orig: אַבְרָהָם
+  ref: 代上1:27
+  strong: H0085
+  translit: av.ra.ham
+亞伯頓#沙煞:
+  match: exact
+  meaning_en: servile
+  name_en: Abdon
+  orig: עַבְדּוֹן
+  ref: 代上8:23
+  strong: H5658I
+  translit: av.don
+亞伯頓#耶利:
+  match: exact
+  meaning_en: servile
+  name_en: Abdon
+  orig: עַבְדּוֹן
+  ref: 代上8:30
+  strong: H5658J
+  translit: av.don
+亞何亞:
+  match: exact
+  meaning_en: brother of rest
+  name_en: Ahoah
+  orig: אֲחוֹחַ
+  ref: 代上8:4
+  strong: H0265
+  translit: a.cho.ach
+亞何利亞伯:
+  match: exact
+  meaning_en: Father's tent
+  name_en: Aholiab
+  orig: אׇהֳלִיאָב
+  ref: 出31:6
+  strong: H0171
+  translit: o.ho.li.av
+亞何利巴瑪:
+  match: exact
+  meaning_en: ''
+  name_en: Oholibamah
+  orig: אָהֳלִיבָמָ֛ה
+  ref: 代上1:52
+  strong: H0173
+  translit: '''o.ho.li.va.Mah'
+亞來:
+  match: exact
+  meaning_en: O! would that!
+  name_en: Ahlai
+  orig: אַחְלָ֑י
+  ref: 代上2:31
+  strong: H0304G
+  translit: ach.lay
+亞們:
+  match: exact
+  meaning_en: skilled workman
+  name_en: Amon
+  orig: אָמוֹן
+  ref: 代上3:14
+  strong: H0526H
+  translit: a.mon
+亞倫:
+  match: exact
+  meaning_en: light bringer
+  name_en: Aaron
+  orig: אַהֲרֹן
+  ref: 代上6:3
+  strong: H0175
+  translit: a.ha.ron
+亞列利:
+  match: exact
+  meaning_en: lion of God
+  name_en: Areli
+  orig: אַרְאֵלִי
+  ref: 創46:16
+  strong: H0692
+  translit: ar.e.li
+亞別:
+  match: fuzzy
+  meaning_en: ''
+  name_en: Abiel
+  orig: אֲבִיאֵל
+  ref: 撒上9:1
+  strong: H0022G
+  translit: a.vi.el
+亞力山大#西門之子:
+  match: exact
+  meaning_en: ''
+  name_en: Alexander
+  orig: Ἀλέξανδρος
+  ref: 可15:21
+  strong: G0223G
+  translit: Alexandros
+亞勒文:
+  match: exact
+  meaning_en: tall
+  name_en: Alian or Alvan
+  orig: עַלְיָן, עַלְוָן
+  ref: 代上1:40
+  strong: H5935
+  translit: al.van
+亞勒瓦:
+  match: exact
+  meaning_en: evil
+  name_en: Aliah or Alvah
+  orig: עַלְוָה
+  ref: 代上1:51
+  strong: H5933
+  translit: al.vah
+亞勒腓#利未的父親:
+  match: exact
+  meaning_en: ''
+  name_en: Alphaeus
+  orig: Ἁλφαίου
+  ref: 可2:14
+  strong: G0256
+  translit: Halphaiou
+亞勒腓#雅各的父親:
+  match: exact
+  meaning_en: ''
+  name_en: Alphaeus
+  orig: Ἁλφαίου
+  ref: 太10:3
+  strong: G0256
+  translit: Halphaiou
+亞哈:
+  match: exact
+  meaning_en: father's brother
+  name_en: Ahab
+  orig: אַחְאָב
+  ref: 王上16:29
+  strong: H0256G
+  translit: ach.av
+亞哈拉:
+  match: exact
+  meaning_en: a following brother
+  name_en: Aharah
+  orig: אַחְרַח
+  ref: 代上8:1
+  strong: H0315
+  translit: ach.rach
+亞哈斯:
+  match: exact
+  meaning_en: he has grasped
+  name_en: Ahaz
+  orig: אָחָז
+  ref: 代上3:13
+  strong: H0271G
+  translit: a.chaz
+亞哈斯#米迦:
+  match: exact
+  meaning_en: he has grasped
+  name_en: Ahaz
+  orig: אָחָז
+  ref: 代上8:35
+  strong: H0271H
+  translit: a.chaz
+亞哈謝:
+  match: exact
+  meaning_en: Jehovah (Yahu) holds (possesses)
+  name_en: Ahaziah
+  orig: אֲחַזְיָ֫הוּ
+  ref: 代上3:11
+  strong: H0274H
+  translit: a.chaz.yah
+亞哈謝#亞哈:
+  match: exact
+  meaning_en: Jehovah (Yahu) holds (possesses)
+  name_en: Ahaziah
+  orig: אֲחַזְיָ֫הוּ
+  ref: 王上22:40
+  strong: H0274G
+  translit: a.chaz.yah
+亞哈黑:
+  match: exact
+  meaning_en: a following host
+  name_en: Aharhel
+  orig: אֲחַרְחֵל
+  ref: 代上4:8
+  strong: H0316
+  translit: a.char.chel
+亞基老:
+  match: exact
+  meaning_en: ''
+  name_en: Archelaus
+  orig: Ἀρχέλαος
+  ref: 太2:22
+  strong: G0745
+  translit: Archelaos
+亞多尼雅:
+  match: exact
+  meaning_en: my lord is Jehovah
+  name_en: Adonijah
+  orig: אֲדֹנִיָּ֫הוּ
+  ref: 代上3:2
+  strong: H0138G
+  translit: a.do.niy.yah
+亞大:
+  match: exact
+  meaning_en: exceeding glorious
+  name_en: Addar or Adar
+  orig: אַדָּר
+  ref: 代上8:3
+  strong: H0146H
+  translit: ad.dar
+亞大#以倫:
+  match: aligned
+  meaning_en: ornament
+  name_en: Adah
+  orig: עָדָה
+  ref: 創36:10
+  strong: H5711H
+  translit: a.dah
+亞大#拉麥:
+  match: aligned
+  meaning_en: ornament
+  name_en: Adah
+  orig: עָדָה
+  ref: 創4:19
+  strong: H5711G
+  translit: a.dah
+亞大雅#以探:
+  match: exact
+  meaning_en: Jehovah has adorned Himself
+  name_en: Adaiah
+  orig: עֲדָיָ֫הוּ
+  ref: 代上6:41
+  strong: H5718N
+  translit: a.da.yah
+亞大雅#示每:
+  match: exact
+  meaning_en: Jehovah has adorned Himself
+  name_en: Adaiah
+  orig: עֲדָיָ֫הוּ
+  ref: 代上8:21
+  strong: H5718H
+  translit: a.da.yah
+亞大雅#耶底大之父:
+  match: exact
+  meaning_en: Jehovah has adorned Himself
+  name_en: Adaiah
+  orig: עֲדָיָ֫הוּ
+  ref: 王下22:1
+  strong: H5718G
+  translit: a.da.yah
+亞大雅#耶羅罕:
+  match: exact
+  meaning_en: Jehovah has adorned Himself
+  name_en: Adaiah
+  orig: עֲדָיָ֫הוּ
+  ref: 代上9:12
+  strong: H5718I
+  translit: a.da.yah
+亞太:
+  match: exact
+  meaning_en: opportune
+  name_en: Attai
+  orig: עַתַּי
+  ref: 代上2:35
+  strong: H6262G
+  translit: at.tay
+亞太#羅波安之子:
+  match: exact
+  meaning_en: opportune
+  name_en: Attai
+  orig: עַתַּי
+  ref: 代下11:20
+  strong: H6262I
+  translit: at.tay
+亞實別:
+  match: exact
+  meaning_en: 'a man in God: a man of Baal: fire of Bel: I will make a path'
+  name_en: Ashbel
+  orig: אַשְׁבֵּל
+  ref: 代上8:1
+  strong: H0788
+  translit: ash.bel
+亞實基拿:
+  match: exact
+  meaning_en: 'a man as sprinkled: fire as scattered'
+  name_en: Ashchenaz or Ashkenaz
+  orig: אַשְׁכְּנַז
+  ref: 代上1:6
+  strong: H0813G
+  translit: ash.ke.naz
+亞希#押比疊:
+  match: exact
+  meaning_en: my brother
+  name_en: Ahi
+  orig: אֲחִי
+  ref: 代上5:15
+  strong: H0277G
+  translit: a.chi
+亞希#朔默:
+  match: exact
+  meaning_en: my brother
+  name_en: Ahi
+  orig: אֲחִי
+  ref: 代上7:34
+  strong: H0277H
+  translit: a.chi
+亞希亞:
+  match: exact
+  meaning_en: brother of Jehovah (Yahu)
+  name_en: Ahiah or Ahijah
+  orig: אֲחִיָּ֫הוּ
+  ref: 代上8:7
+  strong: H0281K
+  translit: a.chiy.yah
+亞希幔:
+  match: exact
+  meaning_en: my brother is a gift
+  name_en: Ahiman
+  orig: אֲחִימַן
+  ref: 代上9:17
+  strong: H0289H
+  translit: a.chi.man
+亞希忽:
+  match: exact
+  meaning_en: brother of mystery
+  name_en: Ahihud
+  orig: אֲחִיחֻד
+  ref: 代上8:7
+  strong: H0284
+  translit: a.chi.chud
+亞希摩:
+  match: exact
+  meaning_en: brother of death
+  name_en: Ahimoth
+  orig: אֲחִימוֹת
+  ref: 代上6:25
+  strong: H0287
+  translit: a.chi.mot
+亞希撒抹:
+  match: exact
+  meaning_en: my brother is support (has supported)
+  name_en: Ahisamach
+  orig: אֲחִיסָמָךְ
+  ref: 出31:6
+  strong: H0294
+  translit: a.chi.sa.makh
+亞希暖:
+  match: exact
+  meaning_en: my brother is delight
+  name_en: Ahinoam
+  orig: אֲחִינֹ֫עַם
+  ref: 撒上25:43
+  strong: H0293H
+  translit: a.chi.no.am
+亞希暖#掃羅之妻:
+  match: exact
+  meaning_en: my brother is delight
+  name_en: Ahinoam
+  orig: אֲחִינֹ֫עַם
+  ref: 撒上14:50
+  strong: H0293G
+  translit: a.chi.no.am
+亞希沙哈:
+  match: exact
+  meaning_en: my brother is dawn
+  name_en: Ahishahar
+  orig: אֲחִישָׁ֑חַר
+  ref: 代上7:10
+  strong: H0300
+  translit: a.chi.sha.char
+亞希瑪斯:
+  match: exact
+  meaning_en: my brother is anger (wrath)
+  name_en: Ahimaaz
+  orig: אֲחִימַ֫עַץ
+  ref: 代上6:8
+  strong: H0290H
+  translit: a.chi.ma.ats
+亞希瑪斯#亞希暖之父:
+  match: exact
+  meaning_en: my brother is anger (wrath)
+  name_en: Ahimaaz
+  orig: אֲחִימַ֫עַץ
+  ref: 撒上14:50
+  strong: H0290G
+  translit: a.chi.ma.ats
+亞希瑪斯#拿弗他利:
+  match: exact
+  meaning_en: my brother is anger (wrath)
+  name_en: Ahimaaz
+  orig: אֲחִימַ֫עַץ
+  ref: 王上4:15
+  strong: H0290I
+  translit: a.chi.ma.ats
+亞希突:
+  match: exact
+  meaning_en: my brother is good (goodness)
+  name_en: Ahitub
+  orig: אֲחִיטוּב
+  ref: 代上6:7
+  strong: H0285H
+  translit: a.chi.tuv
+亞希突#9:11:
+  match: exact
+  meaning_en: my brother is good (goodness)
+  name_en: Ahitub
+  orig: אֲחִיטוּב
+  ref: 代上9:11
+  strong: H0285J
+  translit: a.chi.tuv
+亞希突#亞瑪利雅:
+  match: exact
+  meaning_en: my brother is good (goodness)
+  name_en: Ahitub
+  orig: אֲחִיטוּב
+  ref: 代上6:7
+  strong: H0285H
+  translit: a.chi.tuv
+亞希約#比利亞:
+  match: exact
+  meaning_en: brotherly
+  name_en: Ahio
+  orig: אַחְיוֹ
+  ref: 代上8:14
+  strong: H0283H
+  translit: ach.yo
+亞希約#耶利:
+  match: exact
+  meaning_en: brotherly
+  name_en: Ahio
+  orig: אַחְיוֹ
+  ref: 代上8:31
+  strong: H0283I
+  translit: ach.yo
+亞希蘭:
+  match: exact
+  meaning_en: my brother is exalted
+  name_en: Ahiram
+  orig: אֲחִירָם
+  ref: 民26:38
+  strong: H0297
+  translit: a.chi.ram
+亞希雅:
+  match: exact
+  meaning_en: brother of Jehovah (Yahu)
+  name_en: Ahiah or Ahijah
+  orig: אֲחִיָּ֫הוּ
+  ref: 代上2:25
+  strong: H0281J
+  translit: a.chiy.yah
+亞希雅#巴沙之父:
+  match: exact
+  meaning_en: brother of Jehovah (Yahu)
+  name_en: Ahiah or Ahijah
+  orig: אֲחִיָּ֫הוּ
+  ref: 王上15:27
+  strong: H0281I
+  translit: a.chiy.yah
+亞帥雅#哈基雅:
+  match: exact
+  meaning_en: made by Jehovah
+  name_en: Asaiah or Asahiah
+  orig: עֲשָׂיָה
+  ref: 代上6:30
+  strong: H6222I
+  translit: a.sa.yah
+亞帥雅#示羅:
+  match: exact
+  meaning_en: made by Jehovah
+  name_en: Asaiah or Asahiah
+  orig: עֲשָׂיָה
+  ref: 代上9:5
+  strong: H6222J
+  translit: a.sa.yah
+亞帥雅#西緬:
+  match: exact
+  meaning_en: made by Jehovah
+  name_en: Asaiah or Asahiah
+  orig: עֲשָׂיָה
+  ref: 代上4:36
+  strong: H6222H
+  translit: a.sa.yah
+亞干#以察:
+  match: exact
+  meaning_en: let him oppress them
+  name_en: Jakan
+  orig: יַעֲקָן
+  ref: 代上1:42
+  strong: H3292
+  translit: ya.a.qan
+亞底:
+  match: exact
+  meaning_en: ''
+  name_en: Addi
+  orig: Ἀδδί
+  ref: 路3:28
+  strong: G0078
+  translit: Addi
+亞底業:
+  match: exact
+  meaning_en: ornament of God
+  name_en: Adiel
+  orig: עֲדִיאֵל
+  ref: 代上4:36
+  strong: H5717G
+  translit: a.di.el
+亞律:
+  match: exact
+  meaning_en: watchful
+  name_en: Eri
+  orig: עֵרִי
+  ref: 民26:16
+  strong: H6179
+  translit: e.ri
+亞得:
+  match: exact
+  meaning_en: flock
+  name_en: Ader
+  orig: עֶ֫דֶר
+  ref: 代上8:15
+  strong: H5738
+  translit: e.der
+亞得列:
+  match: exact
+  meaning_en: flock of God
+  name_en: Adriel
+  orig: עַדְרִיאֵל
+  ref: 撒上18:19
+  strong: H5741
+  translit: ad.ri.el
+亞惜:
+  match: exact
+  meaning_en: prisoner
+  name_en: Assir
+  orig: אַסִּיר
+  ref: 代上6:37
+  strong: H0617H
+  translit: as.sir
+亞惜#以比雅撒:
+  match: exact
+  meaning_en: prisoner
+  name_en: Assir
+  orig: אַסִּיר
+  ref: 代上6:22
+  strong: H0617G
+  translit: as.sir
+亞惜#出6:24:
+  match: exact
+  meaning_en: prisoner
+  name_en: Assir
+  orig: אַסִּיר
+  ref: 出6:24
+  strong: H0617G
+  translit: as.sir
+亞惜#可拉:
+  match: exact
+  meaning_en: prisoner
+  name_en: Assir
+  orig: אַסִּיר
+  ref: 代上6:22
+  strong: H0617G
+  translit: as.sir
+亞戶撒:
+  match: exact
+  meaning_en: possessor
+  name_en: Ahuzam
+  orig: אֲחֻזָּם
+  ref: 代上4:6
+  strong: H0275
+  translit: a.chuz.zam
+亞戶買:
+  match: exact
+  meaning_en: 'a water reed: brother of waters'
+  name_en: Ahumai
+  orig: אֲחוּמַי
+  ref: 代上4:2
+  strong: H0267
+  translit: a.chu.may
+亞所:
+  match: exact
+  meaning_en: ''
+  name_en: Azor
+  orig: Ἀζώρ
+  ref: 太1:13
+  strong: G0107
+  translit: Azōr
+亞抹:
+  match: exact
+  meaning_en: labour
+  name_en: Amal
+  orig: עָמָל
+  ref: 代上7:35
+  strong: H6000
+  translit: a.mal
+亞拉#烏拉:
+  match: exact
+  meaning_en: traveller
+  name_en: Arah
+  orig: אָרַח
+  ref: 代上7:39
+  strong: H0733G
+  translit: a.rach
+亞拉#益帖:
+  match: aligned
+  meaning_en: lion
+  name_en: Ara
+  orig: אֲרָא
+  ref: 代上7:38
+  strong: H0690
+  translit: a.ra
+亞拉得:
+  match: exact
+  meaning_en: a wild ass
+  name_en: Arad
+  orig: עֲרָד
+  ref: 代上8:15
+  strong: H6166B
+  translit: a.rad
+亞拉篾:
+  match: exact
+  meaning_en: covering
+  name_en: Alameth or Alemeth
+  orig: עָלֶ֫מֶת
+  ref: 代上8:36
+  strong: H5964I
+  translit: a.le.met
+亞拉篾#比結:
+  match: exact
+  meaning_en: covering
+  name_en: Alameth or Alemeth
+  orig: עָלֶ֫מֶת
+  ref: 代上7:8
+  strong: H5964H
+  translit: a.le.met
+亞拿:
+  match: aligned
+  meaning_en: ''
+  name_en: Anah
+  orig: וַֽ/עֲנָ֑ה
+  ref: 代上1:38
+  strong: H6034
+  translit: va./'a.Nah
+亞拿#法內力的女兒:
+  match: exact
+  meaning_en: ''
+  name_en: Anna
+  orig: Ἄννα
+  ref: 路2:36
+  strong: G0451
+  translit: Anna
+亞拿#祭便:
+  match: aligned
+  meaning_en: ''
+  name_en: Anah
+  orig: וַ/עֲנָֽה\׃
+  ref: 代上1:40
+  strong: H6034
+  translit: va./'a.Nah
+亞拿突:
+  match: exact
+  meaning_en: answers to prayer
+  name_en: Anathoth
+  orig: עֲנָתוֹת
+  ref: 代上7:8
+  strong: H6068H
+  translit: a.na.tot
+亞摩尼:
+  match: exact
+  meaning_en: one of the palace
+  name_en: Armoni
+  orig: אַרְמֹנִי
+  ref: 撒下21:8
+  strong: H0764
+  translit: ar.mo.ni
+亞摩斯:
+  match: exact
+  meaning_en: ''
+  name_en: Amos
+  orig: Ἀμώς
+  ref: 路3:25
+  strong: G0301G
+  translit: Amōs
+亞摩答:
+  match: exact
+  meaning_en: not measured
+  name_en: Almodad
+  orig: אַלְמוֹדָד
+  ref: 代上1:20
+  strong: H0486
+  translit: al.mo.dad
+亞撒:
+  match: aligned
+  meaning_en: 'healer: injurious (?)'
+  name_en: Asa
+  orig: אָסָא
+  ref: 王上15:8
+  strong: H0609G
+  translit: a.sa
+亞撒#示瑪:
+  match: exact
+  meaning_en: strong
+  name_en: Azaz
+  orig: עָזָז
+  ref: 代上5:8
+  strong: H5811
+  translit: a.zaz
+亞撒列:
+  match: exact
+  meaning_en: God holds
+  name_en: Asareel
+  orig: אֲשַׂרְאֵל
+  ref: 代上4:16
+  strong: H0840
+  translit: a.sar.el
+亞撒利雅#亞希瑪斯:
+  match: exact
+  meaning_en: Jehovah has helped
+  name_en: Azariah
+  orig: עֲזַרְיָ֫הוּ
+  ref: 代上6:9
+  strong: H5838G
+  translit: a.zar.yah
+亞撒利雅#以探:
+  match: exact
+  meaning_en: Jehovah has helped
+  name_en: Azariah
+  orig: עֲזַרְיָה
+  ref: 代上2:8
+  strong: H5838I
+  translit: a.zar.yah
+亞撒利雅#希勒家:
+  match: exact
+  meaning_en: Jehovah has helped
+  name_en: Azariah
+  orig: עֲזַרְיָ֫הוּ
+  ref: 代上6:9
+  strong: H5838G
+  translit: a.zar.yah
+亞撒利雅#撒督:
+  match: exact
+  meaning_en: Jehovah has helped
+  name_en: Azariah
+  orig: עֲזַרְיָ֫הוּ
+  ref: 王上4:2
+  strong: H5838G
+  translit: a.zar.yah
+亞撒利雅#猶大王:
+  match: exact
+  meaning_en: Jehovah has helped
+  name_en: Azariah
+  orig: עֲזַרְיָה
+  ref: 代上3:12
+  strong: H5838X
+  translit: a.zar.yah
+亞撒利雅#米拉約之子:
+  match: exact
+  meaning_en: Jehovah has helped
+  name_en: Azariah
+  orig: עֲזַרְיָה
+  ref: 拉7:3
+  strong: H5838K
+  translit: a.zar.yah
+亞撒利雅#約哈難:
+  match: exact
+  meaning_en: Jehovah has helped
+  name_en: Azariah
+  orig: עֲזַרְיָ֫הוּ
+  ref: 代上6:9
+  strong: H5838G
+  translit: a.zar.yah
+亞撒利雅#耶戶:
+  match: exact
+  meaning_en: Jehovah has helped
+  name_en: Azariah
+  orig: עֲזַרְיָה
+  ref: 代上2:38
+  strong: H5838J
+  translit: a.zar.yah
+亞撒利雅#西番雅:
+  match: exact
+  meaning_en: Jehovah has helped
+  name_en: Azariah
+  orig: עֲזַרְיָה
+  ref: 代上6:36
+  strong: H5838W
+  translit: a.zar.yah
+亞撒黑:
+  match: exact
+  meaning_en: God-made
+  name_en: Asahel
+  orig: עֲשָׂהאֵל
+  ref: 代上2:16
+  strong: H6214G
+  translit: a.sa.h.el
+亞斐亞:
+  match: exact
+  meaning_en: I will make to breathe
+  name_en: Aphiah
+  orig: אֲפִיחַ
+  ref: 撒上9:1
+  strong: H0647
+  translit: a.phi.ach
+亞斯列#5:24:
+  match: exact
+  meaning_en: my help is God
+  name_en: Azriel
+  orig: עַזְרִיאֵל
+  ref: 代上5:24
+  strong: H5837G
+  translit: az.ri.el
+亞斯利干:
+  match: exact
+  meaning_en: help against the enemy
+  name_en: Azrikam
+  orig: עַזְרִיקָם
+  ref: 代上8:38
+  strong: H5840H
+  translit: az.ri.qam
+亞斯利干#尼利雅:
+  match: exact
+  meaning_en: help against the enemy
+  name_en: Azrikam
+  orig: עַזְרִיקָם
+  ref: 代上3:23
+  strong: H5840G
+  translit: az.ri.qam
+亞斯烈:
+  match: exact
+  meaning_en: I shall be prince of God
+  name_en: Ashriel or Asriel
+  orig: אַשְׂרִיאֵל
+  ref: 民26:31
+  strong: H0844G
+  translit: as.ri.el
+亞斯瑪威:
+  match: exact
+  meaning_en: strong unto death
+  name_en: Azmaveth
+  orig: עַזְמָ֫וֶת
+  ref: 代上8:36
+  strong: H5820H
+  translit: az.ma.vet
+亞施戶:
+  match: exact
+  meaning_en: black
+  name_en: Ashur
+  orig: אַשְׁחוּר
+  ref: 代上2:24
+  strong: H0806
+  translit: ash.chur
+亞施法:
+  match: exact
+  meaning_en: sleek
+  name_en: Ashvath
+  orig: עַשְׁוָ֑ת
+  ref: 代上7:33
+  strong: H6220
+  translit: ash.vat
+亞比亞:
+  match: exact
+  meaning_en: Jehovah is (my) father
+  name_en: Abia or Abiah or Abijah
+  orig: אֲבִיָּה
+  ref: 代上6:28
+  strong: H0029G
+  translit: a.viy.yah
+亞比亞撒:
+  match: exact
+  meaning_en: my father has gathered
+  name_en: Abiasaph
+  orig: אֲבִיאָסָף
+  ref: 出6:24
+  strong: H0023
+  translit: a.vi.a.saph
+亞比他:
+  match: exact
+  meaning_en: my father is (the) dew
+  name_en: Abital
+  orig: אֲבִיטָ֑ל
+  ref: 撒下3:4
+  strong: H0037
+  translit: a.vi.tal
+亞比以謝:
+  match: exact
+  meaning_en: my father is help
+  name_en: Abiezer
+  orig: אֲבִיעֶ֫זֶר
+  ref: 代上7:18
+  strong: H0044H
+  translit: a.vi.e.zer
+亞比大:
+  match: exact
+  meaning_en: my father knows
+  name_en: Abida or Abidah
+  orig: אֲבִידָע
+  ref: 代上1:33
+  strong: H0028
+  translit: a.vi.da
+亞比孩:
+  match: exact
+  meaning_en: my father is might
+  name_en: Abihail
+  orig: אֲבִיחַ֫יִל
+  ref: 代上5:14
+  strong: H0032I
+  translit: a.vi.ha.yil
+亞比孩#亞比述的妻:
+  match: exact
+  meaning_en: my father is might
+  name_en: Abihail
+  orig: אֲבִיחַ֫יִל
+  ref: 代上2:29
+  strong: H0032H
+  translit: a.vi.ha.yil
+亞比孩#以利押的女兒:
+  match: exact
+  meaning_en: my father is might
+  name_en: Abihail
+  orig: אֲבִיחַ֫יִל
+  ref: 代下11:18
+  strong: H0032J
+  translit: a.vi.ha.yil
+亞比孩#以斯帖之父:
+  match: exact
+  meaning_en: my father is might
+  name_en: Abihail
+  orig: אֲבִיחַ֫יִל
+  ref: 斯2:15
+  strong: H0032K
+  translit: a.vi.ha.yil
+亞比忽:
+  match: fuzzy
+  meaning_en: my father is majesty
+  name_en: Abihud
+  orig: אֲבִיהוּד
+  ref: 代上8:3
+  strong: H0031
+  translit: a.vi.hud
+亞比戶:
+  match: fuzzy
+  meaning_en: he is (my) father
+  name_en: Abihu
+  orig: אֲבִיהוּא
+  ref: 代上6:3
+  strong: H0030
+  translit: a.vi.hu
+亞比拿達:
+  match: exact
+  meaning_en: my father is noble
+  name_en: Abinadab
+  orig: אֲבִינָדָב
+  ref: 代上2:13
+  strong: H0041I
+  translit: a.vi.na.dav
+亞比拿達#掃羅:
+  match: exact
+  meaning_en: my father is noble
+  name_en: Abinadab
+  orig: אֲבִינָדָב
+  ref: 代上8:33
+  strong: H0041H
+  translit: a.vi.na.dav
+亞比書:
+  match: exact
+  meaning_en: my father is rescue (safety), or is opulence
+  name_en: Abishua
+  orig: אֲבִישׁוּעַ
+  ref: 代上6:4
+  strong: H0050G
+  translit: a.vi.shu.a
+亞比書#比拉:
+  match: exact
+  meaning_en: my father is rescue (safety), or is opulence
+  name_en: Abishua
+  orig: אֲבִישׁוּעַ
+  ref: 代上8:4
+  strong: H0050H
+  translit: a.vi.shu.a
+亞比玉:
+  match: exact
+  meaning_en: ''
+  name_en: Abiud
+  orig: Ἀβιούδ
+  ref: 太1:13
+  strong: G0010
+  translit: Abioud
+亞比瑪利:
+  match: exact
+  meaning_en: my father is El (God)
+  name_en: Abimael
+  orig: אֲבִימָאֵל
+  ref: 代上1:22
+  strong: H0039
+  translit: a.vi.ma.el
+亞比突:
+  match: exact
+  meaning_en: my father is good(ness)
+  name_en: Abitub
+  orig: אֲבִיטוּב
+  ref: 代上8:11
+  strong: H0036
+  translit: a.vi.tuv
+亞比篩:
+  match: exact
+  meaning_en: my father is Jesse
+  name_en: Abishai
+  orig: אֲבִישַׁי
+  ref: 代上2:16
+  strong: H0052
+  translit: a.vi.shay
+亞比蘭:
+  match: exact
+  meaning_en: my father is exalted
+  name_en: Abiram
+  orig: אֲבִירָם
+  ref: 民26:9
+  strong: H0048G
+  translit: a.vi.ram
+亞比該:
+  match: exact
+  meaning_en: my father is joy
+  name_en: Abigail
+  orig: אֲבִיגַ֫יִל, אֲבִיגַ֫ל
+  ref: 代上2:16
+  strong: H0026H
+  translit: a.vi.ga.yil
+亞比該#拿八的妻:
+  match: exact
+  meaning_en: my father is joy
+  name_en: Abigail
+  orig: אֲבִיגַ֫יִל, אֲבִיגַ֫ל
+  ref: 撒上25:3
+  strong: H0026G
+  translit: a.vi.ga.yil
+亞比述:
+  match: exact
+  meaning_en: my father is a wall
+  name_en: Abishur
+  orig: אֲבִישׁוּר
+  ref: 代上2:28
+  strong: H0051
+  translit: a.vi.shur
+亞比雅:
+  match: exact
+  meaning_en: Jehovah is (my) father
+  name_en: Abia or Abiah or Abijah
+  orig: אֲבִיָּ֫הוּ, אֲבִיָּה
+  ref: 代上3:10
+  strong: H0029I
+  translit: a.viy.yah
+亞比雅#比結:
+  match: exact
+  meaning_en: Jehovah is (my) father
+  name_en: Abia or Abiah or Abijah
+  orig: אֲבִיָּה
+  ref: 代上7:8
+  strong: H0029K
+  translit: a.viy.yah
+亞比雅#耶羅波安之子:
+  match: exact
+  meaning_en: Jehovah is (my) father
+  name_en: Abia or Abiah or Abijah
+  orig: אֲבִיָּה
+  ref: 王上14:1
+  strong: H0029H
+  translit: a.viy.yah
+亞法撒:
+  match: exact
+  meaning_en: 'I shall fail as the breast: he cursed the breast-bottle'
+  name_en: Arphaxad
+  orig: אַרְפַּכְשַׁד
+  ref: 代上1:17
+  strong: H0775
+  translit: ar.pakh.shad
+亞珥難:
+  match: exact
+  meaning_en: 'lion of perpetuity: or a wild goat: I shall shout for joy'
+  name_en: Arnan
+  orig: אַרְנָן
+  ref: 代上3:21
+  strong: H0770
+  translit: ar.nan
+亞瑪利雅:
+  match: exact
+  meaning_en: Jehovah speaks
+  name_en: Amariah
+  orig: אֲמַרְיָ֫הוּ
+  ref: 代上6:7
+  strong: H0568G
+  translit: a.mar.yah
+亞瑪利雅#亞撒利雅:
+  match: exact
+  meaning_en: Jehovah speaks
+  name_en: Amariah
+  orig: אֲמַרְיָ֫הוּ
+  ref: 代上6:7
+  strong: H0568G
+  translit: a.mar.yah
+亞瑪利雅#撒迦利雅之父:
+  match: exact
+  meaning_en: Jehovah speaks
+  name_en: Amariah
+  orig: אֲמַרְיָ֫הוּ
+  ref: 尼11:4
+  strong: H0568N
+  translit: a.mar.yah
+亞瑪利雅#西番雅之曾祖:
+  match: exact
+  meaning_en: Jehovah speaks
+  name_en: Amariah
+  orig: אֲמַרְיָ֫הוּ
+  ref: 番1:1
+  strong: H0568O
+  translit: a.mar.yah
+亞瑪力:
+  match: exact
+  meaning_en: dweller in a valley
+  name_en: Amalek
+  orig: עֲמָלֵק
+  ref: 創36:12
+  strong: H6002H
+  translit: a.ma.leq
+亞瑪撒:
+  match: exact
+  meaning_en: burden
+  name_en: Amasa
+  orig: עֲמָשָׂא
+  ref: 代上2:17
+  strong: H6021G
+  translit: a.ma.sa
+亞瑪謝:
+  match: exact
+  meaning_en: Jehovah is mighty
+  name_en: Amaziah
+  orig: אֲמַצְיָ֫הוּ
+  ref: 代上3:12
+  strong: H0558G
+  translit: a.mats.yah
+亞瑪謝#希勒家:
+  match: exact
+  meaning_en: Jehovah is mighty
+  name_en: Amaziah
+  orig: אֲמַצְיָ֫הוּ
+  ref: 代上6:45
+  strong: H0558I
+  translit: a.mats.yah
+亞瑪謝#約沙之父:
+  match: exact
+  meaning_en: Jehovah is mighty
+  name_en: Amaziah
+  orig: אֲמַצְיָ֫הוּ
+  ref: 代上4:34
+  strong: H0558H
+  translit: a.mats.yah
+亞瑪賽:
+  match: exact
+  meaning_en: burdensome
+  name_en: Amasai
+  orig: עֲמָשַׂי
+  ref: 代上6:35
+  strong: H6022G
+  translit: a.ma.say
+亞瑪賽#6:25:
+  match: exact
+  meaning_en: burdensome
+  name_en: Amasai
+  orig: עֲמָשַׂי
+  ref: 代上6:25
+  strong: H6022G
+  translit: a.ma.say
+亞當:
+  match: exact
+  meaning_en: red
+  name_en: Adam
+  orig: אָדָם
+  ref: 代上1:1
+  strong: H0121G
+  translit: a.dam
+亞第業:
+  match: exact
+  meaning_en: ornament of God
+  name_en: Adiel
+  orig: עֲדִיאֵל
+  ref: 代上9:12
+  strong: H5717H
+  translit: a.di.el
+亞米利#拔書亞之父:
+  match: exact
+  meaning_en: my kinsman is God
+  name_en: Ammiel
+  orig: עַמִּיאֵל
+  ref: 代上3:5
+  strong: H5988J
+  translit: am.mi.el
+亞米忽:
+  match: exact
+  meaning_en: my kinsman is majesty
+  name_en: Ammihud
+  orig: עַמִּיהוּד
+  ref: 代上7:26
+  strong: H5989G
+  translit: am.mi.hud
+亞米忽#9:4:
+  match: exact
+  meaning_en: my kinsman is majesty
+  name_en: Ammihud
+  orig: עַמִּיהוּד
+  ref: 代上9:4
+  strong: H5989K
+  translit: am.mi.hud
+亞米忽#達買之父:
+  match: exact
+  meaning_en: my kinsman is majesty
+  name_en: Ammihud
+  orig: עַמִּיהוּד
+  ref: 撒下13:37
+  strong: H5989J
+  translit: am.mi.hud
+亞米拿達:
+  match: exact
+  meaning_en: my kinsman is noble
+  name_en: Amminadab
+  orig: עַמִּינָדָב
+  ref: 代上2:10
+  strong: H5992G
+  translit: am.mi.na.dav
+亞米拿達#哥轄:
+  match: exact
+  meaning_en: my kinsman is noble
+  name_en: Amminadab
+  orig: עַמִּינָדָב
+  ref: 代上6:22
+  strong: H5992I
+  translit: am.mi.na.dav
+亞羅底:
+  match: exact
+  meaning_en: 'I shall subdue: I shall roam'
+  name_en: Arodi or Arodites
+  orig: אֲרוֹדִי
+  ref: 創46:16
+  strong: H0722
+  translit: a.ro.di
+亞薛:
+  match: exact
+  meaning_en: made by God
+  name_en: Asiel
+  orig: עֲשִׂיאֵל
+  ref: 代上4:35
+  strong: H6221
+  translit: a.si.el
+亞薩:
+  match: exact
+  meaning_en: gatherer
+  name_en: Asaph
+  orig: אָסָף
+  ref: 代上6:39
+  strong: H0623H
+  translit: a.saph
+亞薩利雅:
+  match: exact
+  meaning_en: Jehovah has helped
+  name_en: Azariah
+  orig: עֲזַרְיָה
+  ref: 代上9:11
+  strong: H5838L
+  translit: a.zar.yah
+亞蘭:
+  match: aligned
+  meaning_en: exalted
+  name_en: Aram or Arameans
+  orig: אֲרָם
+  ref: 創10:22
+  strong: H0758G
+  translit: a.ram
+亞蘭#底珊:
+  match: exact
+  meaning_en: joyous
+  name_en: Aran
+  orig: אֲרָן
+  ref: 代上1:42
+  strong: H0765
+  translit: a.ran
+亞西納:
+  match: exact
+  meaning_en: belonging to the goddess Neith
+  name_en: Asenath
+  orig: אָֽסְנַת
+  ref: 創41:45
+  strong: H0621
+  translit: a.se.nat
+亞設:
+  match: exact
+  meaning_en: happy
+  name_en: Asher
+  orig: אָשֵׁר
+  ref: 代上2:2
+  strong: H0836
+  translit: a.sher
+亞谷:
+  match: exact
+  meaning_en: insidious
+  name_en: Akkub
+  orig: עַקּוּב
+  ref: 代上9:17
+  strong: H6126H
+  translit: aq.quv
+亞辦:
+  match: exact
+  meaning_en: brother of an understanding (intelligent) one
+  name_en: Ahban
+  orig: אַחְבָן
+  ref: 代上2:29
+  strong: H0257
+  translit: ach.van
+亞遍:
+  match: exact
+  meaning_en: nostrils
+  name_en: Appaim
+  orig: אַפַּיִם
+  ref: 代上2:30
+  strong: H0649
+  translit: ap.pa.yim
+亞那:
+  match: exact
+  meaning_en: ''
+  name_en: Annas
+  orig: Ἄννας
+  ref: 約18:13
+  strong: G0452
+  translit: Annas
+亞金:
+  match: exact
+  meaning_en: ''
+  name_en: Achim
+  orig: Ἀχείμ
+  ref: 太1:14
+  strong: G0885
+  translit: Acheim
+亞雅:
+  match: exact
+  meaning_en: falcon
+  name_en: Aiah or Ajah
+  orig: אַיָּה
+  ref: 代上1:40
+  strong: H0345G
+  translit: ay.yah
+亞革波:
+  match: exact
+  meaning_en: mouse
+  name_en: Achbor
+  orig: עַכְבּוֹר
+  ref: 創36:38
+  strong: H5907G
+  translit: akh.bor
+亦施瓦:
+  match: exact
+  meaning_en: he will resemble
+  name_en: Ishuai or Isuah
+  orig: יִשְׁוָה
+  ref: 代上7:30
+  strong: H3438
+  translit: yish.vah
+亦施韋:
+  match: exact
+  meaning_en: he resembles me
+  name_en: Ishui or Ishuai or Isui or Jesui
+  orig: יִשְׁוִי
+  ref: 代上7:30
+  strong: H3440G
+  translit: yish.vi
+亦施韋#掃羅:
+  match: exact
+  meaning_en: he resembles me
+  name_en: Ishui or Ishuai or Isui or Jesui
+  orig: יִשְׁוִי
+  ref: 撒上14:49
+  strong: H3440H
+  translit: yish.vi
+亦迦:
+  match: exact
+  meaning_en: one who looks forth
+  name_en: Iscah
+  orig: יִסְכָּה
+  ref: 創11:29
+  strong: H3252
+  translit: yis.kah
+他利亞:
+  match: fuzzy
+  meaning_en: chamber of a neighbour
+  name_en: Tarea
+  orig: תַּאֲרֵעַ
+  ref: 代上8:35
+  strong: H8390
+  translit: ta.a.re.a
+他哈:
+  match: exact
+  meaning_en: station
+  name_en: Tahath
+  orig: תַּ֫חַת
+  ref: 代上6:37
+  strong: H8480H
+  translit: ta.chat
+他哈#亞惜:
+  match: exact
+  meaning_en: station
+  name_en: Tahath
+  orig: תַּ֫חַת
+  ref: 代上6:24
+  strong: H8480H
+  translit: ta.chat
+他拉:
+  match: aligned
+  meaning_en: station
+  name_en: Terah
+  orig: תֶּ֫רַח
+  ref: 創11:24
+  strong: H8646G
+  translit: te.rach
+他拉#利悉:
+  match: exact
+  meaning_en: vigour
+  name_en: Telah
+  orig: תֶּ֫לַח
+  ref: 代上7:25
+  strong: H8520
+  translit: te.lach
+他施:
+  match: exact
+  meaning_en: yellow jasper
+  name_en: Tarshish or Tharshish
+  orig: תַּרְשִׁישׁ
+  ref: 代上1:7
+  strong: H8659G
+  translit: tar.shish
+他施#比勒罕:
+  match: exact
+  meaning_en: yellow jasper
+  name_en: Tarshish or Tharshish
+  orig: תַּרְשִׁישׁ
+  ref: 代上7:10
+  strong: H8659I
+  translit: tar.shish
+他普亞:
+  match: exact
+  meaning_en: the apple city
+  name_en: Tappuah
+  orig: תַּפֻּחַ
+  ref: 代上2:43
+  strong: H8599A
+  translit: ta.phuch
+他瑪:
+  match: exact
+  meaning_en: palm-tree
+  name_en: Tamar
+  orig: תָּמָר
+  ref: 代上3:9
+  strong: H8559H
+  translit: ta.mar
+他瑪#押沙龍:
+  match: exact
+  meaning_en: palm-tree
+  name_en: Tamar
+  orig: תָּמָר
+  ref: 撒下14:27
+  strong: H8559I
+  translit: ta.mar
+他瑪#猶大的兒婦:
+  match: exact
+  meaning_en: palm-tree
+  name_en: Tamar
+  orig: תָּמָר
+  ref: 創38:6
+  strong: H8559G
+  translit: ta.mar
+他罕:
+  match: exact
+  meaning_en: camp
+  name_en: Tahan
+  orig: תַּ֫חַן
+  ref: 代上7:25
+  strong: H8465H
+  translit: ta.chan
+他罕#以法蓮:
+  match: exact
+  meaning_en: camp
+  name_en: Tahan
+  orig: תַּ֫חַן
+  ref: 民26:35
+  strong: H8465G
+  translit: ta.chan
+他轄:
+  match: exact
+  meaning_en: dugong
+  name_en: Thahash
+  orig: תַּ֫חַשׁ
+  ref: 創22:24
+  strong: H8477
+  translit: ta.chash
+以他瑪:
+  match: exact
+  meaning_en: coast of palms
+  name_en: Ithamar
+  orig: אִיתָמָר
+  ref: 代上6:3
+  strong: H0385
+  translit: i.ta.mar
+以倫:
+  match: exact
+  meaning_en: terebinth, mighty
+  name_en: Elon
+  orig: אֵלוֹן
+  ref: 民26:26
+  strong: H0356H
+  translit: e.lon
+以倫#西布倫:
+  match: exact
+  meaning_en: terebinth, mighty
+  name_en: Elon
+  orig: אֵלוֹן
+  ref: 創46:14
+  strong: H0356H
+  translit: e.lon
+以倫#赫人:
+  match: exact
+  meaning_en: terebinth, mighty
+  name_en: Elon
+  orig: אֵלוֹן
+  ref: 創26:34
+  strong: H0356G
+  translit: e.lon
+以利乃:
+  match: exact
+  meaning_en: unto God are my eyes
+  name_en: Elienai
+  orig: אֱלִיעֵינַי
+  ref: 代上8:20
+  strong: H0462
+  translit: e.li.e.nay
+以利亞:
+  match: exact
+  meaning_en: my God is Jehovah
+  name_en: Elijah or Eliah
+  orig: אֵלִיָּה
+  ref: 代上8:27
+  strong: H0452H
+  translit: e.liy.yah
+以利亞他#希幔:
+  match: exact
+  meaning_en: God has come
+  name_en: Eliathah
+  orig: אֳלִיאָ֫תָה
+  ref: 代上25:4
+  strong: H0448
+  translit: e.li.a.tah
+以利亞實:
+  match: exact
+  meaning_en: God restores
+  name_en: Eliashib
+  orig: אֶלְיָשִׁיב
+  ref: 代上3:24
+  strong: H0475G
+  translit: el.ya.shiv
+以利亞實#約雅金:
+  match: exact
+  meaning_en: God restores
+  name_en: Eliashib
+  orig: אֶלְיָשִׁיב
+  ref: 尼12:10
+  strong: H0475N
+  translit: el.ya.shiv
+以利亞撒:
+  match: exact
+  meaning_en: God has helped
+  name_en: Eleazar
+  orig: אֶלְעָזָר
+  ref: 代上6:3
+  strong: H0499G
+  translit: el.a.zar
+以利亞撒#以律:
+  match: exact
+  meaning_en: ''
+  name_en: Eleazar
+  orig: Ἐλεάζαρ
+  ref: 太1:15
+  strong: G1648
+  translit: Eleazar
+以利亞撒#抹利:
+  match: exact
+  meaning_en: God has helped
+  name_en: Eleazar
+  orig: אֶלְעָזָר
+  ref: 代上23:21
+  strong: H0499J
+  translit: el.a.zar
+以利亞敬#亞比玉:
+  match: exact
+  meaning_en: ''
+  name_en: Eliakim
+  orig: Ἐλιακείμ
+  ref: 太1:13
+  strong: G1662G
+  translit: Eliakeim
+以利亞敬#路3:30:
+  match: exact
+  meaning_en: ''
+  name_en: Eliakim
+  orig: Ἐλιακείμ
+  ref: 路3:30
+  strong: G1662H
+  translit: Eliakeim
+以利亞薩#希利斯:
+  match: aligned
+  meaning_en: God has made
+  name_en: Elasah or Eleasah
+  orig: אֶלְעָשָׂה
+  ref: 代上2:39
+  strong: H0501G
+  translit: el.a.sah
+以利以謝:
+  match: exact
+  meaning_en: God is help
+  name_en: Eliezer
+  orig: אֱלִיעֶ֫זֶר
+  ref: 代上7:8
+  strong: H0461I
+  translit: e.li.e.zer
+以利以謝#摩西:
+  match: exact
+  meaning_en: God is help
+  name_en: Eliezer
+  orig: אֱלִיעֶ֫זֶר
+  ref: 出18:4
+  strong: H0461H
+  translit: e.li.e.zer
+以利以謝#約令:
+  match: exact
+  meaning_en: ''
+  name_en: Eliezer
+  orig: Ἐλιέζερ
+  ref: 路3:29
+  strong: G1663
+  translit: Eliezer
+以利加拿#6:25:
+  match: exact
+  meaning_en: God has possessed
+  name_en: Elkanah
+  orig: אֶלְקָנָה
+  ref: 代上6:25
+  strong: H0511I
+  translit: el.qa.nah
+以利加拿#9:16:
+  match: exact
+  meaning_en: God has possessed
+  name_en: Elkanah
+  orig: אֶלְקָנָה
+  ref: 代上9:16
+  strong: H0511K
+  translit: el.qa.nah
+以利加拿#亞希摩:
+  match: exact
+  meaning_en: God has possessed
+  name_en: Elkanah
+  orig: אֶלְקָנָה
+  ref: 代上6:26
+  strong: H0511J
+  translit: el.qa.nah
+以利加拿#亞惜:
+  match: exact
+  meaning_en: God has possessed
+  name_en: Elkanah
+  orig: אֶלְקָנָה
+  ref: 代上6:23
+  strong: H0511G
+  translit: el.qa.nah
+以利加拿#出6:24:
+  match: exact
+  meaning_en: God has possessed
+  name_en: Elkanah
+  orig: אֶלְקָנָה
+  ref: 出6:24
+  strong: H0511G
+  translit: el.qa.nah
+以利加拿#瑪哈:
+  match: exact
+  meaning_en: God has possessed
+  name_en: Elkanah
+  orig: אֶלְקָנָה
+  ref: 代上6:34
+  strong: H0511H
+  translit: el.qa.nah
+以利加拿#約珥:
+  match: exact
+  meaning_en: God has possessed
+  name_en: Elkanah
+  orig: אֶלְקָנָה
+  ref: 代上6:34
+  strong: H0511H
+  translit: el.qa.nah
+以利加拿#耶羅罕:
+  match: exact
+  meaning_en: God has possessed
+  name_en: Elkanah
+  orig: אֶלְקָנָה
+  ref: 代上6:26
+  strong: H0511J
+  translit: el.qa.nah
+以利加拿#耶羅罕甲:
+  match: exact
+  meaning_en: God has possessed
+  name_en: Elkanah
+  orig: אֶלְקָנָה
+  ref: 代上6:34
+  strong: H0511H
+  translit: el.qa.nah
+以利巴力:
+  match: exact
+  meaning_en: God is maker
+  name_en: Elpaal
+  orig: אֶלְפַּ֫עַל
+  ref: 代上8:11
+  strong: H0508
+  translit: el.pa.al
+以利押:
+  match: exact
+  meaning_en: my God is father
+  name_en: Eliab
+  orig: אֱלִיאָב
+  ref: 代上2:13
+  strong: H0446I
+  translit: e.li.av
+以利押#拿哈:
+  match: exact
+  meaning_en: my God is father
+  name_en: Eliab
+  orig: אֱלִיאָב
+  ref: 代上6:27
+  strong: H0446L
+  translit: e.li.av
+以利押#法路:
+  match: exact
+  meaning_en: my God is father
+  name_en: Eliab
+  orig: אֱלִיאָב
+  ref: 民26:8
+  strong: H0446H
+  translit: e.li.av
+以利拿單#尼護施他之父:
+  match: exact
+  meaning_en: God has given
+  name_en: Elnathan
+  orig: אֶלְנָתָן
+  ref: 王下24:8
+  strong: H0494G
+  translit: el.na.tan
+以利撒反:
+  match: exact
+  meaning_en: my God has protected
+  name_en: Elizaphan or Elzaphan
+  orig: אֱלִיצָפָן
+  ref: 出6:22
+  strong: H0469G
+  translit: e.li.tsa.phan
+以利書亞:
+  match: exact
+  meaning_en: my God is wealth
+  name_en: Elishua
+  orig: אֱלִישׁוּעַ
+  ref: 撒下5:15
+  strong: H0474
+  translit: e.li.shu.a
+以利沙:
+  match: fuzzy
+  meaning_en: God of the coming (one)
+  name_en: Elishah
+  orig: אֱלִישָׁה
+  ref: 代上1:7
+  strong: H0473G
+  translit: e.li.shah
+以利沙伯:
+  match: exact
+  meaning_en: ''
+  name_en: Elizabeth
+  orig: Ἐλισάβετ
+  ref: 路1:5
+  strong: G1665
+  translit: Elisabet
+以利沙巴:
+  match: exact
+  meaning_en: my God has sworn
+  name_en: Elisheba
+  orig: אֱלִישֶׁ֫בַע
+  ref: 出6:23
+  strong: H0472
+  translit: e.li.she.va
+以利沙瑪:
+  match: exact
+  meaning_en: my God has heard
+  name_en: Elishama
+  orig: אֱלִישָׁמָע
+  ref: 代上7:26
+  strong: H0476G
+  translit: e.li.sha.ma
+以利沙瑪#大衛乙:
+  match: exact
+  meaning_en: my God has heard
+  name_en: Elishama
+  orig: אֱלִישָׁמָע
+  ref: 代上3:8
+  strong: H0476H
+  translit: e.li.sha.ma
+以利沙瑪#大衛甲:
+  match: exact
+  meaning_en: my God has heard
+  name_en: Elishama
+  orig: אֱלִישָׁמָע
+  ref: 代上3:6
+  strong: H0476M
+  translit: e.li.sha.ma
+以利沙瑪#耶加米雅:
+  match: exact
+  meaning_en: my God has heard
+  name_en: Elishama
+  orig: אֱלִישָׁמָע
+  ref: 代上2:41
+  strong: H0476J
+  translit: e.li.sha.ma
+以利法:
+  match: exact
+  meaning_en: my God is (fine) gold
+  name_en: Eliphaz
+  orig: אֱלִיפַז
+  ref: 代上1:35
+  strong: H0464G
+  translit: e.li.phaz
+以利法列#以設:
+  match: exact
+  meaning_en: God is deliverance
+  name_en: Elpalet or Eliphalet or Eliphelet
+  orig: אֲלִיפֶ֫לֶט
+  ref: 代上8:39
+  strong: H0467J
+  translit: e.li.phe.let
+以利法列#大衛乙:
+  match: exact
+  meaning_en: God is deliverance
+  name_en: Elpalet or Eliphalet or Eliphelet
+  orig: אֲלִיפֶ֫לֶט
+  ref: 代上3:8
+  strong: H0467G
+  translit: e.li.phe.let
+以利法列#大衛甲:
+  match: exact
+  meaning_en: God is deliverance
+  name_en: Elpalet or Eliphalet or Eliphelet
+  orig: אֲלִיפֶ֫לֶט
+  ref: 代上3:6
+  strong: H0467I
+  translit: e.li.phe.let
+以利米勒:
+  match: exact
+  meaning_en: my God is king
+  name_en: Elimelech
+  orig: אֱלִימֶ֫לֶךְ
+  ref: 得1:2
+  strong: H0458
+  translit: e.li.me.lekh
+以利約乃#尼利雅:
+  match: exact
+  meaning_en: unto Jehovah are my eyes
+  name_en: Elioenai or Elihoenai
+  orig: אֶלְיוֹעֵינַי
+  ref: 代上3:23
+  strong: H0454B
+  translit: el.yo.e.nay
+以利約乃#比結:
+  match: exact
+  meaning_en: unto Jehovah are my eyes
+  name_en: Elioenai or Elihoenai
+  orig: אֶלְיוֹעֵינַי
+  ref: 代上7:8
+  strong: H0454I
+  translit: el.yo.e.nay
+以利約乃#西緬:
+  match: exact
+  meaning_en: unto Jehovah are my eyes
+  name_en: Elioenai or Elihoenai
+  orig: אֶלְיוֹעֵינַי
+  ref: 代上4:36
+  strong: H0454H
+  translit: el.yo.e.nay
+以利雅大:
+  match: exact
+  meaning_en: God knows
+  name_en: Eliadah or Eliada
+  orig: אֶלְיָדָע
+  ref: 代上3:8
+  strong: H0450G
+  translit: el.ya.da
+以勒大:
+  match: exact
+  meaning_en: God has known
+  name_en: Eldaah
+  orig: אֶלְדָּעָה
+  ref: 代上1:33
+  strong: H0420
+  translit: el.da.ah
+以察:
+  match: exact
+  meaning_en: treasure
+  name_en: Ezer
+  orig: אֵ֫צֶר
+  ref: 代上1:38
+  strong: H0687
+  translit: e.tser
+以實瑪利:
+  match: exact
+  meaning_en: God will hear
+  name_en: Ishmael
+  orig: יִשְׁמָעֵאל
+  ref: 代上1:28
+  strong: H3458G
+  translit: yish.ma.el
+以實瑪利#亞悉:
+  match: exact
+  meaning_en: God will hear
+  name_en: Ishmael
+  orig: יִשְׁמָעֵאל
+  ref: 代上8:38
+  strong: H3458I
+  translit: yish.ma.el
+以巴錄:
+  match: exact
+  meaning_en: stone
+  name_en: Ebal
+  orig: עֵיבָל
+  ref: 代上1:22
+  strong: H5858A
+  translit: e.val
+以巴錄#朔巴:
+  match: exact
+  meaning_en: stone
+  name_en: Ebal
+  orig: עֵיבָל
+  ref: 代上1:40
+  strong: H5858B
+  translit: e.val
+以希:
+  match: exact
+  meaning_en: my brother
+  name_en: Ehi
+  orig: אֵחִי
+  ref: 創46:21
+  strong: H0278
+  translit: e.chi
+以弗:
+  match: exact
+  meaning_en: a calf
+  name_en: Epher
+  orig: עֵ֫פֶר
+  ref: 代上1:33
+  strong: H6081G
+  translit: e.pher
+以弗#5:24:
+  match: exact
+  meaning_en: a calf
+  name_en: Epher
+  orig: עֵ֫פֶר
+  ref: 代上5:24
+  strong: H6081I
+  translit: e.pher
+以弗#以斯拉:
+  match: exact
+  meaning_en: a calf
+  name_en: Epher
+  orig: עֵ֫פֶר
+  ref: 代上4:17
+  strong: H6081H
+  translit: e.pher
+以弗拉:
+  match: exact
+  meaning_en: intercessor
+  name_en: Ephlal
+  orig: אֶפְלָל
+  ref: 代上2:37
+  strong: H0654
+  translit: eph.lal
+以律:
+  match: exact
+  meaning_en: ''
+  name_en: Eliud
+  orig: Ἐλιούδ
+  ref: 太1:14
+  strong: G1664
+  translit: Elioud
+以忽:
+  match: exact
+  meaning_en: 'I will give thanks: I will be praised'
+  name_en: Ehud
+  orig: אֵהוּד
+  ref: 代上7:10
+  strong: H0164H
+  translit: e.hud
+以忽#8:6:
+  match: exact
+  meaning_en: united
+  name_en: Ehud
+  orig: אֵחוּד
+  ref: 代上8:6
+  strong: H0261
+  translit: e.chud
+以拉#何細亞之父:
+  match: exact
+  meaning_en: An oak
+  name_en: Elah
+  orig: אֵלָה
+  ref: 王下15:30
+  strong: H0425I
+  translit: e.lah
+以拉#巴沙:
+  match: exact
+  meaning_en: An oak
+  name_en: Elah
+  orig: אֵלָה
+  ref: 王上16:8
+  strong: H0425H
+  translit: e.lah
+以拉#族長:
+  match: exact
+  meaning_en: An oak
+  name_en: Elah
+  orig: אֵלָה
+  ref: 代上1:52
+  strong: H0425G
+  translit: e.lah
+以拉#烏西:
+  match: exact
+  meaning_en: An oak
+  name_en: Elah
+  orig: אֵלָה
+  ref: 代上9:8
+  strong: H0425K
+  translit: e.lah
+以拉#迦勒:
+  match: exact
+  meaning_en: An oak
+  name_en: Elah
+  orig: אֵלָה
+  ref: 代上4:15
+  strong: H0425J
+  translit: e.lah
+以拉大:
+  match: exact
+  meaning_en: God has adorned
+  name_en: Eladah
+  orig: אֶלְעָדָה
+  ref: 代上7:20
+  strong: H0497
+  translit: el.a.dah
+以挪士:
+  match: exact
+  meaning_en: man
+  name_en: Enos
+  orig: אֱנוֹשׁ
+  ref: 代上1:1
+  strong: H0583
+  translit: e.nosh
+以掃:
+  match: exact
+  meaning_en: hairy
+  name_en: Esau
+  orig: עֵשָׂו
+  ref: 代上1:34
+  strong: H6215G
+  translit: e.sav
+以探:
+  match: exact
+  meaning_en: enduring
+  name_en: Ethan
+  orig: אֵיתָן
+  ref: 代上6:44
+  strong: H0387J
+  translit: e.tan
+以探#薪瑪:
+  match: exact
+  meaning_en: enduring
+  name_en: Ethan
+  orig: אֵיתָן
+  ref: 代上6:42
+  strong: H0387I
+  translit: e.tan
+以探#謝拉:
+  match: exact
+  meaning_en: enduring
+  name_en: Ethan
+  orig: אֵיתָן
+  ref: 代上2:6
+  strong: H0387H
+  translit: e.tan
+以摩當:
+  match: exact
+  meaning_en: ''
+  name_en: Elmadam
+  orig: Ἐλμωδάμ
+  ref: 路3:28
+  strong: G1678
+  translit: Elmōdam
+以撒:
+  match: exact
+  meaning_en: he laughs
+  name_en: Isaac
+  orig: יִצְחָק
+  ref: 代上1:28
+  strong: H3327
+  translit: yits.chaq
+以攔:
+  match: exact
+  meaning_en: eternity
+  name_en: Elam
+  orig: עֵילָם
+  ref: 代上1:17
+  strong: H5867C
+  translit: e.lam
+以攔#沙煞:
+  match: exact
+  meaning_en: eternity
+  name_en: Elam
+  orig: עֵילָם
+  ref: 代上8:24
+  strong: H5867G
+  translit: e.lam
+以斯利:
+  match: exact
+  meaning_en: ''
+  name_en: Esli
+  orig: Ἐσλί
+  ref: 路3:25
+  strong: G2069
+  translit: Esli
+以斯哈:
+  match: exact
+  meaning_en: shining oil
+  name_en: Izhar
+  orig: יִצְהָר
+  ref: 代上6:2
+  strong: H3324
+  translit: yits.har
+以斯帖:
+  match: exact
+  meaning_en: star
+  name_en: Esther
+  orig: אֶסְתֵּר
+  ref: 斯2:7
+  strong: H0635
+  translit: es.ter
+以斯拉:
+  match: exact
+  meaning_en: help
+  name_en: Ezra
+  orig: עֶזְרָה
+  ref: 代上4:17
+  strong: H5834
+  translit: ez.rah
+以斯拉#西萊雅:
+  match: exact
+  meaning_en: help
+  name_en: Ezra
+  orig: עֶזְרָא
+  ref: 拉7:1
+  strong: H5830G
+  translit: ez.ra
+以斯本:
+  match: exact
+  meaning_en: 'hasting to discern: I will be enlargement'
+  name_en: Ezbon
+  orig: אֶצְבּוֹן
+  ref: 代上7:7
+  strong: H0675H
+  translit: ets.bon
+以斯本#迦得:
+  match: exact
+  meaning_en: 'hasting to discern: I will be enlargement'
+  name_en: Ezbon
+  orig: אֶצְבּוֹן
+  ref: 創46:16
+  strong: H0675G
+  translit: ets.bon
+以格拉:
+  match: exact
+  meaning_en: a heifer
+  name_en: Eglah
+  orig: עֶגְלָה
+  ref: 撒下3:5
+  strong: H5698
+  translit: eg.lah
+以比雅撒:
+  match: exact
+  meaning_en: my father has gathered
+  name_en: Ebiasaph
+  orig: אֶבְיָסָף, אֲבִיאָסָף
+  ref: 代上6:37
+  strong: H0043
+  translit: ev.ya.saph
+以比雅撒#以利加拿:
+  match: exact
+  meaning_en: my father has gathered
+  name_en: Ebiasaph
+  orig: אֶבְיָסָף, אֲבִיאָסָף
+  ref: 代上6:23
+  strong: H0043
+  translit: ev.ya.saph
+以法:
+  match: exact
+  meaning_en: gloomy
+  name_en: Ephah
+  orig: עֵיפָה
+  ref: 代上1:33
+  strong: H5891G
+  translit: e.phah
+以法#迦勒的妾:
+  match: exact
+  meaning_en: gloomy
+  name_en: Ephah
+  orig: עֵיפָה
+  ref: 代上2:46
+  strong: H5891H
+  translit: e.phah
+以法#雅代:
+  match: exact
+  meaning_en: gloomy
+  name_en: Ephah
+  orig: עֵיפָה
+  ref: 代上2:47
+  strong: H5891I
+  translit: e.phah
+以法蓮:
+  match: exact
+  meaning_en: 'double ash-heap: I shall be doubly fruitful'
+  name_en: Ephraim
+  orig: אֶפְרַ֫יִם
+  ref: 代上7:20
+  strong: H0669G
+  translit: eph.ra.yim
+以特念:
+  match: exact
+  meaning_en: profit of the people
+  name_en: Ithream
+  orig: יִתְרְעָם
+  ref: 代上3:3
+  strong: H3507
+  translit: yit.re.am
+以特拉:
+  match: exact
+  meaning_en: abundance
+  name_en: Ithra
+  orig: יִתְרָא
+  ref: 撒下17:25
+  strong: H3501
+  translit: yit.ra
+以珥:
+  match: exact
+  meaning_en: belonging to a city
+  name_en: Ir
+  orig: עִיר
+  ref: 代上7:12
+  strong: H5893G
+  translit: ir
+以甲:
+  match: exact
+  meaning_en: He redeems
+  name_en: Igal or Igeal
+  orig: יִגְאָל
+  ref: 代上3:22
+  strong: H3008I
+  translit: yig.al
+以示:
+  match: exact
+  meaning_en: He saves me
+  name_en: Ishi
+  orig: יִשְׁעִי
+  ref: 代上2:31
+  strong: H3469G
+  translit: yish.i
+以示#4:20:
+  match: exact
+  meaning_en: He saves me
+  name_en: Ishi
+  orig: יִשְׁעִי
+  ref: 代上4:20
+  strong: H3469H
+  translit: yish.i
+以示#4:42:
+  match: exact
+  meaning_en: He saves me
+  name_en: Ishi
+  orig: יִשְׁעִי
+  ref: 代上4:42
+  strong: H3469I
+  translit: yish.i
+以示#5:24:
+  match: exact
+  meaning_en: He saves me
+  name_en: Ishi
+  orig: יִשְׁעִי
+  ref: 代上5:24
+  strong: H3469J
+  translit: yish.i
+以結:
+  match: exact
+  meaning_en: offspring
+  name_en: Eker
+  orig: עֵקֶר
+  ref: 代上2:27
+  strong: H6134
+  translit: e.qer
+以色列:
+  match: exact
+  meaning_en: God prevails
+  name_en: Israel
+  orig: יִשְׂרָאֵל
+  ref: 創35:22
+  strong: H3478
+  translit: yis.ra.el
+以薩迦:
+  match: exact
+  meaning_en: there is recompense
+  name_en: Issachar
+  orig: יִשָּׂשכָר
+  ref: 代上2:1
+  strong: H3485G
+  translit: yis.sa.s.khar
+以蘭:
+  match: exact
+  meaning_en: belonging to a city
+  name_en: Iram
+  orig: עִירָם
+  ref: 代上1:54
+  strong: H5902
+  translit: i.ram
+以蘭#書提拉:
+  match: exact
+  meaning_en: watcher
+  name_en: Eran
+  orig: עֵרָן
+  ref: 民26:36
+  strong: H6197
+  translit: e.ran
+以設:
+  match: exact
+  meaning_en: oppressor
+  name_en: Eshek
+  orig: עֵ֫שֶׁק
+  ref: 代上8:39
+  strong: H6232
+  translit: e.sheq
+以諾:
+  match: exact
+  meaning_en: dedicated
+  name_en: Enoch
+  orig: חֲנוֹךְ
+  ref: 代上1:3
+  strong: H2585H
+  translit: cha.nokh
+以諾#該隱:
+  match: exact
+  meaning_en: dedicated
+  name_en: Enoch
+  orig: חֲנוֹךְ
+  ref: 創4:17
+  strong: H2585G
+  translit: cha.nokh
+以謝:
+  match: exact
+  meaning_en: treasure
+  name_en: Ezer
+  orig: עֵ֫זֶר
+  ref: 代上7:21
+  strong: H5829K
+  translit: e.zer
+以路:
+  match: exact
+  meaning_en: watch
+  name_en: Iru
+  orig: עִירוּ
+  ref: 代上4:15
+  strong: H5900
+  translit: i.ru
+以連:
+  match: exact
+  meaning_en: God of the people
+  name_en: Eliam
+  orig: אֱלִיעָם
+  ref: 撒下11:3
+  strong: H0463G
+  translit: e.li.am
+伊弗底雅:
+  match: exact
+  meaning_en: Jehovah will redeem
+  name_en: Iphedeiah
+  orig: יִפְדְּיָה
+  ref: 代上8:25
+  strong: H3301
+  translit: yiph.de.yah
+伊得巴:
+  match: exact
+  meaning_en: stout
+  name_en: Idbash
+  orig: יִדְבָּשׁ
+  ref: 代上4:3
+  strong: H3031
+  translit: yid.bash
+伊提南:
+  match: exact
+  meaning_en: hire of unchastity
+  name_en: Ethnan
+  orig: אֶתְנַן
+  ref: 代上4:7
+  strong: H0869
+  translit: et.nan
+伊斯利亞:
+  match: exact
+  meaning_en: whom God will preserve
+  name_en: Jezliah
+  orig: יִזְלִיאָה
+  ref: 代上8:18
+  strong: H3152
+  translit: yiz.li.ah
+伊斯拉希:
+  match: exact
+  meaning_en: Jehovah will shine
+  name_en: Izrahiah or Jezrahiah
+  orig: יִזְרַחְיָה
+  ref: 代上7:3
+  strong: H3156G
+  translit: yiz.rach.yah
+伊施屯:
+  match: exact
+  meaning_en: effeminate
+  name_en: Eshton
+  orig: אֶשְׁתּוֹן
+  ref: 代上4:12
+  strong: H0850
+  translit: esh.ton
+伊施巴:
+  match: exact
+  meaning_en: he releases
+  name_en: Ishbak
+  orig: יִשְׁבָּק
+  ref: 代上1:32
+  strong: H3435
+  translit: yish.baq
+伊施巴#比利亞:
+  match: exact
+  meaning_en: He is bare
+  name_en: Ispah
+  orig: יִשְׁפָּה
+  ref: 代上8:16
+  strong: H3472
+  translit: yish.pah
+伊施巴力:
+  match: exact
+  meaning_en: a man of Baal
+  name_en: Eshbaal
+  orig: אֶשְׁבַּעַל
+  ref: 代上8:33
+  strong: H0792
+  translit: esh.ba.al
+伊施班:
+  match: exact
+  meaning_en: he hides
+  name_en: Ishpan
+  orig: יִשְׁפָּן
+  ref: 代上8:22
+  strong: H3473
+  translit: yish.pan
+伊施瑪:
+  match: exact
+  meaning_en: desolation
+  name_en: Ishma
+  orig: יִשְׁמָא
+  ref: 代上4:3
+  strong: H3457
+  translit: yish.ma
+伊施米萊:
+  match: exact
+  meaning_en: He keeps me
+  name_en: Ishmerai
+  orig: יִשְׁמְרַי
+  ref: 代上8:18
+  strong: H3461
+  translit: yish.me.ray
+伊施荷:
+  match: exact
+  meaning_en: man of majesty
+  name_en: Ishod
+  orig: אִישְׁהוֹד
+  ref: 代上7:18
+  strong: H0379
+  translit: ish.hod
+伊是班:
+  match: exact
+  meaning_en: fire of discernment
+  name_en: Eshban
+  orig: אֶשְׁבָּן
+  ref: 代上1:41
+  strong: H0790
+  translit: esh.ban
+伊比尼雅#流珥之祖:
+  match: exact
+  meaning_en: Jehovah builds
+  name_en: Ibneiah
+  orig: יִבְנְיָה
+  ref: 代上9:8
+  strong: H2997
+  translit: yiv.ne.yah
+伊比尼雅#耶羅罕:
+  match: exact
+  meaning_en: Jehovah builds
+  name_en: Ibneiah
+  orig: יִבְנְיָה
+  ref: 代上9:8
+  strong: H2997
+  translit: yiv.ne.yah
+伊示雅:
+  match: exact
+  meaning_en: Jehovah will lend
+  name_en: Ishiah or Ishijah or Jesiah
+  orig: יִשִּׁיָּהוּ
+  ref: 代上7:3
+  strong: H3449G
+  translit: yish.shiy.yah
+伸崙:
+  match: exact
+  meaning_en: watch-height
+  name_en: Shimron
+  orig: שִׁמְרוֹן
+  ref: 代上7:1
+  strong: H8110B
+  translit: shim.ron
+但:
+  match: exact
+  meaning_en: a judge
+  name_en: Dan
+  orig: דָּן
+  ref: 代上2:2
+  strong: H1835H
+  translit: dan
+但以利:
+  match: exact
+  meaning_en: God is my judge
+  name_en: Daniel
+  orig: דָּנִיֵּאל, דָּנִאֵל
+  ref: 代上3:1
+  strong: H1840H
+  translit: da.niy.yel
+何利:
+  match: exact
+  meaning_en: cave dweller
+  name_en: Hori
+  orig: חֹרִי
+  ref: 代上1:39
+  strong: H2753H
+  translit: cho.ri
+何坦:
+  match: exact
+  meaning_en: seal
+  name_en: Hotham
+  orig: חוֹתָם
+  ref: 代上7:32
+  strong: H2369G
+  translit: cho.tam
+何大雅:
+  match: exact
+  meaning_en: praise ye Jehovah
+  name_en: Hodaviah
+  orig: הוֹדַוְיָה
+  ref: 代上3:24
+  strong: H1938G
+  translit: ho.dav.yah
+何巴:
+  match: exact
+  meaning_en: cherished
+  name_en: Hobab
+  orig: חֹבָב
+  ref: 民10:29
+  strong: H2246
+  translit: cho.vav
+何提#希幔:
+  match: exact
+  meaning_en: abundance
+  name_en: Hothir
+  orig: הוֹתִיר
+  ref: 代上25:4
+  strong: H1956
+  translit: ho.tir
+何沙瑪:
+  match: exact
+  meaning_en: whom Jehovah hears
+  name_en: Hoshama
+  orig: יְהוֹשָׁמָע
+  ref: 代上3:18
+  strong: H1953
+  translit: ho.sha.ma
+何細亞:
+  match: exact
+  meaning_en: salvation
+  name_en: Hosea or Hoshea or Oshea
+  orig: הוֹשֵׁעַ
+  ref: 王下15:30
+  strong: H1954G
+  translit: ho.she.a
+何達威雅#5:24:
+  match: exact
+  meaning_en: praise ye Jehovah
+  name_en: Hodaviah
+  orig: הוֹדַוְיָה
+  ref: 代上5:24
+  strong: H1938H
+  translit: ho.dav.yah
+何達威雅#哈西努:
+  match: exact
+  meaning_en: praise ye Jehovah
+  name_en: Hodaviah
+  orig: הוֹדַוְיָה
+  ref: 代上9:7
+  strong: H1938I
+  translit: ho.dav.yah
+便亞比拿達:
+  match: exact
+  meaning_en: son of Abinadab
+  name_en: Ben-Abinadab
+  orig: בֶּן־אֲבִינָדָב
+  ref: 王上4:11
+  strong: H1125
+  translit: ben-a.vi.na.dav
+便亞米:
+  match: fuzzy
+  meaning_en: son of my people
+  name_en: Ben-ami
+  orig: בֶּן־עַמִּי
+  ref: 創19:38
+  strong: H1151
+  translit: ben-am.mi
+便哈南:
+  match: exact
+  meaning_en: son of favour
+  name_en: Ben-hanan
+  orig: בֶּן־חָנָן
+  ref: 代上4:20
+  strong: H1135
+  translit: ben-cha.nan
+便梭黑:
+  match: exact
+  meaning_en: son of Zoheth
+  name_en: Ben-zoheth
+  orig: בֶּן־זוֹחֵת
+  ref: 代上4:20
+  strong: H1132
+  translit: ben-zo.chet
+便雅憫:
+  match: exact
+  meaning_en: son of the right hand
+  name_en: Benjamin
+  orig: בִּנְיָמִין
+  ref: 代上2:2
+  strong: H1144G
+  translit: bin.ya.min
+便雅憫#比勒罕:
+  match: exact
+  meaning_en: son of the right hand
+  name_en: Benjamin
+  orig: בִּנְיָמִין
+  ref: 代上7:10
+  strong: H1144H
+  translit: bin.ya.min
+俄備得:
+  match: exact
+  meaning_en: serving
+  name_en: Obed
+  orig: עוֹבֵד
+  ref: 代上2:12
+  strong: H5744G
+  translit: o.ved
+俄備得#以弗拉:
+  match: exact
+  meaning_en: serving
+  name_en: Obed
+  orig: עוֹבֵד
+  ref: 代上2:37
+  strong: H5744H
+  translit: o.ved
+俄南:
+  match: exact
+  meaning_en: strong
+  name_en: Onan
+  orig: אוֹנָן
+  ref: 代上2:3
+  strong: H0209
+  translit: o.nan
+俄巴底:
+  match: exact
+  meaning_en: servant of Jehovah
+  name_en: Obadiah
+  orig: עֹבַדְיָ֫הוּ
+  ref: 代上9:16
+  strong: H5662K
+  translit: o.vad.yah
+俄巴底亞#3:21:
+  match: exact
+  meaning_en: servant of Jehovah
+  name_en: Obadiah
+  orig: עֹבַדְיָ֫הוּ
+  ref: 代上3:21
+  strong: H5662H
+  translit: o.vad.yah
+俄巴底亞#伊斯拉希:
+  match: exact
+  meaning_en: servant of Jehovah
+  name_en: Obadiah
+  orig: עֹבַדְיָ֫הוּ
+  ref: 代上7:3
+  strong: H5662I
+  translit: o.vad.yah
+俄巴底雅:
+  match: exact
+  meaning_en: servant of Jehovah
+  name_en: Obadiah
+  orig: עֹבַדְיָ֫הוּ
+  ref: 代上8:38
+  strong: H5662J
+  translit: o.vad.yah
+俄弗拉:
+  match: exact
+  meaning_en: fawn
+  name_en: Ophrah
+  orig: עׇפְרָה
+  ref: 代上4:14
+  strong: H6084I
+  translit: oph.rah
+俄陀聶:
+  match: exact
+  meaning_en: lion of God
+  name_en: Othniel
+  orig: עׇתְנִיאֵל
+  ref: 代上4:13
+  strong: H6274
+  translit: ot.ni.el
+利亞:
+  match: exact
+  meaning_en: weary
+  name_en: Leah
+  orig: לֵאָה
+  ref: 創29:16
+  strong: H3812
+  translit: le.ah
+利亞雅#朔巴:
+  match: exact
+  meaning_en: Jehovah has seen
+  name_en: Reaia or Reaiah
+  orig: רְאָיָה
+  ref: 代上4:2
+  strong: H7211I
+  translit: re.a.yah
+利亞雅#米迦:
+  match: exact
+  meaning_en: Jehovah has seen
+  name_en: Reaia or Reaiah
+  orig: רְאָיָה
+  ref: 代上5:5
+  strong: H7211G
+  translit: re.a.yah
+利健:
+  match: exact
+  meaning_en: friend
+  name_en: Regem
+  orig: רֶ֫גֶם
+  ref: 代上2:47
+  strong: H7276
+  translit: re.gem
+利克希:
+  match: exact
+  meaning_en: learning
+  name_en: Likhi
+  orig: לִקְחִי
+  ref: 代上7:19
+  strong: H3949
+  translit: liq.chi
+利哈比雅:
+  match: exact
+  meaning_en: Jehovah has enlarged
+  name_en: Rehabiah
+  orig: רְחַבְיָהוּ
+  ref: 代上23:17
+  strong: H7345
+  translit: re.chav.yah
+利寫:
+  match: exact
+  meaning_en: delight
+  name_en: Rezia
+  orig: רִצְיָא
+  ref: 代上7:39
+  strong: H7525
+  translit: rits.ya
+利悉:
+  match: exact
+  meaning_en: flame
+  name_en: Resheph
+  orig: רֶ֫שֶׁף
+  ref: 代上7:25
+  strong: H7566
+  translit: re.sheph
+利撒:
+  match: exact
+  meaning_en: ''
+  name_en: Rhesa
+  orig: Ῥησά
+  ref: 路3:27
+  strong: G4488
+  translit: Rhēsa
+利斯巴:
+  match: exact
+  meaning_en: pavement
+  name_en: Rizpah
+  orig: רִצְפָּה
+  ref: 撒下3:7
+  strong: H7532
+  translit: rits.pah
+利未:
+  match: exact
+  meaning_en: joined to
+  name_en: Levi
+  orig: לֵוִי
+  ref: 代上2:1
+  strong: H3878
+  translit: le.vi
+利未#亞勒腓的兒子:
+  match: exact
+  meaning_en: ''
+  name_en: Levi
+  orig: Λευΐ
+  ref: 可2:14
+  strong: G3017I
+  translit: Leui
+利未#路3:24:
+  match: exact
+  meaning_en: ''
+  name_en: Levi
+  orig: Λευΐ
+  ref: 路3:24
+  strong: G3017G
+  translit: Leui
+利未#路3:29:
+  match: exact
+  meaning_en: ''
+  name_en: Levi
+  orig: Λευΐ
+  ref: 路3:29
+  strong: G3017H
+  translit: Leui
+利法:
+  match: exact
+  meaning_en: healing of the breath
+  name_en: Rephah
+  orig: רֶ֫פַח
+  ref: 代上7:25
+  strong: H7506
+  translit: re.phach
+利法雅#3:21:
+  match: exact
+  meaning_en: healed of Jehovah
+  name_en: Rephaiah
+  orig: רְפָיָה
+  ref: 代上3:21
+  strong: H7509G
+  translit: re.pha.yah
+利法雅#以示:
+  match: exact
+  meaning_en: healed of Jehovah
+  name_en: Rephaiah
+  orig: רְפָיָה
+  ref: 代上4:42
+  strong: H7509H
+  translit: re.pha.yah
+利法雅#陀拉:
+  match: exact
+  meaning_en: healed of Jehovah
+  name_en: Rephaiah
+  orig: רְפָיָה
+  ref: 代上7:2
+  strong: H7509I
+  translit: re.pha.yah
+利瑪利:
+  match: exact
+  meaning_en: protected by Jehovah
+  name_en: Remaliah
+  orig: רְמַלְיָ֜הוּ
+  ref: 王下15:25
+  strong: H7425
+  translit: re.mal.ya.hu
+利百加:
+  match: exact
+  meaning_en: ensnarer
+  name_en: Rebekah
+  orig: רִבְקָה
+  ref: 創24:15
+  strong: H7259
+  translit: riv.qah
+利肯:
+  match: exact
+  meaning_en: variegation
+  name_en: Rekem
+  orig: רֶ֫קֶם
+  ref: 代上2:43
+  strong: H7552I
+  translit: re.qem
+利金:
+  match: exact
+  meaning_en: variegation
+  name_en: Rekem
+  orig: רֶ֫קֶם
+  ref: 代上7:16
+  strong: H7552J
+  translit: re.qem
+古實:
+  match: exact
+  meaning_en: black
+  name_en: Cush
+  orig: כּוּשׁ
+  ref: 代上1:8
+  strong: H3568G
+  translit: kush
+古尼#迦得:
+  match: exact
+  meaning_en: my defender (?)
+  name_en: Guni
+  orig: גּוּנִי
+  ref: 代上5:15
+  strong: H1476H
+  translit: gu.ni
+古示:
+  match: exact
+  meaning_en: ''
+  name_en: Cushi
+  orig: כּוּשִׁי
+  ref: 番1:1
+  strong: H3569H
+  translit: ku.shi
+可拉:
+  match: exact
+  meaning_en: bald
+  name_en: Korah
+  orig: קֹ֫רַח
+  ref: 代上6:37
+  strong: H7141I
+  translit: qo.rach
+可拉#亞米拿達:
+  match: exact
+  meaning_en: bald
+  name_en: Korah
+  orig: קֹ֫רַח
+  ref: 代上6:22
+  strong: H7141I
+  translit: qo.rach
+可拉#以掃:
+  match: exact
+  meaning_en: bald
+  name_en: Korah
+  orig: קֹ֫רַח
+  ref: 代上1:35
+  strong: H7141G
+  translit: qo.rach
+可拉#希伯崙:
+  match: exact
+  meaning_en: bald
+  name_en: Korah
+  orig: קֹ֫רַח
+  ref: 代上2:43
+  strong: H7141J
+  translit: qo.rach
+含:
+  match: exact
+  meaning_en: hot
+  name_en: Ham
+  orig: חָם
+  ref: 代上1:4
+  strong: H2526G
+  translit: cham
+哈及:
+  match: exact
+  meaning_en: festive
+  name_en: Haggith
+  orig: חַגִּית
+  ref: 撒下3:4
+  strong: H2294
+  translit: chag.git
+哈基:
+  match: exact
+  meaning_en: festive
+  name_en: Haggi
+  orig: חַגִּי
+  ref: 創46:16
+  strong: H2291
+  translit: chag.gi
+哈基雅:
+  match: exact
+  meaning_en: festival of Jehovah
+  name_en: Haggiah
+  orig: חַגִּיָּה
+  ref: 代上6:30
+  strong: H2293
+  translit: chag.giy.yah
+哈塔:
+  match: exact
+  meaning_en: fearful
+  name_en: Hathath
+  orig: חֲתַת
+  ref: 代上4:13
+  strong: H2867
+  translit: cha.tat
+哈多蘭:
+  match: exact
+  meaning_en: noble honour
+  name_en: Hadoram
+  orig: הֲדוֹרָם
+  ref: 代上1:21
+  strong: H1913A
+  translit: ha.do.ram
+哈尼弗:
+  match: exact
+  meaning_en: panting
+  name_en: Harnepher
+  orig: חַרְנֶ֫פֶר
+  ref: 代上7:36
+  strong: H2774
+  translit: char.ne.pher
+哈崙:
+  match: exact
+  meaning_en: exalted
+  name_en: Harum
+  orig: הָרֻם
+  ref: 代上4:8
+  strong: H2037
+  translit: ha.rum
+哈悉勒玻尼:
+  match: fuzzy
+  meaning_en: facing the shade
+  name_en: Hazelelponi
+  orig: הַצְּלֶלְפּוֹנִי
+  ref: 代上4:3
+  strong: H6753
+  translit: tse.lel.po.ni
+哈慕他:
+  match: exact
+  meaning_en: father-in-law is protection
+  name_en: Hamutal
+  orig: חֲמוּטַל
+  ref: 王下23:31
+  strong: H2537
+  translit: cha.mu.tal
+哈拿:
+  match: exact
+  meaning_en: grace
+  name_en: Hannah
+  orig: חַנָּה
+  ref: 撒上1:2
+  strong: H2584
+  translit: chan.nah
+哈拿尼#希幔:
+  match: exact
+  meaning_en: gracious
+  name_en: Hanani
+  orig: חֲנָנִי
+  ref: 代上25:4
+  strong: H2607H
+  translit: cha.na.ni
+哈拿尼雅#希幔:
+  match: exact
+  meaning_en: God has favoured
+  name_en: Hananiah
+  orig: חֲנַנְיָ֫הוּ
+  ref: 代上25:4
+  strong: H2608P
+  translit: cha.nan.yah
+哈拿尼雅#所羅巴伯:
+  match: exact
+  meaning_en: God has favoured
+  name_en: Hananiah
+  orig: חֲנַנְיָ֫הוּ
+  ref: 代上3:19
+  strong: H2608L
+  translit: cha.nan.yah
+哈拿尼雅#沙煞:
+  match: exact
+  meaning_en: God has favoured
+  name_en: Hananiah
+  orig: חֲנַנְיָ֫הוּ
+  ref: 代上8:24
+  strong: H2608O
+  translit: cha.nan.yah
+哈拿篾:
+  match: exact
+  meaning_en: God is gracious
+  name_en: Hanameel
+  orig: חֲנַמְאֵל
+  ref: 耶32:7
+  strong: H2601
+  translit: cha.nam.el
+哈摩利吉:
+  match: exact
+  meaning_en: the queen
+  name_en: Hammoleketh
+  orig: הַמֹּלֶכֶת
+  ref: 代上7:18
+  strong: H4447
+  translit: mo.le.khet
+哈撒底:
+  match: exact
+  meaning_en: Jehovah has been faithful
+  name_en: Hasadiah
+  orig: חֲסַדְיָה
+  ref: 代上3:20
+  strong: H2619
+  translit: cha.sad.yah
+哈母利:
+  match: fuzzy
+  meaning_en: heat of God
+  name_en: Hamuel
+  orig: חַמּוּאֵל
+  ref: 代上4:26
+  strong: H2536
+  translit: cham.mu.el
+哈母勒:
+  match: exact
+  meaning_en: spared
+  name_en: Hamul
+  orig: חָמוּל
+  ref: 代上2:5
+  strong: H2538
+  translit: cha.mul
+哈沙比雅#9:14:
+  match: exact
+  meaning_en: Jehovah has considered
+  name_en: Hashabiah
+  orig: חֲשַׁבְיָ֫הוּ
+  ref: 代上9:14
+  strong: H2811H
+  translit: cha.shav.yah
+哈沙比雅#亞瑪謝:
+  match: exact
+  meaning_en: Jehovah has considered
+  name_en: Hashabiah
+  orig: חֲשַׁבְיָ֫הוּ
+  ref: 代上6:45
+  strong: H2811G
+  translit: cha.shav.yah
+哈沙比雅#瑪他尼:
+  match: exact
+  meaning_en: Jehovah has considered
+  name_en: Hashabiah
+  orig: חֲשַׁבְיָ֫הוּ
+  ref: 尼11:22
+  strong: H2811O
+  translit: cha.shav.yah
+哈瑣:
+  match: exact
+  meaning_en: vision
+  name_en: Hazo
+  orig: חֲזוֹ
+  ref: 創22:22
+  strong: H2375
+  translit: cha.zo
+哈突:
+  match: exact
+  meaning_en: assembled
+  name_en: Hattush
+  orig: חַטּוּשׁ
+  ref: 代上3:22
+  strong: H2407G
+  translit: chat.tush
+哈羅以:
+  match: exact
+  meaning_en: vision
+  name_en: Haroeh
+  orig: רֹאֶה
+  ref: 代上2:52
+  strong: H7204
+  translit: ro.eh
+哈腓拉:
+  match: exact
+  meaning_en: circle
+  name_en: Havilah
+  orig: חֲוִילָה
+  ref: 代上1:9
+  strong: H2341H
+  translit: cha.vi.lah
+哈腓拉#約坍:
+  match: exact
+  meaning_en: circle
+  name_en: Havilah
+  orig: חֲוִילָה
+  ref: 代上1:23
+  strong: H2341I
+  translit: cha.vi.lah
+哈舒巴:
+  match: exact
+  meaning_en: consideration
+  name_en: Hashubah
+  orig: חֲשֻׁבָה
+  ref: 代上3:20
+  strong: H2807
+  translit: cha.shu.vah
+哈薩瑪非:
+  match: exact
+  meaning_en: village of death
+  name_en: Hazarmaveth
+  orig: חֲצַרְמָ֫וֶת
+  ref: 代上1:20
+  strong: H2700
+  translit: cha.tsar.ma.vet
+哈蘭:
+  match: exact
+  meaning_en: mountaineer
+  name_en: Haran
+  orig: חָרָן
+  ref: 代上2:46
+  strong: H2771B
+  translit: cha.ran
+哈蘭#他拉:
+  match: exact
+  meaning_en: mountaineer
+  name_en: Haran
+  orig: הָרָן
+  ref: 創11:26
+  strong: H2039G
+  translit: ha.ran
+哈諾:
+  match: exact
+  meaning_en: dedicated
+  name_en: Enoch
+  orig: חֲנוֹךְ
+  ref: 代上1:33
+  strong: H2585I
+  translit: cha.nokh
+哈諾#流便:
+  match: exact
+  meaning_en: dedicated
+  name_en: Enoch
+  orig: חֲנוֹךְ
+  ref: 代上5:3
+  strong: H2585J
+  translit: cha.nokh
+哈述:
+  match: exact
+  meaning_en: considerate
+  name_en: Hashub
+  orig: חַשּׁוּב
+  ref: 代上9:14
+  strong: H2815G
+  translit: chash.shuv
+哈達:
+  match: exact
+  meaning_en: mighty
+  name_en: Hadad
+  orig: חֲדַד
+  ref: 代上1:30
+  strong: H2301
+  translit: cha.dad
+哈達#巴伊:
+  match: exact
+  meaning_en: mighty
+  name_en: Hadad
+  orig: הֲדַד
+  ref: 代上1:50
+  strong: H1908H
+  translit: ha.dad
+哈達#比達:
+  match: exact
+  meaning_en: mighty
+  name_en: Hadad
+  orig: הֲדַד
+  ref: 代上1:46
+  strong: H1908G
+  translit: ha.dad
+哈難:
+  match: exact
+  meaning_en: he is merciful
+  name_en: Canan or Hanan
+  orig: חָנָן
+  ref: 代上8:38
+  strong: H2605H
+  translit: cha.nan
+哈難#沙煞:
+  match: exact
+  meaning_en: he is merciful
+  name_en: Canan or Hanan
+  orig: חָנָן
+  ref: 代上8:23
+  strong: H2605G
+  translit: cha.nan
+哈魯斯:
+  match: exact
+  meaning_en: zealous
+  name_en: Haruz
+  orig: חָרוּץ
+  ref: 王下21:19
+  strong: H2743
+  translit: cha.ruts
+哈默蘭:
+  match: exact
+  meaning_en: desire
+  name_en: Hemdan
+  orig: חֶמְדָּן
+  ref: 創36:26
+  strong: H2533
+  translit: chem.dan
+哥斯:
+  match: exact
+  meaning_en: thorn
+  name_en: Koz
+  orig: קוֹץ
+  ref: 代上4:8
+  strong: H6976G
+  translit: qots
+哥桑:
+  match: exact
+  meaning_en: ''
+  name_en: Cosam
+  orig: Κωσάμ
+  ref: 路3:28
+  strong: G2973
+  translit: Kōsam
+哥轄:
+  match: exact
+  meaning_en: assembly
+  name_en: Kohath
+  orig: קְהָת
+  ref: 代上6:1
+  strong: H6955
+  translit: qe.hat
+喇合:
+  match: exact
+  meaning_en: wide
+  name_en: Rahab
+  orig: רָחָב
+  ref: 書2:1
+  strong: H7343
+  translit: ra.chav
+土八該隱:
+  match: exact
+  meaning_en: thou will be brought of Cain
+  name_en: Tubal-cain
+  orig: תּוּבַל־קַ֫יִן
+  ref: 創4:22
+  strong: H8423
+  translit: tu.val qa.yin
+土巴:
+  match: exact
+  meaning_en: thou shall be brought
+  name_en: Tubal
+  orig: תּוּבַל
+  ref: 代上1:5
+  strong: H8422G
+  translit: tu.val
+基列:
+  match: exact
+  meaning_en: rocky region
+  name_en: Gilead
+  orig: גִּלְעָד
+  ref: 代上7:17
+  strong: H1568H
+  translit: gil.ad
+基列#米迦勒:
+  match: exact
+  meaning_en: rocky region
+  name_en: Gilead
+  orig: גִּלְעָד
+  ref: 代上5:14
+  strong: H1568J
+  translit: gil.ad
+基土拉:
+  match: exact
+  meaning_en: incense
+  name_en: Keturah
+  orig: קְטוּרָה
+  ref: 創25:1
+  strong: H6989
+  translit: qe.tu.rah
+基士:
+  match: exact
+  meaning_en: bent
+  name_en: Kish
+  orig: קִישׁ
+  ref: 代上8:33
+  strong: H7027G
+  translit: qish
+基士#抹利:
+  match: exact
+  meaning_en: bent
+  name_en: Kish
+  orig: קִישׁ
+  ref: 代上23:21
+  strong: H7027H
+  translit: qish
+基士#末底改之曾祖:
+  match: exact
+  meaning_en: bent
+  name_en: Kish
+  orig: קִישׁ
+  ref: 斯2:5
+  strong: H7027J
+  translit: qish
+基士#耶利:
+  match: exact
+  meaning_en: bent
+  name_en: Kish
+  orig: קִישׁ
+  ref: 代上8:30
+  strong: H7027G
+  translit: qish
+基多:
+  match: exact
+  meaning_en: wall
+  name_en: Gedor
+  orig: גְּדוֹר
+  ref: 代上8:31
+  strong: H1446I
+  translit: ge.dor
+基大利#西番雅之祖:
+  match: exact
+  meaning_en: Jehovah is great
+  name_en: Gedaliah
+  orig: גְּדַלְיָה
+  ref: 番1:1
+  strong: H1436H
+  translit: ge.dal.yah
+基大利提#希幔:
+  match: exact
+  meaning_en: I make great
+  name_en: Giddalti
+  orig: גִּדַּלְתִּי
+  ref: 代上25:4
+  strong: H1437
+  translit: gid.dal.ti
+基帖:
+  match: exact
+  meaning_en: fear
+  name_en: Gether
+  orig: גֶּ֫תֶר
+  ref: 代上1:17
+  strong: H1666
+  translit: ge.ter
+基底瑪:
+  match: exact
+  meaning_en: original
+  name_en: Kedemah
+  orig: קֵ֑דְמָה
+  ref: 代上1:31
+  strong: H6929
+  translit: qe.de.mah
+基拿拿:
+  match: exact
+  meaning_en: trader
+  name_en: Chenaanah
+  orig: כְּנַעֲנָה
+  ref: 代上7:10
+  strong: H3668H
+  translit: ke.na.a.nah
+基母利:
+  match: exact
+  meaning_en: raised of God
+  name_en: Kemuel
+  orig: קְמוּאֵל
+  ref: 創22:21
+  strong: H7055G
+  translit: qe.mu.el
+基珊:
+  match: exact
+  meaning_en: lump
+  name_en: Geshan
+  orig: גֵּישָׁן
+  ref: 代上2:47
+  strong: H1529
+  translit: ge.shan
+基納:
+  match: exact
+  meaning_en: protection
+  name_en: Ginath
+  orig: גִּינַ֑ת
+  ref: 王上16:21
+  strong: H1527
+  translit: gi.nat
+基綠:
+  match: exact
+  meaning_en: caged
+  name_en: Chelub
+  orig: כְּלוּב
+  ref: 代上4:11
+  strong: H3620G
+  translit: ke.luv
+基薛:
+  match: exact
+  meaning_en: increase
+  name_en: Chesed
+  orig: כֶּ֫שֶׂד
+  ref: 創22:22
+  strong: H3777
+  translit: ke.sed
+基蘭:
+  match: exact
+  meaning_en: lyre
+  name_en: Cheran
+  orig: כְּרָ֑ן
+  ref: 代上1:41
+  strong: H3763
+  translit: ke.ran
+基路拜:
+  match: exact
+  meaning_en: my caged one
+  name_en: Chelub ai
+  orig: כְּלוּבָ֑י
+  ref: 代上2:9
+  strong: H3621
+  translit: ke.lu.vay
+基連:
+  match: exact
+  meaning_en: pining
+  name_en: Chilion
+  orig: כִּלְיוֹן
+  ref: 得1:2
+  strong: H3630
+  translit: kil.yon
+基達:
+  match: exact
+  meaning_en: dark
+  name_en: Kedar
+  orig: קֵדָר
+  ref: 代上1:29
+  strong: H6938
+  translit: qe.dar
+塞特:
+  match: exact
+  meaning_en: compensation
+  name_en: Seth
+  orig: שֵׁת
+  ref: 代上1:1
+  strong: H8352
+  translit: shet
+夏娃:
+  match: exact
+  meaning_en: life
+  name_en: Eve
+  orig: חַוָּה
+  ref: 創3:20
+  strong: H2332
+  translit: chav.vah
+夏甲:
+  match: exact
+  meaning_en: flight
+  name_en: Hagar
+  orig: הָגָר
+  ref: 創16:1
+  strong: H1904
+  translit: ha.gar
+多單:
+  match: exact
+  meaning_en: leaders
+  name_en: Dodanim or Rodanim
+  orig: רוֹדָנִים
+  ref: 代上1:7
+  strong: H1721
+  translit: do.da.nim
+大坍:
+  match: exact
+  meaning_en: belonging to a fountain
+  name_en: Dathan
+  orig: דָּתָן
+  ref: 民26:9
+  strong: H1885
+  translit: da.tan
+大拉:
+  match: exact
+  meaning_en: the arm
+  name_en: Dara
+  orig: דָּרַע
+  ref: 代上2:6
+  strong: H1873
+  translit: da.ra
+大衛:
+  match: exact
+  meaning_en: beloved
+  name_en: David
+  orig: דָּוִד
+  ref: 代上2:15
+  strong: H1732
+  translit: da.vid
+嫩:
+  match: exact
+  meaning_en: fish
+  name_en: Nun
+  orig: נוּן
+  ref: 代上7:27
+  strong: H5126
+  translit: nun
+安得烈:
+  match: exact
+  meaning_en: ''
+  name_en: Andrew
+  orig: Ἀνδρέας
+  ref: 太4:18
+  strong: G0406
+  translit: Andreas
+安陀提雅:
+  match: exact
+  meaning_en: Jehovah's answer
+  name_en: Antothijah
+  orig: עַנְתֹתִיָּה
+  ref: 代上8:24
+  strong: H6070
+  translit: an.to.tiy.yah
+寧示:
+  match: exact
+  meaning_en: rescued
+  name_en: Nimshi
+  orig: נִמְשִׁי
+  ref: 王下9:2
+  strong: H5250
+  translit: nim.shi
+寧錄:
+  match: exact
+  meaning_en: rebellion
+  name_en: Nimrod
+  orig: נִמְרֹד
+  ref: 代上1:10
+  strong: H5248
+  translit: nim.rod
+少羅:
+  match: exact
+  meaning_en: desired
+  name_en: Saul or Shaul
+  orig: שָׁאוּל
+  ref: 代上6:24
+  strong: H7586J
+  translit: sha.ul
+尼八:
+  match: exact
+  meaning_en: aspect
+  name_en: Nebat
+  orig: נְבָט
+  ref: 王上11:26
+  strong: H5028
+  translit: ne.vat
+尼利:
+  match: exact
+  meaning_en: ''
+  name_en: Neri
+  orig: Νηρί
+  ref: 路3:27
+  strong: G3518
+  translit: Nēri
+尼利雅:
+  match: fuzzy
+  meaning_en: servant of Jehovah
+  name_en: Neariah
+  orig: נְעַרְיָה
+  ref: 代上3:22
+  strong: H5294G
+  translit: ne.ar.yah
+尼利雅#以示:
+  match: fuzzy
+  meaning_en: servant of Jehovah
+  name_en: Neariah
+  orig: נְעַרְיָה
+  ref: 代上4:42
+  strong: H5294H
+  translit: ne.ar.yah
+尼大比雅:
+  match: exact
+  meaning_en: whom Jehovah impels
+  name_en: Nedabiah
+  orig: נְדַבְיָה
+  ref: 代上3:18
+  strong: H5072
+  translit: ne.dav.yah
+尼拜約:
+  match: exact
+  meaning_en: heights
+  name_en: Nebaioth or Nebajoth
+  orig: נְבָיוֹת
+  ref: 代上1:29
+  strong: H5032
+  translit: ne.va.vot
+尼斐:
+  match: exact
+  meaning_en: sprout
+  name_en: Nepheg
+  orig: נֶ֫פֶג
+  ref: 代上3:7
+  strong: H5298H
+  translit: ne.pheg
+尼斐#以斯哈:
+  match: exact
+  meaning_en: sprout
+  name_en: Nepheg
+  orig: נֶ֫פֶג
+  ref: 出6:21
+  strong: H5298G
+  translit: ne.pheg
+尼母利:
+  match: exact
+  meaning_en: day of God
+  name_en: Nemuel
+  orig: נְמוּאֵל
+  ref: 代上4:24
+  strong: H5241H
+  translit: ne.mu.el
+尼母利#以利押:
+  match: exact
+  meaning_en: day of God
+  name_en: Nemuel
+  orig: נְמוּאֵל
+  ref: 民26:9
+  strong: H5241G
+  translit: ne.mu.el
+尼珥:
+  match: exact
+  meaning_en: lamp
+  name_en: Ner
+  orig: נֵר
+  ref: 代上9:36
+  strong: H5369G
+  translit: ner
+尼護施他:
+  match: exact
+  meaning_en: brass
+  name_en: Nehushta
+  orig: נְחֻשְׁתָּא
+  ref: 王下24:8
+  strong: H5179
+  translit: ne.chush.ta
+巴利亞:
+  match: exact
+  meaning_en: fleeing
+  name_en: Bariah
+  orig: בָּרִיחַ
+  ref: 代上3:22
+  strong: H1282
+  translit: ba.ri.ach
+巴力#利亞雅:
+  match: exact
+  meaning_en: lord
+  name_en: Baal
+  orig: בַּ֫עַל
+  ref: 代上5:5
+  strong: H1168G
+  translit: ba.al
+巴力#耶利:
+  match: exact
+  meaning_en: lord
+  name_en: Baal
+  orig: בַּ֫עַל
+  ref: 代上8:30
+  strong: H1168B
+  translit: ba.al
+巴勒哈南:
+  match: exact
+  meaning_en: Baal is gracious
+  name_en: Baal-hanan
+  orig: בַּ֫עַל חָנָן
+  ref: 代上1:49
+  strong: H1177G
+  translit: ba.al cha.nan
+巴實抹:
+  match: exact
+  meaning_en: spice
+  name_en: Bashemath or Basmath
+  orig: בָּֽשְׂמַת
+  ref: 王上4:15
+  strong: H1315G
+  translit: bos.mat
+巴實抹#以倫:
+  match: exact
+  meaning_en: spice
+  name_en: Bashemath or Basmath
+  orig: בָּֽשְׂמַת
+  ref: 創26:34
+  strong: H1315H
+  translit: bos.mat
+巴實抹#以實瑪利:
+  match: exact
+  meaning_en: spice
+  name_en: Bashemath or Basmath
+  orig: בָּֽשְׂמַת
+  ref: 創36:3
+  strong: H1315I
+  translit: bos.mat
+巴尼#9:4:
+  match: exact
+  meaning_en: built
+  name_en: Bani
+  orig: בָּנִי
+  ref: 代上9:4
+  strong: H1137I
+  translit: ba.ni
+巴尼#哈沙比雅:
+  match: exact
+  meaning_en: built
+  name_en: Bani
+  orig: בָּנִי
+  ref: 尼11:22
+  strong: H1137O
+  translit: ba.ni
+巴尼#沙麥:
+  match: exact
+  meaning_en: built
+  name_en: Bani
+  orig: בָּנִי
+  ref: 代上6:46
+  strong: H1137H
+  translit: ba.ni
+巴拉加:
+  match: exact
+  meaning_en: ''
+  name_en: Berekiah
+  orig: Βαραχίας
+  ref: 太23:35
+  strong: G0914
+  translit: Barachias
+巴施戶珥:
+  match: exact
+  meaning_en: freedom
+  name_en: Pashur
+  orig: פַּשְׁחוּר
+  ref: 代上9:12
+  strong: H6583G
+  translit: pash.chur
+巴沙:
+  match: exact
+  meaning_en: wicked
+  name_en: Baasha
+  orig: בַּעְשָׁא
+  ref: 王上15:27
+  strong: H1201
+  translit: ba.sah
+巴薩:
+  match: exact
+  meaning_en: cut off
+  name_en: Pasach
+  orig: פָּסַךְ
+  ref: 代上7:33
+  strong: H6457
+  translit: pa.sakh
+巴西亞:
+  match: exact
+  meaning_en: limper
+  name_en: Paseah or Phaseah
+  orig: פָּסֵחַ
+  ref: 代上4:12
+  strong: H6454G
+  translit: pa.se.ach
+巴西萊#米何拉人:
+  match: exact
+  meaning_en: my iron
+  name_en: Barzillai
+  orig: בַּרְזִלַּי
+  ref: 撒下21:8
+  strong: H1271H
+  translit: bar.zil.lay
+巴西雅:
+  match: exact
+  meaning_en: in the service of Jehovah
+  name_en: Baaseiah
+  orig: בַּעֲשֵׂיָה
+  ref: 代上6:40
+  strong: H1202
+  translit: ba.a.se.yah
+布基:
+  match: exact
+  meaning_en: wasting
+  name_en: Bukki
+  orig: בֻּקִּי
+  ref: 代上6:5
+  strong: H1231H
+  translit: buq.qi
+布基雅#希幔:
+  match: exact
+  meaning_en: Jehovah has emptied
+  name_en: Bukkiah
+  orig: בֻּקִּיָּ֫הוּ
+  ref: 代上25:4
+  strong: H1232
+  translit: buq.qiy.yah
+布尼:
+  match: exact
+  meaning_en: built
+  name_en: Bunni
+  orig: בֻּנִּי
+  ref: 尼11:15
+  strong: H1138I
+  translit: bun.ni
+布拿:
+  match: exact
+  meaning_en: intelligence
+  name_en: Bunah
+  orig: בּוּנָה
+  ref: 代上2:25
+  strong: H0946
+  translit: bu.nah
+布斯:
+  match: exact
+  meaning_en: contempt
+  name_en: Buz
+  orig: בּוּז
+  ref: 代上5:14
+  strong: H0938H
+  translit: buz
+布斯#拿鶴:
+  match: exact
+  meaning_en: contempt
+  name_en: Buz
+  orig: בּוּז
+  ref: 創22:21
+  strong: H0938G
+  translit: buz
+布西:
+  match: exact
+  meaning_en: my contempt
+  name_en: Buzi
+  orig: בּוּזִי
+  ref: 結1:3
+  strong: H0941
+  translit: bu.zi
+希伯:
+  match: exact
+  meaning_en: the region beyond
+  name_en: Eber or Heber
+  orig: עֵ֫בֶר
+  ref: 代上1:18
+  strong: H5677G
+  translit: e.ver
+希伯#亞比孩:
+  match: exact
+  meaning_en: the region beyond
+  name_en: Eber or Heber
+  orig: עֵ֫בֶר
+  ref: 代上5:13
+  strong: H5677H
+  translit: e.ver
+希伯#以利巴力:
+  match: exact
+  meaning_en: the region beyond
+  name_en: Eber or Heber
+  orig: עֵ֫בֶר
+  ref: 代上8:12
+  strong: H5677I
+  translit: e.ver
+希伯#沙煞:
+  match: exact
+  meaning_en: the region beyond
+  name_en: Eber or Heber
+  orig: עֵ֫בֶר
+  ref: 代上8:22
+  strong: H5677J
+  translit: e.ver
+希伯#米列:
+  match: exact
+  meaning_en: comrade
+  name_en: Heber
+  orig: חֶ֫בֶר
+  ref: 代上4:18
+  strong: H2268I
+  translit: che.ver
+希伯倫:
+  match: exact
+  meaning_en: association
+  name_en: Hebron
+  orig: חֶבְרוֹן
+  ref: 代上6:2
+  strong: H2275B
+  translit: chev.ron
+希伯崙:
+  match: exact
+  meaning_en: association
+  name_en: Hebron
+  orig: חֶבְרוֹן
+  ref: 代上2:43
+  strong: H2275I
+  translit: chev.ron
+希別:
+  match: exact
+  meaning_en: comrade
+  name_en: Heber
+  orig: חֶ֫בֶר
+  ref: 代上7:31
+  strong: H2268G
+  translit: che.ver
+希勒:
+  match: exact
+  meaning_en: portion
+  name_en: Helek
+  orig: חֵ֫לֶק
+  ref: 民26:30
+  strong: H2507
+  translit: che.leq
+希勒家:
+  match: exact
+  meaning_en: my portion is Jehovah
+  name_en: Hilkiah
+  orig: חִלְקִיָּהוּ
+  ref: 代上6:13
+  strong: H2518H
+  translit: chil.qiy.yah
+希勒家#9:11:
+  match: exact
+  meaning_en: my portion is Jehovah
+  name_en: Hilkiah
+  orig: חִלְקִיָּהוּ
+  ref: 代上9:11
+  strong: H2518H
+  translit: chil.qiy.yah
+希勒家#亞拿突:
+  match: exact
+  meaning_en: my portion is Jehovah
+  name_en: Hilkiah
+  orig: חִלְקִיָּהוּ
+  ref: 耶1:1
+  strong: H2518M
+  translit: chil.qiy.yah
+希勒家#暗西:
+  match: exact
+  meaning_en: my portion is Jehovah
+  name_en: Hilkiah
+  orig: חִלְקִיָּהוּ
+  ref: 代上6:45
+  strong: H2518I
+  translit: chil.qiy.yah
+希幔:
+  match: exact
+  meaning_en: faithful
+  name_en: Heman
+  orig: הֵימָן
+  ref: 代上6:33
+  strong: H1968I
+  translit: he.man
+希幔#謝拉:
+  match: exact
+  meaning_en: faithful
+  name_en: Heman
+  orig: הֵימָן
+  ref: 代上2:6
+  strong: H1968H
+  translit: he.man
+希弗:
+  match: exact
+  meaning_en: a well
+  name_en: Hepher
+  orig: חֵ֫פֶר
+  ref: 代上4:6
+  strong: H2660G
+  translit: che.pher
+希弗#基列:
+  match: exact
+  meaning_en: a well
+  name_en: Hepher
+  orig: חֵ֫פֶר
+  ref: 民26:32
+  strong: H2660A
+  translit: che.pher
+希律#分封的王:
+  match: exact
+  meaning_en: ''
+  name_en: Herod
+  orig: Ἡρώδης
+  ref: 太14:1
+  strong: G2264H
+  translit: Hērōdēs
+希律#太2:1:
+  match: exact
+  meaning_en: ''
+  name_en: Herod
+  orig: Ἡρώδης
+  ref: 太2:1
+  strong: G2264G
+  translit: Hērōdēs
+希斯倫:
+  match: exact
+  meaning_en: surrounded by a wall
+  name_en: Hezron
+  orig: חֶצְרוֹן
+  ref: 代上5:3
+  strong: H2696G
+  translit: chets.ron
+希斯崙:
+  match: exact
+  meaning_en: surrounded by a wall
+  name_en: Hezron
+  orig: חֶצְרוֹן
+  ref: 代上2:5
+  strong: H2696H
+  translit: chets.ron
+希百:
+  match: exact
+  meaning_en: comrade
+  name_en: Heber
+  orig: חֶ֫בֶר
+  ref: 士4:11
+  strong: H2268H
+  translit: che.ver
+希羅底:
+  match: exact
+  meaning_en: ''
+  name_en: Herodias
+  orig: Ἡρωδιάς
+  ref: 太14:3
+  strong: G2266G
+  translit: Hērōdias
+希西基:
+  match: exact
+  meaning_en: strong
+  name_en: Hezeki
+  orig: חִזְקִי
+  ref: 代上8:17
+  strong: H2395
+  translit: chiz.qi
+希西家:
+  match: exact
+  meaning_en: Jehovah is my strength
+  name_en: Hezekiah or Hizkiah or Hizkijah
+  orig: חִזְקִיָּהוּ
+  ref: 代上3:13
+  strong: H2396G
+  translit: chiz.qiy.yah
+希西家#尼利雅:
+  match: exact
+  meaning_en: Jehovah is my strength
+  name_en: Hezekiah or Hizkiah or Hizkijah
+  orig: חִזְקִיָּהוּ
+  ref: 代上3:23
+  strong: H2396H
+  translit: chiz.qiy.yah
+希西家#番1:1:
+  match: exact
+  meaning_en: Jehovah is my strength
+  name_en: Hezekiah or Hizkiah or Hizkijah
+  orig: חִזְקִיָּהוּ
+  ref: 番1:1
+  strong: H2396K
+  translit: chiz.qiy.yah
+希連:
+  match: exact
+  meaning_en: smiter
+  name_en: Helem
+  orig: הֶ֫לֶם
+  ref: 代上7:35
+  strong: H1987
+  translit: he.lem
+希里:
+  match: exact
+  meaning_en: ''
+  name_en: Heli
+  orig: Ἡλί
+  ref: 路3:23
+  strong: G2242
+  translit: Hēli
+帕提:
+  match: exact
+  meaning_en: my deliverance
+  name_en: Palti or Phalti
+  orig: פַּלְטִי
+  ref: 撒上25:44
+  strong: H6406H
+  translit: pal.ti
+底伯利:
+  match: exact
+  meaning_en: my word
+  name_en: Dibri
+  orig: דִּבְרִי
+  ref: 利24:11
+  strong: H1704
+  translit: div.ri
+底但#拉瑪:
+  match: exact
+  meaning_en: low country
+  name_en: Dedan
+  orig: רֹדָן
+  ref: 代上1:9
+  strong: H1719B
+  translit: ro.dan
+底但#約珊:
+  match: exact
+  meaning_en: low country
+  name_en: Dedan
+  orig: רֹדָן
+  ref: 代上1:32
+  strong: H1719C
+  translit: ro.dan
+底拿:
+  match: exact
+  meaning_en: judgment
+  name_en: Dinah
+  orig: דִּינָה
+  ref: 創34:1
+  strong: H1783
+  translit: di.nah
+底珊:
+  match: exact
+  meaning_en: thresher
+  name_en: Dishan or Dishon
+  orig: דִּישָׁן
+  ref: 代上1:38
+  strong: H1789G
+  translit: di.shan
+底順:
+  match: exact
+  meaning_en: thresher
+  name_en: Dishon
+  orig: דִּישֹׁן
+  ref: 代上1:41
+  strong: H1787H
+  translit: di.shon
+底順#亞拿:
+  match: exact
+  meaning_en: thresher
+  name_en: Dishon
+  orig: דִּישֹׁן
+  ref: 代上1:41
+  strong: H1787H
+  translit: di.shon
+度瑪:
+  match: exact
+  meaning_en: silence
+  name_en: Dumah
+  orig: דּוּמָה
+  ref: 代上1:30
+  strong: H1746G
+  translit: du.mah
+彼土利:
+  match: exact
+  meaning_en: God destroys
+  name_en: Bethuel
+  orig: בְּתוּאֵל
+  ref: 創22:22
+  strong: H1328A
+  translit: be.tu.el
+得撒:
+  match: exact
+  meaning_en: favourable
+  name_en: Tirzah
+  orig: תִּרְצָה
+  ref: 民26:33
+  strong: H8656G
+  translit: tir.tsah
+德拉:
+  match: exact
+  meaning_en: palm grove
+  name_en: Diklah
+  orig: דִּקְלָה
+  ref: 代上1:21
+  strong: H1853
+  translit: diq.lah
+心利:
+  match: exact
+  meaning_en: my music
+  name_en: Zimri
+  orig: זִמְרִי
+  ref: 代上2:6
+  strong: H2174I
+  translit: zim.ri
+心利#耶何阿達:
+  match: exact
+  meaning_en: my music
+  name_en: Zimri
+  orig: זִמְרִי
+  ref: 代上8:36
+  strong: H2174H
+  translit: zim.ri
+心蘭:
+  match: exact
+  meaning_en: musician
+  name_en: Zimran
+  orig: זִמְרָן
+  ref: 代上1:32
+  strong: H2175
+  translit: zim.ran
+必達:
+  match: exact
+  meaning_en: flame of fire
+  name_en: Pildash
+  orig: פִּלְדָּשׁ
+  ref: 創22:22
+  strong: H6394
+  translit: pil.dash
+悉帕:
+  match: exact
+  meaning_en: a trickling
+  name_en: Zilpah
+  orig: זִלְפָּה
+  ref: 創29:24
+  strong: H2153
+  translit: zil.pah
+愛亞:
+  match: exact
+  meaning_en: falcon
+  name_en: Aiah or Ajah
+  orig: אַיָּה
+  ref: 撒下3:7
+  strong: H0345H
+  translit: ay.yah
+憫挪太:
+  match: exact
+  meaning_en: my habitations
+  name_en: Meonothai
+  orig: מְעוֹנֹתַי
+  ref: 代上4:14
+  strong: H4587
+  translit: me.o.no.tay
+戶伸:
+  match: exact
+  meaning_en: who makes haste
+  name_en: Hushim
+  orig: חֻשִׁים
+  ref: 代上7:12
+  strong: H2366G
+  translit: chu.shim
+戶伸#但:
+  match: exact
+  meaning_en: who makes haste
+  name_en: Hushim
+  orig: חֻשִׁים
+  ref: 創46:23
+  strong: H2366B
+  translit: chu.shim
+戶利:
+  match: exact
+  meaning_en: linen-weaver
+  name_en: Huri
+  orig: חוּרִי
+  ref: 代上5:14
+  strong: H2359
+  translit: chu.ri
+戶勒:
+  match: exact
+  meaning_en: circle
+  name_en: Hul
+  orig: חוּל
+  ref: 代上1:17
+  strong: H2343
+  translit: chul
+戶反:
+  match: exact
+  meaning_en: coast-man
+  name_en: Hupham
+  orig: חוּפָם
+  ref: 民26:39
+  strong: H2349
+  translit: chu.pham
+戶品:
+  match: exact
+  meaning_en: protected
+  name_en: Huppim
+  orig: חֻפִּים
+  ref: 代上7:12
+  strong: H2650G
+  translit: chup.pim
+戶平:
+  match: exact
+  meaning_en: protected
+  name_en: Huppim
+  orig: חֻפִּים
+  ref: 創46:21
+  strong: H2650H
+  translit: chup.pim
+戶珊:
+  match: exact
+  meaning_en: haste
+  name_en: Husham
+  orig: חֻשָׁם
+  ref: 代上1:45
+  strong: H2367
+  translit: chu.sham
+戶珥:
+  match: exact
+  meaning_en: hole
+  name_en: Hur
+  orig: חוּר
+  ref: 代上2:19
+  strong: H2354G
+  translit: chur
+所羅巴伯:
+  match: exact
+  meaning_en: sown in Babylon
+  name_en: Zerubbabel
+  orig: זְרֻבָּבֶ֫ל
+  ref: 代上3:19
+  strong: H2216
+  translit: ze.rub.ba.vel
+所羅門:
+  match: exact
+  meaning_en: peace
+  name_en: Solomon
+  orig: שְׁלֹמֹה
+  ref: 代上3:5
+  strong: H8010
+  translit: she.lo.moh
+抹利:
+  match: exact
+  meaning_en: sick
+  name_en: Mahli
+  orig: מַחְלִי
+  ref: 代上6:19
+  strong: H4249G
+  translit: mach.li
+押墩:
+  match: exact
+  meaning_en: 'subduer: fugitive'
+  name_en: Ardon
+  orig: אַרְדּוֹן
+  ref: 代上2:18
+  strong: H0715
+  translit: ar.don
+押尼珥:
+  match: exact
+  meaning_en: my father is a lamp
+  name_en: Abner
+  orig: אֲבִינֵר
+  ref: 撒上14:50
+  strong: H0074
+  translit: av.ner
+押德別:
+  match: exact
+  meaning_en: chastened of God
+  name_en: Adbeel
+  orig: אַדְבְּאֵל
+  ref: 代上1:29
+  strong: H0110
+  translit: ad.be.el
+押撒:
+  match: exact
+  meaning_en: ankle chain
+  name_en: Achsah
+  orig: עַכְסָה
+  ref: 代上2:49
+  strong: H5915H
+  translit: akh.sah
+押撒#書15:16:
+  match: exact
+  meaning_en: ankle chain
+  name_en: Achsah
+  orig: עַכְסָה
+  ref: 書15:16
+  strong: H5915G
+  translit: akh.sah
+押杜亞:
+  match: exact
+  meaning_en: knowing
+  name_en: Jaddua
+  orig: יַדּוּעַ
+  ref: 尼12:11
+  strong: H3037H
+  translit: yad.du.a
+押比疊:
+  match: exact
+  meaning_en: servant of God
+  name_en: Abdiel
+  orig: עַבְדִּיאֵל
+  ref: 代上5:15
+  strong: H5661
+  translit: av.di.el
+押沙龍:
+  match: exact
+  meaning_en: my father is peace
+  name_en: Absalom or Abishalom
+  orig: אֲבִישָׁלוֹם
+  ref: 代上3:2
+  strong: H0053
+  translit: a.vi.sha.lom
+押沙龍#瑪迦之父:
+  match: exact
+  meaning_en: my father is peace
+  name_en: Absalom or Abishalom
+  orig: אֲבִישָׁלוֹם
+  ref: 王上15:2
+  strong: H0053
+  translit: a.vi.sha.lom
+拉代:
+  match: exact
+  meaning_en: trampling
+  name_en: Raddai
+  orig: רַדַּי
+  ref: 代上2:14
+  strong: H7288
+  translit: rad.day
+拉但:
+  match: exact
+  meaning_en: put in order
+  name_en: Laadan
+  orig: לַעְדָּן
+  ref: 代上7:26
+  strong: H3936G
+  translit: la.dan
+拉億:
+  match: exact
+  meaning_en: lion
+  name_en: Laish
+  orig: לַ֫יִשׁ
+  ref: 撒上25:44
+  strong: H3919B
+  translit: la.yish
+拉含:
+  match: exact
+  meaning_en: belly
+  name_en: Raham
+  orig: רַ֫חַם
+  ref: 代上2:44
+  strong: H7357
+  translit: ra.cham
+拉吳:
+  match: exact
+  meaning_en: friend
+  name_en: Reu
+  orig: רְעוּ
+  ref: 代上1:25
+  strong: H7466
+  translit: re.u
+拉哈:
+  match: exact
+  meaning_en: oppression
+  name_en: Lahad
+  orig: לָ֑הַד
+  ref: 代上4:2
+  strong: H3855
+  translit: la.had
+拉大:
+  match: exact
+  meaning_en: order
+  name_en: Laadah
+  orig: לַעְדָּה
+  ref: 代上4:21
+  strong: H3935
+  translit: la.dah
+拉撒路:
+  match: exact
+  meaning_en: ''
+  name_en: Lazarus
+  orig: Λάζαρος
+  ref: 約11:1
+  strong: G2976H
+  translit: Lazaros
+拉法:
+  match: fuzzy
+  meaning_en: tall
+  name_en: Rapha
+  orig: רָפָא
+  ref: 代上8:2
+  strong: H7498H
+  translit: ra.pah
+拉法#比尼亞:
+  match: exact
+  meaning_en: tall
+  name_en: Rapha
+  orig: רָפָא
+  ref: 代上8:37
+  strong: H7498G
+  translit: ra.pah
+拉班:
+  match: exact
+  meaning_en: white
+  name_en: Laban
+  orig: לָבָן
+  ref: 創28:5
+  strong: H3837A
+  translit: la.van
+拉瑪:
+  match: exact
+  meaning_en: horse's mane
+  name_en: Raamah
+  orig: רַעְמָה
+  ref: 代上1:9
+  strong: H7484G
+  translit: ra.mah
+拉結:
+  match: exact
+  meaning_en: ewe
+  name_en: Rachel
+  orig: רָחֵל
+  ref: 創29:16
+  strong: H7354
+  translit: ra.chel
+拉麥:
+  match: exact
+  meaning_en: powerful
+  name_en: Lamech
+  orig: לֶ֫מֶךְ
+  ref: 代上1:3
+  strong: H3929H
+  translit: le.mekh
+拉麥#瑪土撒利:
+  match: exact
+  meaning_en: powerful
+  name_en: Lamech
+  orig: לֶ֫מֶךְ
+  ref: 創4:18
+  strong: H3929G
+  translit: le.mekh
+拔巴甲:
+  match: exact
+  meaning_en: searcher
+  name_en: Bakbakkar
+  orig: בַּקְבַּקַּר
+  ref: 代上9:15
+  strong: H1230
+  translit: baq.baq.qar
+拔示巴:
+  match: exact
+  meaning_en: daughter of an oath
+  name_en: Bath-sheba
+  orig: בַּת־שֶׁ֫בַע
+  ref: 撒下11:3
+  strong: H1339
+  translit: bat-she.va
+拿俄米:
+  match: exact
+  meaning_en: my delight
+  name_en: Naomi
+  orig: נׇעֳמִי
+  ref: 得1:2
+  strong: H5281
+  translit: no.o.mi
+拿八:
+  match: exact
+  meaning_en: fool
+  name_en: Nabhal or Nabal
+  orig: נָבָל
+  ref: 撒上25:3
+  strong: H5037
+  translit: na.val
+拿哈:
+  match: exact
+  meaning_en: rest
+  name_en: Nahath
+  orig: נַ֫חַת
+  ref: 代上1:37
+  strong: H5184G
+  translit: na.chat
+拿哈#瑣菲:
+  match: exact
+  meaning_en: rest
+  name_en: Nahath
+  orig: נַ֫חַת
+  ref: 代上6:26
+  strong: H5184I
+  translit: na.chat
+拿單:
+  match: exact
+  meaning_en: giver
+  name_en: Nathan
+  orig: נָתָן
+  ref: 代上3:5
+  strong: H5416G
+  translit: na.tan
+拿單#亞太:
+  match: exact
+  meaning_en: giver
+  name_en: Nathan
+  orig: נָתָן
+  ref: 代上2:36
+  strong: H5416J
+  translit: na.tan
+拿坦業:
+  match: exact
+  meaning_en: given of God
+  name_en: Nethaneel
+  orig: נְתַנְאֵל
+  ref: 代上2:14
+  strong: H5417H
+  translit: ne.tan.el
+拿安:
+  match: exact
+  meaning_en: pleasantness
+  name_en: Naam
+  orig: נָ֑עַם
+  ref: 代上4:15
+  strong: H5277
+  translit: na.am
+拿弗他利:
+  match: exact
+  meaning_en: wrestling
+  name_en: Naphtali
+  orig: נַפְתָּלִי
+  ref: 代上2:2
+  strong: H5321G
+  translit: naph.ta.li
+拿瑪:
+  match: exact
+  meaning_en: loveliness
+  name_en: Naamah
+  orig: נַעֲמָה
+  ref: 創4:22
+  strong: H5279G
+  translit: na.a.mah
+拿瑪#羅波安之母:
+  match: exact
+  meaning_en: loveliness
+  name_en: Naamah
+  orig: נַעֲמָה
+  ref: 王上14:21
+  strong: H5279A
+  translit: na.a.mah
+拿答:
+  match: exact
+  meaning_en: generous
+  name_en: Nadab
+  orig: נָדָב
+  ref: 代上2:28
+  strong: H5070I
+  translit: na.dav
+拿答#亞倫:
+  match: exact
+  meaning_en: generous
+  name_en: Nadab
+  orig: נָדָב
+  ref: 代上6:3
+  strong: H5070G
+  translit: na.dav
+拿答#耶利:
+  match: exact
+  meaning_en: generous
+  name_en: Nadab
+  orig: נָדָב
+  ref: 代上8:30
+  strong: H5070J
+  translit: na.dav
+拿答#耶羅波安:
+  match: exact
+  meaning_en: generous
+  name_en: Nadab
+  orig: נָדָב
+  ref: 王上15:25
+  strong: H5070H
+  translit: na.dav
+拿該:
+  match: exact
+  meaning_en: ''
+  name_en: Naggai
+  orig: Ναγγαί
+  ref: 路3:25
+  strong: G3477
+  translit: Nangai
+拿轄:
+  match: exact
+  meaning_en: serpent
+  name_en: Nahash
+  orig: נָחָשׁ
+  ref: 撒下17:25
+  strong: H5176I
+  translit: na.chash
+拿非施:
+  match: exact
+  meaning_en: refreshment
+  name_en: Naphish or Nephish
+  orig: נָפִישׁ
+  ref: 代上1:31
+  strong: H5305
+  translit: na.phish
+拿順:
+  match: exact
+  meaning_en: enchanter
+  name_en: Nahshon
+  orig: נַחְשׁוֹן
+  ref: 代上2:10
+  strong: H5177
+  translit: nach.shon
+拿鴻:
+  match: exact
+  meaning_en: ''
+  name_en: Nahum
+  orig: Ναούμ
+  ref: 路3:25
+  strong: G3486
+  translit: Naoum
+拿鶴:
+  match: exact
+  meaning_en: snorting
+  name_en: Nahor
+  orig: נָחוֹר
+  ref: 代上1:26
+  strong: H5152G
+  translit: na.chor
+拿鶴#他拉:
+  match: exact
+  meaning_en: snorting
+  name_en: Nahor
+  orig: נָחוֹר
+  ref: 創11:26
+  strong: H5152H
+  translit: na.chor
+挪亞:
+  match: exact
+  meaning_en: rest
+  name_en: Noah
+  orig: נֹחַ
+  ref: 代上1:4
+  strong: H5146
+  translit: no.ach
+挪哈:
+  match: exact
+  meaning_en: rest
+  name_en: Nohah
+  orig: נוֹחָה
+  ref: 代上8:2
+  strong: H5119
+  translit: no.chah
+挪迦:
+  match: exact
+  meaning_en: brightness
+  name_en: Nogah
+  orig: נֹ֫גַהּ
+  ref: 代上3:7
+  strong: H5052
+  translit: no.gah
+挪阿:
+  match: exact
+  meaning_en: motion
+  name_en: Noah
+  orig: נֹעָה
+  ref: 民26:33
+  strong: H5270
+  translit: no.ah
+掃羅:
+  match: exact
+  meaning_en: desired
+  name_en: Saul or Shaul
+  orig: שָׁאוּל
+  ref: 代上8:33
+  strong: H7586G
+  translit: sha.ul
+掃羅#利河伯:
+  match: exact
+  meaning_en: desired
+  name_en: Saul or Shaul
+  orig: שָׁאוּל
+  ref: 代上1:48
+  strong: H7586I
+  translit: sha.ul
+掃羅#西緬:
+  match: exact
+  meaning_en: desired
+  name_en: Saul or Shaul
+  orig: שָׁאוּל
+  ref: 代上4:24
+  strong: H7586H
+  translit: sha.ul
+提倫:
+  match: exact
+  meaning_en: gift
+  name_en: Tilon
+  orig: תִּילוֹן
+  ref: 代上4:20
+  strong: H8436
+  translit: tu.lon
+提八:
+  match: exact
+  meaning_en: a slaughter
+  name_en: Tebah
+  orig: טֶ֫בַח
+  ref: 創22:24
+  strong: H2875
+  translit: te.vach
+提利:
+  match: exact
+  meaning_en: fear
+  name_en: Tiria
+  orig: תִּירְיָא
+  ref: 代上4:16
+  strong: H8493
+  translit: tir.ya
+提幔:
+  match: exact
+  meaning_en: south
+  name_en: Teman
+  orig: תֵּימָן
+  ref: 代上1:36
+  strong: H8487G
+  translit: te.man
+提幔#族長:
+  match: exact
+  meaning_en: south
+  name_en: Teman
+  orig: תֵּימָן
+  ref: 代上1:53
+  strong: H8487G
+  translit: te.man
+提拉:
+  match: exact
+  meaning_en: desire
+  name_en: Tiras
+  orig: תִּירָ֑ס
+  ref: 代上1:5
+  strong: H8494
+  translit: ti.ras
+提欣拿:
+  match: exact
+  meaning_en: supplication
+  name_en: Tehinnah
+  orig: תְּחִנָּה
+  ref: 代上4:12
+  strong: H8468
+  translit: te.chin.nah
+提比尼:
+  match: exact
+  meaning_en: intelligent
+  name_en: Tibni
+  orig: תִּבְנִי
+  ref: 王上16:21
+  strong: H8402
+  translit: tiv.ni
+提瑪:
+  match: exact
+  meaning_en: desert
+  name_en: Tema
+  orig: תֵּימָא
+  ref: 代上1:30
+  strong: H8485G
+  translit: te.ma
+摩利:
+  match: exact
+  meaning_en: begetter
+  name_en: Molid
+  orig: מוֹלִיד
+  ref: 代上2:29
+  strong: H4140
+  translit: mo.lid
+摩押:
+  match: exact
+  meaning_en: of his father
+  name_en: Moab
+  orig: מוֹאָב
+  ref: 創19:37
+  strong: H4124H
+  translit: mo.av
+摩撒:
+  match: exact
+  meaning_en: fountain
+  name_en: Moza
+  orig: מוֹצָא
+  ref: 代上2:46
+  strong: H4162G
+  translit: mo.tsa
+摩撒#心利:
+  match: exact
+  meaning_en: fountain
+  name_en: Moza
+  orig: מוֹצָא
+  ref: 代上8:36
+  strong: H4162H
+  translit: mo.tsa
+摩西:
+  match: exact
+  meaning_en: drawn
+  name_en: Moses
+  orig: מֹשֶׁה
+  ref: 代上6:3
+  strong: H4872
+  translit: mo.sheh
+撒刻:
+  match: exact
+  meaning_en: mindful
+  name_en: Zaccur or Zacchur
+  orig: זַכּוּר
+  ref: 代上4:26
+  strong: H2139H
+  translit: zak.kur
+撒刻#亞薩:
+  match: exact
+  meaning_en: mindful
+  name_en: Zaccur or Zacchur
+  orig: זַכּוּר
+  ref: 尼12:35
+  strong: H2139J
+  translit: zak.kur
+撒底:
+  match: exact
+  meaning_en: endowment
+  name_en: Zabdi
+  orig: זַבְדִּי
+  ref: 代上8:19
+  strong: H2067H
+  translit: zav.di
+撒底#亞干之祖:
+  match: exact
+  meaning_en: endowment
+  name_en: Zabdi
+  orig: זַבְדִּי
+  ref: 書7:1
+  strong: H2067G
+  translit: zav.di
+撒底#亞薩:
+  match: exact
+  meaning_en: endowment
+  name_en: Zabdi
+  orig: זַבְדִּי
+  ref: 尼11:17
+  strong: H2067J
+  translit: zav.di
+撒弗他:
+  match: exact
+  meaning_en: striking
+  name_en: Sabta or Sabtah
+  orig: סַבְתָּה
+  ref: 代上1:9
+  strong: H5454
+  translit: sav.tah
+撒拉:
+  match: exact
+  meaning_en: princess
+  name_en: Sarai
+  orig: שָׂרַי
+  ref: 創11:29
+  strong: H8297
+  translit: sa.ray
+撒拉鐵:
+  match: exact
+  meaning_en: I have asked of God
+  name_en: Shealtiel or Salathiel
+  orig: שְׁאַלְתִּיאֵל
+  ref: 代上3:17
+  strong: H7597A
+  translit: she.al.ti.el
+撒拔:
+  match: exact
+  meaning_en: he endows
+  name_en: Zabad
+  orig: זָבָד
+  ref: 代上2:36
+  strong: H2066G
+  translit: za.vad
+撒拔#他哈:
+  match: exact
+  meaning_en: he endows
+  name_en: Zabad
+  orig: זָבָד
+  ref: 代上7:21
+  strong: H2066H
+  translit: za.vad
+撒母耳:
+  match: exact
+  meaning_en: his name is El
+  name_en: Samuel
+  orig: שְׁמוּאֵל
+  ref: 代上6:27
+  strong: H8050G
+  translit: she.mu.el
+撒母耳#希幔線:
+  match: exact
+  meaning_en: his name is El
+  name_en: Samuel
+  orig: שְׁמוּאֵל
+  ref: 代上6:33
+  strong: H8050G
+  translit: she.mu.el
+撒番:
+  match: exact
+  meaning_en: troubled
+  name_en: Zaavan
+  orig: זַעֲוָן
+  ref: 代上1:42
+  strong: H2190
+  translit: za.a.van
+撒督:
+  match: exact
+  meaning_en: righteous
+  name_en: Zadok
+  orig: צָדוֹק
+  ref: 代上6:8
+  strong: H6659G
+  translit: tsa.doq
+撒督#9:11:
+  match: exact
+  meaning_en: righteous
+  name_en: Zadok
+  orig: צָדוֹק
+  ref: 代上9:11
+  strong: H6659I
+  translit: tsa.doq
+撒督#亞希突:
+  match: exact
+  meaning_en: righteous
+  name_en: Zadok
+  orig: צָדוֹק
+  ref: 代上6:8
+  strong: H6659G
+  translit: tsa.doq
+撒督#亞所:
+  match: exact
+  meaning_en: ''
+  name_en: Zadok
+  orig: Σαδώκ
+  ref: 太1:14
+  strong: G4524
+  translit: Sadōk
+撒督#耶路沙之父:
+  match: exact
+  meaning_en: righteous
+  name_en: Zadok
+  orig: צָדוֹק
+  ref: 王下15:33
+  strong: H6659H
+  translit: tsa.doq
+撒罕#羅波安之子:
+  match: exact
+  meaning_en: loathing
+  name_en: Zaham
+  orig: זָ֑הַם
+  ref: 代下11:19
+  strong: H2093
+  translit: za.ham
+撒薩:
+  match: exact
+  meaning_en: brightness
+  name_en: Zaza
+  orig: זָזָא
+  ref: 代上2:33
+  strong: H2117
+  translit: za.za
+撒路:
+  match: exact
+  meaning_en: weighed
+  name_en: Sallu or Salu or Sallai
+  orig: סַלּוּא
+  ref: 代上9:7
+  strong: H5543D
+  translit: sal.lu
+撒迦:
+  match: exact
+  meaning_en: Jehovah remembers
+  name_en: Zechariah
+  orig: זְכַרְיָהוּ
+  ref: 代上9:37
+  strong: H2148X
+  translit: ze.khar.yah
+撒迦利亞#巴拉加之子:
+  match: exact
+  meaning_en: ''
+  name_en: Zechariah
+  orig: Ζαχαρίας
+  ref: 太23:35
+  strong: G2197G
+  translit: Zacharias
+撒迦利亞#巴施戶珥:
+  match: exact
+  meaning_en: Jehovah remembers
+  name_en: Zechariah
+  orig: זְכַרְיָהוּ
+  ref: 尼11:12
+  strong: H2148X
+  translit: ze.khar.yah
+撒迦利亞#比利家:
+  match: exact
+  meaning_en: Jehovah remembers
+  name_en: Zechariah
+  orig: זְכַרְיָהוּ
+  ref: 亞1:1
+  strong: H2148V
+  translit: ze.khar.yah
+撒迦利亞#約拿單:
+  match: exact
+  meaning_en: Jehovah remembers
+  name_en: Zechariah
+  orig: זְכַרְיָהוּ
+  ref: 尼12:35
+  strong: H2148Z
+  translit: ze.khar.yah
+撒迦利亞#約翰的父親:
+  match: exact
+  meaning_en: ''
+  name_en: Zechariah
+  orig: Ζαχαρίας
+  ref: 路1:5
+  strong: G2197H
+  translit: Zacharias
+撒迦利亞#耶何耶大之子:
+  match: exact
+  meaning_en: Jehovah remembers
+  name_en: Zechariah
+  orig: זְכַרְיָהוּ
+  ref: 代下24:20
+  strong: H2148W
+  translit: ze.khar.yah
+撒迦利雅#亞比之父:
+  match: exact
+  meaning_en: Jehovah remembers
+  name_en: Zechariah
+  orig: זְכַרְיָהוּ
+  ref: 王下18:2
+  strong: H2148C
+  translit: ze.khar.yah
+撒迦利雅#流便:
+  match: exact
+  meaning_en: Jehovah remembers
+  name_en: Zechariah
+  orig: זְכַרְיָהוּ
+  ref: 代上5:7
+  strong: H2148D
+  translit: ze.khar.yah
+撒迦利雅#烏西雅之父:
+  match: exact
+  meaning_en: Jehovah remembers
+  name_en: Zechariah
+  orig: זְכַרְיָהוּ
+  ref: 尼11:4
+  strong: H2148V
+  translit: ze.khar.yah
+撒迦利雅#米施利米雅:
+  match: exact
+  meaning_en: Jehovah remembers
+  name_en: Zechariah
+  orig: זְכַרְיָהוּ
+  ref: 代上9:21
+  strong: H2148A
+  translit: ze.khar.yah
+撒迦利雅#約沙法之子:
+  match: exact
+  meaning_en: Jehovah remembers
+  name_en: Zechariah
+  orig: זְכַרְיָהוּ
+  ref: 代下21:2
+  strong: H2148J
+  translit: ze.khar.yah
+撒迦利雅#耶羅波安:
+  match: exact
+  meaning_en: Jehovah remembers
+  name_en: Zechariah
+  orig: זְכַרְיָהוּ
+  ref: 王下15:8
+  strong: H2148P
+  translit: ze.khar.yah
+撒迦利雅#雅哈悉之父:
+  match: exact
+  meaning_en: Jehovah remembers
+  name_en: Zechariah
+  orig: זְכַרְיָהוּ
+  ref: 代下20:14
+  strong: H2148I
+  translit: ze.khar.yah
+撒門:
+  match: exact
+  meaning_en: garment
+  name_en: Salmon
+  orig: שַׂלְמָה
+  ref: 得4:20
+  strong: H8009
+  translit: sal.mah
+施沙:
+  match: exact
+  meaning_en: strong
+  name_en: Shilshah
+  orig: שִׁלְשָׁה
+  ref: 代上7:37
+  strong: H8030
+  translit: shil.shah
+易伯散:
+  match: exact
+  meaning_en: pleasant
+  name_en: Jibsam
+  orig: יִבְשָׂם
+  ref: 代上7:2
+  strong: H3005
+  translit: yiv.sam
+易多:
+  match: exact
+  meaning_en: His witness
+  name_en: Iddo
+  orig: עִדּוֹ
+  ref: 代上6:21
+  strong: H5714H
+  translit: id.do
+易多#撒迦利亞之祖:
+  match: exact
+  meaning_en: His witness
+  name_en: Iddo
+  orig: עִדּוֹ
+  ref: 亞1:1
+  strong: H5714J
+  translit: id.do
+普瓦:
+  match: exact
+  meaning_en: splendid
+  name_en: Puah or Pua or Phuvah
+  orig: פּוּאָה
+  ref: 代上7:1
+  strong: H6312G
+  translit: pu.ah
+暗利:
+  match: exact
+  meaning_en: pupil of Jehovah
+  name_en: Omri
+  orig: עׇמְרִי
+  ref: 代上7:8
+  strong: H6018H
+  translit: om.ri
+暗利#9:4:
+  match: exact
+  meaning_en: pupil of Jehovah
+  name_en: Omri
+  orig: עׇמְרִי
+  ref: 代上9:4
+  strong: H6018I
+  translit: om.ri
+暗利#以色列王:
+  match: exact
+  meaning_en: pupil of Jehovah
+  name_en: Omri
+  orig: עׇמְרִי
+  ref: 王上16:23
+  strong: H6018G
+  translit: om.ri
+暗嫩:
+  match: exact
+  meaning_en: faithful
+  name_en: Amnon
+  orig: אַמְנוֹן
+  ref: 代上3:1
+  strong: H0550G
+  translit: am.non
+暗嫩#示門:
+  match: exact
+  meaning_en: faithful
+  name_en: Amnon
+  orig: אַמְנוֹן
+  ref: 代上4:20
+  strong: H0550H
+  translit: am.non
+暗洗#撒迦利亞:
+  match: exact
+  meaning_en: my strength
+  name_en: Amzi
+  orig: אַמְצִי
+  ref: 尼11:12
+  strong: H0557H
+  translit: am.tsi
+暗蘭:
+  match: exact
+  meaning_en: exalted people
+  name_en: Amram
+  orig: עַמְרָם
+  ref: 代上6:2
+  strong: H6019G
+  translit: am.ram
+暗西:
+  match: exact
+  meaning_en: my strength
+  name_en: Amzi
+  orig: אַמְצִי
+  ref: 代上6:46
+  strong: H0557G
+  translit: am.tsi
+書亞:
+  match: exact
+  meaning_en: wealth
+  name_en: Shuah
+  orig: שׁוּחַ
+  ref: 代上1:32
+  strong: H7744
+  translit: shu.ach
+書亞#瑣法:
+  match: exact
+  meaning_en: sweeping
+  name_en: Suah
+  orig: סוּחַ
+  ref: 代上7:36
+  strong: H5477
+  translit: su.ach
+書亞#迦南人:
+  match: exact
+  meaning_en: wealth
+  name_en: Shuah
+  orig: שׁוּעַ
+  ref: 創38:2
+  strong: H7770
+  translit: shu.a
+書反:
+  match: exact
+  meaning_en: serpent
+  name_en: Shephuphan or Shupham
+  orig: שְׁפוּפָם
+  ref: 民26:39
+  strong: H8197A
+  translit: she.phu.pham
+書含:
+  match: exact
+  meaning_en: pit-digger
+  name_en: Shuham
+  orig: שׁוּחָם
+  ref: 民26:42
+  strong: H7748
+  translit: shu.cham
+書品:
+  match: exact
+  meaning_en: serpents
+  name_en: Shuppim
+  orig: שֻׁפִּים
+  ref: 代上7:12
+  strong: H8206G
+  translit: shup.pim
+書尼:
+  match: exact
+  meaning_en: fortunate
+  name_en: Shuni
+  orig: שׁוּנִי
+  ref: 創46:16
+  strong: H7764
+  translit: shu.ni
+書提拉:
+  match: exact
+  meaning_en: noise of breaking
+  name_en: Shuthelah
+  orig: שׁוּתֶ֫לַח
+  ref: 代上7:20
+  strong: H7803G
+  translit: shu.te.lach
+書提拉#撒拔:
+  match: exact
+  meaning_en: noise of breaking
+  name_en: Shuthelah
+  orig: שׁוּתֶ֫לַח
+  ref: 代上7:20
+  strong: H7803G
+  translit: shu.te.lach
+書雅:
+  match: exact
+  meaning_en: ''
+  name_en: Shua
+  orig: שׁוּעָ֥א
+  ref: 代上7:32
+  strong: H7774
+  translit: shu.'A'
+朔巴:
+  match: exact
+  meaning_en: flowing
+  name_en: Shobal
+  orig: שׁוֹבָל
+  ref: 代上1:38
+  strong: H7732G
+  translit: sho.val
+朔巴#4:2:
+  match: exact
+  meaning_en: flowing
+  name_en: Shobal
+  orig: שׁוֹבָל
+  ref: 代上4:2
+  strong: H7732H
+  translit: sho.val
+朔巴#戶珥:
+  match: exact
+  meaning_en: flowing
+  name_en: Shobal
+  orig: שׁוֹבָל
+  ref: 代上2:50
+  strong: H7732H
+  translit: sho.val
+朔罷:
+  match: exact
+  meaning_en: rebellious
+  name_en: Shobab
+  orig: שׁוֹבָב
+  ref: 代上3:5
+  strong: H7727G
+  translit: sho.vav
+朔罷#迦勒:
+  match: exact
+  meaning_en: rebellious
+  name_en: Shobab
+  orig: שׁוֹבָב
+  ref: 代上2:18
+  strong: H7727H
+  translit: sho.vav
+朔默:
+  match: exact
+  meaning_en: keeper
+  name_en: Shomer
+  orig: שֹׁמֵר
+  ref: 代上7:32
+  strong: H7763H
+  translit: sho.mer
+末力:
+  match: exact
+  meaning_en: sick
+  name_en: Mahli
+  orig: מַחְלִי
+  ref: 代上6:47
+  strong: H4249H
+  translit: mach.li
+末底改:
+  match: exact
+  meaning_en: little man
+  name_en: Mordecai
+  orig: מׇרְדֳּכַי
+  ref: 斯2:5
+  strong: H4782H
+  translit: mor.de.khay
+林拿:
+  match: exact
+  meaning_en: shout
+  name_en: Rinnah
+  orig: רִנָּה
+  ref: 代上4:20
+  strong: H7441
+  translit: rin.nah
+桑拉:
+  match: exact
+  meaning_en: garment
+  name_en: Samlah
+  orig: שַׂמְלָה
+  ref: 代上1:47
+  strong: H8072
+  translit: sam.lah
+歌篾:
+  match: exact
+  meaning_en: complete
+  name_en: Gomer
+  orig: גֹּ֫מֶר
+  ref: 代上1:5
+  strong: H1586G
+  translit: go.mer
+歌革:
+  match: exact
+  meaning_en: mountain
+  name_en: Gog
+  orig: גּוֹג
+  ref: 代上5:4
+  strong: H1463G
+  translit: gog
+母平:
+  match: exact
+  meaning_en: serpent
+  name_en: Muppim
+  orig: מֻפִּים
+  ref: 創46:21
+  strong: H4649
+  translit: mup.pim
+母示:
+  match: exact
+  meaning_en: yielding
+  name_en: Mushi
+  orig: מוּשִׁי
+  ref: 代上6:19
+  strong: H4187
+  translit: mu.shi
+比但:
+  match: exact
+  meaning_en: in judging
+  name_en: Bedan
+  orig: בְּדָן
+  ref: 代上7:17
+  strong: H0917G
+  translit: be.dan
+比列:
+  match: exact
+  meaning_en: hail
+  name_en: Bered
+  orig: בֶּ֫רֶד
+  ref: 代上7:20
+  strong: H1260H
+  translit: be.red
+比利:
+  match: exact
+  meaning_en: a well
+  name_en: Beri
+  orig: בֵּרִי
+  ref: 代上7:36
+  strong: H1275
+  translit: be.ri
+比利#赫人:
+  match: fuzzy
+  meaning_en: my well
+  name_en: Beeri
+  orig: בְּאֵרִי
+  ref: 創26:34
+  strong: H0882G
+  translit: be.e.ri
+比利亞#8:13:
+  match: exact
+  meaning_en: with a friend
+  name_en: Beriah
+  orig: בְּרִיעָה
+  ref: 代上8:13
+  strong: H1283I
+  translit: be.ri.ah
+比利亞#亞設:
+  match: exact
+  meaning_en: with a friend
+  name_en: Beriah
+  orig: בְּרִיעָה
+  ref: 代上7:30
+  strong: H1283G
+  translit: be.ri.ah
+比利亞#以法蓮:
+  match: exact
+  meaning_en: with a friend
+  name_en: Beriah
+  orig: בְּרִיעָה
+  ref: 代上7:23
+  strong: H1283H
+  translit: be.ri.ah
+比利家#亞撒:
+  match: exact
+  meaning_en: Jehovah blesses
+  name_en: Berachiah or Berechiah
+  orig: בֶּרֶכְיָה
+  ref: 代上9:16
+  strong: H1296I
+  translit: be.rekh.yah
+比利家#撒迦利亞之父:
+  match: exact
+  meaning_en: Jehovah blesses
+  name_en: Berachiah or Berechiah
+  orig: בֶּרֶכְיָה
+  ref: 亞1:1
+  strong: H1296L
+  translit: be.rekh.yah
+比利家#示米亞:
+  match: exact
+  meaning_en: Jehovah blesses
+  name_en: Berachiah or Berechiah
+  orig: בֶּרֶכְיָה
+  ref: 代上6:39
+  strong: H1296H
+  translit: be.rekh.yah
+比利家#米書蘭:
+  match: exact
+  meaning_en: Jehovah blesses
+  name_en: Berachiah or Berechiah
+  orig: בֶּרֶכְיָה
+  ref: 代上3:20
+  strong: H1296G
+  translit: be.rekh.yah
+比加:
+  match: exact
+  meaning_en: opened
+  name_en: Pekah
+  orig: פֶּ֫קַח
+  ref: 王下15:25
+  strong: H6492
+  translit: pe.qach
+比加轄:
+  match: exact
+  meaning_en: Jehovah sees
+  name_en: Pekahiah
+  orig: פְּקַחְיָה
+  ref: 王下15:22
+  strong: H6494
+  translit: pe.qach.yah
+比勒:
+  match: exact
+  meaning_en: swiftness
+  name_en: Peleth
+  orig: פֶּ֫לֶת
+  ref: 代上2:33
+  strong: H6431H
+  translit: pe.let
+比勒罕:
+  match: exact
+  meaning_en: their decrepitude
+  name_en: Bilhan
+  orig: בִּלְהָן
+  ref: 代上7:10
+  strong: H1092H
+  translit: bil.han
+比嫩:
+  match: exact
+  meaning_en: darkness
+  name_en: Pinon
+  orig: פִּינֹן
+  ref: 代上1:52
+  strong: H6373
+  translit: pi.non
+比尼亞:
+  match: exact
+  meaning_en: ''
+  name_en: Binea
+  orig: בִּנְעָא
+  ref: 代上8:37
+  strong: H1150
+  translit: bin.a
+比悉:
+  match: exact
+  meaning_en: a well
+  name_en: Beri
+  orig: בֵּרִי
+  ref: 代上7:36
+  strong: H1275
+  translit: be.ri
+比拉#以東王:
+  match: aligned
+  meaning_en: destruction
+  name_en: Bela
+  orig: בֶּ֫לַע
+  ref: 創36:32
+  strong: H1106G
+  translit: be.la
+比拉#便雅憫:
+  match: aligned
+  meaning_en: destruction
+  name_en: Bela
+  orig: בֶּ֫לַע
+  ref: 代上7:7
+  strong: H1106A
+  translit: be.la
+比拉#瑣法:
+  match: exact
+  meaning_en: a well
+  name_en: Beera
+  orig: בְּאֵרָא
+  ref: 代上7:37
+  strong: H0878
+  translit: be.e.ra
+比拉雅:
+  match: exact
+  meaning_en: Jehovah has created
+  name_en: Beraiah
+  orig: בְּרָאיָה
+  ref: 代上8:21
+  strong: H1256
+  translit: be.ra.yah
+比拿雅#西緬:
+  match: exact
+  meaning_en: Jehovah has built
+  name_en: Benaiah
+  orig: בְּנָיָ֫הוּ
+  ref: 代上4:36
+  strong: H1141I
+  translit: be.na.yah
+比拿雅#雅哈悉之祖父:
+  match: exact
+  meaning_en: Jehovah has built
+  name_en: Benaiah
+  orig: בְּנָיָ֫הוּ
+  ref: 代下20:14
+  strong: H1141L
+  translit: be.na.yah
+比撒列:
+  match: exact
+  meaning_en: in the shadow (i.e. protection) of God
+  name_en: Bezaleel
+  orig: בְּצַלְאֵל
+  ref: 代上2:20
+  strong: H1212G
+  translit: be.tsal.el
+比歌拉:
+  match: exact
+  meaning_en: first-born
+  name_en: Bechorath
+  orig: בְּכוֹרַת
+  ref: 撒上9:1
+  strong: H1064
+  translit: be.kho.rat
+比珥:
+  match: exact
+  meaning_en: burning
+  name_en: Beor
+  orig: בְּעוֹר
+  ref: 創36:32
+  strong: H1160G
+  translit: be.or
+比結:
+  match: exact
+  meaning_en: young camel
+  name_en: Becher
+  orig: בֶּ֫כֶר
+  ref: 代上7:6
+  strong: H1071G
+  translit: be.kher
+比結#以法蓮:
+  match: exact
+  meaning_en: young camel
+  name_en: Becher
+  orig: בֶּ֫כֶר
+  ref: 民26:35
+  strong: H1071H
+  translit: be.kher
+毘利施:
+  match: exact
+  meaning_en: dung
+  name_en: Peresh
+  orig: פֶּ֫רֶשׁ
+  ref: 代上7:16
+  strong: H6570
+  translit: pe.resh
+毘力:
+  match: exact
+  meaning_en: deliverance
+  name_en: Pelet
+  orig: פֶּ֫לֶט
+  ref: 代上2:47
+  strong: H6404G
+  translit: pe.let
+毘努伊勒:
+  match: exact
+  meaning_en: facing God
+  name_en: Penuel or Peniel
+  orig: פְּנוּאֵל
+  ref: 代上4:4
+  strong: H6439H
+  translit: pe.nu.el
+毘努伊勒#沙煞:
+  match: exact
+  meaning_en: facing God
+  name_en: Penuel or Peniel
+  orig: פְּנוּאֵל
+  ref: 代上8:25
+  strong: H6439I
+  translit: pe.nu.el
+毘大雅:
+  match: exact
+  meaning_en: Jehovah has ransomed
+  name_en: Pedaiah
+  orig: פְּדָיָהוּ
+  ref: 代上3:18
+  strong: H6305H
+  translit: pe.da.yah
+毘大雅#西布大之父:
+  match: exact
+  meaning_en: Jehovah has ransomed
+  name_en: Pedaiah
+  orig: פְּדָיָהוּ
+  ref: 王下23:36
+  strong: H6305G
+  translit: pe.da.yah
+毘尼拿:
+  match: exact
+  meaning_en: jewel
+  name_en: Peninnah
+  orig: פְּנִנָּה
+  ref: 撒上1:2
+  strong: H6444
+  translit: pe.nin.nah
+毘拉利#暗洗:
+  match: exact
+  meaning_en: Jehovah has judged
+  name_en: Pelaliah
+  orig: פְּלַלְיָה
+  ref: 尼11:12
+  strong: H6421
+  translit: pe.lal.yah
+毘拉提#以示:
+  match: exact
+  meaning_en: Jehovah delivers
+  name_en: Pelatiah
+  orig: פְּלַטְיָ֫הוּ
+  ref: 代上4:42
+  strong: H6410H
+  translit: pe.lat.yah
+毘拉提#哈拿尼雅:
+  match: exact
+  meaning_en: Jehovah delivers
+  name_en: Pelatiah
+  orig: פְּלַטְיָ֫הוּ
+  ref: 代上3:21
+  strong: H6410G
+  translit: pe.lat.yah
+毘敦:
+  match: exact
+  meaning_en: harmless
+  name_en: Pithon
+  orig: פִּיתוֹן
+  ref: 代上8:35
+  strong: H6377
+  translit: pi.ton
+毘斯巴:
+  match: exact
+  meaning_en: disappearance
+  name_en: Pispah
+  orig: פִּסְפָּה
+  ref: 代上7:38
+  strong: H6462
+  translit: pis.pah
+毘萊雅:
+  match: exact
+  meaning_en: Jehovah does wonders
+  name_en: Pelaiah
+  orig: פְּלָיָה
+  ref: 代上3:24
+  strong: H6411B
+  translit: pe.la.yah
+沙亞弗:
+  match: exact
+  meaning_en: division
+  name_en: Shaaph
+  orig: שַׁ֫עַף
+  ref: 代上2:49
+  strong: H8174H
+  translit: sha.aph
+沙亞弗#雅代:
+  match: exact
+  meaning_en: division
+  name_en: Shaaph
+  orig: שַׁ֫עַף
+  ref: 代上2:47
+  strong: H8174G
+  translit: sha.aph
+沙列:
+  match: exact
+  meaning_en: a drawing forth
+  name_en: Sheleph
+  orig: שֶׁ֫לֶף
+  ref: 代上1:20
+  strong: H8026
+  translit: she.leph
+沙哈連:
+  match: exact
+  meaning_en: double dawn
+  name_en: Shaharaim
+  orig: שַׁחֲרַ֫יִם
+  ref: 代上8:8
+  strong: H7842
+  translit: sha.cha.ra.yim
+沙拉:
+  match: exact
+  meaning_en: sprout
+  name_en: Salah or Shelah
+  orig: שֶׁ֫לַח
+  ref: 代上1:18
+  strong: H7974
+  translit: she.lach
+沙法:
+  match: exact
+  meaning_en: judged
+  name_en: Shaphat
+  orig: שָׁפָט
+  ref: 代上3:22
+  strong: H8202I
+  translit: sha.phat
+沙法#迦得:
+  match: exact
+  meaning_en: judged
+  name_en: Shaphat
+  orig: שָׁפָט
+  ref: 代上5:12
+  strong: H8202J
+  translit: sha.phat
+沙煞:
+  match: exact
+  meaning_en: longing
+  name_en: Shashak
+  orig: שָׁשָׁק
+  ref: 代上8:14
+  strong: H8349
+  translit: sha.shaq
+沙瑪:
+  match: exact
+  meaning_en: astonishment
+  name_en: Shammah
+  orig: שַׁמָּה
+  ref: 代上1:37
+  strong: H8048G
+  translit: sham.mah
+沙番:
+  match: exact
+  meaning_en: bold
+  name_en: Shapham
+  orig: שָׁפָם
+  ref: 代上5:12
+  strong: H8223
+  translit: sha.pham
+沙買:
+  match: exact
+  meaning_en: desolate
+  name_en: Shammai
+  orig: שַׁמַּי
+  ref: 代上2:28
+  strong: H8060G
+  translit: sham.may
+沙買#利肯:
+  match: exact
+  meaning_en: desolate
+  name_en: Shammai
+  orig: שַׁמַּי
+  ref: 代上2:44
+  strong: H8060H
+  translit: sham.may
+沙買#米列:
+  match: exact
+  meaning_en: desolate
+  name_en: Shammai
+  orig: שַׁמַּי
+  ref: 代上4:17
+  strong: H8060I
+  translit: sham.may
+沙龍:
+  match: exact
+  meaning_en: retribution
+  name_en: Shallum
+  orig: שַׁלּוּם
+  ref: 代上9:17
+  strong: H7967M
+  translit: shal.lum
+沙龍#拿弗他利:
+  match: exact
+  meaning_en: retribution
+  name_en: Shallum
+  orig: שַׁלּוּם
+  ref: 代上7:13
+  strong: H7967T
+  translit: shal.lum
+沙龍#掃羅:
+  match: exact
+  meaning_en: retribution
+  name_en: Shallum
+  orig: שַׁלּוּם
+  ref: 代上4:25
+  strong: H7967K
+  translit: shal.lum
+沙龍#撒督:
+  match: exact
+  meaning_en: retribution
+  name_en: Shallum
+  orig: שַׁלּוּם
+  ref: 代上6:12
+  strong: H7967L
+  translit: shal.lum
+沙龍#約西亞:
+  match: exact
+  meaning_en: retribution
+  name_en: Shallum
+  orig: שַׁלּוּם
+  ref: 代上3:15
+  strong: H7967J
+  translit: shal.lum
+沙龍#耶利米之叔:
+  match: exact
+  meaning_en: retribution
+  name_en: Shallum
+  orig: שַׁלּוּם
+  ref: 耶32:7
+  strong: H7967R
+  translit: shal.lum
+沙龍#西斯買:
+  match: exact
+  meaning_en: retribution
+  name_en: Shallum
+  orig: שַׁלּוּם
+  ref: 代上2:40
+  strong: H7967I
+  translit: shal.lum
+沙龍#雅比:
+  match: exact
+  meaning_en: retribution
+  name_en: Shallum
+  orig: שַׁלּוּם
+  ref: 王下15:10
+  strong: H7967G
+  translit: shal.lum
+河得:
+  match: exact
+  meaning_en: splendour
+  name_en: Hod
+  orig: הוֹד
+  ref: 代上7:37
+  strong: H1936
+  translit: hod
+法內力:
+  match: exact
+  meaning_en: ''
+  name_en: Phanuel
+  orig: Φανουήλ
+  ref: 路2:36
+  strong: G5323
+  translit: Phanouēl
+法勒:
+  match: exact
+  meaning_en: division
+  name_en: Peleg
+  orig: פֶּ֫לֶג
+  ref: 代上1:19
+  strong: H6389
+  translit: pe.leg
+法勒斯:
+  match: exact
+  meaning_en: breach
+  name_en: Perez or Pharez
+  orig: פֶּ֫רֶץ
+  ref: 代上2:4
+  strong: H6557
+  translit: pe.rets
+法路:
+  match: exact
+  meaning_en: distinguished
+  name_en: Pallu or Phallu
+  orig: פַּלּוּא
+  ref: 代上5:3
+  strong: H6396
+  translit: pal.lu
+波基路:
+  match: exact
+  meaning_en: firstborn
+  name_en: Bocheru
+  orig: בֹּֽכְרוּ
+  ref: 代上8:38
+  strong: H1074
+  translit: bo.khe.ru
+波提非拉:
+  match: fuzzy
+  meaning_en: he whom the Ra gave
+  name_en: Poti-pherah
+  orig: פּוֹטִי פֶ֫רַע
+  ref: 創41:45
+  strong: H6319
+  translit: po.ti phe.ra
+波阿斯:
+  match: exact
+  meaning_en: fleetness
+  name_en: Boaz
+  orig: בֹּ֫עַז
+  ref: 代上2:11
+  strong: H1162G
+  translit: bo.az
+洗分:
+  match: exact
+  meaning_en: treasure
+  name_en: Zephon
+  orig: צְפוֹן
+  ref: 民26:15
+  strong: H6827
+  translit: tse.phon
+洗列:
+  match: exact
+  meaning_en: splendour
+  name_en: Zereth
+  orig: צֶ֫רֶת
+  ref: 代上4:7
+  strong: H6889
+  translit: tse.ret
+洗勒太:
+  match: exact
+  meaning_en: dark
+  name_en: Zilthai
+  orig: צִלְּתַי
+  ref: 代上8:20
+  strong: H6769G
+  translit: tsil.l.tay
+洗拉:
+  match: exact
+  meaning_en: shade
+  name_en: Zillah
+  orig: צִלָּה
+  ref: 創4:19
+  strong: H6741
+  translit: tsil.lah
+洗比雅:
+  match: fuzzy
+  meaning_en: roe
+  name_en: Zibia
+  orig: צִבְיָא
+  ref: 代上8:9
+  strong: H6644
+  translit: tsiv.ya
+洗玻:
+  match: exact
+  meaning_en: watch-tower
+  name_en: Zepho or Zephi
+  orig: צְפוֹ, צְפִי
+  ref: 代上1:36
+  strong: H6825
+  translit: tse.pho
+洗羅:
+  match: exact
+  meaning_en: bundle
+  name_en: Zeror
+  orig: צְרוֹר
+  ref: 撒上9:1
+  strong: H6872C
+  translit: tse.ror
+洗魯阿:
+  match: exact
+  meaning_en: full breasted
+  name_en: Zeruah
+  orig: צְרוּעָה
+  ref: 王上11:26
+  strong: H6871
+  translit: tse.ru.ah
+洗魯雅:
+  match: exact
+  meaning_en: balsam
+  name_en: Zeruiah
+  orig: צְרוּיָה
+  ref: 代上2:16
+  strong: H6870
+  translit: tse.ru.yah
+流便:
+  match: exact
+  meaning_en: behold a son
+  name_en: Reuben
+  orig: רְאוּבֵן
+  ref: 代上2:1
+  strong: H7205
+  translit: re.u.ven
+流珥:
+  match: exact
+  meaning_en: friend of God
+  name_en: Reuel or Raguel
+  orig: רְעוּאֵל
+  ref: 代上1:35
+  strong: H7467G
+  translit: re.u.el
+流珥#9:8:
+  match: exact
+  meaning_en: friend of God
+  name_en: Reuel or Raguel
+  orig: רְעוּאֵל
+  ref: 代上9:8
+  strong: H7467H
+  translit: re.u.el
+流珥#米甸祭司:
+  match: exact
+  meaning_en: friend of God
+  name_en: Reuel or Raguel
+  orig: רְעוּאֵל
+  ref: 出2:18
+  strong: H7467J
+  translit: re.u.el
+流瑪:
+  match: exact
+  meaning_en: elevated
+  name_en: Reumah
+  orig: רְאוּמָה
+  ref: 創22:24
+  strong: H7208
+  translit: re.u.mah
+漢尼業:
+  match: exact
+  meaning_en: favoured of God
+  name_en: Hanniel
+  orig: חַנִּיאֵל
+  ref: 代上7:39
+  strong: H2592H
+  translit: chan.ni.el
+烏列:
+  match: exact
+  meaning_en: God (El) is my light
+  name_en: Uriel
+  orig: אוּרִיאֵל
+  ref: 代上6:24
+  strong: H0222G
+  translit: u.ri.el
+烏列#基比亞人:
+  match: exact
+  meaning_en: God (El) is my light
+  name_en: Uriel
+  orig: אוּרִיאֵל
+  ref: 代下13:2
+  strong: H0222I
+  translit: u.ri.el
+烏利:
+  match: exact
+  meaning_en: fiery
+  name_en: Uri
+  orig: אוּרִי
+  ref: 代上2:20
+  strong: H0221G
+  translit: u.ri
+烏利亞:
+  match: exact
+  meaning_en: Jehovah (Yahweh) is my light (flame)
+  name_en: Uriah or Urijah
+  orig: אוּרִיָּה
+  ref: 撒下11:3
+  strong: H0223A
+  translit: u.riy.yah
+烏太:
+  match: exact
+  meaning_en: helpful
+  name_en: Uthai
+  orig: עוּתַי
+  ref: 代上9:4
+  strong: H5793G
+  translit: u.tay
+烏拉:
+  match: exact
+  meaning_en: yoke
+  name_en: Ulla
+  orig: עֻלָּא
+  ref: 代上7:39
+  strong: H5925
+  translit: ul.la
+烏撒:
+  match: exact
+  meaning_en: strength
+  name_en: Uzza or Uzzah
+  orig: עֻזָּא
+  ref: 代上8:7
+  strong: H5798H
+  translit: uz.za
+烏撒#示每:
+  match: exact
+  meaning_en: strength
+  name_en: Uzza or Uzzah
+  orig: עֻזָּה
+  ref: 代上6:29
+  strong: H5798B
+  translit: uz.zah
+烏斯:
+  match: exact
+  meaning_en: wooded
+  name_en: Uz
+  orig: עוּץ
+  ref: 代上1:17
+  strong: H5780G
+  translit: uts
+烏斯#底珊:
+  match: exact
+  meaning_en: wooded
+  name_en: Uz
+  orig: עוּץ
+  ref: 代上1:42
+  strong: H5780I
+  translit: uts
+烏斯#拿鶴:
+  match: exact
+  meaning_en: wooded
+  name_en: Uz
+  orig: עוּץ
+  ref: 創22:21
+  strong: H5780H
+  translit: uts
+烏薛#哥轄:
+  match: aligned
+  meaning_en: my strength is God
+  name_en: Uzziel
+  orig: עֻזִּיאֵל
+  ref: 代上6:2
+  strong: H5816G
+  translit: uz.zi.el
+烏薛#比拉:
+  match: aligned
+  meaning_en: my strength is God
+  name_en: Uzziel
+  orig: עֻזִּיאֵל
+  ref: 代上7:7
+  strong: H5816I
+  translit: uz.zi.el
+烏薩:
+  match: exact
+  meaning_en: I shall be flooded
+  name_en: Uzal
+  orig: אוּזָל
+  ref: 代上1:21
+  strong: H0187G
+  translit: u.zal
+烏蘭:
+  match: exact
+  meaning_en: 'their leader: vestibule'
+  name_en: Ulam
+  orig: אוּלָם
+  ref: 代上8:39
+  strong: H0198H
+  translit: u.lam
+烏蘭#示利施:
+  match: exact
+  meaning_en: 'their leader: vestibule'
+  name_en: Ulam
+  orig: אוּלָם
+  ref: 代上7:16
+  strong: H0198G
+  translit: u.lam
+烏西:
+  match: exact
+  meaning_en: strong
+  name_en: Uzzi
+  orig: עֻזִּי
+  ref: 代上6:5
+  strong: H5813G
+  translit: uz.zi
+烏西#巴尼:
+  match: exact
+  meaning_en: strong
+  name_en: Uzzi
+  orig: עֻזִּי
+  ref: 尼11:22
+  strong: H5813K
+  translit: uz.zi
+烏西#比拉:
+  match: exact
+  meaning_en: strong
+  name_en: Uzzi
+  orig: עֻזִּי
+  ref: 代上7:7
+  strong: H5813I
+  translit: uz.zi
+烏西#米基立:
+  match: exact
+  meaning_en: strong
+  name_en: Uzzi
+  orig: עֻזִּי
+  ref: 代上9:8
+  strong: H5813J
+  translit: uz.zi
+烏西#陀拉:
+  match: exact
+  meaning_en: strong
+  name_en: Uzzi
+  orig: עֻזִּי
+  ref: 代上7:2
+  strong: H5813H
+  translit: uz.zi
+烏西雅:
+  match: exact
+  meaning_en: my strength is Jehovah
+  name_en: Uzziah
+  orig: עֻזִּיָּהוּ
+  ref: 代上6:24
+  strong: H5818H
+  translit: uz.ziy.yah
+烏西雅#亞他雅之父:
+  match: exact
+  meaning_en: my strength is Jehovah
+  name_en: Uzziah
+  orig: עֻזִּיָּהוּ
+  ref: 尼11:4
+  strong: H5818K
+  translit: uz.ziy.yah
+特哈拿:
+  match: exact
+  meaning_en: favour
+  name_en: Tirhanah
+  orig: תִּרְחֲנָה
+  ref: 代上2:48
+  strong: H8647
+  translit: tir.cha.nah
+猶八:
+  match: exact
+  meaning_en: stream
+  name_en: Jubal
+  orig: יוּבָ֑ל
+  ref: 創4:21
+  strong: H3106
+  translit: yu.val
+猶大:
+  match: exact
+  meaning_en: praised
+  name_en: Judah
+  orig: יְהוּדָה
+  ref: 代上2:1
+  strong: H3063G
+  translit: ye.hu.dah
+猶大#加略人:
+  match: exact
+  meaning_en: ''
+  name_en: Judas
+  orig: Ἰούδας
+  ref: 約13:2
+  strong: G2455H
+  translit: Ioudas
+猶大#耶穌的弟兄:
+  match: exact
+  meaning_en: ''
+  name_en: Judas
+  orig: Ἰούδας
+  ref: 可6:3
+  strong: G2455I
+  translit: Ioudas
+猶大#路3:26:
+  match: exact
+  meaning_en: ''
+  name_en: Joda
+  orig: Ἰωδά
+  ref: 路3:26
+  strong: G6043
+  translit: Iōda
+猶大#路3:30:
+  match: exact
+  meaning_en: ''
+  name_en: Judah
+  orig: Ἰούδας
+  ref: 路3:30
+  strong: G2455J
+  translit: Ioudas
+猶滴:
+  match: exact
+  meaning_en: Jewess
+  name_en: Judith
+  orig: יְהוּדִית
+  ref: 創26:34
+  strong: H3067
+  translit: ye.hu.dit
+珊瑪:
+  match: fuzzy
+  meaning_en: desert
+  name_en: Shamma
+  orig: שַׁמָּא
+  ref: 代上7:37
+  strong: H8037H
+  translit: sham.ma
+珊示萊:
+  match: exact
+  meaning_en: sunlike
+  name_en: Shamsherai
+  orig: שַׁמְשְׁרַי
+  ref: 代上8:26
+  strong: H8125
+  translit: sham.she.ray
+珥:
+  match: exact
+  meaning_en: awake
+  name_en: Er
+  orig: עֵר
+  ref: 代上2:3
+  strong: H6147G
+  translit: er
+珥#示拉:
+  match: exact
+  meaning_en: awake
+  name_en: Er
+  orig: עֵר
+  ref: 代上4:21
+  strong: H6147H
+  translit: er
+珥#約細:
+  match: exact
+  meaning_en: ''
+  name_en: Er
+  orig: Ἤρ
+  ref: 路3:28
+  strong: G2262
+  translit: Ēr
+瑣法:
+  match: exact
+  meaning_en: a cruse
+  name_en: Zophah
+  orig: צוֹפַח
+  ref: 代上7:35
+  strong: H6690
+  translit: tso.phach
+瑣菲:
+  match: exact
+  meaning_en: honeycomb
+  name_en: Zuph or Zophai
+  orig: צוּף
+  ref: 代上6:26
+  strong: H6689G
+  translit: tsuph
+瑣轄:
+  match: exact
+  meaning_en: tawny
+  name_en: Zohar
+  orig: צֹ֫חַר
+  ref: 代上4:7
+  strong: H6714G
+  translit: tso.char
+瑣轄#西緬:
+  match: exact
+  meaning_en: tawny
+  name_en: Zohar
+  orig: צֹ֫חַר
+  ref: 創46:10
+  strong: H6714H
+  translit: tso.char
+瑪他尼#米該亞:
+  match: exact
+  meaning_en: gift of Jehovah
+  name_en: Mattaniah
+  orig: מַתַּנְיָ֫הוּ
+  ref: 尼12:35
+  strong: H4983O
+  translit: mat.tan.yah
+瑪他尼#米迦:
+  match: exact
+  meaning_en: gift of Jehovah
+  name_en: Mattaniah
+  orig: מַתַּנְיָ֫הוּ
+  ref: 尼11:17
+  strong: H4983G
+  translit: mat.tan.yah
+瑪他提亞#路3:25:
+  match: exact
+  meaning_en: ''
+  name_en: Mattathias
+  orig: Ματταθίας
+  ref: 路3:25
+  strong: G3161G
+  translit: Mattathias
+瑪他提亞#路3:26:
+  match: exact
+  meaning_en: ''
+  name_en: Mattathias
+  orig: Ματταθίας
+  ref: 路3:26
+  strong: G3161H
+  translit: Mattathias
+瑪他提雅:
+  match: exact
+  meaning_en: gift of Jehovah
+  name_en: Mattithiah
+  orig: מַתִּתְיָ֫הוּ
+  ref: 代上9:31
+  strong: H4993G
+  translit: mat.tit.yah
+瑪代:
+  match: exact
+  meaning_en: middle land
+  name_en: Media or Medes or Madai
+  orig: מָדַי
+  ref: 代上1:5
+  strong: H4074G
+  translit: ma.day
+瑪倫:
+  match: exact
+  meaning_en: sick
+  name_en: Mahlon
+  orig: מַחְלוֹן
+  ref: 得1:2
+  strong: H4248
+  translit: mach.lon
+瑪利沙:
+  match: exact
+  meaning_en: deliverance
+  name_en: Mesha
+  orig: מֵישָׁע
+  ref: 代上2:42
+  strong: H4337
+  translit: me.sah
+瑪勒列:
+  match: exact
+  meaning_en: praise of God
+  name_en: Mahalaleel
+  orig: מַהֲלַלְאֵל
+  ref: 代上1:2
+  strong: H4111G
+  translit: ma.ha.lal.el
+瑪勒列#示法提雅之父:
+  match: exact
+  meaning_en: praise of God
+  name_en: Mahalaleel
+  orig: מַהֲלַלְאֵל
+  ref: 尼11:4
+  strong: H4111H
+  translit: ma.ha.lal.el
+瑪各:
+  match: exact
+  meaning_en: land of Gog
+  name_en: Magog
+  orig: מָגוֹג
+  ref: 代上1:5
+  strong: H4031G
+  translit: ma.gog
+瑪吉:
+  match: exact
+  meaning_en: sold
+  name_en: Machir
+  orig: מָכִיר
+  ref: 代上7:14
+  strong: H4353G
+  translit: ma.khir
+瑪哈拉:
+  match: exact
+  meaning_en: stringed instrument
+  name_en: Mahalath
+  orig: מַחֲלַת
+  ref: 創28:9
+  strong: H4258G
+  translit: ma.cha.lat
+瑪哈拉#耶利摩的女兒:
+  match: exact
+  meaning_en: stringed instrument
+  name_en: Mahalath
+  orig: מַחֲלַת
+  ref: 代下11:18
+  strong: H4258H
+  translit: ma.cha.lat
+瑪哈秀#希幔:
+  match: exact
+  meaning_en: visions
+  name_en: Mahazioth
+  orig: מַחֲזִיאֹת
+  ref: 代上25:4
+  strong: H4238
+  translit: ma.cha.zi.ot
+瑪土撒利:
+  match: exact
+  meaning_en: who is of God
+  name_en: Methusael
+  orig: מְתוּשָׁאֵל
+  ref: 創4:18
+  strong: H4967
+  translit: me.tu.sha.el
+瑪土撒拉:
+  match: exact
+  meaning_en: man of the dart
+  name_en: Methuselah
+  orig: מְתוּשֶׁ֫לַח
+  ref: 代上1:3
+  strong: H4968
+  translit: me.tu.she.lach
+瑪基疊:
+  match: exact
+  meaning_en: prince of God
+  name_en: Magdiel
+  orig: מַגְדִּיאֵל
+  ref: 代上1:54
+  strong: H4025
+  translit: mag.di.el
+瑪基蘭:
+  match: exact
+  meaning_en: my king is high
+  name_en: Malchiram
+  orig: מַלְכִּירָם
+  ref: 代上3:18
+  strong: H4443
+  translit: mal.ki.ram
+瑪基雅#9:12:
+  match: exact
+  meaning_en: my king is Jehovah
+  name_en: Malchijah or Malchiah or Melchiah
+  orig: מַלְכִּיָּהוּ
+  ref: 代上9:12
+  strong: H4441H
+  translit: mal.kiy.yah
+瑪基雅#伊特尼:
+  match: exact
+  meaning_en: my king is Jehovah
+  name_en: Malchijah or Malchiah or Melchiah
+  orig: מַלְכִּיָּהוּ
+  ref: 代上6:40
+  strong: H4441G
+  translit: mal.kiy.yah
+瑪塔#路3:24:
+  match: exact
+  meaning_en: ''
+  name_en: Matthat
+  orig: Ματθάτ, Μαθθάτ
+  ref: 路3:24
+  strong: G3158G
+  translit: Matthat, Maththat
+瑪塔#路3:29:
+  match: exact
+  meaning_en: ''
+  name_en: Matthat
+  orig: Ματθάτ, Μαθθάτ
+  ref: 路3:29
+  strong: G3158H
+  translit: Matthat, Maththat
+瑪押:
+  match: exact
+  meaning_en: ''
+  name_en: Maath
+  orig: Μαάθ
+  ref: 路3:26
+  strong: G3092
+  translit: Maath
+瑪拉:
+  match: exact
+  meaning_en: disease
+  name_en: Mahlah
+  orig: מַחְלָה
+  ref: 代上7:18
+  strong: H4244H
+  translit: mach.lah
+瑪拉#西羅非哈:
+  match: exact
+  meaning_en: disease
+  name_en: Mahlah
+  orig: מַחְלָה
+  ref: 民26:33
+  strong: H4244G
+  translit: mach.lah
+瑪拉干:
+  match: exact
+  meaning_en: great king
+  name_en: Milcom
+  orig: מַלְכָּם
+  ref: 代上8:9
+  strong: H4445A
+  translit: mal.kam
+瑪拿西#支派:
+  match: exact
+  meaning_en: causing to forget
+  name_en: Manasseh
+  orig: מְנַשֶּׁה
+  ref: 代上7:14
+  strong: H4519G
+  translit: me.nash.sheh
+瑪拿西#猶大王:
+  match: exact
+  meaning_en: causing to forget
+  name_en: Manasseh
+  orig: מְנַשֶּׁה
+  ref: 代上3:13
+  strong: H4519H
+  translit: me.nash.sheh
+瑪拿轄:
+  match: exact
+  meaning_en: rest
+  name_en: Manahath
+  orig: מָנַ֫חַת
+  ref: 代上1:40
+  strong: H4506B
+  translit: ma.na.chat
+瑪探雅:
+  match: exact
+  meaning_en: gift of Jehovah
+  name_en: Mattaniah
+  orig: מַתַּנְיָ֫הוּ
+  ref: 代上9:15
+  strong: H4983G
+  translit: mat.tan.yah
+瑪探雅#希幔:
+  match: exact
+  meaning_en: gift of Jehovah
+  name_en: Mattaniah
+  orig: מַתַּנְיָ֫הוּ
+  ref: 代上25:4
+  strong: H4983H
+  translit: mat.tan.yah
+瑪探雅#雅哈悉之高祖:
+  match: exact
+  meaning_en: gift of Jehovah
+  name_en: Mattaniah
+  orig: מַתַּנְיָ֫הוּ
+  ref: 代下20:14
+  strong: H4983I
+  translit: mat.tan.yah
+瑪撒:
+  match: exact
+  meaning_en: burden
+  name_en: Massa
+  orig: מַשָּׂא
+  ref: 代上1:30
+  strong: H4854
+  translit: mas.sa
+瑪斯:
+  match: exact
+  meaning_en: wrath
+  name_en: Maaz
+  orig: מַ֫עַץ
+  ref: 代上2:27
+  strong: H4619
+  translit: ma.ats
+瑪特列:
+  match: exact
+  meaning_en: pushing forward
+  name_en: Matred
+  orig: מַטְרֵד
+  ref: 創36:39
+  strong: H4308
+  translit: mat.red
+瑪結:
+  match: exact
+  meaning_en: my king is God
+  name_en: Malchiel
+  orig: מַלְכִּיאֵל
+  ref: 代上7:31
+  strong: H4439
+  translit: mal.ki.el
+瑪羅提#希幔:
+  match: exact
+  meaning_en: I have uttered
+  name_en: Mallothi
+  orig: מַלּוֹתִי
+  ref: 代上25:4
+  strong: H4413
+  translit: mal.lo.ti
+瑪賽:
+  match: exact
+  meaning_en: work of the Lord
+  name_en: Maasiai
+  orig: מַעֲשַׂי
+  ref: 代上9:12
+  strong: H4640
+  translit: ma.a.say
+瑪迦:
+  match: exact
+  meaning_en: oppression
+  name_en: Maachah
+  orig: מַעֲכָה
+  ref: 撒下3:3
+  strong: H4601I
+  translit: ma.a.khah
+瑪迦#押沙龍的女兒:
+  match: exact
+  meaning_en: oppression
+  name_en: Maachah
+  orig: מַעֲכָה
+  ref: 王上15:2
+  strong: H4601K
+  translit: ma.a.khah
+瑪迦#拿鶴:
+  match: exact
+  meaning_en: oppression
+  name_en: Maachah
+  orig: מַעֲכָה
+  ref: 創22:24
+  strong: H4601G
+  translit: ma.a.khah
+瑪迦#瑪吉的妻:
+  match: exact
+  meaning_en: oppression
+  name_en: Maachah
+  orig: מַעֲכָה
+  ref: 代上7:16
+  strong: H4601M
+  translit: ma.a.khah
+瑪迦#迦勒的妾:
+  match: exact
+  meaning_en: oppression
+  name_en: Maachah
+  orig: מַעֲכָה
+  ref: 代上2:48
+  strong: H4601L
+  translit: ma.a.khah
+瑪達他:
+  match: exact
+  meaning_en: ''
+  name_en: Mattatha
+  orig: Ματταθά
+  ref: 路3:31
+  strong: G3160
+  translit: Mattatha
+瑪雲:
+  match: exact
+  meaning_en: habitation
+  name_en: Maon or Maonites
+  orig: מָעוֹן
+  ref: 代上2:45
+  strong: H4584H
+  translit: ma.on
+瑪鹿:
+  match: exact
+  meaning_en: counsellor
+  name_en: Malluch or Melicu
+  orig: מַלּוּךְ
+  ref: 代上6:44
+  strong: H4409G
+  translit: mal.lukh
+申利:
+  match: exact
+  meaning_en: vigilant
+  name_en: Shimri
+  orig: שִׁמְרִי
+  ref: 代上4:37
+  strong: H8113G
+  translit: shim.ri
+申拉:
+  match: exact
+  meaning_en: guard
+  name_en: Shimrath
+  orig: שִׁמְרָת
+  ref: 代上8:21
+  strong: H8119
+  translit: shim.rat
+益巴:
+  match: exact
+  meaning_en: he will praise
+  name_en: Ishbah
+  orig: יִשְׁבַּח
+  ref: 代上4:17
+  strong: H3431G
+  translit: yish.bach
+益帖#7:38:
+  match: exact
+  meaning_en: abundance
+  name_en: Jether
+  orig: יֶ֫תֶר
+  ref: 代上7:38
+  strong: H3500K
+  translit: ye.ter
+益帖#以斯拉:
+  match: exact
+  meaning_en: abundance
+  name_en: Jether
+  orig: יֶ֫תֶר
+  ref: 代上4:17
+  strong: H3500J
+  translit: ye.ter
+益帖#雅大:
+  match: exact
+  meaning_en: abundance
+  name_en: Jether
+  orig: יֶ֫תֶר
+  ref: 代上2:32
+  strong: H3500I
+  translit: ye.ter
+益拉:
+  match: exact
+  meaning_en: weeping
+  name_en: Jidlaph
+  orig: יִדְלָ֑ף
+  ref: 創22:22
+  strong: H3044
+  translit: yid.laph
+益蘭:
+  match: exact
+  meaning_en: advantage
+  name_en: Ithran
+  orig: יִתְרָן
+  ref: 代上1:41
+  strong: H3506G
+  translit: yit.ran
+益蘭#瑣法:
+  match: exact
+  meaning_en: advantage
+  name_en: Ithran
+  orig: יִתְרָן
+  ref: 代上7:37
+  strong: H3506H
+  translit: yit.ran
+益轄:
+  match: exact
+  meaning_en: Jehovah chooses
+  name_en: Ibhar
+  orig: יִבְחָר
+  ref: 代上3:6
+  strong: H2984
+  translit: yiv.char
+睚珥:
+  match: exact
+  meaning_en: he enlightens
+  name_en: Jair
+  orig: יָאִיר
+  ref: 代上2:22
+  strong: H2971G
+  translit: ya.ir
+睚珥#末底改之父:
+  match: exact
+  meaning_en: he enlightens
+  name_en: Jair
+  orig: יָאִיר
+  ref: 斯2:5
+  strong: H2971J
+  translit: ya.ir
+示亞利雅:
+  match: exact
+  meaning_en: valued by Jehovah
+  name_en: Sheariah
+  orig: שְׁעַרְיָה
+  ref: 代上8:38
+  strong: H8187
+  translit: she.ar.yah
+示冷:
+  match: exact
+  meaning_en: repaid
+  name_en: Shillem
+  orig: שִׁלֵּם
+  ref: 創46:24
+  strong: H8006
+  translit: shil.lem
+示別:
+  match: exact
+  meaning_en: breaking
+  name_en: Sheber
+  orig: שֶׁ֫בֶר
+  ref: 代上2:48
+  strong: H7669
+  translit: she.ver
+示利希:
+  match: exact
+  meaning_en: armed
+  name_en: Shilhi
+  orig: שִׁלְחִי
+  ref: 王上22:42
+  strong: H7977
+  translit: shil.chi
+示利斯:
+  match: exact
+  meaning_en: might
+  name_en: Shelesh
+  orig: שֶׁ֫לֶשׁ
+  ref: 代上7:35
+  strong: H8028
+  translit: she.lesh
+示利施:
+  match: exact
+  meaning_en: root
+  name_en: Sheresh
+  orig: שָׁ֑רֶשׁ
+  ref: 代上7:16
+  strong: H8329
+  translit: she.resh
+示劍:
+  match: exact
+  meaning_en: back
+  name_en: Shechem
+  orig: שֶׁ֫כֶם
+  ref: 代上7:19
+  strong: H7928H
+  translit: she.khem
+示劍#基列:
+  match: exact
+  meaning_en: back
+  name_en: Shechem
+  orig: שֶׁ֫כֶם
+  ref: 民26:31
+  strong: H7928G
+  translit: she.khem
+示哈利:
+  match: exact
+  meaning_en: dawning of Jehovah
+  name_en: Shehariah
+  orig: שְׁחַרְיָה
+  ref: 代上8:26
+  strong: H7841
+  translit: she.char.yah
+示孚汛:
+  match: exact
+  meaning_en: serpent
+  name_en: Shephuphan or Shupham
+  orig: שְׁפוּפָן
+  ref: 代上8:5
+  strong: H8197B
+  translit: she.phu.phan
+示巴#亞比孩:
+  match: exact
+  meaning_en: seven
+  name_en: Sheba
+  orig: שֶׁ֫בַע
+  ref: 代上5:13
+  strong: H7652G
+  translit: she.va
+示巴#拉瑪:
+  match: exact
+  meaning_en: seven
+  name_en: Sheba
+  orig: שְׁבָא
+  ref: 代上1:9
+  strong: H7614G
+  translit: she.va
+示巴#約坍:
+  match: exact
+  meaning_en: seven
+  name_en: Sheba
+  orig: שְׁבָא
+  ref: 代上1:22
+  strong: H7614H
+  translit: she.va
+示巴#約珊:
+  match: exact
+  meaning_en: seven
+  name_en: Sheba
+  orig: שְׁבָא
+  ref: 代上1:32
+  strong: H7614I
+  translit: she.va
+示拉:
+  match: exact
+  meaning_en: a petition
+  name_en: Shelah
+  orig: שֵׁלָה
+  ref: 代上2:3
+  strong: H7956
+  translit: she.lah
+示拿薩:
+  match: exact
+  meaning_en: splendid leader
+  name_en: Shenazar
+  orig: שֶׁנְאַצַּ֑ר
+  ref: 代上3:18
+  strong: H8137
+  translit: shen.ats.tsar
+示每#8:21:
+  match: exact
+  meaning_en: renowned
+  name_en: Shimei or Shimhi or Shimi or Shimea
+  orig: שִׁמְעִי
+  ref: 代上8:21
+  strong: H8096N
+  translit: shim.i
+示每#撒刻:
+  match: exact
+  meaning_en: renowned
+  name_en: Shimei or Shimhi or Shimi or Shimea
+  orig: שִׁמְעִי
+  ref: 代上4:26
+  strong: H8096K
+  translit: shim.i
+示每#末底改之祖:
+  match: exact
+  meaning_en: renowned
+  name_en: Shimei or Shimhi or Shimi or Shimea
+  orig: שִׁמְעִי
+  ref: 斯2:5
+  strong: H8096U
+  translit: shim.i
+示每#歌革:
+  match: exact
+  meaning_en: renowned
+  name_en: Shimei or Shimhi or Shimi or Shimea
+  orig: שִׁמְעִי
+  ref: 代上5:4
+  strong: H8096L
+  translit: shim.i
+示每#毘大雅:
+  match: exact
+  meaning_en: renowned
+  name_en: Shimei or Shimhi or Shimi or Shimea
+  orig: שִׁמְעִי
+  ref: 代上3:19
+  strong: H8096J
+  translit: shim.i
+示每#立尼:
+  match: exact
+  meaning_en: renowned
+  name_en: Shimei or Shimhi or Shimi or Shimea
+  orig: שִׁמְעִי
+  ref: 代上6:29
+  strong: H8096M
+  translit: shim.i
+示每#雅哈:
+  match: exact
+  meaning_en: renowned
+  name_en: Shimei or Shimhi or Shimi or Shimea
+  orig: שִׁמְעִי
+  ref: 代上6:42
+  strong: H8096V
+  translit: shim.i
+示每#革順:
+  match: exact
+  meaning_en: renowned
+  name_en: Shimei or Shimhi or Shimi or Shimea
+  orig: שִׁמְעִי
+  ref: 代上6:17
+  strong: H8096G
+  translit: shim.i
+示法:
+  match: exact
+  meaning_en: Jehovah contends
+  name_en: Sheva
+  orig: שְׁוָא
+  ref: 代上2:49
+  strong: H7724G
+  translit: she.va
+示法提雅:
+  match: exact
+  meaning_en: Jehovah has judged
+  name_en: Shephatiah
+  orig: שְׁפַטְיָהוּ
+  ref: 代上3:3
+  strong: H8203G
+  translit: she.phat.yah
+示法提雅#亞瑪利雅之父:
+  match: exact
+  meaning_en: Jehovah has judged
+  name_en: Shephatiah
+  orig: שְׁפַטְיָהוּ
+  ref: 尼11:4
+  strong: H8203N
+  translit: she.phat.yah
+示法提雅#流珥:
+  match: exact
+  meaning_en: Jehovah has judged
+  name_en: Shephatiah
+  orig: שְׁפַטְיָהוּ
+  ref: 代上9:8
+  strong: H8203H
+  translit: she.phat.yah
+示法提雅#約沙法之子:
+  match: exact
+  meaning_en: Jehovah has judged
+  name_en: Shephatiah
+  orig: שְׁפַטְיָהוּ
+  ref: 代下21:2
+  strong: H8203K
+  translit: she.phat.yah
+示珊:
+  match: exact
+  meaning_en: noble
+  name_en: Sheshan
+  orig: שֵׁשָׁן
+  ref: 代上2:31
+  strong: H8348
+  translit: she.shan
+示瑪#8:13:
+  match: exact
+  meaning_en: hear
+  name_en: Shema
+  orig: שֶׁ֫מַע
+  ref: 代上8:13
+  strong: H8087I
+  translit: she.ma
+示瑪#希伯崙:
+  match: exact
+  meaning_en: hear
+  name_en: Shema
+  orig: שֶׁ֫מַע
+  ref: 代上2:43
+  strong: H8087G
+  translit: she.ma
+示瑪#約珥:
+  match: exact
+  meaning_en: hear
+  name_en: Shema
+  orig: שֶׁ֫מַע
+  ref: 代上5:8
+  strong: H8087H
+  translit: she.ma
+示瑪利雅#羅波安之子:
+  match: exact
+  meaning_en: kept by Jehovah
+  name_en: Shemariah
+  orig: שְׁמַרְיָ֫הוּ
+  ref: 代下11:19
+  strong: H8114H
+  translit: she.mar.yah
+示瑪雅#哈述:
+  match: exact
+  meaning_en: heard by Jehovah
+  name_en: Shemaiah
+  orig: שְׁמַעְיָ֫הוּ
+  ref: 代上9:14
+  strong: H8098E
+  translit: she.ma.yah
+示瑪雅#瑪他尼:
+  match: exact
+  meaning_en: heard by Jehovah
+  name_en: Shemaiah
+  orig: שְׁמַעְיָ֫הוּ
+  ref: 尼12:35
+  strong: H8098U
+  translit: she.ma.yah
+示瑪雅#申利之父:
+  match: exact
+  meaning_en: heard by Jehovah
+  name_en: Shemaiah
+  orig: שְׁמַעְיָ֫הוּ
+  ref: 代上4:37
+  strong: H8098C
+  translit: she.ma.yah
+示瑪雅#示迦尼:
+  match: exact
+  meaning_en: heard by Jehovah
+  name_en: Shemaiah
+  orig: שְׁמַעְיָ֫הוּ
+  ref: 代上3:22
+  strong: H8098B
+  translit: she.ma.yah
+示瑪雅#約珥:
+  match: exact
+  meaning_en: heard by Jehovah
+  name_en: Shemaiah
+  orig: שְׁמַעְיָ֫הוּ
+  ref: 代上5:4
+  strong: H8098D
+  translit: she.ma.yah
+示瑪雅#迦拉:
+  match: exact
+  meaning_en: heard by Jehovah
+  name_en: Shemaiah
+  orig: שְׁמַעְיָ֫הוּ
+  ref: 代上9:16
+  strong: H8098F
+  translit: she.ma.yah
+示米亞:
+  match: exact
+  meaning_en: fame
+  name_en: Shimea
+  orig: שִׁמְעָא
+  ref: 代上2:13
+  strong: H8092I
+  translit: shim.a
+示米亞#大衛:
+  match: exact
+  meaning_en: fame
+  name_en: Shimea
+  orig: שִׁמְעָא
+  ref: 代上3:5
+  strong: H8092J
+  translit: shim.ah, shim.a
+示米亞#烏撒:
+  match: exact
+  meaning_en: renowned
+  name_en: Shimei or Shimhi or Shimi or Shimea
+  orig: שִׁמְעִי
+  ref: 代上6:29
+  strong: H8096M
+  translit: shim.i
+示米亞#米迦勒:
+  match: exact
+  meaning_en: fame
+  name_en: Shimea
+  orig: שִׁמְעָא
+  ref: 代上6:39
+  strong: H8092H
+  translit: shim.ah, shim.a
+示米大:
+  match: exact
+  meaning_en: wise
+  name_en: Shemida
+  orig: שְׁמִידָ֑ע
+  ref: 代上7:19
+  strong: H8061
+  translit: she.mi.da
+示米大#基列:
+  match: exact
+  meaning_en: wise
+  name_en: Shemida
+  orig: שְׁמִידָ֑ע
+  ref: 民26:32
+  strong: H8061
+  translit: she.mi.da
+示米暗:
+  match: exact
+  meaning_en: report
+  name_en: Shimeah
+  orig: שִׁמְאָה
+  ref: 代上8:32
+  strong: H8039
+  translit: shim.ah
+示羅密:
+  match: exact
+  meaning_en: peaceful
+  name_en: Shelomith
+  orig: שְׁלֹמִית
+  ref: 代上3:19
+  strong: H8019I
+  translit: she.lo.mit
+示羅密#底伯利:
+  match: exact
+  meaning_en: peaceful
+  name_en: Shelomith
+  orig: שְׁלֹמִית
+  ref: 利24:11
+  strong: H8019B
+  translit: she.lo.mit
+示羅密#細基利:
+  match: exact
+  meaning_en: peaceful
+  name_en: Shelomith
+  orig: שְׁלֹמִית
+  ref: 代上26:25
+  strong: H8019J
+  translit: she.lo.mit
+示羅密#羅波安之子:
+  match: exact
+  meaning_en: peaceful
+  name_en: Shelomith
+  orig: שְׁלֹמִית
+  ref: 代下11:20
+  strong: H8019G
+  translit: she.lo.mit
+示迦尼:
+  match: exact
+  meaning_en: dweller with Jehovah
+  name_en: Shecaniah or Shechaniah
+  orig: שְׁכַנְיָהוּ
+  ref: 代上3:21
+  strong: H7935G
+  translit: she.khan.yah
+示門:
+  match: exact
+  meaning_en: desert
+  name_en: Shimon
+  orig: שִׁימוֹן
+  ref: 代上4:20
+  strong: H7889
+  translit: shi.mon
+示非:
+  match: exact
+  meaning_en: bold
+  name_en: Shepho or Shephi
+  orig: שְׁפוֹ, שְׁפִי
+  ref: 代上1:40
+  strong: H8195
+  translit: she.pho
+祭便:
+  match: exact
+  meaning_en: coloured
+  name_en: Zibeon
+  orig: צִבְעוֹן
+  ref: 代上1:38
+  strong: H6649H
+  translit: tsiv.on
+立尼:
+  match: exact
+  meaning_en: white
+  name_en: Libni
+  orig: לִבְנִי
+  ref: 代上6:17
+  strong: H3845G
+  translit: liv.ni
+立尼#抹利:
+  match: exact
+  meaning_en: white
+  name_en: Libni
+  orig: לִבְנִי
+  ref: 代上6:29
+  strong: H3845H
+  translit: liv.ni
+第萊雅:
+  match: exact
+  meaning_en: Jehovah has drawn
+  name_en: Dalaiah or Delaiah
+  orig: דְּלָיָ֫הוּ
+  ref: 代上3:24
+  strong: H1806G
+  translit: de.la.yah
+米列:
+  match: exact
+  meaning_en: rebellion
+  name_en: Mered
+  orig: מֶ֫רֶד
+  ref: 代上4:17
+  strong: H4778
+  translit: me.red
+米利亞:
+  match: exact
+  meaning_en: ''
+  name_en: Melea
+  orig: Μελεᾶς
+  ref: 路3:31
+  strong: G3190
+  translit: Meleas
+米利暗:
+  match: exact
+  meaning_en: rebellion
+  name_en: Miriam
+  orig: מִרְיָם
+  ref: 代上6:3
+  strong: H4813G
+  translit: mir.yam
+米利暗#米列:
+  match: exact
+  meaning_en: rebellion
+  name_en: Miriam
+  orig: מִרְיָם
+  ref: 代上4:17
+  strong: H4813H
+  translit: mir.yam
+米力巴力:
+  match: exact
+  meaning_en: Baal is my advocate
+  name_en: Merib-baal
+  orig: מְרִיב בַּ֫עַל
+  ref: 代上8:34
+  strong: H4807
+  translit: me.riv ba.al
+米勒:
+  match: fuzzy
+  meaning_en: who is like God
+  name_en: Micah or Micaiah or Michah
+  orig: מִיכָה
+  ref: 代上8:35
+  strong: H4318H
+  translit: mi.khah
+米基立:
+  match: exact
+  meaning_en: worthy of price
+  name_en: Michri
+  orig: מִכְרִי
+  ref: 代上9:8
+  strong: H4381
+  translit: mikh.ri
+米基羅:
+  match: exact
+  meaning_en: staves
+  name_en: Mikloth
+  orig: מִקְלוֹת
+  ref: 代上8:32
+  strong: H4732G
+  translit: miq.lot
+米實利密:
+  match: exact
+  meaning_en: recompense
+  name_en: Meshillemith
+  orig: מְשִׁלֵּמִית
+  ref: 代上9:12
+  strong: H4921
+  translit: me.shil.le.mit
+米希他別:
+  match: exact
+  meaning_en: favoured of God
+  name_en: Mehetabeel or Mehetabel
+  orig: מְהֵיטַבְאֵל
+  ref: 創36:39
+  strong: H4105G
+  translit: me.he.tav.el
+米戶雅利:
+  match: exact
+  meaning_en: smitten by God
+  name_en: Mehujael
+  orig: מְחוּיָאֵל
+  ref: 創4:18
+  strong: H4232
+  translit: me.chu.ya.el
+米所巴:
+  match: exact
+  meaning_en: restored
+  name_en: Meshobab
+  orig: מְשׁוֹבָב
+  ref: 代上4:34
+  strong: H4877
+  translit: me.sho.vav
+米拉:
+  match: exact
+  meaning_en: increase
+  name_en: Merab
+  orig: מֵרָב
+  ref: 撒上14:49
+  strong: H4764
+  translit: me.rav
+米拉利:
+  match: exact
+  meaning_en: bitter
+  name_en: Merari
+  orig: מְרָרִי
+  ref: 代上6:1
+  strong: H4847
+  translit: me.ra.ri
+米拉約:
+  match: exact
+  meaning_en: rebellious
+  name_en: Meraioth
+  orig: מְרָיוֹת
+  ref: 代上6:6
+  strong: H4812G
+  translit: me.ra.vot
+米拉約#9:11:
+  match: exact
+  meaning_en: rebellious
+  name_en: Meraioth
+  orig: מְרָיוֹת
+  ref: 代上9:11
+  strong: H4812G
+  translit: me.ra.vot
+米拿現:
+  match: exact
+  meaning_en: comforter
+  name_en: Menahem
+  orig: מְנַחֵם
+  ref: 王下15:14
+  strong: H4505
+  translit: me.na.chem
+米撒:
+  match: exact
+  meaning_en: fear
+  name_en: Mizzah
+  orig: מִזָּה
+  ref: 代上1:37
+  strong: H4199
+  translit: miz.zah
+米施利米雅:
+  match: exact
+  meaning_en: whom Jehovah repays
+  name_en: Meshelemiah
+  orig: מְשֶׁלֶמְיָהוּ
+  ref: 代上9:21
+  strong: H4920
+  translit: me.she.lem.yah
+米施瑪:
+  match: exact
+  meaning_en: a hearing
+  name_en: Mishma
+  orig: מִשְׁמָע
+  ref: 代上1:30
+  strong: H4927G
+  translit: mish.ma
+米施瑪#西緬:
+  match: exact
+  meaning_en: a hearing
+  name_en: Mishma
+  orig: מִשְׁמָע
+  ref: 代上4:25
+  strong: H4927H
+  translit: mish.ma
+米書蘭#亞比孩:
+  match: exact
+  meaning_en: friend
+  name_en: Meshullam
+  orig: מְשֻׁלָּם
+  ref: 代上5:13
+  strong: H4918I
+  translit: me.shul.lam
+米書蘭#以利巴力:
+  match: exact
+  meaning_en: friend
+  name_en: Meshullam
+  orig: מְשֻׁלָּם
+  ref: 代上8:17
+  strong: H4918J
+  translit: me.shul.lam
+米書蘭#何達威雅:
+  match: exact
+  meaning_en: friend
+  name_en: Meshullam
+  orig: מְשֻׁלָּם
+  ref: 代上9:7
+  strong: H4918K
+  translit: me.shul.lam
+米書蘭#所羅巴伯:
+  match: exact
+  meaning_en: friend
+  name_en: Meshullam
+  orig: מְשֻׁלָּם
+  ref: 代上3:19
+  strong: H4918H
+  translit: me.shul.lam
+米書蘭#撒督:
+  match: exact
+  meaning_en: friend
+  name_en: Meshullam
+  orig: מְשֻׁלָּם
+  ref: 代上9:11
+  strong: H4918Y
+  translit: me.shul.lam
+米書蘭#示法提雅:
+  match: exact
+  meaning_en: friend
+  name_en: Meshullam
+  orig: מְשֻׁלָּם
+  ref: 代上9:8
+  strong: H4918L
+  translit: me.shul.lam
+米書蘭#米實利密:
+  match: exact
+  meaning_en: friend
+  name_en: Meshullam
+  orig: מְשֻׁלָּם
+  ref: 代上9:12
+  strong: H4918M
+  translit: me.shul.lam
+米比薩:
+  match: exact
+  meaning_en: fortress
+  name_en: Mibzar
+  orig: מִבְצָר
+  ref: 代上1:53
+  strong: H4014
+  translit: miv.tsar
+米比衫:
+  match: exact
+  meaning_en: sweet odour
+  name_en: Mibsam
+  orig: מִבְשָׂם
+  ref: 代上1:29
+  strong: H4017G
+  translit: miv.sam
+米比衫#西緬:
+  match: exact
+  meaning_en: sweet odour
+  name_en: Mibsam
+  orig: מִבְשָׂם
+  ref: 代上4:25
+  strong: H4017H
+  translit: miv.sam
+米沙:
+  match: exact
+  meaning_en: deliverance
+  name_en: Mesha
+  orig: מֵישָׁע
+  ref: 代上2:42
+  strong: H4337
+  translit: me.sah
+米沙#沙哈連:
+  match: exact
+  meaning_en: freedom
+  name_en: Mesha
+  orig: מֵישָׁא
+  ref: 代上8:9
+  strong: H4331
+  translit: me.sah
+米沙利:
+  match: exact
+  meaning_en: who is what God is
+  name_en: Mishael
+  orig: מִישָׁאֵל
+  ref: 出6:22
+  strong: H4332G
+  translit: mi.sha.el
+米甲:
+  match: exact
+  meaning_en: who is like God
+  name_en: Michal
+  orig: מִיכַל
+  ref: 撒上14:49
+  strong: H4324G
+  translit: mi.khal
+米甸:
+  match: exact
+  meaning_en: strife
+  name_en: Midian or Midianite
+  orig: מִדְיָן
+  ref: 代上1:32
+  strong: H4080G
+  translit: mid.yan
+米舒利密:
+  match: exact
+  meaning_en: friend
+  name_en: Meshullemeth
+  orig: מְשֻׁלֶּ֫מֶת
+  ref: 王下21:19
+  strong: H4922
+  translit: me.shul.le.met
+米薩合:
+  match: exact
+  meaning_en: waters of gold
+  name_en: Mezahab
+  orig: מֵי זָהָב
+  ref: 創36:39
+  strong: H4314
+  translit: me za.hav
+米設:
+  match: exact
+  meaning_en: drawing out
+  name_en: Mesech or Meshech
+  orig: מֶ֫שֶׁךְ
+  ref: 代上1:5
+  strong: H4902G
+  translit: me.shekh
+米設#閃:
+  match: exact
+  meaning_en: drawing out
+  name_en: Mesech or Meshech
+  orig: מֶ֫שֶׁךְ
+  ref: 代上1:17
+  strong: H4902J
+  translit: me.shekh
+米該亞#撒刻:
+  match: exact
+  meaning_en: who is like God
+  name_en: Micah or Michaiah
+  orig: מִיכָיָה
+  ref: 尼12:35
+  strong: H4320I
+  translit: mi.kha.yah
+米迦#撒底:
+  match: exact
+  meaning_en: who is like God
+  name_en: Micah or Micaiah or Michah
+  orig: מִיכָה
+  ref: 尼11:17
+  strong: H4318L
+  translit: mi.khah
+米迦#示每:
+  match: exact
+  meaning_en: who is like God
+  name_en: Micah or Micaiah or Michah
+  orig: מִיכָה
+  ref: 代上5:5
+  strong: H4318I
+  translit: mi.khah
+米迦#米力巴力:
+  match: exact
+  meaning_en: who is like God
+  name_en: Micah or Micaiah or Michah
+  orig: מִיכָה
+  ref: 代上8:34
+  strong: H4318H
+  translit: mi.khah
+米迦#細基利:
+  match: fuzzy
+  meaning_en: who is like God
+  name_en: Micha
+  orig: מִיכָא
+  ref: 代上9:15
+  strong: H4316G
+  translit: mi.kah
+米迦勒#亞比孩:
+  match: exact
+  meaning_en: who is like God
+  name_en: Michael
+  orig: מִיכָאֵל
+  ref: 代上5:13
+  strong: H4317H
+  translit: mi.kha.el
+米迦勒#伊斯拉希:
+  match: exact
+  meaning_en: who is like God
+  name_en: Michael
+  orig: מִיכָאֵל
+  ref: 代上7:3
+  strong: H4317K
+  translit: mi.kha.el
+米迦勒#巴西雅:
+  match: exact
+  meaning_en: who is like God
+  name_en: Michael
+  orig: מִיכָאֵל
+  ref: 代上6:40
+  strong: H4317J
+  translit: mi.kha.el
+米迦勒#比利亞:
+  match: exact
+  meaning_en: who is like God
+  name_en: Michael
+  orig: מִיכָאֵל
+  ref: 代上8:16
+  strong: H4317L
+  translit: mi.kha.el
+米迦勒#約沙法之子:
+  match: exact
+  meaning_en: who is like God
+  name_en: Michael
+  orig: מִיכָאֵל
+  ref: 代下21:2
+  strong: H4317O
+  translit: mi.kha.el
+米迦勒#耶示篩:
+  match: exact
+  meaning_en: who is like God
+  name_en: Michael
+  orig: מִיכָאֵל
+  ref: 代上5:14
+  strong: H4317I
+  translit: mi.kha.el
+米非波設#利斯巴:
+  match: exact
+  meaning_en: exterminating the idol
+  name_en: Mephibosheth
+  orig: מְפִיבֹשֶׁת
+  ref: 撒下21:8
+  strong: H4648H
+  translit: me.phi.vo.shet
+米黑:
+  match: exact
+  meaning_en: price
+  name_en: Mehir
+  orig: מְחִיר
+  ref: 代上4:11
+  strong: H4243
+  translit: me.chir
+約亞:
+  match: exact
+  meaning_en: Jehovah is brother
+  name_en: Joah
+  orig: יוֹאָח
+  ref: 代上6:21
+  strong: H3098H
+  translit: yo.ach
+約亞拿#苦撒的妻子:
+  match: exact
+  meaning_en: ''
+  name_en: Joanna
+  orig: Ἰωάννα, Ἰωανάν
+  ref: 路8:3
+  strong: G2489
+  translit: Iōanna, Iōanan
+約令:
+  match: exact
+  meaning_en: ''
+  name_en: Jorim
+  orig: Ἰωρείμ
+  ref: 路3:29
+  strong: G2497
+  translit: Iōreim
+約伯#以薩迦:
+  match: exact
+  meaning_en: persecuted
+  name_en: Job
+  orig: יוֹב
+  ref: 創46:13
+  strong: H3102
+  translit: yov
+約南:
+  match: exact
+  meaning_en: ''
+  name_en: Jonam
+  orig: Ἰωνάν
+  ref: 路3:30
+  strong: G2494
+  translit: Iōnan
+約哈:
+  match: exact
+  meaning_en: Jehovah gives life
+  name_en: Joha
+  orig: יוֹחָא
+  ref: 代上8:16
+  strong: H3109G
+  translit: yo.ach
+約哈斯#耶戶:
+  match: exact
+  meaning_en: Jehovah has seized
+  name_en: Jehoahaz
+  orig: יְהוֹאָחָז
+  ref: 王下13:1
+  strong: H3059G
+  translit: ye.ho.a.chaz
+約哈難#亞撒利雅:
+  match: exact
+  meaning_en: Jehovah has graced
+  name_en: Johanan
+  orig: יוֹחָנָן
+  ref: 代上6:9
+  strong: H3110J
+  translit: yo.cha.nan
+約哈難#以利亞實:
+  match: exact
+  meaning_en: Jehovah has graced
+  name_en: Johanan
+  orig: יוֹחָנָן
+  ref: 尼12:23
+  strong: H3110L
+  translit: yo.cha.nan
+約哈難#以利約乃:
+  match: exact
+  meaning_en: Jehovah has graced
+  name_en: Johanan
+  orig: יוֹחָנָן
+  ref: 代上3:24
+  strong: H3110I
+  translit: yo.cha.nan
+約哈難#約西亞:
+  match: exact
+  meaning_en: Jehovah has graced
+  name_en: Johanan
+  orig: יוֹחָנָן
+  ref: 代上3:15
+  strong: H3110H
+  translit: yo.cha.nan
+約坍:
+  match: exact
+  meaning_en: smallness
+  name_en: Joktan
+  orig: יׇקְטָן
+  ref: 代上1:19
+  strong: H3355
+  translit: yoq.tan
+約坦:
+  match: exact
+  meaning_en: Jehovah is perfect
+  name_en: Jotham
+  orig: יוֹתָם
+  ref: 代上3:12
+  strong: H3147H
+  translit: yo.tam
+約坦#雅代:
+  match: exact
+  meaning_en: Jehovah is perfect
+  name_en: Jotham
+  orig: יוֹתָם
+  ref: 代上2:47
+  strong: H3147I
+  translit: yo.tam
+約基別:
+  match: exact
+  meaning_en: Jehovah is glory
+  name_en: Jochebed
+  orig: יוֹכֶ֫בֶד
+  ref: 出6:20
+  strong: H3115
+  translit: yo.khe.ved
+約巴:
+  match: exact
+  meaning_en: a desert
+  name_en: Jobab
+  orig: יוֹבָב
+  ref: 代上1:23
+  strong: H3103G
+  translit: yo.vav
+約巴#以利巴力:
+  match: exact
+  meaning_en: a desert
+  name_en: Jobab
+  orig: יוֹבָב
+  ref: 代上8:18
+  strong: H3103K
+  translit: yo.vav
+約巴#以東王:
+  match: exact
+  meaning_en: a desert
+  name_en: Jobab
+  orig: יוֹבָב
+  ref: 代上1:44
+  strong: H3103H
+  translit: yo.vav
+約巴#沙哈連:
+  match: exact
+  meaning_en: a desert
+  name_en: Jobab
+  orig: יוֹבָב
+  ref: 代上8:9
+  strong: H3103J
+  translit: yo.vav
+約押:
+  match: exact
+  meaning_en: Jehovah is father
+  name_en: Joab
+  orig: יוֹאָב
+  ref: 代上2:16
+  strong: H3097G
+  translit: yo.av
+約押#西萊雅:
+  match: exact
+  meaning_en: Jehovah is father
+  name_en: Joab
+  orig: יוֹאָב
+  ref: 代上4:14
+  strong: H3097H
+  translit: yo.av
+約拿單:
+  match: exact
+  meaning_en: Jehovah has given
+  name_en: Jonathan or Jehonathan
+  orig: יְהוֹנָתָן
+  ref: 代上8:33
+  strong: H3083H
+  translit: ye.ho.na.tan
+約拿單#示瑪雅:
+  match: exact
+  meaning_en: Jehovah has given
+  name_en: Jonathan or Jehonathan
+  orig: יוֹנָתָן
+  ref: 尼12:35
+  strong: H3129K
+  translit: yo.na.tan
+約拿單#示米亞:
+  match: exact
+  meaning_en: Jehovah has given
+  name_en: Jonathan or Jehonathan
+  orig: יְהוֹנָתָן
+  ref: 撒下21:21
+  strong: H3083O
+  translit: ye.ho.na.tan
+約拿單#耶何耶大:
+  match: exact
+  meaning_en: Jehovah has given
+  name_en: Jonathan or Jehonathan
+  orig: יוֹנָתָן
+  ref: 尼12:11
+  strong: H3129M
+  translit: yo.na.tan
+約拿單#雅大:
+  match: exact
+  meaning_en: Jehovah has given
+  name_en: Jonathan or Jehonathan
+  orig: יוֹנָתָן
+  ref: 代上2:32
+  strong: H3129G
+  translit: yo.na.tan
+約拿單#革舜:
+  match: exact
+  meaning_en: Jehovah has given
+  name_en: Jonathan or Jehonathan
+  orig: יְהוֹנָתָן
+  ref: 士18:30
+  strong: H3083G
+  translit: ye.ho.na.tan
+約拿達:
+  match: exact
+  meaning_en: Jehovah is willing
+  name_en: Jonadab or Jehonadab
+  orig: יוֹנָדָב
+  ref: 撒下13:3
+  strong: H3122G
+  translit: yo.na.dav
+約敬:
+  match: exact
+  meaning_en: Jehovah raises up
+  name_en: Jokim
+  orig: יוֹקִים
+  ref: 代上4:22
+  strong: H3137
+  translit: yo.qim
+約施比加沙#希幔:
+  match: exact
+  meaning_en: seated in hardness
+  name_en: Joshbekashah
+  orig: יׇשְׁבְּקָ֫שָׁה
+  ref: 代上25:4
+  strong: H3436
+  translit: yosh.be.qa.shah
+約書亞:
+  match: exact
+  meaning_en: Jehovah is salvation
+  name_en: Joshua or Jehoshua
+  orig: יְהוֹשׁוּעַ
+  ref: 代上7:27
+  strong: H3091G
+  translit: ye.ho.shu.a
+約朔海:
+  match: exact
+  meaning_en: Jehovah humbles
+  name_en: Jeshohaiah
+  orig: יְשׁוֹחָיָה
+  ref: 代上4:36
+  strong: H3439
+  translit: ye.sho.cha.yah
+約沙:
+  match: exact
+  meaning_en: Jehovah makes equal
+  name_en: Joshah
+  orig: יוֹשָׁה
+  ref: 代上4:34
+  strong: H3144
+  translit: yo.shah
+約沙法:
+  match: exact
+  meaning_en: Jehovah has judged
+  name_en: Jehoshaphat
+  orig: יְהוֹשָׁפָט
+  ref: 代上3:10
+  strong: H3092I
+  translit: ye.ho.sha.phat
+約沙法#耶戶之父:
+  match: exact
+  meaning_en: Jehovah has judged
+  name_en: Jehoshaphat
+  orig: יְהוֹשָׁפָט
+  ref: 王下9:2
+  strong: H3092J
+  translit: ye.ho.sha.phat
+約珊:
+  match: exact
+  meaning_en: snarer
+  name_en: Jokshan
+  orig: יׇקְשָׁן
+  ref: 代上1:32
+  strong: H3370
+  translit: yoq.shan
+約珥#亞撒利雅:
+  match: exact
+  meaning_en: Jehovah is God
+  name_en: Joel
+  orig: יוֹאֵל
+  ref: 代上6:33
+  strong: H3100G
+  translit: yo.el
+約珥#伊斯拉希:
+  match: exact
+  meaning_en: Jehovah is God
+  name_en: Joel
+  orig: יוֹאֵל
+  ref: 代上7:3
+  strong: H3100L
+  translit: yo.el
+約珥#希幔之父:
+  match: exact
+  meaning_en: Jehovah is God
+  name_en: Joel
+  orig: יוֹאֵל
+  ref: 代上6:33
+  strong: H3100G
+  translit: yo.el
+約珥#撒母耳:
+  match: exact
+  meaning_en: Jehovah is God
+  name_en: Joel
+  orig: יוֹאֵל
+  ref: 代上6:28
+  strong: H3100G
+  translit: yo.el
+約珥#比拉:
+  match: exact
+  meaning_en: Jehovah is God
+  name_en: Joel
+  orig: יוֹאֵל
+  ref: 代上5:8
+  strong: H3100J
+  translit: yo.el
+約珥#流便:
+  match: exact
+  meaning_en: Jehovah is God
+  name_en: Joel
+  orig: יוֹאֵל
+  ref: 代上5:4
+  strong: H3100I
+  translit: yo.el
+約珥#西緬:
+  match: exact
+  meaning_en: Jehovah is God
+  name_en: Joel
+  orig: יוֹאֵל
+  ref: 代上4:35
+  strong: H3100H
+  translit: yo.el
+約珥#迦得:
+  match: exact
+  meaning_en: Jehovah is God
+  name_en: Joel
+  orig: יוֹאֵל
+  ref: 代上5:12
+  strong: H3100K
+  translit: yo.el
+約瑟:
+  match: exact
+  meaning_en: Jehovah has added
+  name_en: Joseph
+  orig: יוֹסֵף
+  ref: 代上2:2
+  strong: H3130G
+  translit: yo.seph
+約瑟#亞薩:
+  match: exact
+  meaning_en: Jehovah has added
+  name_en: Joseph
+  orig: יוֹסֵף
+  ref: 代上25:2
+  strong: H3130I
+  translit: yo.seph
+約瑟#路3:24:
+  match: exact
+  meaning_en: ''
+  name_en: Joseph
+  orig: Ἰωσήφ
+  ref: 路3:24
+  strong: G2501J
+  translit: Iōsēph
+約瑟#路3:26:
+  match: exact
+  meaning_en: ''
+  name_en: Josech
+  orig: Ἰωσήχ
+  ref: 路3:26
+  strong: G6044
+  translit: Iōsēch
+約瑟#路3:30:
+  match: exact
+  meaning_en: ''
+  name_en: Joseph
+  orig: Ἰωσήφ
+  ref: 路3:30
+  strong: G2501L
+  translit: Iōsēph
+約瑟#馬利亞的丈夫:
+  match: exact
+  meaning_en: ''
+  name_en: Joseph
+  orig: Ἰωσήφ
+  ref: 太1:16
+  strong: G2501G
+  translit: Iōsēph
+約示巴:
+  match: exact
+  meaning_en: Jehovah has sworn
+  name_en: Jehosheba
+  orig: יְהוֹשֶׁבַע
+  ref: 王下11:2
+  strong: H3089
+  translit: ye.ho.she.va
+約示比:
+  match: exact
+  meaning_en: Jehovah causes to dwell
+  name_en: Josibiah
+  orig: יוֹשִׁבְיָה
+  ref: 代上4:35
+  strong: H3143
+  translit: yo.shiv.yah
+約翰#施洗:
+  match: exact
+  meaning_en: ''
+  name_en: John
+  orig: Ἰωάννης
+  ref: 路1:13
+  strong: G2491G
+  translit: Iōannēs
+約翰#西庇太:
+  match: exact
+  meaning_en: ''
+  name_en: John
+  orig: Ἰωάννης
+  ref: 太4:21
+  strong: G2491H
+  translit: Iōannēs
+約翰#西門彼得的父親:
+  match: exact
+  meaning_en: ''
+  name_en: John
+  orig: Ἰωνᾶς
+  ref: 約1:42
+  strong: G2491K
+  translit: Iōnas
+約耶但:
+  match: exact
+  meaning_en: Jehovah delights
+  name_en: Jehoaddan
+  orig: יְהוֹעַדָּן
+  ref: 王下14:2
+  strong: H3086
+  translit: ye.ho.ad.din
+約薩答:
+  match: exact
+  meaning_en: Jehovah is righteous
+  name_en: Jehozadak or Josedech
+  orig: יְהוֹצָדָק
+  ref: 代上6:14
+  strong: H3087
+  translit: ye.ho.tsa.daq
+約薩達#耶書亞之父:
+  match: exact
+  meaning_en: Jehovah is righteous
+  name_en: Jozadak
+  orig: יוֹצָדָק
+  ref: 拉3:2
+  strong: H3136A
+  translit: yo.tsa.daq
+約蘭:
+  match: exact
+  meaning_en: Jehovah is exalted
+  name_en: Joram
+  orig: יוֹרָם
+  ref: 代上3:11
+  strong: H3141J
+  translit: yo.ram
+約蘭#亞哈:
+  match: exact
+  meaning_en: Jehovah is exalted
+  name_en: Jehoram or Joram
+  orig: יְהוֹרָם
+  ref: 王下3:1
+  strong: H3088I
+  translit: ye.ho.ram
+約蘭#耶篩亞:
+  match: exact
+  meaning_en: Jehovah is exalted
+  name_en: Joram
+  orig: יוֹרָם
+  ref: 代上26:25
+  strong: H3141I
+  translit: yo.ram
+約西#可15:40:
+  match: fuzzy
+  meaning_en: ''
+  name_en: Joses
+  orig: Ἰωσῆς
+  ref: 可15:40
+  strong: G2500G
+  translit: Iōsēs
+約西#耶穌的弟兄:
+  match: fuzzy
+  meaning_en: ''
+  name_en: Joses
+  orig: Ἰωσῆς
+  ref: 可6:3
+  strong: G2500G
+  translit: Iōsēs
+約西亞:
+  match: exact
+  meaning_en: whom Jehovah heals
+  name_en: Josiah
+  orig: יֹאשִׁיָּ֫הוּ
+  ref: 代上3:14
+  strong: H2977G
+  translit: yo.shiy.yah
+約賴:
+  match: exact
+  meaning_en: Jehovah has taught me
+  name_en: Jorai
+  orig: יוֹרַי
+  ref: 代上5:13
+  strong: H3140
+  translit: yo.ray
+約阿施:
+  match: exact
+  meaning_en: given by the Lord
+  name_en: Joash
+  orig: יוֹאָשׁ
+  ref: 代上3:11
+  strong: H3101I
+  translit: yo.ash
+約阿施#比結:
+  match: exact
+  meaning_en: Jehovah hastens
+  name_en: Joash
+  orig: יוֹעָשׁ
+  ref: 代上7:8
+  strong: H3135G
+  translit: yo.ash
+約阿施#示拉:
+  match: exact
+  meaning_en: given by the Lord
+  name_en: Joash
+  orig: יוֹאָשׁ
+  ref: 代上4:22
+  strong: H3101K
+  translit: yo.ash
+約阿施#約哈斯:
+  match: exact
+  meaning_en: given by the Lord
+  name_en: Joash
+  orig: יוֹאָשׁ
+  ref: 王下13:10
+  strong: H3101I
+  translit: yo.ash
+約雅敬:
+  match: exact
+  meaning_en: Jehovah raises up
+  name_en: Jehoiakim
+  orig: יְהוֹיָקִים
+  ref: 代上3:15
+  strong: H3079
+  translit: ye.ho.ya.qim
+約雅金#耶書亞:
+  match: exact
+  meaning_en: Jehovah raises up
+  name_en: Joiakim or Jehoiakim
+  orig: יוֹיָקִים
+  ref: 尼12:10
+  strong: H3113
+  translit: yo.ya.qim
+細亞:
+  match: exact
+  meaning_en: tumult
+  name_en: Zia
+  orig: זִיעַ
+  ref: 代上5:13
+  strong: H2127
+  translit: zi.a
+細坦:
+  match: exact
+  meaning_en: olive
+  name_en: Zethan
+  orig: זֵיתָן
+  ref: 代上7:10
+  strong: H2133
+  translit: ze.tan
+細基利#亞薩:
+  match: exact
+  meaning_en: memorable
+  name_en: Zichri
+  orig: זִכְרִי
+  ref: 代上9:15
+  strong: H2147K
+  translit: zikh.ri
+細基利#以斯哈:
+  match: exact
+  meaning_en: memorable
+  name_en: Zichri
+  orig: זִכְרִי
+  ref: 出6:21
+  strong: H2147G
+  translit: zikh.ri
+細基利#沙煞:
+  match: exact
+  meaning_en: memorable
+  name_en: Zichri
+  orig: זִכְרִי
+  ref: 代上8:23
+  strong: H2147I
+  translit: zikh.ri
+細基利#示每:
+  match: exact
+  meaning_en: memorable
+  name_en: Zichri
+  orig: זִכְרִי
+  ref: 代上8:19
+  strong: H2147H
+  translit: zikh.ri
+細基利#約蘭:
+  match: exact
+  meaning_en: memorable
+  name_en: Zichri
+  orig: זִכְרִי
+  ref: 代上26:25
+  strong: H2147L
+  translit: zikh.ri
+細基利#耶羅罕:
+  match: exact
+  meaning_en: memorable
+  name_en: Zichri
+  orig: זִכְרִי
+  ref: 代上8:27
+  strong: H2147J
+  translit: zikh.ri
+細布業#希幔:
+  match: exact
+  meaning_en: captive of God
+  name_en: Shebuel or Shubael
+  orig: שְׁבוּאֵל
+  ref: 代上25:4
+  strong: H7619H
+  translit: she.vu.el
+細布業#革舜:
+  match: exact
+  meaning_en: captive of God
+  name_en: Shebuel or Shubael
+  orig: שְׁבוּאֵל
+  ref: 代上23:16
+  strong: H7619G
+  translit: she.vu.el
+細撒:
+  match: exact
+  meaning_en: shining
+  name_en: Ziza
+  orig: זִיזָא
+  ref: 代上4:37
+  strong: H2124G
+  translit: zi.za
+細撒#羅波安之子:
+  match: exact
+  meaning_en: shining
+  name_en: Ziza
+  orig: זִיזָא
+  ref: 代下11:20
+  strong: H2124H
+  translit: zi.za
+細米拉:
+  match: exact
+  meaning_en: song
+  name_en: Zemira
+  orig: זְמִירָה
+  ref: 代上7:8
+  strong: H2160
+  translit: ze.mi.rah
+羅坍:
+  match: exact
+  meaning_en: covering
+  name_en: Lotan
+  orig: לוֹטָן
+  ref: 代上1:38
+  strong: H3877
+  translit: lo.tan
+羅實:
+  match: exact
+  meaning_en: head
+  name_en: Rosh
+  orig: רֹאשׁ
+  ref: 創46:21
+  strong: H7220
+  translit: rosh
+羅得:
+  match: exact
+  meaning_en: covering
+  name_en: Lot
+  orig: לוֹט
+  ref: 創11:31
+  strong: H3876
+  translit: lot
+羅波安:
+  match: exact
+  meaning_en: a people has enlarged
+  name_en: Rehoboam
+  orig: רְחַבְעָם
+  ref: 代上3:10
+  strong: H7346
+  translit: re.chav.am
+羅迦:
+  match: exact
+  meaning_en: clamour
+  name_en: Rohgah
+  orig: רָהְגָּה
+  ref: 代上7:34
+  strong: H7303
+  translit: ro.ha.gah
+耶何耶大#以利亞實:
+  match: exact
+  meaning_en: Jehovah knows
+  name_en: Joiada or Jehoiada
+  orig: יוֹיָדָע
+  ref: 尼12:10
+  strong: H3111H
+  translit: yo.ya.da
+耶何耶大#祭司:
+  match: exact
+  meaning_en: Jehovah knows
+  name_en: Jehoiada
+  orig: יְהוֹיָדָע
+  ref: 代下22:11
+  strong: H3077H
+  translit: ye.ho.ya.da
+耶何阿達:
+  match: exact
+  meaning_en: Jehovah has adorned
+  name_en: Jehoadah
+  orig: יְהוֹעַדָּה
+  ref: 代上8:36
+  strong: H3085
+  translit: ye.ho.ad.dah
+耶何雅立:
+  match: exact
+  meaning_en: Jehovah contends
+  name_en: Jehoiarib
+  orig: יְהוֹיָרִיב
+  ref: 代上9:10
+  strong: H3080H
+  translit: ye.ho.ya.riv
+耶利:
+  match: exact
+  meaning_en: God sweeps away
+  name_en: Jeiel or Jehiel
+  orig: יְעִיאֵל
+  ref: 代上8:29
+  strong: H3273G
+  translit: ye.i.el
+耶利#流便:
+  match: exact
+  meaning_en: God sweeps away
+  name_en: Jeiel or Jehiel
+  orig: יְעִיאֵל
+  ref: 代上5:7
+  strong: H3273G
+  translit: ye.i.el
+耶利#雅哈悉之曾祖:
+  match: exact
+  meaning_en: God sweeps away
+  name_en: Jeiel or Jehiel
+  orig: יְעִיאֵל
+  ref: 代下20:14
+  strong: H3273J
+  translit: ye.i.el
+耶利摩#大衛之子:
+  match: exact
+  meaning_en: He is Most High
+  name_en: Jerimoth or Jeremoth
+  orig: יְרִימוֹת
+  ref: 代下11:18
+  strong: H3406N
+  translit: ye.ri.mot
+耶利摩#希幔:
+  match: exact
+  meaning_en: He is Most High
+  name_en: Jerimoth or Jeremoth
+  orig: יְרֵמוֹת, יְרִימוֹת
+  ref: 代上25:4
+  strong: H3406L
+  translit: ye.ri.mot
+耶利摩#比拉:
+  match: exact
+  meaning_en: He is Most High
+  name_en: Jerimoth or Jeremoth
+  orig: יְרִימוֹת
+  ref: 代上7:7
+  strong: H3406G
+  translit: ye.ri.mot
+耶利摩#比結:
+  match: exact
+  meaning_en: He is Most High
+  name_en: Jerimoth or Jeremoth
+  orig: יְרֵמוֹת
+  ref: 代上7:8
+  strong: H3406H
+  translit: ye.ri.mot
+耶利末:
+  match: exact
+  meaning_en: He is Most High
+  name_en: Jerimoth or Jeremoth
+  orig: יְרֵמוֹת
+  ref: 代上8:14
+  strong: H3406I
+  translit: ye.ri.mot
+耶利米:
+  match: exact
+  meaning_en: whom Jehovah has appointed
+  name_en: Jeremiah
+  orig: יִרְמְיָ֫הוּ
+  ref: 代上5:24
+  strong: H3414H
+  translit: yir.me.yah
+耶利米#哈慕他之父:
+  match: exact
+  meaning_en: whom Jehovah has appointed
+  name_en: Jeremiah
+  orig: יִרְמְיָ֫הוּ
+  ref: 王下23:31
+  strong: H3414G
+  translit: yir.me.yah
+耶利米#希勒家:
+  match: exact
+  meaning_en: whom Jehovah has appointed
+  name_en: Jeremiah
+  orig: יִרְמְיָ֫הוּ
+  ref: 耶1:1
+  strong: H3414L
+  translit: yir.me.yah
+耶加米:
+  match: exact
+  meaning_en: Jehovah raises
+  name_en: Jecamiah or Jekamiah
+  orig: יְקַמְיָה
+  ref: 代上3:18
+  strong: H3359H
+  translit: ye.qam.yah
+耶加米雅:
+  match: exact
+  meaning_en: Jehovah raises
+  name_en: Jecamiah or Jekamiah
+  orig: יְקַמְיָה
+  ref: 代上2:41
+  strong: H3359G
+  translit: ye.qam.yah
+耶勒:
+  match: exact
+  meaning_en: taught by God
+  name_en: Jeriel
+  orig: יְרִיאֵל
+  ref: 代上7:2
+  strong: H3400
+  translit: ye.ri.el
+耶古鐵:
+  match: exact
+  meaning_en: cleansing of God
+  name_en: Jekuthiel
+  orig: יְקוּתִיאֵל
+  ref: 代上4:18
+  strong: H3354
+  translit: ye.qu.ti.el
+耶可利雅:
+  match: exact
+  meaning_en: Jehovah is able
+  name_en: Jecoliah or Jecholiah
+  orig: יְכָלְיָהוּ
+  ref: 王下15:2
+  strong: H3203
+  translit: ye.khol.yah
+耶哈利勒:
+  match: exact
+  meaning_en: God is praised
+  name_en: Jehaleleel or Jehalelel
+  orig: יְהַלֶּלְאֵל
+  ref: 代上4:16
+  strong: H3094G
+  translit: ye.hal.lel.el
+耶哈多:
+  match: exact
+  meaning_en: His unity
+  name_en: Jahdo
+  orig: יַחְדּוֹ
+  ref: 代上5:14
+  strong: H3163
+  translit: yach.do
+耶哥尼雅:
+  match: exact
+  meaning_en: Jehovah will establish
+  name_en: Jeconiah
+  orig: יְכוֹנְיָה
+  ref: 代上3:16
+  strong: H3204
+  translit: ye.khon.yah
+耶大雅:
+  match: exact
+  meaning_en: Jehovah has known
+  name_en: Jedaiah
+  orig: יְדַעְיָה
+  ref: 代上9:10
+  strong: H3048G
+  translit: ye.da.yah
+耶大雅#申利:
+  match: exact
+  meaning_en: praised of Jehovah
+  name_en: Jedaiah
+  orig: יְדָיָה
+  ref: 代上4:37
+  strong: H3042G
+  translit: ye.da.yah
+耶孚尼:
+  match: exact
+  meaning_en: He will be facing
+  name_en: Jephunneh
+  orig: יְפֻנֶּה
+  ref: 代上4:15
+  strong: H3312G
+  translit: ye.phun.neh
+耶孚尼#益帖:
+  match: exact
+  meaning_en: He will be facing
+  name_en: Jephunneh
+  orig: יְפֻנֶּה
+  ref: 代上7:38
+  strong: H3312H
+  translit: ye.phun.neh
+耶帖:
+  match: exact
+  meaning_en: a nail
+  name_en: Jetheth
+  orig: יְתֵת
+  ref: 代上1:51
+  strong: H3509
+  translit: ye.tet
+耶底大:
+  match: exact
+  meaning_en: beloved
+  name_en: Jedidah
+  orig: יְדִידָה
+  ref: 王下22:1
+  strong: H3040
+  translit: ye.di.dah
+耶戶:
+  match: exact
+  meaning_en: Jehovah is He
+  name_en: Jehu
+  orig: יֵהוּא
+  ref: 代上2:38
+  strong: H3058I
+  translit: ye.hu
+耶戶#約沙法:
+  match: exact
+  meaning_en: Jehovah is He
+  name_en: Jehu
+  orig: יֵהוּא
+  ref: 王下9:2
+  strong: H3058H
+  translit: ye.hu
+耶戶#約示比:
+  match: exact
+  meaning_en: Jehovah is He
+  name_en: Jehu
+  orig: יֵהוּא
+  ref: 代上4:35
+  strong: H3058J
+  translit: ye.hu
+耶戶巴:
+  match: exact
+  meaning_en: hidden
+  name_en: Jehubbah
+  orig: חֻבָּה
+  ref: 代上7:34
+  strong: H3160
+  translit: ye.chub.bah
+耶拉:
+  match: exact
+  meaning_en: new moon
+  name_en: Jerah
+  orig: יֶ֫רַח
+  ref: 代上1:20
+  strong: H3392
+  translit: ye.rach
+耶拉篾:
+  match: exact
+  meaning_en: may God have pity
+  name_en: Jerahmeel
+  orig: יְרַחְמְאֵל
+  ref: 代上2:9
+  strong: H3396G
+  translit: ye.rach.me.el
+耶斯列:
+  match: exact
+  meaning_en: God sows
+  name_en: Jezreel
+  orig: יִזְרְעֶאל
+  ref: 代上4:3
+  strong: H3157J
+  translit: yiz.re.el
+耶書亞#約薩答:
+  match: exact
+  meaning_en: he is saved
+  name_en: Jeshua
+  orig: יֵשׁוּעַ
+  ref: 拉3:2
+  strong: H3442P
+  translit: ye.shu.a
+耶杜頓:
+  match: exact
+  meaning_en: praising
+  name_en: Jeduthun
+  orig: יְדוּתוּן
+  ref: 代上9:16
+  strong: H3038H
+  translit: ye.du.tun
+耶歇#約沙法之子:
+  match: exact
+  meaning_en: God lives
+  name_en: Jehiel
+  orig: יְחִיאֵל
+  ref: 代下21:2
+  strong: H3171J
+  translit: ye.chi.el
+耶母利:
+  match: exact
+  meaning_en: day of God
+  name_en: Jemuel
+  orig: יְמוּאֵל
+  ref: 創46:10
+  strong: H3223
+  translit: ye.mu.el
+耶洗別:
+  match: exact
+  meaning_en: Baal exalts
+  name_en: Jezebel
+  orig: אִיזֶבֶל
+  ref: 王上16:31
+  strong: H0348
+  translit: i.ze.vel
+耶烏利:
+  match: exact
+  meaning_en: God sweeps away
+  name_en: Jeuel
+  orig: יְעוּאֵל
+  ref: 代上9:6
+  strong: H3262
+  translit: ye.u.el
+耶烏斯:
+  match: exact
+  meaning_en: counsellor
+  name_en: Jeuz
+  orig: יְעוּץ
+  ref: 代上8:10
+  strong: H3263
+  translit: ye.uts
+耶烏施:
+  match: exact
+  meaning_en: He hurries to aid
+  name_en: Jehush or Jeush
+  orig: יְעוּשׁ
+  ref: 代上1:35
+  strong: H3266G
+  translit: ye.ush
+耶烏施#以設:
+  match: exact
+  meaning_en: He hurries to aid
+  name_en: Jehush or Jeush
+  orig: יְעוּשׁ
+  ref: 代上8:39
+  strong: H3266I
+  translit: ye.ush
+耶烏施#比勒罕:
+  match: exact
+  meaning_en: He hurries to aid
+  name_en: Jehush or Jeush
+  orig: יְעוּשׁ
+  ref: 代上7:10
+  strong: H3266H
+  translit: ye.ush
+耶烏施#羅波安之子:
+  match: exact
+  meaning_en: He hurries to aid
+  name_en: Jehush or Jeush
+  orig: יְעוּשׁ
+  ref: 代下11:19
+  strong: H3266K
+  translit: ye.ush
+耶特賴:
+  match: exact
+  meaning_en: whom Jehovah leads
+  name_en: Jeaterai
+  orig: יְאָֽתְרַי
+  ref: 代上6:21
+  strong: H2979
+  translit: ye.a.te.ray
+耶疊:
+  match: exact
+  meaning_en: God makes known
+  name_en: Jediael
+  orig: יְדִיעֲאֵל
+  ref: 代上7:6
+  strong: H3043G
+  translit: ye.di.a.el
+耶示篩:
+  match: exact
+  meaning_en: my old one
+  name_en: Jeshishai
+  orig: יְשִׁישַׁי
+  ref: 代上5:14
+  strong: H3454
+  translit: ye.shi.sah
+耶穌:
+  match: exact
+  meaning_en: ''
+  name_en: Jesus
+  orig: Ἰησοῦς
+  ref: 太1:1
+  strong: G2424G
+  translit: Iēsous
+耶篩亞:
+  match: exact
+  meaning_en: Jehovah has saved
+  name_en: Isaiah or Jesaiah or Jeshaiah
+  orig: יְשַׁעְיָה
+  ref: 代上3:21
+  strong: H3470B
+  translit: ye.sha.yah
+耶篩亞#利哈比雅:
+  match: exact
+  meaning_en: Jehovah has saved
+  name_en: Isaiah or Jesaiah or Jeshaiah
+  orig: יְשַׁעְיָ֫הוּ
+  ref: 代上26:25
+  strong: H3470G
+  translit: ye.sha.yah
+耶羅亞:
+  match: exact
+  meaning_en: new moon
+  name_en: Jaroah
+  orig: יָרוֹחַ
+  ref: 代上5:14
+  strong: H3386
+  translit: ya.ro.ach
+耶羅波安#尼八:
+  match: exact
+  meaning_en: the people will contend
+  name_en: Jeroboam
+  orig: יָֽרָבְעָם
+  ref: 王上11:26
+  strong: H3379G
+  translit: ya.rov.am
+耶羅波安#約阿施:
+  match: exact
+  meaning_en: the people will contend
+  name_en: Jeroboam
+  orig: יָֽרָבְעָם
+  ref: 王下14:23
+  strong: H3379H
+  translit: ya.rov.am
+耶羅罕#8:27:
+  match: exact
+  meaning_en: showing pity
+  name_en: Jeroham
+  orig: יְרֹחָם
+  ref: 代上8:27
+  strong: H3395H
+  translit: ye.ro.cham
+耶羅罕#9:8:
+  match: exact
+  meaning_en: showing pity
+  name_en: Jeroham
+  orig: יְרֹחָם
+  ref: 代上9:8
+  strong: H3395I
+  translit: ye.ro.cham
+耶羅罕#以列:
+  match: exact
+  meaning_en: showing pity
+  name_en: Jeroham
+  orig: יְרֹחָם
+  ref: 代上6:34
+  strong: H3395G
+  translit: ye.ro.cham
+耶羅罕#以利押:
+  match: exact
+  meaning_en: showing pity
+  name_en: Jeroham
+  orig: יְרֹחָם
+  ref: 代上6:27
+  strong: H3395G
+  translit: ye.ro.cham
+耶羅罕#巴施戶珥:
+  match: exact
+  meaning_en: showing pity
+  name_en: Jeroham
+  orig: יְרֹחָם
+  ref: 代上9:12
+  strong: H3395J
+  translit: ye.ro.cham
+耶色:
+  match: exact
+  meaning_en: forming
+  name_en: Jezer
+  orig: יֵ֫צֶר
+  ref: 代上7:13
+  strong: H3337
+  translit: ye.tser
+耶西:
+  match: exact
+  meaning_en: I possess
+  name_en: Jesse
+  orig: יִשַׁי
+  ref: 代上2:12
+  strong: H3448
+  translit: yi.shay
+耶西篾:
+  match: exact
+  meaning_en: God will place
+  name_en: Jesimiel
+  orig: יְשִׁימִאֵל
+  ref: 代上4:36
+  strong: H3450
+  translit: ye.shi.ma.el
+耶設:
+  match: exact
+  meaning_en: upright
+  name_en: Jesher
+  orig: יֶ֫שֶׁר
+  ref: 代上2:18
+  strong: H3475
+  translit: ye.sher
+耶路沙:
+  match: exact
+  meaning_en: dispossessor
+  name_en: Jerushah or Jerusha
+  orig: יְרוּשָׁא, יְרוּשָׁה
+  ref: 王下15:33
+  strong: H3388
+  translit: ye.ru.sah
+腓力#太14:3:
+  match: exact
+  meaning_en: ''
+  name_en: Philip
+  orig: Φίλιππος
+  ref: 太14:3
+  strong: G5376H
+  translit: Philippos
+腓力#路3:1:
+  match: exact
+  meaning_en: ''
+  name_en: Philip
+  orig: Φίλιππος
+  ref: 路3:1
+  strong: G5376I
+  translit: Philippos
+舍伊拉:
+  match: exact
+  meaning_en: kinswoman
+  name_en: Sherah
+  orig: שֶׁאֱרָה
+  ref: 代上7:24
+  strong: H7609
+  translit: she.e.rah
+苦撒:
+  match: exact
+  meaning_en: ''
+  name_en: Chuza
+  orig: Χουζᾶς
+  ref: 路8:3
+  strong: G5529
+  translit: Chouzas
+荷幔:
+  match: exact
+  meaning_en: confusion
+  name_en: Homam
+  orig: הוֹמָ֑ם
+  ref: 代上1:39
+  strong: H1950
+  translit: ho.mam
+荷第雅:
+  match: exact
+  meaning_en: majesty of Jehovah
+  name_en: Hodiah
+  orig: הוֹדִיָּה
+  ref: 代上4:19
+  strong: H1940G
+  translit: ho.diy.yah
+葉忒羅:
+  match: exact
+  meaning_en: his abundance
+  name_en: Jethro
+  orig: יִתְרוֹ
+  ref: 出18:1
+  strong: H3503
+  translit: yit.ro
+薩拉:
+  match: exact
+  meaning_en: to burn
+  name_en: Saraph
+  orig: שָׂרָף
+  ref: 代上4:22
+  strong: H8315
+  translit: sa.raph
+薩瑪:
+  match: exact
+  meaning_en: garment
+  name_en: Salma
+  orig: שַׂלְמָא
+  ref: 代上2:51
+  strong: H8007H
+  translit: sal.ma
+薪瑪:
+  match: exact
+  meaning_en: plotter
+  name_en: Zimmah
+  orig: זִמָּה
+  ref: 代上6:42
+  strong: H2155G
+  translit: zim.mah
+薪瑪#立尼:
+  match: exact
+  meaning_en: plotter
+  name_en: Zimmah
+  orig: זִמָּה
+  ref: 代上6:20
+  strong: H2155G
+  translit: zim.mah
+蘇弗:
+  match: exact
+  meaning_en: honeycomb
+  name_en: Zuph or Zophai
+  orig: צוּף
+  ref: 代上6:35
+  strong: H6689G
+  translit: tsuph
+蘇珥:
+  match: exact
+  meaning_en: rock
+  name_en: Zur
+  orig: צוּר
+  ref: 代上8:30
+  strong: H6698I
+  translit: tsur
+蘭:
+  match: exact
+  meaning_en: high
+  name_en: Ram
+  orig: רָם
+  ref: 代上2:9
+  strong: H7410G
+  translit: ram
+蘭#耶拉篾:
+  match: exact
+  meaning_en: high
+  name_en: Ram
+  orig: רָם
+  ref: 代上2:25
+  strong: H7410H
+  translit: ram
+西列:
+  match: exact
+  meaning_en: exultation
+  name_en: Seled
+  orig: סֶ֫לֶד
+  ref: 代上2:30
+  strong: H5540
+  translit: se.led
+西坡拉:
+  match: exact
+  meaning_en: bird
+  name_en: Zipporah
+  orig: צִפֹּרָה
+  ref: 出2:21
+  strong: H6855
+  translit: tsip.po.rah
+西巴:
+  match: exact
+  meaning_en: drink thou
+  name_en: Seba
+  orig: סְבָא
+  ref: 代上1:9
+  strong: H5434G
+  translit: se.va
+西巴第雅#以利巴力:
+  match: exact
+  meaning_en: endowment of Jehovah
+  name_en: Zebadiah
+  orig: זְבַדְיָהוּ
+  ref: 代上8:17
+  strong: H2069H
+  translit: ze.vad.yah
+西巴第雅#比利亞:
+  match: exact
+  meaning_en: endowment of Jehovah
+  name_en: Zebadiah
+  orig: זְבַדְיָהוּ
+  ref: 代上8:15
+  strong: H2069G
+  translit: ze.vad.yah
+西布倫:
+  match: exact
+  meaning_en: exalted
+  name_en: Zebulun
+  orig: זְבוּלֻן
+  ref: 代上2:1
+  strong: H2074
+  translit: ze.vu.lun
+西布大:
+  match: exact
+  meaning_en: given
+  name_en: Zebudah
+  orig: זְבוּדָה
+  ref: 王下23:36
+  strong: H2080
+  translit: ze.vi.dah
+西庇太:
+  match: exact
+  meaning_en: ''
+  name_en: Zebedee
+  orig: Ζεβεδαῖος
+  ref: 太4:21
+  strong: G2199G
+  translit: Zebedaios
+西底家:
+  match: exact
+  meaning_en: Jehovah is righteous
+  name_en: Zedekiah
+  orig: צִדְקִיָּ֫הוּ
+  ref: 代上3:15
+  strong: H6667H
+  translit: tsid.qiy.yah
+西底家#約雅敬:
+  match: exact
+  meaning_en: Jehovah is righteous
+  name_en: Zedekiah
+  orig: צִדְקִיָּ֫הוּ
+  ref: 代上3:16
+  strong: H6667I
+  translit: tsid.qiy.yah
+西弗:
+  match: exact
+  meaning_en: battlement
+  name_en: Ziph
+  orig: זִיף
+  ref: 代上4:16
+  strong: H2128J
+  translit: ziph
+西拉:
+  match: exact
+  meaning_en: the prince breathed
+  name_en: Serah
+  orig: שֶׂ֫רַח, שָׂ֫רַח
+  ref: 代上7:30
+  strong: H8294
+  translit: se.rach
+西拉希雅:
+  match: exact
+  meaning_en: Jehovah has risen
+  name_en: Zerahiah
+  orig: זְרַחְיָה
+  ref: 代上6:6
+  strong: H2228G
+  translit: ze.rach.yah
+西提利:
+  match: exact
+  meaning_en: protection of Jehovah
+  name_en: Zithri
+  orig: סִתְרִי
+  ref: 出6:22
+  strong: H5644
+  translit: sit.ri
+西比亞:
+  match: exact
+  meaning_en: roe
+  name_en: Zibiah
+  orig: צִבְיָה
+  ref: 王下12:1
+  strong: H6645
+  translit: tsiv.y.yah
+西法:
+  match: exact
+  meaning_en: battlement
+  name_en: Ziphah
+  orig: זִיפָה
+  ref: 代上4:16
+  strong: H2129
+  translit: zi.phah
+西烈:
+  match: exact
+  meaning_en: fear
+  name_en: Sered
+  orig: סֶ֫רֶד
+  ref: 創46:14
+  strong: H5624
+  translit: se.red
+西珥:
+  match: exact
+  meaning_en: hairy
+  name_en: Seir
+  orig: שֵׂעִיר
+  ref: 代上1:38
+  strong: H8165B
+  translit: se.ir
+西番雅:
+  match: exact
+  meaning_en: Jehovah has treasured
+  name_en: Zephaniah
+  orig: צְפַנְיָהוּ
+  ref: 代上6:36
+  strong: H6846J
+  translit: tse.phan.yah
+西番雅#古示:
+  match: exact
+  meaning_en: Jehovah has treasured
+  name_en: Zephaniah
+  orig: צְפַנְיָהוּ
+  ref: 番1:1
+  strong: H6846H
+  translit: tse.phan.yah
+西緬:
+  match: exact
+  meaning_en: heard
+  name_en: Simeon or Shimeon
+  orig: שִׁמְעוֹן
+  ref: 代上2:1
+  strong: H8095G
+  translit: shim.on
+西緬#路3:30:
+  match: exact
+  meaning_en: ''
+  name_en: Simeon
+  orig: Συμεών
+  ref: 路3:30
+  strong: G4826H
+  translit: Sumeōn
+西羅非哈:
+  match: exact
+  meaning_en: first-born
+  name_en: Zelophehad
+  orig: צְלׇפְחָד
+  ref: 代上7:15
+  strong: H6765
+  translit: tse.loph.chad
+西美:
+  match: exact
+  meaning_en: ''
+  name_en: Semein
+  orig: Σεμεΐ
+  ref: 路3:26
+  strong: G4584
+  translit: Semei
+西萊雅:
+  match: exact
+  meaning_en: Jehovah is ruler
+  name_en: Seraiah
+  orig: שְׂרָיָהוּ
+  ref: 代上6:14
+  strong: H8304H
+  translit: se.ra.yah
+西萊雅#亞薛:
+  match: exact
+  meaning_en: Jehovah is ruler
+  name_en: Seraiah
+  orig: שְׂרָיָהוּ
+  ref: 代上4:35
+  strong: H8304K
+  translit: se.ra.yah
+西萊雅#基納斯:
+  match: exact
+  meaning_en: Jehovah is ruler
+  name_en: Seraiah
+  orig: שְׂרָיָהוּ
+  ref: 代上4:13
+  strong: H8304J
+  translit: se.ra.yah
+西萊雅#希勒家:
+  match: exact
+  meaning_en: Jehovah is ruler
+  name_en: Seraiah
+  orig: שְׂרָיָהוּ
+  ref: 尼11:11
+  strong: H8304H
+  translit: se.ra.yah
+西門#加略人:
+  match: exact
+  meaning_en: ''
+  name_en: Simon
+  orig: Σίμων
+  ref: 約6:71
+  strong: G4613L
+  translit: Simōn
+西門#古利奈人:
+  match: exact
+  meaning_en: ''
+  name_en: Simon
+  orig: Σίμων
+  ref: 可15:21
+  strong: G4613J
+  translit: Simōn
+西門#彼得:
+  match: exact
+  meaning_en: ''
+  name_en: Simon
+  orig: Σίμων
+  ref: 太4:18
+  strong: G4613O
+  translit: Simōn
+西門#耶穌的弟兄:
+  match: exact
+  meaning_en: ''
+  name_en: Simon?
+  orig: Σίμων
+  ref: 可6:3
+  strong: G4613H
+  translit: Simōn
+西頓:
+  match: exact
+  meaning_en: hunting
+  name_en: Sidon
+  orig: צִידוֹן
+  ref: 代上1:13
+  strong: H6721G
+  translit: tsi.don
+西鹿:
+  match: exact
+  meaning_en: branch
+  name_en: Serug
+  orig: שְׂרוּג
+  ref: 代上1:26
+  strong: H8286
+  translit: se.rug
+該亞法:
+  match: exact
+  meaning_en: ''
+  name_en: Caiaphas
+  orig: Καϊάφας
+  ref: 約18:13
+  strong: G2533G
+  translit: Kaiaphas
+該南:
+  match: exact
+  meaning_en: possession
+  name_en: Kenan
+  orig: קֵינָן
+  ref: 代上1:2
+  strong: H7018
+  translit: qe.nan
+該南#亞法撒:
+  match: exact
+  meaning_en: ''
+  name_en: Cainan
+  orig: Καϊνάν, Καϊνάμ
+  ref: 路3:36
+  strong: G2536G
+  translit: Kainan, Kainam
+該隱:
+  match: exact
+  meaning_en: possession
+  name_en: Cain
+  orig: קַ֫יִן
+  ref: 創4:1
+  strong: H7014B
+  translit: qa.yin
+謁巴力:
+  match: exact
+  meaning_en: with Baal
+  name_en: Ethbaal
+  orig: אֶתְבַּ֫עַל
+  ref: 王上16:31
+  strong: H0856
+  translit: et.ba.al
+謝拉:
+  match: exact
+  meaning_en: rising
+  name_en: Zerah or Zarah
+  orig: זֶ֫רַח
+  ref: 代上2:4
+  strong: H2226I
+  translit: ze.rach
+謝拉#亞大雅:
+  match: exact
+  meaning_en: rising
+  name_en: Zerah or Zarah
+  orig: זֶ֫רַח
+  ref: 代上6:41
+  strong: H2226J
+  translit: ze.rach
+謝拉#易多:
+  match: exact
+  meaning_en: rising
+  name_en: Zerah or Zarah
+  orig: זֶ֫רַח
+  ref: 代上6:21
+  strong: H2226J
+  translit: ze.rach
+謝拉#波斯拉人:
+  match: exact
+  meaning_en: rising
+  name_en: Zerah or Zarah
+  orig: זֶ֫רַח
+  ref: 創36:33
+  strong: H2226H
+  translit: ze.rach
+謝拉#流珥:
+  match: exact
+  meaning_en: rising
+  name_en: Zerah or Zarah
+  orig: זֶ֫רַח
+  ref: 代上1:37
+  strong: H2226G
+  translit: ze.rach
+謝拉#西緬:
+  match: exact
+  meaning_en: rising
+  name_en: Zerah or Zarah
+  orig: זֶ֫רַח
+  ref: 代上4:24
+  strong: H2226L
+  translit: ze.rach
+買南:
+  match: exact
+  meaning_en: ''
+  name_en: Menna
+  orig: Μαϊνάν
+  ref: 路3:31
+  strong: G3104
+  translit: Mainan
+賓哈:
+  match: exact
+  meaning_en: 'in circumcision: in weakness (by mixture)'
+  name_en: Bimhal
+  orig: בִּמְהָל
+  ref: 代上7:33
+  strong: H1118
+  translit: bim.hal
+赫:
+  match: exact
+  meaning_en: terror
+  name_en: Heth
+  orig: חֵת
+  ref: 代上1:13
+  strong: H2845
+  translit: chet
+路得:
+  match: exact
+  meaning_en: friendship
+  name_en: Ruth
+  orig: רוּת
+  ref: 得1:4
+  strong: H7327
+  translit: rut
+路德:
+  match: exact
+  meaning_en: strife
+  name_en: Lud or Lydia
+  orig: לוּד
+  ref: 代上1:17
+  strong: H3865
+  translit: lud
+辟拉:
+  match: exact
+  meaning_en: troubled
+  name_en: Bilhah
+  orig: בִּלְהָה
+  ref: 創29:29
+  strong: H1090A
+  translit: bil.hah
+辟罕:
+  match: exact
+  meaning_en: their decrepitude
+  name_en: Bilhan
+  orig: בִּלְהָן
+  ref: 代上1:42
+  strong: H1092G
+  translit: bil.han
+迦勒#耶孚尼:
+  match: exact
+  meaning_en: dog
+  name_en: Caleb
+  orig: כָּלֵב
+  ref: 代上4:15
+  strong: H3612G
+  translit: ka.lev
+迦南:
+  match: exact
+  meaning_en: ''
+  name_en: Canaan
+  orig: כְּנַ֫עַן
+  ref: 代上1:8
+  strong: H3667G
+  translit: ke.na.an
+迦卸:
+  match: aligned
+  meaning_en: shearer
+  name_en: Gazez
+  orig: גָּזֵז
+  ref: 代上2:46
+  strong: H1495H
+  translit: ga.zez
+迦含:
+  match: exact
+  meaning_en: burning
+  name_en: Gaham
+  orig: גַּ֫חַם
+  ref: 創22:24
+  strong: H1514
+  translit: ga.cham
+迦坦:
+  match: exact
+  meaning_en: a burnt valley
+  name_en: Gatam
+  orig: גַּעְתָּם
+  ref: 代上1:36
+  strong: H1609
+  translit: ga.tam
+迦底:
+  match: exact
+  meaning_en: my fortune
+  name_en: Gadi
+  orig: גָּדִי
+  ref: 王下15:14
+  strong: H1424
+  translit: ga.di
+迦得:
+  match: exact
+  meaning_en: troop
+  name_en: Gad
+  orig: גָּד
+  ref: 代上2:2
+  strong: H1410G
+  translit: gad
+迦拉#9:15:
+  match: exact
+  meaning_en: influential
+  name_en: Galal
+  orig: גָּלָל
+  ref: 代上9:15
+  strong: H1559G
+  translit: ga.lal
+迦拉#耶杜頓:
+  match: exact
+  meaning_en: influential
+  name_en: Galal
+  orig: גָּלָל
+  ref: 代上9:16
+  strong: H1559H
+  translit: ga.lal
+迦米#亞干之父:
+  match: exact
+  meaning_en: my vineyard
+  name_en: Carmi
+  orig: כַּרְמִי
+  ref: 代上2:7
+  strong: H3756H
+  translit: kar.mi
+迦米#流便:
+  match: exact
+  meaning_en: my vineyard
+  name_en: Carmi
+  orig: כַּרְמִי
+  ref: 代上5:3
+  strong: H3756G
+  translit: kar.mi
+迦謝:
+  match: aligned
+  meaning_en: shearer
+  name_en: Gazez
+  orig: גָּזֵז
+  ref: 代上2:46
+  strong: H1495G
+  translit: ga.zez
+閃:
+  match: exact
+  meaning_en: name
+  name_en: Shem
+  orig: שֵׁם
+  ref: 代上1:4
+  strong: H8035
+  translit: shem
+阿何利巴瑪#亞拿:
+  match: exact
+  meaning_en: ''
+  name_en: Oholibamah
+  orig: אָהֳלִֽיבָמָה֙
+  ref: 創36:2
+  strong: H0173
+  translit: '''o.ho.li.va.Mah'
+阿南:
+  match: exact
+  meaning_en: vigorous
+  name_en: Onam
+  orig: אוֹנָם
+  ref: 代上1:40
+  strong: H0208G
+  translit: o.nam
+阿南#耶拉篾:
+  match: exact
+  meaning_en: vigorous
+  name_en: Onam
+  orig: אוֹנָם
+  ref: 代上2:26
+  strong: H0208H
+  translit: o.nam
+阿尼安:
+  match: exact
+  meaning_en: I am the people
+  name_en: Aniam
+  orig: אֲנִיעָם
+  ref: 代上7:19
+  strong: H0593
+  translit: a.ni.am
+阿抹:
+  match: exact
+  meaning_en: speaker
+  name_en: Omar
+  orig: אוֹמָר
+  ref: 代上1:36
+  strong: H0201
+  translit: o.mar
+阿拿尼:
+  match: exact
+  meaning_en: my cloud
+  name_en: Anani
+  orig: עֲנָנִי
+  ref: 代上3:24
+  strong: H6054
+  translit: a.na.ni
+阿斐:
+  match: exact
+  meaning_en: reducing to ashes
+  name_en: Ophir
+  orig: אוֹפִיר
+  ref: 代上1:23
+  strong: H0211G
+  translit: o.phir
+阿斯尼:
+  match: exact
+  meaning_en: my ear (hearing)
+  name_en: Ozni
+  orig: אׇזְנִי
+  ref: 民26:16
+  strong: H0244A
+  translit: oz.ni
+阿蘇巴#示利希的女兒:
+  match: exact
+  meaning_en: forsaken
+  name_en: Azubah
+  orig: עֲזוּבָה
+  ref: 王上22:42
+  strong: H5806G
+  translit: a.zu.vah
+阿谷#以利約乃:
+  match: exact
+  meaning_en: insidious
+  name_en: Akkub
+  orig: עַקּוּב
+  ref: 代上3:24
+  strong: H6126G
+  translit: aq.quv
+阿轄:
+  match: exact
+  meaning_en: united
+  name_en: Ohad
+  orig: אֹ֫הַד
+  ref: 創46:10
+  strong: H0161
+  translit: o.had
+阿連:
+  match: exact
+  meaning_en: cedar
+  name_en: Oren
+  orig: אֹ֫רֶן
+  ref: 代上2:25
+  strong: H0767
+  translit: o.ren
+阿鮮:
+  match: exact
+  meaning_en: I shall hasten them
+  name_en: Ozem
+  orig: אֹ֫צֶם
+  ref: 代上2:15
+  strong: H0684G
+  translit: o.tsem
+阿鮮#耶拉篾:
+  match: exact
+  meaning_en: I shall hasten them
+  name_en: Ozem
+  orig: אֹ֫צֶם
+  ref: 代上2:25
+  strong: H0684H
+  translit: o.tsem
+陀亞:
+  match: exact
+  meaning_en: lowly
+  name_en: Toah
+  orig: תּוֹחַ
+  ref: 代上6:34
+  strong: H8430
+  translit: to.ach
+陀拉:
+  match: exact
+  meaning_en: worm
+  name_en: Tola
+  orig: תּוֹלָע
+  ref: 代上7:1
+  strong: H8439G
+  translit: to.la
+陀迦瑪:
+  match: exact
+  meaning_en: thou wilt break her
+  name_en: Togarmah
+  orig: תֹּגַרְמָה
+  ref: 代上1:6
+  strong: H8425G
+  translit: to.gar.mah
+雅乃:
+  match: exact
+  meaning_en: whom Jehovah answers
+  name_en: Jaanai
+  orig: יַעֲנַי
+  ref: 代上5:12
+  strong: H3285
+  translit: ya.a.nay
+雅代:
+  match: exact
+  meaning_en: ''
+  name_en: Jahdai
+  orig: יַהְדַּי
+  ref: 代上2:47
+  strong: H3056
+  translit: yeh.day
+雅倫:
+  match: exact
+  meaning_en: Jehovah lodges
+  name_en: Jalon
+  orig: יָלוֹן
+  ref: 代上4:17
+  strong: H3210
+  translit: ya.lon
+雅八:
+  match: exact
+  meaning_en: stream of water
+  name_en: Jabal
+  orig: יָבָל
+  ref: 創4:20
+  strong: H2989
+  translit: ya.val
+雅列:
+  match: exact
+  meaning_en: descent
+  name_en: Jered or Jared
+  orig: יֶ֫רֶד
+  ref: 代上1:2
+  strong: H3382G
+  translit: ye.red
+雅列#米列:
+  match: exact
+  meaning_en: descent
+  name_en: Jered or Jared
+  orig: יֶ֫רֶד
+  ref: 代上4:18
+  strong: H3382H
+  translit: ye.red
+雅利:
+  match: exact
+  meaning_en: God waits
+  name_en: Jahleel
+  orig: יַחְלְאֵל
+  ref: 創46:14
+  strong: H3177
+  translit: yach.le.el
+雅利西:
+  match: exact
+  meaning_en: whom Jehovah nourishes
+  name_en: Jaresiah
+  orig: יַעֲרֶשְׁיָה
+  ref: 代上8:27
+  strong: H3298
+  translit: ya.a.resh.yah
+雅各#亞勒腓的兒子:
+  match: exact
+  meaning_en: ''
+  name_en: James
+  orig: Ἰάκωβος
+  ref: 太10:3
+  strong: G2385H
+  translit: Iakōbos
+雅各#小雅各:
+  match: exact
+  meaning_en: ''
+  name_en: James
+  orig: Ἰάκωβος
+  ref: 可15:40
+  strong: G2385I
+  translit: Iakōbos
+雅各#耶穌的弟兄:
+  match: exact
+  meaning_en: ''
+  name_en: James
+  orig: Ἰάκωβος
+  ref: 可6:3
+  strong: G2385I
+  translit: Iakōbos
+雅各#西庇太:
+  match: exact
+  meaning_en: ''
+  name_en: James
+  orig: Ἰάκωβος
+  ref: 太4:21
+  strong: G2385G
+  translit: Iakōbos
+雅各#路6:16:
+  match: exact
+  meaning_en: ''
+  name_en: James
+  orig: Ἰάκωβος
+  ref: 路6:16
+  strong: G2385J
+  translit: Iakōbos
+雅各#馬但:
+  match: exact
+  meaning_en: ''
+  name_en: Jacob
+  orig: Ἰακώβ
+  ref: 太1:15
+  strong: G2384G
+  translit: Iakōb
+雅哈:
+  match: exact
+  meaning_en: He will snatch up
+  name_en: Jahath
+  orig: יַ֫חַת
+  ref: 代上6:43
+  strong: H3189I
+  translit: ya.chat
+雅哈#利亞雅:
+  match: exact
+  meaning_en: He will snatch up
+  name_en: Jahath
+  orig: יַ֫חַת
+  ref: 代上4:2
+  strong: H3189G
+  translit: ya.chat
+雅哈#立尼:
+  match: exact
+  meaning_en: He will snatch up
+  name_en: Jahath
+  orig: יַ֫חַת
+  ref: 代上6:20
+  strong: H3189I
+  translit: ya.chat
+雅哈悉:
+  match: fuzzy
+  meaning_en: beheld of God
+  name_en: Jahaziel
+  orig: יַחֲזִיאֵל
+  ref: 代下20:14
+  strong: H3166J
+  translit: ya.cha.zi.el
+雅哥巴:
+  match: exact
+  meaning_en: toward Jacob
+  name_en: Jaakobah
+  orig: יַעֲקֹ֫בָה
+  ref: 代上4:36
+  strong: H3291
+  translit: ya.a.qo.vah
+雅大:
+  match: exact
+  meaning_en: He knows
+  name_en: Jada
+  orig: יָדָע
+  ref: 代上2:28
+  strong: H3047
+  translit: ya.da
+雅完:
+  match: exact
+  meaning_en: Ionia
+  name_en: Javan
+  orig: יָוָן
+  ref: 代上1:5
+  strong: H3120G
+  translit: ya.van
+雅希細拉:
+  match: exact
+  meaning_en: whom God leads back
+  name_en: Jahzerah
+  orig: יַחְזֵרָה
+  ref: 代上9:12
+  strong: H3170
+  translit: yach.ze.rah
+雅干:
+  match: exact
+  meaning_en: troublesome
+  name_en: Jachan
+  orig: יַעְכָּן
+  ref: 代上5:13
+  strong: H3275
+  translit: ya.kan
+雅弗:
+  match: exact
+  meaning_en: opened
+  name_en: Japheth
+  orig: יֶ֫פֶת
+  ref: 代上1:4
+  strong: H3315
+  translit: ye.phet
+雅弗勒:
+  match: exact
+  meaning_en: he will deliver
+  name_en: Japhlet
+  orig: יַפְלֵט
+  ref: 代上7:32
+  strong: H3310
+  translit: yaph.let
+雅憫:
+  match: exact
+  meaning_en: right hand
+  name_en: Jamin
+  orig: יָמִין
+  ref: 代上2:27
+  strong: H3226H
+  translit: ya.min
+雅憫#西緬:
+  match: exact
+  meaning_en: right hand
+  name_en: Jamin
+  orig: יָמִין
+  ref: 代上4:24
+  strong: H3226G
+  translit: ya.min
+雅拿:
+  match: exact
+  meaning_en: ''
+  name_en: Jannai
+  orig: Ἰαννά
+  ref: 路3:24
+  strong: G2388
+  translit: Ianna
+雅斤:
+  match: exact
+  meaning_en: He will establish
+  name_en: Jachin
+  orig: יָכִין
+  ref: 代上9:10
+  strong: H3199I
+  translit: ya.khin
+雅斤#西緬:
+  match: exact
+  meaning_en: He will establish
+  name_en: Jachin
+  orig: יָכִין
+  ref: 創46:10
+  strong: H3199G
+  translit: ya.khin
+雅比斯:
+  match: exact
+  meaning_en: sorrow
+  name_en: Jabez
+  orig: יַעְבֵּץ
+  ref: 代上4:9
+  strong: H3258H
+  translit: ya.bets
+雅疊:
+  match: exact
+  meaning_en: my unity is God
+  name_en: Jahdiel
+  orig: יַחְדִּיאֵל
+  ref: 代上5:24
+  strong: H3164
+  translit: yach.di.el
+雅立:
+  match: exact
+  meaning_en: he contends
+  name_en: Jarib
+  orig: יָרִיב
+  ref: 代上4:24
+  strong: H3402I
+  translit: ya.riv
+雅米勒:
+  match: exact
+  meaning_en: He will reign
+  name_en: Jamlech
+  orig: יַמְלֵךְ
+  ref: 代上4:34
+  strong: H3230
+  translit: yam.lekh
+雅薛:
+  match: exact
+  meaning_en: forming
+  name_en: Jezer
+  orig: יֵ֫צֶר
+  ref: 代上7:13
+  strong: H3337
+  translit: ye.tser
+雅蘭:
+  match: exact
+  meaning_en: concealed
+  name_en: Jaalam
+  orig: יַעְלָם
+  ref: 代上1:35
+  strong: H3281
+  translit: ya.lam
+雅買:
+  match: exact
+  meaning_en: pleasant
+  name_en: Jibsam
+  orig: יִבְשָׂם
+  ref: 代上7:2
+  strong: H3005
+  translit: yiv.sam
+雅述:
+  match: exact
+  meaning_en: he will return
+  name_en: Jashub
+  orig: יָשׁוּב
+  ref: 代上7:1
+  strong: H3437H
+  translit: ya.shuv
+雅金:
+  match: exact
+  meaning_en: He will raise
+  name_en: Jakim
+  orig: יָקִים
+  ref: 代上8:19
+  strong: H3356G
+  translit: ya.qim
+雅非亞:
+  match: exact
+  meaning_en: shining
+  name_en: Japhia
+  orig: יָפִיעַ
+  ref: 代上3:7
+  strong: H3309I
+  translit: ya.phi.a
+非尼哈:
+  match: exact
+  meaning_en: mouth of brass
+  name_en: Phinehas
+  orig: פִּינְחָס
+  ref: 代上6:4
+  strong: H6372G
+  translit: pin.chas
+革羅罷:
+  match: fuzzy
+  meaning_en: ''
+  name_en: Clopas
+  orig: Κλωπᾶς
+  ref: 約19:25
+  strong: G2832
+  translit: Klōpas
+革舜:
+  match: exact
+  meaning_en: foreigner
+  name_en: Gershom
+  orig: גֵּרְשֹׁם
+  ref: 出2:22
+  strong: H1647G
+  translit: ge.re.shom
+革順:
+  match: exact
+  meaning_en: exile
+  name_en: Gershon or Gershom
+  orig: גֵּרְשׁוֹן
+  ref: 代上6:1
+  strong: H1648
+  translit: ge.re.shon
+音利:
+  match: exact
+  meaning_en: eloquent
+  name_en: Imri
+  orig: אִמְרִי
+  ref: 代上9:4
+  strong: H0566G
+  translit: im.ri
+音拉:
+  match: exact
+  meaning_en: bitterness
+  name_en: Imrah
+  orig: יִמְרָה
+  ref: 代上7:36
+  strong: H3236
+  translit: yim.rah
+音拿:
+  match: exact
+  meaning_en: right hand
+  name_en: Imna or Imnah or Jimnah
+  orig: יִמְנָה
+  ref: 代上7:30
+  strong: H3232G
+  translit: yim.nah
+音那:
+  match: exact
+  meaning_en: He will restrain
+  name_en: Imna
+  orig: יִמְנָע
+  ref: 代上7:35
+  strong: H3234
+  translit: yim.na
+音麥:
+  match: exact
+  meaning_en: he hath said
+  name_en: Immer
+  orig: אִמֵּר
+  ref: 代上9:12
+  strong: H0564G
+  translit: im.mer
+馬但:
+  match: exact
+  meaning_en: ''
+  name_en: Matthan
+  orig: Ματθάν
+  ref: 太1:15
+  strong: G3157
+  translit: Matthan
+馬利亞#伯大尼:
+  match: exact
+  meaning_en: ''
+  name_en: Mary
+  orig: Μαρία
+  ref: 約11:1
+  strong: G3137J
+  translit: Maria
+馬利亞#耶穌的母親:
+  match: exact
+  meaning_en: ''
+  name_en: Mary
+  orig: Μαρία
+  ref: 太1:16
+  strong: G3137G
+  translit: Maria
+馬利亞#路10:39:
+  match: exact
+  meaning_en: ''
+  name_en: Mary
+  orig: Μαρία
+  ref: 路10:39
+  strong: G3137J
+  translit: Maria
+馬大:
+  match: exact
+  meaning_en: ''
+  name_en: Martha
+  orig: Μάρθα
+  ref: 約11:1
+  strong: G3136
+  translit: Martha
+馬大#路10:38:
+  match: exact
+  meaning_en: ''
+  name_en: Martha
+  orig: Μάρθα
+  ref: 路10:38
+  strong: G3136
+  translit: Martha
+魯孚#西門之子:
+  match: exact
+  meaning_en: ''
+  name_en: Rufus
+  orig: Ῥοῦφος
+  ref: 可15:21
+  strong: G4504G
+  translit: Rhouphos
+麥基#路3:24:
+  match: exact
+  meaning_en: ''
+  name_en: Melchi
+  orig: Μελχί
+  ref: 路3:24
+  strong: G3197G
+  translit: Melchi
+麥基#路3:28:
+  match: exact
+  meaning_en: ''
+  name_en: Melchi
+  orig: Μελχί
+  ref: 路3:28
+  strong: G3197H
+  translit: Melchi
+麥基舒亞:
+  match: exact
+  meaning_en: my king is wealth
+  name_en: Malchishua or Melchishua
+  orig: מַלְכִּישׁוּעַ
+  ref: 代上8:33
+  strong: H4444
+  translit: mal.ki.shu.a
+麥西:
+  match: exact
+  meaning_en: land of the Copts
+  name_en: Egypt
+  orig: מִצְרַ֫יִם
+  ref: 代上1:8
+  strong: H4714H
+  translit: mits.ra.yim
+黑勒施:
+  match: exact
+  meaning_en: mute
+  name_en: Heresh
+  orig: חֶ֫רֶשׁ
+  ref: 代上9:15
+  strong: H2792
+  translit: che.resh

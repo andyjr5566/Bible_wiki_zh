@@ -175,6 +175,24 @@ describe('家譜資料閘門', () => {
     }
   });
 
+  it('名字字義：主線人物幾乎都有原文，經文說明的引句真的在經文裡', () => {
+    const spine = new Set(Object.values(DATA.spine.lines).flat());
+    const withOrig = [...spine].filter((id) => DATA.persons.find((person) => person.id === id)?.nameMeaning?.orig);
+    expect(withOrig.length / spine.size).toBeGreaterThan(0.9);
+    let withMeaning = 0;
+    for (const person of DATA.persons) {
+      const info = person.nameMeaning;
+      if (!info) continue;
+      if (info.meaningEn) { withMeaning += 1; expect(info.meaningZh, person.id).toBeTruthy(); }
+      for (const item of info.scripture) {
+        const text = lookupVerses(item.ref).map((line) => line.text ?? '').join('');
+        expect(text.includes(item.quote), `${person.id} ${item.ref}`).toBe(true);
+      }
+    }
+    expect(withMeaning).toBeGreaterThan(1000);
+    expect(DATA.persons.find((person) => person.id === '塞特')?.nameMeaning?.meaningZh).toBe('補償');
+  });
+
   it('經文範圍展開：同章、逗號、跨章', () => {
     const verses = { '創1:30': 'a', '創1:31': 'b', '創2:1': 'c', '創2:2': 'd', '創3:5': 'e' };
     expect(expandVerseRefs('創1:30-31', verses)).toEqual(['創1:30', '創1:31']);

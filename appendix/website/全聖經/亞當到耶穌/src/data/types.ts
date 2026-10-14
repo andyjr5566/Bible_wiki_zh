@@ -31,6 +31,17 @@ export interface MaybeSamePerson {
   refs: string[];
 }
 
+export interface NameMeaning {
+  orig: string;
+  translit: string;
+  strong: string;
+  nameEn: string;
+  meaningEn: string;
+  meaningZh: string;
+  ref: string;
+  scripture: Array<{ ref: string; quote: string }>;
+}
+
 export interface Person {
   id: string;
   name: string;
@@ -55,6 +66,7 @@ export interface Person {
   notes?: string[];
   imported?: unknown;
   anchor?: string | null;
+  nameMeaning?: NameMeaning | null;
   [key: string]: unknown;
 }
 
