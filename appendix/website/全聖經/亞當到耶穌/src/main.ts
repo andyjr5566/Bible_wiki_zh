@@ -250,7 +250,7 @@ const toolbar = createToolbar(data, {
   setLine(value) { line = value; canvas.setLine(value); },
   restartTour() { page = 'tree'; applyPage(); tour.start(); },
   zoom: (factor) => canvas.zoom(factor),
-  fit: () => canvas.fitSpine(true),
+  fit: () => canvas.fitSpine(true, true),
   getLine: () => line,
   getPage: () => page,
 });

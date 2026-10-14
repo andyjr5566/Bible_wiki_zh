@@ -11,7 +11,7 @@ export interface CanvasApi {
   focusPerson(id: string, animate?: boolean): void;
   focusIds(ids: string[], animate?: boolean, minZoom?: number, anchorId?: string): void;
   focusTourIds(ids: string[], avoid: HTMLElement | null, animate?: boolean): Promise<boolean>;
-  fitSpine(animate?: boolean): void;
+  fitSpine(animate?: boolean, collapse?: boolean): void;
   fitAll(animate?: boolean): void;
   zoom(factor: number): void;
   select(id: string | null): void;
@@ -136,6 +136,28 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     const minZoom = Math.max(0.02, Math.min(rect.height / Math.max(1, bounds.height), rect.width / Math.max(1, bounds.width)) * 0.85);
     const zoom = zoomOf(currentBox);
     return zoom / Math.max(minZoom, Math.min(4, zoom / ratio));
+  };
+  // 使用者自己縮小到會進入總覽時，先把展開的旁支全部收起來：
+  // 展開的旁支會把主線的間距撐得很長，總覽裡只剩一條拉得老長的線。
+  // 以畫面中央最近的主線人物為準，收起來之後鏡頭仍然停在他附近。
+  const collapseForOverview = (box: ViewBox): ViewBox => {
+    const main = layout.nodes.filter((node) => node.mainline);
+    const centerY = box.y + box.height / 2;
+    const anchor = main.reduce<LayoutNode | null>((best, node) => !best || Math.abs(node.y - centerY) < Math.abs(best.y - centerY) ? node : best, null);
+    const offset = anchor ? centerY - anchor.y : 0;
+    const anchorId = anchor?.id;
+    expanded.clear();
+    refresh(false);
+    const moved = anchorId ? nodeFor(anchorId) : undefined;
+    return moved ? { ...box, y: moved.y + offset - box.height / 2 } : box;
+  };
+  const setUserViewBox = (box: ViewBox): boolean => {
+    if (expanded.size && !overviewMode && zoomOf(box) < OVERVIEW_ZOOM) {
+      setViewBox(collapseForOverview(box));
+      return true;
+    }
+    setViewBox(box);
+    return false;
   };
   const zoomTo = (x: number, y: number, zoom: number, animate = true) => {
     const rect = svg.getBoundingClientRect();
@@ -706,7 +728,8 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     if (!overviewMode && ![...nodeEls.values()].some((element) => element.style.display !== 'none')) fitSpine(animate);
   }
 
-  const fitSpine = (animate = false) => {
+  const fitSpine = (animate = false, collapse = false) => {
+    if (collapse && expanded.size) { expanded.clear(); refresh(false); }
     const main = layout.nodes.filter((node) => node.mainline);
     if (!main.length) return;
     const x0 = Math.min(...main.map((node) => node.x - node.width / 2));
@@ -819,7 +842,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       const x = currentBox.x + currentBox.width / 2;
       const y = currentBox.y + currentBox.height / 2;
       const ratio = clampRatio(1 / factor);
-      setViewBox({ x: x - currentBox.width * ratio / 2, y: y - currentBox.height * ratio / 2, width: currentBox.width * ratio, height: currentBox.height * ratio });
+      setUserViewBox({ x: x - currentBox.width * ratio / 2, y: y - currentBox.height * ratio / 2, width: currentBox.width * ratio, height: currentBox.height * ratio });
     },
     select(id) { selected = id; refresh(); },
     setTourHighlights(ids, currentId, edges) {
@@ -951,7 +974,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     const focus = worldPoint(event.clientX, event.clientY);
     const factor = Math.max(0.72, Math.min(1.4, Math.exp(-event.deltaY * 0.0015)));
     const ratio = clampRatio(1 / factor);
-    setViewBox({
+    setUserViewBox({
       x: focus.x - (focus.x - currentBox.x) * ratio,
       y: focus.y - (focus.y - currentBox.y) * ratio,
       width: currentBox.width * ratio,
@@ -983,7 +1006,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       const width = Math.max(150, Math.min(pinchStart.box.width * scale, layout.bounds.width * 2));
       const height = pinchStart.box.height * width / pinchStart.box.width;
       const r = width / pinchStart.box.width;
-      setViewBox({ x: focusX - (focusX - pinchStart.box.x) * r, y: focusY - (focusY - pinchStart.box.y) * r, width, height });
+      if (setUserViewBox({ x: focusX - (focusX - pinchStart.box.x) * r, y: focusY - (focusY - pinchStart.box.y) * r, width, height })) pinchStart = null;
       didDrag = true;
       return;
     }
@@ -1003,7 +1026,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
   };
   svg.addEventListener('pointerup', endPointer);
   svg.addEventListener('pointercancel', endPointer);
-  svg.addEventListener('dblclick', () => fitSpine(true));
+  svg.addEventListener('dblclick', () => fitSpine(true, true));
   svg.addEventListener('keydown', (event) => {
     if (event.key === '+' || event.key === '=') api.zoom(1.2);
     if (event.key === '-') api.zoom(0.84);
