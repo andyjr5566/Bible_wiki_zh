@@ -4,13 +4,15 @@ chapter: 6
 stages:
   m3:
     round: 2
-    revision: 2
-    sha256: 1125c815ffbbc8fd6c9a52af4136789c258b7e21288c9cd6f4de52435c1280e2
+    revision: 3
+    sha256: 2a8075d279299158b880dcfb7560ff963ab5a41659456a7ca3006e9d1d09be81
+    verdict_sha: 2a8075d279299158b880dcfb7560ff963ab5a41659456a7ca3006e9d1d09be81
     claude: revised
     reviewer_status: pass
     reviewer_agent: antigravity
     review_attempts: 2
-    forced_pass: false
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
     review_history:
     - attempt: 1
       reviewer: antigravity
@@ -24,6 +26,12 @@ stages:
       verdict: pass
       findings_count: 0
       late_recorded: false
+    - attempt: null
+      reviewer: antigravity
+      sha256: 2a8075d279299158b880dcfb7560ff963ab5a41659456a7ca3006e9d1d09be81
+      verdict: forced_pass
+      forced_pass: true
+    forced_from_findings_count: 0
     hash_inputs:
     - entry_content/來十一30 因信城牆倒塌.yaml
     - entry_content/歸耶和華為聖的金銀銅鐵.yaml
@@ -32,16 +40,15 @@ stages:
     - entry_content/耶利哥城陷落的考古與年代之爭.yaml
     - entry_content/重建耶利哥的咒詛.yaml
     - entry_content/關得嚴緊（sa.gar）.yaml
-    verdict_sha: 1125c815ffbbc8fd6c9a52af4136789c258b7e21288c9cd6f4de52435c1280e2
-    findings_count: 0
+    own_sha256: 2a8075d279299158b880dcfb7560ff963ab5a41659456a7ca3006e9d1d09be81
   m6:
-    round: 1
-    revision: 1
-    sha256: a78e9f5a4e189dbacbfc46cb9665ac8a354d63436cf086a40ad9f2e12437044a
-    claude: ready
+    round: 2
+    revision: 2
+    sha256: 6718b4accac0461f266cf03f514b7ccbfb6d1fcb56dfda5da5bc814a77b14941
+    claude: revised
     reviewer_status: pass
     reviewer_agent: antigravity
-    review_attempts: 1
+    review_attempts: 2
     forced_pass: false
     review_history:
     - attempt: 1
@@ -50,19 +57,27 @@ stages:
       verdict: pass
       findings_count: 0
       late_recorded: false
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 6718b4accac0461f266cf03f514b7ccbfb6d1fcb56dfda5da5bc814a77b14941
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
     hash_inputs:
-    - parent:m3=1125c815ffbbc8fd6c9a52af4136789c258b7e21288c9cd6f4de52435c1280e2
+    - parent:m3=2a8075d279299158b880dcfb7560ff963ab5a41659456a7ca3006e9d1d09be81
     - chapter_content.yaml
-    verdict_sha: a78e9f5a4e189dbacbfc46cb9665ac8a354d63436cf086a40ad9f2e12437044a
+    own_sha256: e3287ac4402f9c1e00eebd545aac5be83fca6bc97eb67e21fdcea15ddf65816c
+    verdict_sha: 6718b4accac0461f266cf03f514b7ccbfb6d1fcb56dfda5da5bc814a77b14941
+    thread_id: c6d81ee3-4632-4dc5-8af1-b360ce511d9b
     findings_count: 0
   link_updates:
-    round: 1
-    revision: 1
-    sha256: 04038747e18b927d3ffbb33ca0ecfbaa29839a05135657ff61422ad9b7943773
-    claude: ready
+    round: 2
+    revision: 2
+    sha256: 8b0cf944ef081e568267f1ca338cf927d1c0cbd1b0f54d4f80f55fcf636944a4
+    claude: revised
     reviewer_status: pass
     reviewer_agent: antigravity
-    review_attempts: 1
+    review_attempts: 2
     forced_pass: false
     review_history:
     - attempt: 1
@@ -71,9 +86,17 @@ stages:
       verdict: pass
       findings_count: 0
       late_recorded: false
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 8b0cf944ef081e568267f1ca338cf927d1c0cbd1b0f54d4f80f55fcf636944a4
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
     hash_inputs:
-    - parent:m3=1125c815ffbbc8fd6c9a52af4136789c258b7e21288c9cd6f4de52435c1280e2
-    - parent:m6=a78e9f5a4e189dbacbfc46cb9665ac8a354d63436cf086a40ad9f2e12437044a
+    - parent:m3=2a8075d279299158b880dcfb7560ff963ab5a41659456a7ca3006e9d1d09be81
+    - parent:m6=6718b4accac0461f266cf03f514b7ccbfb6d1fcb56dfda5da5bc814a77b14941
     - link_updates.yaml
-    verdict_sha: 04038747e18b927d3ffbb33ca0ecfbaa29839a05135657ff61422ad9b7943773
+    own_sha256: 5327da7eaa45d3b9db0449a448d50fb50cfef1960f68d71db2ad7513c3963171
+    verdict_sha: 8b0cf944ef081e568267f1ca338cf927d1c0cbd1b0f54d4f80f55fcf636944a4
+    thread_id: e7a35e4c-4f1d-41fe-87d9-05c270fab058
     findings_count: 0
