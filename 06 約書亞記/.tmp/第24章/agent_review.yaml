@@ -1,0 +1,83 @@
+version: 2
+book: 約書亞記
+chapter: 24
+stages:
+  m3:
+    round: 1
+    revision: 1
+    sha256: 4e615ac655b413be00c94793befb1dd9f66e4c671bf1a7fcedd22958ea39c54c
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 4e615ac655b413be00c94793befb1dd9f66e4c671bf1a7fcedd22958ea39c54c
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - entry_content/你們不能事奉耶和華.yaml
+    - entry_content/基比亞（以法蓮）.yaml
+    - entry_content/示劍更新盟約.yaml
+    - entry_content/立石為證.yaml
+    - entry_content/迦實山.yaml
+    own_sha256: 4e615ac655b413be00c94793befb1dd9f66e4c671bf1a7fcedd22958ea39c54c
+    verdict_sha: 4e615ac655b413be00c94793befb1dd9f66e4c671bf1a7fcedd22958ea39c54c
+    thread_id: 71fc5c3d-3ebc-4679-8d69-bddcc57865a4
+    findings_count: 0
+  m6:
+    round: 2
+    revision: 2
+    sha256: 53662a7a3b83eb4a693ee879dee07747d8e6df87118b44656d31de691d135a8a
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: c60d266c2706b670056bac6a0c59020604e3aa14f76529d2b27d4ce0778b1462
+      verdict: changes_required
+      findings_count: 1
+      late_recorded: false
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 53662a7a3b83eb4a693ee879dee07747d8e6df87118b44656d31de691d135a8a
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    thread_id: 3f7c5afa-d9a3-4e95-96ae-e9e2cbf99dd6
+    hash_inputs:
+    - parent:m3=4e615ac655b413be00c94793befb1dd9f66e4c671bf1a7fcedd22958ea39c54c
+    - chapter_content.yaml
+    own_sha256: dd54baababbd02affb31b36c3d539184a6672ca239e094ef70f8a158bb578c82
+    verdict_sha: 53662a7a3b83eb4a693ee879dee07747d8e6df87118b44656d31de691d135a8a
+    findings_count: 0
+  link_updates:
+    round: 1
+    revision: 1
+    sha256: 2478c60e0f9eb10acea2b78b0bb68288fd0e92c851309f4d6e7646137f59a9f8
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 2478c60e0f9eb10acea2b78b0bb68288fd0e92c851309f4d6e7646137f59a9f8
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=4e615ac655b413be00c94793befb1dd9f66e4c671bf1a7fcedd22958ea39c54c
+    - parent:m6=53662a7a3b83eb4a693ee879dee07747d8e6df87118b44656d31de691d135a8a
+    - link_updates.yaml
+    own_sha256: f12e27c224c6962d9a410e62c7150b0e74aafa7cd521ea111175a6d829bbbc1d
+    verdict_sha: 2478c60e0f9eb10acea2b78b0bb68288fd0e92c851309f4d6e7646137f59a9f8
+    thread_id: fb3efd21-80eb-441b-a9f9-76a7944b51da
+    findings_count: 0

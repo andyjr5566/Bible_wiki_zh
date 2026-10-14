@@ -1,0 +1,645 @@
+book: 約書亞記
+chapter: 24
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。正確形狀：從前幾章講起、把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；本章的細節與引句留在本章 summary，主題發展不再重述一遍。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 示劍（城）
+  path: link_folder/地點/示劍（城）.md
+  summary: 第1節約書亞將眾支派聚集在示劍，第25節在示劍立約，第32節約瑟的骸骨葬在示劍。CT 與 GT《綜合解讀》說示劍是南北大道與東西大道的交叉口，亞伯拉罕首先在這裡築壇，雅各在這裡清除偶像，以色列人在這裡宣告祝福和咒詛；GT《研經資料》說約書亞記中以色列人通常在吉甲、示羅集會，這裡卻在示劍；GT 華爾頓說示劍是巴拉塔遺址，有二十四個文化層，攻取名單裡沒有示劍，以色列人可能沒有經過重大爭戰就取得這城；GT《聖經精讀本》說自族長時代以來示劍一直被視為聖地；KC 說這裡可視為一處聖所。
+  relation: 書20、21 示劍是逃城和利未人的城，本章約書亞在這裡帶百姓立約，又在這裡埋葬約瑟。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development: keep
+- title: 以色列的長老
+  path: link_folder/文化/以色列的長老.md
+  summary: 第1節約書亞召了以色列的長老、族長、審判官並官長；第31節那些知道耶和華為以色列人所行諸事的長老還在的時候，以色列人事奉耶和華。CT 說這些長老比約書亞年輕最少二十或二十五歲；GT《研經資料》說第1節所招聚的領袖種類與書23:2 一致，第31節暗示長老死後就是士師記所描述的混亂；BH 說約書亞死後仍在的領袖延續了那一代敬虔的影響。
+  relation: 書23 長老領受約書亞的囑咐，本章他們延續了約書亞那一代的事奉。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 15
+    - 16
+    definition: keep
+    development: keep
+- title: 審判官
+  path: link_folder/原文/審判官.md
+  summary: 第1節「審判官」。CT 說審判官可能以數城或區域為單位，主持審理案件並下達判決；BH 說審判官施行公義。
+  relation: 書8:33、書23:2 之後，審判官又一次被召到約書亞面前。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 11
+    - 12
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:16
+      - 約書亞記:8
+      - 約書亞記:23
+      - 約書亞記:24
+- title: 以色列人的官長
+  path: link_folder/人物/以色列人的官長.md
+  summary: 第1節「官長」。CT 說官長輔佐審判官並執行其斷案；BH 說官長執行大會的決定。
+  relation: 書23 官長聽約書亞的囑咐，本章他們在示劍站在神面前。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development: keep
+- title: 他拉
+  path: link_folder/人物/他拉.md
+  summary: 第2節「亞伯拉罕和拿鶴的父親他拉，住在大河那邊事奉別神」。CT 給字義「駐紮地」；GT《聖經精讀本》說他拉一家所事奉的別神就是米所波大米人普遍崇拜的月神；GT《綜合解讀》《研經資料》說吾珥和哈蘭都是敬拜月神的中心；GT《研經資料》說「別的」和「神」都是複數，表示列祖本來是多神信仰；GT 華爾頓說亞伯蘭一家崇拜不少神明，這證明亞伯拉罕並沒有承襲古代一神信仰的傳統；BH 說以色列的記述從亞伯拉罕蒙召以前、他拉的家開始。
+  relation: 創11 他拉帶家人出吾珥到哈蘭，本章約書亞說他在大河那邊事奉別神。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 拿鶴
+  path: link_folder/人物/拿鶴.md
+  summary: 第2節「亞伯拉罕和拿鶴的父親他拉」。CT 給字義「哼氣」，說拿鶴是亞伯蘭的兄弟（創11:26）；GT《聖經精讀本》說只論及亞伯拉罕與拿鶴，是因為長子哈蘭很早就過世了；GT《丁道爾》《研經資料》說創31:53 拉班指著拿鶴的神起誓，GT《丁道爾》並說拉班留在大河那邊的哈蘭，繼續那種宗教。
+  relation: 本章約書亞追溯以色列的來歷，拿鶴是起點那一家的成員。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 伯拉大河
+  path: link_folder/地點/伯拉大河.md
+  summary: 第2、3、14、15節四次說「大河那邊」。CT 說大河指幼發拉底河，大河那邊即指迦勒底的吾珥；GT《啟導本》《串珠》說指幼發拉底河流域的米所波大米；GT《雷氏》說即幼發拉底河北面和東面的土地；GT《丁道爾》說兩次重複提到大河那邊別具意義，大河是亞伯蘭祖先的家園；BH 說神從那遙遠之地呼召亞伯拉罕。
+  relation: 書1:4 大河是應許之地的北界，本章大河那邊是列祖事奉別神的地方。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:15
+      - 申命記:1
+      - 申命記:11
+      - 約書亞記:1
+      - 約書亞記:24
+- title: 亞伯拉罕
+  path: link_folder/人物/亞伯拉罕.md
+  summary: 第2-3節「我將你們的祖宗亞伯拉罕從大河那邊帶來，領他走遍迦南全地，又使他的子孫眾多」。CT 說「走遍迦南全地」指神曾叫亞伯拉罕縱橫走遍這地（創13:17），並說不是亞伯拉罕有信心、有智慧脫離偶像，而是神主動揀選他；GT《聖經精讀本》說被尊為信心之父的亞伯拉罕當初也是偶像崇拜者；GT《丁道爾》說神在以色列當中的工作，始自讓亞伯蘭單單來敬拜神；KC 說約書亞提起亞伯拉罕的偶像崇拜，是要指出偶像也在他們的本性裡；BH 說亞伯拉罕蒙揀選是出於神的恩典，不是人的功德。
+  relation: 創世記的亞伯拉罕，在約書亞記最後一章被當作神主動揀選的開端。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 26
+    - 27
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 亞伯拉罕在示劍築壇
+  path: link_folder/歷史/亞伯拉罕在示劍築壇.md
+  summary: 評論第1、26節。CT、GT《綜合解讀》《研經資料》說亞伯拉罕進入迦南後首先在示劍為神築壇，神在這裡第一次與他立約（創12:6-7），約書亞選在示劍召集百姓正是為此；CT 說第26節的橡樹極可能就是同一棵，耶和華的聖所大概指亞伯拉罕所築的祭壇；KC 說耶和華在那裡向亞伯拉罕顯現，亞伯拉罕在那裡築壇（創12:6-7）；BH 說這地方叫人想起神第一次向亞伯拉罕應許這地。
+  relation: 創12 亞伯拉罕在示劍築壇，本章約書亞在同一個地方帶百姓立約。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 以撒
+  path: link_folder/人物/以撒.md
+  summary: 第3-4節「把以撒賜給他；又把雅各和以掃賜給以撒」。CT 給字義「他笑」，說「他的子孫」在此特指經由撒拉所生的子孫；KC 說神賜下以撒，要藉著他成就應許；BH 說以撒是應許之子。
+  relation: 本章約書亞回顧歷史，以撒是神賜給亞伯拉罕的那一個兒子。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 23
+    - 24
+    definition: keep
+    development: keep
+- title: 雅各
+  path: link_folder/人物/雅各.md
+  summary: 第4節「後來雅各和他的子孫下到埃及去了」，第32節雅各從前用一百塊銀子向哈抹的子孫買了示劍那塊地。CT 說雅各一家因飢荒去投靠當時做埃及首相的約瑟；GT《聖經精讀本》說雅各的人生充滿了許多失敗，神卻用人的軟弱成就了自己的旨意；GT《綜合解讀》把第23節和雅各在示劍要全家除掉外邦神相比（創35:2、4）。
+  relation: 創33、35 雅各在示劍買地、除掉外邦神，本章兩件事都回到示劍。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 34
+    - 35
+    definition: keep
+    development: keep
+- title: 以掃
+  path: link_folder/人物/以掃.md
+  summary: 第4節「又把雅各和以掃賜給以撒，將西珥山賜給以掃為業」。CT 給字義「多毛的」，說賜給以掃為業指供他們居住生活（申2:5）；KC 說神把西珥山賜給以掃，好讓迦南地完全歸雅各的後裔；BH 說以掃是以東人的祖先。
+  relation: 申2 不可侵犯以掃的地業，本章約書亞回顧時再提神把西珥山賜給以掃。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development: keep
+- title: 西珥
+  path: link_folder/地點/西珥.md
+  summary: 第4節「將西珥山賜給以掃為業」。CT 給字義「長滿粗毛的」，說西珥山指死海南邊的多山丘陵地帶；BH 說以東人的領土在死海的南方和東南方（申2:4-5）。
+  relation: 本章西珥山是神賜給以掃的地業。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 埃及
+  path: link_folder/地點/埃及.md
+  summary: 第4-7節雅各下到埃及、神降災與埃及、領他們出埃及，第14節在埃及所事奉的神，第17節從埃及地的為奴之家領出來，第32節從埃及帶來約瑟的骸骨。GT《綜合解讀》說在埃及所事奉的是代表先進文明的偶像，又說在場的以色列人出埃及時許多已經出生，只是還不到二十歲，所以都經歷過十災和過紅海；BH 說埃及先是避難所，後來成了為奴之地。
+  relation: 本章約書亞回顧下埃及與出埃及，又要百姓除掉在埃及所事奉的神。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 37
+    - 38
+    definition: keep
+    development: keep
+- title: 摩西
+  path: link_folder/人物/摩西.md
+  summary: 第5節「我差遣摩西、亞倫」。CT 給字義「被拉的」；BH 說摩西幼年蒙保守、在法老家中長大，奉神命站在埃及的君王面前。
+  relation: 本章約書亞回顧歷史時，摩西是神差遣去領百姓出埃及的人。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 84
+    - 85
+    definition: keep
+    development: keep
+- title: 亞倫
+  path: link_folder/人物/亞倫.md
+  summary: 第5節「我差遣摩西、亞倫」，第33節「亞倫的兒子以利亞撒也死了」。CT 給字義「帶來光的人」；BH 說亞倫是摩西的代言人和祭司。
+  relation: 本章亞倫的名字出現在歷史回顧裡，也出現在他兒子以利亞撒的死訊裡。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 43
+    - 44
+    definition: keep
+    development: keep
+- title: 十災
+  path: link_folder/歷史/十災.md
+  summary: 第5節「照我在埃及中所行的降災與埃及」。CT 說「降災與埃及」原文意指神對埃及的十大打擊（出7-11）；BH 說十災是神對埃及壓迫以色列的公義審判。
+  relation: 出7-11 的十災，在本章收成「降災與埃及」一句。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:33
+      - 申命記:6
+      - 申命記:11
+      - 約書亞記:24
+- title: 海（紅海）
+  path: link_folder/地點/海（紅海）.md
+  summary: 第6-7節「他們就到了紅海；埃及人帶領車輛馬兵追趕你們列祖到紅海」「又使海水淹沒埃及人」。CT 說車輛馬兵包括六百輛特選的車（出14:7），代表埃及的精銳軍力，「中間黑暗」使埃及追兵不能迫近以色列人；BH 說過海標誌著以色列與埃及的統治決然分開。
+  relation: 出14 過紅海，在本章是神第二段作為的頂點。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:10
+      - 出埃及記:14
+      - 出埃及記:15
+      - 民數記:33
+      - 申命記:1
+      - 申命記:11
+      - 約書亞記:2
+      - 約書亞記:24
+- title: 曠野
+  path: link_folder/地點/曠野.md
+  summary: 第7節「你們在曠野也住了許多年日」。CT 說許多年日共達四十年之久（書5:6）；GT《研經資料》說因著悖逆被神懲罰在曠野漂流四十年（民14:33-34）；BH 說曠野成了管教、試驗和每日倚靠耶和華的地方。
+  relation: 民數記的四十年曠野，在本章只用一句「住了許多年日」帶過。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 12
+    - 13
+    definition: keep
+    development: keep
+- title: 亞摩利人
+  path: link_folder/人物/亞摩利人.md
+  summary: 第8、11、12、15、18節約但河東亞摩利人所住之地、亞摩利人的二王、亞摩利人的神、住此地的亞摩利人。CT 說亞摩利人所住之地指西宏和噩的領地，亞摩利人的神泛指迦南七族所敬拜的偶像；GT《綜合解讀》說所住這地的亞摩利人的神代表現實利益的偶像；GT《研經資料》說亞摩利人的二王可能指西宏和噩，七十士譯本作十二王；BH 說亞摩利人是迦南人口中難以對付的一部分。
+  relation: 本章亞摩利人出現五次，從河東的仇敵到百姓可能去事奉的神。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 22
+    - 23
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 巴勒
+  path: link_folder/人物/巴勒.md
+  summary: 第9-10節「摩押王西撥的兒子巴勒起來攻擊以色列人」「我便救你們脫離巴勒的手」。CT 給字義「破壞者」，說故事記在民22-24；GT《丁道爾》說耶弗他在士11:25 否認巴勒曾攻擊以色列人，或許是一種反諷的說法，講到巴勒雇巴蘭來咒詛，就等於已經耗盡了他作戰的力量；BH 說巴勒不能用平常的軍力勝過以色列，就去求屬靈的力量。
+  relation: 民22-24 巴勒召巴蘭，本章約書亞說神救他們脫離巴勒的手。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:22
+      - 民數記:23
+      - 民數記:24
+      - 約書亞記:24
+- title: 巴蘭（比珥的兒子）
+  path: link_folder/人物/巴蘭（比珥的兒子）.md
+  summary: 第9-10節「召了比珥的兒子巴蘭來咒詛你們。我不肯聽巴蘭的話，所以他倒為你們連連祝福」。CT 給字義「非我民」，說「連連祝福」前後共有四次轉變咒詛為祝福；GT《研經資料》說「連連祝福」是 SH 1109 出現兩次；GT《丁道爾》說神克服了先知和他咒詛的力量，把它變為祂子民的祝福，因此也是救了他們；KC 說在巴蘭的祝福裡聽見耶和華作王；BH 連到申23:5。
+  relation: 民22-24 巴蘭的故事，本章收成神「不肯聽巴蘭的話」。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 耶利哥
+  path: link_folder/地點/耶利哥.md
+  summary: 第11節「你們過了約但河，到了耶利哥；耶利哥人……都與你們爭戰」。CT 說耶利哥地處東西南北大道的交匯點，自古即為兵家必爭之地；GT《丁道爾》說第一回合在耶利哥的得勝乃是以後勝利的象徵，耶利哥人或許是指該城的一些領袖；BH 說耶利哥關上城門抵擋以色列。
+  relation: 書6 耶利哥陷落，本章約書亞說耶利哥人也與他們爭戰。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 21
+    - 22
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 比利洗人
+  path: link_folder/人物/比利洗人.md
+  summary: 第11節「比利洗人」。CT 給字義「屬於某一村莊」，說他們居住在迦南地中部，與迦南人相鄰（創13:7）；GT《丁道爾》說這張國家清單和書3:10 相同。
+  relation: 書3:10 神應許要從以色列人面前趕出的七族，本章約書亞說神已經把他們交在以色列人手裡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development: keep
+- title: 迦南人
+  path: link_folder/人物/迦南人.md
+  summary: 第11節「迦南人」。CT 說他們以含的兒子迦南取名（創12:6），居住在迦南地西部谷地和沿海一帶；GT《丁道爾》說這張國家清單和書3:10 相同。
+  relation: 書3:10 神應許要從以色列人面前趕出的七族，本章約書亞說神已經把他們交在以色列人手裡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 20
+    - 21
+    definition: keep
+    development: keep
+- title: 赫人
+  path: link_folder/人物/赫人.md
+  summary: 第11節「赫人」。CT 給字義「恐懼」，說他們比亞伯拉罕較早定居於迦南地，人多勢大，擁有大片土地（書1:4）。
+  relation: 書3:10 神應許要從以色列人面前趕出的七族，本章約書亞說神已經把他們交在以色列人手裡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 12
+    - 13
+    definition: keep
+    development: keep
+- title: 革迦撒人
+  path: link_folder/人物/革迦撒人.md
+  summary: 第11節「革迦撒人」。CT 給字義「外邦人行近」，說是含的兒子迦南的子孫中的一族（創10:6、15-16）。
+  relation: 書3:10 神應許要從以色列人面前趕出的七族，本章約書亞說神已經把他們交在以色列人手裡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 希未人
+  path: link_folder/歷史/希未人.md
+  summary: 第11節「希未人」。CT 給字義「村民」，說相信也是迦南子孫中的一族（創10:17）。
+  relation: 書3:10 神應許要從以色列人面前趕出的七族，本章約書亞說神已經把他們交在以色列人手裡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 耶布斯人
+  path: link_folder/人物/耶布斯人.md
+  summary: 第11節「耶布斯人」。CT 給字義「被踐踏，打穀場」，說是耶路撒冷的原住民（書15:63）。
+  relation: 書3:10 神應許要從以色列人面前趕出的七族，本章約書亞說神已經把他們交在以色列人手裡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development: keep
+- title: 黃蜂
+  path: link_folder/原文/黃蜂.md
+  summary: 第12節「我打發黃蜂飛在你們前面，將亞摩利人的二王從你們面前攆出，並不是用你的刀，也不是用你的弓」。CT 說「黃蜂」乃寓意，表明從神來的驚恐；GT《丁道爾》《研經資料》列出埃及、戰爭中的昆蟲、驚駭幾種說法，認為驚駭較能解釋出15:14-16、書2:9-11 等處對仇敵的描述；GT《雷氏》說可能是實在的，也可能是比喻；GT《串珠》說是寓意，表明神的幫助；GT《聖經精讀本》說這應驗了出23:28、申7:20，按字面理解較穩妥；GT《綜合解讀》說「黃蜂 Zirah」與「埃及 Mizraim」發音相近，可能是雙關語，指劫掠迦南地的埃及軍隊；BH 說可能是真的災害、驚恐或神引起的慌亂。
+  relation: 出23:28、申7:20 神應許打發黃蜂，本章約書亞說神已經這樣做了。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 敬畏神
+  path: link_folder/神學/敬畏神.md
+  summary: 第14節「現在你們要敬畏耶和華，誠心實意地事奉他」。CT 說「誠心實意」指正直的存心和忠實的意念；GT《研經資料》說「敬畏」是懼怕、敬畏、害怕，「誠心實意地」是完全的忠實可靠；BH 說敬畏耶和華是智慧的開端。
+  relation: 書4:24 立石是要叫人永遠敬畏耶和華，本章約書亞以敬畏耶和華開始他的勸勉。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 16
+    - 17
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:6
+      - 約書亞記:4
+      - 約書亞記:24
+- title: 事奉與作奴僕同一字根（a.vad）
+  path: link_folder/原文/事奉與作奴僕同一字根（a.vad）.md
+  summary: '第14-24節「事奉」反覆出現，第31節以色列人事奉耶和華。STEP 第19節為 la./''a.Vod（H5647H，a.vad: to serve: minister）；CT 說「事奉」在第14-15節共提到七次，表示委身的服事；GT《丁道爾》《研經資料》說七次中四次指以色列現今的一代，兩次提到列祖在大河那邊所事奉的神，約書亞以自己和他的家作為總結；GT《綜合解讀》說在埃及為奴的人沒有選擇所要事奉之神的自由；CT〔話中之光〕說人不是事奉神，就是事奉偶像，並沒有第三條道路。'
+  relation: 申命記用同一字根說為奴與事奉，本章約書亞要百姓從列祖的別神轉來事奉耶和華。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 除掉外邦神
+  path: link_folder/神學/除掉外邦神.md
+  summary: 第14、23節「將你們列祖在大河那邊和在埃及所事奉的神除掉」「你們現在要除掉你們中間的外邦神，專心歸向耶和華」。CT 說「除掉」重在指從心裡除掉偶像假神的影響力；GT《綜合解讀》說雅各在示劍要求全家除掉外邦神，他們立刻交出神像（創35:2、4），約書亞在示劍提出同樣的要求，百姓卻只回答「我們必事奉耶和華」，可能暗示有些人沒有徹底清除偶像；GT《聖經精讀本》說約書亞在世時，百姓中似乎也有私藏偶像的人；KC 說約書亞要他們除掉外邦神來證明誠意，後來證明他們沒有這樣做；BH 連到創35:2-4。
+  relation: 創35 雅各在示劍除掉外邦神，本章約書亞在示劍提出同樣的要求。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 聖潔
+  path: link_folder/神學/聖潔.md
+  summary: 第19節「因為他是聖潔的神」。STEP 為 'E.lo.Him ke.do.Shim（H430G＋H6918G，形容詞是複數形）；CT 給「聖潔的」字義是神聖的；GT《研經資料》說 SH 6918 有「分離」的意思，聖潔與神性可以劃上同義（撒上2:2）；BH 說耶和華全然純淨、公義，與一切假神分別。
+  relation: 本章約書亞以神的聖潔說明百姓為何不能隨便事奉祂。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 忌邪的神
+  path: link_folder/神學/忌邪的神.md
+  summary: 第19節「是忌邪的神」。STEP 為 'el- ka.No'（H410G＋H7072）；CT 給「忌邪的」字義是嫉妒的；GT《研經資料》說是指丈夫希望妻子忠貞的那種熱情，SH 7072 這個字聖經僅出現兩次，另一次在鴻1:2；BH 說神不與列國的神分享百姓的忠誠，如同妻子的忠貞屬於丈夫（出20:5；34:14）。
+  relation: 出20、34 神自稱忌邪的神，本章約書亞用它說明百姓不能事奉耶和華的理由。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 律例（choq）
+  path: link_folder/原文/律例（choq）.md
+  summary: '第25節「在示劍為他們立定律例典章」。STEP 為 chok（H2706G，choq: statute: decree）與 u./mish.Pat（H4941G）；CT 說「律例」指律法，是神向人的要求，「典章」指審判；GT《聖經精讀本》說「律例」指一般的規條或義務，「典章」指具有法律意義的律法，出15:25 將相同的希伯來語譯成「律例、典章」，約書亞是重申了摩西的律法；BH 連到出15:25。'
+  relation: 申命記反覆說律例典章，本章約書亞在示劍為百姓立定。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 律法書放在約櫃旁
+  path: link_folder/主題/律法書放在約櫃旁.md
+  summary: 第26節「約書亞將這些話都寫在神的律法書上」。STEP 為 be./Se.fer to.Rat 'E.lo.Him（H5612H＋H8451＋H430G）；CT 說「神的律法書」指摩西所寫、放在約櫃旁的律法書（申31:26）；KC 說約書亞認真看待百姓的應許，把所說的寫在神的律法書上；BH 說約書亞把這次立約加進交託給全國的神聖記錄。
+  relation: 申31 摩西寫下律法書放在約櫃旁，本章約書亞在神的律法書上寫下示劍的約。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 摩利橡樹
+  path: link_folder/背景/摩利橡樹.md
+  summary: '第26節「將一塊大石頭立在橡樹下耶和華的聖所旁邊」。STEP「橡樹」為 ha./''a.Lah（H427，al.lah: oak）；CT 說亞伯拉罕曾在示劍的橡樹下築壇敬拜神（創12:6-7），極可能指的是同一棵樹；GT《雷氏》說或譯作在耶和華看為聖的橡樹下面（比較創12:6）；GT《串珠》說指示劍旁神特別啟示自己的一塊地方；GT 華爾頓說稱聖的樹木是迦南人和早期以色列人祭儀場所的一部分；BH 連到創35:4。'
+  relation: 創12 亞伯蘭到示劍摩利橡樹，創35 雅各把外邦神藏在示劍的橡樹下，本章約書亞在橡樹下立石。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 宗主條約
+  path: link_folder/背景/宗主條約.md
+  summary: 評論第1-28節。GT《雷氏》說本章使用宗主條約的慣用形式，包括前言（第1-2節）、歷史序言（第2-13節）、主要條款（第14-24節），以及契約的抄寫和存放（第25-28節）；GT《啟導本》說約的內容有似古代宗主與屬國間的條約；GT《研經資料》說第2-13節先列出宗主對屬國仁慈的作為，第14-24節複述以色列的職責；GT《丁道爾》說條約的見證人通常是國家所拜的神祇。
+  relation: 出19-20、申命記的立約已用宗主條約的形式，本章示劍的約也照這形式寫。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 西乃之約
+  path: link_folder/神學/西乃之約.md
+  summary: 評論第25節。GT《啟導本》說約書亞帶領百姓與神重訂昔日在西奈山之約（出19:1）；GT《串珠》說這約大致與摩西經手立的約相同；GT《聖經精讀本》說約書亞是重申了摩西的律法；BH 說約書亞更新了藉摩西在西乃所賜的立約義務。
+  relation: 出19、24 在西乃立的約，本章在示劍重新確認。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 約書亞的告別辭
+  path: link_folder/事件/約書亞的告別辭.md
+  summary: 第1-28節約書亞第二次講話。GT《綜合解讀》說書23 是給領袖的贈言，本章是帶領全體百姓重新與神立約，目的都是讓百姓迎接他去世之後的屬靈爭戰；GT《聖經精讀本》說約書亞雖已在前章作了告別的囑託，仍將整個百姓召集在示劍，本章的內容更加嚴肅；KC 說約書亞在前一章對長老說話，本章要對全體百姓說話。
+  relation: 書23 是第一次告別，本章是第二次，最後以立約結束。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:23
+      - 約書亞記:24
+- title: 約書亞
+  path: link_folder/人物/約書亞.md
+  summary: 第1-28節約書亞召集眾支派、述說歷史、立約；第29-30節「耶和華的僕人嫩的兒子約書亞，正一百一十歲，就死了」，葬在亭拿西拉。CT 說「耶和華的僕人」這頭銜和摩西一樣（書1:1），第29-33節是別人追記的本書跋文；GT《丁道爾》《研經資料》說一百一十歲與約瑟去世的年紀一樣（創50:26）；GT《綜合解讀》說若他是80歲進迦南，就治理了百姓30年，神不再指定他的接班人；KC 說這是他第一次、也是唯一一次被稱為耶和華的僕人；BH 說這頭銜把他放在摩西旁邊。
+  relation: 出17 起出現的約書亞，在本章被稱為耶和華的僕人，結束一生。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 35
+    - 36
+    definition: keep
+    development: keep
+- title: 亭拿西拉
+  path: link_folder/地點/亭拿西拉.md
+  summary: '第30節約書亞葬在「他地業的境內，就是在以法蓮山地的亭拿西拉，在迦實山的北邊」。STEP「境內」為 bi/g.Vul（H1366H，ge.vul: border: area）；CT 給字義「豐盛的一部分」，說位於伯特利西北方約15公里、示羅西南方約19公里（書19:49-50）；GT《丁道爾》《研經資料》說「境內」的原文「邊界」在書12-19 分配地業中出現了五十多次，表示支派分配地業的時期也已結束，約書亞是最後一個去自己地業的人；BH 說士2:9 稱這地為亭拿希烈，大概是同一個名字的另一種寫法。'
+  relation: 書19:50 約書亞求得亭拿西拉，本章他葬在那裡。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:19
+      - 約書亞記:24
+- title: 以法蓮山地
+  path: link_folder/地點/以法蓮山地.md
+  summary: 第30、33節約書亞葬在以法蓮山地的亭拿西拉，以利亞撒葬在以法蓮山地的小山上。CT 說這以法蓮山地屬以法蓮支派或瑪拿西半支派；BH 說約書亞本是以法蓮支派的人，這中央山地也有會幕所在的示羅。
+  relation: 本章兩個葬禮都在以法蓮山地。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 約瑟骸骨葬於示劍
+  path: link_folder/歷史/約瑟骸骨葬於示劍.md
+  summary: 第32節「以色列人從埃及所帶來約瑟的骸骨，葬埋在示劍，就是在雅各從前用一百塊銀子向示劍的父親、哈抹的子孫所買的那塊地裡；這就作了約瑟子孫的產業」。CT 說約瑟死前留下遺言（創50:25），出埃及時一同帶走（出13:19），示劍分地時劃歸瑪拿西半個支派；GT《丁道爾》說這將約書亞記和創世記連起來，成為一個大時代的總結；GT《雷氏》說要使以色列人記得約瑟深信神賜下迦南地的應許；GT《啟導本》說約瑟骸骨的下葬和約書亞、以利亞撒的逝世，結束了寄居外邦和流浪曠野的時代；GT《聖經精讀本》說過了500年之後葬在迦南地，表明神的應許必會成就；KC 說約瑟骸骨的埋葬顯出這卷書並不是以死亡作結（來11:22）；BH 連到徒7:16。
+  relation: 創33 雅各買地、創50 約瑟遺言，到本章骸骨葬在那塊地裡。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 哈抹
+  path: link_folder/人物/哈抹.md
+  summary: 第32節「雅各從前用一百塊銀子向示劍的父親、哈抹的子孫所買的那塊地」。CT 給字義「公驢」；GT《串珠》說參創33:18-20。
+  relation: 創33-34 的哈抹，在本章只出現在約瑟葬地的來歷裡。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 客西達錢幣單位
+  path: link_folder/文化/客西達錢幣單位.md
+  summary: 第32節「一百塊銀子」。GT《研經資料》說「銀子」原文 SH 7192（qesitahs）是銀錢的單位，價值和重量不詳，這個字亦見於創33:19 及伯42:11；BH 說這價錢回到創世記所記的那次交易。
+  relation: 創33:19 雅各用一百客西達買地，本章在約瑟的葬地再提一次。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 以利亞撒
+  path: link_folder/人物/以利亞撒.md
+  summary: 第33節「亞倫的兒子以利亞撒也死了，就把他葬在他兒子非尼哈所得、以法蓮山地的小山上」。CT 說他是當時的大祭司，死後職任由他兒子非尼哈繼承；GT《啟導本》說他的逝世與約書亞的死、約瑟骸骨的下葬一同結束了寄居外邦和流浪曠野的時代；KC 說他的死表示這位忠心大祭司為得地而有的服事告一段落，下一卷書開始一個百姓不看重這服事的時代；BH 說他的死標誌一個時代的結束。
+  relation: 民20 他接續亞倫作大祭司，書14-21 他和約書亞一同分地，本章他也死了。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 19
+    - 20
+    definition: keep
+    development: keep
+- title: 非尼哈
+  path: link_folder/人物/非尼哈.md
+  summary: 第33節以利亞撒葬在「他兒子非尼哈所得、以法蓮山地的小山上」。CT 說非尼哈所得的小山可能是哥轄其餘的子孫分一小塊地給候任大祭司居住，以利亞撒死後大祭司的職任由非尼哈繼承；GT《綜合解讀》說神不再指定約書亞的接班人，而是安排非尼哈接替他父親作大祭司；BH 說非尼哈得了基比亞，表明祭司的世系延續下去。
+  relation: 書22 非尼哈帶首領去問罪，本章他接續父親成為大祭司。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep

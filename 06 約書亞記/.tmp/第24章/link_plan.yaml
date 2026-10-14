@@ -1,0 +1,487 @@
+book: 約書亞記
+chapter: 24
+A_use_directly: []
+B_needs_update:
+- name: 示劍（城）
+  suggested_type: 地點
+  evidence: 第1、25、32節聚集在示劍、在示劍立約、約瑟的骸骨葬埋在示劍；CT、GT《綜合解讀》：示劍是南北大道與東西大道的交叉口，亞伯拉罕首先在示劍築壇，雅各在示劍清除偶像，以色列人在示劍宣告祝福和咒詛；GT
+    華爾頓：巴拉塔遺址，二十四個文化層，攻取名單沒有示劍；GT《研經資料》：約書亞記中以色列人通常在吉甲、示羅集會，此處奇怪的是在示劍；KC：This is to
+    consider a sanctuary；BH：Shechem stood between Mount Ebal and Mount Gerizim
+  surfaces:
+  - phrase: 示劍
+    verses:
+    - 1
+    - 25
+  - phrase: 葬埋在示劍
+    verses:
+    - 32
+  match_type: exact
+  existing_title: 示劍（城）
+  existing_path: link_folder/地點/示劍（城）.md
+- name: 以色列的長老
+  suggested_type: 文化
+  evidence: 第1節「召了以色列的長老、族長、審判官，並官長來」，第31節「那些知道耶和華為以色列人所行諸事的長老還在的時候」；CT：長老年長且老練，被選作全民的代表；CT
+    第31節：他們的年齡比約書亞相差最少二十或二十五歲；GT《研經資料》：第24:1 所招聚的領袖種類與23:2 一致；BH：The leaders who remained
+    after Joshua's death preserved the godly influence
+  surfaces:
+  - phrase: 長老
+    verses:
+    - 1
+    - 31
+  match_type: exact
+  existing_title: 以色列的長老
+  existing_path: link_folder/文化/以色列的長老.md
+- name: 審判官
+  suggested_type: 原文
+  evidence: 第1節「審判官」；CT：可能以數城或區域為單位，主持審理案件並下達判決；BH：judges administered justice
+  match_type: exact
+  existing_title: 審判官
+  existing_path: link_folder/原文/審判官.md
+- name: 以色列人的官長
+  suggested_type: 人物
+  evidence: 第1節「官長」；CT：輔佐審判官並執行其斷案的下級首領；BH：officers carried out the decisions of the
+    assembly
+  match_type: exact
+  existing_title: 以色列人的官長
+  existing_path: link_folder/人物/以色列人的官長.md
+- name: 他拉
+  suggested_type: 人物
+  evidence: 第2節「亞伯拉罕和拿鶴的父親他拉，住在大河那邊事奉別神」；CT：「他拉」駐紮地；GT《精讀本》：他拉的家人所事奉的別神就是米所波大米人普遍崇拜的月神；GT《綜合解讀》《研經資料》：吾珥和哈蘭都是敬拜月神的中心；GT
+    華爾頓：亞伯蘭一家崇拜不少神明，證明亞伯拉罕沒有承襲古代一神信仰傳統；BH：Israel's account began before Abraham's
+    call, in the household of Terah
+  match_type: exact
+  existing_title: 他拉
+  existing_path: link_folder/人物/他拉.md
+- name: 拿鶴
+  suggested_type: 人物
+  evidence: 第2節「亞伯拉罕和拿鶴的父親他拉」；CT：「拿鶴」哼氣，是亞伯蘭的兄弟（創11:26）；GT《精讀本》：只論及亞伯拉罕與拿鶴，是因為長子哈蘭很早就過世了；GT《丁道爾》《研經資料》：創31:53
+    拉班指著拿鶴的神祇起誓
+  match_type: exact
+  existing_title: 拿鶴
+  existing_path: link_folder/人物/拿鶴.md
+- name: 伯拉大河
+  suggested_type: 地點
+  evidence: 第2、3、14、15節「大河那邊」；CT：『大河』指幼發拉底河，『大河那邊』即指迦勒底的吾珥；GT《啟導本》《串珠》：指幼發拉底河流域的米所波大米；GT《雷氏》：即幼發拉底河北面和東面的土地；GT《丁道爾》：兩次重複提到大河那邊別具意義，大河是指亞伯蘭祖先的家園；BH：beyond
+    the Euphrates
+  surfaces:
+  - phrase: 大河
+    verses:
+    - 2
+    - 3
+    - 14
+    - 15
+  match_type: exact
+  existing_title: 伯拉大河
+  existing_path: link_folder/地點/伯拉大河.md
+- name: 亞伯拉罕
+  suggested_type: 人物
+  evidence: 第2-3節「我將你們的祖宗亞伯拉罕從大河那邊帶來，領他走遍迦南全地，又使他的子孫眾多」；CT〔話中之光〕：不是亞伯拉罕有信心、有智慧脫離偶像，而是神主動揀選他；GT《精讀本》：被尊為信心之父的亞伯拉罕當初也是偶像崇拜者；GT《丁道爾》：神在以色列當中的工作，始自讓亞伯蘭單單來敬拜神；KC：That
+    God takes Abraham shows His election；BH：Abraham was chosen by God's grace rather
+    than human merit
+  match_type: exact
+  existing_title: 亞伯拉罕
+  existing_path: link_folder/人物/亞伯拉罕.md
+- name: 亞伯拉罕在示劍築壇
+  suggested_type: 歷史
+  evidence: 評論第1、26節；CT、GT《綜合解讀》《研經資料》《啟導本》：亞伯拉罕進入迦南地之後，首先在示劍為神築壇，神在這裡第一次與亞伯拉罕立約（創12:6-7）；CT：橡樹下極可能指同一棵樹，耶和華的聖所大概指亞伯拉罕所築的祭壇；KC：there
+    the LORD appeared to Abraham, and there Abraham built an altar（創12:6-7）；BH：The
+    location also recalled God's first promise of the land to Abraham
+  match_type: exact
+  existing_title: 亞伯拉罕在示劍築壇
+  existing_path: link_folder/歷史/亞伯拉罕在示劍築壇.md
+- name: 以撒
+  suggested_type: 人物
+  evidence: 第3-4節「把以撒賜給他；又把雅各和以掃賜給以撒」；CT：「以撒」他笑，『他的子孫』在此特指經由撒拉所生的子孫；KC：God grants
+    Isaac as the son in whom He will fulfill His promises；BH：Isaac was the child of
+    promise
+  match_type: exact
+  existing_title: 以撒
+  existing_path: link_folder/人物/以撒.md
+- name: 雅各
+  suggested_type: 人物
+  evidence: 第4、32節「後來雅各和他的子孫下到埃及去了」「雅各從前用一百塊銀子向示劍的父親、哈抹的子孫所買的那塊地」；CT：因飢荒而去投靠當時做埃及首相的約瑟；GT《精讀本》：雅各的人生充滿了許多失敗，神卻用人的軟弱成就了自己的旨意；BH：Jacob's
+    family entered Egypt during the famine through God's providential preservation
+    of Joseph
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 以掃
+  suggested_type: 人物
+  evidence: 第4節「又把雅各和以掃賜給以撒，將西珥山賜給以掃為業」；CT：「以掃」多毛的，賜給以掃為業指供他們居住生活（申2:5）；KC：He gives
+    Esau Mount Seir as an inheritance, so that the land of Canaan will be entirely
+    for the descendants of Jacob；BH：Esau became the father of the Edomites
+  match_type: exact
+  existing_title: 以掃
+  existing_path: link_folder/人物/以掃.md
+- name: 西珥
+  suggested_type: 地點
+  evidence: 第4節「將西珥山賜給以掃為業」；CT：「西珥」長滿粗毛的，西珥山指死海南邊的多山丘陵地帶；BH：whose territory lay south
+    and southeast of the Dead Sea（申2:4-5）
+  match_type: exact
+  existing_title: 西珥
+  existing_path: link_folder/地點/西珥.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 第4-7、14、17、32節下到埃及、降災與埃及、領你們列祖出埃及、在埃及所事奉的神、從埃及地的為奴之家領出來、從埃及所帶來約瑟的骸骨；CT：「埃及」兩個海峽；GT《綜合解讀》：在埃及所事奉的是代表先進文明的偶像；BH：Egypt
+    became both a place of refuge and, later, bondage
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 第5節「我差遣摩西、亞倫」；CT：「摩西」被拉的；BH：Moses, preserved in infancy and raised in
+    Pharaoh's household, stood before Egypt's ruler by God's command
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 第5、33節「我差遣摩西、亞倫」「亞倫的兒子以利亞撒也死了」；CT：「亞倫」帶來光的人；BH：Aaron served alongside
+    his brother as spokesman and priest
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 十災
+  suggested_type: 歷史
+  evidence: 第5節「照我在埃及中所行的降災與埃及」；CT：『降災與埃及』原文意指神對埃及的十大打擊（出7-11）；BH：God brought the
+    ten plagues upon Egypt as righteous judgment
+  surfaces:
+  - phrase: 降災
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 十災
+  existing_path: link_folder/歷史/十災.md
+- name: 海（紅海）
+  suggested_type: 地點
+  evidence: 第6-7節「他們就到了紅海；埃及人帶領車輛馬兵追趕你們列祖到紅海」「又使海水淹沒埃及人」；CT：車輛馬兵包括六百輛特選的車（出14:7），代表埃及的精銳軍力；BH：The
+    nation's passage through the sea marked a decisive separation from Egypt's rule
+  match_type: exact
+  existing_title: 海（紅海）
+  existing_path: link_folder/地點/海（紅海）.md
+- name: 曠野
+  suggested_type: 地點
+  evidence: 第7節「你們在曠野也住了許多年日」；CT：許多年日共達四十年之久（書5:6）；GT《研經資料》：因著悖逆被神懲罰在曠野漂流四十年（民14:33-34）；BH：The
+    wilderness became a place of discipline, testing, and daily dependence upon the
+    Lord
+  match_type: exact
+  existing_title: 曠野
+  existing_path: link_folder/地點/曠野.md
+- name: 亞摩利人
+  suggested_type: 人物
+  evidence: 第8、11、12、15、18節約但河東亞摩利人所住之地、亞摩利人的二王、亞摩利人的神、住此地的亞摩利人；CT：「亞摩利」山居者，亞摩利人所住之地指西宏和噩的領地，亞摩利人的神泛指迦南七族所敬拜的偶像；GT《綜合解讀》：所住這地的亞摩利人的神代表現實利益的偶像；GT《研經資料》：亞摩利人的二王可能指西宏和噩，七十士譯本作十二王；BH：The
+    Amorites represented a formidable part of the Canaanite population
+  match_type: exact
+  existing_title: 亞摩利人
+  existing_path: link_folder/人物/亞摩利人.md
+- name: 巴勒
+  suggested_type: 人物
+  evidence: 第9-10節「摩押王西撥的兒子巴勒起來攻擊以色列人」「我便救你們脫離巴勒的手」；CT：「巴勒」破壞者，故事記在民22-24；GT《丁道爾》：耶弗他在士11:25
+    否認巴勒曾攻擊以色列人，或許是反諷的說法；BH：Unable to overcome Israel by ordinary military strength,
+    Balak sought spiritual power against them
+  match_type: exact
+  existing_title: 巴勒
+  existing_path: link_folder/人物/巴勒.md
+- name: 巴蘭（比珥的兒子）
+  suggested_type: 人物
+  evidence: 第9-10節「召了比珥的兒子巴蘭來咒詛你們。我不肯聽巴蘭的話，所以他倒為你們連連祝福」；CT：「巴蘭」非我民，『連連祝福』前後共有四次轉變咒詛為祝福；GT《研經資料》：「連連祝福」是
+    SH 1109 出現兩次；GT《丁道爾》：神克服了先知和他咒詛的力量，把它變為祂子民的祝福；KC：we hear in the blessing of Balaam
+    about the kingship of the LORD；BH：Balaam came from Pethor near the Euphrates
+  surfaces:
+  - phrase: 巴蘭
+    verses:
+    - 9
+    - 10
+  match_type: exact
+  existing_title: 巴蘭（比珥的兒子）
+  existing_path: link_folder/人物/巴蘭（比珥的兒子）.md
+- name: 耶利哥
+  suggested_type: 地點
+  evidence: 第11節「你們過了約但河，到了耶利哥；耶利哥人……都與你們爭戰」；CT：「耶利哥」它的月亮；GT《丁道爾》：第一回合在耶利哥的得勝乃是以後勝利的象徵，耶利哥人或許是指該城的一些領袖；BH：Jericho
+    shut its gates and resisted Israel's advance
+  match_type: exact
+  existing_title: 耶利哥
+  existing_path: link_folder/地點/耶利哥.md
+- name: 比利洗人
+  suggested_type: 人物
+  evidence: 第11節「比利洗人」；CT：「比利洗」屬於某一村莊，居住在迦南地中部，與迦南人相鄰（創13:7）；GT《丁道爾》：這裡的國家清單和書3:10
+    相同
+  match_type: exact
+  existing_title: 比利洗人
+  existing_path: link_folder/人物/比利洗人.md
+- name: 迦南人
+  suggested_type: 人物
+  evidence: 第11節「迦南人」；CT：以含的兒子迦南取名的一族（創12:6），居住在迦南地西部谷地和沿海一帶；GT《丁道爾》：這裡的國家清單和書3:10
+    相同
+  match_type: exact
+  existing_title: 迦南人
+  existing_path: link_folder/人物/迦南人.md
+- name: 赫人
+  suggested_type: 人物
+  evidence: 第11節「赫人」；CT：「赫」恐懼，他們比亞伯拉罕較早定居於迦南地，人多勢大，擁有大片土地（書1:4）
+  match_type: exact
+  existing_title: 赫人
+  existing_path: link_folder/人物/赫人.md
+- name: 革迦撒人
+  suggested_type: 人物
+  evidence: 第11節「革迦撒人」；CT：「革迦撒」外邦人行近，是含的兒子迦南的子孫中的一族（創10:6、15-16）
+  match_type: exact
+  existing_title: 革迦撒人
+  existing_path: link_folder/人物/革迦撒人.md
+- name: 希未人
+  suggested_type: 歷史
+  evidence: 第11節「希未人」；CT：「希未」村民，相信也是迦南的子孫中的一族（創10:17）
+  match_type: exact
+  existing_title: 希未人
+  existing_path: link_folder/歷史/希未人.md
+- name: 耶布斯人
+  suggested_type: 人物
+  evidence: 第11節「耶布斯人」；CT：「耶布斯」被踐踏、打穀場，是耶路撒冷的原住民（書15:63）
+  match_type: exact
+  existing_title: 耶布斯人
+  existing_path: link_folder/人物/耶布斯人.md
+- name: 黃蜂
+  suggested_type: 原文
+  evidence: 第12節「我打發黃蜂飛在你們前面，將亞摩利人的二王從你們面前攆出」；CT：『黃蜂』乃寓意，表明從神來的驚恐；GT《丁道爾》《研經資料》：埃及、戰爭中的昆蟲還是驚駭，驚駭的說法較能解釋；GT《雷氏》：可能是實在的，也可能是比喻；GT《串珠》：寓意，表明神的幫助；GT《精讀本》：應驗出23:28、申7:20，按字面理解較穩妥；GT《綜合解讀》：「黃蜂
+    Zirah」與「埃及 Mizraim」發音相近，可能是雙關語，指埃及軍隊；BH：whether through actual affliction, terror,
+    or providentially stirred panic
+  match_type: exact
+  existing_title: 黃蜂
+  existing_path: link_folder/原文/黃蜂.md
+- name: 敬畏神
+  suggested_type: 神學
+  evidence: 第14節「現在你們要敬畏耶和華，誠心實意地事奉他」；CT：『誠心實意』指正直的存心和忠實的意念；GT《研經資料》：「敬畏」懼怕、敬畏、害怕；BH：Reverence
+    for the LORD remains the beginning of wisdom
+  match_type: exact
+  existing_title: 敬畏神
+  existing_path: link_folder/神學/敬畏神.md
+- name: 事奉與作奴僕同一字根（a.vad）
+  suggested_type: 原文
+  evidence: 第14-24節「事奉」反覆出現；CT：『事奉』在14-15節裡共提到這詞七次，表示委身的服事；GT《丁道爾》《研經資料》：「事奉」（SH 5647）重複了七次，四次指以色列現今的一代，兩次提到列祖在大河那邊所事奉的神，約書亞以自己和他的家作為總結；GT《綜合解讀》：在埃及為奴的人沒有選擇所要事奉之神的自由；CT〔話中之光〕：人不是事奉神，就是事奉偶像，並沒有第三條道路
+  surfaces:
+  - phrase: 事奉
+    verses:
+    - 14
+    - 15
+    - 16
+    - 18
+    - 20
+    - 21
+    - 22
+    - 24
+    - 31
+  match_type: exact
+  existing_title: 事奉與作奴僕同一字根（a.vad）
+  existing_path: link_folder/原文/事奉與作奴僕同一字根（a.vad）.md
+- name: 除掉外邦神
+  suggested_type: 神學
+  evidence: 第14、23節「將你們列祖在大河那邊和在埃及所事奉的神除掉」「你們現在要除掉你們中間的外邦神，專心歸向耶和華」；GT《綜合解讀》：雅各在示劍要求全家除掉外邦神（創35:2、4），全家立刻交出；約書亞在示劍同樣要求，百姓卻只用「我們必事奉耶和華」回應，可能暗示有些人沒有徹底清除偶像；CT：『除掉』重在指從心裡除掉偶像假神的影響力；KC：Joshua
+    asks them to prove their sincerity by putting away the strange gods；BH 連到創35:2-4
+  surfaces:
+  - phrase: 除掉你們中間的外邦神
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 除掉外邦神
+  existing_path: link_folder/神學/除掉外邦神.md
+- name: 聖潔
+  suggested_type: 神學
+  evidence: 第19節「因為他是聖潔的神」；CT：「聖潔的」神聖的；GT《研經資料》：SH 6918 有「分離」的意思，聖潔與神性可以劃上同義（撒上2:2）；BH：The
+    LORD is utterly pure, righteous, and set apart from all false gods
+  surfaces:
+  - phrase: 聖潔的神
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 聖潔
+  existing_path: link_folder/神學/聖潔.md
+- name: 忌邪的神
+  suggested_type: 神學
+  evidence: 第19節「是忌邪的神」；CT：「忌邪的」嫉妒的；GT《研經資料》：指丈夫希望妻子忠貞的那種熱情，SH 7072 這個字聖經僅出現兩次，另一次在鴻1:2；BH：as
+    a wife's faithfulness belongs to her husband（出20:5；34:14）
+  match_type: exact
+  existing_title: 忌邪的神
+  existing_path: link_folder/神學/忌邪的神.md
+- name: 律例（choq）
+  suggested_type: 原文
+  evidence: 第25節「在示劍為他們立定律例典章」；CT：『律例』指律法，是神向人的要求，『典章』指審判；GT《精讀本》：「律例」指一般的規條或義務，出15:25
+    將與此相同的希伯來語譯成「律例、典章」，約書亞是重申了摩西的律法；BH 連到出15:25
+  match_type: exact
+  existing_title: 律例（choq）
+  existing_path: link_folder/原文/律例（choq）.md
+- name: 律法書放在約櫃旁
+  suggested_type: 主題
+  evidence: 第26節「約書亞將這些話都寫在神的律法書上」；CT：『神的律法書』指摩西所寫、放在約櫃旁的律法書（申31:26）；KC：He writes
+    in the book of the law of God what has been said；BH 連到申31:24-26
+  match_type: exact
+  existing_title: 律法書放在約櫃旁
+  existing_path: link_folder/主題/律法書放在約櫃旁.md
+- name: 摩利橡樹
+  suggested_type: 背景
+  evidence: 第26節「將一塊大石頭立在橡樹下耶和華的聖所旁邊」；CT：亞伯拉罕曾在示劍的橡樹下築壇（創12:6-7），極可能指的是同一棵樹；GT《雷氏》：或譯作在耶和華看為聖的橡樹下面（比較創12:6）；GT《串珠》：指示劍旁神特別啟示自己的一塊地方（創12:6-7）；GT
+    華爾頓：稱聖的樹木是迦南人和早期以色列人祭儀場所的一部分；BH 連到創35:4
+  surfaces:
+  - phrase: 橡樹
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 摩利橡樹
+  existing_path: link_folder/背景/摩利橡樹.md
+- name: 宗主條約
+  suggested_type: 背景
+  evidence: 第1-28節；GT《雷氏》：本章使用宗主條約的慣用形式，包括前言、歷史序言、主要條款，以及契約的抄寫和存放；GT《啟導本》：約的內容有似古代宗主與屬國間的條約；GT《研經資料》：形式依照當時宗主與屬國立約的方式；GT《丁道爾》：條約的見證人通常是國家所拜的神祇
+  match_type: exact
+  existing_title: 宗主條約
+  existing_path: link_folder/背景/宗主條約.md
+- name: 西乃之約
+  suggested_type: 神學
+  evidence: 第25節；GT《啟導本》：約書亞帶領百姓與神重訂昔日在西奈山之約（出19:1）；GT《串珠》：這約大致與摩西經手立的約相同；BH：Joshua
+    renewed the covenant obligations given through Moses at Sinai
+  match_type: exact
+  existing_title: 西乃之約
+  existing_path: link_folder/神學/西乃之約.md
+- name: 約書亞的告別辭
+  suggested_type: 事件
+  evidence: 第1-28節約書亞第二次講話；GT《雷氏》：二十三章對象是眾首領，第二十四章是整個民族；GT《綜合解讀》：二十三章是給領袖的贈言，二十四章是帶領全體百姓重新與神立約；GT《精讀本》：雖然約書亞已在前章作了告別的囑託，仍將整個百姓召集在示劍；KC：After
+    Joshua addressed the elders in the previous chapter, he wants to address the whole
+    people
+  match_type: exact
+  existing_title: 約書亞的告別辭
+  existing_path: link_folder/事件/約書亞的告別辭.md
+- name: 約書亞
+  suggested_type: 人物
+  evidence: 第1-31節約書亞召集眾支派、立約，第29節「耶和華的僕人嫩的兒子約書亞，正一百一十歲，就死了」；CT：『耶和華的僕人』這個頭銜和摩西一樣，29-33節是別人追記的本書跋文；GT《丁道爾》《研經資料》：一百一十歲與約瑟去世的年紀一樣（創50:26）；GT《綜合解讀》：神不再指定約書亞的接班人；KC：He
+    is called here for the first and also only time the servant of the LORD；BH：The
+    title given to Joshua at his death places him beside Moses
+  match_type: exact
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 亭拿西拉
+  suggested_type: 地點
+  evidence: 第30節「以色列人將他葬在他地業的境內，就是在以法蓮山地的亭拿西拉」；CT：「亭拿西拉」豐盛的一部分，位於伯特利西北方約15公里；GT《丁道爾》《研經資料》：約書亞葬在亭拿西拉的「邊界」上，這個字在書12-19
+    出現了五十多次，表示分配地業的時期也已結束；BH：Judges 2:9 calls the place Timnath-heres
+  match_type: exact
+  existing_title: 亭拿西拉
+  existing_path: link_folder/地點/亭拿西拉.md
+- name: 以法蓮山地
+  suggested_type: 地點
+  evidence: 第30、33節約書亞葬在以法蓮山地的亭拿西拉，以利亞撒葬在以法蓮山地的小山上；CT：以法蓮山地是屬於以法蓮支派或瑪拿西半個支派；BH：This
+    central highland region also contained Shiloh
+  match_type: exact
+  existing_title: 以法蓮山地
+  existing_path: link_folder/地點/以法蓮山地.md
+- name: 約瑟骸骨葬於示劍
+  suggested_type: 歷史
+  evidence: 第32節「以色列人從埃及所帶來約瑟的骸骨，葬埋在示劍」；CT：約瑟死前留下遺言（創50:25），出埃及時一同帶走（出13:19）；GT《丁道爾》：將約書亞記和創世記連起來，成為一個大時代的總結；GT《雷氏》：要使以色列人記得約瑟深信神賜下迦南地的應許；GT《啟導本》：結束了以色列人寄居外邦和流浪曠野的時代；GT《精讀本》：過了500年之後葬在迦南地；KC：The
+    burial of Joseph's bones makes it clear that the book does not really end with
+    death（來11:22）；BH 連到徒7:16
+  surfaces:
+  - phrase: 約瑟的骸骨
+    verses:
+    - 32
+  match_type: exact
+  existing_title: 約瑟骸骨葬於示劍
+  existing_path: link_folder/歷史/約瑟骸骨葬於示劍.md
+- name: 哈抹
+  suggested_type: 人物
+  evidence: 第32節「雅各從前用一百塊銀子向示劍的父親、哈抹的子孫所買的那塊地」；CT：「哈抹」公驢；GT《串珠》：參創33:18-20
+  match_type: exact
+  existing_title: 哈抹
+  existing_path: link_folder/人物/哈抹.md
+- name: 客西達錢幣單位
+  suggested_type: 文化
+  evidence: 第32節「一百塊銀子」；GT《研經資料》：「銀子」原文 SH 7192（qesitahs）是銀錢的單位，價值和重量不詳，亦見於創33:19
+    及伯42:11；BH：The stated price recalls the historical transaction recorded in Genesis
+  surfaces:
+  - phrase: 一百塊銀子
+    verses:
+    - 32
+  match_type: exact
+  existing_title: 客西達錢幣單位
+  existing_path: link_folder/文化/客西達錢幣單位.md
+- name: 以利亞撒
+  suggested_type: 人物
+  evidence: 第33節「亞倫的兒子以利亞撒也死了，就把他葬在他兒子非尼哈所得、以法蓮山地的小山上」；CT：當時的大祭司，死後職任由他兒子非尼哈繼承；KC：The
+    death and burial of Eleazar indicate that the service of this faithful high priest
+    in connection with taking possession of the land is also coming to an end；BH：His
+    death marks the end of an era
+  match_type: exact
+  existing_title: 以利亞撒
+  existing_path: link_folder/人物/以利亞撒.md
+- name: 非尼哈
+  suggested_type: 人物
+  evidence: 第33節「他兒子非尼哈所得、以法蓮山地的小山」；CT：非尼哈所得的小山可能是哥轄其餘的子孫分一小塊給候任大祭司居住；GT《綜合解讀》：神不再指定約書亞的接班人，而是安排非尼哈接替他父親做大祭司；BH：His
+    inheritance of Gibeah signifies the continuation of the priestly line
+  match_type: exact
+  existing_title: 非尼哈
+  existing_path: link_folder/人物/非尼哈.md
+C_new_formal:
+- name: 示劍更新盟約
+  suggested_type: 事件
+  evidence: 第1-28節約書亞將以色列的眾支派聚集在示劍，述說神從他拉到進迦南的作為，要百姓選擇事奉誰，百姓三次回答必事奉耶和華，第25節「約書亞就與百姓立約，在示劍為他們立定律例典章」，第26節寫在神的律法書上並立石為證；GT《雷氏》《啟導本》《研經資料》：採用宗主條約的形式（序言、歷史序言、條款、抄寫存放）；GT《精讀本》：重申聖約，百姓反復表明決志，本章也算是士師記的前言；GT《串珠》：使列祖與神所立的約繼續有效，大致與摩西經手立的約相同；KC：Joshua
+    takes the promise of the people seriously；BH：a decisive renewal of the covenant
+  surfaces:
+  - phrase: 與百姓立約
+    verses:
+    - 25
+  target_path: link_folder/事件/示劍更新盟約.md
+- name: 你們不能事奉耶和華
+  suggested_type: 解經爭議
+  evidence: 第19節「你們不能事奉耶和華；因為他是聖潔的神，是忌邪的神，必不赦免你們的過犯罪惡」；CT：要做到討神喜悅的事奉就必須對付罪惡，〔話中之光〕可能指人意志薄弱，無法依靠自己順從神，約書亞在這句話中提出了因信稱義的原則；GT《研經資料》：必不赦免這句話引起很多爭議，是一種表達方式，是激將法，神賜律法是告訴罪人不能；GT《精讀本》：約書亞並不因百姓的決志而滿意，為堅固百姓而強烈警告；GT《綜合解讀》：神只接受人專心歸向祂；KC：Joshua
+    does not mean to say that God is not a God of forgiveness；BH：Joshua exposed the
+    insufficiency of a divided heart
+  target_path: link_folder/解經爭議/你們不能事奉耶和華.md
+  semantic_hint:
+  - title: 不可照他們那樣事奉耶和華
+    score: 0.516
+    type: 神學
+  - title: 專一事奉
+    score: 0.475
+    type: 神學
+  - title: 敬畏神與專一事奉
+    score: 0.442
+    type: 主題
+- name: 立石為證
+  suggested_type: 主題
+  evidence: 第26-27節「將一塊大石頭立在橡樹下耶和華的聖所旁邊」「這石頭可以向我們作見證」；CT、GT《啟導本》《研經資料》《綜合解讀》：這是以色列人進迦南後第七次立石作見證（書4:20；7:26；8:29、32；10:27；22:27）；GT
+    李道生、《研經資料》：伯特利、米斯巴、約但河、以巴路山、示劍、以便以謝的立石為證；GT《丁道爾》：像雅各在伯特利以及與拉班所立的石頭，條約的見證人通常是國家所拜的神祇；GT
+    華爾頓：立石和稱聖的樹木是迦南人和早期以色列人祭儀場所的一部分；KC：the stone remains as a lasting reminder that
+    God has heard everything；BH：a visible witness against any future abandonment of
+    the LORD
+  surfaces:
+  - phrase: 一塊大石頭
+    verses:
+    - 26
+  - phrase: 這石頭
+    verses:
+    - 27
+  target_path: link_folder/主題/立石為證.md
+  semantic_hint:
+  - title: 作為證據的記號（ot）
+    score: 0.433
+    type: 原文
+- name: 迦實山
+  suggested_type: 地點
+  evidence: 第30節葬在亭拿西拉，「在迦實山的北邊」；CT：「迦實」震動，確實地點不詳，大概在亭拿西拉境內的南邊；GT《研經資料》、華爾頓：位置不明，但應在以法蓮山地亭拿西拉（蒂布納廢墟）以南，示劍西南約二十哩；BH：its
+    exact site is now uncertain，連到撒下23:30、代上11:32 迦實溪
+  target_path: link_folder/地點/迦實山.md
+- name: 基比亞（以法蓮）
+  suggested_type: 地點
+  evidence: 第33節以利亞撒葬在「他兒子非尼哈所得、以法蓮山地的小山上」；CT：「小山」原文「基比亞」，山丘，非尼哈所得的小山可能是哥轄其餘子孫分一小塊給候任大祭司居住，確實地點不詳；GT《研經資料》：就是基比亞，明確地點無法考察；GT
+    華爾頓：新國際本作基比亞，優西比烏記載在戈夫納以北五哩，名叫基比亞的地點有好幾個，經文可能只稱非尼哈的小山；BH：not to be confused with
+    the more infamous Gibeah of Saul
+  surfaces:
+  - phrase: 小山
+    verses:
+    - 33
+  target_path: link_folder/地點/基比亞（以法蓮）.md
+  semantic_hint:
+  - title: 基比亞（便雅憫）
+    score: 0.493
+    type: 地點
+  - title: 基非拉
+    score: 0.405
+    type: 地點
+D_new_candidate: []
+E_skip: []
+locked_at: '2026-10-14T19:05:39Z'

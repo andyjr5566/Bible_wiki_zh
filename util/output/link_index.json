@@ -3329,6 +3329,14 @@
       "立石寫律法"
     ]
   },
+  "立石為證": {
+    "path": "link_folder/主題/立石為證.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "立石為證",
+    "status": "formal",
+    "aliases": []
+  },
   "立約": {
     "path": "link_folder/主題/立約.md",
     "type": "主題",
@@ -5214,6 +5222,14 @@
       "Water from the Rock",
       "磐石出活水"
     ]
+  },
+  "示劍更新盟約": {
+    "path": "link_folder/事件/示劍更新盟約.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "示劍更新盟約",
+    "status": "formal",
+    "aliases": []
   },
   "神指示築壇獻祭": {
     "path": "link_folder/事件/神指示築壇獻祭.md",
@@ -19474,6 +19490,14 @@
     "status": "formal",
     "aliases": []
   },
+  "基比亞（以法蓮）": {
+    "path": "link_folder/地點/基比亞（以法蓮）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基比亞（以法蓮）",
+    "status": "formal",
+    "aliases": []
+  },
   "基比亞（便雅憫）": {
     "path": "link_folder/地點/基比亞（便雅憫）.md",
     "type": "地點",
@@ -21001,6 +21025,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "迦密",
+    "status": "formal",
+    "aliases": []
+  },
+  "迦實山": {
+    "path": "link_folder/地點/迦實山.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "迦實山",
     "status": "formal",
     "aliases": []
   },
@@ -30472,6 +30504,14 @@
     "type": "解經爭議",
     "secondary_types": [],
     "title": "何西阿與約書亞改名時機與字意之解經爭議",
+    "status": "formal",
+    "aliases": []
+  },
+  "你們不能事奉耶和華": {
+    "path": "link_folder/解經爭議/你們不能事奉耶和華.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "你們不能事奉耶和華",
     "status": "formal",
     "aliases": []
   },

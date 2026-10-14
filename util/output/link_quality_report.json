@@ -1,7 +1,7 @@
 {
-  "total_warnings": 267,
+  "total_warnings": 279,
   "critical_count": 0,
-  "warning_count": 267,
+  "warning_count": 279,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -23,6 +23,13 @@
       "source": "約書亞記/第21章.md",
       "target": "迦特臨門",
       "message": "同一 alias「迦特臨門」指向多個 target: 迦特臨門（但）, 迦特臨門（瑪拿西）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞伯拉罕.md",
+      "target": "第24章",
+      "message": "同一 alias「第24章」指向多個 target: 01 創世記/第24章, 06 約書亞記/第24章"
     },
     {
       "type": "alias_target_conflict",
@@ -119,6 +126,13 @@
       "type": "alias_target_conflict",
       "severity": "warning",
       "source": "link_folder/人物/亞倫.md",
+      "target": "第24章",
+      "message": "同一 alias「第24章」指向多個 target: 02 出埃及記/第24章, 06 約書亞記/第24章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞倫.md",
       "target": "第32章",
       "message": "同一 alias「第32章」指向多個 target: 02 出埃及記/第32章, 05 申命記/第32章"
     },
@@ -177,6 +191,13 @@
       "source": "link_folder/人物/以利亞撒.md",
       "target": "第19章",
       "message": "同一 alias「第19章」指向多個 target: 04 民數記/第19章, 06 約書亞記/第19章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/以撒.md",
+      "target": "第24章",
+      "message": "同一 alias「第24章」指向多個 target: 01 創世記/第24章, 06 約書亞記/第24章"
     },
     {
       "type": "alias_target_conflict",
@@ -286,9 +307,23 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/人物/巴勒.md",
+      "target": "第24章",
+      "message": "同一 alias「第24章」指向多個 target: 04 民數記/第24章, 06 約書亞記/第24章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/人物/巴蘭（比珥的兒子）.md",
       "target": "第23章",
       "message": "同一 alias「第23章」指向多個 target: 04 民數記/第23章, 05 申命記/第23章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/巴蘭（比珥的兒子）.md",
+      "target": "第24章",
+      "message": "同一 alias「第24章」指向多個 target: 04 民數記/第24章, 06 約書亞記/第24章"
     },
     {
       "type": "alias_target_conflict",
@@ -310,6 +345,13 @@
       "source": "link_folder/人物/拿弗他利.md",
       "target": "第34章",
       "message": "同一 alias「第34章」指向多個 target: 04 民數記/第34章, 05 申命記/第34章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/拿鶴.md",
+      "target": "第24章",
+      "message": "同一 alias「第24章」指向多個 target: 01 創世記/第24章, 06 約書亞記/第24章"
     },
     {
       "type": "alias_target_conflict",
@@ -449,7 +491,7 @@
       "severity": "warning",
       "source": "link_folder/人物/摩西.md",
       "target": "第24章",
-      "message": "同一 alias「第24章」指向多個 target: 02 出埃及記/第24章, 03 利未記/第24章"
+      "message": "同一 alias「第24章」指向多個 target: 02 出埃及記/第24章, 03 利未記/第24章, 06 約書亞記/第24章"
     },
     {
       "type": "alias_target_conflict",
@@ -609,6 +651,13 @@
       "type": "alias_target_conflict",
       "severity": "warning",
       "source": "link_folder/人物/約書亞.md",
+      "target": "第24章",
+      "message": "同一 alias「第24章」指向多個 target: 02 出埃及記/第24章, 06 約書亞記/第24章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/約書亞.md",
       "target": "第32章",
       "message": "同一 alias「第32章」指向多個 target: 02 出埃及記/第32章, 04 民數記/第32章, 05 申命記/第32章"
     },
@@ -730,6 +779,13 @@
       "source": "link_folder/人物/迦南人.md",
       "target": "第13章",
       "message": "同一 alias「第13章」指向多個 target: 01 創世記/第13章, 06 約書亞記/第13章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/迦南人.md",
+      "target": "第24章",
+      "message": "同一 alias「第24章」指向多個 target: 01 創世記/第24章, 06 約書亞記/第24章"
     },
     {
       "type": "alias_target_conflict",
@@ -916,6 +972,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/地點/曠野.md",
+      "target": "第24章",
+      "message": "同一 alias「第24章」指向多個 target: 04 民數記/第24章, 06 約書亞記/第24章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/地點/海（紅海）.md",
       "target": "第2章",
       "message": "同一 alias「第2章」指向多個 target: 05 申命記/第2章, 06 約書亞記/第2章"
@@ -1017,6 +1080,13 @@
       "source": "link_folder/地點/西珥.md",
       "target": "第33章",
       "message": "同一 alias「第33章」指向多個 target: 01 創世記/第33章, 05 申命記/第33章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/地點/西珥.md",
+      "target": "第24章",
+      "message": "同一 alias「第24章」指向多個 target: 04 民數記/第24章, 06 約書亞記/第24章"
     },
     {
       "type": "alias_target_conflict",
@@ -1483,6 +1553,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/文化/以色列的長老.md",
+      "target": "第24章",
+      "message": "同一 alias「第24章」指向多個 target: 02 出埃及記/第24章, 06 約書亞記/第24章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/文化/奠酒.md",
       "target": "第29章",
       "message": "同一 alias「第29章」指向多個 target: 02 出埃及記/第29章, 04 民數記/第29章"
@@ -1773,6 +1850,13 @@
       "source": "link_folder/神學/聖靈內住.md",
       "target": "第2章",
       "message": "同一 alias「第2章」指向多個 target: 29 約珥書/第2章, 44 使徒行傳/第2章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/神學/西乃之約.md",
+      "target": "第24章",
+      "message": "同一 alias「第24章」指向多個 target: 02 出埃及記/第24章, 06 約書亞記/第24章"
     },
     {
       "type": "alias_target_conflict",
