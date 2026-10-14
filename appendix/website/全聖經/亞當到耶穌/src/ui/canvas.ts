@@ -1,7 +1,8 @@
 import type { GenealogyData, Person } from '../data/types';
 import { branchRoots, buildGraph, firstReference } from '../data/model';
-import { computeLayout, type CanvasLayout, type LayoutNode } from './layout';
+import { COLUMN_W, ROW_H, computeLayout, type CanvasLayout, type LayoutNode } from './layout';
 import { svgEl } from './dom';
+import { FONT_SCALE_EVENT, getFontScale } from './fontscale';
 
 export type CanvasLine = 'both' | '馬太' | '路加';
 
@@ -26,6 +27,16 @@ export interface CanvasApi {
 }
 
 interface ViewBox { x: number; y: number; width: number; height: number }
+interface OverviewPerson {
+  id: string; node: LayoutNode; line: string; priority: number; labelWidth: number;
+  g: SVGGElement; bg: SVGRectElement; text: SVGTextElement;
+}
+interface OverviewBand {
+  left: number; y0: number; y1: number; g: SVGGElement; title: SVGTextElement; sub: SVGTextElement; width: number;
+}
+// 縮小到這個比例以下就改畫「總覽」：只畫主線，名字一律用固定的螢幕字級
+const OVERVIEW_ZOOM = 0.6;
+const OVERVIEW_LABEL_PX = 13;
 interface Pointer { x: number; y: number }
 
 const COLORS: Record<string, string> = { common: 'var(--ag-ink)', '馬太': 'var(--ag-matthew)', '路加': 'var(--ag-luke)' };
@@ -40,7 +51,8 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
   const edgeLayer = svgEl('g', { class: 'ag-edge-layer' });
   const overviewLayer = svgEl('g', { class: 'ag-overview-layer' });
   const nodeLayer = svgEl('g', { class: 'ag-node-layer' });
-  scene.append(segmentLayer, edgeLayer, overviewLayer, nodeLayer);
+  const hudLayer = svgEl('g', { class: 'ag-overview-hud' });
+  scene.append(segmentLayer, edgeLayer, overviewLayer, nodeLayer, hudLayer);
   svg.append(scene);
   const graph = buildGraph(data);
   const expanded = new Set<string>();
@@ -65,6 +77,12 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
   let animationFrame = 0;
   let layoutAnimationFrame = 0;
   let animationDone: (() => void) | null = null;
+  let overviewMode = false;
+  let ovPersons: OverviewPerson[] = [];
+  let ovBands: OverviewBand[] = [];
+  let ovHeads: Array<{ line: string; x: number; text: SVGTextElement }> = [];
+  let ovHint: SVGTextElement | null = null;
+  let mainEdgeEls = new Map<string, SVGPathElement>();
 
   const nodeFor = (id: string) => layout.nodes.find((node) => node.id === id);
   const lineFor = (person: Person) => person.lines?.includes('common') ? 'common' : person.lines?.includes('馬太') ? '馬太' : person.lines?.includes('路加') ? '路加' : 'common';
@@ -77,11 +95,41 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     };
   };
 
-  const setViewBox = (box: ViewBox) => {
+  const zoomOf = (box: ViewBox) => Math.max(1, svg.clientHeight || window.innerHeight) / Math.max(1, box.height);
+  // 縮小時，畫面上下緣不要超出整張家譜太多（左右不限制，導覽卡要用左右偏移留空間）
+  const keepInside = (box: ViewBox): ViewBox => {
+    const zoom = zoomOf(box);
+    if (zoom >= OVERVIEW_ZOOM) return box;
+    const bounds = layout.bounds;
+    const top = bounds.y - 60 / zoom;
+    const bottom = bounds.y + bounds.height + 60 / zoom;
+    const y = box.height >= bottom - top ? (top + bottom) / 2 - box.height / 2 : Math.max(top, Math.min(bottom - box.height, box.y));
+    return y === box.y ? box : { ...box, y };
+  };
+  const setViewBox = (requested: ViewBox) => {
+    const box = keepInside(requested);
     currentBox = { ...box };
     svg.setAttribute('viewBox', `${box.x} ${box.y} ${box.width} ${box.height}`);
     window.clearTimeout(cullTimer);
-    cullTimer = window.setTimeout(cullToViewport, 140);
+    if ((zoomOf(currentBox) < OVERVIEW_ZOOM) !== overviewMode) cullToViewport();
+    else {
+      cullTimer = window.setTimeout(cullToViewport, 140);
+      if (overviewMode) updateOverview();
+    }
+  };
+  // 縮放範圍：最小是整張家譜剛好放進畫面，最大約 4 倍
+  const clampRatio = (ratio: number) => {
+    const rect = svg.getBoundingClientRect();
+    const bounds = layout.bounds;
+    const minZoom = Math.max(0.02, Math.min(rect.height / Math.max(1, bounds.height), rect.width / Math.max(1, bounds.width)) * 0.85);
+    const zoom = zoomOf(currentBox);
+    return zoom / Math.max(minZoom, Math.min(4, zoom / ratio));
+  };
+  const zoomTo = (x: number, y: number, zoom: number, animate = true) => {
+    const rect = svg.getBoundingClientRect();
+    const width = Math.max(1, rect.width) / zoom;
+    const height = Math.max(1, rect.height) / zoom;
+    animateToBox({ x: x - width / 2, y: y - height / 2, width, height }, animate);
   };
   const fitRect = (x0: number, y0: number, x1: number, y1: number, animate = false, padding = 90, lockAspect = true) => {
     const rect = svg.getBoundingClientRect();
@@ -132,10 +180,23 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
   function cullToViewport() {
     const marginX = currentBox.width * 0.12;
     const marginY = currentBox.height * 0.12;
-    const zoomLevel = Math.max(1, svg.clientHeight || window.innerHeight) / Math.max(1, currentBox.height);
-    const overview = zoomLevel < 0.6;
-    nodeLayer.classList.toggle('ag-side-mini', zoomLevel < 0.45);
-    nodeLayer.classList.toggle('ag-spine-mini', overview);
+    const zoomLevel = zoomOf(currentBox);
+    const overview = zoomLevel < OVERVIEW_ZOOM;
+    overviewMode = overview;
+    scene.classList.toggle('ag-overview-on', overview);
+    segmentLayer.style.display = overview ? '' : 'none';
+    overviewLayer.style.display = overview ? '' : 'none';
+    hudLayer.style.display = overview ? '' : 'none';
+    if (overview) {
+      for (const element of nodeEls.values()) element.style.display = 'none';
+      for (const [key, element] of edgeEls) element.style.display = mainEdgeEls.has(key) ? '' : 'none';
+      updateOverview();
+      return;
+    }
+    for (const element of mainEdgeEls.values()) {
+      element.style.removeProperty('stroke-width');
+      element.style.removeProperty('stroke-dasharray');
+    }
     for (const [id, element] of nodeEls) {
       const label = element.querySelector<SVGTextElement>('.ag-node-label');
       const rect = element.querySelector<SVGRectElement>(':scope > rect');
@@ -143,15 +204,16 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       const node = nodeFor(id);
       if (!label || !rect || !node) continue;
       // 只有縮小到字會小於約 13px 時才放大標亮節點的字；已經夠大就維持原本字級，避免亮起後反而變小
-      const emphasized = tourHighlightIds.has(id) && zoomLevel < 13 / 15;
+      const fontScale = getFontScale();
+      const emphasized = tourHighlightIds.has(id) && zoomLevel < 13 * fontScale / 15;
       label.style.display = emphasized ? 'block' : '';
-      label.style.fontSize = emphasized ? `${13 / zoomLevel}px` : '';
+      label.style.fontSize = emphasized ? `${13 * fontScale / zoomLevel}px` : '';
       if (dot) dot.style.display = emphasized ? 'none' : '';
       rect.style.display = emphasized ? 'block' : '';
       if (emphasized) {
         const labelWidth = label.getComputedTextLength();
-        const width = Math.max(node.rectWidth, labelWidth + 24 / zoomLevel);
-        const height = Math.max(node.rectHeight, 22 / zoomLevel);
+        const width = Math.max(node.rectWidth, labelWidth + 24 * fontScale / zoomLevel);
+        const height = Math.max(node.rectHeight, 22 * fontScale / zoomLevel);
         rect.setAttribute('x', String(node.rectX + (node.rectWidth - width) / 2));
         rect.setAttribute('y', String(-height / 2));
         rect.setAttribute('width', String(width));
@@ -163,9 +225,6 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
         rect.setAttribute('height', String(node.rectHeight));
       }
     }
-    segmentLayer.classList.toggle('ag-segment-overview', overview);
-    segmentLayer.style.display = overview ? '' : 'none';
-    overviewLayer.style.display = 'none';
     const visible = new Set<string>();
     for (const node of allLayoutNodes()) {
       const shown = node.x + node.width / 2 >= currentBox.x - marginX && node.x - node.width / 2 <= currentBox.x + currentBox.width + marginX &&
@@ -178,6 +237,200 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       const shown = visible.has(edge.from) && visible.has(edge.to);
       const el = edgeEls.get(edge.key);
       if (el) el.style.display = shown ? '' : 'none';
+    }
+  }
+
+  const labelWidthOf = (text: string) => Array.from(text).reduce((sum, char) => sum + (char.codePointAt(0)! > 0x2e80 ? OVERVIEW_LABEL_PX : OVERVIEW_LABEL_PX * 0.58), 0) * getFontScale();
+  // 低位元反轉序列：讓「每隔幾個人才標名字」在各處均勻分布，縮得越小留下的名字越少但仍分散
+  const spread = (index: number) => {
+    let result = 0;
+    let fraction = 0.5;
+    for (let n = index; n > 0; n >>= 1, fraction /= 2) if (n & 1) result += fraction;
+    return result;
+  };
+
+  // 總覽（縮小時）：只畫主線；區段標題、人名、圓點都用固定的螢幕尺寸，名字太擠就依優先序稀疏
+  function buildOverview() {
+    segmentLayer.replaceChildren();
+    overviewLayer.replaceChildren();
+    hudLayer.replaceChildren();
+    ovPersons = [];
+    ovBands = [];
+    ovHeads = [];
+    ovHint = null;
+    const main = layout.nodes.filter((node) => node.mainline);
+    if (!main.length) return;
+    const left = Math.min(...main.map((node) => node.x - node.width / 2)) - 140;
+    const right = Math.max(...main.map((node) => node.x + node.width / 2)) + 140;
+
+    const spans = new Map<string, { y0: number; y1: number }>();
+    for (const segment of layout.segments) {
+      const known = spans.get(segment.title);
+      spans.set(segment.title, { y0: Math.min(known?.y0 ?? segment.y0, segment.y0), y1: Math.max(known?.y1 ?? segment.y1, segment.y1) });
+    }
+    const ordered = [...spans].sort((a, b) => a[1].y0 - b[1].y0);
+    const nameOf = (id: string) => graph.byId.get(id)?.name ?? id;
+    ordered.forEach(([title, span], index) => {
+      const previous = ordered[index - 1]?.[1];
+      const next = ordered[index + 1]?.[1];
+      const top = previous ? (previous.y1 + span.y0) / 2 : span.y0 - ROW_H / 2;
+      const bottom = next ? (span.y1 + next.y0) / 2 : span.y1 + ROW_H / 2;
+      const rect = svgEl('rect', { class: `ag-ov-band${index % 2 ? ' ag-ov-band-alt' : ''}`, x: left, y: top, width: right - left, height: bottom - top });
+      rect.addEventListener('click', (event) => {
+        if (didDrag) return;
+        const point = worldPoint(event.clientX, event.clientY);
+        zoomTo(point.x, point.y, 0.9);
+      });
+      segmentLayer.append(rect);
+      const routes = Object.entries((data.spine.segments ?? []).find((item) => item.title === title)?.lines ?? {}).filter(([, ids]) => ids.length);
+      const subtitle = routes.length === 1
+        ? `${nameOf(routes[0]![1][0]!)} → ${nameOf(routes[0]![1].at(-1)!)}`
+        : routes.map(([line, ids]) => `${line === 'common' ? '共同' : line} ${ids.length} 人`).join('　');
+      const g = svgEl('g', { class: 'ag-ov-heading' });
+      const fs = getFontScale();
+      const titleText = svgEl('text', { class: 'ag-ov-title', x: 0, y: 9 * fs, 'dominant-baseline': 'central' });
+      titleText.textContent = title;
+      const sub = svgEl('text', { class: 'ag-ov-sub', x: 0, y: 28 * fs, 'dominant-baseline': 'central' });
+      sub.textContent = subtitle;
+      g.append(titleText, sub);
+      hudLayer.append(g);
+      ovBands.push({ left, y0: top, y1: bottom, g, title: titleText, sub, width: Math.max(labelWidthOf(title) * 15 / OVERVIEW_LABEL_PX, labelWidthOf(subtitle) * 11 / OVERVIEW_LABEL_PX) });
+    });
+
+    for (const [line, x, label] of [['馬太', -COLUMN_W, '馬太線'], ['common', 0, '共同主線'], ['路加', COLUMN_W, '路加線']] as const) {
+      const text = svgEl('text', { class: `ag-ov-head ag-ov-head-${line}`, 'text-anchor': 'middle', 'dominant-baseline': 'central' });
+      text.textContent = label;
+      hudLayer.append(text);
+      ovHeads.push({ line, x, text });
+    }
+    ovHint = svgEl('text', { class: 'ag-ov-hint', x: 0, y: 0 });
+    ovHint.textContent = '縮小檢視只顯示主線　點人名或區段可放大';
+    hudLayer.append(ovHint);
+
+    const boundary = new Set<string>();
+    for (const segment of data.spine.segments ?? []) {
+      for (const ids of Object.values(segment.lines ?? {})) if (ids.length) { boundary.add(ids[0]!); boundary.add(ids.at(-1)!); }
+    }
+    const routeIndex = new Map<string, number>();
+    for (const ids of Object.values(data.spine.lines ?? {})) ids.forEach((id, index) => { if (!routeIndex.has(id)) routeIndex.set(id, index); });
+    for (const node of main) {
+      const person = graph.byId.get(node.id);
+      if (!person) continue;
+      const line = lineFor(person);
+      const tier = boundary.has(node.id) ? 1 : person.notes?.length || person.marks?.length ? 2 : 3;
+      const g = svgEl('g', { class: `ag-ov-person ag-ov-${line}`, 'data-id': node.id, role: 'button', tabindex: '0', 'aria-label': person.name });
+      const bg = svgEl('rect', { class: 'ag-ov-bg', rx: 4, y: -11 * getFontScale(), height: 22 * getFontScale() });
+      const dot = svgEl('circle', { class: 'ag-ov-dot', r: 4.5 });
+      const text = svgEl('text', { class: 'ag-ov-label', 'dominant-baseline': 'central' });
+      text.textContent = person.name;
+      g.append(bg, dot, text);
+      const zoomIn = () => zoomTo(node.x, node.y, 0.9);
+      g.addEventListener('click', (event) => { event.stopPropagation(); if (!didDrag) zoomIn(); });
+      g.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); zoomIn(); } });
+      overviewLayer.append(g);
+      ovPersons.push({ id: node.id, node, line, priority: tier + spread(routeIndex.get(node.id) ?? 0), labelWidth: labelWidthOf(person.name), g, bg, text });
+    }
+    ovPersons.sort((a, b) => a.priority - b.priority);
+  }
+
+  function updateOverview() {
+    if (!ovPersons.length) return;
+    const width = Math.max(1, svg.clientWidth);
+    const height = Math.max(1, svg.clientHeight);
+    const zoom = zoomOf(currentBox);
+    const inv = 1 / zoom;
+    const fs = getFontScale();
+    const screenX = (x: number) => (x - currentBox.x) * zoom;
+    const screenY = (y: number) => (y - currentBox.y) * zoom;
+    const place = (element: SVGElement, px: number, py: number) => {
+      element.setAttribute('transform', `translate(${currentBox.x + px * inv} ${currentBox.y + py * inv}) scale(${inv})`);
+    };
+    const occupied: Array<{ l: number; t: number; r: number; b: number }> = [];
+    const hits = (box: { l: number; t: number; r: number; b: number }) => occupied.some((other) =>
+      box.l < other.r + 4 && box.r > other.l - 4 && box.t < other.b + 3 && box.b > other.t - 3);
+
+    for (const element of mainEdgeEls.values()) {
+      const lit = element.classList.contains('ag-edge-tour-lit');
+      const traced = element.classList.contains('ag-edge-traced');
+      element.style.setProperty('stroke-width', `${(lit ? 5 : traced ? 4 : 2.6) * inv}px`, 'important');
+      if (element.classList.contains('ag-edge-descends')) element.style.setProperty('stroke-dasharray', `${7 * inv} ${5 * inv}`);
+    }
+
+    const columnGap = COLUMN_W * zoom;
+    for (const head of ovHeads) {
+      const px = screenX(head.x);
+      const outward = head.line === '馬太' ? 'end' : head.line === '路加' ? 'start' : 'middle';
+      const shown = px > 36 && px < width - 36 && (head.line === 'common' ? columnGap > 70 : lineOpacity(head.line) > 0);
+      head.text.style.display = shown ? '' : 'none';
+      if (!shown) continue;
+      head.text.setAttribute('text-anchor', outward);
+      const anchorX = outward === 'end' ? px + 14 : outward === 'start' ? px - 14 : px;
+      place(head.text, anchorX, 18 * fs);
+      occupied.push(outward === 'end' ? { l: anchorX - 52 * fs, t: 5, r: anchorX + 4, b: 31 * fs }
+        : outward === 'start' ? { l: anchorX - 4, t: 5, r: anchorX + 52 * fs, b: 31 * fs }
+          : { l: anchorX - 36 * fs, t: 5, r: anchorX + 36 * fs, b: 31 * fs });
+    }
+    for (const band of ovBands) {
+      const visibleTop = Math.max(screenY(band.y0), 40 * fs);
+      const visibleBottom = Math.min(screenY(band.y1), height - 30);
+      const shown = visibleBottom - visibleTop >= 28 * fs;
+      band.g.style.display = shown ? '' : 'none';
+      if (!shown) continue;
+      const top = Math.max(visibleTop + 3, Math.min((visibleTop + visibleBottom) / 2 - 20 * fs, visibleBottom - 42 * fs));
+      // 標題貼在區段左緣外側；區段左緣被推出畫面時就貼在畫面左邊
+      const edge = screenX(band.left) - 12;
+      const beside = edge - band.width >= 10;
+      const anchor = beside ? 'end' : 'start';
+      band.title.setAttribute('text-anchor', anchor);
+      band.sub.setAttribute('text-anchor', anchor);
+      const anchorX = beside ? edge : 12;
+      place(band.g, anchorX, top);
+      occupied.push(beside
+        ? { l: anchorX - band.width - 4, t: top - 4, r: anchorX + 4, b: top + 42 * fs }
+        : { l: 8, t: top - 4, r: 16 + band.width, b: top + 42 * fs });
+    }
+    if (ovHint) ovHint.style.display = width < 640 ? 'none' : '';
+    if (ovHint && width >= 640) {
+      place(ovHint, 12, height - 12);
+      occupied.push({ l: 8, t: height - 24 * fs, r: 12 + labelWidthOf(ovHint.textContent ?? '') * 12 / OVERVIEW_LABEL_PX, b: height - 2 });
+    }
+
+    const labelBox = (person: OverviewPerson, px: number, py: number, right: boolean) => right
+      ? { l: px + 10, t: py - 10 * fs, r: px + 14 + person.labelWidth, b: py + 10 * fs }
+      : { l: px - 14 - person.labelWidth, t: py - 10 * fs, r: px - 10, b: py + 10 * fs };
+    const emphasized = (person: OverviewPerson) => tourHighlightIds.has(person.id) || selected === person.id || traceIds.has(person.id);
+    const onScreen = new Map<string, { px: number; py: number }>();
+    for (const person of ovPersons) {
+      const px = screenX(person.node.x);
+      const py = screenY(person.node.y);
+      const visible = px > -60 && px < width + 60 && py > -24 && py < height + 24 && lineOpacity(person.line) > 0;
+      person.g.style.display = visible ? '' : 'none';
+      if (!visible) continue;
+      onScreen.set(person.id, { px, py });
+      place(person.g, px, py);
+      person.g.style.opacity = String(lineOpacity(person.line));
+      person.g.classList.toggle('ag-ov-lit', tourHighlightIds.has(person.id) || traceIds.has(person.id));
+      person.g.classList.toggle('ag-ov-current', tourCurrentId === person.id || selected === person.id);
+      person.text.style.display = 'none';
+    }
+    const show = (person: OverviewPerson, px: number, py: number, force: boolean) => {
+      const right = person.node.x > -COLUMN_W / 2;
+      const box = labelBox(person, px, py, right);
+      if (!force && hits(box)) return;
+      occupied.push(box);
+      person.text.style.display = 'block';
+      person.text.setAttribute('x', String(right ? 12 : -12));
+      person.text.setAttribute('text-anchor', right ? 'start' : 'end');
+      person.bg.setAttribute('x', String(right ? 8 : -12 - person.labelWidth - 4));
+      person.bg.setAttribute('width', String(person.labelWidth + 8));
+    };
+    for (const person of ovPersons) {
+      const at = onScreen.get(person.id);
+      if (at && emphasized(person)) show(person, at.px, at.py, true);
+    }
+    for (const person of ovPersons) {
+      const at = onScreen.get(person.id);
+      if (at && !emphasized(person)) show(person, at.px, at.py, false);
     }
   }
 
@@ -313,22 +566,17 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     layout = computeLayout(data, expanded);
     nodeEls = new Map();
     edgeEls = new Map();
-    segmentLayer.replaceChildren();
+    mainEdgeEls = new Map();
     edgeLayer.replaceChildren();
     nodeLayer.replaceChildren();
-    for (const segment of layout.segments) {
-      const text = svgEl('text', { class: `ag-segment-title ag-segment-${segment.line}`, x: segment.labelX, y: (segment.y0 + segment.y1) / 2, 'text-anchor': 'end' });
-      text.textContent = segment.title;
-      text.style.opacity = String(lineOpacity(segment.line));
-      segmentLayer.append(text);
-    }
+    buildOverview();
     const nodesById = new Map(allLayoutNodes().map((node) => [node.id, node]));
     for (const edge of layout.edges) {
       const a = nodesById.get(edge.from);
       const b = nodesById.get(edge.to);
       if (!a || !b) continue;
       const path = svgEl('path', {
-        class: `ag-edge ag-edge-${edge.kind}${traceEdges.has(`${edge.from}>${edge.to}>${edge.kind}`) ? ' ag-edge-traced' : ''}${tourEdgeKeys.has(edge.key) ? ' ag-edge-tour-lit' : ''}`,
+        class: `ag-edge ag-edge-${edge.kind}${a.mainline && b.mainline ? ' ag-edge-main' : ''}${traceEdges.has(`${edge.from}>${edge.to}>${edge.kind}`) ? ' ag-edge-traced' : ''}${tourEdgeKeys.has(edge.key) ? ' ag-edge-tour-lit' : ''}`,
         d: edgePath(a, b),
         stroke: COLORS[edge.line] ?? COLORS.common,
         'stroke-width': tourEdgeKeys.has(edge.key) ? 4 : edge.kind === 'mother' ? 1.1 : edge.kind === 'descends' ? 1.4 : 1.7,
@@ -336,6 +584,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       path.style.opacity = String(lineOpacity(edge.line));
       edgeLayer.append(path);
       edgeEls.set(edge.key, path);
+      if (a.mainline && b.mainline) mainEdgeEls.set(edge.key, path);
     }
     for (const node of allLayoutNodes()) {
       const rendered = renderNode(node);
@@ -414,8 +663,9 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     const x0 = Math.min(...main.map((node) => node.x - node.width / 2));
     const x1 = Math.max(...main.map((node) => node.x + node.width / 2));
     const rect = svg.getBoundingClientRect();
-    const height = Math.max(1, rect.height) / (11 / 15);
-    const width = Math.max(1, rect.width) / (11 / 15);
+    const baseZoom = 11 / 15 * getFontScale();
+    const height = Math.max(1, rect.height) / baseZoom;
+    const width = Math.max(1, rect.width) / baseZoom;
     const centerX = (x0 + x1) / 2;
     const centerY = currentBox.y + currentBox.height / 2;
     animateToBox({ x: centerX - width / 2, y: centerY - height / 2, width, height }, animate);
@@ -518,7 +768,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     zoom(factor) {
       const x = currentBox.x + currentBox.width / 2;
       const y = currentBox.y + currentBox.height / 2;
-      const ratio = Math.max(0.12, Math.min(4.5, 1 / factor));
+      const ratio = clampRatio(1 / factor);
       setViewBox({ x: x - currentBox.width * ratio / 2, y: y - currentBox.height * ratio / 2, width: currentBox.width * ratio, height: currentBox.height * ratio });
     },
     select(id) { selected = id; refresh(); },
@@ -650,7 +900,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     event.preventDefault();
     const focus = worldPoint(event.clientX, event.clientY);
     const factor = Math.max(0.72, Math.min(1.4, Math.exp(-event.deltaY * 0.0015)));
-    const ratio = 1 / factor;
+    const ratio = clampRatio(1 / factor);
     setViewBox({
       x: focus.x - (focus.x - currentBox.x) * ratio,
       y: focus.y - (focus.y - currentBox.y) * ratio,
@@ -709,6 +959,16 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     if (event.key === '-') api.zoom(0.84);
   });
 
+  let lastFontScale = getFontScale();
+  window.addEventListener(FONT_SCALE_EVENT, () => {
+    const ratio = getFontScale() / lastFontScale;
+    lastFontScale = getFontScale();
+    refresh();
+    const cx = currentBox.x + currentBox.width / 2;
+    const cy = currentBox.y + currentBox.height / 2;
+    const next = clampRatio(1 / ratio);
+    setViewBox({ x: cx - currentBox.width * next / 2, y: cy - currentBox.height * next / 2, width: currentBox.width * next, height: currentBox.height * next });
+  });
   refresh();
   requestAnimationFrame(() => fitSpine(false));
   const resize = new ResizeObserver(() => { if (!currentBox.width) fitSpine(false); });

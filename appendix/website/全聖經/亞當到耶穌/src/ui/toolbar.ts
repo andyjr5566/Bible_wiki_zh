@@ -1,6 +1,7 @@
 import type { GenealogyData, Person } from '../data/types';
 import { h } from './dom';
 import { createSearch } from './search';
+import { FONT_SCALES, getFontScale, setFontScale } from './fontscale';
 
 export type PageId = 'tree' | 'compare' | 'ages' | 'notes' | 'families' | 'unconnected';
 export type LineFilter = 'both' | '馬太' | '路加';
@@ -73,7 +74,20 @@ export function createToolbar(data: GenealogyData, actions: ToolbarActions): { e
     syncPreferences();
   });
   syncPreferences();
-  const controls = h('div', { className: 'ag-controls' }, lineGroup, zoomOut, zoomIn, fit, restart, theme, motion);
+  const smaller = h('button', { className: 'ag-quiet-button', type: 'button', title: '字體變小', 'aria-label': '字體變小' }, 'A−');
+  const larger = h('button', { className: 'ag-quiet-button', type: 'button', title: '字體變大', 'aria-label': '字體變大' }, 'A＋');
+  const fontGroup = h('div', { className: 'ag-font-size', role: 'group', 'aria-label': '字體大小' }, smaller, larger);
+  const syncFont = () => {
+    const index = (FONT_SCALES as readonly number[]).indexOf(getFontScale());
+    smaller.disabled = index <= 0;
+    larger.disabled = index >= FONT_SCALES.length - 1;
+    fontGroup.title = `字體大小 ${Math.round(getFontScale() * 100)}%`;
+  };
+  smaller.addEventListener('click', () => setFontScale(FONT_SCALES[Math.max(0, (FONT_SCALES as readonly number[]).indexOf(getFontScale()) - 1)]!));
+  larger.addEventListener('click', () => setFontScale(FONT_SCALES[Math.min(FONT_SCALES.length - 1, (FONT_SCALES as readonly number[]).indexOf(getFontScale()) + 1)]!));
+  window.addEventListener('ag-fontscale', syncFont);
+  syncFont();
+  const controls = h('div', { className: 'ag-controls' }, lineGroup, zoomOut, zoomIn, fit, restart, fontGroup, theme, motion);
   const header = h('header', { className: 'ag-header' },
     h('div', { className: 'ag-brand' },
       h('span', { className: 'ag-brand-mark', 'aria-hidden': 'true' }, '譜'),

@@ -84,6 +84,8 @@ export function createFamilyCard(
     class: 'ag-family-svg', role: 'img', 'aria-label': `${family.title}家族圖`,
     width: layout.width, height: layout.height, viewBox: `0 0 ${layout.width} ${layout.height}`,
   });
+  svg.style.width = `calc(${layout.width}px * var(--ag-fs))`;
+  svg.style.height = `calc(${layout.height}px * var(--ag-fs))`;
   const edgeLayer = svgEl('g', { class: 'ag-family-edges' });
   const nodeLayer = svgEl('g', { class: 'ag-family-nodes' });
   const nodesById = new Map(layout.nodes.map((node) => [node.person.id, node]));
