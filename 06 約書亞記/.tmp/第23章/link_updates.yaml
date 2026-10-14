@@ -1,0 +1,336 @@
+book: 約書亞記
+chapter: 23
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。正確形狀：從前幾章講起、把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；本章的細節與引句留在本章 summary，主題發展不再重述一遍。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 約書亞
+  path: link_folder/人物/約書亞.md
+  summary: 第1-2節約書亞年紀老邁，召了以色列眾人的長老、族長、審判官並官長，說「我年紀已經老邁」；第14節「我現在要走世人必走的路」。CT、GT《綜合解讀》與《雷氏》說他這時大約一百一十歲（書24:29）；GT《聖經精讀本》說他分完產業後似乎退到亭拿西拉安度晚年；GT《綜合解讀》說他從外表的安靜看出百姓偏離神的蛛絲馬跡；BH 說他與迦勒同是出埃及、曠野年間與神信實的活見證。
+  relation: 書13:1 神說他年紀老邁，還有許多未得之地；本章他自己說年紀老邁，把剩下的工作交代給首領。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 34
+    - 35
+    definition: keep
+    development: keep
+- title: 安息
+  path: link_folder/神學/安息.md
+  summary: '第1節「耶和華使以色列人安靜，不與四圍的一切仇敵爭戰，已經多日」。STEP 為 he.Ni.ach（H5117，nu.ach: to rest），與書21:44 同字；GT《研經資料》說「安靜」就是安息、休息，原文是「耶和華使以色列從他們四圍一切的仇敵獲得安息之後」；GT《串珠》說神的應許已獲初步應驗，全面的勝利仍待爭取；GT《綜合解讀》說表面上不再與仇敵爭戰，所面臨的危險卻更大；BH 連到申12:10、書21:44。'
+  relation: 書21:44 耶和華使他們四境平安，本章這份安靜已經持續多日。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 以色列的長老
+  path: link_folder/文化/以色列的長老.md
+  summary: '第2節約書亞召了「長老、族長、審判官，並官長」。STEP 為 li/z.ke.Na/v（H2205G，za.qen: old: elder）；CT 說長老年長且老練，被選作全民的代表，摩西時代是七十長老（出24:1）；GT《聖經精讀本》說長老是稱百姓之代表的一般名稱；GT 華爾頓與《研經資料》說這些領袖在重要的儀式和締結盟約場合中充任百姓的代表（出24:1；民11:16）。'
+  relation: 書7、8、20 長老在認罪、立約與逃城審判中出現，本章他們領受約書亞的臨終囑咐。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 14
+    - 15
+    definition: keep
+    development: keep
+- title: 審判官
+  path: link_folder/原文/審判官.md
+  summary: '第2節「審判官」。STEP 為 u./le./sho.fe.Ta/v（H8199，sha.phat: to judge）；CT 說審判官可能以數城或區域為單位，主持審理案件並下達判決；GT《研經資料》與華爾頓說摩西在出18:21-22 指派審判官減輕自己的負擔，審判官也出現在書8:33；GT《聖經精讀本》說族長之中最適合的人被選為審判官與官長（申1:15-16）。'
+  relation: 書8:33 審判官站在約櫃兩旁聽律法，本章他們被召來聽約書亞的告別辭。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 10
+    - 11
+    definition: keep
+    development: keep
+- title: 以色列人的官長
+  path: link_folder/人物/以色列人的官長.md
+  summary: '第2節「官長」。STEP 為 u./le./sho.te.Ra/v（H7860，sho.ter: official）；CT 說官長是輔佐審判官並執行其斷案的下級首領；GT《研經資料》與華爾頓說官長在營中負責組織和維持法紀，執行約書亞的命令（書1:10；3:2；8:33）。'
+  relation: 書1、3 官長傳達約書亞過河的命令，本章他們被召來聽約書亞最後的囑咐。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 耶和華的爭戰
+  path: link_folder/神學/耶和華的爭戰.md
+  summary: '第3、10節「那為你們爭戰的是耶和華─你們的神」「耶和華─你們的神照他所應許的，為你們爭戰」。STEP 第10節為 ha./nil.Cham（H3898A，la.cham: to fight）；CT 說約書亞將征服迦南地歸功於神，神的同在是以色列人爭戰得勝的原因；GT《聖經精讀本》說引領以色列在迦南之戰中獲勝的是神，並引亞4:6；KC 說百姓所有的勝利都要歸於神，一人能追趕千人是因神照應許為他們爭戰（撒上14:6）；BH 連到出14:14、申1:30、申3:22。'
+  relation: 出14 神在紅海為百姓爭戰，申1、3、20 摩西一再應許，本章約書亞回頭說神確實這樣做了。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 未得之地
+  path: link_folder/主題/未得之地.md
+  summary: 第4-5節「我所剪除和所剩下的各國……我已經拈鬮分給你們各支派為業」「耶和華─你們的神必將他們從你們面前趕出去」。CT 說「所剩下」指尚未進取的，「他們的地」包括非利士人的地、亞摩利人的山地等；GT《丁道爾》說剩下的各國在第4、7、12節出現，是演說的主題之一，約書亞展望他過世之後仍待完成的工作；GT《聖經精讀本》說把剩下的各國也包括在產業之內，突出了先取性信仰；GT《綜合解讀》說神會在百姓人數增長的時候把剩下的迦南人趕出去（出23:29-30）；BH 連到士3:1-2、申7:22。
+  relation: 書13 起一再記下的缺口，本章約書亞把它交代給首領，並說神必將他們趕出。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development: keep
+- title: 拈鬮分地（go.ral）
+  path: link_folder/主題/拈鬮分地（go.ral）.md
+  summary: 第4節「我已經拈鬮分給你們各支派為業」。CT 說拈鬮類似抽籤，用來求得神的旨意（書14:2）；BH 說各支派是在耶和華主權的指引下得了指定的份，這使百姓與真正擁有這地的神連在一起。
+  relation: 書14-21 的拈鬮，在本章被約書亞收成一句話。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 13
+    - 14
+    definition: keep
+    development: keep
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: 第4節「從約但河起到日落之處的大海」。GT《研經資料》說第4節似乎只提約旦河西的土地，河東是摩西時代早已佔領並分地的，不算約書亞的功績；BH 說產業從約但河往西延伸到地中海。
+  relation: 本章約但河是河西產業的東界。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 34
+    - 35
+    definition: keep
+    development: keep
+- title: 大海（地中海）
+  path: link_folder/地點/大海（地中海）.md
+  summary: 第4節「日落之處的大海」。CT 與 GT《串珠》說指西面的地中海；BH 說產業往西延伸到地中海，包括谷地、山地、平原與沿海地區。
+  relation: 本章大海是河西產業的西界。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 膽壯與大能同一字根（cha.zaq）
+  path: link_folder/原文/膽壯與大能同一字根（cha.zaq）.md
+  summary: '第6節「你們要大大壯膽」。STEP 為 va./cha.zak.Tem（H2388G，cha.zaq: to strengthen）加 me.''Od（H3966）；CT 給「壯膽」的字義是勇敢、強壯、加強；GT《聖經精讀本》說「大大壯膽」具有「極其大膽」與「下定決心」之意，大膽的勇氣不僅是戰爭所需，也是信仰生活必備的品質；GT《研經資料》說是「極度地堅定勇敢」，與書1:7 神對約書亞的命令一致；BH 連到書1:6、申31:6。'
+  relation: 申11 這個字根用在神的大能和人的膽壯，本章約書亞把書1 神給他的命令轉給百姓。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:11
+      - 約書亞記:23
+- title: 律法書放在約櫃旁
+  path: link_folder/主題/律法書放在約櫃旁.md
+  summary: 第6節「謹守遵行寫在摩西律法書上的一切話」。STEP 為 be./Se.fer to.Rat mo.Sheh（H5612H＋H8451＋H4872）；GT《丁道爾》說書8:31 也提到摩西律法書，這裡指出24:7 的立約之書；GT《研經資料》說「書」是單數，顯示此時摩西的律法書至少有一個雛型，而且只有一本；BH 說成文的律法是神給以色列的權威標準（申31:24-26；書1:8）。
+  relation: 申31 摩西寫下律法書放在約櫃旁，書1 神要約書亞晝夜思想，本章約書亞要眾首領遵行。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 不可偏離左右
+  path: link_folder/主題/不可偏離左右.md
+  summary: 第6節「不可偏離左右」。STEP 為 sur-（H5493I，to turn aside）ya.Min（H3225G）u./se.Mol（H8040G）；CT 說意指完全正直地照所教導的道路去行，不可偏向自己的心意；GT《丁道爾》說書1:7-8 神警告約書亞不可偏離左右，現在約書亞把這個警告傳給以色列人；GT《聖經精讀本》說勿要曲解神的話語，當謙卑而慎重地順服真理的教導；BH 連到申5:32、申17:20。
+  relation: 申5、17 立下的路線，書1 神對約書亞說過，本章約書亞轉給百姓。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 迦南七族（迦南地原住民）
+  path: link_folder/背景/迦南七族（迦南地原住民）.md
+  summary: 第7、12節「你們中間所剩下的這些國民」。CT 說即指迦南七族的殘餘原住民，不可跟他們雜居並通婚；BH 說有幾個迦南民族仍住在以色列支派地界之內或附近，以色列要住在他們中間，卻不採用他們的敬拜、道德與效忠。
+  relation: 申7 列出的迦南七族，到本章是「所剩下的這些國民」，約書亞警告不可與他們攙雜。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 出23：13不可提別神名
+  path: link_folder/解經爭議/出23：13不可提別神名.md
+  summary: '第7節「他們的神，你們不可提他的名，不可指著他起誓，也不可事奉、叩拜」。STEP「提」是 taz.Ki.ru（H2142，za.khar: to remember）；GT《研經資料》說不可提他的名，因為這樣作便是承認外邦神的實在和存在（出23:13），又說「不可指著他起誓」沒有出現在七十士譯本；GT《串珠》說提別神的名可能表示以別神的名字來命名，指著別神起誓則等於承認這些神的真實性和能力；GT《丁道爾》說這四項禁令都以最強烈的形式表達；KC 說提它們的名字就是開始留意它們（詩16:4）；BH 連到出23:13。'
+  relation: 出23:13 不可提別神名的範圍有爭議，本章約書亞把它放在四項禁令的第一項。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 專靠（da.veq）
+  path: link_folder/原文/專靠（da.veq）.md
+  summary: '第8節「專靠耶和華─你們的神」，第12節「與你們中間所剩下的這些國民聯絡」。STEP 兩處都是 H1692（da.vaq: to cleave）：tid.Ba.ku、u./de.vak.Tem；CT 說「專靠」緊靠、黏住，意指緊緊地依附祂，絲毫不分離；GT《研經資料》說 SH 1692 在創2:24 也用來表達夫妻之間的關係，第12節的「聯絡」與第8節的「專靠」是同一個字；GT《綜合解讀》說約書亞把聯絡迦南人帶來的滅亡與專靠神帶來的得勝作對比；GT《聖經精讀本》說「專靠」具有緊緊粘住、堅定地留在原處、盡力追趕等含意；KC 說順服要靠靈魂緊靠主（第8節）。'
+  relation: 書22:5 約書亞用這個字送河東的軍兵回家，本章他把同一個字用了兩次：一次黏著神，一次黏著列國。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:4
+      - 申命記:10
+      - 申命記:13
+      - 約書亞記:22
+      - 約書亞記:23
+- title: 五個人追趕一百人（蒙福的軍事應許）
+  path: link_folder/神學/五個人追趕一百人（蒙福的軍事應許）.md
+  summary: '第10節「你們一人必追趕千人，因耶和華─你們的神照他所應許的，為你們爭戰」。STEP 為 yir.dof-（H7291，ra.daph: to pursue）''A.lef（H505G）；CT 說形容勢如破竹，銳不可當；GT《研經資料》說可參申32:30，是一種誇張的語法；GT《啟導本》說人有神同在可以發揮無法估計的力量，參孫便是好例（士15:14-16）；GT《聖經精讀本》說以色列百姓曾數次經歷以一敵千的戰鬥，因為神代他們而戰；BH 連到利26:8、申32:30。'
+  relation: 利26:8 五個人要追趕一百人，本章約書亞說一人必追趕千人。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:26
+      - 約書亞記:23
+- title: 你要盡心盡性盡力愛耶和華（a.hav）
+  path: link_folder/原文/你要盡心盡性盡力愛耶和華（a.hav）.md
+  summary: 第11節「你們要分外謹慎，愛耶和華─你們的神」。GT《研經資料》說「分外謹慎」是「極其謹守你們的心」，對神用「愛」這個字舊約不常見，主要出現在申命記，此處的確是用 SH 157；CT 說愛神才不會去追求神以外的一切人事物；KC 說愛帶出遵守神的誡命（約壹5:3）；BH 連到申6:5。
+  relation: 書22:5 約書亞要河東的人愛耶和華，本章他對全體首領再說一次。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:6
+      - 申命記:10
+      - 申命記:11
+      - 約書亞記:22
+      - 約書亞記:23
+- title: 申命記7_3-4 禁止與迦南人通婚
+  path: link_folder/互文/申命記7_3-4 禁止與迦南人通婚.md
+  summary: '第12節「彼此結親，互相往來」。STEP 為 ve./hit.cha.tan.Tem（H2859B，cha.tan: be related）；GT《研經資料》說第7節的「攙雜」更可能是指申7:3-4 所記與他們通婚，第12節原文可能是「藉著彼此聯姻進入他們中間」；GT《聖經精讀本》說禁止聯姻是為了防止藉著通婚而興起的偶像崇拜；GT《綜合解讀》說只有不愛神的人才會與不信者攙雜通婚；BH 說所羅門娶外邦女子是這警告的悲劇性應驗（王上11:1-4）。'
+  relation: 申7:3-4 禁止與迦南人結親，本章約書亞臨終重申這條禁令。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 網羅
+  path: link_folder/原文/網羅.md
+  summary: '第13節「他們卻要成為你們的網羅、機檻」。STEP 為 le./Fach（H6341A，pach: snare）與 u./le./mo.Kesh（H4170，mo.qesh: snare）；CT 說「網羅」陷阱、「機檻」誘餌，指誘捕器；GT《聖經精讀本》說這警告根據出23:33、民33:55、申7:16 的律法，網羅與機檻是為強調同樣含意的重複手法；GT《研經資料》說「機檻」在摩3:5 指捕抓雀鳥的機器，兩個詞表示以色列會落入偶像崇拜的陷阱；KC 說網羅使人跌倒，機檻使人動彈不得。'
+  relation: 出23、申7 說迦南人的神會成為網羅，本章約書亞說剩下的國民自己會成為網羅。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 眼中的刺與肋下的荊棘
+  path: link_folder/原文/眼中的刺與肋下的荊棘.md
+  summary: '第13節「肋上的鞭、眼中的刺」。STEP 為 u./le./sho.Tet（H7850，sho.tet: scourge）be./tzi.dei./Khem（H6654，side）ve./li/tz.ni.Nim（H6796，tsa.nin: thorn）be./''ei.nei./Khem（H5869A）；民33:55 的「肋下的荊棘」也是 tsa.nin，本章用在「眼中的刺」；GT《綜合解讀》說是重申摩西的警告（民33:55；申7:16）；GT《聖經精讀本》說「肋上的鞭」意指將要落到用鞭子受治理的悲慘地步（王上12:11），「眼中的刺」比喻將因仇敵大受痛苦，士2:3 重複了這兩句話；GT《研經資料》說「肋上的鞭」有學者認為是奴隸販子的鞭子，「眼中的刺」可以導致失明；KC 說它會殘酷地使人瞎眼，再也看不見神的福分。'
+  relation: 民33:55 摩西說留下的居民會作眼中的刺、肋下的荊棘；本章約書亞說的是肋上的鞭、眼中的刺，用字與民33:55 不完全相同。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:33
+      - 約書亞記:23
+- title: 美地
+  path: link_folder/主題/美地.md
+  summary: 第13、15、16節三次說「耶和華─你們神所賜的這美地」。STEP 第13、15節為 H127G（a.da.mah）加 H2896A（tov），第16節為 H776G（e.rets）加 H2896A；GT《綜合解讀》說約書亞三次強調悖逆違約的結果是在這美地上滅亡；BH 說這地是神慷慨的賞賜，聖經處處說它美好多產，但百姓享受它要靠順服。
+  relation: 申命記一再說這是美地，本章約書亞三次說他們可能從這美地上滅亡。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 神的應許應驗
+  path: link_folder/神學/神的應許應驗.md
+  summary: '第14-15節「耶和華─你們神所應許賜福與你們的話沒有一句落空，都應驗在你們身上了」「所應許的一切福氣怎樣臨到你們身上，耶和華也必照樣使各樣禍患臨到你們身上」。STEP「落空」是 na.Fal（H5307L，to fall: fail），兩次；第15節「福氣」是 ha./da.Var ha./Tov（H1697I＋H2896A），「禍患」是 ha./da.Var ha./Ra''（H1697I＋H7451H）；CT 說一切福氣原文是好的話語，各樣禍患是壞的話語；CT 與 GT《綜合解讀》說賜福根據神的應許（申28:1-14），降禍根據祂的咒詛（申28:15-68），兩樣都必沒有一句落空；KC 說已經應驗的應許是尚待應驗之應許的保證；BH 連到書21:45、王上8:56。'
+  relation: 書21:45 說應許賜福的話一句也沒有落空，本章約書亞重述這句話，又說警告的話也同樣會應驗。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 進入約中（a.var）
+  path: link_folder/原文/進入約中（a.var）.md
+  summary: '第16節「你們若違背耶和華─你們神吩咐你們所守的約」。STEP 為 Be./''a.ve.re./khem（H5674D，a.var: to pass: trespass）be.Rit（H1285，be.rit: covenant）；GT《研經資料》說 SH 5674 有經過、穿越、違犯、廢除等意思，正好也是約書亞記提到他們怎樣過約旦河所使用的動詞；GT《丁道爾》說約書亞記頭幾章的鑰字講到全國怎樣過到應許之地來，如今同一個動詞警告以色列不要違背神的約；CT 給「違背」的字義是疏離、廢除。'
+  relation: 申29:12 a.var 加 be.rit 是走進約裡，本章同樣的組合是越過了約。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:29
+      - 約書亞記:23
+- title: 除了我以外你不可有別的神
+  path: link_folder/神學/除了我以外你不可有別的神.md
+  summary: 第7、16節不可事奉、叩拜別神；第16節「去事奉別神，叩拜他」。STEP 第16節為 'E.lo.Him 'a.che.Rim（H430J＋H312）；GT《丁道爾》說不准拜偶像的基本命令（出20:3-6；申5:7-10）成為順服的主要測驗；GT《研經資料》說不可事奉、叩拜可參出20:3-6、申5:7-10；BH 說拜偶像是否認耶和華的獨一，棄絕第一條誡命。
+  relation: 出20、申5 的第一條誡命，成了本章約書亞警告的最後一句。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep

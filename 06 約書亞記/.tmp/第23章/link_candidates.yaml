@@ -1,0 +1,139 @@
+book: 約書亞記
+chapter: 23
+candidates:
+# ---- C 類新建 ----
+- name: "約書亞的告別辭"
+  type: "事件"
+  evidence: "第1-16節約書亞年紀老邁，召了以色列眾人的長老、族長、審判官並官長，說「我年紀已經老邁」「我現在要走世人必走的路」，回顧神的作為、勸勉遵行律法、警告不可與剩下的國民攙雜；GT《聖經精讀本》稱為「約書亞的告別辭」，分三個焦點；GT《研經資料》《啟導本》：與申31-33 摩西的遺言先後輝映；GT 華爾頓：經文沒說是否緊接書22，也不提地點；GT《雷氏》：本章對象是眾首領，書24 是整個民族；KC：書23 與書24 是一體的，可比摩西、撒母耳、保羅的臨別；BH：如同摩西在申31:2 承認自己年老"
+  surfaces:
+  - phrase: "我年紀已經老邁"
+    verses: [2]
+  - phrase: "世人必走的路"
+    verses: [14]
+# ---- B 類既有條目 ----
+- name: "約書亞"
+  type: "人物"
+  evidence: "第1-2節約書亞年紀老邁，召集眾首領；CT、GT《綜合解讀》《雷氏》：可能已經一百一十歲（書24:29）；GT《精讀本》：似乎退到亭拿西拉安度晚年（書19:50）；BH：與迦勒同為出埃及、曠野年間與神信實的活見證"
+- name: "安息"
+  type: "神學"
+  evidence: "第1節「耶和華使以色列人安靜」；STEP he.Ni.ach（H5117，nu.ach: to rest）；GT《研經資料》：「安靜」就是安息、休息，原文是「耶和華使以色列從他們四圍一切的仇敵獲得安息之後」；GT《串珠》：神的應許已獲初步應驗，全面的勝利仍待爭取；BH 連到申12:10、書21:44"
+  surfaces:
+  - phrase: "安靜"
+    verses: [1]
+- name: "以色列的長老"
+  type: "文化"
+  evidence: "第2節「以色列眾人的長老、族長、審判官，並官長」；STEP li/z.ke.Na/v（H2205G）；CT：長老年長且老練，被選作全民的代表；GT《精讀本》：長老是稱百姓之代表的一般名稱；GT 華爾頓、《研經資料》：在重要的儀式和締結盟約場合中充任百姓的代表（出24:1；民11:16）"
+  surfaces:
+  - phrase: "長老"
+    verses: [2]
+- name: "審判官"
+  type: "原文"
+  evidence: "第2節「審判官」；STEP u./le./sho.fe.Ta/v（H8199，sha.phat: to judge）；CT：可能以數城或區域為單位主持審理案件；GT《研經資料》、華爾頓：摩西在出18:21-22 指派審判官減輕自己的負擔"
+- name: "以色列人的官長"
+  type: "人物"
+  evidence: "第2節「官長」；STEP u./le./sho.te.Ra/v（H7860，sho.ter: official）；CT：輔佐審判官並執行其斷案的下級首領；GT《研經資料》、華爾頓：在營中負責組織和維持法紀，執行約書亞的命令（書1:10；3:2；8:33）"
+- name: "耶和華的爭戰"
+  type: "神學"
+  evidence: "第3、10節「那為你們爭戰的是耶和華─你們的神」「耶和華─你們的神照他所應許的，為你們爭戰」；STEP ha./nil.Cham（H3898A，la.cham: to fight）；CT：約書亞將征服迦南地歸功於神；GT《精讀本》：引領以色列獲勝的是神（亞4:6）；KC：All the victories that the people have achieved are due to God；BH 連到出14:14、申1:30、申3:22"
+  surfaces:
+  - phrase: "為你們爭戰"
+    verses: [3, 10]
+- name: "未得之地"
+  type: "主題"
+  evidence: "第4-5節「我所剪除和所剩下的各國……我已經拈鬮分給你們各支派為業」「耶和華─你們的神必將他們從你們面前趕出去」；CT：『所剩下』指尚未進取的；GT《丁道爾》《研經資料》：剩下的各國出現在第4、7、12節，約書亞展望他過世之後仍有待完成的工作；GT《精讀本》：把剩下的各國也包括在產業之內，突出先取性信仰；BH 連到士3:1-2、申7:22、出23:30"
+  surfaces:
+  - phrase: "所剩下的各國"
+    verses: [4]
+- name: "拈鬮分地（go.ral）"
+  type: "主題"
+  evidence: "第4節「我已經拈鬮分給你們各支派為業」；CT：拈鬮類似抽籤，用來求得神的旨意（書14:2）；BH 連到書13:7、書14:2、民34:13"
+  surfaces:
+  - phrase: "拈鬮"
+    verses: [4]
+- name: "約但河"
+  type: "地點"
+  evidence: "第4節「從約但河起到日落之處的大海」；GT《研經資料》：似乎只提約旦河西的土地，河東是摩西時代早已佔領分地的"
+- name: "大海（地中海）"
+  type: "地點"
+  evidence: "第4節「日落之處的大海」；CT、GT《串珠》：指西面的地中海；BH：the Mediterranean Sea"
+  surfaces:
+  - phrase: "大海"
+    verses: [4]
+- name: "膽壯與大能同一字根（cha.zaq）"
+  type: "原文"
+  evidence: "第6節「你們要大大壯膽」；STEP va./cha.zak.Tem（H2388G，cha.zaq: to strengthen）me.'Od（H3966）；CT：「壯膽」勇敢、強壯、加強；GT《精讀本》：具有「極其大膽」與「下定決心」之意；GT《研經資料》：「極度地堅定勇敢」，與書1:7 神對約書亞的命令一致；BH 連到書1:6-9、申31:6"
+  surfaces:
+  - phrase: "壯膽"
+    verses: [6]
+- name: "律法書放在約櫃旁"
+  type: "主題"
+  evidence: "第6節「寫在摩西律法書上的一切話」；STEP be./Se.fer to.Rat mo.Sheh（H5612H＋H8451＋H4872）；GT《丁道爾》：書8:31 也提到摩西律法書，這裡指出24:7 的立約之書；GT《研經資料》：「書」是單數，顯示摩西律法書至少有一個雛型存在；BH 連到申31:24-26、書1:8"
+- name: "不可偏離左右"
+  type: "主題"
+  evidence: "第6節「不可偏離左右」；STEP sur-（H5493I，to turn aside）ya.Min（H3225G）u./se.Mol（H8040G）；CT：意指完全正直地照所教導的道路去行，不可偏向自己的心意；GT《丁道爾》：書1:7-8 神警告約書亞不可偏離左右，現在約書亞把這個警告傳給以色列人；GT《精讀本》：勿要曲解神的話語；BH 連到申5:32、申17:20"
+- name: "迦南七族（迦南地原住民）"
+  type: "背景"
+  evidence: "第7、12節「你們中間所剩下的這些國民」；CT：所剩下的這些國民即指迦南七族的殘餘原住民，不可跟迦南七族的人雜居並通婚；BH：Several Canaanite peoples continued to live within or near Israel's tribal territories"
+  surfaces:
+  - phrase: "這些國民"
+    verses: [7, 12]
+- name: "出23：13不可提別神名"
+  type: "解經爭議"
+  evidence: "第7節「他們的神，你們不可提他的名，不可指著他起誓，也不可事奉、叩拜」；STEP taz.Ki.ru（H2142，za.khar: to remember）；GT《研經資料》：不可提他的名，因為這樣作便是承認外邦神的實在和存在（出23:13）；GT《串珠》：提別神的名可能表示以別神的名字來命名；KC：Mentioning the names means paying attention to them（詩16:4）；BH 連到出23:13；GT《研經資料》：「不可指著他起誓」沒有出現在七十士譯本"
+  surfaces:
+  - phrase: "不可提他的名"
+    verses: [7]
+- name: "專靠（da.veq）"
+  type: "原文"
+  evidence: "第8節「專靠耶和華─你們的神」，第12節「與你們中間所剩下的這些國民聯絡」；STEP 兩處都是 H1692（da.vaq: to cleave）：tid.Ba.ku、u./de.vak.Tem；GT《研經資料》《綜合解讀》：「聯絡」原文與「專靠」是同一個字，SH 1692 在創2:24 也用來表達夫妻之間的關係；GT《精讀本》：「專靠」具有「緊緊粘住」「堅定地留在原處」「盡力追趕」等含意；CT：「專靠」緊靠，黏住；KC：our soul cling to the Lord"
+  surfaces:
+  - phrase: "聯絡"
+    verses: [12]
+- name: "五個人追趕一百人（蒙福的軍事應許）"
+  type: "神學"
+  evidence: "第10節「你們一人必追趕千人」；STEP yir.dof-（H7291，ra.daph: to pursue）'A.lef（H505G）；CT：形容勢如破竹，銳不可當；GT《研經資料》：可參申32:30，是一種誇張的語法；GT《啟導本》：人有神同在，可以發揮無法估計的力量，參孫便是好例（士15:14-16）；KC 參撒上14:6；BH 連到申32:30、利26:8"
+  surfaces:
+  - phrase: "一人必追趕千人"
+    verses: [10]
+- name: "你要盡心盡性盡力愛耶和華（a.hav）"
+  type: "原文"
+  evidence: "第11節「你們要分外謹慎，愛耶和華─你們的神」；GT《研經資料》：對神用「愛」這個字，舊約裡面不常見，主要出現在申命記，此處的確是用 SH 157；CT：愛神，才不會去追求神以外的一切人事物；KC：Love leads to the keeping of God's commandments；BH 連到申6:5"
+  surfaces:
+  - phrase: "愛耶和華"
+    verses: [11]
+- name: "申命記7_3-4 禁止與迦南人通婚"
+  type: "互文"
+  evidence: "第12節「彼此結親，互相往來」；STEP ve./hit.cha.tan.Tem（H2859B，cha.tan: be related）；GT《精讀本》：約書亞禁止他們與迦南居民聯姻，是為了防止藉著通婚而興起的偶像崇拜；GT《研經資料》：「攙雜」更可能是指申7:3-4 所記與他們通婚；BH 連到申7:3-4，所羅門娶外邦女子是這警告的應驗（王上11:1-4）"
+  surfaces:
+  - phrase: "彼此結親"
+    verses: [12]
+- name: "網羅"
+  type: "原文"
+  evidence: "第13節「他們卻要成為你們的網羅、機檻」；STEP le./Fach（H6341A，pach: snare）、u./le./mo.Kesh（H4170，mo.qesh: snare）；CT：「網羅」陷阱，「機檻」誘餌，指誘捕器；GT《精讀本》：根據出23:33、民33:55、申7:16 的律法，網羅與機檻是為強調同樣含意的重複手法；GT《研經資料》：「機檻」在摩3:5 指捕抓雀鳥的機器；BH 連到出23:33、申7:16"
+- name: "眼中的刺與肋下的荊棘"
+  type: "原文"
+  evidence: "第13節「肋上的鞭、眼中的刺」；STEP u./le./sho.Tet（H7850，sho.tet: scourge）be./tzi.dei./Khem（H6654）ve./li/tz.ni.Nim（H6796，tsa.nin: thorn）be./'ei.nei./Khem（H5869A）；GT《綜合解讀》：是重申摩西的警告（民33:55；申7:16）；GT《精讀本》：「肋上的鞭」意指將要落到用鞭子受治理的悲慘地步（王上12:11），士2:3 重複了這兩句話；GT《研經資料》：「肋上的鞭」有學者認為是奴隸販子的鞭子，「眼中的刺」可以導致失明；KC：he will cruelly and painfully blind us；BH 連到民33:55、士2:3"
+  surfaces:
+  - phrase: "肋上的鞭、眼中的刺"
+    verses: [13]
+- name: "美地"
+  type: "主題"
+  evidence: "第13、15、16節「耶和華─你們神所賜的這美地」三次；STEP ha./'a.da.Mah ha./to.Vah（H127G＋H2896A）、ha./'A.retz ha./to.Va（H776G）；GT《綜合解讀》：三次強調悖逆違約的結果是在這美地上滅亡；BH：The land was a generous gift, described throughout Scripture as good and fruitful"
+- name: "神的應許應驗"
+  type: "神學"
+  evidence: "第14-15節「耶和華─你們神所應許賜福與你們的話沒有一句落空，都應驗在你們身上了」「所應許的一切福氣怎樣臨到你們身上，耶和華也必照樣使各樣禍患臨到你們身上」；STEP na.Fal（H5307L，to fall: fail）兩次；第15節「福氣」是 ha./da.Var ha./Tov（H1697I＋H2896A），「禍患」是 ha./da.Var ha./Ra'（H7451H）；CT：一切福氣原文雙字是好的話語，各樣禍患是壞的話語；GT《綜合解讀》、CT：神既是信實的，守約的福氣和違約的禍患都必沒有一句落空（申28）；KC：All the promises that have already been fulfilled are a guarantee for all the promises that remain to be fulfilled；BH 連到書21:45、王上8:56"
+  surfaces:
+  - phrase: "沒有一句落空"
+    verses: [14]
+- name: "進入約中（a.var）"
+  type: "原文"
+  evidence: "第16節「你們若違背耶和華─你們神吩咐你們所守的約」；STEP Be./'a.ve.re./khem（H5674D，a.var: to pass: trespass）be.Rit（H1285）；GT《研經資料》：SH 5674 有經過、穿越、違犯、廢除等意思，正好也是約書亞記提到他們怎樣過約旦河所使用的動詞；GT《丁道爾》：約書亞記頭幾章的鑰字，講到全國怎樣過到應許之地來，如今同一個動詞警告以色列不要違背神的約；CT：「違背」疏離、廢除"
+  surfaces:
+  - phrase: "違背"
+    verses: [16]
+- name: "除了我以外你不可有別的神"
+  type: "神學"
+  evidence: "第7、16節不可事奉、叩拜別神；「去事奉別神，叩拜他」；STEP 'E.lo.Him 'a.che.Rim（H430J＋H312）；GT《丁道爾》：不准拜偶像的基本命令（出20:3-6；申5:7-10）成為順服的主要測驗；BH：Idolatry would deny the LORD's uniqueness and reject the first commandment；CT 引出20:3"
+  surfaces:
+  - phrase: "去事奉別神"
+    verses: [16]

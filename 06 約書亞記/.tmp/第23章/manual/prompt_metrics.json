@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "book": "約書亞記",
+  "chapter": 23,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "chapter_content",
+      "path": "chapter_content.prompt.md",
+      "before": {
+        "chars": 114720,
+        "bytes": 159706
+      },
+      "after": {
+        "chars": 11986,
+        "bytes": 19215
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_joshua_23.txt",
+          "chars": 6420,
+          "bytes": 18252
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_joshua_23.txt",
+          "chars": 10908,
+          "bytes": 29794
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_joshua_23.txt",
+          "chars": 8422,
+          "bytes": 8484
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_joshua_23.txt",
+          "chars": 33546,
+          "bytes": 34164
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_joshua_23.txt",
+          "selection_mode": "selected_candidates",
+          "raw_chars": 50824,
+          "raw_bytes": 58705,
+          "projected_chars": 6797,
+          "projected_bytes": 7762,
+          "occurrences": 44,
+          "occurrence_count": 44,
+          "lexicon_entries": 14,
+          "selected_verses": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "candidate_count": 40,
+          "selected_candidate_count": 14,
+          "truncated": true,
+          "returned_chars": 6797,
+          "budget": 7000,
+          "fallback_used": false
+        }
+      ]
+    }
+  ]
+}

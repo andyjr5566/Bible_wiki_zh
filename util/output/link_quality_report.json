@@ -1,7 +1,7 @@
 {
-  "total_warnings": 265,
+  "total_warnings": 267,
   "critical_count": 0,
-  "warning_count": 265,
+  "warning_count": 267,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -1462,6 +1462,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/原文/網羅.md",
+      "target": "第23章",
+      "message": "同一 alias「第23章」指向多個 target: 02 出埃及記/第23章, 06 約書亞記/第23章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/原文/贖愆祭（asham）.md",
       "target": "第5章",
       "message": "同一 alias「第5章」指向多個 target: 03 利未記/第5章, 04 民數記/第5章"
@@ -1843,6 +1850,13 @@
       "source": "link_folder/互文/逃城.md",
       "target": "第21章",
       "message": "同一 alias「第21章」指向多個 target: 02 出埃及記/第21章, 06 約書亞記/第21章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/解經爭議/出23：13不可提別神名.md",
+      "target": "第23章",
+      "message": "同一 alias「第23章」指向多個 target: 02 出埃及記/第23章, 06 約書亞記/第23章"
     },
     {
       "type": "alias_target_conflict",

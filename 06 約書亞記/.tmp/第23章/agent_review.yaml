@@ -1,0 +1,88 @@
+version: 2
+book: 約書亞記
+chapter: 23
+stages:
+  m3:
+    round: 1
+    revision: 1
+    sha256: e980236b389b6521eaf08867c2039b099b268ff080d02f9a4d07a31c79920cab
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: e980236b389b6521eaf08867c2039b099b268ff080d02f9a4d07a31c79920cab
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - entry_content/約書亞的告別辭.yaml
+    own_sha256: e980236b389b6521eaf08867c2039b099b268ff080d02f9a4d07a31c79920cab
+    verdict_sha: e980236b389b6521eaf08867c2039b099b268ff080d02f9a4d07a31c79920cab
+    thread_id: f87c8d30-5467-4b00-844a-eaeeb4590ff5
+    findings_count: 0
+  m6:
+    round: 2
+    revision: 2
+    sha256: 29aa1d6d155fbf35231a2837d81fc56666864c507b55858e52bbf27a17ca6975
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: ac1ad423eccf20656a57d8e2f2a6cc951199f9773e8879d5dbbda355f4e9f063
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 29aa1d6d155fbf35231a2837d81fc56666864c507b55858e52bbf27a17ca6975
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    thread_id: 0b322e38-ea11-4055-8661-1e4ccb5a23f3
+    hash_inputs:
+    - parent:m3=e980236b389b6521eaf08867c2039b099b268ff080d02f9a4d07a31c79920cab
+    - chapter_content.yaml
+    own_sha256: 77716ecd9ddcadd7f71e9741635b9779405f5ce61ed973285e2a3207950ec6fd
+    verdict_sha: 29aa1d6d155fbf35231a2837d81fc56666864c507b55858e52bbf27a17ca6975
+    findings_count: 0
+  link_updates:
+    round: 2
+    revision: 2
+    sha256: 87922b73519812c57ae3d56287a4dabdde715995f4061131b904e96874736bb0
+    claude: unchanged
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_mode: delta_reviewed
+    delta_from_sha: 72263dbc8cf385142dfa17fa65dfeb0549ac54254ddc45570cee9c86d34037ca
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 72263dbc8cf385142dfa17fa65dfeb0549ac54254ddc45570cee9c86d34037ca
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: null
+      reviewer: antigravity
+      sha256: 87922b73519812c57ae3d56287a4dabdde715995f4061131b904e96874736bb0
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+      mode: delta
+    thread_id: 1ebbe6f4-cb71-4ceb-a100-e5bc35f66f7c
+    hash_inputs:
+    - parent:m3=e980236b389b6521eaf08867c2039b099b268ff080d02f9a4d07a31c79920cab
+    - parent:m6=29aa1d6d155fbf35231a2837d81fc56666864c507b55858e52bbf27a17ca6975
+    - link_updates.yaml
+    own_sha256: 14ef493a54105dd97c92072ba5e80fbf6243c04c7de8453bf096d724f1113d4f
+    verdict_sha: 87922b73519812c57ae3d56287a4dabdde715995f4061131b904e96874736bb0
+    findings_count: 0
