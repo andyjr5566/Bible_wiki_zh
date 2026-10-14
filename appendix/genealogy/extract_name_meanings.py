@@ -97,6 +97,7 @@ def load_lexicon(path: Path) -> dict[str, dict]:
         entries[dstrong] = {
             "orig": cols[3].strip(), "translit": cols[4].strip(), "morph": cols[5].strip(),
             "gloss": cols[6].strip(), "name": name, "meaning": meaning,
+            "rel": cols[1].split("=", 1)[1].strip() if "=" in cols[1] else "", "uref": cols[2].strip(),
             "heb": [w for part in re.findall(r"Heb\.\s*([^)]*)", cols[7]) for w in re.findall(r"H\d{4}|[֐-׿]+", part)],
         }
     return entries
@@ -125,22 +126,27 @@ def resolve_entry(lexicon: dict[str, dict], strong: str) -> dict:
     return head
 
 
-def hebrew_counterpart(greek_entry: dict, name_en: str, hebrew: dict[str, dict]) -> dict | None:
-    """希臘文名字的詞典沒有字義時，用希臘文詞條自己標的希伯來文對應名字：
-    希伯來文拼寫相同、是人名、英文名相近（≥0.75）、而且字義只有一種才採用。"""
+def hebrew_counterpart(greek_entry: dict, names: list[str], hebrew: dict[str, dict]) -> dict | None:
+    """希臘文名字的詞典沒有字義時，借對應的希伯來文名字的字義。兩種依據，都要求英文名相近（≥0.75）：
+    1. STEP 在這個詞條自己標了「the Greek of H…」，直接取那個希伯來文詞條；
+    2. 希臘文詞條文字標了唯一的對應希伯來文（Heb. …），拼寫相同、是人名、字義只有一種。"""
+    letters = lambda text: re.sub(r"[^a-z]", "", text.lower())
+    similar = lambda hebrew_name: max((SequenceMatcher(None, letters(n), letters(hebrew_name.split(" or ")[0])).ratio()
+                                      for n in names if n), default=0) >= 0.75
+    uref = norm_strong(greek_entry.get("uref", ""))
+    if "Greek of" in greek_entry.get("rel", "") and uref.startswith("H"):
+        target = hebrew.get(uref)
+        if target and target["meaning"] and similar(target["name"] or target["gloss"]):
+            return target
     cited = list(dict.fromkeys(greek_entry.get("heb", [])))
     if len({consonants(word) if not word.startswith("H") else word for word in cited}) != 1:
         return None
-    target = cited[0]
-    is_number = bool(re.match(r"^H\d{4}$", target))
-    letters = lambda text: re.sub(r"[^a-z]", "", text.lower())
+    word = cited[0]
+    is_number = bool(re.match(r"^H\d{4}$", word))
     candidates = []
     for key, entry in hebrew.items():
-        same = re.sub(r"[A-Z]$", "", key) == target if is_number else consonants(entry["orig"]) == consonants(target)
-        if not same or "-P" not in entry["morph"] or not entry["meaning"]:
-            continue
-        hebrew_name = (entry["name"] or entry["gloss"]).split(" or ")[0]
-        if SequenceMatcher(None, letters(name_en), letters(hebrew_name)).ratio() >= 0.75:
+        same = re.sub(r"[A-Z]$", "", key) == word if is_number else consonants(entry["orig"]) == consonants(word)
+        if same and "-P" in entry["morph"] and entry["meaning"] and similar(entry["name"] or entry["gloss"]):
             candidates.append(entry)
     if len({entry["meaning"] for entry in candidates}) != 1:
         return None
@@ -295,7 +301,7 @@ def main() -> int:
         book, chapter, verse, token, entry, kind = found
         via = ""
         if not entry.get("meaning") and norm_strong(token["strong"]).startswith("G"):
-            counterpart = hebrew_counterpart(entry, entry.get("name") or clean_gloss(token["gloss"]).title(), hebrew)
+            counterpart = hebrew_counterpart(entry, [entry.get("name", ""), entry.get("gloss", ""), clean_gloss(token["gloss"])], hebrew)
             if counterpart:
                 entry = {**entry, "meaning": counterpart["meaning"]}
                 via = f"{counterpart['orig']}（{counterpart['name'] or counterpart['gloss']}）"
