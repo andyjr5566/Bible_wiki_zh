@@ -1,0 +1,170 @@
+book: 約書亞記
+chapter: 22
+candidates:
+# ---- C 類新建 ----
+- name: "證壇"
+  type: "主題"
+  evidence: "第10-34節流便人、迦得人、瑪拿西半支派在約但河那裡築了一座看著高大的壇，引起全會眾聚集示羅要攻打，非尼哈與十個首領前去問罪，二支派半解釋是作證據不是獻祭，第34節起名叫證壇；STEP 'ed（H5707，witness）、tav.Nit（H8403，pattern）；CT：形狀似祭壇的紀念壇，非用來獻祭，從遠處就能望見；GT《啟導本》《精讀本》《研經資料》《丁道爾》《綜合解讀》《雷氏》：證據一字與法庭見證人、創31:48-52 邊界紀念碑同字，是耶和華壇的複製品，神已定一年三次上聖所來維持合一，證壇是多餘的；KC：fake altar larger than the real one，a fictional unity；BH：deliberately large and visible，a witness that the Jordan did not divide Israel"
+  surfaces:
+  - phrase: "證壇"
+    verses: [34]
+  - phrase: "築了一座壇"
+    verses: [10]
+- name: "大能者神耶和華"
+  type: "原文"
+  evidence: "第22節二支派半連呼兩次「大能者神耶和華」；STEP 'el（H410G）'E.lo.Him（H430G）Yah.weh（H3068G）連用兩次；CT：包括三個名字，連呼兩次強調神無所不能；GT《研經資料》：SH 410 El、SH 430 Elohim、SH 3068 Yahweh，重複兩次表示最高級；GT《丁道爾》：可用最高級翻譯，即耶和華是最偉大的神；GT《雷氏》《啟導本》《綜合解讀》《精讀本》：呼喊神的三個名字，是誓言，表示震驚與清白；BH：The LORD, the Mighty One, is God!"
+- name: "悖逆（ma.rad）"
+  type: "原文"
+  evidence: "第16、18、19、22、29節反覆說「悖逆耶和華」；STEP ma.rad（H4775，to rebel）五次、第22節 me.red（H4777，rebellion）；CT：「悖逆」反叛、造反；GT《聖經精讀本》：指對神的叛逆及不順服，超過一般的罪過；GT《丁道爾》《研經資料》：轉去不跟從和悖逆兩個詞過去曾用來形容以色列對神的不忠；BH 第16、18、19節連到民14:9「不可背叛耶和華」"
+  surfaces:
+  - phrase: "悖逆"
+    verses: [16, 18, 19, 22, 29]
+# ---- B 類既有條目 ----
+- name: "流便"
+  type: "人物"
+  evidence: "第1、9-34節流便人與迦得人、瑪拿西半支派回河東、築壇、答辯，第25、32-34節只提流便人、迦得人；GT《研經資料》：學者因第25、32節只提流便、迦得，認為瑪拿西是後來加入，研經資料不以為然；BH 第34節：Reuben and Gad are named as the principal builders"
+- name: "迦得（萬幸）"
+  type: "人物"
+  evidence: "第1、9-34節迦得人與流便人、瑪拿西半支派回河東、築壇、答辯；BH 第34節：Reuben and Gad are named as the principal builders"
+  surfaces:
+  - phrase: "迦得人"
+    verses: [1, 9, 10, 11, 13, 15, 21, 25, 30, 31, 32, 33, 34]
+- name: "瑪拿西"
+  type: "人物"
+  evidence: "第1、7、9-31節瑪拿西半支派；第7節摩西早已在巴珊分給一半，約書亞在約但河西分給另一半；CT：那半支派指河東巴珊，這半支派指河西中部；GT《研經資料》：第25、32節不提瑪拿西，可能因為另一半在河西，被隔絕的危險較小；BH 第7節：Though divided by the Jordan, both halves remained one tribe"
+- name: "兩支派半求河東之地為業"
+  type: "事件"
+  evidence: "第1-9節約書亞稱讚二支派半遵守了摩西的吩咐（民32:20-22）與自己的吩咐（書1:16-18），沒有撇離弟兄，打發他們回摩西在約但河東所賜為業之地；CT、GT《研經資料》《雷氏》《綜合解讀》、BH 都接回民32 的承諾；GT《綜合解讀》：派四萬人渡河，征戰七年；GT《研經資料》：22:1-6 與 1:12-18 相呼應"
+  surfaces:
+  - phrase: "在約但河東所賜你們為業之地"
+    verses: [4]
+- name: "河東之地是神的旨意還是神的允許"
+  type: "解經爭議"
+  evidence: "第4、19節；KC：他們寧取約但河的曠野一邊，不取神所揀選的地，God allows them to go back；GT《雷氏》：不要以為這些支派定居在約但河東並不是神的旨意，神已經把那地賜給他們（書24:8）；GT《綜合解讀》：若嫌不潔淨可能因為會幕不在河東，那裡還有基述人、瑪迦人；BH 第19節：the territory east of the Jordan may be viewed as outside the sacred center"
+- name: "河東二支派半最先被擄（代上5：25-26）"
+  type: "互文"
+  evidence: "第34節之後的後話；CT〔話中之光〕、GT《綜合解讀》：河東兩個半支派的子孫後來還是得罪神，隨從偶像，被亞述擄去（代上5:25-26），成了最早被擄的支派；KC：The tribes of the wilderness side of the Jordan are the first to be deported in scattering (1Chr 5:26)"
+- name: "巴珊"
+  type: "地點"
+  evidence: "第7節瑪拿西那半支派，摩西早已在巴珊分給他們地業；CT：「巴珊」多結果實的；BH：fertile, well-defended region that included cities such as Ashtaroth and Edrei"
+- name: "示羅"
+  type: "地點"
+  evidence: "第9、12節二支派半從迦南地的示羅起行，全會眾聚集在示羅要上去攻打；CT：示劍南方約18公里，伯特利北方約15公里，會幕所在地；GT《綜合解讀》：分地結束後才離開，盡忠到最後一刻；BH：Gathering there placed the matter before God's established center of worship"
+- name: "基列"
+  type: "地點"
+  evidence: "第9、13、15、32節回往他們得為業的基列地，非尼哈往基列地去；CT：基列地泛指約但河東岸二支派半所分得之地；GT《研經資料》：指約旦河東一帶的地區；BH：fertile and mountainous region east of the Jordan, separated from the main body of Israel by the river"
+- name: "約但河"
+  type: "地點"
+  evidence: "第10、11、25節在約但河那裡築壇，「耶和華把約但河定為我們和你們這流便人、迦得人的交界」；GT《精讀本》：巴勒斯坦的天然要塞；GT《雷氏》：約但河東的基列眾山（而不是約但河）是巴勒斯坦的東界；GT《研經資料》《精讀本》：河東人因天然屏障更多受外敵侵擾、不易往來；BH：The Jordan could become a lasting division"
+- name: "迦南地"
+  type: "地點"
+  evidence: "第9、10、11、32節迦南地的示羅、靠近約但河的一帶迦南地、從基列地回往迦南地；第19節「耶和華之地」；CT：耶和華之地即約但河西岸迦南地；BH：The land west of the Jordan was especially identified as the LORD's possession"
+- name: "安息"
+  type: "神學"
+  evidence: "第4節「使你們弟兄得享平安」；GT《研經資料》：得享「平安」原文是「安息」；BH 連到申3:20、書21:44、王上5:4；GT《綜合解讀》引書1:15「等到耶和華使你們的弟兄像你們一樣得享平安」"
+  surfaces:
+  - phrase: "得享平安"
+    verses: [4]
+- name: "專靠（da.veq）"
+  type: "原文"
+  evidence: "第5節「專靠他」；STEP u./le./da.ve.kah-（H1692，da.vaq: to cleave）；CT：「專靠」附著，黏住，緊靠，意指緊緊地依附祂，絲毫不分離；GT《研經資料》：臨別訓勉四要點之一是專心倚靠耶和華，可參申4:4 等；BH：Israel was to cling to the LORD alone, refusing divided loyalty"
+- name: "你要盡心盡性盡力愛耶和華（a.hav）"
+  type: "原文"
+  evidence: "第5節「愛耶和華─你們的神……盡心盡性事奉他」；CT：『盡心盡性』意指全心全魂，人很容易在事奉上盡力，卻用事奉代替了愛神的心；GT《研經資料》：基於申4:4、9，5:10，6:5，10:12，11:13、22；GT《精讀本》：「盡心盡性」則指投入全身心；BH：declared in the Shema (Deuteronomy 6:4–5)"
+  surfaces:
+  - phrase: "愛耶和華"
+    verses: [5]
+- name: "戰利品的分配辦法"
+  type: "主題"
+  evidence: "第8節「要將你們從仇敵奪來的物，與你們眾弟兄同分」；CT：摩西曾定下條例，凡擄獲物前線與後方均分（民31:21-27）；GT《精讀本》《綜合解讀》：與弟兄同分戰利品是原則（民31:25-47），撒上30:24；GT 華爾頓：分享掠物表示各支派目標上團結一致；KC：cf. Num 31:27; 1Sam 30:24；BH：those who had remained behind to guard families"
+  surfaces:
+  - phrase: "與你們眾弟兄同分"
+    verses: [8]
+- name: "基利綠"
+  type: "地點"
+  evidence: "第10、11節「靠近約但河的一帶迦南地」；STEP ge.li.Lot（H1552，ge.li.lah: border）；GT《研經資料》：「一帶」原文 SH 1552，18:17 基利綠是 SH 1553，兩字相當接近，許多抄本說是吉甲，其實不是，照字義翻譯成「一帶」比較妥當；BH：Geliloth stood near the Jordan，lay in the Jordan region, near the place where Israel had crossed"
+  surfaces:
+  - phrase: "一帶"
+    verses: [10]
+- name: "立他名的居所（中央聖所）"
+  type: "主題"
+  evidence: "第19、29節「在耶和華─我們神的壇以外為自己築壇」「在耶和華─我們神帳幕前的壇以外，另築一座壇」；GT《研經資料》：人只能在耶和華指定的地方獻祭（利17:8-9；申12:4-5）；GT《綜合解讀》：神吩咐百姓不可效法迦南人隨處築壇獻祭（申12:4），只能到神選擇立祂名的居所；KC：there may be no other altar than the altar of the LORD (Deu 12:5)；BH 多次引申12:13-14"
+  surfaces:
+  - phrase: "耶和華─我們神的壇以外"
+    verses: [19]
+- name: "會幕（帳幕整體）"
+  type: "主題"
+  evidence: "第19節「耶和華的帳幕所住之地」，第29節「神帳幕前的壇」；GT《聖經精讀本》在第19節整理帳幕歷史四階段：西乃山設立、曠野移動、吉甲到示羅、基遍與耶路撒冷兩個會幕直到所羅門聖殿，約五百年；CT：『神的壇』指會幕近門口處的祭壇；BH：The tabernacle at Shiloh was Israel's appointed center of sacrifice"
+  surfaces:
+  - phrase: "耶和華的帳幕"
+    verses: [19]
+- name: "三大節期"
+  type: "神學"
+  evidence: "評論第10-12、34節；GT《雷氏》：神已經規定所有男丁必須每年三次上聖所去，以維持眾支派的合一；GT《精讀本》：出23:14-17；GT《研經資料》：出23:17；GT《綜合解讀》、CT〔話中之光〕：神已經吩咐一切的男丁要一年三次朝見主耶和華，證壇是多餘的；CT：以色列人真正的合一表現在於每年三次到示羅的聖所"
+- name: "全會眾"
+  type: "人物"
+  evidence: "第12、16、18、20節全會眾聚集在示羅要上去攻打，「耶和華全會眾這樣說」，「明日他必向以色列全會眾發怒」；CT：『全會眾』在此指約但河西岸九個半支派的人；GT《綜合解讀》：這一代的全會眾親身經歷38年曠野飄流，對干犯神的罪非常敏感；BH：The nation responded as one covenant people"
+- name: "會眾的首領"
+  type: "人物"
+  evidence: "第14、30、32節十個首領，每支派一個，都是以色列軍中的統領；第30節「祭司非尼哈與會中的首領」；STEP ne.si.'Ei ha./'e.Dah（H5387A＋H5712）；CT：十個首領即河西九個半支派加瑪拿西半支派；『首領』重在民間身分，『統領』重在軍中身分；GT《丁道爾》《研經資料》：這件事與以色列的合一有關，其餘十個支派各派代表"
+  surfaces:
+  - phrase: "會中的首領"
+    verses: [30]
+- name: "非尼哈"
+  type: "人物"
+  evidence: "第13、30-32節以色列人打發祭司以利亞撒的兒子非尼哈往基列地，聽了答辯都以為美，說今日我們知道耶和華在我們中間；CT：將來大祭司的接班人，曾經兩次親身經歷以色列人干犯神被降罰；GT《啟導本》《丁道爾》《研經資料》《綜合解讀》《精讀本》：巴力毘珥事件中為神忌邪（民25:7-13），此行再度立功；KC：He has a feeling for the holiness of God；BH：Aaron's grandson, his earlier zeal at Baal Peor"
+- name: "以利亞撒"
+  type: "人物"
+  evidence: "第13、31、32節「祭司以利亞撒的兒子非尼哈」；GT《丁道爾》：分配地業時由以利亞撒出面（書14:1），這次使團的召集人卻是他的兒子，或許因為以利亞撒已經年邁；GT《研經資料》：除了其父親祭司以利亞撒年邁的理由之外；CT：「以利亞撒」字義神已幫助"
+- name: "巴力毘珥"
+  type: "背景"
+  evidence: "第17節「從前拜毘珥的罪孽還算小嗎？雖然瘟疫臨到耶和華的會眾，到今日我們還沒有洗淨這罪」；CT：指在什亭與摩押女子行淫，遭瘟疫死的二萬四千人（民25:1-9）；GT《串珠》：引致毗珥事件的罪根至今還未完全從百姓心中清除；GT《研經資料》：毗珥原文是「裂縫」，摩押地區的神名；KC：the teaching of Balaam to destroy the people of God by mixing good and false religion (Num 25:1-3; 31:16)；BH：Psa 106:28-31"
+  surfaces:
+  - phrase: "毘珥"
+    verses: [17]
+- name: "亞干"
+  type: "人物"
+  evidence: "第20節「從前謝拉的曾孫亞干豈不是在那當滅的物上犯了罪……那人在所犯的罪中不獨一人死亡」；CT：除了亞干以外，尚有他的家人，以及首次攻打艾城時被擊殺的三十六人；GT《串珠》：少數人的罪會連累整體會眾受罰；KC：Achan did not bring false teaching, but was guided by the desire for the worldly things；BH：As a descendant of Zerah in the tribe of Judah"
+- name: "謝拉"
+  type: "人物"
+  evidence: "第20節「謝拉的曾孫亞干」；CT：「謝拉」升起；BH：As a descendant of Zerah in the tribe of Judah, he belonged to a leading tribe in Israel"
+- name: "滅絕（herem）"
+  type: "神學"
+  evidence: "第20節「在那當滅的物上犯了罪」；CT：亞干因私自收藏了耶利哥城的當滅之物；BH：What God had devoted to destruction could not be claimed for personal gain without treating holy things as common"
+  surfaces:
+  - phrase: "當滅的物"
+    verses: [20]
+- name: "犯了罪（ma.al）"
+  type: "原文"
+  evidence: "第16、20、22、31節「干犯以色列的神」「在那當滅的物上犯了罪」「或是干犯耶和華」「你們沒有向他犯了這罪」；STEP me.'al.Tem（H4603）、Ma.'al（H4604）；CT：「干犯」不忠實，背叛；GT《研經資料》：SH 4603，在民5:12、27 用同一個字描述妻子對丈夫的不貞；GT《雷氏》：「罪」（16節）跟亞干的罪（20節；七1）所用的字相同"
+  surfaces:
+  - phrase: "干犯"
+    verses: [16, 22]
+  - phrase: "犯了罪"
+    verses: [20]
+  - phrase: "犯了這罪"
+    verses: [31]
+- name: "一人犯罪全營受累"
+  type: "神學"
+  evidence: "第18、20節「明日他必向以色列全會眾發怒」「就有忿怒臨到以色列全會眾嗎？那人在所犯的罪中不獨一人死亡」；GT 馬唐納：作為百姓，他們學習到罪汙損整個營，以及神要國民為個人的行為負責任；GT《啟導本》：全民乃一體，一人幹罪，全體受罰；GT《精讀本》：在以色列社會中，個人與整個會眾有不可分割的關係；BH：rebellion within the camp affected the whole community"
+  surfaces:
+  - phrase: "不獨一人死亡"
+    verses: [20]
+- name: "燔祭"
+  type: "神學"
+  evidence: "第23、26-29節「要將燔祭、素祭、平安祭獻在壇上」「不是為獻燔祭，也不是為獻別的祭」「好叫我們也在耶和華面前獻燔祭、平安祭」；CT：「燔祭」升起；BH：Burnt offerings expressed wholehearted consecration and atonement，Sacrifices belonged at the tabernacle"
+- name: "平安祭"
+  type: "神學"
+  evidence: "第23、27節「平安祭獻在壇上」「在耶和華面前獻燔祭、平安祭」；BH：Peace offerings celebrated restored fellowship with God and shared communion among His people. Sacrificing them independently would fracture the unity"
+- name: "山上的樣式"
+  type: "神學"
+  evidence: "第28節「你們看我們列祖所築的壇是耶和華壇的樣式」；STEP tav.Nit（H8403，tav.nit: pattern）；GT《丁道爾》：這座壇是一個複製品，以色列人不可敬拜受造物的複製品（申4:15-20），不過神曾顯示會幕的複製品（NIV：樣式）讓以色列人去建造（出25:9、40）；GT《研經資料》：「樣式」複製品、模式、形象；CT：「樣式」樣式，模式，結構；BH：Look at the replica of the altar of the LORD"
+  surfaces:
+  - phrase: "樣式"
+    verses: [28]
+- name: "迦累得"
+  type: "原文"
+  evidence: "第27、28、34節「作證據」「證壇」；STEP 'ed（H5707，witness）；GT《研經資料》《丁道爾》：證據一字和法庭中的見證人是同一個字，兩方定出邊界後所立的紀念碑也是這字（創31:48-52）；BH 第26、27、28、34節都引創31:48-52 Laban declared, This mound is a witness"
+- name: "假合一"
+  type: "神學"
+  evidence: "評論第26-29、34節；CT〔話中之光〕：他們要在祭壇建立一個外表的象徵說明合一的意義，這種合一是人為的，任何外面合一的表象都好像證壇，用心雖良但不能持久；KC：The altar of the two and a half tribes is a symbol of a fictional unity，Every form of unity that is established by people … does not promote unity, but division"

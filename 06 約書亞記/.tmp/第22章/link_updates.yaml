@@ -1,0 +1,474 @@
+book: 約書亞記
+chapter: 22
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。正確形狀：從前幾章講起、把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；本章的細節與引句留在本章 summary，主題發展不再重述一遍。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 流便
+  path: link_folder/人物/流便.md
+  summary: 第1、9-34節流便人與迦得人、瑪拿西半支派一同被約書亞打發回河東，在約但河邊築壇，又向非尼哈和首領答辯；第25節與第32-34節只提流便人、迦得人，第34節是他們給壇起名叫證壇。BH 說流便和迦得是築壇的主要一方；GT《研經資料》說第25、32節不提瑪拿西，可能因為另一半在河西，被隔絕的危險比較小。
+  relation: 書1 他們承諾、書4 帶兵器先過河，本章任務完成回到河東，又在約但河邊立了證壇。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 21
+    - 22
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:32
+      - 約書亞記:1
+      - 約書亞記:4
+      - 約書亞記:13
+      - 約書亞記:22
+- title: 迦得（萬幸）
+  path: link_folder/人物/迦得（萬幸）.md
+  summary: 第1、9-34節迦得人與流便人、瑪拿西半支派一同回河東，在約但河邊築壇，又向非尼哈和首領答辯；第25節與第32-34節只提流便人、迦得人。BH 說流便和迦得是築壇的主要一方。
+  relation: 書1、書4 他們走在弟兄前面打仗，本章約書亞稱讚他們沒有撇離弟兄，打發他們回去。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 14
+    - 15
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:32
+      - 約書亞記:1
+      - 約書亞記:4
+      - 約書亞記:22
+- title: 瑪拿西
+  path: link_folder/人物/瑪拿西.md
+  summary: 第7節瑪拿西那半支派，摩西早已在巴珊分給地業，另一半約書亞在約但河西分給地業；第1、9-31節河東那一半與流便、迦得一同回去築壇答辯。CT 說「那半支派」指河東巴珊，「這半支派」指河西中部、以法蓮地北面；BH 說雖被約但河分開，兩半仍是一個支派；GT《研經資料》說第25、32節不提瑪拿西，可能因為另一半在河西。
+  relation: 書17 兩半各自得地，本章河東那一半回家，經文再註明兩半分在河的兩邊。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 20
+    - 21
+    definition: keep
+    development: keep
+- title: 兩支派半求河東之地為業
+  path: link_folder/事件/兩支派半求河東之地為業.md
+  summary: 第1-9節約書亞稱讚二支派半遵守了摩西的吩咐，也聽從了自己的吩咐，沒有撇離弟兄，打發他們帶著財物回到摩西在約但河東所賜為業之地。CT 把這兩句接到民32:20-22 與書1:16-18；GT《研經資料》說22:1-6 與1:12-18 相呼應；GT《綜合解讀》說他們派四萬人渡河，在河西征戰七年沒有怨言，一直到分地結束才離開示羅。
+  relation: 民32 談定的條件，到本章正式解除，他們回到河東。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 河東之地是神的旨意還是神的允許
+  path: link_folder/解經爭議/河東之地是神的旨意還是神的允許.md
+  summary: 第4、19節。KC 說二支派半寧取約但河曠野的一邊，不取神揀選的地，神也就容他們回去；GT《雷氏》說不要以為他們定居河東不是神的旨意，神已把那地賜給他們（書24:8）；GT《串珠》說第19節的「不潔淨」指禮儀上不潔、不配敬拜神；GT《綜合解讀》說可能因為會幕不在河東，那裡還有基述人、瑪迦人；BH 說河西的支派邀他們過到耶和華之地，願意分出自己的產業。
+  relation: 第19節河西的代表自己說出「若嫌不潔淨」，河東之地的地位又被提出來一次，各家的看法照樣分成兩邊。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 河東二支派半最先被擄（代上5：25-26）
+  path: link_folder/互文/河東二支派半最先被擄（代上5：25-26）.md
+  summary: 第34節之後的後話。CT〔話中之光〕與 GT《綜合解讀》說河東兩個半支派的子孫後來還是得罪神、隨從偶像，被亞述擄去（代上5:25-26），成了最早被擄的支派，並說證壇不能維持神與人的關係；KC 說人造的合一沒有保持多久，河東的支派最先被擄散（代上5:26）。
+  relation: 民32 的註釋把這個結局接到選地，本章的註釋把它接到證壇。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:32
+      - 約書亞記:22
+- title: 巴珊
+  path: link_folder/地點/巴珊.md
+  summary: 第7節瑪拿西那半支派，摩西早已在巴珊分給他們地業。CT 給字義「多結果實的」；BH 說巴珊在約但河東，土地肥沃、易守，城邑有亞斯他錄和以得來。
+  relation: 本章用巴珊標出瑪拿西河東那一半的位置。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 13
+    - 14
+    definition: keep
+    development: keep
+- title: 示羅
+  path: link_folder/地點/示羅.md
+  summary: 第9、12節二支派半從迦南地的示羅起行；全會眾一聽見築壇，就聚集在示羅要上去攻打。CT 說示羅在示劍南方約18公里、伯特利北方約15公里，是當時會幕所在地；GT《綜合解讀》說他們一直到分地結束才從示羅離開，盡忠到最後一刻；BH 說在示羅聚集，是把這件事擺在神所設立的敬拜中心面前。
+  relation: 書18-21 示羅是分地的地方，本章全會眾為了信仰在這裡聚集，準備出兵。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 基列
+  path: link_folder/地點/基列.md
+  summary: 第9、13、15、32節回往他們得為業的基列地，非尼哈往基列地去，再從基列地回往迦南地。CT 說基列地泛指約但河東岸二支派半所分得之地（民32:29）；GT《研經資料》說指約旦河東一帶的地區；BH 說基列土地肥沃多山，被約但河與以色列的主體隔開，離示羅的會幕遠。
+  relation: 書12-17 基列被分成幾份，本章基列地用來統稱整個河東。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 10
+    - 11
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:12
+      - 約書亞記:13
+      - 約書亞記:17
+      - 約書亞記:22
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: 第10、11、25節二支派半在約但河那裡築壇；第25節他們說「耶和華把約但河定為我們和你們這流便人、迦得人的交界」。GT《聖經精讀本》說約但河是巴勒斯坦的天然要塞，也是兩岸不易往來的天然障礙；GT《雷氏》說約但河東的基列眾山（而不是約但河）是巴勒斯坦的東界；GT《研經資料》說因這天然屏障，河東人更多受外敵侵擾；BH 說約但河可能成為長久的分隔。
+  relation: 書3-4 以色列人從約但河過去，本章二支派半擔心這條河成了兩岸後代的分界。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 33
+    - 34
+    definition: keep
+    development: keep
+- title: 迦南地
+  path: link_folder/地點/迦南地.md
+  summary: 第9-11、32節迦南地的示羅、靠近約但河的一帶迦南地、從基列地回往迦南地；第19節河西的代表稱它為「耶和華之地」。CT 說耶和華之地即約但河西岸迦南地，是神所選定供神與人同住之地；BH 說約但河西的地特別被稱為耶和華的產業，因為神把祂的居所設在那裡。
+  relation: 本章用迦南地和基列地對舉，把約但河兩岸分開來稱呼。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 34
+    - 35
+    definition: keep
+    development: keep
+- title: 安息
+  path: link_folder/神學/安息.md
+  summary: 第4節「使你們弟兄得享平安」。GT《研經資料》說「平安」原文是「安息」；GT《綜合解讀》引書1:15，說他們在河西一直等到耶和華使弟兄像他們一樣得享平安；BH 連到申3:20、書21:44 與王上5:4，說這是神照應許使百姓在地上安定。
+  relation: 書21:44 說耶和華使他們四境平安，本章約書亞據此打發河東的軍兵回家。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 專靠（da.veq）
+  path: link_folder/原文/專靠（da.veq）.md
+  summary: '第5節「專靠他」。STEP 為 u./le./da.ve.kah-（H1692，簡要詞典義 da.vaq: to cleave），條目在申4:4 的是形容詞 H1695；CT 說「專靠」是附著、黏住、緊靠，意指緊緊地依附祂，絲毫不分離；GT《研經資料》說臨別訓勉的要點之一是專心倚靠耶和華，可參申4:4；BH 說河東的支派離會幕遠、又與外邦接觸密切，更要專一依附耶和華。'
+  relation: 申命記用這個要求叮嚀全體百姓，本章約書亞用同樣的要求送河東的軍兵回家。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 你要盡心盡性盡力愛耶和華（a.hav）
+  path: link_folder/原文/你要盡心盡性盡力愛耶和華（a.hav）.md
+  summary: 第5節「愛耶和華─你們的神，行他一切的道，守他的誡命，專靠他，盡心盡性事奉他」。CT 說『盡心盡性』意指全心全魂，並說人很容易在事奉上盡力，卻用事奉代替了愛神的心；GT《研經資料》說這些臨別訓勉基於申4:4、9，5:10，6:5，10:12，11:13、22；GT《聖經精讀本》說「盡心盡性」指投入全身心；BH 連到申6:4-5 的示瑪。
+  relation: 申6、10、11 立下的要求，本章約書亞原樣交代給要回河東的人。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 戰利品的分配辦法
+  path: link_folder/主題/戰利品的分配辦法.md
+  summary: 第8節「要將你們從仇敵奪來的物，與你們眾弟兄同分」。CT 說摩西曾定下條例，凡擄獲物前線與後方均分（民31:21-27）；GT《聖經精讀本》《綜合解讀》說與弟兄同分戰利品是以色列的原則，並引撒上30:24；GT 華爾頓說分享掠物表示各支派在目標上團結一致；KC 引民31:27 與撒上30:24；BH 說要與留在後方保護家眷、牲畜和城邑的人同分。
+  relation: 民31 定下前線後方均分，本章約書亞要河東軍兵回去照樣分給留守的弟兄。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 基利綠
+  path: link_folder/地點/基利綠.md
+  summary: '第10、11節「靠近約但河的一帶迦南地」「靠近約但河邊」。STEP 兩處作 ge.li.Lot（H1552，簡要詞典義 ge.li.lah: border），書18:17 是 H1553；GT《研經資料》說兩字相當接近，許多抄本說這地點是吉甲，其實不是，照字義翻譯成「一帶」比較妥當；GT《丁道爾》稱證壇為「在約但的基利綠之祭壇」；BH 直接稱 Geliloth，說它在約但河一帶，靠近以色列人當初過河的地方。'
+  relation: 書18:17 基利綠是便雅憫南界的地標，本章二支派半在約但河邊這個地方築了證壇。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:18
+      - 約書亞記:22
+- title: 立他名的居所（中央聖所）
+  path: link_folder/主題/立他名的居所（中央聖所）.md
+  summary: 第19、29節「在耶和華─我們神的壇以外為自己築壇」「在耶和華─我們神帳幕前的壇以外，另築一座壇」。GT《研經資料》說人只能在耶和華指定的地方獻祭（利17:8-9；申12:4-5），所以河西以為河東另行築壇要拜假神；GT《綜合解讀》說神吩咐百姓不可效法迦南人隨處築壇獻祭（申12:4），只能到神選擇立祂名的居所；KC 說除了耶和華的壇以外不可有別的壇（申12:5）；BH 多次引申12:13-14。
+  relation: 申12 立下只能在一個地方獻祭，書18 會幕設在示羅，本章全會眾為了這條律法差點對弟兄出兵。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development: keep
+- title: 會幕（帳幕整體）
+  path: link_folder/主題/會幕（帳幕整體）.md
+  summary: 第19節「耶和華的帳幕所住之地」，第29節「耶和華─我們神帳幕前的壇」。GT《聖經精讀本》在第19節把帳幕的歷史分成四個階段：西乃山設立、曠野中隨雲彩移動、進迦南後從吉甲移到示羅、到大衛時基遍與耶路撒冷各有一個會幕，直到所羅門建殿，約五百年；CT 說『神的壇』指會幕近門口處的祭壇；BH 說示羅的會幕是以色列指定的獻祭、祭司供職與全國聚集的中心。
+  relation: 書18 會幕設在示羅，本章河西的支派稱約但河西為耶和華的帳幕所住之地。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 26
+    - 27
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:9
+      - 民數記:10
+      - 申命記:12
+      - 約書亞記:18
+      - 約書亞記:19
+      - 約書亞記:22
+- title: 三大節期
+  path: link_folder/神學/三大節期.md
+  summary: 評論第10-12、34節。GT《雷氏》說神已規定所有男丁每年三次上聖所去，以維持眾支派的合一，所以證壇是不需要的；GT《聖經精讀本》引出23:14-17，說築壇的想法出自沒有必要的憂患意識；CT〔話中之光〕、GT《綜合解讀》說神已吩咐男丁一年三次朝見主耶和華，證壇是多餘的；CT 說以色列人真正的合一表現在每年三次到示羅的聖所。
+  relation: 出23 定下一年三次朝見，本章的註釋拿它來衡量證壇：神已經給了維持合一的方法。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 全會眾
+  path: link_folder/人物/全會眾.md
+  summary: 第12、16、18、20節全會眾聚集在示羅要上去攻打；代表團以「耶和華全會眾」的名義說話，並說神必向以色列全會眾發怒。CT 說這裡的全會眾指約但河西岸九個半支派的人；GT《綜合解讀》說這一代的全會眾經歷了曠野飄流，對干犯神的罪非常敏感，知道部分人不跟從神也會連累全會眾；BH 說全國以一個立約百姓的身分回應。
+  relation: 書20 全會眾在逃城制度中審判，本章全會眾為了維護敬拜準備出兵。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 會眾的首領
+  path: link_folder/人物/會眾的首領.md
+  summary: 第14、30、32節十個首領，每支派一個，都是以色列軍中的統領，與非尼哈同去；第30節「祭司非尼哈與會中的首領」聽了答辯都以為美。STEP 第30節是 u./ne.si.'Ei ha./'e.Dah（H5387A＋H5712）；CT 說十個首領是河西九個半支派各派一個，加上瑪拿西半支派的首領，「首領」重在民間的身分，「統領」重在軍中的身分；GT《丁道爾》《研經資料》說這件事與以色列的合一有關，所以其餘十個支派各派代表同去。
+  relation: 書9 首領沒有求問耶和華就起誓，本章首領先去查明真相，聽完答辯再下判斷。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:9
+      - 約書亞記:22
+- title: 非尼哈
+  path: link_folder/人物/非尼哈.md
+  summary: 第13、30-32節以色列人打發祭司以利亞撒的兒子非尼哈往基列地，他聽了答辯以為美，說「今日我們知道耶和華在我們中間」，再回去向以色列人回報。CT 說他是將來大祭司的接班人，曾兩次親身經歷以色列人因干犯神而被降罰；GT《啟導本》說他當日在毘珥以清除罪惡得神喜悅，現在再度立功，使誤會冰釋；GT《研經資料》《丁道爾》說派他可能因以利亞撒年邁，也因他在巴力毘珥阻擋以色列人拜偶像；KC 說他對神的聖潔有感受（民25:6-15）；GT《綜合解讀》說此行是為了神在地上見證的合一，不是為自己。
+  relation: 民25 他為神忌邪止住瘟疫，本章他帶著同樣的身分去查問，最後宣告河東沒有犯這罪。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 以利亞撒
+  path: link_folder/人物/以利亞撒.md
+  summary: 第13、31、32節三次稱「祭司以利亞撒的兒子非尼哈」。GT《丁道爾》說分配地業時由以利亞撒出面（書14:1），這次使團的召集人卻是他的兒子，或許是因為以利亞撒已經年邁；GT《研經資料》也說以利亞撒年邁可能是原因之一；CT 給字義「神已幫助」。
+  relation: 書14-21 他和約書亞一同主持分地，本章出面的換成了他的兒子。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 18
+    - 19
+    definition: keep
+    development: keep
+- title: 巴力毘珥
+  path: link_folder/背景/巴力毘珥.md
+  summary: 第17節「從前拜毘珥的罪孽還算小嗎？雖然瘟疫臨到耶和華的會眾，到今日我們還沒有洗淨這罪」。CT 說是指在什亭與摩押女子行淫、跪拜他們的神，遭瘟疫死的有二萬四千人（民25:1-9）；GT《串珠》說引致毗珥事件的罪根至今還未完全從百姓心中清除；GT《研經資料》說毗珥原文是「裂縫」，是摩押地區的神名；KC 說毘珥可怕的是巴蘭的教導，把真宗教與偶像的事奉混在一起（民25:1-3；31:16）；BH 連到詩106:28-31。
+  relation: 民25、申4 記下毘珥的事，本章河西的代表把它當作前車之鑑。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 亞干
+  path: link_folder/人物/亞干.md
+  summary: 第20節「從前謝拉的曾孫亞干豈不是在那當滅的物上犯了罪，就有忿怒臨到以色列全會眾嗎？那人在所犯的罪中不獨一人死亡」。CT 說不獨一人死亡是指他的家人，以及首次攻打艾城時被擊殺的三十六人；GT《串珠》說亞干的例子足以證明少數人的罪會連累整體會眾受罰；GT《聖經精讀本》說這是以色列進入應許之地後最令人痛心的事件之一；KC 說亞干不是帶來假教訓，而是被屬世之物的慾望帶走；BH 說他出自猶大這個領頭的支派，尊貴的出身不能為背約開脫。
+  relation: 書7 是亞干犯罪受刑的經過，本章河西的代表用他提醒河東：一人的罪會連累全會眾。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:7
+      - 約書亞記:22
+- title: 謝拉
+  path: link_folder/人物/謝拉.md
+  summary: 第20節「謝拉的曾孫亞干」。CT 給字義「升起」；BH 說亞干是猶大支派謝拉的後代，屬於以色列中領頭的支派。
+  relation: 書7:1 的四代家譜在本章縮成一句「謝拉的曾孫」。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 滅絕（herem）
+  path: link_folder/神學/滅絕（herem）.md
+  summary: 第20節「在那當滅的物上犯了罪」。CT 說亞干因私自收藏耶利哥城的當滅之物，以致以色列人首次攻打艾城失敗；BH 說神所定為毀滅的東西不能為了私利據為己有，否則就是把聖物當作俗物。
+  relation: 書6-7 的當滅之物，本章在提醒河東時再被提起一次。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 12
+    - 13
+    definition: keep
+    development: keep
+- title: 犯了罪（ma.al）
+  path: link_folder/原文/犯了罪（ma.al）.md
+  summary: 第16、20、22、31節「干犯以色列的神」「在那當滅的物上犯了罪」「或是干犯耶和華」「你們沒有向他犯了這罪」。STEP 第16節為 me.'al.Tem（H4603，be unfaithful）與 ha./Ma.'al（H4604），第20、22、31節也是同一組字；CT 給「干犯」的字義是不忠實、背叛，「犯」是行為奸詐；GT《雷氏》說第16節的「罪」跟亞干的罪（第20節；書7:1）所用的字相同；GT《研經資料》說民5:12、27 用同一個字描述妻子對丈夫的不貞。
+  relation: 書7 用這個字開始亞干的事，本章河西的代表用同一個字指控河東，非尼哈最後用它宣告他們沒有犯這罪。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:7
+      - 約書亞記:22
+- title: 一人犯罪全營受累
+  path: link_folder/神學/一人犯罪全營受累.md
+  summary: 第18、20節「明日他必向以色列全會眾發怒」「就有忿怒臨到以色列全會眾嗎？那人在所犯的罪中不獨一人死亡」。GT 所引馬唐納說百姓學習到罪汙損整個營，神要國民為個人的行為負責任；GT《啟導本》說全民乃一體，一人幹罪，全體受罰；GT《聖經精讀本》說毗珥與亞干兩件事的共同點是犯罪結果涉及整個會眾，個人與會眾有不可分割的關係；GT《綜合解讀》說少數人的犯罪會破壞整體的見證，連累全體；CT 說若河東真的拜偶像，以色列全會眾也會受到連累。
+  relation: 書7 亞干一人犯罪全營受罰，本章河西就是因為記得這件事，才把河東的壇當作全國的事。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:7
+      - 約書亞記:22
+- title: 燔祭
+  path: link_folder/神學/燔祭.md
+  summary: 第23、26-29節二支派半說，若要將燔祭、素祭、平安祭獻在這壇上，願耶和華親自討罪；築這壇不是為獻燔祭，乃是為作證據，好叫他們在耶和華面前獻燔祭。CT 給「燔祭」的字義是升起；BH 說燔祭表達全然的奉獻與贖罪，祭只能獻在耶和華立祂名的會幕那裡。
+  relation: 申12 把燔祭限在一個地方，本章二支派半特別說明自己的壇不是為獻燔祭。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 26
+    - 27
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:12
+      - 申命記:27
+      - 約書亞記:8
+      - 約書亞記:22
+- title: 平安祭
+  path: link_folder/神學/平安祭.md
+  summary: 第23、27節二支派半說不在這壇上獻平安祭，而要在耶和華面前獻燔祭、平安祭事奉他。BH 說平安祭慶祝與神恢復的交通，以及百姓彼此的團契，若各自另獻，就會破壞以色列在耶和華面前應有的合一。
+  relation: 書8 平安祭獻在以巴路山的壇上，本章二支派半說平安祭只能在耶和華面前獻。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 19
+    - 20
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:12
+      - 申命記:27
+      - 約書亞記:8
+      - 約書亞記:22
+- title: 山上的樣式
+  path: link_folder/神學/山上的樣式.md
+  summary: '第28節「你們看我們列祖所築的壇是耶和華壇的樣式」。STEP 為 tav.Nit（H8403，簡要詞典義 tav.nit: pattern，本節譯義 the copy of）；GT《丁道爾》說這座壇是一個複製品，以色列人不可敬拜受造物的複製品（申4:15-20），不過神曾顯示會幕的複製品讓以色列人去建造（出25:9、40），證壇是照著神啟示的樣式建造的；GT《研經資料》說「樣式」是複製品、模式、形象；CT 給「樣式」的字義是樣式、模式、結構。'
+  relation: 出25 神把會幕的樣式顯給摩西，本章二支派半照耶和華壇的樣式另築一座不獻祭的壇。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 14
+    - 15
+    definition: keep
+    development: keep
+- title: 迦累得
+  path: link_folder/原文/迦累得.md
+  summary: '第27、28、34節「作證據」「證壇」。STEP 三處都是 ''ed（H5707，簡要詞典義 ed: witness）；GT《研經資料》與《丁道爾》說這個字和法庭中的見證人是同一個字，兩方定出邊界後所立的紀念碑也是這字（創31:48-52）；BH 在第26-28、34節都引創31:48-52 拉班立石堆作見證。'
+  relation: 創31 雅各與拉班在邊界上立石堆作證據，本章二支派半在約但河這條界線上立壇作證據。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 假合一
+  path: link_folder/神學/假合一.md
+  summary: 評論第26-29、34節。CT〔話中之光〕說二支派半要用祭壇建立一個外表的象徵說明合一的意義，這種合一是人為的，真正的合一表現在每年三次到示羅的聖所；KC 說這座壇是虛構合一的象徵，由人建立、又拿來當作合一條件的合一，帶來的不是合一而是分裂，並舉信條與聯合佈道會為例。
+  relation: 創11 巴別塔是人憑自己的計畫求合一，本章的註釋把證壇也讀成人造的合一。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep

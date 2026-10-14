@@ -3914,6 +3914,14 @@
     "status": "formal",
     "aliases": []
   },
+  "證壇": {
+    "path": "link_folder/主題/證壇.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "證壇",
+    "status": "formal",
+    "aliases": []
+  },
   "財產權": {
     "path": "link_folder/主題/財產權.md",
     "type": "主題",
@@ -15111,6 +15119,14 @@
       "大痲瘋"
     ]
   },
+  "大能者神耶和華": {
+    "path": "link_folder/原文/大能者神耶和華.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "大能者神耶和華",
+    "status": "formal",
+    "aliases": []
+  },
   "大腿窩的筋": {
     "path": "link_folder/原文/大腿窩的筋.md",
     "type": "原文",
@@ -15577,6 +15593,14 @@
     "type": "原文",
     "secondary_types": [],
     "title": "忿怒（qe.tseph）",
+    "status": "formal",
+    "aliases": []
+  },
+  "悖逆（ma.rad）": {
+    "path": "link_folder/原文/悖逆（ma.rad）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "悖逆（ma.rad）",
     "status": "formal",
     "aliases": []
   },
