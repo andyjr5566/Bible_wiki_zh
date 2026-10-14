@@ -261,8 +261,19 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       const el = nodeEls.get(node.id);
       if (el) el.style.display = shown ? '' : 'none';
     }
+    // 連線只要「兩端節點圍成的範圍」碰到畫面就畫：父親在畫面外、孩子在畫面內（或一條長幹線穿過畫面）時，
+    // 不能因為父親被隱藏就讓孩子看起來斷線
+    const byId = new Map(allLayoutNodes().map((node) => [node.id, node]));
+    const left = currentBox.x - marginX;
+    const right = currentBox.x + currentBox.width + marginX;
+    const top = currentBox.y - marginY;
+    const bottom = currentBox.y + currentBox.height + marginY;
     for (const edge of layout.edges) {
-      const shown = visible.has(edge.from) && visible.has(edge.to);
+      const from = byId.get(edge.from);
+      const to = byId.get(edge.to);
+      const shown = Boolean(from && to) &&
+        Math.max(from!.x, to!.x) + Math.max(from!.width, to!.width) / 2 >= left && Math.min(from!.x, to!.x) - Math.max(from!.width, to!.width) / 2 <= right &&
+        Math.max(from!.y, to!.y) >= top && Math.min(from!.y, to!.y) <= bottom;
       const el = edgeEls.get(edge.key);
       if (el) el.style.display = shown ? '' : 'none';
     }
@@ -613,7 +624,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       if (!a || !b) continue;
       const path = svgEl('path', {
         class: `ag-edge ag-edge-${edge.kind}${a.mainline && b.mainline ? ' ag-edge-main' : ''}${traceEdges.has(`${edge.from}>${edge.to}>${edge.kind}`) ? ' ag-edge-traced' : ''}${tourEdgeKeys.has(edge.key) ? ' ag-edge-tour-lit' : ''}`,
-        d: edgePath(a, b),
+        d: edgePath(a, b), 'data-from': edge.from, 'data-to': edge.to,
         stroke: COLORS[edge.line] ?? COLORS.common,
         'stroke-width': tourEdgeKeys.has(edge.key) ? 4 : edge.kind === 'mother' ? 1.1 : edge.kind === 'descends' ? 1.4 : 1.7,
       });
