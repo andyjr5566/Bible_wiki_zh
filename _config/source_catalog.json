@@ -38,5 +38,9 @@
   "36 西番雅書": {"cc_folder": "36Zeph", "kc": "Zep", "en": "zephaniah"},
   "37 哈該書":   {"cc_folder": "37Hagg", "kc": "Hag", "en": "haggai"},
   "38 撒迦利亞書": {"cc_folder": "38Zech", "kc": "Zec", "en": "zechariah"},
-  "39 瑪拉基書": {"cc_folder": "39Mal", "kc": "Mal", "en": "malachi"}
+  "39 瑪拉基書": {"cc_folder": "39Mal", "kc": "Mal", "en": "malachi"},
+  "40 馬太福音": {"cc_folder": "40Matt", "kc": "Mt", "en": "matthew", "nt": true},
+  "41 馬可福音": {"cc_folder": "41Mark", "kc": "Mk", "en": "mark",    "nt": true},
+  "42 路加福音": {"cc_folder": "42Luke", "kc": "Lk", "en": "luke",    "nt": true},
+  "43 約翰福音": {"cc_folder": "43John", "kc": "Jn", "en": "john",    "nt": true}
 }

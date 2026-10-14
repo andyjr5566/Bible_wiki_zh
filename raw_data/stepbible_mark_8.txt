@@ -1,0 +1,934 @@
+# STEP Bible — Mark 8
+
+> Source: STEP Bible / STEPBible-Data — https://github.com/STEPBible/STEPBible-Data
+> License: CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+> 本檔是「原文證據層」資料，不是 Commentary。
+> Lexicon 列的是詞彙可能義域；不可直接把所有字典義都當成本節語境義。
+
+## Mark 8:1
+
+**Original:** Ἐν ἐκείναις ταῖς ἡμέραις πάλιν πολλοῦ ὄχλου ὄντος καὶ μὴ ἐχόντων τί φάγωσιν, προσκαλεσάμενος ὁ Ἰησοῦς τοὺς μαθητὰς αὐτοῦ λέγει αὐτοῖς·
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | Ἐν | En | In | G1722 | PREP — Preposition | ἐν (en): in/on/among |
+| 2 | ἐκείναις | ekeinais | those | G1565 | D-DPF — Demonstrative pronoun Dative Plural Feminine | ἐκεῖνος (ekeinos): that |
+| 3 | ταῖς | tais | <the> | G3588 | T-DPF — Definite article Dative Plural Feminine | ὁ (ho): the/this/who |
+| 4 | ἡμέραις | hēmerais | days | G2250 | N-DPF — Noun Dative Plural Feminine | ἡμέρα (hēmera): day |
+| 5 | πάλιν | palin | again | G3825 | ADV — Adverb | again |
+| 6 | πολλοῦ | pollou | much | G4183 | A-GSM — Adjective Genitive Singular Masculine | πολύς (polus): much |
+| 7 | ὄχλου | ochlou | [the] crowd | G3793 | N-GSM — Noun Genitive Singular Masculine | ὄχλος (ochlos): crowd |
+| 8 | ὄντος | ontos | being | G1510 | V-PAP-GSM — Verb Present Active Participle Genitive Singular Masculine | εἰμί (eimi): to be |
+| 9 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 10 | μὴ | mē | not | G3361 | PRT-N — Negative Particle Negative Negative | μή (mē): not |
+| 11 | ἐχόντων | echontōn | having | G2192 | V-PAP-GPM — Verb Present Active Participle Genitive Plural Masculine | ἔχω (echō): to have/be |
+| 12 | τί | ti | what | G5101 | I-ASN — Interrogative pronoun Accusative Singular Neuter | τίς (tis): which? |
+| 13 | φάγωσιν, | phagōsin | they may eat, | G5315 | V-AAS-3P — Verb Aorist Active Subjunctive 3rd Plural | φαγεῖν (phagein): to eat |
+| 14 | προσκαλεσάμενος | proskalesamenos | having called to [Him] | G4341 | V-ADP-NSM — Verb Aorist Middle Deponent Participle Nominative Singular Masculine | προσκαλέω (proskaleō): to call to/summon |
+| 15 | ὁ | ho | <the> | G3588 | T-NSM — Definite article Nominative Singular Masculine | the/this/who |
+| 16 | Ἰησοῦς | Iēsous | Jesus | G2424G | N-NSM-P — Noun Nominative Singular Masculine Individual | Jesus |
+| 17 | τοὺς | tous | the | G3588 | T-APM — Definite article Accusative Plural Masculine | ὁ (ho): the/this/who |
+| 18 | μαθητὰς | mathētas | disciples | G3101 | N-APM — Noun Accusative Plural Masculine | μαθητής (mathētēs): disciple |
+| 19 | αὐτοῦ | autou | of him | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+| 20 | λέγει | legei | He says | G3004G | V-PAI-3S — Verb Present Active Indicative 3rd Singular | λέγω (legō): to say |
+| 21 | αὐτοῖς· | autois | to them; | G846 | P-DPM — Personal pronoun Dative Plural Masculine | αὐτός (autos): it/s/he |
+
+## Mark 8:2
+
+**Original:** σπλαγχνίζομαι ἐπὶ τὸν ὄχλον ὅτι ἤδη ἡμέραι τρεῖς προσμένουσίν μοι καὶ οὐκ ἔχουσιν τί φάγωσιν.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | σπλαγχνίζομαι | splagchnizomai | I am moved with compassion | G4697 | V-PNI-1S — Verb Present Middle or Passive Deponent Indicative 1st Singular | σπλαγχνίζω (splagchnizō): to pity |
+| 2 | ἐπὶ | epi | upon | G1909 | PREP — Preposition | ἐπί (epi): upon/to/against |
+| 3 | τὸν | ton | the | G3588 | T-ASM — Definite article Accusative Singular Masculine | ὁ (ho): the/this/who |
+| 4 | ὄχλον | ochlon | crowd | G3793 | N-ASM — Noun Accusative Singular Masculine | ὄχλος (ochlos): crowd |
+| 5 | ὅτι | hoti | because | G3754H | CONJ — Conjunction | that/since: since |
+| 6 | ἤδη | ēdē | already | G2235 | ADV — Adverb | already |
+| 7 | ἡμέραι | hēmerai | days | G2250 | N-NPF — Noun Nominative Plural Feminine | ἡμέρα (hēmera): day |
+| 8 | τρεῖς | treis | three | G5140 | A-NPF — Adjective Nominative Plural Feminine | Three |
+| 9 | προσμένουσίν | prosmenousin | they continue | G4357 | V-PAI-3P — Verb Present Active Indicative 3rd Plural | προσμένω (prosmenō): to remain/persist |
+| 10 | μοι | moi | with Me | G3165 | P-1DS — Personal pronoun 1st Dative Singular | μέ (me): me |
+| 11 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 12 | οὐκ | ouk | nothing | G3756 | PRT-N — Negative Particle Negative Negative | οὐ (ou): no |
+| 13 | ἔχουσιν | echousin | they have | G2192 | V-PAI-3P — Verb Present Active Indicative 3rd Plural | ἔχω (echō): to have/be |
+| 14 | τί | ti | that | G5101 | I-ASN — Interrogative pronoun Accusative Singular Neuter | τίς (tis): which? |
+| 15 | φάγωσιν. | phagōsin | they may eat. | G5315 | V-AAS-3P — Verb Aorist Active Subjunctive 3rd Plural | φαγεῖν (phagein): to eat |
+
+## Mark 8:3
+
+**Original:** καὶ ἐὰν ἀπολύσω αὐτοὺς νήστεις εἰς οἶκον αὐτῶν, ἐκλυθήσονται ἐν τῇ ὁδῷ· καί τινες αὐτῶν ἀπὸ μακρόθεν ἥκασιν.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | ἐὰν | ean | if | G1437 | COND — Conjunction | ἐάν (ean): if |
+| 3 | ἀπολύσω | apolusō | I shall send away | G630G | V-AAS-1S — Verb Aorist Active Subjunctive 1st Singular | ἀπολύω (apoluō): to release: release |
+| 4 | αὐτοὺς | autous | them | G846 | P-APM — Personal pronoun Accusative Plural Masculine | αὐτός (autos): it/s/he |
+| 5 | νήστεις | nēsteis | hungry | G3523 | A-APM — Adjective Accusative Plural Masculine | νῆστις (nēstis): fasting |
+| 6 | εἰς | eis | to | G1519 | PREP — Preposition | toward |
+| 7 | οἶκον | oikon | [the] homes | G3624G | N-ASM — Noun Accusative Singular Masculine | οἶκος (oikos): house: home |
+| 8 | αὐτῶν, | autōn | of them, | G846 | P-GPM — Personal pronoun Genitive Plural Masculine | αὐτός (autos): it/s/he |
+| 9 | ἐκλυθήσονται | ekluthēsontai | they will faint | G1590 | V-FPI-3P — Verb Future Passive Indicative 3rd Plural | ἐκλύω (ekluō): to faint |
+| 10 | ἐν | en | on | G1722 | PREP — Preposition | in/on/among |
+| 11 | τῇ | tēa | the | G3588 | T-DSF — Definite article Dative Singular Feminine | ὁ (ho): the/this/who |
+| 12 | ὁδῷ· | hodō | way; | G3598 | N-DSF — Noun Dative Singular Feminine | ὁδός (hodos): road |
+| 13 | καί | kai | And | G2532 | CONJ — Conjunction | and |
+| 14 | τινες | tines | some | G5100 | X-NPM — Indefinite pronoun Nominative Plural Masculine | τις (tis): one |
+| 15 | αὐτῶν | autōn | of them | G846 | P-GPM — Personal pronoun Genitive Plural Masculine | αὐτός (autos): it/s/he |
+| 16 | ἀπὸ | apo | from | G575 | PREP — Preposition | ἀπό (apo): away from |
+| 17 | μακρόθεν | makrothen | afar | G3113 | ADV — Adverb | from afar |
+| 18 | ἥκασιν. | hēkasin | have come. | G2240 | V-RAI-3P — Verb Perfect Active Indicative 3rd Plural | ἥκω (hēkō): to come/be present |
+
+## Mark 8:4
+
+**Original:** Καὶ ἀπεκρίθησαν αὐτῷ οἱ μαθηταὶ αὐτοῦ ὅτι πόθεν τούτους δυνήσεταί τις ὧδε χορτάσαι ἄρτων ἐπ᾽ ἐρημίας;
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | Καὶ | Kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | ἀπεκρίθησαν | apekrithēsan | answered | G611 | V-ADI-3P — Verb Aorist Middle Deponent Indicative 3rd Plural | ἀποκρίνω (apokrinō): to answer |
+| 3 | αὐτῷ | autō | Him | G846 | P-DSM — Personal pronoun Dative Singular Masculine | αὐτός (autos): it/s/he |
+| 4 | οἱ | hoi | the | G3588 | T-NPM — Definite article Nominative Plural Masculine | ὁ (ho): the/this/who |
+| 5 | μαθηταὶ | mathētai | disciples | G3101 | N-NPM — Noun Nominative Plural Masculine | μαθητής (mathētēs): disciple |
+| 6 | αὐτοῦ | autou | of Him | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+| 7 | ὅτι | hoti | that | G3754G | CONJ — Conjunction | that/since: that |
+| 8 | πόθεν | pothen | From where | G4159 | ADV-I — Adverb Interrogative | whence |
+| 9 | τούτους | toutous | these | G3778 | D-APM — Demonstrative pronoun Accusative Plural Masculine | οὗτος (ohutos): this/he/she/it |
+| 10 | δυνήσεταί | dunēsetai | will be able | G1410 | V-FDI-3S — Verb Future Middle Deponent Indicative 3rd Singular | δύναμαι (dunamai): be able |
+| 11 | τις | tis | anyone | G5100 | X-NSM — Indefinite pronoun Nominative Singular Masculine | one |
+| 12 | ὧδε | hōde | here | G5602 | ADV — Adverb | here |
+| 13 | χορτάσαι | chortasai | to satisfy | G5526 | V-AAN — Verb Aorist Active Infinitive | χορτάζω (chortazō): to feed |
+| 14 | ἄρτων | artōn | with bread | G740 | N-GPM — Noun Genitive Plural Masculine | ἄρτος (artos): bread |
+| 15 | ἐπ᾽ | ep᾽ | in | G1909 | PREP — Preposition | ἐπί (epi): upon/to/against |
+| 16 | ἐρημίας; | erēmias | this desolate place? | G2047 | N-GSF — Noun Genitive Singular Feminine | ἐρημία (erēmia): desert |
+
+## Mark 8:5
+
+**Original:** καὶ ἠρώτα αὐτούς· πόσους ἔχετε ἄρτους; οἱ δὲ εἶπαν· ἑπτά.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | ἠρώτα | ērōta | He was asking | G2065 | V-IAI-3S — Verb Imperfect Active Indicative 3rd Singular | ἐρωτάω (erōtaō): to ask |
+| 3 | αὐτούς· | autous | them; | G846 | P-APM — Personal pronoun Accusative Plural Masculine | αὐτός (autos): it/s/he |
+| 4 | πόσους | posous | How many | G4214 | Q-APM — Correlative or Interrogative pronoun Accusative Plural Masculine | πόσος (posos): how much/many? |
+| 5 | ἔχετε | echete | have you | G2192 | V-PAI-2P — Verb Present Active Indicative 2nd Plural | ἔχω (echō): to have/be |
+| 6 | ἄρτους; | artous | loaves? | G740 | N-APM — Noun Accusative Plural Masculine | ἄρτος (artos): bread |
+| 7 | οἱ | hoi | <the> | G3588 | T-NPM — Definite article Nominative Plural Masculine | ὁ (ho): the/this/who |
+| 8 | δὲ | de | And | G1161 | CONJ — Conjunction | δέ (de): then |
+| 9 | εἶπαν· | eipan | they said; | G2036 | V-2AAI-3P — Verb 2nd Aorist Active Indicative 3rd Plural | εἶπον (eipon): to say |
+| 10 | ἑπτά. | hepta | Seven. | G2033 | A-NUI — Adjective Indeclinable Numeral | ἑπτά (hepta): seven |
+
+## Mark 8:6
+
+**Original:** καὶ παραγγέλλει τῷ ὄχλῳ ἀναπεσεῖν ἐπὶ τῆς γῆς, καὶ λαβὼν τοὺς ἑπτὰ ἄρτους, εὐχαριστήσας ἔκλασεν καὶ ἐδίδου τοῖς μαθηταῖς αὐτοῦ ἵνα παρατιθῶσιν· καὶ παρέθηκαν τῷ ὄχλῳ.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | παραγγέλλει | parangellei | He directs | G3853 | V-PAI-3S — Verb Present Active Indicative 3rd Singular | παραγγέλλω (parangellō): to order |
+| 3 | τῷ | tō | the | G3588 | T-DSM — Definite article Dative Singular Masculine | ὁ (ho): the/this/who |
+| 4 | ὄχλῳ | ochlō | crowd | G3793 | N-DSM — Noun Dative Singular Masculine | ὄχλος (ochlos): crowd |
+| 5 | ἀναπεσεῖν | anapesein | to recline | G377 | V-2AAN — Verb 2nd Aorist Active Infinitive | ἀναπίπτω (anapiptō): to recline |
+| 6 | ἐπὶ | epi | on | G1909 | PREP — Preposition | ἐπί (epi): upon/to/against |
+| 7 | τῆς | tēs | the | G3588 | T-GSF — Definite article Genitive Singular Feminine | ὁ (ho): the/this/who |
+| 8 | γῆς, | gēs | ground, | G1093I | N-GSF — Noun Genitive Singular Feminine | γῆ (gē): earth: soil |
+| 9 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 10 | λαβὼν | labōn | having taken | G2983 | V-2AAP-NSM — Verb 2nd Aorist Active Participle Nominative Singular Masculine | λαμβάνω (lambanō): to take |
+| 11 | τοὺς | tous | the | G3588 | T-APM — Definite article Accusative Plural Masculine | ὁ (ho): the/this/who |
+| 12 | ἑπτὰ | hepta | seven | G2033 | A-NUI — Adjective Indeclinable Numeral | ἑπτά (hepta): seven |
+| 13 | ἄρτους, | artous | loaves, | G740 | N-APM — Noun Accusative Plural Masculine | ἄρτος (artos): bread |
+| 14 | εὐχαριστήσας | eucharistēsas | having given thanks | G2168 | V-AAP-NSM — Verb Aorist Active Participle Nominative Singular Masculine | εὐχαριστέω (eucharisteō): to thank |
+| 15 | ἔκλασεν | eklasen | He broke [them] | G2806 | V-AAI-3S — Verb Aorist Active Indicative 3rd Singular | κλάω (klaō): to break |
+| 16 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 17 | ἐδίδου | edidou | he was giving [them] | G1325 | V-IAI-3S — Verb Imperfect Active Indicative 3rd Singular | δίδωμι (didōmi): to give |
+| 18 | τοῖς | tois | to the | G3588 | T-DPM — Definite article Dative Plural Masculine | ὁ (ho): the/this/who |
+| 19 | μαθηταῖς | mathētais | disciples | G3101 | N-DPM — Noun Dative Plural Masculine | μαθητής (mathētēs): disciple |
+| 20 | αὐτοῦ | autou | of Him | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+| 21 | ἵνα | ina | that | G2443 | CONJ — Conjunction | in order that/to |
+| 22 | παρατιθῶσιν· | paratithōsin | they may set before [them]; | G3908 | V-PAS-3P — Verb Present Active Subjunctive 3rd Plural | παρατίθημι (paratithēmi): to set before |
+| 23 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 24 | παρέθηκαν | parethēkan | they set [it] | G3908 | V-AAI-3P — Verb Aorist Active Indicative 3rd Plural | παρατίθημι (paratithēmi): to set before |
+| 25 | τῷ | tō | before the | G3588 | T-DSM — Definite article Dative Singular Masculine | ὁ (ho): the/this/who |
+| 26 | ὄχλῳ. | ochlō | crowd. | G3793 | N-DSM — Noun Dative Singular Masculine | ὄχλος (ochlos): crowd |
+
+## Mark 8:7
+
+**Original:** καὶ εἶχον ἰχθύδια ὀλίγα· καὶ εὐλογήσας αὐτὰ εἶπεν καὶ ταῦτα παρατιθέναι.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | εἶχον | eichon | they had | G2192 | V-IAI-3P — Verb Imperfect Active Indicative 3rd Plural | ἔχω (echō): to have/be |
+| 3 | ἰχθύδια | ichthudia | small fish | G2485 | N-APN — Noun Accusative Plural Neuter | ἰχθύδιον (ichthudion): little fish |
+| 4 | ὀλίγα· | oliga | a few; | G3641 | A-APN — Adjective Accusative Plural Neuter | ὀλίγος (oligos): little/few |
+| 5 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 6 | εὐλογήσας | eulogēsas | having blessed | G2127 | V-AAP-NSM — Verb Aorist Active Participle Nominative Singular Masculine | εὐλογέω (eulogeō): to praise/bless |
+| 7 | αὐτὰ | auta | them | G846 | P-APN — Personal pronoun Accusative Plural Neuter | αὐτός (autos): it/s/he |
+| 8 | εἶπεν | eipen | He ordered | G2036 | V-2AAI-3S — Verb 2nd Aorist Active Indicative 3rd Singular | εἶπον (eipon): to say |
+| 9 | καὶ | kai | also | G2532 | CONJ — Conjunction | καί (kai): and |
+| 10 | ταῦτα | tauta | these | G3778 | D-APN — Demonstrative pronoun Accusative Plural Neuter | οὗτος (ohutos): this/he/she/it |
+| 11 | παρατιθέναι. | paratithenai | to be set before [them]. | G3908 | V-PAN — Verb Present Active Infinitive | παρατίθημι (paratithēmi): to set before |
+
+## Mark 8:8
+
+**Original:** καὶ ἔφαγον δέ καὶ ἐχορτάσθησαν, καὶ ἦραν περισσεύματα κλασμάτων ἑπτὰ σπυρίδας.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | ἔφαγον | ephagon | they ate | G5315 | V-AAI-3P — Verb Aorist Active Indicative 3rd Plural | φαγεῖν (phagein): to eat |
+| 3 | δέ | de | now | G1161 | CONJ — Conjunction | then |
+| 4 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 5 | ἐχορτάσθησαν, | echortasthēsan | were satisfied, | G5526 | V-API-3P — Verb Aorist Passive Indicative 3rd Plural | χορτάζω (chortazō): to feed |
+| 6 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 7 | ἦραν | ēran | they took up | G142 | V-AAI-3P — Verb Aorist Active Indicative 3rd Plural | αἴρω (airō): to take up |
+| 8 | περισσεύματα | perisseumata | overflow | G4051 | N-APN — Noun Accusative Plural Neuter | περίσσευμα (perisseuma): overflow |
+| 9 | κλασμάτων | klasmatōn | of fragments | G2801 | N-GPN — Noun Genitive Plural Neuter | κλάσμα (klasma): fragment |
+| 10 | ἑπτὰ | hepta | seven | G2033 | A-NUI — Adjective Indeclinable Numeral | ἑπτά (hepta): seven |
+| 11 | σπυρίδας. | spuridas | baskets. | G4711 | N-APF — Noun Accusative Plural Feminine | σπυρίς (spuris): basket |
+
+## Mark 8:9
+
+**Original:** ἦσαν δὲ οἱ φαγόντες ὡς τετρακισχίλιοι· καὶ ἀπέλυσεν αὐτούς.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | ἦσαν | ēsan | There were | G1510 | V-IAI-3P — Verb Imperfect Active Indicative 3rd Plural | εἰμί (eimi): to be |
+| 2 | δὲ | de | now | G1161 | CONJ — Conjunction | δέ (de): then |
+| 3 | οἱ | hoi | <the> | G3588 | T-NPM — Definite article Nominative Plural Masculine | ὁ (ho): the/this/who |
+| 4 | φαγόντες | phagontes | having eaten of | G5315 | V-2AAP-NPM — Verb 2nd Aorist Active Participle Nominative Plural Masculine | φαγεῖν (phagein): to eat |
+| 5 | ὡς | hōs | about | G5613 | PRT — Particle or Disjunctive Particle | as/when |
+| 6 | τετρακισχίλιοι· | tetrakischilioi | four thousand; | G5070 | A-NPM — Adjective Nominative Plural Masculine | τετρακισχίλιοι (tetrakischilioi): four thousand |
+| 7 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 8 | ἀπέλυσεν | apelusen | He sent away | G630G | V-AAI-3S — Verb Aorist Active Indicative 3rd Singular | ἀπολύω (apoluō): to release: release |
+| 9 | αὐτούς. | autous | them. | G846 | P-APM — Personal pronoun Accusative Plural Masculine | αὐτός (autos): it/s/he |
+
+## Mark 8:10
+
+**Original:** Καὶ εὐθὺς ἐμβὰς εἰς τὸ πλοῖον μετὰ τῶν μαθητῶν αὐτοῦ ἦλθεν εἰς τὰ μέρη Δαλμανουθά.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | Καὶ | Kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | εὐθὺς | euthus | immediately | G2112 | ADV — Adverb | εὐθέως (eutheōs): immediately |
+| 3 | ἐμβὰς | embas | having climbed | G1684 | V-2AAP-NSM — Verb 2nd Aorist Active Participle Nominative Singular Masculine | ἐμβαίνω (embainō): to climb |
+| 4 | εἰς | eis | into | G1519 | PREP — Preposition | toward |
+| 5 | τὸ | to | the | G3588 | T-ASN — Definite article Accusative Singular Neuter | ὁ (ho): the/this/who |
+| 6 | πλοῖον | ploion | boat | G4143 | N-ASN — Noun Accusative Singular Neuter | boat |
+| 7 | μετὰ | meta | with | G3326 | PREP — Preposition | μετά (meta): with/after |
+| 8 | τῶν | tōn | the | G3588 | T-GPM — Definite article Genitive Plural Masculine | ὁ (ho): the/this/who |
+| 9 | μαθητῶν | mathētōn | disciples | G3101 | N-GPM — Noun Genitive Plural Masculine | μαθητής (mathētēs): disciple |
+| 10 | αὐτοῦ | autou | of Him | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+| 11 | ἦλθεν | ēlthen | He came | G2064 | V-2AAI-3S — Verb 2nd Aorist Active Indicative 3rd Singular | ἔρχομαι (erchomai): to come/go |
+| 12 | εἰς | eis | into | G1519 | PREP — Preposition | toward |
+| 13 | τὰ | ta | the | G3588 | T-APN — Definite article Accusative Plural Neuter | ὁ (ho): the/this/who |
+| 14 | μέρη | merē | district | G3313 | N-APN — Noun Accusative Plural Neuter | μέρος (meros): part |
+| 15 | Δαλμανουθά. | Dalmanoutha | of Dalmanutha. | G1148 | N-GSF-L — Noun Genitive Singular Feminine Location | Δαλμανουθά (Dalmanoutha): Dalmanutha |
+
+## Mark 8:11
+
+**Original:** καὶ ἐξῆλθον οἱ Φαρισαῖοι καὶ ἤρξαντο συζητεῖν αὐτῷ ζητοῦντες παρ᾽ αὐτοῦ σημεῖον ἀπὸ τοῦ οὐρανοῦ, πειράζοντες αὐτόν.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | ἐξῆλθον | exēlthon | went out | G1831 | V-2AAI-3P — Verb 2nd Aorist Active Indicative 3rd Plural | ἐξέρχομαι (exerchomai): to go out |
+| 3 | οἱ | hoi | the | G3588 | T-NPM — Definite article Nominative Plural Masculine | ὁ (ho): the/this/who |
+| 4 | Φαρισαῖοι | Pharisaioi | Pharisees | G5330 | N-NPM-T — Noun Nominative Plural Masculine Title | Φαρισαῖος (Pharisaios): Pharisee |
+| 5 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 6 | ἤρξαντο | ērxanto | began | G757 | V-ADI-3P — Verb Aorist Middle Deponent Indicative 3rd Plural | ἄρχω (archō): be first |
+| 7 | συζητεῖν | suzētein | to dispute | G4802 | V-PAN — Verb Present Active Infinitive | συζητέω (suzēteō): to debate |
+| 8 | αὐτῷ | autō | with Him | G846 | P-DSM — Personal pronoun Dative Singular Masculine | αὐτός (autos): it/s/he |
+| 9 | ζητοῦντες | zētountes | seeking | G2212 | V-PAP-NPM — Verb Present Active Participle Nominative Plural Masculine | ζητέω (zēteō): to seek |
+| 10 | παρ᾽ | par᾽ | from | G3844 | PREP — Preposition | παρά (para): from/with/beside |
+| 11 | αὐτοῦ | autou | Him | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+| 12 | σημεῖον | sēmeion | a sign | G4592 | N-ASN — Noun Accusative Singular Neuter | sign |
+| 13 | ἀπὸ | apo | from | G575 | PREP — Preposition | ἀπό (apo): away from |
+| 14 | τοῦ | tou | <the> | G3588 | T-GSM — Definite article Genitive Singular Masculine | ὁ (ho): the/this/who |
+| 15 | οὐρανοῦ, | ouranou | heaven, | G3772 | N-GSM — Noun Genitive Singular Masculine | οὐρανός (ouranos): heaven |
+| 16 | πειράζοντες | peirazontes | testing | G3985H | V-PAP-NPM — Verb Present Active Participle Nominative Plural Masculine | πειράζω (peirazō): to test/tempt: test |
+| 17 | αὐτόν. | auton | Him. | G846 | P-ASM — Personal pronoun Accusative Singular Masculine | αὐτός (autos): it/s/he |
+
+## Mark 8:12
+
+**Original:** Καὶ ἀναστενάξας τῷ πνεύματι αὐτοῦ λέγει· τί ἡ γενεὰ αὕτη ζητεῖ σημεῖον; ἀμὴν λέγω ὑμῖν, εἰ δοθήσεται τῇ γενεᾷ ταύτῃ σημεῖον.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | Καὶ | Kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | ἀναστενάξας | anastenaxas | having sighed deeply | G389 | V-AAP-NSM — Verb Aorist Active Participle Nominative Singular Masculine | ἀναστενάζω (anastenazō): to sigh deeply |
+| 3 | τῷ | tō | in the | G3588 | T-DSN — Definite article Dative Singular Neuter | ὁ (ho): the/this/who |
+| 4 | πνεύματι | pneumati | spirit | G4151G | N-DSN — Noun Dative Singular Neuter | πνεῦμα (pneuma): spirit/breath: spirit |
+| 5 | αὐτοῦ | autou | of Him | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+| 6 | λέγει· | legei | He says; | G3004G | V-PAI-3S — Verb Present Active Indicative 3rd Singular | λέγω (legō): to say |
+| 7 | τί | ti | Why | G5101 | I-ASN — Interrogative pronoun Accusative Singular Neuter | τίς (tis): which? |
+| 8 | ἡ | hē | <the> | G3588 | T-NSF — Definite article Nominative Singular Feminine | ὁ (ho): the/this/who |
+| 9 | γενεὰ | genea | generation | G1074 | N-NSF — Noun Nominative Singular Feminine | γενεά (genea): generation |
+| 10 | αὕτη | hautē | this | G3778 | D-NSF — Demonstrative pronoun Nominative Singular Feminine | οὗτος (ohutos): this/he/she/it |
+| 11 | ζητεῖ | zētei | seeks | G2212 | V-PAI-3S — Verb Present Active Indicative 3rd Singular | ζητέω (zēteō): to seek |
+| 12 | σημεῖον; | sēmeion | a sign? | G4592 | N-ASN — Noun Accusative Singular Neuter | σημεῖον (sēmeion): sign |
+| 13 | ἀμὴν | amēn | Amen | G281 | INJ-HEB — Interjection Transcribed from Hebrew | ἀμήν (amēn): amen |
+| 14 | λέγω | legō | I say | G3004G | V-PAI-1S — Verb Present Active Indicative 1st Singular | to say |
+| 15 | ὑμῖν, | humin | to you, | G4771 | P-2DP — Personal pronoun 2nd Dative Plural | σύ (su): you |
+| 16 | εἰ | ei | if | G1487H | COND — Conjunction | if: not |
+| 17 | δοθήσεται | dothēsetai | there will be given | G1325 | V-FPI-3S — Verb Future Passive Indicative 3rd Singular | δίδωμι (didōmi): to give |
+| 18 | τῇ | tēa | to the | G3588 | T-DSF — Definite article Dative Singular Feminine | ὁ (ho): the/this/who |
+| 19 | γενεᾷ | genea | generation | G1074 | N-DSF — Noun Dative Singular Feminine | γενεά (genea): generation |
+| 20 | ταύτῃ | tautē | this | G3778 | D-DSF — Demonstrative pronoun Dative Singular Feminine | οὗτος (ohutos): this/he/she/it |
+| 21 | σημεῖον. | sēmeion | a sign. | G4592 | N-NSN — Noun Nominative Singular Neuter | σημεῖον (sēmeion): sign |
+
+## Mark 8:13
+
+**Original:** καὶ ἀφεὶς αὐτοὺς πάλιν ἐμβὰς εἰς τὸ πλοῖον ἀπῆλθεν εἰς τὸ πέραν.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | ἀφεὶς | apheis | having left | G863G | V-2AAP-NSM — Verb 2nd Aorist Active Participle Nominative Singular Masculine | ἀφίημι (aphiēmi): to release: leave |
+| 3 | αὐτοὺς | autous | them | G846 | P-APM — Personal pronoun Accusative Plural Masculine | αὐτός (autos): it/s/he |
+| 4 | πάλιν | palin | again | G3825 | ADV — Adverb | again |
+| 5 | ἐμβὰς | embas | having climbed | G1684 | V-2AAP-NSM — Verb 2nd Aorist Active Participle Nominative Singular Masculine | ἐμβαίνω (embainō): to climb |
+| 6 | εἰς | eis | into | G1519 | PREP — Preposition | toward |
+| 7 | τὸ | to | <the> | G3588 | T-ASN — Definite article Accusative Singular Neuter | ὁ (ho): the/this/who |
+| 8 | πλοῖον | ploion | boat | G4143 | N-ASN — Noun Accusative Singular Neuter | boat |
+| 9 | ἀπῆλθεν | apēlthen | He went away | G565 | V-2AAI-3S — Verb 2nd Aorist Active Indicative 3rd Singular | ἀπέρχομαι (aperchomai): to go away |
+| 10 | εἰς | eis | to | G1519 | PREP — Preposition | toward |
+| 11 | τὸ | to | the | G3588 | T-ASN — Definite article Accusative Singular Neuter | ὁ (ho): the/this/who |
+| 12 | πέραν. | peran | other side. | G4008 | PREP — Preposition | πέραν (peran): other side |
+
+## Mark 8:14
+
+**Original:** καὶ ἐπελάθοντο λαβεῖν ἄρτους καὶ εἰ μὴ ἕνα ἄρτον οὐκ εἶχον μεθ᾽ ἑαυτῶν ἐν τῷ πλοίῳ.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | ἐπελάθοντο | epelathonto | they forgot | G1950 | V-2ADI-3P — Verb 2nd Aorist Middle Deponent Indicative 3rd Plural | ἐπιλανθάνω (epilanthanō): to forget |
+| 3 | λαβεῖν | labein | to take | G2983 | V-2AAN — Verb 2nd Aorist Active Infinitive | λαμβάνω (lambanō): to take |
+| 4 | ἄρτους | artous | loaves | G740 | N-APM — Noun Accusative Plural Masculine | ἄρτος (artos): bread |
+| 5 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 6 | εἰ | ei | only | G1487H | COND — Conjunction | if: not |
+| 7 | μὴ | mē | except | G3361 | PRT-N — Negative Particle Negative Negative | μή (mē): not |
+| 8 | ἕνα | hena | one | G1520 | A-ASM — Adjective Accusative Singular Masculine | εἷς (ehis): one |
+| 9 | ἄρτον | arton | loaf | G740 | N-ASM — Noun Accusative Singular Masculine | ἄρτος (artos): bread |
+| 10 | οὐκ | ouk | not | G3756 | PRT-N — Negative Particle Negative Negative | οὐ (ou): no |
+| 11 | εἶχον | eichon | they had | G2192 | V-IAI-3P — Verb Imperfect Active Indicative 3rd Plural | ἔχω (echō): to have/be |
+| 12 | μεθ᾽ | meth᾽ | with | G3326 | PREP — Preposition | μετά (meta): with/after |
+| 13 | ἑαυτῶν | he'autōn | themselves | G1438 | F-3GPM — Reflexive pronoun 3rd Genitive Plural Masculine | ἑαυτοῦ (heautou): themself |
+| 14 | ἐν | en | in | G1722 | PREP — Preposition | in/on/among |
+| 15 | τῷ | tō | the | G3588 | T-DSN — Definite article Dative Singular Neuter | ὁ (ho): the/this/who |
+| 16 | πλοίῳ. | ploiō | boat. | G4143 | N-DSN — Noun Dative Singular Neuter | πλοῖον (ploion): boat |
+
+## Mark 8:15
+
+**Original:** καὶ διεστέλλετο αὐτοῖς λέγων· ὁρᾶτε, βλέπετε ἀπὸ τῆς ζύμης τῶν Φαρισαίων καὶ τῆς ζύμης Ἡρῴδου.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | διεστέλλετο | diestelleto | He was instructing | G1291 | V-IMI-3S — Verb Imperfect Middle Indicative 3rd Singular | διαστέλλω (diastellō): to give orders |
+| 3 | αὐτοῖς | autois | to them | G846 | P-DPM — Personal pronoun Dative Plural Masculine | αὐτός (autos): it/s/he |
+| 4 | λέγων· | legōn | saying; | G3004G | V-PAP-NSM — Verb Present Active Participle Nominative Singular Masculine | λέγω (legō): to say |
+| 5 | ὁρᾶτε, | horate | do watch out, | G3708 | V-PAM-2P — Verb Present Active Imperative 2nd Plural | ὁράω (horaō): to see: see |
+| 6 | βλέπετε | blepete | do take heed | G991 | V-PAM-2P — Verb Present Active Imperative 2nd Plural | βλέπω (blepō): to see |
+| 7 | ἀπὸ | apo | of | G575 | PREP — Preposition | ἀπό (apo): away from |
+| 8 | τῆς | tēs | the | G3588 | T-GSF — Definite article Genitive Singular Feminine | ὁ (ho): the/this/who |
+| 9 | ζύμης | zumēs | leaven | G2219 | N-GSF — Noun Genitive Singular Feminine | ζύμη (zumē): leaven |
+| 10 | τῶν | tōn | of the | G3588 | T-GPM — Definite article Genitive Plural Masculine | ὁ (ho): the/this/who |
+| 11 | Φαρισαίων | Pharisaiōn | Pharisees | G5330 | N-GPM-T — Noun Genitive Plural Masculine Title | Φαρισαῖος (Pharisaios): Pharisee |
+| 12 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 13 | τῆς | tēs | of the | G3588 | T-GSF — Definite article Genitive Singular Feminine | ὁ (ho): the/this/who |
+| 14 | ζύμης | zumēs | leaven | G2219 | N-GSF — Noun Genitive Singular Feminine | ζύμη (zumē): leaven |
+| 15 | Ἡρῴδου. | Hērōdou | of Herod. | G2264H | N-GSM-P — Noun Genitive Singular Masculine Individual | Ἡρώδης (Hērōdēs): Herod |
+
+## Mark 8:16
+
+**Original:** καὶ διελογίζοντο πρὸς ἀλλήλους λέγοντες ὅτι ἄρτους οὐκ ἔχουσιν.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | διελογίζοντο | dielogizonto | they were reasoning | G1260 | V-INI-3P — Verb Imperfect Middle or Passive Deponent Indicative 3rd Plural | διαλογίζομαι (dialogizomai): to discuss |
+| 3 | πρὸς | pros | with | G4314 | PREP — Preposition | πρός (pros): to/with |
+| 4 | ἀλλήλους | allēlous | one another | G240 | C-APM — Reciprocal pronoun Accusative Plural Masculine | ἀλλήλων (allēlōn): one another |
+| 5 | λέγοντες | legontes | saying | G3004G | V-PAP-NPM — Verb Present Active Participle Nominative Plural Masculine | λέγω (legō): to say |
+| 6 | ὅτι | hoti | because | G3754H | CONJ — Conjunction | that/since: since |
+| 7 | ἄρτους | artous | loaves | G740 | N-APM — Noun Accusative Plural Masculine | ἄρτος (artos): bread |
+| 8 | οὐκ | ouk | not | G3756 | PRT-N — Negative Particle Negative Negative | οὐ (ou): no |
+| 9 | ἔχουσιν. | echousin | they have. | G2192 | V-PAI-3P — Verb Present Active Indicative 3rd Plural | ἔχω (echō): to have/be |
+
+## Mark 8:17
+
+**Original:** καὶ γνοὺς ὁ Ἰησοῦς λέγει αὐτοῖς· τί διαλογίζεσθε ὅτι ἄρτους οὐκ ἔχετε; οὔπω νοεῖτε οὐδὲ συνίετε; ἔτι πεπωρωμένην ἔχετε τὴν καρδίαν ὑμῶν;
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | γνοὺς | gnous | having known [it] | G1097 | V-2AAP-NSM — Verb 2nd Aorist Active Participle Nominative Singular Masculine | γινώσκω (ginōskō): to know |
+| 3 | ὁ | ho | <the> | G3588 | T-NSM — Definite article Nominative Singular Masculine | the/this/who |
+| 4 | Ἰησοῦς | Iēsous | Jesus | G2424G | N-NSM-P — Noun Nominative Singular Masculine Individual | Jesus |
+| 5 | λέγει | legei | He says | G3004G | V-PAI-3S — Verb Present Active Indicative 3rd Singular | λέγω (legō): to say |
+| 6 | αὐτοῖς· | autois | to them; | G846 | P-DPM — Personal pronoun Dative Plural Masculine | αὐτός (autos): it/s/he |
+| 7 | τί | ti | Why | G5101 | I-ASN — Interrogative pronoun Accusative Singular Neuter | τίς (tis): which? |
+| 8 | διαλογίζεσθε | dialogizesthe | reason you | G1260 | V-PNI-2P — Verb Present Middle or Passive Deponent Indicative 2nd Plural | διαλογίζομαι (dialogizomai): to discuss |
+| 9 | ὅτι | hoti | because | G3754G | CONJ — Conjunction | that/since: that |
+| 10 | ἄρτους | artous | loaves | G740 | N-APM — Noun Accusative Plural Masculine | ἄρτος (artos): bread |
+| 11 | οὐκ | ouk | not | G3756 | PRT-N — Negative Particle Negative Negative | οὐ (ou): no |
+| 12 | ἔχετε; | echete | you have? | G2192 | V-PAI-2P — Verb Present Active Indicative 2nd Plural | ἔχω (echō): to have/be |
+| 13 | οὔπω | oupō | Not yet | G3768 | ADV-N — Adverb or adverb and particle combined Negative | not yet |
+| 14 | νοεῖτε | noeite | do you perceive | G3539 | V-PAI-2P — Verb Present Active Indicative 2nd Plural | νοέω (noeō): to understand |
+| 15 | οὐδὲ | oude | nor | G3761 | CONJ-N — Conjunction Negative | οὐδέ (oude): nor |
+| 16 | συνίετε; | suniete | understand? | G4920 | V-PAI-2P — Verb Present Active Indicative 2nd Plural | συνίημι (suniēmi): to understand |
+| 17 | ἔτι | eti | still | G2089 | ADV — Adverb | still |
+| 18 | πεπωρωμένην | pepōrōmenēn | Hardened | G4456 | V-RPP-ASF — Verb Perfect Passive Participle Accusative Singular Feminine | πωρόω (pōroō): to harden |
+| 19 | ἔχετε | echete | do you have | G2192 | V-PAI-2P — Verb Present Active Indicative 2nd Plural | ἔχω (echō): to have/be |
+| 20 | τὴν | tēn | the | G3588 | T-ASF — Definite article Accusative Singular Feminine | ὁ (ho): the/this/who |
+| 21 | καρδίαν | kardian | heart | G2588 | N-ASF — Noun Accusative Singular Feminine | καρδία (kardia): heart |
+| 22 | ὑμῶν; | humōn | of you? | G4771 | P-2GP — Personal pronoun 2nd Genitive Plural | σύ (su): you |
+
+## Mark 8:18
+
+**Original:** ὀφθαλμοὺς ἔχοντες οὐ βλέπετε, καὶ ὦτα ἔχοντες οὐκ ἀκούετε; καὶ οὐ μνημονεύετε;
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | ὀφθαλμοὺς | ophthalmous | Eyes | G3788 | N-APM — Noun Accusative Plural Masculine | ὀφθαλμός (ophthalmos): eye |
+| 2 | ἔχοντες | echontes | having | G2192 | V-PAP-NPM — Verb Present Active Participle Nominative Plural Masculine | ἔχω (echō): to have/be |
+| 3 | οὐ | ou | not | G3756 | PRT-N — Negative Particle Negative Negative | no |
+| 4 | βλέπετε, | blepete | do you see? | G991 | V-PAI-2P — Verb Present Active Indicative 2nd Plural | βλέπω (blepō): to see |
+| 5 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 6 | ὦτα | ōta | ears | G3775 | N-APN — Noun Accusative Plural Neuter | οὖς (ous): ear |
+| 7 | ἔχοντες | echontes | having | G2192 | V-PAP-NPM — Verb Present Active Participle Nominative Plural Masculine | ἔχω (echō): to have/be |
+| 8 | οὐκ | ouk | not | G3756 | PRT-N — Negative Particle Negative Negative | οὐ (ou): no |
+| 9 | ἀκούετε; | akouete | do you hear? | G191 | V-PAI-2P — Verb Present Active Indicative 2nd Plural | ἀκούω (akouō): to hear |
+| 10 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 11 | οὐ | ou | not | G3756 | PRT-N — Negative Particle Negative Negative | no |
+| 12 | μνημονεύετε; | mnēmoneuete | do you remember? | G3421 | V-PAI-2P — Verb Present Active Indicative 2nd Plural | μνημονεύω (mnēmoneuō): to remember |
+
+## Mark 8:19
+
+**Original:** ὅτε τοὺς πέντε ἄρτους ἔκλασα εἰς τοὺς πεντακισχιλίους πόσους κοφίνους κλασμάτων πλήρεις ἤρατε; λέγουσιν αὐτῷ· δώδεκα.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | ὅτε | hote | When | G3753 | CONJ — Conjunction | when |
+| 2 | τοὺς | tous | the | G3588 | T-APM — Definite article Accusative Plural Masculine | ὁ (ho): the/this/who |
+| 3 | πέντε | pente | five | G4002 | A-NUI — Adjective Indeclinable Numeral | five |
+| 4 | ἄρτους | artous | loaves | G740 | N-APM — Noun Accusative Plural Masculine | ἄρτος (artos): bread |
+| 5 | ἔκλασα | eklasa | I broke | G2806 | V-AAI-1S — Verb Aorist Active Indicative 1st Singular | κλάω (klaō): to break |
+| 6 | εἰς | eis | for | G1519 | PREP — Preposition | toward |
+| 7 | τοὺς | tous | the | G3588 | T-APM — Definite article Accusative Plural Masculine | ὁ (ho): the/this/who |
+| 8 | πεντακισχιλίους | pentakischilious | five thousand | G4000 | A-APM — Adjective Accusative Plural Masculine | πεντακισχίλιοι (pentakischilioi): five thousand |
+| 9 | πόσους | posous | how many | G4214 | Q-APM — Correlative or Interrogative pronoun Accusative Plural Masculine | πόσος (posos): how much/many? |
+| 10 | κοφίνους | kophinous | hand-baskets | G2894 | N-APM — Noun Accusative Plural Masculine | κόφινος (kophinos): basket |
+| 11 | κλασμάτων | klasmatōn | of fragments | G2801 | N-GPN — Noun Genitive Plural Neuter | κλάσμα (klasma): fragment |
+| 12 | πλήρεις | plēreis | full | G4134 | A-APM — Adjective Accusative Plural Masculine | πλήρης (plērēs): full |
+| 13 | ἤρατε; | ērate | took you up? | G142 | V-AAI-2P — Verb Aorist Active Indicative 2nd Plural | αἴρω (airō): to take up |
+| 14 | λέγουσιν | legousin | They say | G3004G | V-PAI-3P — Verb Present Active Indicative 3rd Plural | λέγω (legō): to say |
+| 15 | αὐτῷ· | autō | to Him; | G846 | P-DSM — Personal pronoun Dative Singular Masculine | αὐτός (autos): it/s/he |
+| 16 | δώδεκα. | dōdeka | Twelve. | G1427 | A-NUI — Adjective Indeclinable Numeral | δώδεκα (dōdeka): twelve |
+
+## Mark 8:20
+
+**Original:** ὅτε δὲ τοὺς ἑπτὰ εἰς τοὺς τετρακισχιλίους πόσων σπυρίδων πληρώματα κλασμάτων ἤρατε; οἱ καὶ λέγουσιν αὐτῷ· ἑπτά.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | ὅτε | hote | When | G3753 | CONJ — Conjunction | when |
+| 2 | δὲ | de | now | G1161 | CONJ — Conjunction | δέ (de): then |
+| 3 | τοὺς | tous | the | G3588 | T-APM — Definite article Accusative Plural Masculine | ὁ (ho): the/this/who |
+| 4 | ἑπτὰ | hepta | seven | G2033 | A-NUI — Adjective Indeclinable Numeral | ἑπτά (hepta): seven |
+| 5 | εἰς | eis | to | G1519 | PREP — Preposition | toward |
+| 6 | τοὺς | tous | the | G3588 | T-APM — Definite article Accusative Plural Masculine | ὁ (ho): the/this/who |
+| 7 | τετρακισχιλίους | tetrakischilious | four thousand | G5070 | A-APM — Adjective Accusative Plural Masculine | τετρακισχίλιοι (tetrakischilioi): four thousand |
+| 8 | πόσων | posōn | of how many | G4214 | Q-GPF — Correlative or Interrogative pronoun Genitive Plural Feminine | πόσος (posos): how much/many? |
+| 9 | σπυρίδων | spuridōn | baskets | G4711 | N-GPF — Noun Genitive Plural Feminine | σπυρίς (spuris): basket |
+| 10 | πληρώματα | plērōmata | [the] fillings | G4138 | N-APN — Noun Accusative Plural Neuter | πλήρωμα (plērōma): fulfillment |
+| 11 | κλασμάτων | klasmatōn | of fragments | G2801 | N-GPN — Noun Genitive Plural Neuter | κλάσμα (klasma): fragment |
+| 12 | ἤρατε; | ērate | took you up? | G142 | V-AAI-2P — Verb Aorist Active Indicative 2nd Plural | αἴρω (airō): to take up |
+| 13 | οἱ | hoi | <the> | G3588 | T-NPM — Definite article Nominative Plural Masculine | ὁ (ho): the/this/who |
+| 14 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 15 | λέγουσιν | legousin | they speak | G3004G | V-PAI-3P — Verb Present Active Indicative 3rd Plural | λέγω (legō): to say |
+| 16 | αὐτῷ· | autō | to him; | G846 | P-DSM — Personal pronoun Dative Singular Masculine | αὐτός (autos): it/s/he |
+| 17 | ἑπτά. | hepta | Seven. | G2033 | A-NUI — Adjective Indeclinable Numeral | ἑπτά (hepta): seven |
+
+## Mark 8:21
+
+**Original:** καὶ ἔλεγεν αὐτοῖς· οὔπω πῶς συνίετε;
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | ἔλεγεν | elegen | He was saying | G3004G | V-IAI-3S — Verb Imperfect Active Indicative 3rd Singular | λέγω (legō): to say |
+| 3 | αὐτοῖς· | autois | to them; | G846 | P-DPM — Personal pronoun Dative Plural Masculine | αὐτός (autos): it/s/he |
+| 4 | οὔπω | oupō | Not yet | G3768 | ADV-N — Adverb or adverb and particle combined Negative | not yet |
+| 5 | πῶς | pōs | how | G4459 | PRT-I — Interrogative Particle Interrogative | how?! |
+| 6 | συνίετε; | suniete | do you understand? | G4920 | V-PAI-2P — Verb Present Active Indicative 2nd Plural | συνίημι (suniēmi): to understand |
+
+## Mark 8:22
+
+**Original:** Καὶ ἔρχονται εἰς Βηθσαϊδάν, καὶ φέρουσιν αὐτῷ τυφλὸν καὶ παρακαλοῦσιν αὐτὸν ἵνα αὐτοῦ ἅψηται.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | Καὶ | Kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | ἔρχονται | erchontai | they come | G2064 | V-PNI-3P — Verb Present Middle or Passive Deponent Indicative 3rd Plural | ἔρχομαι (erchomai): to come/go |
+| 3 | εἰς | eis | to | G1519 | PREP — Preposition | toward |
+| 4 | Βηθσαϊδάν, | Bēthsaidan | Bethsaida, | G966 | N-ASF-L — Noun Accusative Singular Feminine Location | Βηθσαϊδά (Bēthsaida): Bethsaida |
+| 5 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 6 | φέρουσιν | pherousin | they bring | G5342 | V-PAI-3P — Verb Present Active Indicative 3rd Plural | φέρω (pherō): to bear/lead |
+| 7 | αὐτῷ | autō | to Him | G846 | P-DSM — Personal pronoun Dative Singular Masculine | αὐτός (autos): it/s/he |
+| 8 | τυφλὸν | tuphlon | a blind [man] | G5185 | A-ASM — Adjective Accusative Singular Masculine | τυφλός (tuphlos): blind |
+| 9 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 10 | παρακαλοῦσιν | parakalousin | they implore | G3870 | V-PAI-3P — Verb Present Active Indicative 3rd Plural | παρακαλέω (parakaleō): to plead/comfort |
+| 11 | αὐτὸν | auton | Him | G846 | P-ASM — Personal pronoun Accusative Singular Masculine | αὐτός (autos): it/s/he |
+| 12 | ἵνα | ina | that | G2443 | CONJ — Conjunction | in order that/to |
+| 13 | αὐτοῦ | autou | him | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+| 14 | ἅψηται. | hapsētai | He may touch. | G681 | V-AMS-3S — Verb Aorist Middle Subjunctive 3rd Singular | ἅπτω (haptō): to touch |
+
+## Mark 8:23
+
+**Original:** καὶ ἐπιλαβόμενος τῆς χειρὸς τοῦ τυφλοῦ ἐξήνεγκεν αὐτὸν ἔξω τῆς κώμης, καὶ πτύσας εἰς τὰ ὄμματα αὐτοῦ, ἐπιθεὶς τὰς χεῖρας αὐτῷ ἐπηρώτα αὐτόν· εἴ τι βλέπεις;
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | ἐπιλαβόμενος | epilabomenos | having taken hold of | G1949 | V-2ADP-NSM — Verb 2nd Aorist Middle Deponent Participle Nominative Singular Masculine | ἐπιλαμβάνω (epilambanō): to catch |
+| 3 | τῆς | tēs | the | G3588 | T-GSF — Definite article Genitive Singular Feminine | ὁ (ho): the/this/who |
+| 4 | χειρὸς | cheiros | hand | G5495 | N-GSF — Noun Genitive Singular Feminine | χείρ (cheir): hand |
+| 5 | τοῦ | tou | of the | G3588 | T-GSM — Definite article Genitive Singular Masculine | ὁ (ho): the/this/who |
+| 6 | τυφλοῦ | tuphlou | blind [man] | G5185 | A-GSM — Adjective Genitive Singular Masculine | τυφλός (tuphlos): blind |
+| 7 | ἐξήνεγκεν | exēnegken | he brought | G1627 | V-AAI-3S — Verb Aorist Active Indicative 3rd Singular | ἐκφέρω (ekpherō): to bring/carry out |
+| 8 | αὐτὸν | auton | him | G846 | P-ASM — Personal pronoun Accusative Singular Masculine | αὐτός (autos): it/s/he |
+| 9 | ἔξω | exō | out | G1854 | PREP — Preposition | out/outside(r) |
+| 10 | τῆς | tēs | of the | G3588 | T-GSF — Definite article Genitive Singular Feminine | ὁ (ho): the/this/who |
+| 11 | κώμης, | kōmēs | village, | G2968 | N-GSF — Noun Genitive Singular Feminine | κώμη (kōmē): village |
+| 12 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 13 | πτύσας | ptusas | having spit | G4429 | V-AAP-NSM — Verb Aorist Active Participle Nominative Singular Masculine | πτύω (ptuō): to spit |
+| 14 | εἰς | eis | upon | G1519 | PREP — Preposition | toward |
+| 15 | τὰ | ta | the | G3588 | T-APN — Definite article Accusative Plural Neuter | ὁ (ho): the/this/who |
+| 16 | ὄμματα | ommata | eyes | G3659 | N-APN — Noun Accusative Plural Neuter | ὄμμα (omma): eye |
+| 17 | αὐτοῦ, | autou | of him, | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+| 18 | ἐπιθεὶς | epitheis | having laid | G2007 | V-2AAP-NSM — Verb 2nd Aorist Active Participle Nominative Singular Masculine | ἐπιτίθημι (epitithēmi): to put/lay on |
+| 19 | τὰς | tas | the | G3588 | T-APF — Definite article Accusative Plural Feminine | ὁ (ho): the/this/who |
+| 20 | χεῖρας | cheiras | hands | G5495 | N-APF — Noun Accusative Plural Feminine | χείρ (cheir): hand |
+| 21 | αὐτῷ | autō | upon him | G846 | P-DSM — Personal pronoun Dative Singular Masculine | αὐτός (autos): it/s/he |
+| 22 | ἐπηρώτα | epērōta | He was asking | G1905 | V-IAI-3S — Verb Imperfect Active Indicative 3rd Singular | ἐπερωτάω (eperōtaō): to question |
+| 23 | αὐτόν· | auton | him: | G846 | P-ASM — Personal pronoun Accusative Singular Masculine | αὐτός (autos): it/s/he |
+| 24 | εἴ | ei | if | G1487I | COND — Conjunction | εἰ (ei): if: is(QUESTION) |
+| 25 | τι | ti | anything | G5100 | X-ASN — Indefinite pronoun Accusative Singular Neuter | τις (tis): one |
+| 26 | βλέπεις; | blepeis | you see? | G991 | V-PAI-2S — Verb Present Active Indicative 2nd Singular | βλέπω (blepō): to see |
+
+## Mark 8:24
+
+**Original:** καὶ ἀναβλέψας ἔλεγεν· βλέπω τοὺς ἀνθρώπους ὅτι ὡς δένδρα ὁρῶ περιπατοῦντας.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | ἀναβλέψας | anablepsas | having looked up | G308 | V-AAP-NSM — Verb Aorist Active Participle Nominative Singular Masculine | ἀναβλέπω (anablepō): to look up/again |
+| 3 | ἔλεγεν· | elegen | he was saying; | G3004G | V-IAI-3S — Verb Imperfect Active Indicative 3rd Singular | λέγω (legō): to say |
+| 4 | βλέπω | blepō | I see | G991 | V-PAI-1S — Verb Present Active Indicative 1st Singular | to see |
+| 5 | τοὺς | tous | the | G3588 | T-APM — Definite article Accusative Plural Masculine | ὁ (ho): the/this/who |
+| 6 | ἀνθρώπους | anthrōpous | men | G444 | N-APM — Noun Accusative Plural Masculine | ἄνθρωπος (anthrōpos): a human |
+| 7 | ὅτι | hoti | for | G3754G | CONJ — Conjunction | that/since: that |
+| 8 | ὡς | hōs | as | G5613 | PRT — Particle or Disjunctive Particle | as/when |
+| 9 | δένδρα | dendra | trees | G1186 | N-APN — Noun Accusative Plural Neuter | δένδρον (dendron): tree |
+| 10 | ὁρῶ | horō | I see [them] | G3708 | V-PAI-1S — Verb Present Active Indicative 1st Singular | ὁράω (horaō): to see: see |
+| 11 | περιπατοῦντας. | peripatountas | walking. | G4043 | V-PAP-APM — Verb Present Active Participle Accusative Plural Masculine | περιπατέω (peripateō): to walk |
+
+## Mark 8:25
+
+**Original:** εἶτα πάλιν ἐπέθηκεν τὰς χεῖρας ἐπὶ τοὺς ὀφθαλμοὺς αὐτοῦ, καὶ ἐποίησεν αὐτὸν διέβλεψεν καὶ ἀπεκατέστη καὶ ἐνέβλεπεν τηλαυγῶς ἅπαντα.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | εἶτα | eita | Then | G1534 | ADV — Adverb | then |
+| 2 | πάλιν | palin | again | G3825 | ADV — Adverb | again |
+| 3 | ἐπέθηκεν | epethēken | He put | G2007 | V-2AAI-3S — Verb 2nd Aorist Active Indicative 3rd Singular | ἐπιτίθημι (epitithēmi): to put/lay on |
+| 4 | τὰς | tas | the | G3588 | T-APF — Definite article Accusative Plural Feminine | ὁ (ho): the/this/who |
+| 5 | χεῖρας | cheiras | hands | G5495 | N-APF — Noun Accusative Plural Feminine | χείρ (cheir): hand |
+| 6 | ἐπὶ | epi | upon | G1909 | PREP — Preposition | ἐπί (epi): upon/to/against |
+| 7 | τοὺς | tous | the | G3588 | T-APM — Definite article Accusative Plural Masculine | ὁ (ho): the/this/who |
+| 8 | ὀφθαλμοὺς | ophthalmous | eyes | G3788 | N-APM — Noun Accusative Plural Masculine | ὀφθαλμός (ophthalmos): eye |
+| 9 | αὐτοῦ, | autou | of him, | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+| 10 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 11 | ἐποίησεν | epoiēsen | made | G4160G | V-AAI-3S — Verb Aorist Active Indicative 3rd Singular | ποιέω (poieō): to do/make: do |
+| 12 | αὐτὸν | auton | him | G846 | P-ASM — Personal pronoun Accusative Singular Masculine | αὐτός (autos): it/s/he |
+| 13 | διέβλεψεν | dieblepsen | look | G1227 | V-AAI-3S — Verb Aorist Active Indicative 3rd Singular | διαβλέπω (diablepō): to see clearly |
+| 14 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 15 | ἀπεκατέστη | apekatestē | he  restored | G600 | V-2AAI-3S — Verb 2nd Aorist Active Indicative 3rd Singular | ἀποκαθίστημι (apokathistēmi): to restore |
+| 16 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 17 | ἐνέβλεπεν | eneblepen | he was seeing well | G1689 | V-IAI-3S — Verb Imperfect Active Indicative 3rd Singular | ἐμβλέπω (emblepō): to look into/upon |
+| 18 | τηλαυγῶς | tēlaugōs | clearly | G5081 | ADV — Adverb | clearly |
+| 19 | ἅπαντα. | hapanta | everything. | G537 | A-APN — Adjective Accusative Plural Neuter | ἅπας (hapas): all |
+
+## Mark 8:26
+
+**Original:** καὶ ἀπέστειλεν αὐτὸν εἰς τὸν οἶκον αὐτοῦ λέγων· μηδὲ εἰς τὴν κώμην εἰσέλθῃς μηδὲ εἴπῃς τινὶ ἐν τῇ κώμῃ.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | ἀπέστειλεν | apesteilen | He sent | G649 | V-AAI-3S — Verb Aorist Active Indicative 3rd Singular | ἀποστέλλω (apostellō): to send |
+| 3 | αὐτὸν | auton | him | G846 | P-ASM — Personal pronoun Accusative Singular Masculine | αὐτός (autos): it/s/he |
+| 4 | εἰς | eis | to | G1519 | PREP — Preposition | toward |
+| 5 | τὸν | ton | the | G3588 | T-ASM — Definite article Accusative Singular Masculine | ὁ (ho): the/this/who |
+| 6 | οἶκον | oikon | home | G3624G | N-ASM — Noun Accusative Singular Masculine | οἶκος (oikos): house: home |
+| 7 | αὐτοῦ | autou | of him | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+| 8 | λέγων· | legōn | saying; | G3004G | V-PAP-NSM — Verb Present Active Participle Nominative Singular Masculine | λέγω (legō): to say |
+| 9 | μηδὲ | mēde | Not | G3366 | ADV-N — Adverb or adverb and particle combined Negative | μηδέ (mēde): nor |
+| 10 | εἰς | eis | into | G1519 | PREP — Preposition | toward |
+| 11 | τὴν | tēn | the | G3588 | T-ASF — Definite article Accusative Singular Feminine | ὁ (ho): the/this/who |
+| 12 | κώμην | kōmēn | village | G2968 | N-ASF — Noun Accusative Singular Feminine | κώμη (kōmē): village |
+| 13 | εἰσέλθῃς | eiselthēs | shall you enter | G1525 | V-2AAS-2S — Verb 2nd Aorist Active Subjunctive 2nd Singular | εἰσέρχομαι (eiserchomai): to enter |
+| 14 | μηδὲ | mēde | nor | G3366 | CONJ-N — Conjunction Negative | μηδέ (mēde): nor |
+| 15 | εἴπῃς | eipēs | may you speak | G2036 | V-2AAS-2S — Verb 2nd Aorist Active Subjunctive 2nd Singular | εἶπον (eipon): to say |
+| 16 | τινὶ | tini | to anyone | G5100 | X-DSM — Indefinite pronoun Dative Singular Masculine | τις (tis): one |
+| 17 | ἐν | en | in | G1722 | PREP — Preposition | in/on/among |
+| 18 | τῇ | tēa | <the> | G3588 | T-DSF — Definite article Dative Singular Feminine | ὁ (ho): the/this/who |
+| 19 | κώμῃ. | kōmē | village. | G2968 | N-DSF — Noun Dative Singular Feminine | κώμη (kōmē): village |
+
+## Mark 8:27
+
+**Original:** Καὶ ἐξῆλθεν ὁ Ἰησοῦς καὶ οἱ μαθηταὶ αὐτοῦ εἰς τὰς κώμας Καισαρείας τῆς Φιλίππου. καὶ ἐν τῇ ὁδῷ ἐπηρώτα τοὺς μαθητὰς αὐτοῦ λέγων αὐτοῖς· τίνα με λέγουσιν οἱ ἄνθρωποι εἶναι;
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | Καὶ | Kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | ἐξῆλθεν | exēlthen | went forth | G1831 | V-2AAI-3S — Verb 2nd Aorist Active Indicative 3rd Singular | ἐξέρχομαι (exerchomai): to go out |
+| 3 | ὁ | ho | <the> | G3588 | T-NSM — Definite article Nominative Singular Masculine | the/this/who |
+| 4 | Ἰησοῦς | Iēsous | Jesus | G2424G | N-NSM-P — Noun Nominative Singular Masculine Individual | Jesus |
+| 5 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 6 | οἱ | hoi | the | G3588 | T-NPM — Definite article Nominative Plural Masculine | ὁ (ho): the/this/who |
+| 7 | μαθηταὶ | mathētai | disciples | G3101 | N-NPM — Noun Nominative Plural Masculine | μαθητής (mathētēs): disciple |
+| 8 | αὐτοῦ | autou | of Him | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+| 9 | εἰς | eis | into | G1519 | PREP — Preposition | toward |
+| 10 | τὰς | tas | the | G3588 | T-APF — Definite article Accusative Plural Feminine | ὁ (ho): the/this/who |
+| 11 | κώμας | kōmas | villages | G2968 | N-APF — Noun Accusative Plural Feminine | κώμη (kōmē): village |
+| 12 | Καισαρείας | Kaisareias | of Caesarea | G2542G | N-GSF-L — Noun Genitive Singular Feminine Location | Καισάρεια (Kaisareia): Caesarea |
+| 13 | τῆς | tēs | <the> | G3588 | T-GSF — Definite article Genitive Singular Feminine | ὁ (ho): the/this/who |
+| 14 | Φιλίππου. | Philippou | Philippi. | G5376K | N-GSM-P — Noun Genitive Singular Masculine Individual | Φίλιππος (Philippos): Philippi |
+| 15 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 16 | ἐν | en | on | G1722 | PREP — Preposition | in/on/among |
+| 17 | τῇ | tēa | the | G3588 | T-DSF — Definite article Dative Singular Feminine | ὁ (ho): the/this/who |
+| 18 | ὁδῷ | hodō | way | G3598 | N-DSF — Noun Dative Singular Feminine | ὁδός (hodos): road |
+| 19 | ἐπηρώτα | epērōta | He was questioning | G1905 | V-IAI-3S — Verb Imperfect Active Indicative 3rd Singular | ἐπερωτάω (eperōtaō): to question |
+| 20 | τοὺς | tous | the | G3588 | T-APM — Definite article Accusative Plural Masculine | ὁ (ho): the/this/who |
+| 21 | μαθητὰς | mathētas | disciples | G3101 | N-APM — Noun Accusative Plural Masculine | μαθητής (mathētēs): disciple |
+| 22 | αὐτοῦ | autou | of Him | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+| 23 | λέγων | legōn | saying | G3004G | V-PAP-NSM — Verb Present Active Participle Nominative Singular Masculine | λέγω (legō): to say |
+| 24 | αὐτοῖς· | autois | to them; | G846 | P-DPM — Personal pronoun Dative Plural Masculine | αὐτός (autos): it/s/he |
+| 25 | τίνα | tina | Whom | G5101 | I-ASM — Interrogative pronoun Accusative Singular Masculine | τίς (tis): which? |
+| 26 | με | me | Me | G3165 | P-1AS — Personal pronoun 1st Accusative Singular | μέ (me): me |
+| 27 | λέγουσιν | legousin | do pronounce | G3004G | V-PAI-3P — Verb Present Active Indicative 3rd Plural | λέγω (legō): to say |
+| 28 | οἱ | hoi | <the> | G3588 | T-NPM — Definite article Nominative Plural Masculine | ὁ (ho): the/this/who |
+| 29 | ἄνθρωποι | anthrōpoi | men | G444 | N-NPM — Noun Nominative Plural Masculine | ἄνθρωπος (anthrōpos): a human |
+| 30 | εἶναι; | einai | to be? | G1511 | V-PAN — Verb Present Active Infinitive | εἶναι (einai): to exist |
+
+## Mark 8:28
+
+**Original:** οἱ δὲ εἶπαν αὐτῷ λέγοντες· ὅτι Ἰωάννην τὸν βαπτιστήν, καὶ ἄλλοι· Ἠλίαν, ἄλλοι δὲ ὅτι εἷς τῶν προφητῶν.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | οἱ | hoi | <the> | G3588 | T-NPM — Definite article Nominative Plural Masculine | ὁ (ho): the/this/who |
+| 2 | δὲ | de | And | G1161 | CONJ — Conjunction | δέ (de): then |
+| 3 | εἶπαν | eipan | they said | G2036 | V-2AAI-3P — Verb 2nd Aorist Active Indicative 3rd Plural | εἶπον (eipon): to say |
+| 4 | αὐτῷ | autō | to Him | G846 | P-DSM — Personal pronoun Dative Singular Masculine | αὐτός (autos): it/s/he |
+| 5 | λέγοντες· | legontes | saying: | G3004G | V-PAP-NPM — Verb Present Active Participle Nominative Plural Masculine | λέγω (legō): to say |
+| 6 | ὅτι | hoti | that | G3754G | CONJ — Conjunction | that/since: that |
+| 7 | Ἰωάννην | Iōannēn | John | G2491G | N-ASM-P — Noun Accusative Singular Masculine Individual | Ἰωάννης (Iōannēs): John |
+| 8 | τὸν | ton | the | G3588 | T-ASM — Definite article Accusative Singular Masculine | ὁ (ho): the/this/who |
+| 9 | βαπτιστήν, | baptistēn | Baptist, | G910 | N-ASM — Noun Accusative Singular Masculine | Βαπτιστής (Baptistēs): one who baptizes |
+| 10 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 11 | ἄλλοι· | alloi | others; | G243 | A-NPM — Adjective Nominative Plural Masculine | ἄλλος (allos): another |
+| 12 | Ἠλίαν, | Ēlian | Elijah, | G2243 | N-ASM-P — Noun Accusative Singular Masculine Individual | Ἡλίας (Hēlias): Elijah |
+| 13 | ἄλλοι | alloi | others | G243 | A-NPM — Adjective Nominative Plural Masculine | ἄλλος (allos): another |
+| 14 | δὲ | de | now | G1161 | CONJ — Conjunction | δέ (de): then |
+| 15 | ὅτι | hoti | that | G3754G | CONJ — Conjunction | that/since: that |
+| 16 | εἷς | heis | one | G1520 | A-NSM — Adjective Nominative Singular Masculine | one |
+| 17 | τῶν | tōn | of the | G3588 | T-GPM — Definite article Genitive Plural Masculine | ὁ (ho): the/this/who |
+| 18 | προφητῶν. | prophētōn | prophets. | G4396 | N-GPM — Noun Genitive Plural Masculine | προφήτης (prophētēs): prophet |
+
+## Mark 8:29
+
+**Original:** καὶ αὐτὸς ἐπηρώτα αὐτούς· ὑμεῖς δὲ τίνα με λέγετε εἶναι; ἀποκριθεὶς δὲ ὁ Πέτρος λέγει αὐτῷ· σὺ εἶ ὁ χριστός.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | αὐτὸς | autos | He himself | G846 | P-NSM — Personal pronoun Nominative Singular Masculine | αὐτός (autos): it/s/he |
+| 3 | ἐπηρώτα | epērōta | was questioning | G1905 | V-IAI-3S — Verb Imperfect Active Indicative 3rd Singular | ἐπερωτάω (eperōtaō): to question |
+| 4 | αὐτούς· | autous | them; | G846 | P-APM — Personal pronoun Accusative Plural Masculine | αὐτός (autos): it/s/he |
+| 5 | ὑμεῖς | humeis | You yourselves | G4771 | P-2NP — Personal pronoun 2nd Nominative Plural | σύ (su): you |
+| 6 | δὲ | de | however | G1161 | CONJ — Conjunction | δέ (de): then |
+| 7 | τίνα | tina | whom | G5101 | I-ASM — Interrogative pronoun Accusative Singular Masculine | τίς (tis): which? |
+| 8 | με | me | Me | G3165 | P-1AS — Personal pronoun 1st Accusative Singular | μέ (me): me |
+| 9 | λέγετε | legete | do pronounce | G3004G | V-PAI-2P — Verb Present Active Indicative 2nd Plural | λέγω (legō): to say |
+| 10 | εἶναι; | einai | to be? | G1511 | V-PAN — Verb Present Active Infinitive | εἶναι (einai): to exist |
+| 11 | ἀποκριθεὶς | apokritheis | Answering | G611 | V-AOP-NSM — Verb Aorist Passive Deponent Participle Nominative Singular Masculine | ἀποκρίνω (apokrinō): to answer |
+| 12 | δὲ | de | now | G1161 | CONJ — Conjunction | δέ (de): then |
+| 13 | ὁ | ho | <the> | G3588 | T-NSM — Definite article Nominative Singular Masculine | the/this/who |
+| 14 | Πέτρος | Petros | Peter | G4074G | N-NSM-P — Noun Nominative Singular Masculine Individual | Peter |
+| 15 | λέγει | legei | says | G3004G | V-PAI-3S — Verb Present Active Indicative 3rd Singular | λέγω (legō): to say |
+| 16 | αὐτῷ· | autō | to Him; | G846 | P-DSM — Personal pronoun Dative Singular Masculine | αὐτός (autos): it/s/he |
+| 17 | σὺ | su | You yourself | G4771 | P-2NS — Personal pronoun 2nd Nominative Singular | σύ (su): you |
+| 18 | εἶ | ei | are | G1510 | V-PAI-2S — Verb Present Active Indicative 2nd Singular | εἰμί (eimi): to be |
+| 19 | ὁ | ho | the | G3588 | T-NSM — Definite article Nominative Singular Masculine | the/this/who |
+| 20 | χριστός. | christos | Christ. | G5547 | N-NSM-T — Noun Nominative Singular Masculine Title | Χριστός (Christos): Christ |
+
+## Mark 8:30
+
+**Original:** καὶ ἐπετίμησεν αὐτοῖς ἵνα μηδενὶ λέγωσιν περὶ αὐτοῦ.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | ἐπετίμησεν | epetimēsen | He warned | G2008 | V-AAI-3S — Verb Aorist Active Indicative 3rd Singular | ἐπιτιμάω (epitimaō): to rebuke |
+| 3 | αὐτοῖς | autois | them | G846 | P-DPM — Personal pronoun Dative Plural Masculine | αὐτός (autos): it/s/he |
+| 4 | ἵνα | ina | that | G2443 | CONJ — Conjunction | in order that/to |
+| 5 | μηδενὶ | mēdeni | no one | G3367 | A-DSM — Adjective Dative Singular Masculine | μηδείς (mēdeis): nothing |
+| 6 | λέγωσιν | legōsin | they may tell | G3004G | V-PAS-3P — Verb Present Active Subjunctive 3rd Plural | λέγω (legō): to say |
+| 7 | περὶ | peri | concerning | G4012 | PREP — Preposition | περί (peri): about |
+| 8 | αὐτοῦ. | autou | Him. | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+
+## Mark 8:31
+
+**Original:** καὶ ἤρξατο διδάσκειν αὐτοὺς ὅτι δεῖ τὸν υἱὸν τοῦ ἀνθρώπου πολλὰ παθεῖν καὶ ἀποδοκιμασθῆναι ὑπὸ τῶν πρεσβυτέρων καὶ τῶν ἀρχιερέων καὶ τῶν γραμματέων καὶ ἀποκτανθῆναι καὶ μετὰ τρεῖς ἡμέρας ἀναστῆναι·
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | ἤρξατο | ērxato | He began | G757 | V-ADI-3S — Verb Aorist Middle Deponent Indicative 3rd Singular | ἄρχω (archō): be first |
+| 3 | διδάσκειν | didaskein | to teach | G1321 | V-PAN — Verb Present Active Infinitive | διδάσκω (didaskō): to teach |
+| 4 | αὐτοὺς | autous | them | G846 | P-APM — Personal pronoun Accusative Plural Masculine | αὐτός (autos): it/s/he |
+| 5 | ὅτι | hoti | that | G3754G | CONJ — Conjunction | that/since: that |
+| 6 | δεῖ | dei | it is necessary for | G1163 | V-PAI-3S — Verb Present Active Indicative 3rd Singular | be necessary |
+| 7 | τὸν | ton | the | G3588 | T-ASM — Definite article Accusative Singular Masculine | ὁ (ho): the/this/who |
+| 8 | υἱὸν | huion | Son | G5207 | N-ASM-T — Noun Accusative Singular Masculine Title | υἱός (uhios): son |
+| 9 | τοῦ | tou | <the> | G3588 | T-GSM — Definite article Genitive Singular Masculine | ὁ (ho): the/this/who |
+| 10 | ἀνθρώπου | anthrōpou | of Man | G444 | N-GSM-T — Noun Genitive Singular Masculine Title | ἄνθρωπος (anthrōpos): a human |
+| 11 | πολλὰ | polla | many things | G4183 | A-APN — Adjective Accusative Plural Neuter | πολύς (polus): much |
+| 12 | παθεῖν | pathein | to suffer | G3958 | V-2AAN — Verb 2nd Aorist Active Infinitive | πάσχω (paschō): to suffer |
+| 13 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 14 | ἀποδοκιμασθῆναι | apodokimasthēnai | to be rejected | G593 | V-APN — Verb Aorist Passive Infinitive | ἀποδοκιμάζω (apodokimazō): to reject |
+| 15 | ὑπὸ | hupo | by | G5259G | PREP — Preposition | ὑπό (hupo): by/under: by |
+| 16 | τῶν | tōn | the | G3588 | T-GPM — Definite article Genitive Plural Masculine | ὁ (ho): the/this/who |
+| 17 | πρεσβυτέρων | presbuterōn | elders | G4245G | N-GPM — Noun Genitive Plural Masculine | πρεσβύτερος (presbuteros): elder: Elder |
+| 18 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 19 | τῶν | tōn | the | G3588 | T-GPM — Definite article Genitive Plural Masculine | ὁ (ho): the/this/who |
+| 20 | ἀρχιερέων | archiereōn | chief priests | G749 | N-GPM — Noun Genitive Plural Masculine | ἀρχιερεύς (archiereus): high-priest |
+| 21 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 22 | τῶν | tōn | the | G3588 | T-GPM — Definite article Genitive Plural Masculine | ὁ (ho): the/this/who |
+| 23 | γραμματέων | grammateōn | scribes | G1122 | N-GPM — Noun Genitive Plural Masculine | γραμματεύς (grammateus): scribe |
+| 24 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 25 | ἀποκτανθῆναι | apoktanthēnai | to be killed | G615 | V-APN — Verb Aorist Passive Infinitive | ἀποκτείνω (apokteinō): to kill |
+| 26 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 27 | μετὰ | meta | after | G3326 | PREP — Preposition | μετά (meta): with/after |
+| 28 | τρεῖς | treis | three | G5140 | A-APF — Adjective Accusative Plural Feminine | Three |
+| 29 | ἡμέρας | hēmeras | days | G2250 | N-APF — Noun Accusative Plural Feminine | ἡμέρα (hēmera): day |
+| 30 | ἀναστῆναι· | anastēnai | to rise [again]; | G450 | V-2AAN — Verb 2nd Aorist Active Infinitive | ἀνίστημι (anistēmi): to arise |
+
+## Mark 8:32
+
+**Original:** καὶ παρρησίᾳ τὸν λόγον ἐλάλει. Καὶ προσλαβόμενος ὁ Πέτρος αὐτὸν ἤρξατο ἐπιτιμᾶν αὐτῷ.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | παρρησίᾳ | parrēsia | openly | G3954 | N-DSF — Noun Dative Singular Feminine | παρρησία (parrēsia): boldness |
+| 3 | τὸν | ton | the | G3588 | T-ASM — Definite article Accusative Singular Masculine | ὁ (ho): the/this/who |
+| 4 | λόγον | logon | word | G3056 | N-ASM — Noun Accusative Singular Masculine | λόγος (logos): word |
+| 5 | ἐλάλει. | elalei | He was speaking. | G2980 | V-IAI-3S — Verb Imperfect Active Indicative 3rd Singular | λαλέω (laleō): to speak |
+| 6 | Καὶ | Kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 7 | προσλαβόμενος | proslabomenos | having taken | G4355 | V-2AMP-NSM — Verb 2nd Aorist Middle Participle Nominative Singular Masculine | προσλαμβάνω (proslambanō): to take |
+| 8 | ὁ | ho | <the> | G3588 | T-NSM — Definite article Nominative Singular Masculine | the/this/who |
+| 9 | Πέτρος | Petros | Peter | G4074G | N-NSM-P — Noun Nominative Singular Masculine Individual | Peter |
+| 10 | αὐτὸν | auton | him | G846 | P-ASM — Personal pronoun Accusative Singular Masculine | αὐτός (autos): it/s/he |
+| 11 | ἤρξατο | ērxato | began | G757 | V-ADI-3S — Verb Aorist Middle Deponent Indicative 3rd Singular | ἄρχω (archō): be first |
+| 12 | ἐπιτιμᾶν | epitiman | to rebuke | G2008 | V-PAN — Verb Present Active Infinitive | ἐπιτιμάω (epitimaō): to rebuke |
+| 13 | αὐτῷ. | autō | Him. | G846 | P-DSM — Personal pronoun Dative Singular Masculine | αὐτός (autos): it/s/he |
+
+## Mark 8:33
+
+**Original:** ὁ δὲ ἐπιστραφεὶς καὶ ἰδὼν τοὺς μαθητὰς αὐτοῦ ἐπετίμησεν τῷ Πέτρῳ καὶ λέγει· ὕπαγε ὀπίσω μου, σατανᾶ, ὅτι οὐ φρονεῖς τὰ τοῦ θεοῦ ἀλλὰ τὰ τῶν ἀνθρώπων.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | ὁ | ho | <the> | G3588 | T-NSM — Definite article Nominative Singular Masculine | the/this/who |
+| 2 | δὲ | de | And | G1161 | CONJ — Conjunction | δέ (de): then |
+| 3 | ἐπιστραφεὶς | epistrapheis | having turned | G1994 | V-2APP-NSM — Verb 2nd Aorist Passive Participle Nominative Singular Masculine | ἐπιστρέφω (epistrephō): to turn |
+| 4 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 5 | ἰδὼν | idōn | having looked upon | G1492H | V-2AAP-NSM — Verb 2nd Aorist Active Participle Nominative Singular Masculine | εἴδω (eidō): to perceive: see |
+| 6 | τοὺς | tous | the | G3588 | T-APM — Definite article Accusative Plural Masculine | ὁ (ho): the/this/who |
+| 7 | μαθητὰς | mathētas | disciples | G3101 | N-APM — Noun Accusative Plural Masculine | μαθητής (mathētēs): disciple |
+| 8 | αὐτοῦ | autou | of Him | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+| 9 | ἐπετίμησεν | epetimēsen | He rebuked | G2008 | V-AAI-3S — Verb Aorist Active Indicative 3rd Singular | ἐπιτιμάω (epitimaō): to rebuke |
+| 10 | τῷ | tō | <the> | G3588 | T-DSM — Definite article Dative Singular Masculine | ὁ (ho): the/this/who |
+| 11 | Πέτρῳ | Petrō | Peter | G4074G | N-DSM-P — Noun Dative Singular Masculine Individual | Πέτρος (Petros): Peter |
+| 12 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 13 | λέγει· | legei | speaks; | G3004G | V-PAI-3S — Verb Present Active Indicative 3rd Singular | λέγω (legō): to say |
+| 14 | ὕπαγε | hupage | do go | G5217 | V-PAM-2S — Verb Present Active Imperative 2nd Singular | ὑπάγω (hupagō): to go |
+| 15 | ὀπίσω | opisō | behind | G3694 | PREP — Preposition | after |
+| 16 | μου, | mou | Me, | G3165 | P-1GS — Personal pronoun 1st Genitive Singular | μέ (me): me |
+| 17 | σατανᾶ, | satana | Satan, | G4567 | N-VSM-T — Noun Vocative Singular Masculine | Σατανᾶς (Satanas): Satan |
+| 18 | ὅτι | hoti | for | G3754H | CONJ — Conjunction | that/since: since |
+| 19 | οὐ | ou | not | G3756 | PRT-N — Negative Particle Negative Negative | no |
+| 20 | φρονεῖς | phroneis | you have in mind | G5426 | V-PAI-2S — Verb Present Active Indicative 2nd Singular | φρονέω (phroneō): to reason |
+| 21 | τὰ | ta | the [things] | G3588 | T-APN — Definite article Accusative Plural Neuter | ὁ (ho): the/this/who |
+| 22 | τοῦ | tou | <of the> | G3588 | T-GSM — Definite article Genitive Singular Masculine | ὁ (ho): the/this/who |
+| 23 | θεοῦ | theou | of God | G2316 | N-GSM-T — Noun Genitive Singular Masculine Title | θεός (theos): God |
+| 24 | ἀλλὰ | alla | but | G235 | CONJ — Conjunction | ἀλλά (alla): but |
+| 25 | τὰ | ta | the [things] | G3588 | T-APN — Definite article Accusative Plural Neuter | ὁ (ho): the/this/who |
+| 26 | τῶν | tōn | <of the> | G3588 | T-GPM — Definite article Genitive Plural Masculine | ὁ (ho): the/this/who |
+| 27 | ἀνθρώπων. | anthrōpōn | of men. | G444 | N-GPM — Noun Genitive Plural Masculine | ἄνθρωπος (anthrōpos): a human |
+
+## Mark 8:34
+
+**Original:** καὶ προσκαλεσάμενος τὸν ὄχλον σὺν τοῖς μαθηταῖς αὐτοῦ εἶπεν αὐτοῖς· εἴ τις θέλει ὀπίσω μου ἀκολουθεῖν, ἀπαρνησάσθω ἑαυτὸν καὶ ἀράτω τὸν σταυρὸν αὐτοῦ καὶ ἀκολουθείτω μοι.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | καὶ | kai | And | G2532 | CONJ — Conjunction | καί (kai): and |
+| 2 | προσκαλεσάμενος | proskalesamenos | having called to [Him] | G4341 | V-ADP-NSM — Verb Aorist Middle Deponent Participle Nominative Singular Masculine | προσκαλέω (proskaleō): to call to/summon |
+| 3 | τὸν | ton | the | G3588 | T-ASM — Definite article Accusative Singular Masculine | ὁ (ho): the/this/who |
+| 4 | ὄχλον | ochlon | crowd | G3793 | N-ASM — Noun Accusative Singular Masculine | ὄχλος (ochlos): crowd |
+| 5 | σὺν | sun | with | G4862 | PREP — Preposition | σύν (sun): with |
+| 6 | τοῖς | tois | the | G3588 | T-DPM — Definite article Dative Plural Masculine | ὁ (ho): the/this/who |
+| 7 | μαθηταῖς | mathētais | disciples | G3101 | N-DPM — Noun Dative Plural Masculine | μαθητής (mathētēs): disciple |
+| 8 | αὐτοῦ | autou | of Him | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+| 9 | εἶπεν | eipen | He said | G2036 | V-2AAI-3S — Verb 2nd Aorist Active Indicative 3rd Singular | εἶπον (eipon): to say |
+| 10 | αὐτοῖς· | autois | to them; | G846 | P-DPM — Personal pronoun Dative Plural Masculine | αὐτός (autos): it/s/he |
+| 11 | εἴ | ei | If | G1487G | COND — Conjunction | εἰ (ei): if |
+| 12 | τις | tis | anyone | G5100 | X-NSM — Indefinite pronoun Nominative Singular Masculine | one |
+| 13 | θέλει | thelei | desires | G2309 | V-PAI-3S — Verb Present Active Indicative 3rd Singular | θέλω (thelō): to will/desire |
+| 14 | ὀπίσω | opisō | after | G3694 | PREP — Preposition | after |
+| 15 | μου | mou | Me | G3165 | P-1GS — Personal pronoun 1st Genitive Singular | μέ (me): me |
+| 16 | ἀκολουθεῖν, | akolouthein | to follow, | G190 | V-PAN — Verb Present Active Infinitive | ἀκολουθέω (akoloutheō): to follow |
+| 17 | ἀπαρνησάσθω | aparnēsasthō | he should deny | G533 | V-ADM-3S — Verb Aorist Middle Deponent Imperative 3rd Singular | ἀπαρνέομαι (aparneomai): to deny |
+| 18 | ἑαυτὸν | he'auton | himself | G1438 | F-3ASM — Reflexive pronoun 3rd Accusative Singular Masculine | ἑαυτοῦ (heautou): themself |
+| 19 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 20 | ἀράτω | aratō | he should take up | G142 | V-AAM-3S — Verb Aorist Active Imperative 3rd Singular | αἴρω (airō): to take up |
+| 21 | τὸν | ton | the | G3588 | T-ASM — Definite article Accusative Singular Masculine | ὁ (ho): the/this/who |
+| 22 | σταυρὸν | stauron | cross | G4716 | N-ASM — Noun Accusative Singular Masculine | σταυρός (stauros): cross |
+| 23 | αὐτοῦ | autou | of him | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+| 24 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 25 | ἀκολουθείτω | akoloutheitō | he should follow | G190 | V-PAM-3S — Verb Present Active Imperative 3rd Singular | ἀκολουθέω (akoloutheō): to follow |
+| 26 | μοι. | moi | Me. | G3165 | P-1DS — Personal pronoun 1st Dative Singular | μέ (me): me |
+
+## Mark 8:35
+
+**Original:** ὃς γὰρ ἐὰν θέλῃ τὴν ψυχὴν αὐτοῦ σῶσαι, ἀπολέσει αὐτήν· ὃς δ᾽ ἂν ἀπολέσει τὴν ψυχὴν αὐτοῦ ἕνεκεν ἐμοῦ καὶ τοῦ εὐαγγελίου, οὗτος σώσει αὐτήν.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | ὃς | hos | Who[ever] | G3739 | R-NSM — Relative pronoun Nominative Singular Masculine | ὅς (hos, hē): which |
+| 2 | γὰρ | gar | for | G1063 | CONJ — Conjunction | γάρ (gar): for |
+| 3 | ἐὰν | ean | if | G1437 | COND — Conjunction | ἐάν (ean): if |
+| 4 | θέλῃ | thelē | shall desire | G2309 | V-PAS-3S — Verb Present Active Subjunctive 3rd Singular | θέλω (thelō): to will/desire |
+| 5 | τὴν | tēn | <the> | G3588 | T-ASF — Definite article Accusative Singular Feminine | ὁ (ho): the/this/who |
+| 6 | ψυχὴν | psuchēn | life | G5590H | N-ASF — Noun Accusative Singular Feminine | ψυχή (psuchē): soul: life |
+| 7 | αὐτοῦ | autou | his | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+| 8 | σῶσαι, | sōsai | to save, | G4982 | V-AAN — Verb Aorist Active Infinitive | σῴζω (sōzō): to save |
+| 9 | ἀπολέσει | apolesei | will lose | G622 | V-FAI-3S — Verb Future Active Indicative 3rd Singular | ἀπολλύω (apolluō): to destroy |
+| 10 | αὐτήν· | autēn | it; | G846 | P-ASF — Personal pronoun Accusative Singular Feminine | αὐτός (autos): it/s/he |
+| 11 | ὃς | hos | who[ever] | G3739 | R-NSM — Relative pronoun Nominative Singular Masculine | ὅς (hos, hē): which |
+| 12 | δ᾽ | d᾽ | now | G1161 | CONJ — Conjunction | δέ (de): then |
+| 13 | ἂν | an | maybe | G302 | PRT — Particle or Disjunctive Particle | ἄν (an): if |
+| 14 | ἀπολέσει | apolesei | will lose | G622 | V-FAI-3S — Verb Future Active Indicative 3rd Singular | ἀπολλύω (apolluō): to destroy |
+| 15 | τὴν | tēn | the | G3588 | T-ASF — Definite article Accusative Singular Feminine | ὁ (ho): the/this/who |
+| 16 | ψυχὴν | psuchēn | life | G5590H | N-ASF — Noun Accusative Singular Feminine | ψυχή (psuchē): soul: life |
+| 17 | αὐτοῦ | autou | of him | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+| 18 | ἕνεκεν | heneken | on account of | G1752 | PREP — Preposition | ἕνεκα (heneka, ehineken): because of |
+| 19 | ἐμοῦ | emou | Me | G1473 | S-1SGSN — Possessive pronoun 1st Person Genitive Singular Neuter | ἐγώ (egō): I/we |
+| 20 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 21 | τοῦ | tou | of the | G3588 | T-GSN — Definite article Genitive Singular Neuter | ὁ (ho): the/this/who |
+| 22 | εὐαγγελίου, | euangeliou | gospel, | G2098 | N-GSN — Noun Genitive Singular Neuter | εὐαγγέλιον (euangelion): gospel |
+| 23 | οὗτος | houtos | this | G3778 | D-NSM — Demonstrative pronoun Nominative Singular Masculine | this/he/she/it |
+| 24 | σώσει | sōsei | he will save | G4982 | V-FAI-3S — Verb Future Active Indicative 3rd Singular | σῴζω (sōzō): to save |
+| 25 | αὐτήν. | autēn | it. | G846 | P-ASF — Personal pronoun Accusative Singular Feminine | αὐτός (autos): it/s/he |
+
+## Mark 8:36
+
+**Original:** τί γὰρ ὠφελεῖ τὸν ἄνθρωπον ἐὰν κερδῆσαι τὸν κόσμον ὅλον καὶ ζημιωθῆναι τὴν ψυχὴν αὐτοῦ;
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | τί | ti | What | G5101 | I-NSN — Interrogative pronoun Nominative Singular Neuter | τίς (tis): which? |
+| 2 | γὰρ | gar | for | G1063 | CONJ — Conjunction | γάρ (gar): for |
+| 3 | ὠφελεῖ | ōphelei | profits | G5623 | V-PAI-3S — Verb Present Active Indicative 3rd Singular | ὠφελέω (ōpheleō): to help |
+| 4 | τὸν | ton | <the> | G3588 | T-ASM — Definite article Accusative Singular Masculine | ὁ (ho): the/this/who |
+| 5 | ἄνθρωπον | anthrōpon | a man | G444 | N-ASM — Noun Accusative Singular Masculine | ἄνθρωπος (anthrōpos): a human |
+| 6 | ἐὰν | ean | if | G1437 | COND — Conjunction | ἐάν (ean): if |
+| 7 | κερδῆσαι | kerdēsai | to gain | G2770 | V-AAN — Verb Aorist Active Infinitive | κερδαίνω (kerdainō): to gain |
+| 8 | τὸν | ton | the | G3588 | T-ASM — Definite article Accusative Singular Masculine | ὁ (ho): the/this/who |
+| 9 | κόσμον | kosmon | world | G2889 | N-ASM — Noun Accusative Singular Masculine | κόσμος (kosmos): world |
+| 10 | ὅλον | holon | whole | G3650 | A-ASM — Adjective Accusative Singular Masculine | ὅλος (holos): all |
+| 11 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 12 | ζημιωθῆναι | zēmiōthēnai | to lose | G2210 | V-APN — Verb Aorist Passive Infinitive | ζημιόω (zēmioō): to lose |
+| 13 | τὴν | tēn | the | G3588 | T-ASF — Definite article Accusative Singular Feminine | ὁ (ho): the/this/who |
+| 14 | ψυχὴν | psuchēn | soul | G5590G | N-ASF — Noun Accusative Singular Feminine | ψυχή (psuchē): soul |
+| 15 | αὐτοῦ; | autou | of him? | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+
+## Mark 8:37
+
+**Original:** ἢ τί γὰρ δοῖ ἄνθρωπος ἀντάλλαγμα τῆς ψυχῆς αὐτοῦ;
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | ἢ | ē | or | G2228 | CONJ — Conjunction | ἤ (ē): or |
+| 2 | τί | ti | What | G5101 | I-ASN — Interrogative pronoun Accusative Singular Neuter | τίς (tis): which? |
+| 3 | γὰρ | gar | for | G1063 | CONJ — Conjunction | γάρ (gar): for |
+| 4 | δοῖ | doi | may give | G1325 | V-2AAS-3S — Verb 2nd Aorist Active Subjunctive 3rd Singular | δίδωμι (didōmi): to give |
+| 5 | ἄνθρωπος | anthrōpos | a man | G444 | N-NSM — Noun Nominative Singular Masculine | a human |
+| 6 | ἀντάλλαγμα | antallagma | [as] an exchange | G465 | N-ASN — Noun Accusative Singular Neuter | in exchange |
+| 7 | τῆς | tēs | for the | G3588 | T-GSF — Definite article Genitive Singular Feminine | ὁ (ho): the/this/who |
+| 8 | ψυχῆς | psuchēs | soul | G5590G | N-GSF — Noun Genitive Singular Feminine | ψυχή (psuchē): soul |
+| 9 | αὐτοῦ; | autou | of him? | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+
+## Mark 8:38
+
+**Original:** ὃς γὰρ ἐὰν ἐπαισχυνθῇ με καὶ τοὺς ἐμοὺς λόγους ἐν τῇ γενεᾷ ταύτῃ τῇ μοιχαλίδι καὶ ἁμαρτωλῷ, καὶ ὁ υἱὸς τοῦ ἀνθρώπου ἐπαισχυνθήσεται αὐτὸν ὅταν ἔλθῃ ἐν τῇ δόξῃ τοῦ πατρὸς αὐτοῦ μετὰ τῶν ἀγγέλων τῶν ἁγίων.
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | ὃς | hos | Who[ever] | G3739 | R-NSM — Relative pronoun Nominative Singular Masculine | ὅς (hos, hē): which |
+| 2 | γὰρ | gar | for | G1063 | CONJ — Conjunction | γάρ (gar): for |
+| 3 | ἐὰν | ean | if | G1437 | COND — Conjunction | ἐάν (ean): if |
+| 4 | ἐπαισχυνθῇ | epaischunthēa | shall be ashamed of | G1870 | V-AOS-3S — Verb Aorist Passive Deponent Subjunctive 3rd Singular | ἐπαισχύνομαι (epaischunomai): be ashamed of |
+| 5 | με | me | Me | G3165 | P-1AS — Personal pronoun 1st Accusative Singular | μέ (me): me |
+| 6 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 7 | τοὺς | tous | <the> | G3588 | T-APM — Definite article Accusative Plural Masculine | ὁ (ho): the/this/who |
+| 8 | ἐμοὺς | emous | My | G1473 | S-1SAPM — Possessive pronoun 1st Person Accusative Plural Masculine | ἐγώ (egō): I/we |
+| 9 | λόγους | logous | words | G3056 | N-APM — Noun Accusative Plural Masculine | λόγος (logos): word |
+| 10 | ἐν | en | in | G1722 | PREP — Preposition | in/on/among |
+| 11 | τῇ | tēa | <the> | G3588 | T-DSF — Definite article Dative Singular Feminine | ὁ (ho): the/this/who |
+| 12 | γενεᾷ | genea | generation | G1074 | N-DSF — Noun Dative Singular Feminine | γενεά (genea): generation |
+| 13 | ταύτῃ | tautē | this | G3778 | D-DSF — Demonstrative pronoun Dative Singular Feminine | οὗτος (ohutos): this/he/she/it |
+| 14 | τῇ | tēa | <the> | G3588 | T-DSF — Definite article Dative Singular Feminine | ὁ (ho): the/this/who |
+| 15 | μοιχαλίδι | moichalidi | adulterous | G3428 | A-DSF — Adjective Dative Singular Feminine | μοιχαλίς (moichalis): adulterous |
+| 16 | καὶ | kai | and | G2532 | CONJ — Conjunction | καί (kai): and |
+| 17 | ἁμαρτωλῷ, | hamartōlō | sinful, | G268 | A-DSF — Adjective Dative Singular Feminine | ἁμαρτωλός (hamartōlos): sinful |
+| 18 | καὶ | kai | also | G2532 | CONJ — Conjunction | καί (kai): and |
+| 19 | ὁ | ho | the | G3588 | T-NSM — Definite article Nominative Singular Masculine | the/this/who |
+| 20 | υἱὸς | huios | Son | G5207 | N-NSM-T — Noun Nominative Singular Masculine Title | υἱός (uhios): son |
+| 21 | τοῦ | tou | <the> | G3588 | T-GSM — Definite article Genitive Singular Masculine | ὁ (ho): the/this/who |
+| 22 | ἀνθρώπου | anthrōpou | of Man | G444 | N-GSM-T — Noun Genitive Singular Masculine Title | ἄνθρωπος (anthrōpos): a human |
+| 23 | ἐπαισχυνθήσεται | epaischunthēsetai | will be ashamed of | G1870 | V-FOI-3S — Verb Future Passive Deponent Indicative 3rd Singular | ἐπαισχύνομαι (epaischunomai): be ashamed of |
+| 24 | αὐτὸν | auton | him | G846 | P-ASM — Personal pronoun Accusative Singular Masculine | αὐτός (autos): it/s/he |
+| 25 | ὅταν | hotan | when | G3752 | CONJ — Conjunction | when(-ever) |
+| 26 | ἔλθῃ | elthē | He may come | G2064 | V-2AAS-3S — Verb 2nd Aorist Active Subjunctive 3rd Singular | ἔρχομαι (erchomai): to come/go |
+| 27 | ἐν | en | in | G1722 | PREP — Preposition | in/on/among |
+| 28 | τῇ | tēa | the | G3588 | T-DSF — Definite article Dative Singular Feminine | ὁ (ho): the/this/who |
+| 29 | δόξῃ | doxē | glory | G1391 | N-DSF — Noun Dative Singular Feminine | δόξα (doxa): glory |
+| 30 | τοῦ | tou | of the | G3588 | T-GSM — Definite article Genitive Singular Masculine | ὁ (ho): the/this/who |
+| 31 | πατρὸς | patros | Father | G3962 | N-GSM-T — Noun Genitive Singular Masculine Title | πατήρ (patēr): father |
+| 32 | αὐτοῦ | autou | of Him | G846 | P-GSM — Personal pronoun Genitive Singular Masculine | αὐτός (autos): it/s/he |
+| 33 | μετὰ | meta | with | G3326 | PREP — Preposition | μετά (meta): with/after |
+| 34 | τῶν | tōn | the | G3588 | T-GPM — Definite article Genitive Plural Masculine | ὁ (ho): the/this/who |
+| 35 | ἀγγέλων | angelōn | angels | G32G | N-GPM — Noun Genitive Plural Masculine | ἄγγελος (angelos): angel |
+| 36 | τῶν | tōn | <the> | G3588 | T-GPM — Definite article Genitive Plural Masculine | ὁ (ho): the/this/who |
+| 37 | ἁγίων. | hagiōn | holy. | G40G | A-GPM — Adjective Genitive Plural Masculine | ἅγιος (hagios): holy |

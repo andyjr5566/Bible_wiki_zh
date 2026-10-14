@@ -67,6 +67,7 @@ def source_specs(book, chapter):
     kc = meta["kc"]
     en = meta["en"]
     base_cc = f"https://www.ccbiblestudy.org/Old%20Testament/{cc_folder}"
+    base_cc = f"https://www.ccbiblestudy.org/{'New%20Testament' if meta.get('nt') else 'Old%20Testament'}/{cc_folder}"
     return [
         ("ccbiblestudy CT", "逐節註解", f"{base_cc}/{num}{ct_code}{ch_str}.htm",
          f"ccbiblestudy_CT_{en}_{ch}.txt"),
