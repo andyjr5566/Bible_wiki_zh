@@ -20,13 +20,6 @@
         "--port",
         "9876"
       ]
-    },
-    "codex-cli": {
-      "type": "stdio",
-      "command": "codex",
-      "args": [
-        "mcp-server"
-      ]
     }
   }
 }
