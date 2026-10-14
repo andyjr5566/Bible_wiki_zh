@@ -126,11 +126,19 @@ def resolve_entry(lexicon: dict[str, dict], strong: str) -> dict:
     return head
 
 
+# 詞典指向的希伯來文詞其實是另一個名字、字義不同的，不借：
+# Μελχί 是「我的王」（Malki），詞條指向的 מֶלֶךְ（Melech）是「王」。
+NO_BORROW = {"melchi"}
+
+
 def hebrew_counterpart(greek_entry: dict, names: list[str], hebrew: dict[str, dict]) -> dict | None:
     """希臘文名字的詞典沒有字義時，借對應的希伯來文名字的字義。兩種依據，都要求英文名相近（≥0.75）：
     1. STEP 在這個詞條自己標了「the Greek of H…」，直接取那個希伯來文詞條；
     2. 希臘文詞條文字標了唯一的對應希伯來文（Heb. …），拼寫相同、是人名、字義只有一種。"""
     letters = lambda text: re.sub(r"[^a-z]", "", text.lower())
+    if any(n.lower() in NO_BORROW for n in names if n):
+        return None
+    score = lambda hebrew_name: max((SequenceMatcher(None, letters(n), letters(hebrew_name.split(" or ")[0])).ratio() for n in names if n), default=0)
     similar = lambda hebrew_name: max((SequenceMatcher(None, letters(n), letters(hebrew_name.split(" or ")[0])).ratio()
                                       for n in names if n), default=0) >= 0.75
     uref = norm_strong(greek_entry.get("uref", ""))
@@ -150,7 +158,8 @@ def hebrew_counterpart(greek_entry: dict, names: list[str], hebrew: dict[str, di
             candidates.append(entry)
     if len({entry["meaning"] for entry in candidates}) != 1:
         return None
-    return candidates[0]
+    # 同一個拼寫可能有好幾個人物詞條（字義相同），標示用名字最像的那一個
+    return max(candidates, key=lambda entry: score(entry["name"] or entry["gloss"]))
 
 
 _step_cache: dict[tuple[str, int], dict[int, list[dict]]] = {}
