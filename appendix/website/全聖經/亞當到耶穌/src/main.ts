@@ -27,8 +27,10 @@ const closeDialog = () => { verseLayer.hidden = true; verseLayer.replaceChildren
 const showDialog = (dialog: HTMLElement) => {
   const scrim = h('div', { className: 'ag-dialog-scrim' }, dialog);
   let pressedOnScrim = false;
-  scrim.addEventListener('pointerdown', (event) => { pressedOnScrim = event.target === scrim; });
-  scrim.addEventListener('click', (event) => { if (pressedOnScrim && event.target === scrim) closeDialog(); });
+  let releasedOnScrim = false;
+  scrim.addEventListener('pointerdown', (event) => { pressedOnScrim = event.target === scrim; releasedOnScrim = false; });
+  scrim.addEventListener('pointerup', (event) => { releasedOnScrim = event.target === scrim; });
+  scrim.addEventListener('click', (event) => { if (pressedOnScrim && releasedOnScrim && event.target === scrim) closeDialog(); });
   verseLayer.hidden = false;
   verseLayer.replaceChildren(scrim);
 };

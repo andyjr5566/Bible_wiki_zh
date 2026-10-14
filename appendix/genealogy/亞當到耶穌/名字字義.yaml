@@ -153,7 +153,7 @@
   strong: H0692
   translit: ar.e.li
 亞別:
-  match: fuzzy
+  match: exact
   meaning_en: ''
   name_en: Abiel
   orig: אֲבִיאֵל
@@ -281,15 +281,15 @@
   strong: H0146H
   translit: ad.dar
 亞大#以倫:
-  match: aligned
+  match: exact
   meaning_en: ornament
   name_en: Adah
   orig: עָדָה
-  ref: 創36:10
+  ref: 創36:2
   strong: H5711H
   translit: a.dah
 亞大#拉麥:
-  match: aligned
+  match: exact
   meaning_en: ornament
   name_en: Adah
   orig: עָדָה
@@ -578,12 +578,12 @@
   translit: a.di.el
 亞律:
   match: exact
-  meaning_en: watchful
-  name_en: Eri
-  orig: עֵרִי
-  ref: 民26:16
-  strong: H6179
-  translit: e.ri
+  meaning_en: 'I shall subdue: I shall roam'
+  name_en: Arod
+  orig: אֲרוֹד
+  ref: 民26:17
+  strong: H0720
+  translit: a.rod
 亞得:
   match: exact
   meaning_en: flock
@@ -705,7 +705,7 @@
   strong: H5964H
   translit: a.le.met
 亞拿:
-  match: aligned
+  match: exact
   meaning_en: ''
   name_en: Anah
   orig: וַֽ/עֲנָ֑ה
@@ -721,7 +721,7 @@
   strong: G0451
   translit: Anna
 亞拿#祭便:
-  match: aligned
+  match: exact
   meaning_en: ''
   name_en: Anah
   orig: וַ/עֲנָֽה\׃
@@ -761,12 +761,20 @@
   strong: H0486
   translit: al.mo.dad
 亞撒:
-  match: aligned
+  match: exact
   meaning_en: 'healer: injurious (?)'
   name_en: Asa
   orig: אָסָא
-  ref: 王上15:8
+  ref: 代上3:10
   strong: H0609G
+  translit: a.sa
+亞撒#以利加拿:
+  match: exact
+  meaning_en: 'healer: injurious (?)'
+  name_en: Asa
+  orig: אָסָא
+  ref: 代上9:16
+  strong: H0609H
   translit: a.sa
 亞撒#示瑪:
   match: exact
@@ -1001,7 +1009,7 @@
   strong: H0032K
   translit: a.vi.ha.yil
 亞比忽:
-  match: fuzzy
+  match: exact
   meaning_en: my father is majesty
   name_en: Abihud
   orig: אֲבִיהוּד
@@ -1009,7 +1017,7 @@
   strong: H0031
   translit: a.vi.hud
 亞比戶:
-  match: fuzzy
+  match: exact
   meaning_en: he is (my) father
   name_en: Abihu
   orig: אֲבִיהוּא
@@ -1337,11 +1345,11 @@
   strong: H5838L
   translit: a.zar.yah
 亞蘭:
-  match: aligned
+  match: exact
   meaning_en: exalted
   name_en: Aram or Arameans
   orig: אֲרָם
-  ref: 創10:22
+  ref: 代上1:17
   strong: H0758G
   translit: a.ram
 亞蘭#底珊:
@@ -1481,11 +1489,11 @@
   strong: H8480H
   translit: ta.chat
 他拉:
-  match: aligned
+  match: exact
   meaning_en: station
   name_en: Terah
   orig: תֶּ֫רַח
-  ref: 創11:24
+  ref: 代上1:26
   strong: H8646G
   translit: te.rach
 他拉#利悉:
@@ -1680,8 +1688,16 @@
   ref: 路3:30
   strong: G1662H
   translit: Eliakeim
+以利亞薩:
+  match: exact
+  meaning_en: God has made
+  name_en: Elasah or Eleasah
+  orig: אֶלְעָשָׂה
+  ref: 代上8:37
+  strong: H0501H
+  translit: el.a.sah
 以利亞薩#希利斯:
-  match: aligned
+  match: exact
   meaning_en: God has made
   name_en: Elasah or Eleasah
   orig: אֶלְעָשָׂה
@@ -1841,7 +1857,7 @@
   strong: H0474
   translit: e.li.shu.a
 以利沙:
-  match: fuzzy
+  match: exact
   meaning_en: God of the coming (one)
   name_en: Elishah
   orig: אֱלִישָׁה
@@ -3193,7 +3209,7 @@
   strong: H2619
   translit: cha.sad.yah
 哈母利:
-  match: fuzzy
+  match: exact
   meaning_en: heat of God
   name_en: Hamuel
   orig: חַמּוּאֵל
@@ -5641,7 +5657,7 @@
   strong: H1275
   translit: be.ri
 比利#赫人:
-  match: fuzzy
+  match: exact
   meaning_en: my well
   name_en: Beeri
   orig: בְּאֵרִי
@@ -5754,26 +5770,34 @@
   translit: bin.a
 比悉:
   match: exact
-  meaning_en: a well
-  name_en: Beri
-  orig: בֵּרִי
-  ref: 代上7:36
-  strong: H1275
-  translit: be.ri
-比拉#以東王:
-  match: aligned
+  meaning_en: gold ore
+  name_en: Bezer
+  orig: בֶּ֫צֶר
+  ref: 代上7:37
+  strong: H1221H
+  translit: be.tser
+比拉#亞撒:
+  match: exact
   meaning_en: destruction
   name_en: Bela
   orig: בֶּ֫לַע
-  ref: 創36:32
+  ref: 代上5:8
+  strong: H1106H
+  translit: be.la
+比拉#以東王:
+  match: exact
+  meaning_en: destruction
+  name_en: Bela
+  orig: בֶּ֫לַע
+  ref: 代上1:43
   strong: H1106G
   translit: be.la
 比拉#便雅憫:
-  match: aligned
+  match: exact
   meaning_en: destruction
   name_en: Bela
   orig: בֶּ֫לַע
-  ref: 代上7:7
+  ref: 代上7:6
   strong: H1106A
   translit: be.la
 比拉#瑣法:
@@ -6392,16 +6416,32 @@
   ref: 創22:21
   strong: H5780H
   translit: uts
+烏薛#以示:
+  match: exact
+  meaning_en: my strength is God
+  name_en: Uzziel
+  orig: עֻזִּיאֵל
+  ref: 代上4:42
+  strong: H5816H
+  translit: uz.zi.el
 烏薛#哥轄:
-  match: aligned
+  match: exact
   meaning_en: my strength is God
   name_en: Uzziel
   orig: עֻזִּיאֵל
   ref: 代上6:2
   strong: H5816G
   translit: uz.zi.el
+烏薛#希幔:
+  match: exact
+  meaning_en: my strength is God
+  name_en: Uzziel
+  orig: עֻזִּיאֵל
+  ref: 代上25:4
+  strong: H5816J
+  translit: uz.zi.el
 烏薛#比拉:
-  match: aligned
+  match: exact
   meaning_en: my strength is God
   name_en: Uzziel
   orig: עֻזִּיאֵל
@@ -7434,12 +7474,12 @@
   translit: shim.ah, shim.a
 示米亞#烏撒:
   match: exact
-  meaning_en: renowned
-  name_en: Shimei or Shimhi or Shimi or Shimea
-  orig: שִׁמְעִי
-  ref: 代上6:29
-  strong: H8096M
-  translit: shim.i
+  meaning_en: fame
+  name_en: Shimea
+  orig: שִׁמְעָא
+  ref: 代上6:30
+  strong: H8092G
+  translit: shim.ah, shim.a
 示米亞#米迦勒:
   match: exact
   meaning_en: fame
@@ -7601,7 +7641,7 @@
   strong: H4807
   translit: me.riv ba.al
 米勒:
-  match: fuzzy
+  match: exact
   meaning_en: who is like God
   name_en: Micah or Micaiah or Michah
   orig: מִיכָה

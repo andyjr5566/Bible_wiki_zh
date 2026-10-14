@@ -197,6 +197,7 @@ describe('家譜資料閘門', () => {
     const verses = { '創1:30': 'a', '創1:31': 'b', '創2:1': 'c', '創2:2': 'd', '創3:5': 'e' };
     expect(expandVerseRefs('創1:30-31', verses)).toEqual(['創1:30', '創1:31']);
     expect(expandVerseRefs('創1:30-2:2', verses)).toEqual(['創1:30', '創1:31', '創2:1', '創2:2']);
+    expect(expandVerseRefs('創1:31-3:5', verses)).toEqual(['創1:31', '創2:1', '創2:2', '創3:1', '創3:2', '創3:3', '創3:4', '創3:5']);
     expect(expandVerseRefs('創2:1, 創3:5', verses)).toEqual(['創2:1', '創3:5']);
     expect(expandVerseRefs('創2:1、2', verses)).toEqual(['創2:1', '創2:2']);
   });

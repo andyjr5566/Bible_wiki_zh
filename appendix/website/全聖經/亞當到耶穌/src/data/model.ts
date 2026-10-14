@@ -31,6 +31,9 @@ export function expandVerseRefs(ref: string, verses: VerseMap = VERSES): string[
       for (let verse = startVerse; verse <= endVerse; verse += 1) keys.push(`${book}${chapter}:${verse}`);
     } else {
       for (let verse = startVerse; verses[`${book}${chapter}:${verse}`] !== undefined; verse += 1) keys.push(`${book}${chapter}:${verse}`);
+      for (let middle = chapter + 1; middle < endChapter; middle += 1) {
+        for (let verse = 1; verses[`${book}${middle}:${verse}`] !== undefined; verse += 1) keys.push(`${book}${middle}:${verse}`);
+      }
       for (let verse = 1; verse <= endVerse; verse += 1) keys.push(`${book}${endChapter}:${verse}`);
     }
     chapter = endChapter;

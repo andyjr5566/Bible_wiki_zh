@@ -200,9 +200,12 @@ def main() -> int:
                         lexicon = hebrew if strong.startswith("H") else greek
                         entry = lexicon.get(strong) or lexicon.get(re.sub(r"[A-Z]$", "", strong)) or {}
                         names = {norm(clean_gloss(token["gloss"]))} | {norm(x) for x in re.split(r"\s+or\s+", entry.get("name", "")) if x}
-                        if keys & names:
+                        zh_text = verses.get(f"{book}{chapter}:{verse}") or ""
+                        # 該節的和合本要真的出現這個人的名字（和合本把這節併入上一節時除外），避免配到同節的別人
+                        zh_here = any(form in zh_text for form in forms) or "併於" in zh_text
+                        if keys & names and zh_here:
                             hits[strong] = (token, entry, "exact")
-                        elif fuzzy and any(form in (verses.get(f"{book}{chapter}:{verse}") or "") for form in forms):
+                        elif fuzzy and any(form in zh_text for form in forms):
                             score = max((SequenceMatcher(None, k, n).ratio() for k in keys for n in names if n), default=0)
                             if score >= FUZZY_MIN:
                                 hits.setdefault(strong, (token, entry, "fuzzy"))

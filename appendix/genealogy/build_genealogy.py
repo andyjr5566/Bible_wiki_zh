@@ -2692,7 +2692,11 @@ class LineageBuilder:
             if not isinstance(record, dict) or not record.get("orig") or not record.get("strong"):
                 self.err(where, "需要 orig 與 strong")
                 continue
-            self.refs(str(record.get("ref", "")), where)
+            parsed = self.refs(str(record.get("ref", "")), where)
+            forms = {display(pid), *[str(n.get("as", "")) for n in self.people[pid].get("names", []) or [] if n.get("as")]}
+            zh_text = self.text_of(parsed)
+            if parsed and not any(form in zh_text for form in forms) and "併於" not in zh_text:
+                self.err(where, f"對位經節 {record.get('ref')} 的和合本沒有出現這個人的名字（{'、'.join(sorted(forms))}），可能配到同節的別人")
             english = str(record.get("meaning_en") or "")
             if english and english not in self.meaning_zh:
                 self.err(where, f"字義「{english}」缺中譯（字義中譯.tsv）")
