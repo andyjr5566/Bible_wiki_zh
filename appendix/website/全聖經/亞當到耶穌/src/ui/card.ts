@@ -106,8 +106,9 @@ export function createPersonCard(data: GenealogyData, actions: CardActions): Per
       if (meaning.meaningEn) {
         section.append(h('p', { className: 'ag-name-gloss' }, meaning.meaningZh || meaning.meaningEn,
           meaning.meaningZh ? h('small', {}, `　${meaning.meaningEn}`) : null));
+        if (meaning.via) section.append(h('p', { className: 'ag-name-via' }, `希臘文詞典沒有字義；這是它標明的對應希伯來文名字 ${meaning.via} 的字義。`));
       } else if (meaning.orig && !meaning.scripture.length) {
-        section.append(h('p', { className: 'ag-muted ag-name-none' }, '詞典沒有列這個名字的字義。'));
+        section.append(h('p', { className: 'ag-muted ag-name-none' }, 'STEP 詞典沒有列這個名字的字義（希臘文名字的詞條通常不附字義）。'));
       }
       for (const item of meaning.scripture) {
         section.append(h('blockquote', { className: 'ag-name-quote' }, `「${item.quote}」`, refButton(item.ref)));

@@ -38,6 +38,7 @@ export interface NameMeaning {
   nameEn: string;
   meaningEn: string;
   meaningZh: string;
+  via?: string;
   ref: string;
   scripture: Array<{ ref: string; quote: string }>;
 }

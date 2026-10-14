@@ -114,12 +114,12 @@
   translit: o.ho.li.av
 亞何利巴瑪:
   match: exact
-  meaning_en: ''
-  name_en: Oholibamah
-  orig: אָהֳלִיבָמָ֛ה
+  meaning_en: tent of the high place
+  name_en: Aholibamah
+  orig: אׇהֳלִיבָמָה
   ref: 代上1:52
   strong: H0173
-  translit: '''o.ho.li.va.Mah'
+  translit: o.ho.li.va.mah
 亞來:
   match: exact
   meaning_en: O! would that!
@@ -154,7 +154,7 @@
   translit: ar.e.li
 亞別:
   match: exact
-  meaning_en: ''
+  meaning_en: El (God) is (my) father
   name_en: Abiel
   orig: אֲבִיאֵל
   ref: 撒上9:1
@@ -188,18 +188,18 @@
   match: exact
   meaning_en: ''
   name_en: Alphaeus
-  orig: Ἁλφαίου
+  orig: Ἀλφαῖος
   ref: 可2:14
   strong: G0256
-  translit: Halphaiou
+  translit: Alphaios
 亞勒腓#雅各的父親:
   match: exact
   meaning_en: ''
   name_en: Alphaeus
-  orig: Ἁλφαίου
+  orig: Ἀλφαῖος
   ref: 太10:3
   strong: G0256
-  translit: Halphaiou
+  translit: Alphaios
 亞哈:
   match: exact
   meaning_en: father's brother
@@ -706,28 +706,29 @@
   translit: a.le.met
 亞拿:
   match: exact
-  meaning_en: ''
+  meaning_en: answer
   name_en: Anah
-  orig: וַֽ/עֲנָ֑ה
+  orig: עֲנָה
   ref: 代上1:38
   strong: H6034
-  translit: va./'a.Nah
+  translit: a.nah
 亞拿#法內力的女兒:
   match: exact
-  meaning_en: ''
+  meaning_en: grace
   name_en: Anna
   orig: Ἄννα
   ref: 路2:36
   strong: G0451
   translit: Anna
+  via: חַנָּה（Hannah）
 亞拿#祭便:
   match: exact
-  meaning_en: ''
+  meaning_en: answer
   name_en: Anah
-  orig: וַ/עֲנָֽה\׃
+  orig: עֲנָה
   ref: 代上1:40
   strong: H6034
-  translit: va./'a.Nah
+  translit: a.nah
 亞拿突:
   match: exact
   meaning_en: answers to prayer
@@ -1058,12 +1059,13 @@
   translit: a.vi.shu.a
 亞比玉:
   match: exact
-  meaning_en: ''
+  meaning_en: my father is majesty
   name_en: Abiud
   orig: Ἀβιούδ
   ref: 太1:13
   strong: G0010
   translit: Abioud
+  via: אֲבִיהוּד（Abihud）
 亞比瑪利:
   match: exact
   meaning_en: my father is El (God)
@@ -1658,12 +1660,13 @@
   translit: el.a.zar
 以利亞撒#以律:
   match: exact
-  meaning_en: ''
+  meaning_en: God has helped
   name_en: Eleazar
   orig: Ἐλεάζαρ
   ref: 太1:15
   strong: G1648
   translit: Eleazar
+  via: אֶלְעָזָר（Eleazar）
 以利亞撒#抹利:
   match: exact
   meaning_en: God has helped
@@ -1674,20 +1677,22 @@
   translit: el.a.zar
 以利亞敬#亞比玉:
   match: exact
-  meaning_en: ''
+  meaning_en: God raises
   name_en: Eliakim
   orig: Ἐλιακείμ
   ref: 太1:13
   strong: G1662G
   translit: Eliakeim
+  via: אֶלְיָקִים（Eliakim）
 以利亞敬#路3:30:
   match: exact
-  meaning_en: ''
+  meaning_en: God raises
   name_en: Eliakim
   orig: Ἐλιακείμ
   ref: 路3:30
   strong: G1662H
   translit: Eliakeim
+  via: אֶלְיָקִים（Eliakim）
 以利亞薩:
   match: exact
   meaning_en: God has made
@@ -1722,12 +1727,13 @@
   translit: e.li.e.zer
 以利以謝#約令:
   match: exact
-  meaning_en: ''
+  meaning_en: God is help
   name_en: Eliezer
   orig: Ἐλιέζερ
   ref: 路3:29
   strong: G1663
   translit: Eliezer
+  via: אֱלִיעֶ֫זֶר（Eliezer）
 以利加拿#6:25:
   match: exact
   meaning_en: God has possessed
@@ -2922,28 +2928,31 @@
   translit: le.vi
 利未#亞勒腓的兒子:
   match: exact
-  meaning_en: ''
+  meaning_en: joined to
   name_en: Levi
   orig: Λευΐ
   ref: 可2:14
   strong: G3017I
   translit: Leui
+  via: לֵוִי（Levi）
 利未#路3:24:
   match: exact
-  meaning_en: ''
+  meaning_en: joined to
   name_en: Levi
   orig: Λευΐ
   ref: 路3:24
   strong: G3017G
   translit: Leui
+  via: לֵוִי（Levi）
 利未#路3:29:
   match: exact
-  meaning_en: ''
+  meaning_en: joined to
   name_en: Levi
   orig: Λευΐ
   ref: 路3:29
   strong: G3017H
   translit: Leui
+  via: לֵוִי（Levi）
 利法:
   match: exact
   meaning_en: healing of the breath
@@ -3026,7 +3035,7 @@
   translit: gu.ni
 古示:
   match: exact
-  meaning_en: ''
+  meaning_en: Cushi or Ethiopian, of Cush "their blackness"
   name_en: Cushi
   orig: כּוּשִׁי
   ref: 番1:1
@@ -4858,12 +4867,13 @@
   translit: nach.shon
 拿鴻:
   match: exact
-  meaning_en: ''
+  meaning_en: comfort
   name_en: Nahum
   orig: Ναούμ
   ref: 路3:25
   strong: G3486
   translit: Naoum
+  via: נְחוּם（Nehum）
 拿鶴:
   match: exact
   meaning_en: snorting
@@ -5178,12 +5188,13 @@
   translit: tsa.doq
 撒督#亞所:
   match: exact
-  meaning_en: ''
+  meaning_en: righteous
   name_en: Zadok
   orig: Σαδώκ
   ref: 太1:14
   strong: G4524
   translit: Sadōk
+  via: צָדוֹק（Zadok）
 撒督#耶路沙之父:
   match: exact
   meaning_en: righteous
@@ -5514,12 +5525,12 @@
   translit: shu.te.lach
 書雅:
   match: exact
-  meaning_en: ''
+  meaning_en: wealth
   name_en: Shua
-  orig: שׁוּעָ֥א
+  orig: שׁוּעָא
   ref: 代上7:32
   strong: H7774
-  translit: shu.'A'
+  translit: shu.a
 朔巴:
   match: exact
   meaning_en: flowing
@@ -5762,8 +5773,8 @@
   translit: pi.non
 比尼亞:
   match: exact
-  meaning_en: ''
-  name_en: Binea
+  meaning_en: fountain
+  name_en: Binea or Bineah
   orig: בִּנְעָא
   ref: 代上8:37
   strong: H1150
@@ -6154,12 +6165,13 @@
   translit: hod
 法內力:
   match: exact
-  meaning_en: ''
+  meaning_en: facing God
   name_en: Phanuel
   orig: Φανουήλ
   ref: 路2:36
   strong: G5323
   translit: Phanouēl
+  via: פְּנוּאֵל（Penuel or Peniel）
 法勒:
   match: exact
   meaning_en: division
@@ -6554,20 +6566,22 @@
   translit: ye.hu.dah
 猶大#加略人:
   match: exact
-  meaning_en: ''
+  meaning_en: praised
   name_en: Judas
   orig: Ἰούδας
   ref: 約13:2
   strong: G2455H
   translit: Ioudas
+  via: יְהוּדָה（Judah）
 猶大#耶穌的弟兄:
   match: exact
-  meaning_en: ''
+  meaning_en: praised
   name_en: Judas
   orig: Ἰούδας
   ref: 可6:3
   strong: G2455I
   translit: Ioudas
+  via: יְהוּדָה（Judah）
 猶大#路3:26:
   match: exact
   meaning_en: ''
@@ -6578,12 +6592,13 @@
   translit: Iōda
 猶大#路3:30:
   match: exact
-  meaning_en: ''
+  meaning_en: praised
   name_en: Judah
   orig: Ἰούδας
   ref: 路3:30
   strong: G2455J
   translit: Ioudas
+  via: יְהוּדָה（Judah）
 猶滴:
   match: exact
   meaning_en: Jewess
@@ -6626,12 +6641,13 @@
   translit: er
 珥#約細:
   match: exact
-  meaning_en: ''
+  meaning_en: awake
   name_en: Er
   orig: Ἤρ
   ref: 路3:28
   strong: G2262
   translit: Ēr
+  via: עֵר（Er）
 瑣法:
   match: exact
   meaning_en: a cruse
@@ -7018,12 +7034,13 @@
   translit: ma.a.khah
 瑪達他:
   match: exact
-  meaning_en: ''
+  meaning_en: gift of Jehovah
   name_en: Mattatha
   orig: Ματταθά
   ref: 路3:31
   strong: G3160
   translit: Mattatha
+  via: מַתַּתָּה（Mattathah）
 瑪雲:
   match: exact
   meaning_en: habitation
@@ -8394,12 +8411,13 @@
   translit: yo.seph
 約瑟#路3:24:
   match: exact
-  meaning_en: ''
+  meaning_en: Jehovah has added
   name_en: Joseph
   orig: Ἰωσήφ
   ref: 路3:24
   strong: G2501J
   translit: Iōsēph
+  via: יוֹסֵף（Joseph）
 約瑟#路3:26:
   match: exact
   meaning_en: ''
@@ -8410,20 +8428,22 @@
   translit: Iōsēch
 約瑟#路3:30:
   match: exact
-  meaning_en: ''
+  meaning_en: Jehovah has added
   name_en: Joseph
   orig: Ἰωσήφ
   ref: 路3:30
   strong: G2501L
   translit: Iōsēph
+  via: יוֹסֵף（Joseph）
 約瑟#馬利亞的丈夫:
   match: exact
-  meaning_en: ''
+  meaning_en: Jehovah has added
   name_en: Joseph
   orig: Ἰωσήφ
   ref: 太1:16
   strong: G2501G
   translit: Iōsēph
+  via: יוֹסֵף（Joseph）
 約示巴:
   match: exact
   meaning_en: Jehovah has sworn
@@ -9554,12 +9574,13 @@
   translit: shim.on
 西緬#路3:30:
   match: exact
-  meaning_en: ''
+  meaning_en: heard
   name_en: Simeon
   orig: Συμεών
   ref: 路3:30
   strong: G4826H
   translit: Sumeōn
+  via: שִׁמְעוֹן（Simeon or Shimeon）
 西羅非哈:
   match: exact
   meaning_en: first-born
@@ -9810,7 +9831,7 @@
   translit: ka.lev
 迦南:
   match: exact
-  meaning_en: ''
+  meaning_en: merchant, trader
   name_en: Canaan
   orig: כְּנַ֫עַן
   ref: 代上1:8
@@ -9906,12 +9927,12 @@
   translit: shem
 阿何利巴瑪#亞拿:
   match: exact
-  meaning_en: ''
-  name_en: Oholibamah
-  orig: אָהֳלִֽיבָמָה֙
+  meaning_en: tent of the high place
+  name_en: Aholibamah
+  orig: אׇהֳלִיבָמָה
   ref: 創36:2
   strong: H0173
-  translit: '''o.ho.li.va.Mah'
+  translit: o.ho.li.va.mah
 阿南:
   match: exact
   meaning_en: vigorous
@@ -10050,7 +10071,7 @@
   translit: ya.a.nay
 雅代:
   match: exact
-  meaning_en: ''
+  meaning_en: whom he will place
   name_en: Jahdai
   orig: יַהְדַּי
   ref: 代上2:47
@@ -10146,12 +10167,13 @@
   translit: Iakōbos
 雅各#馬但:
   match: exact
-  meaning_en: ''
+  meaning_en: heel holder
   name_en: Jacob
   orig: Ἰακώβ
   ref: 太1:15
   strong: G2384G
   translit: Iakōb
+  via: יַעֲקֹב（Jacob）
 雅哈:
   match: exact
   meaning_en: He will snatch up
@@ -10434,12 +10456,13 @@
   translit: im.mer
 馬但:
   match: exact
-  meaning_en: ''
+  meaning_en: a gift
   name_en: Matthan
   orig: Ματθάν
   ref: 太1:15
   strong: G3157
   translit: Matthan
+  via: מַתָּן（Mattan）
 馬利亞#伯大尼:
   match: exact
   meaning_en: ''
@@ -10490,20 +10513,22 @@
   translit: Rhouphos
 麥基#路3:24:
   match: exact
-  meaning_en: ''
+  meaning_en: king
   name_en: Melchi
   orig: Μελχί
   ref: 路3:24
   strong: G3197G
   translit: Melchi
+  via: מֶ֫לֶךְ（Melech）
 麥基#路3:28:
   match: exact
-  meaning_en: ''
+  meaning_en: king
   name_en: Melchi
   orig: Μελχί
   ref: 路3:28
   strong: G3197H
   translit: Melchi
+  via: מֶ֫לֶךְ（Melech）
 麥基舒亞:
   match: exact
   meaning_en: my king is wealth

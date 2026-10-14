@@ -417,4 +417,4 @@ a { color: var(--ag-focus); }
 .ag-name-gloss small { color: var(--ag-muted); font-size: calc(12px * var(--ag-fs)); }
 .ag-name-quote { margin: 8px 0; padding: 8px 12px; border-left: 2px solid var(--ag-matthew); background: var(--ag-paper); font: calc(14px * var(--ag-fs))/1.8 var(--ag-serif); }
 .ag-name-source { display: block; margin-top: 6px; color: var(--ag-muted); font-size: calc(10px * var(--ag-fs)); line-height: 1.6; }
-
+.ag-name-via { margin: -4px 0 8px; color: var(--ag-muted); font-size: calc(11px * var(--ag-fs)); line-height: 1.6; }

@@ -2726,6 +2726,7 @@ class LineageBuilder:
             "orig": (record or {}).get("orig", ""), "translit": (record or {}).get("translit", ""),
             "strong": (record or {}).get("strong", ""), "nameEn": (record or {}).get("name_en", ""),
             "meaningEn": english, "meaningZh": self.meaning_zh.get(english, ""),
+            "via": (record or {}).get("via", ""),
             "ref": (record or {}).get("ref", ""),
             "scripture": [{"ref": item["ref"], "quote": item["quote"]} for item in scripture],
         }
@@ -2745,6 +2746,8 @@ class LineageBuilder:
                 continue
             original = f"{info['orig']}（{info['translit']}）" if info["orig"] else "—"
             meaning = f"{info['meaningZh']}（{info['meaningEn']}）" if info["meaningEn"] else "—"
+            if info["meaningEn"] and info.get("via"):
+                meaning += f"<br>（取自對應的希伯來文名字 {info['via']}）"
             says = "<br>".join(f"{item['ref']}：「{item['quote']}」" for item in info["scripture"]) or "—"
             out.append(f"| {self._name_link(pid)} | {original} | {meaning} | {says} |")
         out.append("")

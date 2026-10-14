@@ -60,6 +60,32 @@ def norm_strong(code: str) -> str:
     return f"{m.group(1)}{int(m.group(2)):04d}{m.group(3)}" if m else code.strip()
 
 
+def plain(text: str) -> str:
+    return re.sub(r"<[^>]*>", "\n", text).replace("\xa0", " ")
+
+
+def parse_meaning(text: str, greek: bool = False) -> tuple[str, str]:
+    """詞典釋義有好幾種寫法：§ 名 = "義"、名 = "義"、§ 名 = 義（沒引號）、§ 名 "義"、§ 義。"""
+    if greek:
+        # 希臘文詞典沒有名字字義；裡面的「§」是文獻章節符號，不是字義，不能當字義讀
+        return "", ""
+    body = plain(text)
+    patterns = [
+        r'§\s*([^=\n]+?)\s*=\s*"([^"\n]+)"',
+        r'(?:^|\n)\s*([A-Z][^=\n"]{0,60}?)\s*=\s*"([^"\n]+)"',
+        r'§\s*([^=\n]+?)\s*=\s*([^\n"]+)',
+        r'§\s*([A-Z][\w\'\- ]+?)\s+"([^"\n]+)"',
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, body)
+        if match:
+            return match.group(1).strip(), match.group(2).strip().rstrip(".;,")
+    plain_match = re.search(r"§\s*([^\n=]+)", body)
+    if plain_match:
+        return "", plain_match.group(1).strip().rstrip(".;,")
+    return "", ""
+
+
 def load_lexicon(path: Path) -> dict[str, dict]:
     entries: dict[str, dict] = {}
     for line in path.read_text(encoding="utf-8-sig").splitlines():
@@ -67,14 +93,58 @@ def load_lexicon(path: Path) -> dict[str, dict]:
         if len(cols) < 8 or not re.match(r"^[HG]\d{4}", cols[0]):
             continue
         dstrong = norm_strong(cols[1].split("=")[0].strip())
-        meaning = MEANING_RE.search(cols[7])
+        name, meaning = parse_meaning(cols[7], greek=cols[0].startswith("G"))
         entries[dstrong] = {
             "orig": cols[3].strip(), "translit": cols[4].strip(), "morph": cols[5].strip(),
-            "gloss": cols[6].strip(),
-            "name": meaning.group(1).strip() if meaning else "",
-            "meaning": meaning.group(2).strip() if meaning else "",
+            "gloss": cols[6].strip(), "name": name, "meaning": meaning,
+            "heb": [w for part in re.findall(r"Heb\.\s*([^)]*)", cols[7]) for w in re.findall(r"H\d{4}|[֐-׿]+", part)],
         }
     return entries
+
+
+def consonants(text: str) -> str:
+    return re.sub(r"[֑-ׇ,\s]", "", text)
+
+
+def resolve_entry(lexicon: dict[str, dict], strong: str) -> dict:
+    """token 的 Strong 可能沒有字母尾碼（H0173），詞典裡是 H0173G／H…；沒有精確條目時，
+    取同一個 Strong 底下的條目，只在它們的字義一致時才採用。"""
+    if strong in lexicon:
+        return lexicon[strong]
+    base = re.sub(r"[A-Z]$", "", strong)
+    if base in lexicon:
+        return lexicon[base]
+    family = [entry for key, entry in lexicon.items() if re.sub(r"[A-Z]$", "", key) == base]
+    if not family:
+        return {}
+    meanings = {entry["meaning"] for entry in family if entry["meaning"]}
+    head = dict(family[0])
+    head["meaning"] = next(iter(meanings)) if len(meanings) == 1 else ""
+    named = next((entry["name"] for entry in family if entry["name"]), "")
+    head["name"] = named or head["name"]
+    return head
+
+
+def hebrew_counterpart(greek_entry: dict, name_en: str, hebrew: dict[str, dict]) -> dict | None:
+    """希臘文名字的詞典沒有字義時，用希臘文詞條自己標的希伯來文對應名字：
+    希伯來文拼寫相同、是人名、英文名相近（≥0.75）、而且字義只有一種才採用。"""
+    cited = list(dict.fromkeys(greek_entry.get("heb", [])))
+    if len({consonants(word) if not word.startswith("H") else word for word in cited}) != 1:
+        return None
+    target = cited[0]
+    is_number = bool(re.match(r"^H\d{4}$", target))
+    letters = lambda text: re.sub(r"[^a-z]", "", text.lower())
+    candidates = []
+    for key, entry in hebrew.items():
+        same = re.sub(r"[A-Z]$", "", key) == target if is_number else consonants(entry["orig"]) == consonants(target)
+        if not same or "-P" not in entry["morph"] or not entry["meaning"]:
+            continue
+        hebrew_name = (entry["name"] or entry["gloss"]).split(" or ")[0]
+        if SequenceMatcher(None, letters(name_en), letters(hebrew_name)).ratio() >= 0.75:
+            candidates.append(entry)
+    if len({entry["meaning"] for entry in candidates}) != 1:
+        return None
+    return candidates[0]
 
 
 _step_cache: dict[tuple[str, int], dict[int, list[dict]]] = {}
@@ -184,7 +254,7 @@ def main() -> int:
                             token = step_tokens[mine[0]]
                             strong = norm_strong(token["strong"])
                             lexicon = hebrew if strong.startswith("H") else greek
-                            entry = lexicon.get(strong) or lexicon.get(re.sub(r"[A-Z]$", "", strong)) or {}
+                            entry = resolve_entry(lexicon, strong)
                             gloss_norm = norm(clean_gloss(token["gloss"]))
                             def score(tok: dict) -> float:
                                 gloss = norm(clean_gloss(tok["gloss"]))
@@ -198,7 +268,7 @@ def main() -> int:
                     for token in step_tokens:
                         strong = norm_strong(token["strong"])
                         lexicon = hebrew if strong.startswith("H") else greek
-                        entry = lexicon.get(strong) or lexicon.get(re.sub(r"[A-Z]$", "", strong)) or {}
+                        entry = resolve_entry(lexicon, strong)
                         names = {norm(clean_gloss(token["gloss"]))} | {norm(x) for x in re.split(r"\s+or\s+", entry.get("name", "")) if x}
                         zh_text = verses.get(f"{book}{chapter}:{verse}") or ""
                         # 該節的和合本要真的出現這個人的名字（和合本把這節併入上一節時除外），避免配到同節的別人
@@ -223,9 +293,17 @@ def main() -> int:
             stats[status] += 1
             continue
         book, chapter, verse, token, entry, kind = found
+        via = ""
+        if not entry.get("meaning") and norm_strong(token["strong"]).startswith("G"):
+            counterpart = hebrew_counterpart(entry, entry.get("name") or clean_gloss(token["gloss"]).title(), hebrew)
+            if counterpart:
+                entry = {**entry, "meaning": counterpart["meaning"]}
+                via = f"{counterpart['orig']}（{counterpart['name'] or counterpart['gloss']}）"
         record = {"ref": f"{book}{chapter}:{verse}", "strong": norm_strong(token["strong"]), "orig": entry.get("orig") or token["orig"],
                   "translit": entry.get("translit") or token["translit"], "name_en": entry.get("name") or clean_gloss(token["gloss"]).title(),
                   "meaning_en": entry.get("meaning", ""), "match": kind}
+        if via:
+            record["via"] = via
         if not record["meaning_en"]:
             stats["no_meaning"] += 1
         stats["ok"] += 1
