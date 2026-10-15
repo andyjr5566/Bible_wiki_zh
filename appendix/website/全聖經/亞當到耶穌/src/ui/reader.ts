@@ -271,7 +271,9 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
     if (fresh.size || moved) {
       marks = { ...marks, fresh: quiet ? new Set() : fresh };
       canvas.setReadingMarks(marks);
-      if (moved && follow) focusCamera(!quiet);
+      // 安靜地點亮（跳讀、換章、打開時）不動鏡頭，由呼叫的地方決定怎麼移；
+      // 否則這裡會先直接切過去，換章時「先拉遠再推近」就沒有東西可飛
+      if (moved && follow && !quiet) focusCamera(true);
     }
   }
 
