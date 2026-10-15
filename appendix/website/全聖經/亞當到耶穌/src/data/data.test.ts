@@ -263,7 +263,7 @@ describe('讀經資料閘門（代上 1–9 章）', () => {
     const missing: string[] = [];
     for (const { chapter, verse } of verses) {
       for (const token of verse.t) {
-        for (const id of [token.id, token.of, ...(token.from ?? [])].filter((value): value is string => Boolean(value))) {
+        for (const id of [token.id, token.of, ...(token.from ?? []), ...(token.to ?? [])].filter((value): value is string => Boolean(value))) {
           if (!personIds.has(id) || !layoutIds.has(id)) missing.push(`代上${chapter}:${verse.v} ${id}`);
         }
       }

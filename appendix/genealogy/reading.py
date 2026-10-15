@@ -360,6 +360,10 @@ def build_reading(builder, helpers: dict) -> dict | None:
                 sources = [pid for pid in earlier if pid in parents_of[token["id"]]]
                 if sources:
                     token["from"] = list(dict.fromkeys(sources))
+                # 倒著往上數的家譜（「希幔是約珥的兒子」）：讀到父親時，畫到前面已經讀過的兒子
+                children = [pid for pid in earlier if token["id"] in parents_of[pid] and pid not in sources]
+                if children:
+                    token["to"] = list(dict.fromkeys(children))
             # 職稱屬於誰：裁決檔寫明的優先；否則緊貼在後的人名，再來是同一句前面最近的人
             manual = {str(word): str(pid) for word, pid in (title_of.get(k) or {}).items()}
             for token in tokens:
@@ -431,6 +435,8 @@ def annotate(text: str, tokens: list[dict], display) -> str:
             tag = word if tag == word else f"{word}={tag}"
             if token.get("from"):
                 tag += "←" + "/".join(display(x) for x in token["from"])
+            if token.get("to"):
+                tag += "→" + "/".join(display(x) for x in token["to"])
             out.append(f"〔{tag}〕")
         elif token["k"] == "t":
             out.append(f"《{word}→{display(token['of']) if token.get('of') else '？'}》")

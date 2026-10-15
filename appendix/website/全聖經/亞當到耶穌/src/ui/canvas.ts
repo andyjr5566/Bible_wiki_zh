@@ -2,6 +2,7 @@ import type { GenealogyData, Person } from '../data/types';
 import { branchRoots, buildGraph, firstReference, isPlacementNode } from '../data/model';
 import { COLUMN_W, ROW_H, computeLayout, type CanvasLayout, type LayoutNode } from './layout';
 import { svgEl } from './dom';
+import { ensureInkDefs, inkHalo, inkStroke, sealMark } from './ink';
 import { FONT_SCALE_EVENT, getFontScale } from './fontscale';
 
 export type CanvasLine = 'both' | '馬太' | '路加';
@@ -24,6 +25,27 @@ export interface CanvasApi {
   expandFamily(id: string): void;
   expandAll(): void;
   layoutNow(): CanvasLayout;
+  /** 讀經模式：淡墨底、名字依讀到的順序亮起 */
+  setReading(on: boolean): void;
+  /** 讀經的標記：這一節亮著的人、上一節漸退的人、正在讀的人、朱印、墨線。fresh 是這一次新加的（要有落筆、蓋印的動畫） */
+  setReadingMarks(marks: ReadingMarks): void;
+  /** 鏡頭移到這個人；已在畫面舒適範圍內就不動；距離很遠就先拉遠再推近 */
+  flyTo(id: string, animate?: boolean): Promise<void>;
+  /** 一次打開好幾個人所在的位置（只重畫一次） */
+  expandMany(ids: string[]): void;
+  getExpanded(): Set<string>;
+  setExpanded(ids: Set<string>): void;
+  /** 使用者自己拖動或縮放畫布時通知 */
+  onUserCamera(listener: (() => void) | null): void;
+}
+
+export interface ReadingMarks {
+  lit: Set<string>;
+  trail: Set<string>;
+  current: string | null;
+  seals: Array<{ id: string; label: string; key: string }>;
+  ink: Array<{ from: string; to: string; key: string }>;
+  fresh: Set<string>;
 }
 
 interface ViewBox { x: number; y: number; width: number; height: number }
@@ -55,8 +77,10 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
   const edgeLayer = svgEl('g', { class: 'ag-edge-layer' });
   const overviewLayer = svgEl('g', { class: 'ag-overview-layer' });
   const nodeLayer = svgEl('g', { class: 'ag-node-layer' });
+  const inkLayer = svgEl('g', { class: 'ag-rd-ink-layer' });
+  const sealLayer = svgEl('g', { class: 'ag-rd-seal-layer' });
   const hudLayer = svgEl('g', { class: 'ag-overview-hud' });
-  scene.append(segmentLayer, frameLayer, edgeLayer, overviewLayer, nodeLayer, hudLayer);
+  scene.append(segmentLayer, frameLayer, edgeLayer, inkLayer, overviewLayer, nodeLayer, sealLayer, hudLayer);
   svg.append(scene);
   const graph = buildGraph(data);
   const expanded = new Set<string>();
@@ -170,22 +194,26 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
   // 人物卡打開時，畫布還看得到的那一塊（以畫布寬高的比例表示）。
   // 窄螢幕的人物卡從底部升起、寬螢幕的在右側；用版面位置算卡片最後停住的地方，
   // 不看滑入動畫中的 transform，所以先開卡片、再移鏡頭也算得準。
+  // 讀經模式的經文欄也一樣會蓋住畫布。
   const visibleArea = () => {
     const full = { x0: 0, y0: 0, x1: 1, y1: 1 };
-    const card = document.querySelector<HTMLElement>('.ag-info-card.ag-card-open');
     const rect = svg.getBoundingClientRect();
-    if (!card || rect.width < 1 || rect.height < 1) return full;
-    const parent = card.offsetParent?.getBoundingClientRect() ?? { left: 0, top: 0 };
-    const left = parent.left + card.offsetLeft;
-    const top = parent.top + card.offsetTop;
-    const right = left + card.offsetWidth;
-    const bottom = top + card.offsetHeight;
-    if (right <= rect.left || left >= rect.right || bottom <= rect.top || top >= rect.bottom) return full;
+    if (rect.width < 1 || rect.height < 1) return full;
+    const covers = [...document.querySelectorAll<HTMLElement>('.ag-info-card.ag-card-open, .ag-rd-panel:not([hidden])')];
     const gap = 12;
     const clamp = (value: number) => Math.max(0, Math.min(1, value));
     const area = { ...full };
-    if (left <= rect.left + 1 && right >= rect.right - 1) area.y1 = clamp((top - gap - rect.top) / rect.height);
-    else area.x1 = clamp((left - gap - rect.left) / rect.width);
+    for (const cover of covers) {
+      const parent = cover.offsetParent?.getBoundingClientRect() ?? { left: 0, top: 0 };
+      const left = parent.left + cover.offsetLeft;
+      const top = parent.top + cover.offsetTop;
+      const right = left + cover.offsetWidth;
+      const bottom = top + cover.offsetHeight;
+      if (right <= rect.left || left >= rect.right || bottom <= rect.top || top >= rect.bottom) continue;
+      if (left <= rect.left + 1 && right >= rect.right - 1) area.y1 = Math.min(area.y1, clamp((top - gap - rect.top) / rect.height));
+      else if (left <= rect.left + 1) area.x0 = Math.max(area.x0, clamp((right + gap - rect.left) / rect.width));
+      else area.x1 = Math.min(area.x1, clamp((left - gap - rect.left) / rect.width));
+    }
     // 剩下的空間太小時（例如橫放的手機），照整個畫布算，至少不會把人推出畫面
     return area.y1 - area.y0 < 0.18 || area.x1 - area.x0 < 0.3 ? full : area;
   };
@@ -224,7 +252,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     animationDone = null;
     done?.();
   };
-  const animateToBox = (target: ViewBox, animate: boolean): Promise<void> => new Promise((resolve) => {
+  const animateToBox = (target: ViewBox, animate: boolean, duration = 720): Promise<void> => new Promise((resolve) => {
     if (!animate || document.documentElement.dataset.motion === 'off') {
       cancelAnimationFrame(animationFrame);
       finishAnimation();
@@ -237,7 +265,6 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     animationDone = resolve;
     const from = { ...currentBox };
     const start = performance.now();
-    const duration = 720;
     const tick = (now: number) => {
       const t = Math.min(1, (now - start) / duration);
       const eased = 1 - (1 - t) ** 3;
@@ -262,6 +289,8 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     scene.classList.toggle('ag-overview-on', overview);
     segmentLayer.style.display = overview ? '' : 'none';
     frameLayer.style.display = overview ? 'none' : '';
+    inkLayer.style.display = overview ? 'none' : '';
+    sealLayer.style.display = overview ? 'none' : '';
     overviewLayer.style.display = overview ? '' : 'none';
     hudLayer.style.display = overview ? '' : 'none';
     if (overview) {
@@ -522,15 +551,114 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     }
   }
 
+  // ── 讀經模式 ──────────────────────────────────────────────
+  let reading = false;
+  let marks: ReadingMarks = { lit: new Set(), trail: new Set(), current: null, seals: [], ink: [], fresh: new Set() };
+  let userCameraListener: (() => void) | null = null;
+  const nodeById = () => new Map(allLayoutNodes().map((node) => [node.id, node]));
+  /** 把讀經的標記畫上去：節點的亮度、正在讀的墨暈、墨線、朱印。animate 只用在 fresh 裡的新標記。 */
+  function drawReading(animate: boolean) {
+    inkLayer.replaceChildren();
+    sealLayer.replaceChildren();
+    svg.classList.toggle('ag-rd-on', reading);
+    for (const [id, element] of nodeEls) {
+      element.classList.toggle('ag-rd-lit', reading && marks.lit.has(id));
+      element.classList.toggle('ag-rd-trail', reading && !marks.lit.has(id) && marks.trail.has(id));
+      element.classList.toggle('ag-rd-current', reading && marks.current === id);
+    }
+    if (!reading) return;
+    const motion = animate && document.documentElement.dataset.motion !== 'off';
+    const byId = nodeById();
+    const current = marks.current ? byId.get(marks.current) : undefined;
+    if (current) inkLayer.append(inkHalo(current.x, current.y, current.rectWidth * 0.78, current.rectHeight * 0.95));
+    let order = 0;
+    for (const line of marks.ink) {
+      const a = byId.get(line.from);
+      const b = byId.get(line.to);
+      if (!a || !b) continue;
+      const fresh = motion && marks.fresh.has(line.key);
+      inkLayer.append(inkStroke(inkPath(a, b), fresh, fresh ? order++ * 140 : 0));
+    }
+    const perNode = new Map<string, number>();
+    for (const seal of marks.seals) {
+      const node = byId.get(seal.id);
+      if (!node) continue;
+      const index = perNode.get(seal.id) ?? 0;
+      perNode.set(seal.id, index + 1);
+      const x = node.x + node.rectX + node.rectWidth - 10 + index * 26;
+      const y = node.y - node.height / 2 - 30;
+      sealLayer.append(sealMark(seal.label, x, y, motion && marks.fresh.has(seal.key)));
+    }
+  }
+
+  /** 墨線：一筆帶過的曲線，從父母那一側出筆，落在子女那一側（不照家譜樹的直角折線） */
+  function inkPath(a: LayoutNode, b: LayoutNode): string {
+    const dx = b.x - a.x;
+    const dy = b.y - a.y;
+    if (Math.abs(dx) < Math.max(a.width, b.width) / 2) {
+      const direction = Math.sign(dy || 1);
+      const startY = a.y + direction * a.height / 2;
+      const endY = b.y - direction * b.height / 2;
+      const bow = Math.min(60, Math.abs(endY - startY) * 0.18);
+      return `M${a.x} ${startY} C${a.x + bow} ${startY + (endY - startY) * 0.35} ${b.x + bow} ${startY + (endY - startY) * 0.65} ${b.x} ${endY}`;
+    }
+    const direction = Math.sign(dx);
+    const startX = a.x + direction * a.rectWidth / 2;
+    const endX = b.x - direction * b.rectWidth / 2;
+    const pull = (endX - startX) * 0.55;
+    return `M${startX} ${a.y} C${startX + pull} ${a.y} ${endX - pull} ${b.y} ${endX} ${b.y}`;
+  }
+
+  // 讀經時的鏡頭：人已經在畫面舒適的範圍裡就不動；遠的先拉遠看到兩頭，再推近
+  const READ_ZOOM_MIN = 0.86;
+  const READ_ZOOM_MAX = 1.05;
+  const flyTo = async (id: string, animate = true): Promise<void> => {
+    const node = nodeById().get(id);
+    if (!node) return;
+    const rect = svg.getBoundingClientRect();
+    const area = visibleArea();
+    const fx = area.x1 - area.x0;
+    const fy = area.y1 - area.y0;
+    const zoomNow = zoomOf(currentBox);
+    const zoom = Math.max(READ_ZOOM_MIN * getFontScale(), Math.min(READ_ZOOM_MAX, zoomNow));
+    const sx = (node.x - currentBox.x) / currentBox.width;
+    const sy = (node.y - currentBox.y) / currentBox.height;
+    const comfortable = sx > area.x0 + fx * 0.16 && sx < area.x1 - fx * 0.16 && sy > area.y0 + fy * 0.2 && sy < area.y1 - fy * 0.2;
+    if (comfortable && Math.abs(zoom - zoomNow) < 0.01) return;
+    const width = Math.max(1, rect.width) / zoom;
+    const height = Math.max(1, rect.height) / zoom;
+    const target: ViewBox = { x: node.x - width * (area.x0 + fx / 2), y: node.y - height * (area.y0 + fy / 2), width, height };
+    const motion = animate && document.documentElement.dataset.motion !== 'off';
+    const distance = Math.hypot((target.x - currentBox.x) * zoomNow, (target.y - currentBox.y) * zoomNow);
+    if (motion && distance > 2.2 * Math.max(rect.width, rect.height)) {
+      // 拉遠到看得見起點和終點，再推近
+      const x0 = Math.min(currentBox.x, target.x);
+      const y0 = Math.min(currentBox.y, target.y);
+      const x1 = Math.max(currentBox.x + currentBox.width, target.x + target.width);
+      const y1 = Math.max(currentBox.y + currentBox.height, target.y + target.height);
+      const aspect = rect.width / Math.max(1, rect.height);
+      let midWidth = (x1 - x0) * 1.08;
+      let midHeight = (y1 - y0) * 1.08;
+      if (midWidth / midHeight > aspect) midHeight = midWidth / aspect;
+      else midWidth = midHeight * aspect;
+      const mid: ViewBox = { x: (x0 + x1) / 2 - midWidth / 2, y: (y0 + y1) / 2 - midHeight / 2, width: midWidth, height: midHeight };
+      await animateToBox(mid, true, 820);
+      await animateToBox(target, true, 980);
+      return;
+    }
+    await animateToBox(target, motion, 640);
+  };
+
   // 沿著大圖上的掛法往上，把路上每一層（「N 位子女」、旁支的根、名單牌子、區域）都打開
-  const openAncestors = (id: string) => {
+  // includeSelf：連這個人自己的後代也打開（點人物卡時要看他的家）；讀經時只打開通往他的路
+  const openAncestors = (id: string, includeSelf = true) => {
     let current = id;
     const visited = new Set<string>();
     while (!visited.has(current)) {
       visited.add(current);
       const parent = graph.treeParent.get(current);
       if (!parent) break;
-      expanded.add(current);
+      if (includeSelf || current !== id) expanded.add(current);
       if (graph.spineIds.has(parent)) {
         for (const direction of [-1, 1]) {
           const key = `siblings:${parent}:${direction}`;
@@ -798,6 +926,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       };
       layoutAnimationFrame = requestAnimationFrame(tick);
     }
+    drawReading(false);
     cullToViewport();
     // 版面變動後如果畫面上一個節點都沒有（例如收合了正在看的那一組），回到主線，不要留一片空白
     if (!overviewMode && ![...nodeEls.values()].some((element) => element.style.display !== 'none')) fitSpine(animate);
@@ -1031,10 +1160,34 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       refresh(true);
     },
     layoutNow() { return layout; },
+    setReading(on) {
+      reading = on;
+      if (on) ensureInkDefs(svg);
+      if (!on) marks = { lit: new Set(), trail: new Set(), current: null, seals: [], ink: [], fresh: new Set() };
+      drawReading(false);
+    },
+    setReadingMarks(next) {
+      marks = next;
+      drawReading(true);
+    },
+    flyTo,
+    expandMany(ids) {
+      const before = expanded.size;
+      for (const id of ids) openAncestors(id, false);
+      if (expanded.size !== before) refresh(true);
+    },
+    getExpanded() { return new Set(expanded); },
+    setExpanded(ids) {
+      expanded.clear();
+      for (const id of ids) expanded.add(id);
+      refresh(false);
+    },
+    onUserCamera(listener) { userCameraListener = listener; },
   };
 
   svg.addEventListener('wheel', (event) => {
     event.preventDefault();
+    userCameraListener?.();
     const focus = worldPoint(event.clientX, event.clientY);
     const factor = Math.max(0.72, Math.min(1.4, Math.exp(-event.deltaY * 0.0015)));
     const ratio = clampRatio(1 / factor);
@@ -1071,13 +1224,14 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       const height = pinchStart.box.height * width / pinchStart.box.width;
       const r = width / pinchStart.box.width;
       if (setUserViewBox({ x: focusX - (focusX - pinchStart.box.x) * r, y: focusY - (focusY - pinchStart.box.y) * r, width, height })) pinchStart = null;
+      if (!didDrag) userCameraListener?.();
       didDrag = true;
       return;
     }
     if (dragStart && dragBox && pointers.size === 1) {
       const dx = event.clientX - dragStart.x;
       const dy = event.clientY - dragStart.y;
-      if (Math.abs(dx) + Math.abs(dy) > 4) didDrag = true;
+      if (Math.abs(dx) + Math.abs(dy) > 4) { if (!didDrag) userCameraListener?.(); didDrag = true; }
       if (!didDrag) return;
       const rect = svg.getBoundingClientRect();
       setViewBox({ x: dragBox.x - dx / Math.max(1, rect.width) * dragBox.width, y: dragBox.y - dy / Math.max(1, rect.height) * dragBox.height, width: dragBox.width, height: dragBox.height });

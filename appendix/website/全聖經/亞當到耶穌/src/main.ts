@@ -1,5 +1,6 @@
 import './styles.css';
-import { DATA, VERSES, buildGraph, isPlacementNode, lookupVerses, makeSyntheticData, pathToFirstAncestor } from './data/model';
+import './reading.css';
+import { DATA, READING, VERSES, buildGraph, isPlacementNode, lookupVerses, makeSyntheticData, pathToFirstAncestor } from './data/model';
 import type { GenealogyData, GenealogyNote, Person } from './data/types';
 import { createAges } from './ui/ages';
 import { createCanvas, type CanvasApi } from './ui/canvas';
@@ -8,6 +9,7 @@ import { createPersonCard, type PersonCard } from './ui/card';
 import { button, h } from './ui/dom';
 import { createNotes } from './ui/notes';
 import { createToolbar, type LineFilter, type PageId } from './ui/toolbar';
+import { createReader } from './ui/reader';
 import { createTour } from './ui/tour';
 
 const synthetic = import.meta.env.DEV && new URLSearchParams(location.search).get('synthetic') === '1';
@@ -143,16 +145,32 @@ const toolbar = createToolbar(data, {
     applyPage();
   },
   setLine(value) { line = value; canvas.setLine(value); },
-  restartTour() { page = 'tree'; applyPage(); tour.start(); },
+  restartTour() { reader.close(); page = 'tree'; applyPage(); tour.start(); },
+  toggleReading() { if (reader.isOpen()) reader.close(); else reader.open(); },
+  isReading: () => reader.isOpen(),
   zoom: (factor) => canvas.zoom(factor),
   fit: () => canvas.fitSpine(true, true),
   getLine: () => line,
   getPage: () => page,
 });
-const tour = createTour(data, canvas, openVerse);
+const reader = createReader(READING, canvas, {
+  onOpenChange(open) {
+    if (open) {
+      tour.stop(false);
+      page = 'tree';
+      applyPage();
+      activeCardPerson = null;
+      card.show(null);
+      canvas.select(null);
+    }
+    toolbar.setState();
+  },
+});
+const tour = createTour(data, canvas, openVerse, () => reader.open());
 const main = h('main', { className: 'ag-main' });
 for (const element of pageNodes.values()) main.append(element);
-main.append(card.el);
+main.append(card.el, reader.panel);
+treePage.querySelector('.ag-canvas-wrap')?.append(reader.stage);
 const footer = h('footer', { className: 'ag-footer' },
   h('span', {}, '家譜照經文的記載畫出。'),
   h('span', {}, synthetic ? '合成壓力測試資料' : `${data.persons.length.toLocaleString()} 位人物`));
@@ -161,6 +179,13 @@ applyPage();
 
 function applyDeepLink() {
   const hash = location.hash.slice(1);
+  if (hash.startsWith('read=')) {
+    let ref = '';
+    try { ref = decodeURIComponent(hash.slice('read='.length)); } catch { return; }
+    tour.stop(false);
+    reader.open(ref, false);
+    return;
+  }
   if (hash.startsWith('p=')) {
     let id = '';
     try { id = decodeURIComponent(hash.slice(2)); } catch { return; }

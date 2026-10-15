@@ -213,6 +213,8 @@ export interface ReadingToken {
   id?: string;
   of?: string;
   from?: string[];
+  /** 倒著數的家譜：讀到這位父親時，畫到前面已經讀過的兒子 */
+  to?: string[];
 }
 
 export interface ReadingVerse {

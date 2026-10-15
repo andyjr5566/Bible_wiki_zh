@@ -11,6 +11,9 @@ export interface ToolbarActions {
   setPage(page: PageId): void;
   setLine(line: LineFilter): void;
   restartTour(): void;
+  /** 帶你讀經：打開或離開 */
+  toggleReading(): void;
+  isReading(): boolean;
   zoom(factor: number): void;
   fit(): void;
   getLine(): LineFilter;
@@ -45,6 +48,8 @@ export function createToolbar(data: GenealogyData, actions: ToolbarActions): { e
   zoomIn.addEventListener('click', () => actions.zoom(1.22));
   fit.addEventListener('click', actions.fit);
   const restart = h('button', { className: 'ag-quiet-button', type: 'button' }, '重播導覽');
+  const readButton = h('button', { className: 'ag-rd-entry', type: 'button', 'aria-pressed': 'false' }, '帶你讀經');
+  readButton.addEventListener('click', () => { actions.toggleReading(); setState(); });
   restart.addEventListener('click', actions.restartTour);
   const theme = h('button', { className: 'ag-quiet-button', type: 'button', 'aria-pressed': 'false' }, '深色');
   const motion = h('button', { className: 'ag-quiet-button', type: 'button', 'aria-pressed': 'true' }, '動畫');
@@ -87,7 +92,7 @@ export function createToolbar(data: GenealogyData, actions: ToolbarActions): { e
   larger.addEventListener('click', () => setFontScale(FONT_SCALES[Math.min(FONT_SCALES.length - 1, (FONT_SCALES as readonly number[]).indexOf(getFontScale()) + 1)]!));
   window.addEventListener('ag-fontscale', syncFont);
   syncFont();
-  const controls = h('div', { className: 'ag-controls' }, lineGroup, zoomOut, zoomIn, fit, restart, fontGroup, theme, motion);
+  const controls = h('div', { className: 'ag-controls' }, readButton, lineGroup, zoomOut, zoomIn, fit, restart, fontGroup, theme, motion);
   const header = h('header', { className: 'ag-header' },
     h('div', { className: 'ag-brand' },
       h('span', { className: 'ag-brand-mark', 'aria-hidden': 'true' }, '譜'),
@@ -98,6 +103,8 @@ export function createToolbar(data: GenealogyData, actions: ToolbarActions): { e
   const setState = () => {
     for (const [id, button] of lineButtons) button.setAttribute('aria-pressed', String(actions.getLine() === id));
     for (const [id, button] of tabButtons) button.setAttribute('aria-pressed', String(actions.getPage() === id));
+    readButton.setAttribute('aria-pressed', String(actions.isReading()));
+    readButton.textContent = actions.isReading() ? '離開讀經' : '帶你讀經';
   };
   return { el: header, setState };
 }

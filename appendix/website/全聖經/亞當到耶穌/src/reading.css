@@ -1,0 +1,279 @@
+/* 帶你讀經：水墨與朱印。亮色是宣紙墨字，暗色是墨底金字。重的效果只在讀經模式（html.ag-reading）出現。 */
+
+@font-face {
+  font-family: "Wenkai TC Reading";
+  src: url("./assets/fonts/wenkai-tc-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Wenkai TC Reading";
+  src: url("./assets/fonts/wenkai-tc-medium.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+:root {
+  --rd-paper: #f2e9d6;
+  --rd-paper-deep: #e9dcc0;
+  --rd-paper-edge: #dccdab;
+  --rd-ink: #1e1b17;
+  --rd-ink-soft: rgb(30 27 23 / 42%);
+  --rd-ink-faint: rgb(30 27 23 / 14%);
+  --rd-line: #26221d;
+  --rd-glow: rgb(30 27 23 / 26%);
+  --rd-seal: #ab3427;
+  --rd-seal-ink: #f7eedb;
+  --rd-accent: #ab3427;
+  --rd-font: "Wenkai TC Reading", "LXGW WenKai TC", "Kaiti TC", "BiauKai", "DFKai-SB", serif;
+  /* 宣紙：細密的紙紋，加一層橫向拉長的纖維 */
+  --rd-texture:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.008 .16' numOctaves='2' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .34 0 0 0 0 .2 0 0 0 .11 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .24 0 0 0 0 .15 0 0 0 .085 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --rd-paper: #14120f;
+    --rd-paper-deep: #1d1a15;
+    --rd-paper-edge: #2b261d;
+    --rd-ink: #e2c88e;
+    --rd-ink-soft: rgb(226 200 142 / 44%);
+    --rd-ink-faint: rgb(226 200 142 / 13%);
+    --rd-line: #d4b16a;
+    --rd-glow: rgb(226 200 142 / 24%);
+    --rd-seal: #b8402f;
+    --rd-seal-ink: #f4e2c2;
+    --rd-accent: #e07a5f;
+    --rd-texture:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.008 .16' numOctaves='2' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 .85 0 0 0 0 .75 0 0 0 0 .5 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .9 0 0 0 0 .8 0 0 0 0 .55 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+:root[data-theme="dark"] {
+  --rd-paper: #14120f;
+  --rd-paper-deep: #1d1a15;
+  --rd-paper-edge: #2b261d;
+  --rd-ink: #e2c88e;
+  --rd-ink-soft: rgb(226 200 142 / 44%);
+  --rd-ink-faint: rgb(226 200 142 / 13%);
+  --rd-line: #d4b16a;
+  --rd-glow: rgb(226 200 142 / 24%);
+  --rd-seal: #b8402f;
+  --rd-seal-ink: #f4e2c2;
+  --rd-accent: #e07a5f;
+  --rd-texture:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.008 .16' numOctaves='2' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 .85 0 0 0 0 .75 0 0 0 0 .5 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .9 0 0 0 0 .8 0 0 0 0 .55 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* 整站只輕輕帶一點紙紋 */
+.ag-canvas-wrap { background-image: var(--rd-texture); background-blend-mode: multiply; }
+
+/* ── 進入讀經模式 ─────────────────────────────── */
+.ag-rd-entry {
+  border: 1px solid var(--rd-seal); border-radius: 4px; padding: 6px 13px; background: var(--rd-seal); color: var(--rd-seal-ink);
+  font: 600 calc(13px * var(--ag-fs)) var(--rd-font); letter-spacing: .12em; cursor: pointer; white-space: nowrap;
+  box-shadow: inset 0 0 0 2px rgb(255 255 255 / 12%);
+}
+.ag-rd-entry:hover { filter: brightness(1.06); }
+.ag-rd-entry[aria-pressed="true"] { background: transparent; color: var(--rd-seal); }
+.ag-tour-invite { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; margin-top: 10px; color: var(--ag-muted); }
+
+.ag-reading .ag-canvas-wrap { background-color: var(--rd-paper); background-image: var(--rd-texture); }
+.ag-reading .ag-canvas-legend-panel,
+.ag-reading .ag-tabs { display: none; }
+
+/* 大圖：沒讀到的人退成淡墨，讀到的人亮起來。
+   節點本身的 opacity 用來隱藏另一條線，所以淡墨調在節點裡面的圖形上。 */
+.ag-canvas.ag-rd-on .ag-node > * { opacity: .28; transition: opacity 900ms ease; }
+.ag-canvas.ag-rd-on .ag-node.ag-rd-trail > * { opacity: .66; transition: opacity 2400ms ease; }
+.ag-canvas.ag-rd-on .ag-node.ag-rd-lit > *,
+.ag-canvas.ag-rd-on .ag-node-plaque > *,
+.ag-canvas.ag-rd-on .ag-node-selected > *,
+.ag-canvas.ag-rd-on .ag-node:hover > * { opacity: 1; transition: opacity 240ms ease; }
+.ag-canvas.ag-rd-on .ag-node rect { fill: var(--rd-paper); stroke: var(--rd-ink-soft); stroke-dasharray: none; }
+.ag-canvas.ag-rd-on .ag-node-label { fill: var(--rd-ink); font-family: var(--rd-font); font-size: 16px; }
+.ag-canvas.ag-rd-on .ag-node-subtitle { fill: var(--rd-ink-soft); }
+.ag-canvas.ag-rd-on .ag-node.ag-rd-lit rect { stroke: var(--rd-ink); stroke-width: 1.5; }
+.ag-canvas.ag-rd-on .ag-node.ag-rd-current rect { fill: var(--rd-paper-deep); stroke: var(--rd-ink); stroke-width: 2.4; }
+.ag-canvas.ag-rd-on .ag-node.ag-rd-current .ag-node-label {
+  font-weight: 700; animation: ag-rd-write 700ms cubic-bezier(.3, .1, .2, 1) both;
+}
+.ag-canvas.ag-rd-on .ag-node-plaque rect { fill: var(--rd-paper-deep); stroke: var(--rd-seal); }
+.ag-canvas.ag-rd-on .ag-edge { stroke-opacity: .2; }
+.ag-canvas.ag-rd-on .ag-region-frame rect { stroke: var(--rd-ink-faint); fill: transparent; }
+@keyframes ag-rd-write {
+  from { clip-path: inset(0 0 100% 0); opacity: .25; }
+  to { clip-path: inset(0 0 0 0); opacity: 1; }
+}
+
+/* 墨線、墨暈、朱印 */
+.ag-rd-ink-wash { fill: none; stroke: var(--rd-line); stroke-width: 10; stroke-opacity: .09; stroke-linecap: round; stroke-linejoin: round; }
+.ag-rd-ink-line { fill: none; stroke: var(--rd-line); stroke-width: 3.1; stroke-opacity: .92; stroke-linecap: round; stroke-linejoin: round; }
+.ag-rd-halo { fill: var(--rd-glow); transform-box: fill-box; transform-origin: center; animation: ag-rd-bloom 1100ms ease-out both; }
+@keyframes ag-rd-bloom { from { transform: scale(.3); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.ag-rd-seal { pointer-events: none; }
+.ag-rd-seal-ink { fill: var(--rd-seal); }
+.ag-rd-seal-text { fill: var(--rd-seal-ink); font: 600 16px var(--rd-font); }
+.ag-rd-seal-text-wide { font-size: 14px; }
+.ag-rd-seal { filter: drop-shadow(0 1px 1.5px rgb(60 20 10 / 25%)); }
+.ag-rd-seal-stamp { transform-box: fill-box; transform-origin: center; animation: ag-rd-stamp 460ms cubic-bezier(.2, .9, .3, 1.15) both; }
+@keyframes ag-rd-stamp {
+  0% { transform: scale(1.8); opacity: 0; }
+  55% { transform: scale(.93); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ── 經文欄 ─────────────────────────────────── */
+.ag-rd-panel {
+  position: absolute; top: 14px; right: 14px; bottom: 14px; z-index: 5;
+  display: grid; grid-template-rows: auto minmax(0, 1fr) auto; width: clamp(340px, 31vw, 470px);
+  overflow: hidden; border: 1px solid var(--rd-paper-edge); border-radius: 5px;
+  background-color: var(--rd-paper); background-image: var(--rd-texture);
+  color: var(--rd-ink); font-family: var(--rd-font);
+  box-shadow: 0 22px 60px rgb(40 30 15 / 22%), inset 0 0 0 6px color-mix(in srgb, var(--rd-paper-deep) 60%, transparent);
+}
+.ag-rd-panel[hidden] { display: none; }
+.ag-rd-head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 16px 20px 12px; border-bottom: 1px solid var(--rd-ink-faint); }
+.ag-rd-title { display: grid; line-height: 1.15; }
+.ag-rd-eyebrow { color: var(--rd-seal); font-size: calc(11px * var(--ag-fs)); letter-spacing: .3em; }
+.ag-rd-title strong { font-size: calc(21px * var(--ag-fs)); font-weight: 600; letter-spacing: .08em; }
+.ag-rd-select {
+  min-width: 0; max-width: 100%; padding: 5px 8px; border: 1px solid var(--rd-ink-faint); border-radius: 3px;
+  background: color-mix(in srgb, var(--rd-paper) 80%, white 4%); color: var(--rd-ink); font: calc(13px * var(--ag-fs)) var(--rd-font);
+}
+.ag-rd-close { padding: 5px 10px; border: 1px solid var(--rd-ink-faint); border-radius: 3px; background: transparent; color: var(--rd-ink); font: calc(13px * var(--ag-fs)) var(--rd-font); cursor: pointer; }
+.ag-rd-close:hover { border-color: var(--rd-ink-soft); }
+.ag-rd-scroll { overflow-y: auto; overscroll-behavior: contain; padding: 4px 26px 48px; scrollbar-color: var(--rd-ink-faint) transparent; }
+.ag-rd-chapter-head { display: grid; justify-items: start; gap: 2px; margin: 18px 0 14px; font-weight: 400; }
+.ag-rd-chapter-no { font-size: calc(30px * var(--ag-fs)); font-weight: 600; letter-spacing: .18em; }
+.ag-rd-chapter-name { position: relative; padding-bottom: 8px; color: var(--rd-ink-soft); font-size: calc(15px * var(--ag-fs)); letter-spacing: .06em; }
+.ag-rd-chapter-name::after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 64px; height: 5px; border-radius: 3px;
+  background: var(--rd-seal); opacity: .85; clip-path: polygon(0 40%, 8% 0, 100% 30%, 96% 100%, 4% 85%);
+}
+
+.ag-rd-verse { margin: 0 0 .5em; color: var(--rd-ink-soft); font-size: calc(19px * var(--ag-fs)); line-height: 2.05; transition: color 700ms ease; }
+.ag-rd-verse.is-past { color: color-mix(in srgb, var(--rd-ink) 74%, transparent); }
+.ag-rd-verse.is-now { color: var(--rd-ink-soft); }
+.ag-rd-verse.is-now .ag-rd-seg.is-read { color: var(--rd-ink); transition: color 220ms ease; }
+.ag-rd-vno {
+  margin-right: .35em; padding: 0 .1em; border: 0; background: none; color: var(--rd-seal); cursor: pointer;
+  font: 600 calc(12px * var(--ag-fs)) var(--rd-font); vertical-align: .55em;
+}
+.ag-rd-vno:hover { text-decoration: underline; }
+.ag-rd-person { cursor: pointer; border-radius: 2px; }
+.ag-rd-person:focus-visible { outline: 2px solid var(--rd-seal); outline-offset: 2px; }
+.ag-rd-k-p { font-weight: 600; }
+.ag-rd-is-past .ag-rd-k-p,
+.ag-rd-verse.is-past .ag-rd-k-p,
+.ag-rd-seg.ag-rd-k-p.is-read {
+  background-image: linear-gradient(transparent 82%, var(--rd-ink-faint) 82%, var(--rd-ink-faint) 96%, transparent 96%);
+}
+/* 正在讀的名字：底下一道朱紅的筆觸由左往右寫出來 */
+.ag-rd-seg.is-now {
+  color: var(--rd-ink); background-repeat: no-repeat; background-position: 0 92%;
+  background-image: linear-gradient(90deg, var(--rd-accent), color-mix(in srgb, var(--rd-accent) 70%, transparent));
+  background-size: 100% .16em; animation: ag-rd-underline 520ms ease-out both;
+}
+@keyframes ag-rd-underline { from { background-size: 0 .16em; } to { background-size: 100% .16em; } }
+.ag-rd-k-t.is-read, .ag-rd-verse.is-past .ag-rd-k-t { color: var(--rd-seal); }
+.ag-rd-k-l.is-read, .ag-rd-verse.is-past .ag-rd-k-l { text-decoration: underline dotted color-mix(in srgb, var(--rd-ink) 45%, transparent); text-underline-offset: .32em; }
+.ag-rd-k-n { font-variant-numeric: tabular-nums; }
+
+.ag-rd-note {
+  display: none; margin: -.1em 0 1em 1.2em; padding: 8px 12px 9px; border-left: 3px solid var(--rd-seal);
+  background: color-mix(in srgb, var(--rd-paper-deep) 70%, transparent); color: var(--rd-ink);
+  font-size: calc(14px * var(--ag-fs)); line-height: 1.75;
+}
+.ag-rd-note.is-shown { display: block; animation: ag-rd-fade 600ms ease both; }
+.ag-rd-note-label { display: block; margin-bottom: 2px; color: var(--rd-seal); font-size: calc(11px * var(--ag-fs)); letter-spacing: .24em; }
+@keyframes ag-rd-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+.ag-rd-controls { display: grid; gap: 8px; padding: 12px 18px 10px; border-top: 1px solid var(--rd-ink-faint); background: color-mix(in srgb, var(--rd-paper-deep) 45%, transparent); }
+.ag-rd-transport { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.ag-rd-step {
+  display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid var(--rd-ink-faint); border-radius: 50%;
+  background: transparent; color: var(--rd-ink); font: 18px var(--rd-font); cursor: pointer;
+}
+.ag-rd-step:hover { border-color: var(--rd-ink-soft); }
+.ag-rd-play {
+  min-width: 84px; height: 42px; padding: 0 18px; border: 0; border-radius: 21px; background: var(--rd-ink); color: var(--rd-paper);
+  font: 600 calc(15px * var(--ag-fs)) var(--rd-font); letter-spacing: .3em; cursor: pointer;
+}
+.ag-rd-play.is-playing { background: var(--rd-seal); color: var(--rd-seal-ink); }
+.ag-rd-options { display: flex; justify-content: center; gap: 10px; }
+.ag-rd-voice { padding: 5px 14px; border: 1px solid var(--rd-ink-faint); border-radius: 3px; background: transparent; color: var(--rd-ink); font: calc(13px * var(--ag-fs)) var(--rd-font); cursor: pointer; }
+.ag-rd-voice.is-on { border-color: var(--rd-seal); color: var(--rd-seal); }
+.ag-rd-voice-note { margin: 0; color: var(--rd-ink-soft); font-size: calc(12px * var(--ag-fs)); text-align: center; }
+.ag-rd-credit { margin: 0; color: var(--rd-ink-soft); font-size: calc(10px * var(--ag-fs)); text-align: center; letter-spacing: .04em; }
+
+/* ── 畫布上的章名卡、回到朗讀處 ───────────────── */
+.ag-rd-stage { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+.ag-rd-stage[hidden] { display: none; }
+.ag-rd-chapter-card {
+  position: absolute; top: 18%; left: 0; right: calc(clamp(340px, 31vw, 470px) + 28px);
+  display: grid; justify-items: center; gap: 6px; color: var(--rd-ink); font-family: var(--rd-font);
+  opacity: 0; transition: opacity 600ms ease;
+}
+.ag-rd-chapter-card.is-on { opacity: 1; }
+/* 章名卡底下一團淡淡的紙色，蓋過後面的家譜，字才讀得清楚 */
+.ag-rd-chapter-card::before {
+  content: ""; position: absolute; inset: -60px -10%; z-index: -1;
+  background: radial-gradient(closest-side, var(--rd-paper) 58%, color-mix(in srgb, var(--rd-paper) 70%, transparent) 78%, transparent 100%);
+}
+.ag-rd-chapter-card.is-on > * { animation: ag-rd-write 900ms cubic-bezier(.3, .1, .2, 1) both; }
+/* 朱印：四個字直寫兩行，由右往左讀 */
+.ag-rd-card-seal {
+  display: block; height: 52px; padding: 6px 7px; border-radius: 3px;
+  background: var(--rd-seal); color: var(--rd-seal-ink); font-size: 19px; font-weight: 600; line-height: 1.06; letter-spacing: .02em;
+  writing-mode: vertical-rl; transform: rotate(-5deg); box-shadow: 0 0 0 2px color-mix(in srgb, var(--rd-seal) 30%, transparent);
+}
+.ag-rd-chapter-card.is-on .ag-rd-card-seal { animation: ag-rd-stamp 620ms 260ms cubic-bezier(.2, .9, .3, 1.15) both; }
+.ag-rd-card-no { font-size: clamp(44px, 6vw, 72px); font-weight: 600; letter-spacing: .22em; text-shadow: 0 0 22px var(--rd-paper), 0 0 6px var(--rd-paper); }
+.ag-rd-card-title { padding: 2px 14px; background: color-mix(in srgb, var(--rd-paper) 82%, transparent); font-size: clamp(17px, 1.8vw, 22px); letter-spacing: .1em; }
+.ag-rd-return {
+  position: absolute; left: 22px; bottom: 22px; pointer-events: auto; padding: 8px 16px; border: 1px solid var(--rd-seal); border-radius: 20px;
+  background: var(--rd-paper); color: var(--rd-seal); font: 600 calc(14px * var(--ag-fs)) var(--rd-font); cursor: pointer; box-shadow: 0 8px 24px rgb(40 30 15 / 18%);
+}
+.ag-rd-return[hidden] { display: none; }
+
+/* 讀經時點了人物，人物卡放在左邊，不蓋住經文欄 */
+@media (min-width: 901px) {
+  .ag-reading .ag-info-card { right: auto; left: 16px; }
+}
+
+/* 動畫開關關掉：直接切換，不畫落筆、蓋印 */
+html[data-motion="off"] .ag-rd-halo,
+html[data-motion="off"] .ag-rd-seal-stamp,
+html[data-motion="off"] .ag-canvas.ag-rd-on .ag-node.ag-rd-current .ag-node-label,
+html[data-motion="off"] .ag-rd-seg.is-now,
+html[data-motion="off"] .ag-rd-chapter-card.is-on > *,
+html[data-motion="off"] .ag-rd-chapter-card.is-on .ag-rd-card-seal { animation: none; }
+
+/* ── 手機、平板：上半畫布，下半經文 ──────────── */
+@media (max-width: 900px) {
+  .ag-rd-panel { top: auto; right: 0; bottom: 0; left: 0; width: auto; height: 47dvh; border-radius: 14px 14px 0 0; border-bottom: 0; }
+  .ag-rd-head { grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto; gap: 8px; padding: 12px 14px 9px; }
+  .ag-rd-title { grid-column: 1; grid-row: 1; grid-auto-flow: column; justify-content: start; align-items: baseline; gap: 10px; }
+  .ag-rd-head .ag-rd-select { grid-column: 1 / -1; grid-row: 2; }
+  .ag-rd-close { grid-column: 2; grid-row: 1; }
+  .ag-rd-scroll { padding: 0 16px 32px; }
+  .ag-rd-verse { font-size: calc(17px * var(--ag-fs)); line-height: 1.95; }
+  .ag-rd-chapter-head { margin: 12px 0 10px; }
+  .ag-rd-chapter-no { font-size: calc(24px * var(--ag-fs)); }
+  .ag-rd-controls { padding: 8px 12px 8px; gap: 6px; }
+  .ag-rd-credit { display: none; }
+  .ag-rd-chapter-card { top: 3%; right: 0; gap: 2px; }
+  .ag-rd-chapter-card::before { inset: -24px 0; background: radial-gradient(closest-side, var(--rd-paper) 72%, transparent 100%); }
+  .ag-rd-card-no { font-size: 34px; }
+  .ag-rd-card-seal { height: 42px; padding: 4px 5px; font-size: 15px; }
+  .ag-rd-card-title { font-size: 15px; }
+  .ag-rd-return { left: auto; right: 12px; bottom: calc(47dvh + 12px); }
+}
+@media (max-width: 520px) {
+  .ag-rd-options { flex-wrap: wrap; }
+  .ag-rd-step { width: 34px; height: 34px; }
+  .ag-rd-play { min-width: 74px; height: 38px; }
+}

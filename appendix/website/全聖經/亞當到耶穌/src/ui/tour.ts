@@ -9,7 +9,7 @@ export interface TourController {
   showIntro(): void;
 }
 
-export function createTour(data: GenealogyData, canvas: CanvasApi, onVerse: (ref: string) => void): TourController {
+export function createTour(data: GenealogyData, canvas: CanvasApi, onVerse: (ref: string) => void, onRead?: () => void): TourController {
   const layer = h('div', { className: 'ag-tour-layer' });
   const stops = data.tour ?? [];
   let at = 0;
@@ -59,6 +59,9 @@ export function createTour(data: GenealogyData, canvas: CanvasApi, onVerse: (ref
       h('div', { className: 'ag-tour-progress' }, `${String(at + 1).padStart(2, '0')}／${String(stops.length).padStart(2, '0')}`),
       h('h2', {}, station.title),
       h('p', {}, station.text),
+      // 最後一站邀請讀者一節一節讀下去
+      at === stops.length - 1 && onRead ? h('p', { className: 'ag-tour-invite' }, '想一節一節讀歷代志上的家譜嗎？',
+        button('帶你讀經', () => { stop(false); onRead(); }, 'ag-text-button')) : null,
       h('div', { className: 'ag-chip-list ag-tour-refs' }, ...refsOf(station).map((ref) => linkButton(ref, () => onVerse(ref)))),
       h('div', { className: 'ag-tour-actions' },
         button('上一站', () => { at = Math.max(0, at - 1); showStop(); }, 'ag-quiet-button'),
