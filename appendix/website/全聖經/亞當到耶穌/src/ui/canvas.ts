@@ -710,6 +710,40 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       requestAnimationFrame(() => focusIds([id, ...(graph.children.get(id) ?? [])], true, READABLE_ZOOM));
     }
   };
+  // 「母親未記載」膠囊、疊在妻子上面的祖先小卡：只寫名字。膠囊點了展開或收合兒女；祖先小卡點了開人物卡
+  const renderCompact = (node: LayoutNode, person: Person, group: SVGGElement, capsule: boolean) => {
+    const top = -node.rectHeight / 2;
+    group.append(svgEl('rect', { x: node.rectX, y: top, width: node.rectWidth, height: node.rectHeight, rx: capsule ? node.rectHeight / 2 : 5 }));
+    const label = svgEl('text', { class: capsule ? 'ag-child-group-label' : 'ag-node-label', x: node.rectX + node.rectWidth / 2, y: 0.5, 'text-anchor': 'middle', 'dominant-baseline': 'central' });
+    label.textContent = person.name;
+    group.append(label);
+    const toggle = (open: boolean) => {
+      if (open) expanded.add(node.id); else expanded.delete(node.id);
+      refresh(true);
+      requestAnimationFrame(() => focusIds(open ? [node.id, ...(graph.children.get(node.id) ?? [])] : [node.id], true, READABLE_ZOOM));
+    };
+    if (capsule && (node.collapsed || node.expandedRoot)) {
+      const badge = svgEl('g', { class: node.collapsed ? 'ag-descendant-badge' : 'ag-collapse-badge', transform: `translate(${node.rectX + node.rectWidth + 12} ${top + 12})` });
+      badge.append(svgEl('circle', { r: node.collapsed ? 11 : 10 }), (() => {
+        const text = svgEl('text', { 'text-anchor': 'middle', 'dominant-baseline': 'central' });
+        text.textContent = node.collapsed ? `+${node.descendantCount ?? 0}` : '−';
+        return text;
+      })());
+      group.append(badge);
+    }
+    if (traceIds.has(node.id)) group.classList.add('ag-trace-node');
+    if (tourHighlightIds.has(node.id)) group.classList.add('ag-node-tour-lit');
+    if (tourCurrentId === node.id) group.classList.add('ag-node-tour-current');
+    if (selected === node.id) group.classList.add('ag-node-selected');
+    const activate = () => {
+      if (!capsule) onSelect(person);
+      else if (node.collapsed) toggle(true);
+      else if (node.expandedRoot) toggle(false);
+    };
+    group.addEventListener('click', (event) => { event.stopPropagation(); if (!didDrag) activate(); });
+    group.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); activate(); } });
+    return group;
+  };
   const renderNode = (node: LayoutNode) => {
     if (node.groupLabel && node.groupKey) {
       const group = svgEl('g', {
@@ -747,8 +781,12 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     // 母親的分身卡（利亞在以色列旁邊，本人的卡在娘家拉班那一支）：樣子和人物卡一樣，右上角「↗」，點了跳到本人那裡
     const bornOf = isBornOfNode(person) ? graph.bornOf.get(person.id) ?? graph.childRefs.get(person.id) : undefined;
     const onSpine = Boolean(bornOf && graph.childRefs.has(person.id));
+    // 「母親未記載」：妻子欄裡的膠囊，點了展開或收合經文沒寫母親的兒女
+    const capsule = person.kind === 'no-mother';
+    // 妻子欄的卡：卡片上緣標「妻子」（經文沒記成夫妻的標「生母」）
+    const wifeSlot = graph.wifeSlots.get(node.id);
     const group = svgEl('g', {
-      class: `ag-node${node.mainline ? ' ag-node-main' : ' ag-node-side'}${bornOf ? ' ag-node-born-of' : ''} ag-node-route-${lineFor(person)}${node.collapsed ? ' ag-node-collapsed' : ''}${plaque ? ` ag-node-plaque ag-node-plaque-${person.kind}` : ''}`,
+      class: `ag-node${node.mainline ? ' ag-node-main' : ' ag-node-side'}${bornOf ? ' ag-node-born-of' : ''}${capsule ? ' ag-node-no-mother' : ''}${node.chip ? ' ag-node-chip' : ''}${wifeSlot ? ' ag-node-wife' : ''} ag-node-route-${lineFor(person)}${node.collapsed ? ' ag-node-collapsed' : ''}${plaque ? ` ag-node-plaque ag-node-plaque-${person.kind}` : ''}`,
       transform: `translate(${node.x} ${node.y})`,
       'data-id': node.id,
       role: 'button', tabindex: '0',
@@ -757,6 +795,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
         : `${person.name}${node.collapsed ? `，展開 ${node.descendantCount ?? 0} 位後代` : onSpine ? '，到主線上看他' : bornOf ? '，到他娘家那一支看他' : ''}`,
       ...(plaque ? { 'aria-expanded': String(Boolean(node.expandedRoot)) } : {}),
     });
+    if (capsule || node.chip) return renderCompact(node, person, group, capsule);
     group.style.opacity = String(lineOpacity(lineFor(person)));
     const top = -node.height / 2;
     const rect = svgEl('rect', { x: node.rectX, y: top, width: node.rectWidth, height: node.rectHeight, rx: plaque ? (person.kind === 'region' ? 14 : 3) : node.mainline ? 8 : 6 });
@@ -767,6 +806,14 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     secondary.textContent = nodeSubtitle(person);
     const dot = svgEl('circle', { class: 'ag-node-dot', cx: 0, cy: 0, r: 3.2 });
     group.append(rect, dot, primary, secondary);
+    if (wifeSlot) {
+      const text = wifeSlot.spouse ? '妻子' : '生母';
+      const badge = svgEl('g', { class: 'ag-wife-badge', transform: `translate(${node.rectX - 6} ${top - 3})` });
+      badge.append(svgEl('rect', { x: 0, y: -8, width: 34, height: 16, rx: 3 }), (() => {
+        const label = svgEl('text', { x: 17, y: 0.5, 'text-anchor': 'middle', 'dominant-baseline': 'central' }); label.textContent = text; return label;
+      })());
+      group.append(badge);
+    }
     if (bornOf) {
       const mark = svgEl('text', { class: 'ag-born-of-mark', x: node.rectX + node.rectWidth - 9, y: top + 10, 'text-anchor': 'middle', 'dominant-baseline': 'central' });
       mark.textContent = '↗';
@@ -839,6 +886,15 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
   };
 
   // 夫妻、兄弟姊妹、親屬線：在靠近對方那一側才轉折，不要在兩人正中間往下走（會貼著分岔處的主線）
+  // 上下疊著的小卡（亞米忽 → 達買 → 瑪迦、拔示巴下面的烏利亞）：直直往下；並排的（以連、亞米利）先往下再橫到正中間
+  const stackPath = (a: LayoutNode, b: LayoutNode) => {
+    const [upper, lower] = a.y < b.y ? [a, b] : [b, a];
+    const startY = upper.y + upper.height / 2;
+    const endY = lower.y - lower.height / 2;
+    if (Math.abs(upper.x - lower.x) < 1) return `M${upper.x} ${startY} V${endY}`;
+    const midY = (startY + endY) / 2;
+    return `M${upper.x} ${startY} V${midY} H${lower.x} V${endY}`;
+  };
   const kinPath = (a: LayoutNode, b: LayoutNode) => {
     const direction = Math.sign(b.x - a.x) || 1;
     const startX = a.x + direction * a.width / 2;
@@ -857,7 +913,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     const facing = near === a ? direction : -direction;
     const edgeX = near.x + facing * near.rectWidth / 2;
     if (Math.abs(b.x - a.x) < 1) return { x: a.x + width / 2 + 6, y: (a.y + b.y) / 2 };
-    if ((endX - startX) * direction < width + 16) return { x: edgeX - facing * (width / 2 + 4), y: near.y - near.rectHeight / 2 - 11, above: near.id };
+    if ((endX - startX) * direction < width + 16) return { x: edgeX - facing * (width / 2 + 4), y: near.y - near.height / 2 - 11, above: near.id };
     return { x: edgeX + facing * (width / 2 + 6), y: near.y };
   };
   const edgePath = (a: LayoutNode, b: LayoutNode) => {
@@ -873,7 +929,8 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     const startX = a.x + direction * a.width / 2;
     const endX = b.x - direction * b.width / 2;
     // 轉折點從父母那頭量固定距離：同一位父母底下的孩子框寬不同（收著的有「+N」），也共用同一條直線
-    const midX = startX + direction * Math.min(Math.abs(endX - startX) / 2, 24);
+    const midX = b.busX !== undefined && !b.mainline && (b.busX - startX) * direction > 0 && (endX - b.busX) * direction > 0
+      ? b.busX : startX + direction * Math.min(Math.abs(endX - startX) / 2, 24);
     if (endX * direction < startX * direction) return `M${a.x + direction * a.width / 2} ${a.y} L${b.x - direction * b.width / 2} ${b.y}`;
     return `M${startX} ${a.y} H${midX} V${b.y} H${endX}`;
   };
@@ -908,7 +965,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       if (!a || !b) continue;
       const path = svgEl('path', {
         class: `ag-edge ag-edge-${edge.kind}${a.mainline && b.mainline ? ' ag-edge-main' : ''}${traceEdges.has(`${edge.from}>${edge.to}>${edge.kind}`) ? ' ag-edge-traced' : ''}${tourEdgeKeys.has(edge.key) ? ' ag-edge-tour-lit' : ''}`,
-        d: edge.kind === 'kin' ? kinPath(a, b) : edgePath(a, b), 'data-from': edge.from, 'data-to': edge.to,
+        d: a.chip || b.chip ? stackPath(a, b) : edge.kind === 'kin' ? kinPath(a, b) : edgePath(a, b), 'data-from': edge.from, 'data-to': edge.to,
         stroke: COLORS[edge.line] ?? COLORS.common,
         'stroke-width': tourEdgeKeys.has(edge.key) ? 4 : EDGE_WIDTH[edge.kind] ?? 1.7,
       });
@@ -949,7 +1006,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
         const names = others.map((other) => graph.byId.get(other)!.name);
         const prefix = `${label}：`;
         const width = (Array.from(prefix).length + names.reduce((sum, name) => sum + Array.from(name).length + 1, -1)) * 11 + 14;
-        const tag = svgEl('g', { class: 'ag-edge-label ag-far-link', transform: `translate(${node.x} ${node.y - node.rectHeight / 2 - 11 - row * 19})` });
+        const tag = svgEl('g', { class: 'ag-edge-label ag-far-link', transform: `translate(${node.x} ${node.y - node.height / 2 - (graph.wifeSlots.has(id) ? 20 : 11) - row * 19})` });
         tag.append(svgEl('rect', { x: -width / 2, y: -8, width, height: 16, rx: 8 }));
         const text = svgEl('text', { x: 0, y: 0.5, 'text-anchor': 'middle', 'dominant-baseline': 'central' });
         text.append(document.createTextNode(prefix));

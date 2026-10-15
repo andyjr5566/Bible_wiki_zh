@@ -185,7 +185,14 @@ a { color: var(--ag-focus); }
 .ag-far-link text { fill: var(--ag-muted); }
 .ag-far-link-name { pointer-events: auto; cursor: pointer; fill: var(--ag-ink); text-decoration: underline; text-underline-offset: 2px; }
 .ag-far-link-name:hover, .ag-far-link-name:focus-visible { fill: var(--ag-seal, var(--ag-ink)); outline: none; }
-/* 母親的分身卡：右上角「↗」表示本人的卡在娘家那一支 */
+/* 妻子欄：卡片上緣的「妻子」「生母」朱印小牌；「母親未記載」虛線膠囊；疊在妻子上面的祖先小卡 */
+.ag-wife-badge rect { fill: var(--ag-seal, #b3362c); }
+.ag-wife-badge text { fill: #fff8ee; font: 600 10px var(--ag-sans); letter-spacing: .08em; }
+.ag-node-no-mother rect { fill: var(--ag-paper-raised); stroke: var(--ag-border); stroke-width: 1.2; stroke-dasharray: 4 3; }
+.ag-node-no-mother .ag-child-group-label { fill: var(--ag-muted); }
+.ag-node-chip rect { stroke-width: 1; }
+.ag-node-chip .ag-node-label { font-size: 13px; }
+/* 「↗」卡：右上角「↗」表示本人的卡在別處（娘家那一支或主線上） */
 .ag-born-of-mark { fill: var(--ag-muted); font: 11px var(--ag-sans); pointer-events: none; }
 .ag-legend-line { display: inline-block; width: 18px; height: 0; border-top: 2.5px dotted var(--ag-branch); }
 .ag-canvas-legend-panel { position: absolute; right: 22px; bottom: 17px; display: grid; gap: 6px; max-width: calc(100% - 44px); padding: 8px 10px; border: 1px solid var(--ag-border); border-radius: 4px; background: color-mix(in srgb, var(--ag-paper-raised) 94%, transparent); pointer-events: none; }

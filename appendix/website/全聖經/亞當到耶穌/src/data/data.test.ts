@@ -120,9 +120,36 @@ describe('家譜資料閘門', () => {
       }
     }
     expect(missing).toEqual([]);
-    // 撒拉就在亞伯拉罕旁邊，線上標「妻子」
-    const sarah = layout.edges.find((edge) => edge.kind === 'kin' && [edge.from, edge.to].includes('撒拉') && [edge.from, edge.to].includes('亞伯拉罕'));
-    expect(sarah?.label).toBe('妻子');
+    // 撒拉本人在亞伯拉罕的妻子欄，卡上標「妻子」
+    expect(graph.wifeSlots.get('撒拉')).toEqual({ husband: '亞伯拉罕', wife: '撒拉', spouse: true });
+  });
+
+  it('一家人的層次：丈夫 → 妻子欄 → 兒女欄，兒女都在同一層', () => {
+    const graph = buildGraph(DATA);
+    const layout = computeLayout(DATA, everythingOpen(DATA));
+    const at = new Map(layout.nodes.map((node) => [node.id, node]));
+    const wrong: string[] = [];
+    for (const [slot, item] of graph.wifeSlots) {
+      // 妻子欄的卡都掛在丈夫底下，兒女都掛在某張妻子卡或「母親未記載」底下
+      if (graph.treeParent.get(slot) !== item.husband) wrong.push(`${slot} 不在 ${item.husband} 底下`);
+    }
+    for (const person of DATA.persons) {
+      const father = person.parents?.find((relation) => relation.role !== '母' && graph.byId.has(relation.id))?.id;
+      if (!father || graph.spineIds.has(person.id)) continue;
+      const column = (graph.children.get(father) ?? []).filter((id) => graph.wifeSlots.has(id) || graph.noMother.has(id));
+      if (!column.length || !at.has(person.id)) continue;
+      const up = graph.treeParent.get(person.id);
+      if (!up || !column.includes(up)) continue; // 經文另外把他放在別處的（例如名單牌子）
+      // 同一位父親的兒女在同一個水平位置（同一欄）
+      const siblings = DATA.persons.filter((other) => other.parents?.some((relation) => relation.id === father) && column.includes(graph.treeParent.get(other.id) ?? ''));
+      const xs = new Set(siblings.map((other) => Math.round(at.get(other.id)?.x ?? NaN)).filter((x) => !Number.isNaN(x)));
+      if (xs.size > 1) wrong.push(`${father} 的兒女不在同一欄`);
+    }
+    // 瑪迦的祖先疊在他上面；拔示巴上面是以連、亞米利，下面是烏利亞；他生的四個兒子都在他底下
+    expect(graph.ancestry.get('瑪迦')).toEqual([['亞米忽#達買之父'], ['達買']]);
+    expect(graph.ancestry.get('拔示巴')?.flat().sort()).toEqual(['亞米利#拔書亞之父', '以連'].sort());
+    expect(graph.otherHusbands.get('拔示巴')).toEqual(['烏利亞']);
+    expect([...new Set(wrong)]).toEqual([]);
   });
 
   it('名單牌子掛在圖上的人底下，區域在主線人物旁邊而且不畫連到主線的線', () => {

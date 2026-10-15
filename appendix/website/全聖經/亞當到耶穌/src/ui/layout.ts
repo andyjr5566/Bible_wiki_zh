@@ -1,5 +1,5 @@
 import { hierarchy, tree } from 'd3-hierarchy';
-import { branchRoots, buildGraph, descendantCount as countUnder, firstReference, isBornOfNode, isPlacementNode } from '../data/model';
+import { branchRoots, buildGraph, descendantCount as countUnder, firstReference, isPlacementNode } from '../data/model';
 import type { GenealogyData, Person } from '../data/types';
 
 export const MAIN_NODE_W = 96;
@@ -12,6 +12,10 @@ const SIDE_GAP_X = 24;
 const SIDE_LEVEL_GAP_X = 52;
 const SIDE_ROW_STEP = 82;
 const ROW_TREE_PADDING = 20;
+/** 疊在妻子上面的祖先小卡：高度與間距 */
+const CHIP_H = 26;
+const CHIP_GAP = 16;
+const CHIP_STEP = CHIP_H + CHIP_GAP;
 
 export interface LayoutNode {
   id: string;
@@ -34,6 +38,10 @@ export interface LayoutNode {
   groupLine?: string;
   groupParentId?: string;
   syntheticParent?: string;
+  /** 疊在妻子上面的祖先小卡（亞米忽 → 達買 → 瑪迦） */
+  chip?: boolean;
+  /** 接到這一欄的線在哪裡轉彎（緊貼在這一欄前面，同一欄共用一條直線） */
+  busX?: number;
 }
 
 export interface LayoutEdge {
@@ -84,6 +92,9 @@ interface BranchPlacement {
   groupLine?: string;
   groupParentId?: string;
   inGroup?: boolean;
+  chip?: boolean;
+  /** 同一排並列的小卡，左右錯開的距離 */
+  dx?: number;
   metrics: NodeMetrics;
 }
 
@@ -153,10 +164,24 @@ function groupNodeMetrics(label: string): NodeMetrics {
   return { width: rectWidth, height: rectHeight, rectX: -rectWidth / 2, rectWidth, rectHeight };
 }
 
-// 母親的分身卡（利亞在以色列旁邊）和一般人物卡同樣大小，四位妻子看起來一樣
+// 妻子的「↗」卡和一般人物卡同樣大小；「母親未記載」是膠囊
 function metricsFor(person: Person, control: boolean): NodeMetrics {
+  if (person.kind === 'no-mother') {
+    const base = groupNodeMetrics(person.name);
+    const extraWidth = control ? 24 : 0;
+    return { ...base, width: base.rectWidth + extraWidth, rectX: -((base.rectWidth + extraWidth) / 2) };
+  }
   return isPlacementNode(person) ? plaqueMetrics(person, control) : nodeMetrics(person, false, control);
 }
+
+function chipMetrics(person: Person): NodeMetrics {
+  const rectWidth = Math.max(64, Math.ceil(textWidth(person.name, 13) + 22));
+  return { width: rectWidth, height: CHIP_H, rectX: -rectWidth / 2, rectWidth, rectHeight: CHIP_H };
+}
+
+/** 這個人底下排成「妻子一欄 → 兒女一欄」 */
+const hasColumn = (graph: ReturnType<typeof buildGraph>, id: string) => (graph.children.get(id) ?? []).some((child) => graph.wifeSlots.has(child) || graph.noMother.has(child));
+const inColumn = (graph: ReturnType<typeof buildGraph>, id: string) => graph.wifeSlots.has(id) || graph.noMother.has(id);
 
 function buildForests(
   data: GenealogyData,
@@ -179,17 +204,20 @@ function buildForests(
     const placement = graph.placed.get(rootId);
     const route = lineColorKey(rootPerson) !== 'common' ? lineColorKey(rootPerson) : lineColorKey(parent);
     const outward: -1 | 1 = route === '馬太' ? -1 : 1;
-    // 母親、妻子放在另一側；只有共同主線（畫面中央）那段的另一側是空的，馬太、路加兩欄往中間放會撞到對面那一欄
-    // 孩子掛在他底下的妻子（夏甲、基土拉）和孩子同一側
-    const opposite = placement?.side === 'opposite' && !(graph.children.get(rootId) ?? []).length;
+    // 有妻子一欄的人：妻子欄放在外側，其他掛在他旁邊的（名單牌子、姊妹、親屬）放到另一側，免得混進妻子欄。
+    // 其他人照舊：母親、妻子放在另一側；只有共同主線（畫面中央）那段的另一側是空的，馬太、路加兩欄往中間放會撞到對面那一欄
+    const column = hasColumn(graph, parentId);
+    const opposite = column ? !inColumn(graph, rootId) : placement?.side === 'opposite' && !(graph.children.get(rootId) ?? []).length;
     const direction: -1 | 1 = opposite && lineColorKey(parent) === 'common' ? (-outward as -1 | 1) : outward;
     const key = `${parentId}\u0000${direction}`;
     const group = groups.get(key) ?? { parentId, direction, roots: [], extras: [] };
     // 主線在這裡分成馬太、路加兩欄時（大衛），左邊有馬太線往下走：放在左邊的母親、妻子要整組推到線外面
-    if (direction === -1 && (graph.children.get(parentId) ?? []).some((id) => graph.spineIds.has(id) && lineColorKey(graph.byId.get(id)!) === '馬太')) {
+    // 右邊有路加線往下走時（大衛的妻子欄）也一樣，整組推到那一欄外面
+    const splitLine = direction === -1 ? '馬太' : '路加';
+    if ((graph.children.get(parentId) ?? []).some((id) => graph.spineIds.has(id) && lineColorKey(graph.byId.get(id)!) === splitLine)) {
       clearColumn.add(key);
     }
-    if (placement) group.extras.push(rootId);
+    if (placement && !inColumn(graph, rootId)) group.extras.push(rootId);
     else {
       group.roots.push(rootId);
       rootCounts.set(parentId, (rootCounts.get(parentId) ?? 0) + 1);
@@ -203,7 +231,8 @@ function buildForests(
     const localAssigned = new Set<string>();
     const allRoots = [...group.roots, ...group.extras];
     const descendantCount = new Map(allRoots.map((id) => [id, countUnder(id, graph)]));
-    const grouped = (rootCounts.get(group.parentId) ?? 0) > 3 && group.roots.length > 1;
+    // 有妻子一欄的人不再收成「N 位子女」：每位妻子（和「母親未記載」）各自收合
+    const grouped = !hasColumn(graph, group.parentId) && (rootCounts.get(group.parentId) ?? 0) > 3 && group.roots.length > 1;
     const groupKey = `siblings:${group.parentId}:${group.direction}`;
     const groupOpen = grouped && (expanded.has(groupKey) || group.roots.every((id) => expanded.has(id)));
     const makeBranch = (id: string, rootId: string, includeChildren: boolean): BranchDatum | null => {
@@ -213,8 +242,8 @@ function buildForests(
       localAssigned.add(id);
       // 名單牌子和區域各自展開收合：上一層打開了，牌子底下的人還是要再點牌子才出來
       const open = isPlacementNode(person) ? expanded.has(id) : includeChildren;
-      // 直接掛在主線人物旁邊的「利亞所生」或帶著孩子的妻子：打開時只露出孩子，每個孩子再各自展開（和原本一個個兒子一樣）
-      const hubRoot = rootId === id && (isBornOfNode(person) || (graph.placed.get(id)?.via?.kind === 'spouse' && (graph.children.get(id) ?? []).length > 0));
+      // 直接掛在主線人物旁邊的妻子（和「母親未記載」）：打開時只露出兒女，每個兒女再各自展開
+      const hubRoot = rootId === id && inColumn(graph, id);
       const children = open
         ? (graph.children.get(id) ?? []).map((childId) => hubRoot ? makeBranch(childId, childId, expanded.has(childId)) : makeBranch(childId, rootId, true))
           .filter((item): item is BranchDatum => Boolean(item))
@@ -236,21 +265,47 @@ function buildForests(
     if (!rootData.length) continue;
     const datum: BranchDatum = { person: null, children: rootData };
     const root = hierarchy(datum, (item) => item.children);
-    const laidOut = tree<BranchDatum>().nodeSize([SIDE_ROW_STEP, 1])(root);
+    // 妻子上面疊著祖先小卡的，和上一位之間多留那一疊的高度
+    const chipsAbove = (item: { data: BranchDatum }) => (item.data.person ? graph.ancestry.get(item.data.person.id)?.length ?? 0 : 0) * CHIP_STEP;
+    const chipsBelow = (item: { data: BranchDatum }) => (item.data.person ? graph.otherHusbands.get(item.data.person.id)?.length ?? 0 : 0) * CHIP_STEP;
+    const laidOut = tree<BranchDatum>().nodeSize([SIDE_ROW_STEP, 1])
+      // d3 呼叫時兩個參數的上下順序不固定，兩種順序取大的
+      .separation((a, b) => (a.parent === b.parent ? 1 : 2) + Math.max(chipsAbove(b) + chipsBelow(a), chipsAbove(a) + chipsBelow(b)) / SIDE_ROW_STEP)(root);
     const visible = laidOut.descendants().filter((item) => item.data.person || item.data.groupLabel);
     const metricsOf = (item: typeof visible[number]) => item.data.groupLabel
       ? groupNodeMetrics(item.data.groupLabel)
-      : isPlacementNode(item.data.person) || isBornOfNode(item.data.person) ? metricsFor(item.data.person!, true)
+      : isPlacementNode(item.data.person) || item.data.person?.kind === 'no-mother' ? metricsFor(item.data.person!, true)
         : nodeMetrics(item.data.person!, false, item.data.rootId === item.data.person!.id && expanded.has(item.data.rootId));
     const top = Math.min(...visible.map((item) => {
-      return item.x - metricsOf(item).height / 2;
+      return item.x - metricsOf(item).height / 2 - chipsAbove(item);
     }));
     const bottom = Math.max(...visible.map((item) => {
-      return item.x + metricsOf(item).height / 2;
+      return item.x + metricsOf(item).height / 2 + chipsBelow(item);
     }));
     const center = (top + bottom) / 2;
     const levelWidths = new Map<number, number>();
-    const placements = visible.map((item): BranchPlacement => {
+    const placements = visible.flatMap((item): BranchPlacement[] => [placementOf(item), ...chipsOf(item)]);
+    // 妻子上面一排一排的祖先小卡（同一排並列），下面是他另一位丈夫的小卡
+    function chipsOf(item: typeof visible[number]): BranchPlacement[] {
+      const id = item.data.person?.id;
+      if (!id) return [];
+      const rows = graph.ancestry.get(id) ?? [];
+      const below = graph.otherHusbands.get(id) ?? [];
+      const cardTop = item.x - metricsOf(item).height / 2;
+      const cardBottom = item.x + metricsOf(item).height / 2;
+      const chip = (personId: string, vertical: number, dx = 0): BranchPlacement => {
+        const person = graph.byId.get(personId)!;
+        return { person, id: personId, rootId: item.data.rootId!, depth: item.depth, vertical: vertical - center, dx,
+          collapsed: false, expandedRoot: false, descendantCount: 0, chip: true, metrics: chipMetrics(person) };
+      };
+      const above = rows.flatMap((row, index) => {
+        const y = cardTop - CHIP_GAP - CHIP_H / 2 - (rows.length - 1 - index) * CHIP_STEP;
+        const step = Math.max(...row.map((personId) => chipMetrics(graph.byId.get(personId)!).rectWidth)) + 10;
+        return row.map((personId, column) => chip(personId, y, (column - (row.length - 1) / 2) * step));
+      });
+      return [...above, ...below.map((personId, index) => chip(personId, cardBottom + CHIP_GAP + CHIP_H / 2 + index * CHIP_STEP))];
+    }
+    function placementOf(item: typeof visible[number]): BranchPlacement {
       if (item.data.groupLabel && item.data.groupKey) {
         const metrics = groupNodeMetrics(item.data.groupLabel);
         levelWidths.set(item.depth, Math.max(levelWidths.get(item.depth) ?? 0, metrics.width));
@@ -283,7 +338,7 @@ function buildForests(
         inGroup: Boolean(item.parent?.data.groupKey),
         metrics,
       };
-    });
+    }
     forests.push({
       parentId: group.parentId,
       direction: group.direction,
@@ -293,7 +348,7 @@ function buildForests(
       levelWidths,
       ...(grouped ? { groupKey } : {}),
       grouped,
-      pushOut: clearColumn.has(`${group.parentId}\u0000${group.direction}`) ? COLUMN_W / 2 + 48 : 0,
+      pushOut: clearColumn.has(`${group.parentId}\u0000${group.direction}`) ? COLUMN_W : 0,
     });
   }
   return forests;
@@ -315,36 +370,28 @@ function buildEdges(data: GenealogyData, graph: ReturnType<typeof buildGraph>, v
   const lineOf = (id: string) => { const person = graph.byId.get(id); return person ? lineColorKey(person) : 'common'; };
   for (const person of data.persons) {
     const line = lineColorKey(person);
-    // 掛在母親底下的孩子（夏甲 → 以實瑪利、「利亞所生」→ 流便）：線從母親（或「利亞所生」）畫下來，
-    // 父親那一條由父親 → 妻子（或「利亞所生」）代表，不再另外拉一條
     const tree = graph.treeParent.get(person.id);
     const parents = person.parents ?? [];
-    const realHub = tree !== undefined && parents.some((relation) => relation.id === tree && relation.role === '母') && graph.placed.has(tree)
-      && parents.some((relation) => relation.id === graph.treeParent.get(tree));
-    const hubMother = tree === undefined ? undefined : graph.bornOf.get(tree) ?? (realHub ? tree : undefined);
-    const hubFather = hubMother === undefined ? undefined : graph.treeParent.get(tree!);
-    if (hubMother) add(tree!, person.id, 'parent', line);
+    const spine = graph.spineIds.has(person.id);
+    // 掛在妻子欄底下的兒女（瑪迦 → 押沙龍、「母親未記載」→ 益轄）：線從那張卡畫過來；
+    // 父親那一條由「父親 → 妻子欄」代表，母親就是那張卡，都不再另外拉線
+    const slot = tree === undefined ? undefined : graph.wifeSlots.get(tree);
+    const capsuleOf = tree === undefined ? undefined : graph.noMother.get(tree);
+    if (slot || capsuleOf) add(tree!, person.id, 'parent', line);
     for (const parent of parents) {
-      if (hubMother && (parent.id === hubMother || parent.id === hubFather)) continue;
+      if (slot && (parent.id === slot.husband || parent.id === slot.wife)) continue;
+      if (capsuleOf && parent.id === capsuleOf) continue;
       const childNode = nodesById.get(person.id);
       const groupingNode = childNode?.syntheticParent ? nodesById.get(childNode.syntheticParent) : undefined;
       if (groupingNode?.groupParentId === parent.id) continue;
       const kind = /母|mother/i.test(`${parent.role ?? ''} ${parent.type ?? ''}`) ? 'mother' : 'parent';
-      if (kind === 'mother' && tree !== parent.id) {
-        // 主線上的孩子（以撒、猶大）：母親就排在父親旁邊才畫母子線（撒拉 → 以撒）；
-        // 母親在娘家那一支（利亞在拉班底下），或排在父親另一側、線會橫越父親和主線的，改在孩子名字上方標「母親：利亞」
-        const fatherId = parents.find((relation) => relation.role !== '母' && graph.byId.has(relation.id))?.id;
-        const mother = nodesById.get(parent.id);
-        const child = nodesById.get(person.id);
-        const father = fatherId ? nodesById.get(fatherId) : undefined;
-        // 母親排在父親旁邊（撒拉在亞伯拉罕旁邊），或就排在孩子旁邊（他瑪在法勒斯旁邊）
-        const motherAt = graph.treeParent.get(parent.id);
-        const beside = (fatherId !== undefined && (motherAt === fatherId || (motherAt !== undefined && motherAt === graph.treeParent.get(fatherId))))
-          || motherAt === person.id;
-        if (!beside || (mother && child && father && (mother.x - father.x) * (child.x - father.x) < 0)) {
-          far(person.id, parent.id, '母親');
-          continue;
-        }
+      // 只畫排在一起的父母線：主線上的父子、掛在父母底下的人、疊在妻子上面的祖先（亞米忽 → 達買 → 瑪迦）。
+      // 其他（父母排在別處）不拉橫跨畫面的長線，改在名字上方標「父親：某某」「母親：某某」，點了跳過去
+      const chip = graph.treeParent.get(parent.id) === person.id || (tree !== undefined && graph.treeParent.get(parent.id) === tree && (graph.ancestry.get(tree) ?? []).flat().includes(parent.id));
+      const near = spine ? graph.spineIds.has(parent.id) : parent.id === tree || chip;
+      if (!near) {
+        far(person.id, parent.id, kind === 'mother' ? '母親' : '父親');
+        continue;
       }
       const source = String(parent.witness ?? parent.source ?? '');
       const relationLine = String(parent.line ?? witnessLines.get(source) ?? '');
@@ -352,27 +399,23 @@ function buildEdges(data: GenealogyData, graph: ReturnType<typeof buildGraph>, v
       const edgeLine = ['common', '馬太', '路加'].includes(relationLine) ? relationLine : refLine || line;
       add(parent.id, person.id, kind, edgeLine, kind === 'mother' ? '母親' : undefined);
     }
-    for (const ancestor of person.descends ?? []) add(ancestor.id, person.id, 'descends', line, ancestor.rel === '子孫' ? '子孫' : '後代');
+    for (const ancestor of person.descends ?? []) {
+      if (ancestor.id === tree) add(ancestor.id, person.id, 'descends', line, ancestor.rel === '子孫' ? '子孫' : '後代');
+    }
   }
   for (const node of nodesById.values()) {
     if (node.groupParentId && node.groupKey) add(node.groupParentId, node.id, 'parent', node.groupLine ?? 'common');
-    // 母親底下主線孩子的分身卡（拔示巴 → 所羅門）：照一般子女線
-    const refParent = graph.childRefs.has(node.id) ? graph.treeParent.get(node.id) : undefined;
-    if (refParent) add(refParent, node.id, 'parent', lineOf(graph.childRefs.get(node.id)!));
-    // 母親的分身卡：父親接過來的線標「妻子」（經文沒記成夫妻的，例如他瑪和猶大，標「孩子的母親」）
-    const father = graph.bornOf.has(node.id) ? graph.treeParent.get(node.id) : undefined;
-    const motherId = graph.bornOf.get(node.id);
-    const married = Boolean(father && motherId && (graph.byId.get(father)?.spouses?.some((item) => item.id === motherId)
-      || graph.byId.get(motherId)?.spouses?.some((item) => item.id === father)));
-    const wifeLabel = married ? relationLabel(graph, motherId!, father!, 'spouse') : '孩子的母親';
     if (node.syntheticParent) {
       const person = data.persons.find((candidate) => candidate.id === node.id);
       if (person) add(node.syntheticParent, node.id, 'parent', lineColorKey(person));
-      else if (father) add(node.syntheticParent, node.id, 'parent', lineOf(father), wifeLabel);
-    } else if (father) add(father, node.id, 'parent', lineOf(father), wifeLabel);
+    }
+    // 丈夫 → 妻子欄的每一張卡（本人、「↗」卡、「母親未記載」）；母親 → 兒女欄裡主線兒女的「↗」卡
+    const up = graph.treeParent.get(node.id);
+    if (up && inColumn(graph, node.id)) add(up, node.id, 'parent', lineOf(up));
+    if (up && graph.childRefs.has(node.id)) add(up, node.id, 'parent', lineOf(graph.childRefs.get(node.id)!));
   }
   // 大圖安置：名單牌子用點線掛在支派底下，牌子到各家用細線；區域不畫連到主線的線；
-  // 靠妻子、兄弟姊妹、親屬掛上來的一家，畫出那條經文關係
+  // 靠兄弟姊妹、親屬掛上來的一家，畫出那條經文關係（妻子已經排進妻子欄的不再畫）
   for (const node of data.placements?.nodes ?? []) {
     if (node.kind === 'list') add(node.under, node.id, 'list', lineOf(node.under));
   }
@@ -380,13 +423,11 @@ function buildEdges(data: GenealogyData, graph: ReturnType<typeof buildGraph>, v
     const under = graph.byId.get(item.under);
     if (under && (under.kind === 'list' || under.kind === 'family')) add(item.under, item.root, 'member', lineOf(item.root));
     if (!item.via || !['spouse', 'sibling', 'kin'].includes(item.via.kind)) continue;
-    const label = relationLabel(graph, item.via.from, item.via.to, item.via.kind);
-    // 孩子掛在他底下的妻子（夏甲、基土拉）：和子女同一側，用實線接到丈夫，像「丈夫 → 妻子 → 孩子」一條路下來
-    const hub = item.via.kind === 'spouse' && (graph.children.get(item.via.from) ?? []).length > 0;
-    add(item.via.to, item.via.from, hub ? 'parent' : 'kin', lineOf(hub ? item.via.to : item.via.from), label);
+    if (graph.treeParent.get(item.root) !== item.under || inColumn(graph, item.root)) continue;
+    add(item.via.to, item.via.from, 'kin', lineOf(item.via.from), relationLabel(graph, item.via.from, item.via.to, item.via.kind));
   }
-  // 經文記載的夫妻：兩人都在圖上而且離得近，就畫夫妻線；離得遠或對方還收著（例如利百加在娘家拿鶴那一支），
-  // 不拉橫跨整張圖的長線，改在名字上方標「妻子：利百加」，點了打開那一支跳過去
+  // 經文記載的夫妻：妻子已經在丈夫的妻子欄裡，就不用再標；其他排在兩處的，在名字上方標「妻子：某某」「丈夫：某某」
+  const slotPairs = new Set([...graph.wifeSlots].map(([slot, item]) => `${item.husband}|${item.wife}|${slot === item.wife ? 'own' : 'card'}`));
   const linked = new Set(result.flatMap((edge) => [`${edge.from}|${edge.to}`, `${edge.to}|${edge.from}`]));
   const done = new Set<string>();
   for (const person of data.persons) {
@@ -395,17 +436,15 @@ function buildEdges(data: GenealogyData, graph: ReturnType<typeof buildGraph>, v
       if (done.has(pair) || spouse.id === person.id || !graph.byId.has(spouse.id)) continue;
       done.add(pair);
       if (linked.has(`${person.id}|${spouse.id}`)) continue;
-      // 兩人不是排在一起的（亞西納在娘家波提非拉底下），線會斜穿別人的家，一律改標字，不畫線。
-      // 對方就掛在這個人底下（只是還收著），展開就看得到，不另外標
       const adjacent = graph.treeParent.get(spouse.id) === person.id || graph.treeParent.get(person.id) === spouse.id;
       if (adjacent) continue;
-      // 丈夫旁邊已經有這位妻子的分身卡（以色列旁邊的利亞），丈夫這邊就不再標
-      const card = (husband: string, wife: string) => graph.bornOf.has(`所生:${husband}:${wife}`);
-      if (!card(person.id, spouse.id)) far(person.id, spouse.id, relationLabel(graph, spouse.id, person.id, 'spouse'));
-      if (!card(spouse.id, person.id)) far(spouse.id, person.id, relationLabel(graph, person.id, spouse.id, 'spouse'));
+      for (const [a, b] of [[person.id, spouse.id], [spouse.id, person.id]] as const) {
+        // a 是丈夫、妻子欄裡有 b（本人或「↗」卡）：丈夫這邊不標；b 本人就在妻子欄：b 那邊也不標
+        if (slotPairs.has(`${a}|${b}|own`) || slotPairs.has(`${a}|${b}|card`) || slotPairs.has(`${b}|${a}|own`)) continue;
+        far(a, b, relationLabel(graph, b, a, 'spouse'));
+      }
     }
-  }
-  return result;
+  }  return result;
 }
 
 /** 線上的關係字：說的是 member 對 other 是什麼人（「妻子」＝member 是 other 的妻子）。 */
@@ -563,11 +602,13 @@ function positionSpine(
       const { metrics } = branch;
       nodes.set(branch.id, {
         id: branch.id,
-        x: parent.x + forest.direction * xOffset,
+        x: parent.x + forest.direction * xOffset + (branch.dx ?? 0),
+        busX: parent.x + forest.direction * (xOffset - (forest.levelWidths.get(branch.depth) ?? 0) / 2 - (branch.depth === 1 ? 12 : SIDE_LEVEL_GAP_X / 2)),
         y: parent.y + branch.vertical,
         ...metrics,
         sideRoot: branch.rootId,
         mainline: false,
+        ...(branch.chip ? { chip: true } : {}),
         collapsed: branch.collapsed,
         expandedRoot: branch.expandedRoot,
         descendantCount: branch.descendantCount,
