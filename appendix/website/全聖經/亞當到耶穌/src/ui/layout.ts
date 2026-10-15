@@ -93,6 +93,8 @@ interface NodeMetrics {
 
 interface BranchForest {
   parentId: string;
+  /** 第一層往外多推的距離（避開分岔處往下走的主線） */
+  pushOut?: number;
   direction: -1 | 1;
   roots: string[];
   placements: BranchPlacement[];
@@ -172,6 +174,7 @@ function buildForests(
   const groups = new Map<string, { parentId: string; direction: -1 | 1; roots: string[]; extras: string[] }>();
   const rootOwner = new Set<string>();
   const rootCounts = new Map<string, number>();
+  const clearColumn = new Set<string>();
   for (const { parentId, rootId } of branchRoots(data, graph)) {
     if (rootOwner.has(rootId)) continue;
     const rootPerson = graph.byId.get(rootId);
@@ -185,6 +188,10 @@ function buildForests(
     const direction: -1 | 1 = placement?.side === 'opposite' && lineColorKey(parent) === 'common' ? (-outward as -1 | 1) : outward;
     const key = `${parentId}\u0000${direction}`;
     const group = groups.get(key) ?? { parentId, direction, roots: [], extras: [] };
+    // 主線在這裡分成馬太、路加兩欄時（大衛），左邊有馬太線往下走：放在左邊的母親、妻子要整組推到線外面
+    if (direction === -1 && (graph.children.get(parentId) ?? []).some((id) => graph.spineIds.has(id) && lineColorKey(graph.byId.get(id)!) === '馬太')) {
+      clearColumn.add(key);
+    }
     if (placement) group.extras.push(rootId);
     else {
       group.roots.push(rootId);
@@ -286,6 +293,7 @@ function buildForests(
       levelWidths,
       ...(grouped ? { groupKey } : {}),
       grouped,
+      pushOut: clearColumn.has(`${group.parentId}\u0000${group.direction}`) ? COLUMN_W / 2 + 48 : 0,
     });
   }
   return forests;
@@ -308,6 +316,15 @@ function buildEdges(data: GenealogyData, graph: ReturnType<typeof buildGraph>, v
       const groupingNode = childNode?.syntheticParent ? nodesById.get(childNode.syntheticParent) : undefined;
       if (groupingNode?.groupParentId === parent.id) continue;
       const kind = /母|mother/i.test(`${parent.role ?? ''} ${parent.type ?? ''}`) ? 'mother' : 'parent';
+      // 母親放在父親的另一側時（例如大衛的妻子在左、兒子在右），母子線會橫越父親和主線，
+      // 和夫妻線、子女線糾在一起；這種就不畫，母親照樣列在人物卡上，讀經時墨線也會畫出來
+      if (kind === 'mother') {
+        const mother = nodesById.get(parent.id);
+        const child = nodesById.get(person.id);
+        const via = graph.treeParent.get(person.id);
+        const father = via ? nodesById.get(via) : undefined;
+        if (mother && child && father && (mother.x - father.x) * (child.x - father.x) < 0) continue;
+      }
       const source = String(parent.witness ?? parent.source ?? '');
       const relationLine = String(parent.line ?? witnessLines.get(source) ?? '');
       const refLine = /^太/.test(parent.ref ?? '') ? '馬太' : /^路/.test(parent.ref ?? '') ? '路加' : '';
@@ -464,7 +481,7 @@ function positionSpine(
     for (const depth of [...forest.levelWidths.keys()].sort((a, b) => a - b)) {
       const width = forest.levelWidths.get(depth)!;
       const offset = depth === 1
-        ? parent.width / 2 + SIDE_GAP_X + width / 2
+        ? parent.width / 2 + SIDE_GAP_X + width / 2 + (forest.pushOut ?? 0)
         : (depthOffsets.get(previousDepth) ?? 0) + previousWidth / 2 + SIDE_LEVEL_GAP_X + width / 2;
       depthOffsets.set(depth, offset);
       previousDepth = depth;
