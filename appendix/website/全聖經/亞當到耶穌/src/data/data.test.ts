@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { DATA, VERSES, branchRoots, expandVerseRefs, lookupVerses, buildGraph, makeSyntheticData, pathToFirstAncestor, searchNameForms, searchPeople } from './model';
+import { DATA, READING, VERSES, branchRoots, expandVerseRefs, lookupVerses, buildGraph, makeSyntheticData, pathToFirstAncestor, searchNameForms, searchPeople } from './model';
 import type { GenealogyData } from './types';
 import { computeLayout } from '../ui/layout';
 
@@ -234,6 +234,55 @@ describe('家譜資料閘門', () => {
     expect(layout.nodes.length).toBeGreaterThanOrEqual(graph.spineIds.size);
   });
 
+});
+
+describe('讀經資料閘門（代上 1–9 章）', () => {
+  const verses = READING.chapters.flatMap((chapter) => chapter.verses.map((verse) => ({ chapter: chapter.n, verse })));
+  const personIds = new Set(DATA.persons.map((person) => person.id));
+
+  it('407 節全收，經文和正式經文逐字相同', () => {
+    expect(READING.chapters.map((chapter) => chapter.n)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+    expect(verses.length).toBe(407);
+    for (const { chapter, verse } of verses) expect(verse.text, `代上${chapter}:${verse.v}`).toBe(VERSES[`代上${chapter}:${verse.v}`]);
+  });
+
+  it('每個標記的位置都在經文裡，前後不重疊', () => {
+    const errors: string[] = [];
+    for (const { chapter, verse } of verses) {
+      let end = 0;
+      for (const token of verse.t) {
+        if (token.s < end || token.e <= token.s || token.e > verse.text.length) errors.push(`代上${chapter}:${verse.v} ${token.s}-${token.e}`);
+        end = token.e;
+      }
+    }
+    expect(errors).toEqual([]);
+  });
+
+  it('人名對到的人物都存在，而且在大圖上有節點', () => {
+    const layoutIds = new Set(computeLayout(DATA, everythingOpen(DATA)).nodes.map((node) => node.id));
+    const missing: string[] = [];
+    for (const { chapter, verse } of verses) {
+      for (const token of verse.t) {
+        for (const id of [token.id, token.of, ...(token.from ?? [])].filter((value): value is string => Boolean(value))) {
+          if (!personIds.has(id) || !layoutIds.has(id)) missing.push(`代上${chapter}:${verse.v} ${id}`);
+        }
+      }
+    }
+    expect(missing).toEqual([]);
+    expect(verses.reduce((sum, { verse }) => sum + verse.t.filter((token) => token.k === 'p' && token.id).length, 0)).toBeGreaterThan(1500);
+  });
+
+  it('名單牌子與讀經提醒都對得上', () => {
+    const plaques = new Set((DATA.placements?.nodes ?? []).map((node) => node.id));
+    for (const { chapter, verse } of verses) {
+      if (verse.hold) expect(plaques.has(verse.hold), `代上${chapter}:${verse.v} ${verse.hold}`).toBe(true);
+      if (verse.note !== undefined) expect(READING.notes[verse.note], `代上${chapter}:${verse.v}`).toBeTruthy();
+    }
+    for (const note of READING.notes) {
+      expect(note.text).toBeTruthy();
+      for (const key of note.verses) expect(VERSES[key], key).toBeTruthy();
+    }
+  });
 });
 
 describe('三千人物版面壓力測試', () => {

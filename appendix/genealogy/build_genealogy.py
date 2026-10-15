@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import html
+import os
 import re
 import sys
 from collections import OrderedDict, defaultdict
@@ -2685,6 +2686,15 @@ class LineageBuilder:
         self._validate_name_meanings()
         self.placement_data = self._yaml("大圖安置.yaml", {}) or {}
         self.placements = self._compute_placements()
+        if str(HERE) not in sys.path:
+            sys.path.insert(0, str(HERE))
+        from reading import build_reading
+        self.reading_review: list[str] = []
+        self.reading = build_reading(self, {"parse_refs": parse_refs, "prefix_book": prefix_book, "display": display,
+                                            "FULL_TO_ABBR": FULL_TO_ABBR, "ROOT": ROOT})
+        review_path = os.environ.get("READING_REVIEW")
+        if review_path and self.reading_review:
+            Path(review_path).write_text("\n".join(self.reading_review) + "\n", encoding="utf-8")
 
     def err(self, where: str, msg: str) -> None:
         self.errors.append(f"[{where}] {msg}")
@@ -4304,6 +4314,9 @@ class LineageBuilder:
         }
         (output_dir / "genealogy.json").write_text(
             json.dumps(payload, ensure_ascii=False, separators=(",", ":"), default=str), encoding="utf-8")
+        if self.reading:
+            (output_dir / "reading.json").write_text(
+                json.dumps(self.reading, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         (output_dir / "verses.json").write_text(
             json.dumps(self.refs_used, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8")
 
