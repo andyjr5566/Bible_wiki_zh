@@ -956,7 +956,8 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
           if (index) text.append(document.createTextNode('、'));
           const name = svgEl('tspan', { class: 'ag-far-link-name', role: 'link', tabindex: '0', 'aria-label': `${label}${names[index]}，跳過去看` });
           name.textContent = names[index]!;
-          name.addEventListener('click', (event) => { event.stopPropagation(); jumpTo(other); });
+          // 拖動畫布時從名字上放開不算點（和人物卡一樣）
+          name.addEventListener('click', (event) => { event.stopPropagation(); if (!didDrag) jumpTo(other); });
           name.addEventListener('keydown', (event) => { if ((event as KeyboardEvent).key === 'Enter') { event.stopPropagation(); jumpTo(other); } });
           text.append(name);
         });
