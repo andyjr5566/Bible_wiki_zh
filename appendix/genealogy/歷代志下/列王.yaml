@@ -1205,7 +1205,7 @@ sections:
     - {id: 亞撒雅, desc: 王的臣僕, ref: '34:20'}
   - {ref: '34:21', covers: true}
   - ref: '34:22'
-    label: 女先知戶勒大和她的丈夫
+    label: 女先知戶勒大和他的丈夫
     roster:
     - {id: 戶勒大, pos: 女先知, desc: 掌管禮服沙龍的妻, ref: '34:22'}
     - {id: 沙龍, pos: 掌管禮服, desc: 哈斯拉的孫子、特瓦的兒子, ref: '34:22'}
