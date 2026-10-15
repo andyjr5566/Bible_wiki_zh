@@ -470,7 +470,8 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
     if (document.querySelector('.ag-modal-layer:not([hidden])')) return;
     if (event.key === 'ArrowRight') { event.preventDefault(); stepName(1); }
     else if (event.key === 'ArrowLeft') { event.preventDefault(); stepName(-1); }
-    else if (event.key === ' ' && !(target && target.tagName === 'BUTTON')) { event.preventDefault(); togglePlay(); }
+    // 焦點在按鈕或人名上時，空白鍵是按那個東西，不是播放／暫停
+    else if (event.key === ' ' && !target?.closest('button, [role="button"]')) { event.preventDefault(); togglePlay(); }
     else if (event.key === 'Escape') close();
   }
 

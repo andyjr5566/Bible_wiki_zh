@@ -612,7 +612,15 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
   // 讀經時的鏡頭：人已經在畫面舒適的範圍裡就不動；遠的先拉遠看到兩頭，再推近
   const READ_ZOOM_MIN = 0.86;
   const READ_ZOOM_MAX = 1.05;
+  // 每次飛行一個編號：新的飛行開始、或使用者自己動了畫布，舊的就不要再走第二段
+  let flight = 0;
+  const stopCamera = () => {
+    flight += 1;
+    cancelAnimationFrame(animationFrame);
+    finishAnimation();
+  };
   const flyTo = async (id: string, animate = true): Promise<void> => {
+    const mine = ++flight;
     const node = nodeById().get(id);
     if (!node) return;
     const rect = svg.getBoundingClientRect();
@@ -643,6 +651,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       else midWidth = midHeight * aspect;
       const mid: ViewBox = { x: (x0 + x1) / 2 - midWidth / 2, y: (y0 + y1) / 2 - midHeight / 2, width: midWidth, height: midHeight };
       await animateToBox(mid, true, 820);
+      if (mine !== flight) return;
       await animateToBox(target, true, 980);
       return;
     }
@@ -1172,7 +1181,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     setReading(on) {
       reading = on;
       if (on) ensureInkDefs(svg);
-      if (!on) marks = { lit: new Set(), trail: new Set(), current: null, seals: [], ink: [], fresh: new Set() };
+      if (!on) { marks = { lit: new Set(), trail: new Set(), current: null, seals: [], ink: [], fresh: new Set() }; stopCamera(); }
       drawReading(false);
     },
     setReadingMarks(next) {
@@ -1196,6 +1205,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
 
   svg.addEventListener('wheel', (event) => {
     event.preventDefault();
+    stopCamera();
     userCameraListener?.();
     const focus = worldPoint(event.clientX, event.clientY);
     const factor = Math.max(0.72, Math.min(1.4, Math.exp(-event.deltaY * 0.0015)));
@@ -1233,14 +1243,14 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       const height = pinchStart.box.height * width / pinchStart.box.width;
       const r = width / pinchStart.box.width;
       if (setUserViewBox({ x: focusX - (focusX - pinchStart.box.x) * r, y: focusY - (focusY - pinchStart.box.y) * r, width, height })) pinchStart = null;
-      if (!didDrag) userCameraListener?.();
+      if (!didDrag) { stopCamera(); userCameraListener?.(); }
       didDrag = true;
       return;
     }
     if (dragStart && dragBox && pointers.size === 1) {
       const dx = event.clientX - dragStart.x;
       const dy = event.clientY - dragStart.y;
-      if (Math.abs(dx) + Math.abs(dy) > 4) { if (!didDrag) userCameraListener?.(); didDrag = true; }
+      if (Math.abs(dx) + Math.abs(dy) > 4) { if (!didDrag) { stopCamera(); userCameraListener?.(); } didDrag = true; }
       if (!didDrag) return;
       const rect = svg.getBoundingClientRect();
       setViewBox({ x: dragBox.x - dx / Math.max(1, rect.width) * dragBox.width, y: dragBox.y - dy / Math.max(1, rect.height) * dragBox.height, width: dragBox.width, height: dragBox.height });

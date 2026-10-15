@@ -24,6 +24,10 @@ TITLE_PATTERNS = [
 STOP_CHARS = set("，。；：、的是和與又並及人生有")
 NUM_RE = re.compile(r"(?:共)?[零〇一二三四五六七八九十百千萬兩]+(?=人|名|代|歲|年|個|座|城|家|位)")
 CLAUSE_RE = re.compile(r"[，。；：！？]")
+# 兩個人名中間的字，寫明前一位是後一位的父親或母親
+STATED_FORWARD = re.compile(r"(的?(兒子|女兒|長子|次子|三子|四子|五子|六子|七子)(原?是|名叫)?|(又)?生(了)?(長子)?|所生的(兒子|長子)是?)")
+# 「後一位是前一位的兒子」的後半
+STATED_BACKWARD = re.compile(r"的(兒子|女兒|長子|次子)")
 
 
 def build_reading(builder, helpers: dict) -> dict | None:
@@ -88,22 +92,38 @@ def build_reading(builder, helpers: dict) -> dict | None:
         if statement.get("parent"):
             ids.append(str(statement["parent"]))
         return [pid for pid in ids if pid in people]
+    # 族譜逐句記的父子（「甲生乙」的鏈、某人的兒女）：記在這一句的經節，墨線就可以在那裡畫
+    statement_pairs: list[tuple[str, str, list[str]]] = []
     for section in source.get("sections", []) or []:
         for statement in section.get("statements", []) or []:
-            for k in verses_of(prefix_book(str(statement.get("ref", "")), abbr)):
+            keys = verses_of(prefix_book(str(statement.get("ref", "")), abbr))
+            for k in keys:
                 mentioned[k].update(statement_ids(statement))
+            chain = [str(item.get("id") if isinstance(item, dict) else item) for item in statement.get("chain", []) or []]
+            for parent, child in zip(chain, chain[1:]):
+                statement_pairs.append((child, parent, keys))
+            if statement.get("parent"):
+                for item in statement.get("children", []) or []:
+                    statement_pairs.append((str(item.get("id") if isinstance(item, dict) else item), str(statement["parent"]), keys))
     parents_of: dict[str, set[str]] = defaultdict(set)
+    relation_verses: dict[tuple[str, str], set[str]] = defaultdict(set)
     related: dict[str, set[str]] = defaultdict(set)
     for pid, person in people.items():
         for field in ("parents", "descends"):
             for relation in person.get(field, []) or []:
                 parents_of[pid].add(str(relation.get("id", "")))
+                # 這條父子／後代關係記在哪幾節：墨線只畫這一節（或同一句話）經文本身寫明的關係
+                for vk in verses_of(str(relation.get("ref", ""))):
+                    relation_verses[(pid, str(relation.get("id", "")))].add(vk)
         for field in RELATION_FIELDS:
             for relation in person.get(field, []) or []:
                 other = str(relation.get("id", ""))
                 if other in people and other != pid:
                     related[pid].add(other)
                     related[other].add(pid)
+    for child, parent, keys in statement_pairs:
+        if child in people and parent in people and parent in parents_of[child]:
+            relation_verses[(child, parent)].update(keys)
 
     # 地名詞庫：知識庫的地點條目＋代上族譜裡的城邑清單＋裁決檔補的
     places: set[str] = set(str(p) for p in spec.get("places", []) or [])
@@ -166,6 +186,7 @@ def build_reading(builder, helpers: dict) -> dict | None:
     previous_last: tuple[str, str] | None = None
     previous_section = None
     carry: list[str] = []
+    carry_keys: list[str] = []
     for c in range(first, last + 1):
         chapter = {"n": c, "title": chapter_titles.get(c, ""), "verses": []}
         v = 0
@@ -355,13 +376,25 @@ def build_reading(builder, helpers: dict) -> dict | None:
             # 墨線：排在他前面、經文記載是他父母或祖先的人（一句話跨到下一節時，上一節的人也算）
             if section_of.get(k) is None or previous_section != section_of.get(k).get("title"):
                 carry = []
+                carry_keys = []
             for index, token in enumerate(persons):
                 earlier = carry + [other["id"] for other in persons[:index]]
-                sources = [pid for pid in earlier if pid in parents_of[token["id"]]]
+                sentence = set(carry_keys) | {k}
+                sources = [pid for pid in earlier if pid in parents_of[token["id"]] and relation_verses[(token["id"], pid)] & sentence]
+                children = [pid for pid in earlier if token["id"] in parents_of[pid] and pid not in sources and relation_verses[(pid, token["id"])] & sentence]
+                # 這一節字面上就寫明的父子（「比珥的兒子比拉」「亞伯拉罕生以撒」「西番雅是他哈的兒子」），
+                # 資料把關係記在別卷經文時也算
+                if index:
+                    before = persons[index - 1]
+                    between = text[before["e"]:token["s"]]
+                    after = text[token["e"]:token["e"] + 4]
+                    if STATED_FORWARD.fullmatch(between) and before["id"] in parents_of[token["id"]] and before["id"] not in sources:
+                        sources.append(before["id"])
+                    if between == "是" and STATED_BACKWARD.match(after) and token["id"] in parents_of[before["id"]] and before["id"] not in children:
+                        children.append(before["id"])
                 if sources:
                     token["from"] = list(dict.fromkeys(sources))
                 # 倒著往上數的家譜（「希幔是約珥的兒子」）：讀到父親時，畫到前面已經讀過的兒子
-                children = [pid for pid in earlier if token["id"] in parents_of[pid] and pid not in sources]
                 if children:
                     token["to"] = list(dict.fromkeys(children))
             # 職稱屬於誰：裁決檔寫明的優先；否則緊貼在後的人名，再來是同一句前面最近的人
@@ -403,6 +436,7 @@ def build_reading(builder, helpers: dict) -> dict | None:
                 previous_last = (text[persons[-1]["s"]:persons[-1]["e"]], persons[-1]["id"])
             continues = not re.search(r"[。！？）]\s*$", text)
             carry = (carry + [p["id"] for p in persons]) if continues else []
+            carry_keys = (carry_keys + [k]) if continues else []
             previous_section = section.get("title") if section is not None else None
         chapters.append(chapter)
 
