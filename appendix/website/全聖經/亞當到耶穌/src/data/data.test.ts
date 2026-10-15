@@ -84,8 +84,12 @@ describe('家譜資料閘門', () => {
     expect(graph.treeParent.get('以實瑪利')).toBe('夏甲');
     expect(graph.bornOf.get(graph.treeParent.get('流便') ?? '')).toBe('利亞');
     expect(tags.has('利亞|猶大')).toBe(true);
-    // 「某某所生」不算進後代人數，也不是人物
+    // 分身卡不是人物；父母本來就排在同一處的（西庇太一家），不放分身卡，免得同一位母親在旁邊出現兩次
     expect(DATA.persons.some((person) => graph.bornOf.has(person.id))).toBe(false);
+    for (const [card, mother] of graph.bornOf) {
+      const father = graph.treeParent.get(card)!;
+      expect(graph.treeParent.get(mother) === graph.treeParent.get(father) && graph.treeParent.has(father), card).toBe(false);
+    }
   });
 
   it('經文記載的夫妻：兩人都在圖上時，不是有夫妻線，就是名字上方標出配偶', () => {

@@ -140,6 +140,8 @@ export function buildGraph(data: GenealogyData): PersonGraph {
     const father = (person.parents ?? []).find((relation) => relation.role !== '母' && byId.has(relation.id));
     const mother = (person.parents ?? []).find((relation) => relation.role === '母' && byId.has(relation.id));
     if (!father || !mother || treeParent.get(person.id) !== father.id) continue;
+    // 父母就排在同一處（西庇太和他兒子的母親都在「西庇太一家」裡）：不必再放分身卡，直接畫母子線
+    if (treeParent.has(father.id) && treeParent.get(mother.id) === treeParent.get(father.id)) continue;
     let hub = mother.id;
     if (treeParent.get(mother.id) !== father.id || !placed.has(mother.id)) {
       hub = `${BORN_OF_PREFIX}${father.id}:${mother.id}`;
