@@ -10,9 +10,9 @@ prophets_file: prophets.yaml
 
 chronology:
   label: Thiele 年表
-  source: 'Edwin R. Thiele, The Mysterious Numbers of the Hebrew Kings（新修訂版，Zondervan 1983）的考證。本庫收錄的註釋多處直接引用這套年代，例如《舊約聖經背景注釋》：「按照蒂利(Thiele)的考證，巴沙在位的日期是主前九○九至八八六年」。每位王的年代所根據的註釋原句，列在頁末附表「各王年代的出處」。'
+  source: 'Edwin R. Thiele, The Mysterious Numbers of the Hebrew Kings（新修訂版，Zondervan 1983）的考證。本庫收錄的註釋多處直接引用這套年代，例如《舊約聖經背景注釋》：「按照蒂利(Thiele)的考證，巴沙在位的日期是主前九○九至八八六年」。每位王的年代所根據的註釋原句，列在頁末附表『各王年代的出處』。'
   estimate_source: 掃羅、大衛、所羅門不在 Thiele 的年表內，用註釋給的約數，出處見頁末附表。
-  note: 年代不是經文本身的資料。經文只記「某王第幾年，某某登基」和在位年數，各家年表的換算不同；Thiele 的王年常寫成跨年（例如 641/640），各家註釋取的年份有時差一年。圖上的數字一律是「約」。
+  note: 年代不是經文本身的資料。經文只記『某王第幾年，某某登基』和在位年數，各家年表的換算不同；Thiele 的王年常寫成跨年（例如 641/640），各家註釋取的年份有時差一年。圖上的數字一律是「約」。
 
 kings:
 # ───────────── 統一王國 ─────────────
