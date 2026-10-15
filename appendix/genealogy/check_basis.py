@@ -62,6 +62,15 @@ def _read_scripture_range(ref: str, root: Path, where: str) -> tuple[list[str] |
         if min(start_chapter, start_verse, end_chapter, end_verse) < 1 or end < start:
             return None, _error(where, f"ref 範圍無效：{segment!r}")
 
+        # 起訖兩端都必須是存在的經節（避免「創5:1-999」這種超出章長的範圍被默默截斷）
+        for end_chapter_, end_verse_ in (start, end):
+            path = root / "raw_scripture" / BOOKS[book] / f"第{end_chapter_}章.txt"
+            try:
+                count = len(path.read_text(encoding="utf-8").splitlines())
+            except OSError:
+                return None, _error(where, f"經文檔不存在：raw_scripture/{BOOKS[book]}/第{end_chapter_}章.txt")
+            if end_verse_ > count:
+                return None, _error(where, f"經節不存在：{book}{end_chapter_}:{end_verse_}")
         chapter, verse = start
         while (chapter, verse) <= end:
             cache_key = (book, chapter)

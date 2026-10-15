@@ -92,6 +92,41 @@ for link in reading.get("links", []):
         if target.get("role") and target.get("member") and (target["role"], target["member"]) not in cells:
             rows[[r[0] for r in rows].index(segment_of.get(link["at"], rows[0][0]))][4] += 1
 
+# 標記的字必須是那個人的名字或別名（家譜樹人物：顯示名＋names[].as；職位圖的人：名字）
+forms: dict[str, set[str]] = defaultdict(set)
+for pid, person in persons.items():
+    forms[pid].add(person.get("name", pid.split("#")[0]))
+    forms[pid].update(str(n.get("as")) for n in person.get("names", []) or [] if n.get("as"))
+role_names = {p["rid"]: p["name"] for p in roles.get("people", [])}
+wrong_name: dict[str, list[str]] = defaultdict(list)
+# 裁決檔寫明「只在經文裡亮」的名字（names）：那個位置必須真的有一個沒有連到人的人名標記
+import yaml  # noqa: E402
+
+declared: list[tuple[str, str]] = []
+decision_dir = ROOT / "appendix/genealogy/亞當到耶穌"
+for path in [decision_dir / "讀經.yaml", *sorted((decision_dir / "讀經").glob("*.yaml"))]:
+    data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    for key, words in (data.get("names") or {}).items():
+        declared.extend((str(key), str(word)) for word in words or [])
+verse_of: dict[str, dict] = {}
+for segment in reading["segments"]:
+    for chapter in segment["chapters"]:
+        for verse in chapter["verses"]:
+            key = f"{chapter['book']}{chapter['n']}:{verse['v']}"
+            verse_of[key] = verse
+            for t in verse["t"]:
+                word = verse["text"][t["s"]:t["e"]]
+                if t.get("id") and word not in forms[t["id"]]:
+                    wrong_name[segment_of[key]].append(f"{key}「{word}」≠ {t['id']}")
+                if t.get("rid") and word != role_names.get(t["rid"]):
+                    wrong_name[segment_of[key]].append(f"{key}「{word}」≠ {t['rid']}")
+for key, word in declared:
+    verse = verse_of.get(key)
+    if verse is None:
+        continue
+    if not any(t["k"] == "p" and not t.get("id") and not t.get("rid") and verse["text"][t["s"]:t["e"]] == word for t in verse["t"]):
+        wrong_name[segment_of[key]].append(f"{key}「{word}」裁決說只在經文裡亮，卻沒有標")
+
 unhandled: dict[str, list[str]] = defaultdict(list)
 for pid, person in persons.items():
     for name in person.get("names", []) or []:
@@ -107,6 +142,10 @@ for category in roles.get("categories", []):
                 unhandled[segment_of[keys[0]]].append(f"{member['name']}（{box['title']}）{member['ref']}")
 for row in rows:
     row[5] = len(unhandled.get(row[0], []))
+    # 名字對不上人、宣告的名字沒標：算在「找不到人物」
+    row[4] += len(wrong_name.get(row[0], []))
+    for item in wrong_name.get(row[0], [])[:5]:
+        unhandled.setdefault(row[0], []).append("名字對不上：" + item)
 
 print("段落\t節數\t位置錯誤\t找不到人物\t未處理的人名")
 for seg_id, title, count, position, missing, todo in rows:

@@ -19,6 +19,8 @@ export interface ReaderApi {
   open(ref?: string, autoplay?: boolean): void;
   close(): void;
   isOpen(): boolean;
+  /** 讀經中要看家譜樹上的某個人（例如職位圖小卡的「在家譜樹上看」）：像偷看一樣換到家譜樹、停止跟隨 */
+  showOnTree(id: string): void;
 }
 
 const CHARS_PER_SECOND = 4.6;
@@ -100,7 +102,8 @@ export function createReader(reading: ReadingData, stages: { tree: ReadingStage;
   speedSelect.addEventListener('change', () => {
     speed = Number(speedSelect.value);
     storage.set('speed', String(speed));
-    if (playing && voiceOn) speakFromCursor();
+    // 換段的標題卡還在停的時候，語音交給停完的計時器去開，不在這裡先唸（否則會唸兩次）
+    if (playing && voiceOn && performance.now() >= pauseUntil) speakFromCursor();
   });
   const voiceButton = button('朗讀', () => toggleVoice(), 'ag-rd-voice');
   voiceButton.setAttribute('aria-pressed', 'false');
@@ -407,6 +410,8 @@ export function createReader(reading: ReadingData, stages: { tree: ReadingStage;
     if (plan.switching) {
       void switchTo(item.stage, { item, card: plan.card, focus: true, animate: !opening });
     } else {
+      // 還在等載入的換畫面請求（例如剛跳到職位圖的節、又立刻跳回家譜樹的節）一律作廢
+      switchSeq += 1;
       if (plan.card) showCard(item, plan.card === 'switch');
       if (follow) enterCamera(item, plan.fragmentChanged);
     }
@@ -707,5 +712,16 @@ export function createReader(reading: ReadingData, stages: { tree: ReadingStage;
   }
 
   stage.hidden = true;
-  return { panel, stage, open, close, isOpen: () => isOpen };
+  function showOnTree(id: string) {
+    if (!isOpen) return;
+    follow = false;
+    returnButton.hidden = false;
+    void switchTo('tree', { focus: false }).then(() => {
+      if (!isOpen || shown !== 'tree') return;
+      stages.tree.reveal([id]);
+      if (stages.tree.has(id)) void stages.tree.flyTo(id, true);
+    });
+  }
+
+  return { panel, stage, open, close, isOpen: () => isOpen, showOnTree };
 }

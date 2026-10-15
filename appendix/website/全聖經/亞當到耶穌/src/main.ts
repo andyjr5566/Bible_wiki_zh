@@ -118,6 +118,8 @@ const rolesView = createRoles({
   data,
   reading: READING,
   onTreePerson(id) {
+    // 讀經中：換到家譜樹看那個人（停止跟隨、出「回到朗讀處」）；平常：回家譜樹分頁並選取他
+    if (reader?.isOpen()) { reader.showOnTree(id); return; }
     const person = graph.byId.get(id);
     if (person) selectPerson(person);
   },

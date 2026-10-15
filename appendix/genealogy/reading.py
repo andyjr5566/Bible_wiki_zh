@@ -351,6 +351,11 @@ def build_reading(builder, helpers: dict) -> dict | None:
             for message in check_basis(item.get("basis"), l_where, root):
                 builder.err(l_where, message)
         refs = [str(r) for r in item.get("refs", []) or []]
+        # 小卡裡「」內的字必須逐字出現在 refs 的某一節經文
+        ref_texts = [builder.sc.verse(*p) or "" for ref in refs for p in (parse_refs(ref, "", builder.sc) if verses_of(ref) else [])]
+        for quote in re.findall(r"「([^「」]+)」", str(item.get("card", ""))):
+            if not any(quote in verse_text for verse_text in ref_texts):
+                builder.err(l_where, f"小卡的引句不在 refs 的經文裡：「{quote}」")
         for ref in refs:
             if not verses_of(ref):
                 builder.err(l_where, f"經節格式錯誤：{ref}")
@@ -466,6 +471,9 @@ def build_reading(builder, helpers: dict) -> dict | None:
                         pid = str(decision.get("rid") and ROLE_PREFIX + str(decision["rid"]) or decision.get("id", ""))
                         if not known(pid):
                             builder.err(f"讀經.decide.{k}", f"人物不存在：{pid}")
+                        elif text[span[0]:span[1]] not in surfaces[pid]:
+                            # 裁決只能指定「名字對得上」的人；寫法不同的要先在人物資料加 names 別名（附出處）
+                            builder.err(f"讀經.decide.{k}", f"「{text[span[0]:span[1]]}」不是 {pid} 的名字或別名")
                         assignment[span] = pid
                 elif len(spans[span]) == 1:
                     assignment[span] = next(iter(spans[span]))

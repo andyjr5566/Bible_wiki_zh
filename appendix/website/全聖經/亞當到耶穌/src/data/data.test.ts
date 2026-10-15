@@ -383,6 +383,18 @@ describe('讀經資料閘門（整條路線）', () => {
     expect(chronicles.reduce((sum, { verse }) => sum + verse.t.filter((token) => token.k === 'p' && token.id).length, 0)).toBeGreaterThan(1500);
   });
 
+  it('人名標記的字是那個人的名字或別名（避免把一個名字連到別人）', () => {
+    const forms = new Map(DATA.persons.map((person) => [person.id, new Set([person.name, ...(person.names ?? []).map((name) => name.as)])]));
+    const wrong: string[] = [];
+    for (const { key, verse } of verses) {
+      for (const token of verse.t) {
+        const word = verse.text.slice(token.s, token.e);
+        if (token.id && !forms.get(token.id)?.has(word)) wrong.push(`${key}「${word}」≠ ${token.id}`);
+      }
+    }
+    expect(wrong).toEqual([]);
+  });
+
   it('名單牌子、讀經提醒、差異小卡、歸回連結都對得上', () => {
     const plaques = new Set((DATA.placements?.nodes ?? []).map((node) => node.id));
     for (const { key, verse } of verses) {

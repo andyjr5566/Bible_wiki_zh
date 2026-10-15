@@ -33,14 +33,14 @@ segments:
   - {id: chr14, title: 大衛在耶路撒冷生的兒女, group: 大衛立的職位, ranges: 代上14:3-7, stage: tree, parallel: "代上3:5-9, 撒下5:13-16"}
   - {id: chr15, title: 抬約櫃和歌唱的利未人, group: 大衛立的職位, ranges: "代上15:4-24, 代上16:4-6, 代上16:37-42", stage: roles, auto_pool: false, people: [哥轄, 米拉利, 革順, 以利撒反, 希伯倫, 烏薛#哥轄, 利未, 大衛, 約押, 洗魯雅, 掃羅, 基士, 耶西, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳]}
   - {id: chr18, title: 大衛的官員, group: 大衛立的職位, ranges: "代上18:14-17, 撒下8:15-18, 撒下20:23-26", stage: roles, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 基士, 耶西, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳]}
-  - {id: chr23, title: 利未人的班次與職務, group: 大衛立的職位, ranges: 代上23:1-26:32, stage: roles, stages: {"代上23:6-23": tree, "代上24:1-2": tree, "代上24:20-30": tree, "代上25:2-5": tree, "代上26:1-3": tree}, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳, 尼珥, 利未, 革順, 哥轄, 米拉利, 暗蘭, 以斯哈, 希伯倫, 烏薛#哥轄, 抹利, 母示, 以利亞撒, 以他瑪, 拿答#亞倫, 亞比戶, 撒督, 希幔, 亞薩, 耶杜頓, 可拉, 米施利米雅, 可利, 革舜, 以利以謝#摩西]}
+  - {id: chr23, title: 利未人的班次與職務, group: 大衛立的職位, ranges: 代上23:1-26:32, stage: roles, stages: {"代上23:6-23": tree, "代上24:1-2": tree, "代上24:20-30": tree, "代上25:2-5": tree, "代上26:1-3": tree}, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳, 尼珥, 利未, 革順, 哥轄, 米拉利, 暗蘭, 以斯哈, 希伯倫, 烏薛#哥轄, 抹利, 母示, 以利亞撒, 以他瑪, 拿答#亞倫, 亞比戶, 撒督, 希幔, 亞薩, 可拉, 米施利米雅, 可利, 革舜, 以利以謝#摩西]}
   - {id: chr27, title: 軍隊、支派首領、管產業的、謀士, group: 大衛立的職位, ranges: 代上27:1-34, stage: roles, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 基士, 耶西, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳]}
   - {id: 2chr11, title: 羅波安的妻子兒女, group: 列王, ranges: 代下11:18-23, stage: tree}
   - {id: 2chr21, title: 約沙法的兒子, group: 列王, ranges: 代下21:2-3, stage: tree}
   - {id: 2chr24, title: 約阿施的兩個妻, group: 列王, ranges: 代下24:3, stage: tree}
-  - {id: ezra2, title: 從被擄之地歸回的人, group: 歸回, ranges: 拉2:1-70, stage: tree}
+  - {id: ezra2, title: 從被擄之地歸回的人, group: 歸回, ranges: 拉2:1-70, stage: tree, stages: {"拉2:36-39": roles, "拉2:61-62": roles}}
   - {id: ezra7, title: 以斯拉的家譜, group: 歸回, ranges: 拉7:1-5, stage: tree}
-  - {id: neh7, title: 尼希米記的歸回名單, group: 歸回, ranges: 尼7:6-73, stage: tree, parallel: 拉2:1-70}
+  - {id: neh7, title: 尼希米記的歸回名單, group: 歸回, ranges: 尼7:6-73, stage: tree, parallel: 拉2:1-70, stages: {"尼7:39-42": roles, "尼7:63-64": roles}}
   - {id: neh11, title: 住在耶路撒冷的人, group: 歸回, ranges: 尼11:1-36, stage: tree}
   - {id: neh12, title: 歸回的祭司和利未人, group: 歸回, ranges: 尼12:1-26, stage: tree}
   - {id: mat1, title: 耶穌基督的家譜（馬太）, group: 新約, ranges: 太1:1-17, stage: tree}

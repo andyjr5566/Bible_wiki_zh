@@ -684,9 +684,16 @@ export function createRoles(options: RolesOptions): RolesView {
     if (!index) return null;
     const role = roleTarget(target);
     if (role) return cellsByRole.get(cellKey(role.box, role.key))?.[0]?.el ?? boxEls.get(role.box) ?? null;
-    const own = cellsByPid.get(target)?.[0];
+    const own = cellOf(target);
     if (own) return own.el;
     return boxEls.get(target) ?? null;
+  }
+
+  /** 一個人在好幾個方塊裡時，先取這一節所屬的方塊（例如代上 27:5 的比拿雅取「十二班軍隊」，不取護衛長） */
+  function cellOf(target: string): Cell | undefined {
+    const cells = cellsByPid.get(target);
+    if (!cells?.length) return undefined;
+    return cells.find((cell) => marks.boxes.has(cell.place.box.id)) ?? cells[0];
   }
 
   function has(target: string): boolean {
@@ -701,6 +708,12 @@ export function createRoles(options: RolesOptions): RolesView {
     const node = targetElement(target);
     if (!node) return Promise.resolve();
     if (el.clientHeight === 0) { pending = { target, animate }; return Promise.resolve(); }
+    // 換畫面時容器正在縮放浮上來（transform），量到的位置是縮放後的；等動畫結束再定位
+    if (getComputedStyle(el).transform !== 'none') {
+      pending = { target, animate };
+      window.setTimeout(measure, 160);
+      return Promise.resolve();
+    }
     const view = viewSize();
     const style = getComputedStyle(el);
     const padTop = parseFloat(style.paddingTop) || 0;
@@ -741,7 +754,7 @@ export function createRoles(options: RolesOptions): RolesView {
     if (!roles || !index) return null;
     const layout = miniLayout(roles);
     const role = roleTarget(target);
-    const boxId = role ? role.box : cellsByPid.get(target)?.[0]?.place.box.id ?? (index.boxes.has(target) ? target : null);
+    const boxId = role ? role.box : cellOf(target)?.place.box.id ?? (index.boxes.has(target) ? target : null);
     const rect = boxId ? layout.boxes.get(boxId) : undefined;
     if (!rect) return null;
     return { x: (rect.x + rect.w / 2) / MINI_W, y: (rect.y + rect.h / 2) / MINI_H };
