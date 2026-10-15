@@ -41,7 +41,10 @@
   kin:
     - {id: 亞撒, rel: 祖母, ref: 王上15:9-10}
     - {id: 亞撒, rel: 祖母, ref: 代下15:16}
-  same_person: {basis: 經文標明又作瑪迦, refs: [代下13:2]}
+  # 經文標明又作瑪迦
+  same_person:
+    basis: [{ref: 代下13:2, quote: 他母親名叫米該亞【又作瑪迦】}]
+    refs: [代下13:2]
 
 - id: 押沙龍#瑪迦之父
   sex: m
@@ -259,7 +262,12 @@
   names:
     - {as: 亞比, ref: 王下18:2}
     - {as: 亞比雅, ref: 代下29:1}
-  same_person: {basis: 平行經文位置相同, refs: [王下18:2, 代下29:1]}
+  # 平行經文位置相同：同是希西家的母親、撒迦利雅的女兒
+  same_person:
+    basis:
+      - {ref: 王下18:2, quote: 他母親名叫亞比，是撒迦利雅的女兒}
+      - {ref: 代下29:1, quote: 他母親名叫亞比雅，是撒迦利雅的女兒}
+    refs: [王下18:2, 代下29:1]
   parents:
     - {id: 撒迦利雅#亞比之父, ref: 王下18:2}
     - {id: 撒迦利雅#亞比之父, ref: 代下29:1}
@@ -1206,7 +1214,10 @@
   kin:
     - {id: 末底改, rel: 叔叔的女兒, ref: 斯2:7}
     - {id: 末底改, rel: 收為自己女兒, ref: 斯2:15}
-  same_person: {basis: 經文標明後名以斯帖, refs: [斯2:7]}
+  # 經文標明後名以斯帖
+  same_person:
+    basis: [{ref: 斯2:7, quote: 哈大沙（後名以斯帖）}]
+    refs: [斯2:7]
 
 - id: 亞比孩#以斯帖之父
   sex: m
