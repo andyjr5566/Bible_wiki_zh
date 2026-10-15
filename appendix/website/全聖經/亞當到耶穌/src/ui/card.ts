@@ -77,7 +77,7 @@ export function createPersonCard(data: GenealogyData, actions: CardActions): Per
     body.replaceChildren();
     if (!person) {
       el.classList.remove('ag-card-open');
-      body.append(h('div', { className: 'ag-card-empty' }, h('span', {}, '選一個名字'), h('p', {}, '家譜中的人物資料會顯示在這裡。')));
+      body.append(h('div', { className: 'ag-card-empty' }, h('span', {}, '選一個名字'), h('p', {}, '點家譜上的名字，這裡會列出他的家人和經文。')));
       return;
     }
     el.classList.add('ag-card-open');
@@ -133,7 +133,7 @@ export function createPersonCard(data: GenealogyData, actions: CardActions): Per
           ...relationRefs(group.refs), ...group.notes.map((note) => h('p', { className: 'ag-relation-note' }, note))));
       }
       parentSection.append(list);
-    } else parentSection.append(h('p', { className: 'ag-muted' }, '資料沒有列出父母。'));
+    } else parentSection.append(h('p', { className: 'ag-muted' }, '經文沒有記載他的父母。'));
     body.append(parentSection);
 
     if (person.maybeSame?.length) {

@@ -165,17 +165,44 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     const height = Math.max(1, rect.height) / zoom;
     animateToBox({ x: x - width / 2, y: y - height / 2, width, height }, animate);
   };
-  const visibleFraction = () => (window.matchMedia('(max-width: 520px)').matches && document.querySelector('.ag-card-open') ? 0.42 : 1);
+  // 人物卡打開時，畫布還看得到的那一塊（以畫布寬高的比例表示）。
+  // 窄螢幕的人物卡從底部升起、寬螢幕的在右側；用版面位置算卡片最後停住的地方，
+  // 不看滑入動畫中的 transform，所以先開卡片、再移鏡頭也算得準。
+  const visibleArea = () => {
+    const full = { x0: 0, y0: 0, x1: 1, y1: 1 };
+    const card = document.querySelector<HTMLElement>('.ag-info-card.ag-card-open');
+    const rect = svg.getBoundingClientRect();
+    if (!card || rect.width < 1 || rect.height < 1) return full;
+    const parent = card.offsetParent?.getBoundingClientRect() ?? { left: 0, top: 0 };
+    const left = parent.left + card.offsetLeft;
+    const top = parent.top + card.offsetTop;
+    const right = left + card.offsetWidth;
+    const bottom = top + card.offsetHeight;
+    if (right <= rect.left || left >= rect.right || bottom <= rect.top || top >= rect.bottom) return full;
+    const gap = 12;
+    const clamp = (value: number) => Math.max(0, Math.min(1, value));
+    const area = { ...full };
+    if (left <= rect.left + 1 && right >= rect.right - 1) area.y1 = clamp((top - gap - rect.top) / rect.height);
+    else area.x1 = clamp((left - gap - rect.left) / rect.width);
+    // 剩下的空間太小時（例如橫放的手機），照整個畫布算，至少不會把人推出畫面
+    return area.y1 - area.y0 < 0.18 || area.x1 - area.x0 < 0.3 ? full : area;
+  };
   const fitRect = (x0: number, y0: number, x1: number, y1: number, animate = false, padding = 90, lockAspect = true, minZoom = 0, anchor?: { y: number; at: number }) => {
     const rect = svg.getBoundingClientRect();
     const aspect = Math.max(0.45, rect.width / Math.max(1, rect.height));
-    let width = Math.max(160, x1 - x0 + padding * 2);
-    let height = Math.max(160, y1 - y0 + padding * 2);
+    // 要看的東西得放進人物卡沒蓋住的那一塊
+    const area = visibleArea();
+    const fx = area.x1 - area.x0;
+    const fy = area.y1 - area.y0;
+    const cx = area.x0 + fx / 2;
+    const cy = area.y0 + fy / 2;
+    let width = Math.max(160, x1 - x0 + padding * 2) / fx;
+    let height = Math.max(160, y1 - y0 + padding * 2) / fy;
     if (lockAspect) {
       if (width / height > aspect) height = width / aspect;
       else width = height * aspect;
     }
-    const target: ViewBox = { x: (x0 + x1) / 2 - width / 2, y: (y0 + y1) / 2 - height / 2, width, height };
+    const target: ViewBox = { x: (x0 + x1) / 2 - width * cx, y: (y0 + y1) / 2 - height * cy, width, height };
     // 展開旁支時不能縮到會變成「總覽」的比例（總覽不畫旁支，使用者會看到空白）：
     // 太大放不下就維持可讀的比例，從這一組的頂端開始看，其餘用拖曳或捲動看
     if (minZoom > 0 && rect.height / target.height < minZoom) {
@@ -183,14 +210,11 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       const readableWidth = readableHeight * (width / height);
       target.width = readableWidth;
       target.height = readableHeight;
-      target.x = (x0 + x1) / 2 - readableWidth / 2;
-      if ((y1 - y0) + 2 * (padding / 3) <= readableHeight) target.y = (y0 + y1) / 2 - readableHeight / 2;
-      // 一條很長的路徑放不下時，讓指定的節點落在畫面的 at（0~1）處，其餘往外延伸；沒指定就從頂端開始看
-      else target.y = anchor ? anchor.y - readableHeight * anchor.at * visibleFraction() : y0 - padding / 3;
+      target.x = (x0 + x1) / 2 - readableWidth * cx;
+      if ((y1 - y0) + 2 * (padding / 3) <= readableHeight * fy) target.y = (y0 + y1) / 2 - readableHeight * cy;
+      // 一條很長的路徑放不下時，讓指定的節點落在看得到那一塊的 at（0~1）處，其餘往外延伸；沒指定就從頂端開始看
+      else target.y = anchor ? anchor.y - readableHeight * (area.y0 + anchor.at * fy) : y0 - padding / 3 - readableHeight * area.y0;
     }
-    // 手機上人物卡從底部蓋住畫布，要看的東西放在還看得到的上半部
-    const visible = visibleFraction();
-    if (visible < 1 && !(minZoom > 0 && rect.height / target.height < minZoom && anchor)) target.y += target.height * (0.5 - visible / 2);
     animateToBox(target, animate);
   };
   const finishAnimation = () => {
@@ -827,9 +851,11 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       if (!node) return;
       if (window.matchMedia('(max-width: 520px)').matches) {
         const rect = svg.getBoundingClientRect();
+        const area = visibleArea();
         const height = Math.max(220, rect.height * 15 / 14);
         const width = height * Math.max(0.45, rect.width / Math.max(1, rect.height));
-        animateToBox({ x: node.x - width / 2, y: node.y - height / 2, width, height }, animate);
+        // 人物放在人物卡上方還看得到的那一塊中間
+        animateToBox({ x: node.x - width * (area.x0 + area.x1) / 2, y: node.y - height * (area.y0 + area.y1) / 2, width, height }, animate);
       } else focusIds([id], animate);
     },
     focusIds,

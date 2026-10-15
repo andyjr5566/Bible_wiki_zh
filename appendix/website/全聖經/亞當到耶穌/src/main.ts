@@ -68,8 +68,9 @@ const selectPerson = (person: Person | null) => {
   activeCardPerson = person;
   const focusId = focusIdForPerson(person);
   canvas.select(focusId);
-  if (focusId) canvas.focusPerson(focusId, true);
+  // 先開人物卡，鏡頭才知道卡片蓋住哪裡，把人移到看得到的地方
   card.show(person);
+  if (focusId) canvas.focusPerson(focusId, true);
   history.replaceState(null, '', `${location.pathname}${location.search}#p=${encodeURIComponent(person.id)}`);
 };
 
@@ -259,7 +260,7 @@ const main = h('main', { className: 'ag-main' });
 for (const element of pageNodes.values()) main.append(element);
 main.append(card.el);
 const footer = h('footer', { className: 'ag-footer' },
-  h('span', {}, '家譜依資料中的經文記載呈現。'),
+  h('span', {}, '家譜照經文的記載畫出。'),
   h('span', {}, synthetic ? '合成壓力測試資料' : `${data.persons.length.toLocaleString()} 位人物`));
 app.replaceChildren(toolbar.el, main, footer, tour.el, verseLayer);
 applyPage();
