@@ -124,6 +124,17 @@ describe('家譜資料閘門', () => {
     expect(graph.wifeSlots.get('撒拉')).toEqual({ husband: '亞伯拉罕', wife: '撒拉', spouse: true });
   });
 
+  it('經文記的「某人的後代」：不是畫虛線，就是名字上方標「祖先：某某」', () => {
+    const layout = computeLayout(DATA, everythingOpen(DATA));
+    const ids = new Set(layout.nodes.map((node) => node.id));
+    const lines = new Set(layout.edges.filter((edge) => edge.kind === 'descends').map((edge) => `${edge.from}|${edge.to}`));
+    const tags = new Set(layout.farLinks.filter((item) => item.label === '祖先').map((item) => `${item.other}|${item.id}`));
+    const missing = DATA.persons.flatMap((person) => (person.descends ?? [])
+      .filter((ancestor) => ids.has(person.id) && ids.has(ancestor.id) && !lines.has(`${ancestor.id}|${person.id}`) && !tags.has(`${ancestor.id}|${person.id}`))
+      .map((ancestor) => `${ancestor.id} → ${person.id}`));
+    expect(missing).toEqual([]);
+  });
+
   it('一家人的層次：丈夫 → 妻子欄 → 兒女欄，兒女都在同一層', () => {
     const graph = buildGraph(DATA);
     const layout = computeLayout(DATA, everythingOpen(DATA));

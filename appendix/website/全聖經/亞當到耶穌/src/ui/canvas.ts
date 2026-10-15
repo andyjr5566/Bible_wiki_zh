@@ -795,6 +795,8 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
         : `${person.name}${node.collapsed ? `，展開 ${node.descendantCount ?? 0} 位後代` : onSpine ? '，到主線上看他' : bornOf ? '，到他娘家那一支看他' : ''}`,
       ...(plaque ? { 'aria-expanded': String(Boolean(node.expandedRoot)) } : {}),
     });
+    // 選了馬太或路加線時，不在那條線上的一起淡出（小卡、膠囊也一樣）
+    group.style.opacity = String(lineOpacity(lineFor(person)));
     if (capsule || node.chip) return renderCompact(node, person, group, capsule);
     group.style.opacity = String(lineOpacity(lineFor(person)));
     const top = -node.height / 2;
@@ -1085,7 +1087,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
           const a = currentNodes.get(edge.from);
           const b = currentNodes.get(edge.to);
           const element = edgeEls.get(edge.key);
-          if (a && b && element) element.setAttribute('d', edge.kind === 'kin' ? kinPath(a, b) : edgePath(a, b));
+          if (a && b && element) element.setAttribute('d', a.chip || b.chip ? stackPath(a, b) : edge.kind === 'kin' ? kinPath(a, b) : edgePath(a, b));
         }
         if (t < 1) layoutAnimationFrame = requestAnimationFrame(tick);
         else cullToViewport();

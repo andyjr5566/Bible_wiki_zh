@@ -400,7 +400,9 @@ function buildEdges(data: GenealogyData, graph: ReturnType<typeof buildGraph>, v
       add(parent.id, person.id, kind, edgeLine, kind === 'mother' ? '母親' : undefined);
     }
     for (const ancestor of person.descends ?? []) {
+      // 掛在那位祖先底下的畫虛線；祖先排在別處的（西羅非哈和瑪吉、基列）標「祖先：某某」
       if (ancestor.id === tree) add(ancestor.id, person.id, 'descends', line, ancestor.rel === '子孫' ? '子孫' : '後代');
+      else if (graph.byId.has(ancestor.id)) far(person.id, ancestor.id, '祖先');
     }
   }
   for (const node of nodesById.values()) {
