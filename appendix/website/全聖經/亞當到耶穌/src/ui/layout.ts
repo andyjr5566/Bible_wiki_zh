@@ -42,6 +42,8 @@ export interface LayoutEdge {
   kind: 'parent' | 'mother' | 'descends' | 'list' | 'member' | 'kin';
   line: string;
   key: string;
+  /** 不是父子的線，在靠近對方那頭標出關係（妻子、妹子、母親、後代……） */
+  label?: string;
 }
 
 export interface CanvasLayout {
@@ -303,11 +305,11 @@ function buildEdges(data: GenealogyData, graph: ReturnType<typeof buildGraph>, v
   const result: LayoutEdge[] = [];
   const seen = new Set<string>();
   const witnessLines = new Map((data.witnesses ?? []).map((witness) => [witness.id, witness.line ?? 'common']));
-  const add = (from: string, to: string, kind: LayoutEdge['kind'], line: string) => {
+  const add = (from: string, to: string, kind: LayoutEdge['kind'], line: string, label?: string) => {
     const key = `${from}\u0000${to}\u0000${kind}\u0000${line}`;
     if (seen.has(key) || !visibleIds.has(from) || !visibleIds.has(to)) return;
     seen.add(key);
-    result.push({ from, to, kind, line, key });
+    result.push({ from, to, kind, line, key, ...(label ? { label } : {}) });
   };
   for (const person of data.persons) {
     const line = lineColorKey(person);
@@ -329,9 +331,9 @@ function buildEdges(data: GenealogyData, graph: ReturnType<typeof buildGraph>, v
       const relationLine = String(parent.line ?? witnessLines.get(source) ?? '');
       const refLine = /^太/.test(parent.ref ?? '') ? '馬太' : /^路/.test(parent.ref ?? '') ? '路加' : '';
       const edgeLine = ['common', '馬太', '路加'].includes(relationLine) ? relationLine : refLine || line;
-      add(parent.id, person.id, kind, edgeLine);
+      add(parent.id, person.id, kind, edgeLine, kind === 'mother' ? '母親' : undefined);
     }
-    for (const ancestor of person.descends ?? []) add(ancestor.id, person.id, 'descends', line);
+    for (const ancestor of person.descends ?? []) add(ancestor.id, person.id, 'descends', line, ancestor.rel === '子孫' ? '子孫' : '後代');
   }
   for (const node of nodesById.values()) {
     if (node.groupParentId && node.groupKey) add(node.groupParentId, node.id, 'parent', node.groupLine ?? 'common');
@@ -349,9 +351,21 @@ function buildEdges(data: GenealogyData, graph: ReturnType<typeof buildGraph>, v
   for (const item of data.placements?.items ?? []) {
     const under = graph.byId.get(item.under);
     if (under && (under.kind === 'list' || under.kind === 'family')) add(item.under, item.root, 'member', lineOf(item.root));
-    if (item.via && ['spouse', 'sibling', 'kin'].includes(item.via.kind)) add(item.via.to, item.via.from, 'kin', lineOf(item.via.from));
+    if (item.via && ['spouse', 'sibling', 'kin'].includes(item.via.kind)) add(item.via.to, item.via.from, 'kin', lineOf(item.via.from), relationLabel(graph, item.via.from, item.via.to, item.via.kind));
   }
   return result;
+}
+
+/** 線上的關係字：說的是 member 對 other 是什麼人（「妻子」＝member 是 other 的妻子）。 */
+function relationLabel(graph: ReturnType<typeof buildGraph>, member: string, other: string, kind: string): string {
+  const person = graph.byId.get(member);
+  if (kind === 'spouse') return person?.sex === 'f' ? '妻子' : person?.sex === 'm' ? '丈夫' : '配偶';
+  const field = kind === 'sibling' ? 'siblings' : 'kin';
+  // 記在 member 自己身上、指向 other 的那一筆，rel 就是 member 對 other 的稱呼（例如葉忒羅是摩西的岳父）
+  const own = (person?.[field] as Array<{ id: string; rel?: string }> | undefined)?.find((relation) => relation.id === other)?.rel;
+  if (own && own !== '親屬' && own !== '親族') return own;
+  if (kind === 'sibling') return person?.sex === 'f' ? '姊妹' : '兄弟';
+  return '親屬';
 }
 
 /** 展開的區域畫一個框，把區域裡各家框在一起。 */

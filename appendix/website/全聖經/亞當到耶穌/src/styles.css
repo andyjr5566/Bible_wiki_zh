@@ -176,6 +176,12 @@ a { color: var(--ag-focus); }
 .ag-node-plaque .ag-descendant-badge circle { fill: var(--ag-seal); }
 .ag-node-plaque:hover rect { fill: var(--ag-selected); }
 .ag-region-frame rect { fill: color-mix(in srgb, var(--ag-paper-shadow) 55%, transparent); stroke: var(--ag-faint); stroke-width: 1.2; stroke-dasharray: 1 6; stroke-linecap: round; }
+/* 線上的關係字（妻子、妹子、母親、後代……）：小小的淡色標籤，不搶名字的焦點 */
+.ag-edge-label { pointer-events: none; }
+.ag-edge-label rect { fill: var(--ag-paper); stroke: var(--ag-border); stroke-width: 1; }
+.ag-edge-label text { fill: var(--ag-muted); font: 10px var(--ag-sans); letter-spacing: .04em; }
+.ag-edge-label-kin text { fill: var(--ag-ink); }
+.ag-rd-on .ag-edge-label { opacity: .55; }
 .ag-legend-line { display: inline-block; width: 18px; height: 0; border-top: 2.5px dotted var(--ag-branch); }
 .ag-canvas-legend-panel { position: absolute; right: 22px; bottom: 17px; display: grid; gap: 6px; max-width: calc(100% - 44px); padding: 8px 10px; border: 1px solid var(--ag-border); border-radius: 4px; background: color-mix(in srgb, var(--ag-paper-raised) 94%, transparent); pointer-events: none; }
 .ag-canvas-hint { color: var(--ag-muted); font-size: calc(11px * var(--ag-fs)); pointer-events: none; }

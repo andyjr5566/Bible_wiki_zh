@@ -78,9 +78,11 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
   const overviewLayer = svgEl('g', { class: 'ag-overview-layer' });
   const nodeLayer = svgEl('g', { class: 'ag-node-layer' });
   const inkLayer = svgEl('g', { class: 'ag-rd-ink-layer' });
+  const labelLayer = svgEl('g', { class: 'ag-edge-label-layer' });
+  let labelEls = new Map<string, SVGGElement>();
   const sealLayer = svgEl('g', { class: 'ag-rd-seal-layer' });
   const hudLayer = svgEl('g', { class: 'ag-overview-hud' });
-  scene.append(segmentLayer, frameLayer, edgeLayer, inkLayer, overviewLayer, nodeLayer, sealLayer, hudLayer);
+  scene.append(segmentLayer, frameLayer, edgeLayer, labelLayer, inkLayer, overviewLayer, nodeLayer, sealLayer, hudLayer);
   svg.append(scene);
   const graph = buildGraph(data);
   const expanded = new Set<string>();
@@ -290,6 +292,8 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     segmentLayer.style.display = overview ? '' : 'none';
     frameLayer.style.display = overview ? 'none' : '';
     inkLayer.style.display = overview ? 'none' : '';
+    // 線上的關係字只在放大看得清名字時出現
+    labelLayer.style.display = overview || zoomLevel < READABLE_ZOOM * 0.92 ? 'none' : '';
     sealLayer.style.display = overview ? 'none' : '';
     overviewLayer.style.display = overview ? '' : 'none';
     hudLayer.style.display = overview ? '' : 'none';
@@ -354,6 +358,8 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
         Math.max(from!.y, to!.y) >= top && Math.min(from!.y, to!.y) <= bottom;
       const el = edgeEls.get(edge.key);
       if (el) el.style.display = shown ? '' : 'none';
+      const label = labelEls.get(edge.key);
+      if (label) label.style.display = shown ? '' : 'none';
     }
   }
 
@@ -819,8 +825,21 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     const startX = a.x + direction * a.width / 2;
     const endX = b.x - direction * b.width / 2;
     if (Math.abs(b.y - a.y) < 1) return `M${startX} ${a.y} H${endX}`;
-    const turnX = endX - direction * 14;
+    const turnX = endX - direction * 46;
     return `M${startX} ${a.y} H${turnX} V${b.y} H${endX}`;
+  };
+  // 關係字放在靠近對方那一頭的轉角：同一個人連到好幾位（大衛的三位妻子）時，字各在各的高度，不會疊在一起
+  // 字靠在被描述的那個人旁邊：母親線靠母親，妻子、妹子、後代靠那個人；兩人中間太窄就放在那人的上方角落
+  const labelPoint = (kind: string, a: LayoutNode, b: LayoutNode, width: number) => {
+    const direction = Math.sign(b.x - a.x) || 1;
+    const startX = a.x + direction * a.rectWidth / 2;
+    const endX = b.x - direction * b.rectWidth / 2;
+    const near = kind === 'mother' ? a : b;
+    const facing = near === a ? direction : -direction;
+    const edgeX = near.x + facing * near.rectWidth / 2;
+    if (Math.abs(b.x - a.x) < 1) return { x: a.x + width / 2 + 6, y: (a.y + b.y) / 2 };
+    if ((endX - startX) * direction < width + 16) return { x: edgeX - facing * (width / 2 + 4), y: near.y - near.rectHeight / 2 - 11 };
+    return { x: edgeX + facing * (width / 2 + 6), y: near.y };
   };
   const edgePath = (a: LayoutNode, b: LayoutNode) => {
     const dx = b.x - a.x;
@@ -851,6 +870,8 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     mainEdgeEls = new Map();
     edgeLayer.replaceChildren();
     nodeLayer.replaceChildren();
+    labelLayer.replaceChildren();
+    labelEls = new Map();
     frameLayer.replaceChildren();
     for (const frame of layout.regions) {
       const box = svgEl('g', { class: 'ag-region-frame', 'data-region': frame.id });
@@ -873,6 +894,18 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       edgeLayer.append(path);
       edgeEls.set(edge.key, path);
       if (a.mainline && b.mainline) mainEdgeEls.set(edge.key, path);
+      if (edge.label) {
+        const width = Array.from(edge.label).length * 11 + 10;
+        const at = labelPoint(edge.kind, a, b, width);
+        const tag = svgEl('g', { class: `ag-edge-label ag-edge-label-${edge.kind}`, transform: `translate(${at.x} ${at.y})` });
+        tag.style.opacity = String(lineOpacity(edge.line));
+        tag.append(svgEl('rect', { x: -width / 2, y: -8, width, height: 16, rx: 8 }));
+        const text = svgEl('text', { x: 0, y: 0.5, 'text-anchor': 'middle', 'dominant-baseline': 'central' });
+        text.textContent = edge.label;
+        tag.append(text);
+        labelLayer.append(tag);
+        labelEls.set(edge.key, tag);
+      }
     }
     for (const node of allLayoutNodes()) {
       const rendered = renderNode(node);
