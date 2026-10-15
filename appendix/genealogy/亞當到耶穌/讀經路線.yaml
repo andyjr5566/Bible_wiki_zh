@@ -1,0 +1,47 @@
+# 帶你讀經的路線（唯一來源；由 ../reading.py 讀取）
+#
+# 讀者按一次「帶你讀經」，從創 4:17 一路讀到路 3:38。每一段：
+#   id：段落代號（網址、選單用，不給讀者看）
+#   title：讀者看得到的段落名（不加「」，除非是逐字經文）
+#   group：段落選單的分組
+#   ranges：經文範圍（可多段）
+#   stage：預設畫面（tree 家譜樹／roles 大衛立的職位）
+#   stages：段內換畫面的地方（經節範圍 → 畫面），依「這幾節在講什麼」切
+#   parallel：平行經文（同一份名單的另一處記載）；那裡記的人也算這一段的候選人
+#   chronicles：代上 1–9，沿用附錄的章名、小段、讀經提醒、名單牌子
+start: 創4:17
+segments:
+  - {id: gen4, title: 該隱和塞特的後代, group: 創世記, ranges: 創4:17-26, stage: tree}
+  - {id: gen5, title: 亞當到挪亞, group: 創世記, ranges: 創5:1-32, stage: tree, parallel: 代上1:1-4}
+  - {id: gen10, title: 挪亞三個兒子的後代, group: 創世記, ranges: 創10:1-32, stage: tree, parallel: 代上1:4-23}
+  - {id: gen11, title: 閃到亞伯蘭, group: 創世記, ranges: 創11:10-32, stage: tree, parallel: 代上1:17-27}
+  - {id: gen22, title: 拿鶴的兒子, group: 創世記, ranges: 創22:20-24, stage: tree}
+  - {id: gen25a, title: 基土拉的兒子, group: 創世記, ranges: 創25:1-4, stage: tree, parallel: 代上1:32-33}
+  - {id: gen25b, title: 以實瑪利的兒子, group: 創世記, ranges: 創25:12-18, stage: tree, parallel: 代上1:28-31}
+  - {id: gen29, title: 雅各的兒子出生, group: 創世記, ranges: "創29:31-30:24, 創35:16-18", stage: tree}
+  - {id: gen35, title: 雅各的十二個兒子, group: 創世記, ranges: 創35:22-26, stage: tree}
+  - {id: gen36, title: 以掃的後代, group: 創世記, ranges: 創36:1-43, stage: tree, parallel: 代上1:35-54}
+  - {id: gen46, title: 下埃及的雅各家, group: 創世記, ranges: 創46:8-27, stage: tree}
+  - {id: exo6, title: 流便、西緬、利未的家長, group: 出埃及記到撒母耳記, ranges: 出6:14-25, stage: tree}
+  - {id: ruth4, title: 法勒斯到大衛, group: 出埃及記到撒母耳記, ranges: 得4:18-22, stage: tree, parallel: 代上2:4-15}
+  - {id: sam14, title: 掃羅的家, group: 出埃及記到撒母耳記, ranges: 撒上14:49-51, stage: tree}
+  - {id: sam3, title: 大衛在希伯崙生的兒子, group: 出埃及記到撒母耳記, ranges: 撒下3:2-5, stage: tree, parallel: 代上3:1-4}
+  - {id: sam5, title: 大衛在耶路撒冷生的兒女, group: 出埃及記到撒母耳記, ranges: 撒下5:13-16, stage: tree, parallel: "代上3:5-9, 代上14:3-7"}
+  - {id: chr1-9, title: 歷代志上的族譜, group: 歷代志上的族譜, ranges: 代上1:1-9:44, stage: tree, chronicles: true}
+  - {id: chr11, title: 大衛的勇士, group: 大衛立的職位, ranges: 代上11:10-47, stage: roles, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 基士, 耶西, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳]}
+  - {id: chr12, title: 投奔大衛的人, group: 大衛立的職位, ranges: 代上12:1-40, stage: roles, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 基士, 耶西, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳]}
+  - {id: chr14, title: 大衛在耶路撒冷生的兒女, group: 大衛立的職位, ranges: 代上14:3-7, stage: tree, parallel: "代上3:5-9, 撒下5:13-16"}
+  - {id: chr15, title: 抬約櫃和歌唱的利未人, group: 大衛立的職位, ranges: "代上15:4-24, 代上16:4-6, 代上16:37-42", stage: roles, auto_pool: false, people: [哥轄, 米拉利, 革順, 以利撒反, 希伯倫, 烏薛#哥轄, 利未, 大衛, 約押, 洗魯雅, 掃羅, 基士, 耶西, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳]}
+  - {id: chr18, title: 大衛的官員, group: 大衛立的職位, ranges: "代上18:14-17, 撒下8:15-18, 撒下20:23-26", stage: roles, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 基士, 耶西, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳]}
+  - {id: chr23, title: 利未人的班次與職務, group: 大衛立的職位, ranges: 代上23:1-26:32, stage: roles, stages: {"代上23:6-23": tree, "代上24:1-2": tree, "代上24:20-30": tree, "代上25:2-5": tree, "代上26:1-3": tree}, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳, 尼珥, 利未, 革順, 哥轄, 米拉利, 暗蘭, 以斯哈, 希伯倫, 烏薛#哥轄, 抹利, 母示, 以利亞撒, 以他瑪, 拿答#亞倫, 亞比戶, 撒督, 希幔, 亞薩, 耶杜頓, 可拉, 米施利米雅, 可利, 革舜, 以利以謝#摩西]}
+  - {id: chr27, title: 軍隊、支派首領、管產業的、謀士, group: 大衛立的職位, ranges: 代上27:1-34, stage: roles, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 基士, 耶西, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳]}
+  - {id: 2chr11, title: 羅波安的妻子兒女, group: 列王, ranges: 代下11:18-23, stage: tree}
+  - {id: 2chr21, title: 約沙法的兒子, group: 列王, ranges: 代下21:2-3, stage: tree}
+  - {id: 2chr24, title: 約阿施的兩個妻, group: 列王, ranges: 代下24:3, stage: tree}
+  - {id: ezra2, title: 從被擄之地歸回的人, group: 歸回, ranges: 拉2:1-70, stage: tree}
+  - {id: ezra7, title: 以斯拉的家譜, group: 歸回, ranges: 拉7:1-5, stage: tree}
+  - {id: neh7, title: 尼希米記的歸回名單, group: 歸回, ranges: 尼7:6-73, stage: tree, parallel: 拉2:1-70}
+  - {id: neh11, title: 住在耶路撒冷的人, group: 歸回, ranges: 尼11:1-36, stage: tree}
+  - {id: neh12, title: 歸回的祭司和利未人, group: 歸回, ranges: 尼12:1-26, stage: tree}
+  - {id: mat1, title: 耶穌基督的家譜（馬太）, group: 新約, ranges: 太1:1-17, stage: tree}
+  - {id: luke3, title: 耶穌的家譜（路加）, group: 新約, ranges: 路3:23-38, stage: tree}

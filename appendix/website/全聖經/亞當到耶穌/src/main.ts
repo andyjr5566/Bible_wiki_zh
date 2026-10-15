@@ -1,6 +1,6 @@
 import './styles.css';
 import './reading.css';
-import { DATA, READING, VERSES, buildGraph, isPlacementNode, lookupVerses, makeSyntheticData, pathToFirstAncestor } from './data/model';
+import { DATA, READING, VERSES, buildGraph, isPlacementNode, loadRoles, lookupVerses, makeSyntheticData, pathToFirstAncestor } from './data/model';
 import { SPEECH_FIXES } from './data/speech-fixes';
 import type { GenealogyData, GenealogyNote, Person } from './data/types';
 import { createAges } from './ui/ages';
@@ -11,8 +11,10 @@ import { button, h } from './ui/dom';
 import { createNotes } from './ui/notes';
 import { createToolbar, type LineFilter, type PageId } from './ui/toolbar';
 import { createReader } from './ui/reader';
+import { createRoles } from './ui/roles';
 import { createSpeech } from './ui/speech';
 import { createTour } from './ui/tour';
+import { createTreeStage } from './ui/tree-stage';
 
 const synthetic = import.meta.env.DEV && new URLSearchParams(location.search).get('synthetic') === '1';
 const data: GenealogyData = synthetic ? makeSyntheticData() : DATA;
@@ -88,8 +90,7 @@ card = createPersonCard(data, {
   note: openNote,
 });
 
-const treePage = h('section', { className: 'ag-workspace ag-page-view', 'data-page': 'tree' },
-  h('div', { className: 'ag-canvas-wrap' }, canvas.el,
+const canvasWrap = h('div', { className: 'ag-canvas-wrap' }, canvas.el,
     h('div', { className: 'ag-canvas-legend-panel' },
       h('div', { className: 'ag-legend' },
         h('span', {}, h('i', { className: 'ag-dot ag-dot-common' }), '共同主線'),
@@ -97,7 +98,8 @@ const treePage = h('section', { className: 'ag-workspace ag-page-view', 'data-pa
         h('span', {}, h('i', { className: 'ag-dot ag-dot-luke' }), '路加'),
         h('span', {}, h('i', { className: 'ag-dot ag-dot-side' }), '旁支'),
         h('span', {}, h('i', { className: 'ag-legend-line ag-legend-list' }), '只列在名單裡')),
-      h('div', { className: 'ag-canvas-hint' }, '拖曳移動畫布 · 滾輪縮放 · 觸控可平移與雙指縮放'))));
+      h('div', { className: 'ag-canvas-hint' }, '拖曳移動畫布 · 滾輪縮放 · 觸控可平移與雙指縮放')));
+const treePage = h('section', { className: 'ag-workspace ag-page-view', 'data-page': 'tree' }, canvasWrap);
 const comparePage = createCompare(data, (id) => {
   const person = graph.byId.get(id);
   if (person) selectPerson(person);
@@ -110,8 +112,19 @@ const notesPage = createNotes(data, VERSES, (id) => {
   const person = graph.byId.get(id);
   if (person) selectPerson(person);
 }, openVerse);
+// 大衛立的職位：平常是自己的分頁；讀經時這個元素被借去當舞台（疊在畫布上），讀完再放回來，始終只有一份
+const rolesView = createRoles({
+  load: loadRoles,
+  data,
+  reading: READING,
+  onTreePerson(id) {
+    const person = graph.byId.get(id);
+    if (person) selectPerson(person);
+  },
+});
+const rolesPage = h('section', { className: 'ag-page-view ag-rd-roles-page', 'data-page': 'roles' }, rolesView.el);
 const pageNodes = new Map<PageId, HTMLElement>([
-  ['tree', treePage], ['compare', comparePage], ['ages', agesPage], ['notes', notesPage],
+  ['tree', treePage], ['compare', comparePage], ['ages', agesPage], ['notes', notesPage], ['roles', rolesPage],
 ]);
 
 function focusTreeTarget(id: string) {
@@ -133,6 +146,7 @@ function focusIdForPerson(person: Person): string | null {
 
 function applyPage() {
   for (const [id, element] of pageNodes) element.hidden = id !== page;
+  if (page === 'roles') rolesView.showPage();
   toolbar?.setState();
 }
 
@@ -155,9 +169,13 @@ const toolbar = createToolbar(data, {
   getLine: () => line,
   getPage: () => page,
 });
-const reader = createReader(READING, canvas, {
+const treeStage = createTreeStage(canvas, data, graph, canvasWrap, READING);
+const reader = createReader(READING, { tree: treeStage, roles: rolesView }, {
   speech: createSpeech({ replacements: SPEECH_FIXES }),
   onOpenChange(open) {
+    // 讀經時職位圖借去疊在畫布上；離開讀經就放回分頁
+    if (open) canvasWrap.append(rolesView.el);
+    else rolesPage.append(rolesView.el);
     if (open) {
       tour.stop(false);
       page = 'tree';
@@ -169,11 +187,20 @@ const reader = createReader(READING, canvas, {
     toolbar.setState();
   },
 });
+// 家譜樹上的職位印：點了到「大衛立的職位」，捲到那個方塊並標亮那個人（讀經時印只是標示，不換頁）
+canvas.onRoleSeal((boxId, personId) => {
+  if (reader.isOpen()) return;
+  activeCardPerson = null;
+  card.show(null);
+  page = 'roles';
+  applyPage();
+  void rolesView.ready().then(() => rolesView.focusBox(boxId, personId));
+});
 const tour = createTour(data, canvas, openVerse, () => reader.open());
 const main = h('main', { className: 'ag-main' });
 for (const element of pageNodes.values()) main.append(element);
 main.append(card.el, reader.panel);
-treePage.querySelector('.ag-canvas-wrap')?.append(reader.stage);
+canvasWrap.append(reader.stage);
 const footer = h('footer', { className: 'ag-footer' },
   h('span', {}, '家譜照經文的記載畫出。'),
   h('span', {}, synthetic ? '合成壓力測試資料' : `${data.persons.length.toLocaleString()} 位人物`));

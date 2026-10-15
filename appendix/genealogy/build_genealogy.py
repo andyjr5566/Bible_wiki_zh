@@ -2689,9 +2689,16 @@ class LineageBuilder:
         if str(HERE) not in sys.path:
             sys.path.insert(0, str(HERE))
         from reading import build_reading
+        try:
+            from check_basis import check_basis
+        except ImportError:
+            check_basis = None
+        from roles import build_roles
+        helpers = {"parse_refs": parse_refs, "prefix_book": prefix_book, "display": display,
+                   "FULL_TO_ABBR": FULL_TO_ABBR, "ROOT": ROOT, "check_basis": check_basis}
+        self.roles_data, self.role_seals = build_roles(self, self._yaml("職位.yaml", {}) or {}, helpers)
         self.reading_review: list[str] = []
-        self.reading = build_reading(self, {"parse_refs": parse_refs, "prefix_book": prefix_book, "display": display,
-                                            "FULL_TO_ABBR": FULL_TO_ABBR, "ROOT": ROOT})
+        self.reading = build_reading(self, helpers)
         review_path = os.environ.get("READING_REVIEW")
         if review_path and self.reading_review:
             Path(review_path).write_text("\n".join(self.reading_review) + "\n", encoding="utf-8")
@@ -4312,12 +4319,20 @@ class LineageBuilder:
                           "roots": family.get("roots", []), "count": self._family_count(family.get("roots", [])),
                           "intro": family.get("intro", "")} for family in self.data.get("families", []) or []],
             "ntFamilies": self.data.get("nt_families", []), "sources": self.sources,
+            "roleSeals": self.role_seals,
         }
         (output_dir / "genealogy.json").write_text(
             json.dumps(payload, ensure_ascii=False, separators=(",", ":"), default=str), encoding="utf-8")
         if self.reading:
             (output_dir / "reading.json").write_text(
                 json.dumps(self.reading, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        if self.roles_data:
+            roles_out = {"categories": [{**category, "boxes": [{k: v for k, v in box.items() if k != "verses"}
+                                                                for box in category["boxes"]]}
+                                        for category in self.roles_data["categories"]],
+                         "people": [{k: v for k, v in person.items() if k != "aliases"} for person in self.roles_data["people"]]}
+            (output_dir / "roles.json").write_text(
+                json.dumps(roles_out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         (output_dir / "verses.json").write_text(
             json.dumps(self.refs_used, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8")
 

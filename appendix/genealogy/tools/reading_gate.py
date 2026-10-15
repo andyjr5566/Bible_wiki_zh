@@ -1,0 +1,120 @@
+"""帶你讀經的對照閘門（獨立於建置程式另算一次）：逐段落數三項——位置錯誤、找不到人物、未處理的人名。
+
+用法：python appendix/genealogy/tools/reading_gate.py [網站資料夾]
+三項都是 0 才印 PASS，否則 exit 1。
+- 位置錯誤：經文和 raw_scripture 不同；標記超出經文、長度為零或互相重疊。
+- 找不到人物：人名、職稱歸屬、墨線兩端的人不在家譜樹人物或職位圖人物裡；歸回連結指到不存在的人或格子。
+- 未處理的人名：家譜樹人物的名字出處（names[].ref）落在這一段，或職位圖成員的出處落在這一段，
+  但出處那幾節都沒有標到這個人。
+"""
+from __future__ import annotations
+
+import json
+import re
+import sys
+from collections import defaultdict
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+BOOKS = {"創": "創世記", "出": "出埃及記", "得": "路得記", "撒上": "撒母耳記上", "撒下": "撒母耳記下", "代上": "歷代志上",
+         "代下": "歷代志下", "拉": "以斯拉記", "尼": "尼希米記", "太": "馬太福音", "路": "路加福音"}
+site = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "appendix/website/全聖經/亞當到耶穌"
+data_dir = site / "src/data"
+reading = json.loads((data_dir / "reading.json").read_text(encoding="utf-8"))
+genealogy = json.loads((data_dir / "genealogy.json").read_text(encoding="utf-8"))
+roles = json.loads((data_dir / "roles.json").read_text(encoding="utf-8"))
+persons = {p["id"]: p for p in genealogy["persons"]}
+rids = {p["rid"] for p in roles.get("people", [])}
+cells = {(box["id"], m["key"]) for c in roles.get("categories", []) for box in c["boxes"] for m in box["members"]}
+raw_cache: dict[tuple[str, int], list[str]] = {}
+
+
+def raw(book: str, chapter: int) -> list[str]:
+    key = (book, chapter)
+    if key not in raw_cache:
+        raw_cache[key] = (ROOT / "raw_scripture" / BOOKS[book] / f"第{chapter}章.txt").read_text(encoding="utf-8").splitlines()
+    return raw_cache[key]
+
+
+def keys_of(ref: str) -> list[str]:
+    out = []
+    for part in re.split(r"[,，;；、]\s*", str(ref)):
+        m = re.match(r"^(\D+?)(\d+):(\d+)(?:-(?:(\d+):)?(\d+))?$", part.strip())
+        if not m or m[1] not in BOOKS:
+            continue
+        book, c1, v1 = m[1], int(m[2]), int(m[3])
+        c2 = int(m[4]) if m[4] else c1
+        v2 = int(m[5]) if m[5] else v1
+        c, v = c1, v1
+        while (c, v) <= (c2, v2):
+            out.append(f"{book}{c}:{v}")
+            v += 1
+            if v > len(raw(book, c)):
+                c, v = c + 1, 1
+    return out
+
+
+segment_of: dict[str, str] = {}
+tagged: set[tuple[str, str]] = set()
+rows = []
+for segment in reading["segments"]:
+    position = missing = 0
+    count = 0
+    for chapter in segment["chapters"]:
+        for verse in chapter["verses"]:
+            count += 1
+            key = f"{chapter['book']}{chapter['n']}:{verse['v']}"
+            segment_of[key] = segment["id"]
+            lines = raw(chapter["book"], chapter["n"])
+            if verse["v"] > len(lines) or verse["text"] != lines[verse["v"] - 1]:
+                position += 1
+            end = 0
+            for t in verse["t"]:
+                if t["s"] < end or t["e"] <= t["s"] or t["e"] > len(verse["text"]):
+                    position += 1
+                end = t["e"]
+                for pid in [t.get("id"), *t.get("from", []), *t.get("to", [])]:
+                    if pid and pid not in persons:
+                        missing += 1
+                if t.get("rid") and t["rid"] not in rids:
+                    missing += 1
+                if t.get("of") and t["of"] not in persons and t["of"] not in rids:
+                    missing += 1
+                if t.get("id"):
+                    tagged.add((t["id"], key))
+                if t.get("rid"):
+                    tagged.add(("r:" + t["rid"], key))
+    rows.append([segment["id"], segment["title"], count, position, missing, 0])
+for link in reading.get("links", []):
+    for target in link["to"]:
+        if target.get("tree") and target["tree"] not in persons:
+            rows[[r[0] for r in rows].index(segment_of.get(link["at"], rows[0][0]))][4] += 1
+        if target.get("role") and target.get("member") and (target["role"], target["member"]) not in cells:
+            rows[[r[0] for r in rows].index(segment_of.get(link["at"], rows[0][0]))][4] += 1
+
+unhandled: dict[str, list[str]] = defaultdict(list)
+for pid, person in persons.items():
+    for name in person.get("names", []) or []:
+        keys = [k for k in keys_of(name.get("ref", "")) if k in segment_of]
+        if keys and not any((pid, k) in tagged for k in keys):
+            unhandled[segment_of[keys[0]]].append(f"{pid} {name.get('ref')}")
+for category in roles.get("categories", []):
+    for box in category["boxes"]:
+        for member in box["members"]:
+            pid = member.get("id") or ("r:" + member["rid"])
+            keys = [k for k in keys_of(member["ref"]) if k in segment_of]
+            if keys and not any((pid, k) in tagged for k in keys):
+                unhandled[segment_of[keys[0]]].append(f"{member['name']}（{box['title']}）{member['ref']}")
+for row in rows:
+    row[5] = len(unhandled.get(row[0], []))
+
+print("段落\t節數\t位置錯誤\t找不到人物\t未處理的人名")
+for seg_id, title, count, position, missing, todo in rows:
+    print(f"{title}\t{count}\t{position}\t{missing}\t{todo}")
+    for item in unhandled.get(seg_id, [])[:5]:
+        print(f"    未處理：{item}")
+total = [sum(r[i] for r in rows) for i in (2, 3, 4, 5)]
+print(f"合計\t{total[0]}\t{total[1]}\t{total[2]}\t{total[3]}")
+ok = total[1] == total[2] == total[3] == 0
+print("PASS" if ok else "FAIL")
+sys.exit(0 if ok else 1)

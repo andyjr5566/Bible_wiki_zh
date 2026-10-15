@@ -1,8 +1,10 @@
-"""帶你讀經：把經文逐節標出人名、職稱、親屬詞、地名、數字，給網站的讀經模式用。
+"""帶你讀經：把讀經路線上的經文逐節標出人名、職稱、親屬詞、地名、數字，給網站的讀經模式用。
 
 由 build_genealogy.py 的 LineageBuilder 呼叫（helpers 由它傳入，避免互相匯入）。
-裁決寫在 亞當到耶穌/讀經.yaml；程式先依人物資料自動配對，配不出來或有兩種可能的，
-必須在裁決檔寫明，否則建置失敗。
+- 路線寫在 亞當到耶穌/讀經路線.yaml（一串段落，從創 4:17 讀到路 3:38）。
+- 裁決寫在 亞當到耶穌/讀經.yaml（代上 1–9）和 亞當到耶穌/讀經/*.yaml（其餘段落）。
+- 大衛立的職位寫在 亞當到耶穌/職位.yaml；平行經文差異小卡寫在 差異.yaml；歸回的家族連回祖先寫在 歸回.yaml。
+程式先依人物資料自動配對，配不出來或有兩種可能的，必須在裁決檔寫明，否則建置失敗。
 """
 from __future__ import annotations
 
@@ -28,6 +30,32 @@ CLAUSE_RE = re.compile(r"[，。；：！？]")
 STATED_FORWARD = re.compile(r"(的?(兒子|女兒|長子|次子|三子|四子|五子|六子|七子)(原?是|名叫)?|(又)?生(了)?(長子)?|所生的(兒子|長子)是?)")
 # 「後一位是前一位的兒子」的後半
 STATED_BACKWARD = re.compile(r"的(兒子|女兒|長子|次子)")
+ROLE_PREFIX = "r:"
+STAGES = ("tree", "roles")
+
+
+def load_yaml(path: Path, builder, where: str, default):
+    if not path.is_file():
+        return default
+    try:
+        value = yaml.safe_load(path.read_text(encoding="utf-8"))
+    except (OSError, yaml.YAMLError) as exc:
+        builder.err(where, f"無法讀取：{exc}")
+        return default
+    return default if value is None else value
+
+
+def range_label(ranges: str) -> str:
+    """「創29:31-30:24, 創35:16-18」→「創 29:31–30:24、35:16–18」（讀者看的經文範圍）。"""
+    out, last_book = [], None
+    for part in re.split(r"[,，;；]\s*", str(ranges).strip()):
+        m = re.match(r"^([^\d\s]+)\s*(.*)$", part)
+        if not m:
+            continue
+        book, rest = m.group(1), m.group(2).replace("-", "–")
+        out.append(rest if book == last_book else f"{book} {rest}")
+        last_book = book
+    return "、".join(out)
 
 
 def build_reading(builder, helpers: dict) -> dict | None:
@@ -39,26 +67,83 @@ def build_reading(builder, helpers: dict) -> dict | None:
     if not path.is_file():
         return None
     where = "讀經.yaml"
-    try:
-        spec = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-    except (OSError, yaml.YAMLError) as exc:
-        builder.err(where, f"無法讀取：{exc}")
-        return None
-    abbr, book = str(spec.get("book", "代上")), str(spec.get("book_full", "歷代志上"))
-    first, last = [int(x) for x in spec.get("chapters", [1, 9])]
+    spec = load_yaml(path, builder, where, {})
+    chr_abbr, chr_book = str(spec.get("book", "代上")), str(spec.get("book_full", "歷代志上"))
+    chr_first, chr_last = [int(x) for x in spec.get("chapters", [1, 9])]
     source = yaml.safe_load((builder.dir / str(spec["genealogy"])).read_text(encoding="utf-8"))
     chapter_titles = {int(k): str(v) for k, v in (source.get("chapters") or {}).items()}
 
-    def key(c: int, v: int) -> str:
-        return f"{abbr}{c}:{v}"
+    # ── 裁決：讀經.yaml＋讀經/*.yaml 合併（經節都帶書卷簡稱，不會互相蓋掉） ──
+    decisions: dict[str, list] = {}
+    title_of: dict[str, dict] = {}
+    names_of: dict[str, list] = {}
+    places: set[str] = set()
+    decision_files = [(where, spec)] + [(f"讀經/{p.name}", load_yaml(p, builder, f"讀經/{p.name}", {}))
+                                         for p in sorted((builder.dir / "讀經").glob("*.yaml"))]
+    for file_where, data in decision_files:
+        places.update(str(p) for p in data.get("places", []) or [])
+        for field, target in (("decide", decisions), ("title_of", title_of), ("names", names_of)):
+            for k, value in (data.get(field, {}) or {}).items():
+                if str(k) in target:
+                    builder.err(f"{file_where}.{field}", f"{k} 在兩個裁決檔都有寫")
+                target[str(k)] = value
+
+    # ── 路線 ──
+    route_spec = load_yaml(builder.dir / "讀經路線.yaml", builder, "讀經路線.yaml", None)
+    if route_spec is None:
+        route_spec = {"start": f"{chr_abbr}{chr_first}:1", "segments": [
+            {"id": "chr1-9", "title": "歷代志上的族譜", "group": "歷代志上的族譜",
+             "ranges": f"{chr_abbr}{chr_first}:1-{chr_last}:{len(builder.sc.chapter(chr_book, chr_last))}",
+             "stage": "tree", "chronicles": True}]}
+
+    def key(book: str, c: int, v: int) -> str:
+        return f"{abbr_of.get(book, book)}{c}:{v}"
 
     def verses_of(ref: str) -> list[str]:
+        """經節字串 → 經節 key（不限路線範圍）。"""
         try:
             parsed = parse_refs(str(ref), "", builder.sc)
         except ValueError:
             return []
-        return [key(c, v) for b, c, v in parsed if b == book and first <= c <= last]
+        return [key(b, c, v) for b, c, v in parsed]
 
+    segments_in: list[tuple[dict, list[tuple[str, int, int]]]] = []
+    for index, segment in enumerate(route_spec.get("segments", []) or []):
+        seg_where = f"讀經路線.yaml.segments[{index}]"
+        try:
+            parsed = parse_refs(str(segment.get("ranges", "")), "", builder.sc)
+        except ValueError as exc:
+            builder.err(seg_where, str(exc))
+            continue
+        if not parsed:
+            builder.err(seg_where, "經文範圍是空的")
+            continue
+        if segment.get("stage") not in STAGES:
+            builder.err(seg_where, f"stage 必須是 {'／'.join(STAGES)}")
+        for field in ("id", "title", "group"):
+            if not segment.get(field):
+                builder.err(seg_where, f"{field} 不能空白")
+        segments_in.append((segment, parsed))
+    route_order: list[str] = [key(*item) for _, parsed in segments_in for item in parsed]
+    route_keys = set(route_order)
+    if len(route_keys) != len(route_order):
+        builder.err("讀經路線.yaml", "有經節在路線上出現兩次")
+    start = str(route_spec.get("start", ""))
+    if route_order and start not in route_keys:
+        builder.err("讀經路線.yaml.start", f"起點不在路線上：{start}")
+    stage_override: dict[str, str] = {}
+    for segment, _ in segments_in:
+        for ref, stage in (segment.get("stages", {}) or {}).items():
+            if stage not in STAGES:
+                builder.err(f"讀經路線.yaml.{segment.get('id')}.stages", f"{ref}：stage 必須是 {'／'.join(STAGES)}")
+            for k in verses_of(str(ref)):
+                if k not in route_keys:
+                    builder.err(f"讀經路線.yaml.{segment.get('id')}.stages", f"{k} 不在路線上")
+                stage_override[k] = str(stage)
+
+    # ── 大衛立的職位：只在職位圖上的人也是候選人（內部用 r: 開頭，和家譜樹人物分開） ──
+    roles = getattr(builder, "roles_data", None) or {}
+    role_people = {str(item.get("rid")): item for item in roles.get("people", []) or []}
     people = builder.people
     surfaces: dict[str, set[str]] = defaultdict(set)
     for pid, person in people.items():
@@ -66,6 +151,14 @@ def build_reading(builder, helpers: dict) -> dict | None:
         for name in person.get("names", []) or []:
             if name.get("as"):
                 surfaces[pid].add(str(name["as"]))
+    for rid, item in role_people.items():
+        surfaces[ROLE_PREFIX + rid].add(str(item.get("name", display(rid))))
+        for alias in item.get("aliases", []) or []:
+            surfaces[ROLE_PREFIX + rid].add(str(alias))
+
+    def known(pid: str) -> bool:
+        return pid in people or (pid.startswith(ROLE_PREFIX) and pid[len(ROLE_PREFIX):] in role_people)
+
     # 每一節提到誰：名字的出處（一定要在經文裡找到）和關係的出處（找得到就標）
     named: dict[str, set[str]] = defaultdict(set)
     mentioned: dict[str, set[str]] = defaultdict(set)
@@ -73,8 +166,9 @@ def build_reading(builder, helpers: dict) -> dict | None:
     for pid, person in people.items():
         for name in person.get("names", []) or []:
             verses = verses_of(str(name.get("ref", "")))
-            if verses:
-                name_ranges.append((pid, str(name.get("as", "")), verses))
+            in_route = [k for k in verses if k in route_keys]
+            if in_route:
+                name_ranges.append((pid, str(name.get("as", "")), in_route))
             for k in verses:
                 named[k].add(pid)
         for field in RELATION_FIELDS:
@@ -83,6 +177,20 @@ def build_reading(builder, helpers: dict) -> dict | None:
                     mentioned[k].add(pid)
                     if relation.get("id") in people:
                         mentioned[k].add(str(relation["id"]))
+    # 職位圖的成員：成員出處那幾節就是他的名字出處
+    for category in roles.get("categories", []) or []:
+        for box in category.get("boxes", []) or []:
+            for member in box.get("members", []) or []:
+                pid = (ROLE_PREFIX + str(member["rid"])) if member.get("rid") else str(member.get("id", ""))
+                if not known(pid):
+                    continue
+                verses = verses_of(str(member.get("ref", "")))
+                in_route = [k for k in verses if k in route_keys]
+                if in_route and member.get("rid"):
+                    name_ranges.append((pid, str(member.get("name", "")), in_route))
+                for k in verses:
+                    named[k].add(pid)
+
     # 代上族譜資料逐句記的人（同一份名單重複出現時，人物資料只記第一次的出處）
     def statement_ids(statement: dict) -> list[str]:
         ids = []
@@ -96,7 +204,7 @@ def build_reading(builder, helpers: dict) -> dict | None:
     statement_pairs: list[tuple[str, str, list[str]]] = []
     for section in source.get("sections", []) or []:
         for statement in section.get("statements", []) or []:
-            keys = verses_of(prefix_book(str(statement.get("ref", "")), abbr))
+            keys = verses_of(prefix_book(str(statement.get("ref", "")), chr_abbr))
             for k in keys:
                 mentioned[k].update(statement_ids(statement))
             chain = [str(item.get("id") if isinstance(item, dict) else item) for item in statement.get("chain", []) or []]
@@ -126,7 +234,6 @@ def build_reading(builder, helpers: dict) -> dict | None:
             relation_verses[(child, parent)].update(keys)
 
     # 地名詞庫：知識庫的地點條目＋代上族譜裡的城邑清單＋裁決檔補的
-    places: set[str] = set(str(p) for p in spec.get("places", []) or [])
     for entry in (root / "link_folder" / "地點").glob("*.md"):
         base = re.sub(r"（.*?）|\(.*?\)", "", entry.stem).strip()
         if len(base) >= 2:
@@ -139,19 +246,18 @@ def build_reading(builder, helpers: dict) -> dict | None:
         global_names.update(f for f in forms if len(f) >= 2)
     lengths = sorted({len(w) for w in global_names}, reverse=True)
 
-    decisions = spec.get("decide", {}) or {}
-    title_of = spec.get("title_of", {}) or {}
     used_decisions: set[tuple[str, str]] = set()
     used_titles: set[tuple[str, str]] = set()
+    used_names: set[str] = set()
 
     def inside_longer(text: str, s: int, e: int, exclude: set[str]) -> bool:
         """這段字是不是另一個更長名字的一部分（例如「以利」在「以利加拿」裡）。"""
         for length in lengths:
             if length <= e - s:
                 break
-            for start in range(max(0, e - length), s + 1):
-                word = text[start:start + length]
-                if len(word) == length and word in global_names and word not in exclude and start <= s and start + length >= e:
+            for begin in range(max(0, e - length), s + 1):
+                word = text[begin:begin + length]
+                if len(word) == length and word in global_names and word not in exclude and begin <= s and begin + length >= e:
                     return True
         return False
 
@@ -162,40 +268,141 @@ def build_reading(builder, helpers: dict) -> dict | None:
             i = text.find(word, i + 1)
         return out
 
-    sections = []
+    # ── 代上 1–9：附錄的小段、讀經提醒、名單牌子 ──
+    chr_sections = []
     for section in source.get("sections", []) or []:
-        verses = verses_of(prefix_book(str(section.get("range", "")), abbr))
-        sections.append((section, verses))
-    section_of = {k: section for section, verses in sections for k in verses}
-    section_verses = {str(section.get("title", "")): verses for section, verses in sections}
+        verses = verses_of(prefix_book(str(section.get("range", "")), chr_abbr))
+        chr_sections.append((section, verses))
+    section_of = {k: section for section, verses in chr_sections for k in verses}
+    section_verses = {str(section.get("title", "")): verses for section, verses in chr_sections}
     hold_by_anchor = {str(item.get("anchor")): f"名單:{item.get('title')}"
                       for item in (builder.placement_data.get("lists", []) or [])}
     notes = []
     note_of: dict[str, int] = {}
-    for section, _ in sections:
+    for section, _ in chr_sections:
         for note in section.get("notes", []) or []:
-            verses = verses_of(prefix_book(str(note.get("refs", "")), abbr))
+            verses = verses_of(prefix_book(str(note.get("refs", "")), chr_abbr))
             if not verses:
                 continue
+            # 讀經提醒也會提到別卷的經節（例如創 10:23），那幾節的經文一併收進網站
+            for k in verses:
+                found = parse_refs(k, "", builder.sc)
+                text = builder.sc.verse(*found[0]) if found else None
+                if text is not None:
+                    builder.refs_used[k] = text
             notes.append({"text": str(note.get("text", "")).strip(), "verses": verses})
             note_of.setdefault(verses[0], len(notes) - 1)
 
-    chapters = []
+    # ── 職位圖的方塊：沒有人名的節，鏡頭停在這一節所屬的方塊 ──
+    box_of: dict[str, str] = {}
+    for category in roles.get("categories", []) or []:
+        for box in category.get("boxes", []) or []:
+            for k in verses_of(str(box.get("verses", "") or "")):
+                box_of.setdefault(k, str(box.get("id")))
+
+    # ── 平行經文差異小卡 ──
+    diffs_spec = load_yaml(builder.dir / "差異.yaml", builder, "差異.yaml", []) or []
+    diffs = []
+    diff_of: dict[str, list[int]] = defaultdict(list)
+    for index, item in enumerate(diffs_spec):
+        d_where = f"差異.yaml[{index}]"
+        sides = []
+        for side in item.get("sides", []) or []:
+            ref, text = str(side.get("ref", "")), str(side.get("text", ""))
+            joined = "".join(builder.sc.verse(*p) or "" for p in parse_refs(ref, "", builder.sc)) if ref else ""
+            if not text or text not in joined:
+                builder.err(d_where, f"{ref} 的經文裡沒有「{text}」")
+            for k in verses_of(ref):
+                builder.refs_used[k] = builder.sc.verse(*parse_refs(k, "", builder.sc)[0]) or ""
+            sides.append({"ref": ref, "text": text})
+        if len(sides) < 2 or not item.get("title"):
+            builder.err(d_where, "至少要兩處寫法和一個標題")
+        at_keys = verses_of(str(item.get("at", "")))
+        if not at_keys or any(k not in route_keys for k in at_keys):
+            builder.err(d_where, f"出現的位置不在路線上：{item.get('at')}")
+        diffs.append({"title": str(item.get("title", "")), "sides": sides})
+        for k in at_keys:
+            diff_of[k].append(len(diffs) - 1)
+
+    # ── 歸回的家族連回祖先 ──
+    links_spec = load_yaml(builder.dir / "歸回.yaml", builder, "歸回.yaml", {}) or {}
+    role_members = {(str(box.get("id")), str(member.get("key"))) for category in roles.get("categories", []) or []
+                    for box in category.get("boxes", []) or [] for member in box.get("members", []) or []}
+    role_boxes = {str(box.get("id")) for category in roles.get("categories", []) or [] for box in category.get("boxes", []) or []}
+    links = []
+    links_at: dict[str, list[tuple[str, int]]] = defaultdict(list)
+    check_basis = helpers.get("check_basis")
+    for index, item in enumerate(links_spec.get("links", []) or []):
+        l_where = f"歸回.yaml.links[{index}]"
+        at = str(item.get("at", ""))
+        if at not in route_keys:
+            builder.err(l_where, f"位置不在路線上：{at}")
+        targets = []
+        for target in item.get("to", []) or []:
+            if target.get("tree") and str(target["tree"]) not in people:
+                builder.err(l_where, f"家譜樹上沒有這個人：{target['tree']}")
+            if target.get("role") and (str(target["role"]) not in role_boxes or (
+                    target.get("member") and (str(target["role"]), str(target["member"])) not in role_members)):
+                builder.err(l_where, f"職位圖上沒有：{target.get('role')} {target.get('member', '')}")
+            targets.append({k: str(v) for k, v in target.items() if k in ("tree", "role", "member")})
+        if item.get("effect") not in ("returned", "lost", "link"):
+            builder.err(l_where, "effect 必須是 returned／lost／link")
+        if check_basis:
+            for message in check_basis(item.get("basis"), l_where, root):
+                builder.err(l_where, message)
+        refs = [str(r) for r in item.get("refs", []) or []]
+        for ref in refs:
+            if not verses_of(ref):
+                builder.err(l_where, f"經節格式錯誤：{ref}")
+            for k in verses_of(ref):
+                found = parse_refs(k, "", builder.sc)
+                text = builder.sc.verse(*found[0]) if found else None
+                if text is None:
+                    builder.err(l_where, f"經節不存在：{k}")
+                else:
+                    builder.refs_used[k] = text
+        links.append({"at": at, "word": str(item.get("word", "")), "to": targets, "effect": str(item.get("effect", "")),
+                      **({"card": str(item["card"]).strip()} if item.get("card") else {}), "refs": refs})
+        links_at[at].append((str(item.get("word", "")), len(links) - 1))
+
+    segments_out = []
     found_names: set[tuple[str, str]] = set()
     review: list[str] = []
-    previous_last: tuple[str, str] | None = None
-    previous_section = None
-    carry: list[str] = []
-    carry_keys: list[str] = []
-    for c in range(first, last + 1):
-        chapter = {"n": c, "title": chapter_titles.get(c, ""), "verses": []}
-        v = 0
-        while True:
-            v += 1
+    for segment, parsed in segments_in:
+        chronicles = bool(segment.get("chronicles"))
+        seg_keys = [key(*item) for item in parsed]
+        seg_pool_keys = seg_keys + [k for ref in [segment.get("parallel")] if ref for k in verses_of(str(ref))]
+        # 職位章同名的人很多，「同段自動配」容易配錯：auto_pool: false 的段只用 people 明列的人
+        seg_pool = set()
+        if segment.get("auto_pool", True) and seg_pool_keys:
+            seg_pool = set().union(*(named[x] | mentioned[x] for x in seg_pool_keys))
+        # 這一段反覆提到、但出處記在別卷的人（例如職位章裡的大衛、約押）：名字只對得上一個人才標
+        for pid in segment.get("people", []) or []:
+            if str(pid) not in people:
+                builder.err(f"讀經路線.yaml.{segment.get('id')}.people", f"人物不存在：{pid}")
+            seg_pool.add(str(pid))
+        seg_stage = str(segment.get("stage", "tree"))
+        chapters: list[dict] = []
+        previous_last: tuple[str, str] | None = None
+        previous_section = None
+        previous_key: tuple[str, int, int] | None = None
+        carry: list[str] = []
+        carry_keys: list[str] = []
+        for book, c, v in parsed:
+            k = key(book, c, v)
+            abbr = abbr_of.get(book, book)
+            if not chapters or chapters[-1]["book"] != abbr or chapters[-1]["n"] != c:
+                title = chapter_titles.get(c, "") if chronicles and book == chr_book else str(segment.get("title", ""))
+                chapters.append({"book": abbr, "bookName": book, "n": c, "title": title, "verses": []})
+            # 不相連的兩段之間，句子不會接下去
+            if previous_key is None or previous_key[:2] != (book, c) or previous_key[2] + 1 != v:
+                if not (previous_key and previous_key[0] == book and previous_key[1] + 1 == c and v == 1):
+                    carry, carry_keys = [], []
+            previous_key = (book, c, v)
             text = builder.sc.verse(book, c, v)
             if text is None:
-                break
-            k = key(c, v)
+                builder.err("讀經路線.yaml", f"經節不存在：{k}")
+                continue
             builder.refs_used[k] = text
             candidates = named[k] | mentioned[k]
             by_surface: dict[str, set[str]] = defaultdict(set)
@@ -218,6 +425,18 @@ def build_reading(builder, helpers: dict) -> dict | None:
                 s = hits[int(number) - 1]
                 forced[(s, s + len(word))] = decision
                 used_decisions.add((k, at))
+            # 歸回連結指到的家族名，也是裁決過的位置
+            link_spans: dict[tuple[int, int], int] = {}
+            for at, link_index in links_at.get(k, []):
+                word, _, number = at.rpartition("@")
+                hits = occurrences(text, word)
+                if not word or not number.isdigit() or int(number) > len(hits):
+                    builder.err(f"歸回.yaml.links[{link_index}]", f"{k} 找不到「{at}」")
+                    continue
+                s = hits[int(number) - 1]
+                link_spans[(s, s + len(word))] = link_index
+                if (s, s + len(word)) not in forced:
+                    forced[(s, s + len(word))] = {"link": link_index}
             spans: dict[tuple[int, int], set[str]] = defaultdict(set)
             for form, pids in by_surface.items():
                 for s in occurrences(text, form):
@@ -237,12 +456,16 @@ def build_reading(builder, helpers: dict) -> dict | None:
                     if decision.get("place"):
                         assignment[span] = None
                         place_spans.add(span)
+                    elif "link" in decision:
+                        # 歸回連結指到家譜樹上的祖先（亞薩、沙龍、所羅門……）：名字同時連到那個人
+                        tree = [t["tree"] for t in links[decision["link"]]["to"] if t.get("tree")]
+                        assignment[span] = tree[0] if len(tree) == 1 else None
                     elif decision.get("skip"):
                         assignment[span] = None
                     else:
-                        pid = str(decision.get("id", ""))
-                        if pid not in people:
-                            builder.err(f"{where}.decide.{k}", f"人物不存在：{pid}")
+                        pid = str(decision.get("rid") and ROLE_PREFIX + str(decision["rid"]) or decision.get("id", ""))
+                        if not known(pid):
+                            builder.err(f"讀經.decide.{k}", f"人物不存在：{pid}")
                         assignment[span] = pid
                 elif len(spans[span]) == 1:
                     assignment[span] = next(iter(spans[span]))
@@ -256,7 +479,7 @@ def build_reading(builder, helpers: dict) -> dict | None:
                 for options in choices:
                     total *= len(options)
                 if total > 50000:
-                    builder.err(f"{where}.decide", f"{k} 同名太多，請直接裁決：" + "、".join(label(*s) for s in open_spans))
+                    builder.err("讀經.decide", f"{k} 同名太多，請直接裁決：" + "、".join(label(*s) for s in open_spans))
                     continue
                 clause_of = {span: len(CLAUSE_RE.findall(text[:span[0]])) for span in kept}
 
@@ -278,7 +501,7 @@ def build_reading(builder, helpers: dict) -> dict | None:
                     return (pairs, covered)
                 scored = sorted(((score(combo), combo) for combo in itertools.product(*choices)), key=lambda item: item[0], reverse=True)
                 if len(scored) > 1 and scored[0][0] == scored[1][0]:
-                    builder.err(f"{where}.decide", f"{k} 無法自動判斷，請裁決：" + "；".join(
+                    builder.err("讀經.decide", f"{k} 無法自動判斷，請裁決：" + "；".join(
                         f"{label(*s)}＝{'或'.join(choices[i])}" for i, s in enumerate(open_spans)))
                     continue
                 for span, pid in zip(open_spans, scored[0][1]):
@@ -306,10 +529,12 @@ def build_reading(builder, helpers: dict) -> dict | None:
                         notes_for_review.append(f"{form}＝{why}")
                         added = True
                 return added
-            section = section_of.get(k)
+            section = section_of.get(k) if chronicles else None
             if section is not None:
                 pool = set().union(*(named[x] | mentioned[x] for x in section_verses[str(section.get("title", ""))]))
                 add_unique(pool - candidates, "同段")
+            elif not chronicles:
+                add_unique(seg_pool - candidates, "同段")
             for _ in range(3):
                 linked = {pid for pid in assignment.values() if pid}
                 pool = set().union(*(related[pid] for pid in linked)) if linked else set()
@@ -320,16 +545,26 @@ def build_reading(builder, helpers: dict) -> dict | None:
             taken = []
             for span in kept:
                 pid = assignment.get(span)
-                tokens.append({"s": span[0], "e": span[1], "k": "l"} if span in place_spans
-                              else {"s": span[0], "e": span[1], "k": "p", **({"id": pid} if pid else {})})
+                if span in place_spans:
+                    token = {"s": span[0], "e": span[1], "k": "l"}
+                else:
+                    token = {"s": span[0], "e": span[1], "k": "p"}
+                    if pid and pid.startswith(ROLE_PREFIX):
+                        token["rid"] = pid[len(ROLE_PREFIX):]
+                    elif pid:
+                        token["id"] = pid
+                    if span in link_spans:
+                        token["link"] = link_spans[span]
+                tokens.append(token)
                 taken.append(span)
                 if pid:
                     found_names.add((pid, k))
             # 經文裡的名字，但不是資料裡的人物（例如迦勒的妻子以法他）：只在經文裡亮
-            for word in (spec.get("names", {}) or {}).get(k, []) or []:
+            for word in names_of.get(k, []) or []:
+                used_names.add(k)
                 hits = [s for s in occurrences(text, str(word)) if all(s + len(str(word)) <= a or s >= b for a, b in taken)]
                 if not hits:
-                    builder.err(f"{where}.names.{k}", f"這一節沒有這個名字：{word}")
+                    builder.err(f"讀經.names.{k}", f"這一節沒有這個名字：{word}")
                 for s in hits:
                     tokens.append({"s": s, "e": s + len(str(word)), "k": "p"})
                     taken.append((s, s + len(str(word))))
@@ -374,7 +609,7 @@ def build_reading(builder, helpers: dict) -> dict | None:
             tokens.sort(key=lambda t: t["s"])
             persons = [t for t in tokens if t["k"] == "p" and t.get("id")]
             # 墨線：排在他前面、經文記載是他父母或祖先的人（一句話跨到下一節時，上一節的人也算）
-            if section_of.get(k) is None or previous_section != section_of.get(k).get("title"):
+            if chronicles and (section_of.get(k) is None or previous_section != section_of.get(k).get("title")):
                 carry = []
                 carry_keys = []
             for index, token in enumerate(persons):
@@ -399,6 +634,7 @@ def build_reading(builder, helpers: dict) -> dict | None:
                     token["to"] = list(dict.fromkeys(children))
             # 職稱屬於誰：裁決檔寫明的優先；否則緊貼在後的人名，再來是同一句前面最近的人
             manual = {str(word): str(pid) for word, pid in (title_of.get(k) or {}).items()}
+            owners = [t for t in tokens if t["k"] == "p" and (t.get("id") or t.get("rid"))]
             for token in tokens:
                 if token["k"] != "t":
                     continue
@@ -410,53 +646,67 @@ def build_reading(builder, helpers: dict) -> dict | None:
                     used_titles.add((k, chosen))
                     if manual[chosen] == "-":
                         continue
-                    if manual[chosen] not in people:
-                        builder.err(f"{where}.title_of.{k}", f"人物不存在：{manual[chosen]}")
+                    target = manual[chosen]
+                    if target in people or target in role_people:
+                        token["of"] = target
                     else:
-                        token["of"] = manual[chosen]
+                        builder.err(f"讀經.title_of.{k}", f"人物不存在：{target}")
                     continue
                 clause = len(CLAUSE_RE.findall(text[:token["s"]]))
-                after = next((p for p in persons if p["s"] == token["e"]), None)
-                before = [p for p in persons if p["e"] <= token["s"] and len(CLAUSE_RE.findall(text[:p["s"]])) == clause]
+                after = next((p for p in owners if p["s"] == token["e"]), None)
+                before = [p for p in owners if p["e"] <= token["s"] and len(CLAUSE_RE.findall(text[:p["s"]])) == clause]
                 owner = after or (before[-1] if before else None)
                 if owner:
-                    token["of"] = owner["id"]
+                    token["of"] = owner.get("id") or owner.get("rid")
             row = {"v": v, "text": text, "t": tokens}
-            section = section_of.get(k)
-            if section is not None:
-                row["sec"] = str(section.get("title", ""))
-                hold = hold_by_anchor.get(str(section.get("title", "")))
-                if hold:
-                    row["hold"] = hold
-            if k in note_of:
-                row["note"] = note_of[k]
-            chapter["verses"].append(row)
+            stage = stage_override.get(k, seg_stage)
+            if stage != seg_stage:
+                row["stage"] = stage
+            if chronicles:
+                section = section_of.get(k)
+                if section is not None:
+                    row["sec"] = str(section.get("title", ""))
+                    hold = hold_by_anchor.get(str(section.get("title", "")))
+                    if hold:
+                        row["hold"] = hold
+                if k in note_of:
+                    row["note"] = note_of[k]
+            if k in diff_of:
+                row["diff"] = diff_of[k]
+            if k in box_of:
+                row["box"] = box_of[k]
+            chapters[-1]["verses"].append(row)
             review.append(f"{k} {annotate(text, tokens, display)}{auto_note}")
             if persons:
                 previous_last = (text[persons[-1]["s"]:persons[-1]["e"]], persons[-1]["id"])
             continues = not re.search(r"[。！？）]\s*$", text)
             carry = (carry + [p["id"] for p in persons]) if continues else []
             carry_keys = (carry_keys + [k]) if continues else []
-            previous_section = section.get("title") if section is not None else None
-        chapters.append(chapter)
+            previous_section = section_of.get(k).get("title") if chronicles and section_of.get(k) is not None else None
+        segments_out.append({"id": str(segment.get("id")), "title": str(segment.get("title")), "group": str(segment.get("group")),
+                             "range": range_label(str(segment.get("ranges", ""))), "stage": seg_stage, "chapters": chapters})
+        if chronicles:
+            count = sum(len(chapter["verses"]) for chapter in chapters)
+            expected = int(spec.get("verse_count", 0) or 0)
+            if expected and count != expected:
+                builder.err(where, f"應有 {expected} 節，實際 {count} 節")
 
     for pid, form, verses in name_ranges:
         if not any((pid, k) in found_names for k in verses):
-            builder.err(where, f"{display(pid)}（{pid}）的名字「{form}」在 {verses[0]}{'…' if len(verses) > 1 else ''} 沒有對上經文")
+            builder.err("讀經", f"{display(pid)}（{pid}）的名字「{form}」在 {verses[0]}{'…' if len(verses) > 1 else ''} 沒有對上經文")
     for k, items in decisions.items():
         for item in items or []:
             if (str(k), str(item.get("at"))) not in used_decisions:
-                builder.err(f"{where}.decide.{k}", f"找不到要裁決的位置：{item.get('at')}")
+                builder.err(f"讀經.decide.{k}", f"找不到要裁決的位置：{item.get('at')}")
     for k, words in title_of.items():
         for word in words or {}:
             if (str(k), str(word)) not in used_titles:
-                builder.err(f"{where}.title_of.{k}", f"這一節沒有這個職稱：{word}")
-    count = sum(len(chapter["verses"]) for chapter in chapters)
-    expected = int(spec.get("verse_count", 0) or 0)
-    if expected and count != expected:
-        builder.err(where, f"應有 {expected} 節，實際 {count} 節")
+                builder.err(f"讀經.title_of.{k}", f"這一節沒有這個職稱：{word}")
+    for k in names_of:
+        if k not in used_names:
+            builder.err(f"讀經.names.{k}", "這一節不在讀經路線上")
     builder.reading_review = review
-    return {"book": abbr, "bookName": book, "chapters": chapters, "notes": notes}
+    return {"start": start, "segments": segments_out, "notes": notes, "diffs": diffs, "links": links}
 
 
 def annotate(text: str, tokens: list[dict], display) -> str:
@@ -465,12 +715,14 @@ def annotate(text: str, tokens: list[dict], display) -> str:
         out.append(text[at:token["s"]])
         word = text[token["s"]:token["e"]]
         if token["k"] == "p":
-            tag = token.get("id", "？")
+            tag = token.get("id") or (("職:" + token["rid"]) if token.get("rid") else "？")
             tag = word if tag == word else f"{word}={tag}"
             if token.get("from"):
                 tag += "←" + "/".join(display(x) for x in token["from"])
             if token.get("to"):
                 tag += "→" + "/".join(display(x) for x in token["to"])
+            if "link" in token:
+                tag += f"⇢連結{token['link']}"
             out.append(f"〔{tag}〕")
         elif token["k"] == "t":
             out.append(f"《{word}→{display(token['of']) if token.get('of') else '？'}》")

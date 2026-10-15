@@ -197,6 +197,8 @@ export interface GenealogyData {
   families: Family[];
   ntFamilies: Family[];
   sources?: Array<Record<string, unknown>>;
+  /** 家譜樹上的職位印（大衛立的職位） */
+  roleSeals?: RoleSeal[];
 }
 
 export type VerseMap = Record<string, string>;
@@ -210,34 +212,160 @@ export interface ReadingToken {
   s: number;
   e: number;
   k: 'p' | 't' | 'r' | 'l' | 'n';
+  /** 家譜樹上的人物 */
   id?: string;
+  /** 只在職位圖上的人（RolesData.people 的 rid）。和 id 不會同時出現 */
+  rid?: string;
+  /** 職稱屬於誰（家譜樹人物 id，或職位圖的 rid） */
   of?: string;
   from?: string[];
   /** 倒著數的家譜：讀到這位父親時，畫到前面已經讀過的兒子 */
   to?: string[];
+  /** 歸回的家族連回祖先：ReadingData.links 的索引 */
+  link?: number;
 }
+
+/** 讀經的兩個畫面：家譜樹、大衛立的職位（組織圖） */
+export type StageId = 'tree' | 'roles';
 
 export interface ReadingVerse {
   v: number;
   text: string;
   t: ReadingToken[];
-  /** 所屬段落的標題 */
+  /** 這一節用哪個畫面；沒寫就用所屬段落的 stage */
+  stage?: StageId;
+  /** 所屬小段的標題（代上 1–9 的附錄段落） */
   sec?: string;
   /** 這段經文是一塊名單牌子：沒有人名的節，鏡頭停在牌子上 */
   hold?: string;
   /** 讀經提醒（notes 的索引） */
   note?: number;
+  /** 平行經文差異小卡（diffs 的索引） */
+  diff?: number[];
+  /** 職位圖上這一節對應的職位方塊（RoleBox.id）；沒有人名的節，鏡頭停在這個方塊 */
+  box?: string;
 }
 
 export interface ReadingChapter {
+  /** 書卷簡稱，例如「創」「代上」 */
+  book: string;
+  /** 書卷全名，例如「創世記」 */
+  bookName: string;
   n: number;
+  /** 章名卡上的標題（代上 1–9 用附錄章名；其他書卷用段落標題） */
   title: string;
   verses: ReadingVerse[];
 }
 
-export interface ReadingData {
-  book: string;
-  bookName: string;
+/** 讀經路線上的一段（例如「以掃的後代　創 36:1–43」）；一段可以跨章 */
+export interface ReadingSegment {
+  id: string;
+  /** 讀者看得懂的段落名 */
+  title: string;
+  /** 段落選單的分組（例如「創世記」「大衛立的職位」「歸回」「新約」） */
+  group: string;
+  /** 經文範圍的顯示文字，例如「創 36:1–43」 */
+  range: string;
+  /** 預設畫面 */
+  stage: StageId;
   chapters: ReadingChapter[];
+}
+
+/** 平行經文差異小卡：只列兩處（或三處）各自的寫法與經節，不解釋原因。text 是該節經文裡逐字存在的字串 */
+export interface ReadingDiff {
+  title: string;
+  sides: Array<{ ref: string; text: string }>;
+}
+
+/**
+ * 歸回的家族連回祖先（拉 2、尼 7、尼 11–12）。
+ * to：連到家譜樹上的人（tree）或職位圖上的方塊成員（role＝RoleBox.id，member＝成員 key）。
+ * effect：returned＝子孫歸回（二十四班那一格變紅）；lost＝族譜尋不著（虛線）；link＝只是連回祖先。
+ */
+export interface ReadingLink {
+  at: string;
+  word: string;
+  to: Array<{ tree?: string; role?: string; member?: string }>;
+  effect: 'returned' | 'lost' | 'link';
+  /** 小卡上的一句話（逐字經文用「」） */
+  card?: string;
+  /** 小卡要列的經節 */
+  refs: string[];
+}
+
+export interface ReadingData {
+  /** 第一次按「帶你讀經」從哪一節開始 */
+  start: string;
+  segments: ReadingSegment[];
   notes: Array<{ text: string; verses: string[] }>;
+  diffs: ReadingDiff[];
+  links: ReadingLink[];
+}
+
+// ── 大衛立的職位（roles.json，分頁打開或讀到時才載入） ─────────────
+
+/** 一個職位方塊裡的一位（或一班） */
+export interface RoleMember {
+  /** 方塊內唯一的 key（歸回連結、讀經標亮用） */
+  key: string;
+  /** 家譜樹上有這個人時的人物 id */
+  id?: string;
+  /** 只在職位圖上的人 */
+  rid?: string;
+  /** 方塊裡顯示的名字 */
+  name: string;
+  /** 一兩個字的補充，例如「哈律人」「第二班」「十月」「二萬四千人」 */
+  detail?: string;
+  /** 出處經節（可多處，逗號分隔） */
+  ref: string;
+  /** 二十四班、十二月輪盤的序號（1 起算） */
+  order?: number;
+}
+
+export interface RoleBox {
+  id: string;
+  title: string;
+  /** 經文範圍的顯示文字 */
+  ref: string;
+  /** 畫法：一般名單、二十四格環、十二月輪盤、依支派分組 */
+  kind: 'list' | 'ring24' | 'wheel12' | 'groups';
+  /** 家譜樹上職位印的字 */
+  seal: string;
+  /** 方塊底下一句說明 */
+  note?: string;
+  members: RoleMember[];
+  /** kind=groups 時：分組名（例如支派名）→ 成員 key（有些組只有人數、沒有名字，keys 是空的） */
+  groups?: Array<{ title: string; ref: string; keys: string[] }>;
+  /** 照經文寫的人數（count 是經文裡逐字的寫法，例如「六千八百人」）；只列數字，不畫比例 */
+  figures?: Array<{ label: string; count: string; ref: string }>;
+}
+
+export interface RoleCategory {
+  id: 'court' | 'army' | 'temple' | 'tribes';
+  title: string;
+  boxes: RoleBox[];
+}
+
+/** 只在職位圖上的人：小卡寫他是哪裡人、擔任什麼、出處經節 */
+export interface RolePerson {
+  rid: string;
+  name: string;
+  /** 例如「哈律人」「耶何耶大的兒子」 */
+  qualifier?: string;
+  refs: string[];
+}
+
+export interface RolesData {
+  categories: RoleCategory[];
+  people: RolePerson[];
+}
+
+/** 家譜樹上的職位印：人物 id → 職位（genealogy.json 的 roleSeals） */
+export interface RoleSeal {
+  id: string;
+  /** 印上的字，兩三個字（「元帥」「勇士」「第三班」） */
+  label: string;
+  /** 對應的職位方塊 */
+  box: string;
+  ref: string;
 }

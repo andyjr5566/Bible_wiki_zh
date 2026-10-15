@@ -18,7 +18,8 @@ npm run preview    # http://127.0.0.1:4201/
 | 頁面 | 內容 |
 | --- | --- |
 | 家譜樹 | SVG 主線與旁支；可拖曳、縮放、搜尋、展開，並沿父母或代數不詳的後裔關係往上追溯。名單牌子（點線）與同時代區域（不畫線）可各自展開收合。 |
-| 帶你讀經 | 工具列按鈕打開。代上 1–9 章逐節往下讀，讀到誰鏡頭就移到誰、名字亮起；讀到「生」畫墨線、讀到職稱蓋朱印。可暫停、變速、跳讀、開瀏覽器朗讀；`#read=代上2:4` 直接打開到那一節。 |
+| 帶你讀經 | 工具列按鈕打開。一趟從創 4:17 讀到路 3:38（34 段、1,180 節：創世記的家譜、出 6、得 4、撒上 14、撒下 3／5、代上 1–9、代上 11–27 的職位、代下 11／21／24、拉 2／7、尼 7／11／12、太 1、路 3）。讀到誰鏡頭就移到誰、名字亮起；讀到「生」畫墨線、讀到職稱蓋朱印。畫面跟著經文內容在「家譜樹」和「大衛立的職位」之間自己換（標題卡、角落小地圖、回到朗讀處）。平行經文寫法不同的地方出差異小卡；歸回的家族連回祖先（祭司二十四班的那一格變紅、族譜尋不著的畫虛線）。可暫停、變速、跳讀、開瀏覽器朗讀；`#read=創5:3`、`#read=代上24:10`、`#read=拉2:61` 直接打開到那一節。 |
+| 大衛立的職位 | 組織圖：大衛在上，分王的身邊、軍隊、聖殿與利未人、支派與產業四類；祭司二十四班與歌唱二十四班畫成環、十二班軍隊畫成十二個月的輪盤、投奔大衛的人依支派分組。點人名看他的每個職位；家譜樹上有的人點了回家譜樹。家譜樹上的人旁邊蓋職位印，點印到這一頁。 |
 | 兩條線對照 | 按資料段落整理各份見證的名字；點名字回到家譜畫布。 |
 | 年歲時間軸 | 以創世後年份呈現出生、死亡、生子時間與事件。 |
 | 經文不同的地方 | 並列經節、引句、各家說法及來源網址。 |
@@ -37,7 +38,8 @@ npm run preview    # http://127.0.0.1:4201/
 | 檔案 | 內容 |
 | --- | --- |
 | `src/data/genealogy.json` | 家譜人物、主線段落、見證、年歲、註記、導覽，以及大圖安置（`placements`：名單牌子、區域、各家掛在哪裡）。 |
-| `src/data/reading.json` | 讀經模式的逐節標記：代上 1–9 章 407 節經文，標出人名、職稱、親屬詞、地名、數字，以及墨線要從誰畫到誰。 |
+| `src/data/reading.json` | 讀經路線：34 段、1,180 節經文的逐節標記（人名、職稱、親屬詞、地名、數字、墨線、這一節用哪個畫面），加上讀經提醒、平行經文差異小卡（`diffs`）、歸回的家族連回祖先（`links`）。 |
+| `src/data/roles.json` | 大衛立的職位：四類、各職位方塊與成員、只在職位圖上的人。分頁打開或讀經讀到時才載入。 |
 | `src/data/verses.json` | 上述資料所用的經節全文。 |
 | `src/data/speech-fixes.ts` | 朗讀用的多音字替換表（只改送給語音的文字）。 |
 | `src/data/types.ts` | 匯出 JSON 的 TypeScript 型別。 |
@@ -45,7 +47,32 @@ npm run preview    # http://127.0.0.1:4201/
 | `src/data/data.test.ts` | 資料完整度、全展開版面不重疊、每人都有節點、讀經標記位置與人物的閘門；只從網站資料夾讀 JSON。 |
 | `src/assets/fonts/` | 讀經模式的楷書字型（霞鶩文楷 TC，SIL OFL 1.1），只留用到的字；`OFL.txt` 是授權全文。 |
 
-JSON 由 `appendix/genealogy/build_genealogy.py` 的匯出功能產生。大圖安置的裁決在 `appendix/genealogy/亞當到耶穌/大圖安置.yaml`，讀經標記的裁決在 `讀經.yaml`（程式在 `appendix/genealogy/reading.py`）：
+JSON 由 `appendix/genealogy/build_genealogy.py` 的匯出功能產生。資料都在 `appendix/genealogy/亞當到耶穌/`：
+
+| 檔案 | 內容 |
+| --- | --- |
+| `大圖安置.yaml` | 接不上主線的家族掛在大圖哪裡。 |
+| `讀經路線.yaml` | 讀經的 34 段：經文範圍、標題、分組、預設畫面、段內換畫面的地方。 |
+| `讀經.yaml`、`讀經/*.yaml` | 逐節裁決：名字是誰、職稱屬於誰、只在經文裡亮的名字、地名（程式在 `appendix/genealogy/reading.py`）。 |
+| `職位.yaml` | 大衛立的職位（程式在 `appendix/genealogy/roles.py`）；家譜樹上的人要寫根據。 |
+| `歸回.yaml` | 歸回的家族連回祖先，每一筆都寫根據。 |
+| `差異.yaml` | 平行經文差異小卡：只寫兩處各自的寫法和經節。 |
+| `people/06_大衛立的職位.yaml` | 職位章裡經文寫明父親、而父親已在家譜樹上的人。 |
+
+**資料根據的順序**（每一個連結都寫 `basis:`，建置時由 `appendix/genealogy/check_basis.py` 逐字檢查）：
+1. 經文（`raw_scripture/`，和合本）：人物關係、職位、誰是誰的兒子，只取自這裡；前後文能判斷的以前後文為準。
+2. 原文證據（STEP Bible，`raw_data/stepbible_*.txt`）：同名的人常用不同的擴充 Strong 編號區分。
+3. 四套註釋（`raw_data/` 的 CT、GT、KC、BH）：只能支持經文已經指向的連結，引句逐字比對原檔。
+4. TIPNR（STEPBible-Data，CC BY 4.0，見 `appendix/genealogy/sources/README.md`）：交叉檢查同名的人。不引維基百科；外部資料和經文衝突時以經文為準。
+
+檢查工具在 `appendix/genealogy/tools/`：`reading_gate.py`（逐段三項閘門：位置錯誤、找不到人物、未處理的人名）、`step_names.py`（每節原文人名，`audit` 列出標記數對不上的節）、`align_parallels.py`（平行名單逐名對齊）、`tipnr.py`（TIPNR 對照表）。朗讀多音字用 `scripts/polyphone_cases.py` 產生候選、`scripts/tts_polyphone.py` 比對語音波形（說明見 `scripts/README.md`）。
+
+```powershell
+python appendix/genealogy/build_genealogy.py 亞當到耶穌 --export-json appendix/website/全聖經/亞當到耶穌/src/data
+python appendix/genealogy/tools/reading_gate.py
+```
+
+（舊說明）大圖安置的裁決在 `大圖安置.yaml`，讀經標記的裁決在 `讀經.yaml`：
 
 ```powershell
 python appendix/genealogy/build_genealogy.py 亞當到耶穌 --export-json appendix/website/全聖經/亞當到耶穌/src/data

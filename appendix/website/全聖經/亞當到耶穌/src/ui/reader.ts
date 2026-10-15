@@ -1,11 +1,16 @@
-import type { ReadingData, ReadingToken, ReadingVerse } from '../data/types';
-import type { CanvasApi, ReadingMarks } from './canvas';
+import type { ReadingData, ReadingDiff, ReadingToken, StageId } from '../data/types';
 import { button, h } from './dom';
+import {
+  STAGE_LABEL, anchorPerson, buildRoute, cardText, chapterHeading, entryPlan, gapAfterVerse,
+  linkTargets, linksReadBefore, startIndex, type RouteVerse,
+} from './reader-route';
 import type { SpeechController } from './speech';
+import { emptyMarks, type ReadingStage, type StageMarks } from './stage';
 
 /**
- * 帶你讀經：經文一節一節往下讀，讀到誰，大家譜的鏡頭就移到誰；
- * 讀到「生」由父母往子女畫墨線，讀到職稱就蓋一枚朱印。
+ * 帶你讀經：經文一節一節往下讀，讀到誰，上方的畫面就亮起誰。
+ * 畫面有兩個（家譜樹、大衛立的職位），跟著這幾節在講什麼自動換；
+ * 這支程式只透過 ReadingStage 介面操作舞台，不直接碰畫布。
  * 沒開朗讀時，文字像字幕一樣照速度亮；開了朗讀就跟著聲音走。
  */
 export interface ReaderApi {
@@ -16,35 +21,25 @@ export interface ReaderApi {
   isOpen(): boolean;
 }
 
-interface FlatVerse {
-  index: number;
-  chapter: number;
-  chapterTitle: string;
-  verse: ReadingVerse;
-  key: string;
-}
-
 const CHARS_PER_SECOND = 4.6;
 const SPEEDS = [0.75, 1, 1.25, 1.5] as const;
-const CHINESE_NUMBERS = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
-const chapterName = (n: number) => (n <= 10 ? CHINESE_NUMBERS[n]! : `十${CHINESE_NUMBERS[n - 10]}`);
+const SWITCH_MS = 450;
 const storage = {
   get(key: string) { try { return localStorage.getItem(`adam-jesus:reader-${key}`); } catch { return null; } },
   set(key: string, value: string) { try { localStorage.setItem(`adam-jesus:reader-${key}`, value); } catch { /* 私密模式不保存 */ } },
 };
+const other = (id: StageId): StageId => (id === 'tree' ? 'roles' : 'tree');
+/** 經文裡讀得出是誰的人名（家譜樹上的人、只在職位圖的人、歸回連回祖先的家族） */
+const isNamed = (token: ReadingToken) => token.k === 'p' && (token.id !== undefined || token.rid !== undefined || token.link !== undefined);
 
-export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
+export function createReader(reading: ReadingData, stages: { tree: ReadingStage; roles: ReadingStage }, options: {
   speech?: SpeechController;
   onOpenChange?(open: boolean): void;
 }): ReaderApi {
-  const book = reading.book;
-  const verses: FlatVerse[] = [];
-  for (const chapter of reading.chapters) {
-    for (const verse of chapter.verses) {
-      verses.push({ index: verses.length, chapter: chapter.n, chapterTitle: chapter.title, verse, key: `${book}${chapter.n}:${verse.v}` });
-    }
-  }
+  const route = buildRoute(reading);
+  const verses = route.verses;
   const motionOn = () => document.documentElement.dataset.motion !== 'off';
+  const stageIds: StageId[] = ['tree', 'roles'];
 
   // ── 狀態 ─────────────────────────────────────────────
   let isOpen = false;
@@ -56,25 +51,42 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
   let speed = Number(storage.get('speed')) || 1;
   if (!SPEEDS.includes(speed as typeof SPEEDS[number])) speed = 1;
   let voiceOn = false;
-  let renderedChapter = 0;
+  let renderedFragment = -1;
   let pauseUntil = 0;
   let lastFrame = 0;
   let frame = 0;
   let gapTimer = 0;
-  let expandedBefore: Set<string> | null = null;
-  let marks: ReadingMarks = emptyMarks();
+  /** 現在顯示在大畫面的舞台；還沒顯示過是 null */
+  let shown: StageId | null = null;
+  /** 換畫面的流水號：新的一次開始，舊的（還在等資料載入的）就作廢 */
+  let switchSeq = 0;
+  const readyStages = new Set<StageId>(['tree']);
+  let savedViews: Partial<Record<StageId, unknown>> = {};
+  let marks: StageMarks = emptyMarks();
+  let revealed: string[] = [];
+  let prefetchTimer = 0;
   const lastPersonInSection = new Map<string, string>();
-
-  function emptyMarks(): ReadingMarks {
-    return { lit: new Set(), trail: new Set(), current: null, seals: [], ink: [], fresh: new Set() };
-  }
+  const sectionOf = (item: RouteVerse) => item.verse.sec ?? item.segment.id;
 
   // ── 經文欄 ───────────────────────────────────────────
-  const chapterSelect = h('select', { className: 'ag-rd-select', 'aria-label': '選章' },
-    ...reading.chapters.map((chapter) => h('option', { value: String(chapter.n) }, `第 ${chapter.n} 章　${chapter.title}`)));
-  chapterSelect.addEventListener('change', () => jump(firstVerseOf(Number(chapterSelect.value)), 0, playing));
+  const segmentSelect = h('select', { className: 'ag-rd-select', 'aria-label': '選段落' });
+  const groups = new Map<string, HTMLOptGroupElement>();
+  reading.segments.forEach((segment, index) => {
+    let group = groups.get(segment.group);
+    if (!group) {
+      group = h('optgroup', { label: segment.group });
+      groups.set(segment.group, group);
+      segmentSelect.append(group);
+    }
+    group.append(h('option', { value: String(index) }, `${segment.title}　${segment.range}`));
+  });
+  segmentSelect.addEventListener('change', () => {
+    const start = route.segmentStart[Number(segmentSelect.value)];
+    if (start !== undefined) jump(start, 0, playing);
+  });
   const closeButton = button('離開', () => close(), 'ag-rd-close');
   closeButton.setAttribute('aria-label', '離開帶你讀經');
+  const panelTitle = h('strong', {}, '');
   const scroll = h('div', { className: 'ag-rd-scroll' });
   const playButton = button('播放', () => togglePlay(), 'ag-rd-play');
   const control = (label: string, symbol: string, action: () => void) => {
@@ -95,8 +107,8 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
   const voiceNote = h('p', { className: 'ag-rd-voice-note', hidden: true }, '這台裝置沒有中文語音，可以用文字跟著讀。');
   const panel = h('section', { className: 'ag-rd-panel', role: 'region', 'aria-label': '帶你讀經', hidden: true },
     h('header', { className: 'ag-rd-head' },
-      h('div', { className: 'ag-rd-title' }, h('span', { className: 'ag-rd-eyebrow' }, '帶你讀經'), h('strong', {}, reading.bookName)),
-      chapterSelect, closeButton),
+      h('div', { className: 'ag-rd-title' }, h('span', { className: 'ag-rd-eyebrow' }, '帶你讀經'), panelTitle),
+      segmentSelect, closeButton),
     scroll,
     h('footer', { className: 'ag-rd-controls' },
       h('div', { className: 'ag-rd-transport' },
@@ -108,75 +120,117 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
       h('div', { className: 'ag-rd-options' }, speedSelect, voiceButton),
       voiceNote,
       h('p', { className: 'ag-rd-credit' }, '經文：和合本　讀經字型：霞鶩文楷 TC（SIL Open Font License 1.1）')));
-  const returnButton = button('回到朗讀處', () => {
-    follow = true;
-    returnButton.hidden = true;
-    focusCamera(true);
-  }, 'ag-rd-return');
+  const returnButton = button('回到朗讀處', () => returnToReading(), 'ag-rd-return');
   returnButton.hidden = true;
   const chapterCard = h('div', { className: 'ag-rd-chapter-card', 'aria-hidden': 'true' });
-  const stage = h('div', { className: 'ag-rd-stage' }, chapterCard, returnButton);
 
-  canvas.onUserCamera(() => {
-    if (!isOpen || !follow) return;
-    follow = false;
-    returnButton.hidden = false;
-  });
+  // 小地圖：另一個畫面的縮影，上面一個紅點標出現在讀到的人
+  const miniView = h('span', { className: 'ag-rd-mini-view' });
+  const miniDot = h('i', { className: 'ag-rd-mini-dot', hidden: true });
+  const miniName = h('span', { className: 'ag-rd-mini-name' }, '');
+  const miniButton = h('button', { className: 'ag-rd-mini', type: 'button', hidden: true }, miniView, miniName);
+  miniButton.addEventListener('click', () => peek());
+  let miniFor: StageId | null = null;
 
-  function firstVerseOf(chapter: number): number {
-    return verses.find((item) => item.chapter === chapter)?.index ?? 0;
+  const stage = h('div', { className: 'ag-rd-stage' }, chapterCard, miniButton, returnButton);
+
+  for (const id of stageIds) {
+    stages[id].onUserCamera(() => {
+      if (!isOpen || !follow || shown !== id) return;
+      follow = false;
+      returnButton.hidden = false;
+    });
   }
 
-  function renderChapter(chapter: number) {
-    renderedChapter = chapter;
-    chapterSelect.value = String(chapter);
-    const info = reading.chapters.find((item) => item.n === chapter)!;
-    const article = h('article', { className: 'ag-rd-text' },
-      h('h2', { className: 'ag-rd-chapter-head' },
-        h('span', { className: 'ag-rd-chapter-no' }, `第${chapterName(chapter)}章`),
-        h('span', { className: 'ag-rd-chapter-name' }, info.title)));
-    for (const item of verses.filter((entry) => entry.chapter === chapter)) {
-      const line = h('span', { className: 'ag-rd-line' });
-      let position = 0;
-      const text = item.verse.text;
-      const segment = (s: number, e: number, token?: ReadingToken, tokenIndex?: number) => {
-        const el = h('span', { className: `ag-rd-seg${token ? ` ag-rd-k-${token.k}${token.k === 'p' && token.id ? ' ag-rd-person' : ''}` : ''}`,
-          dataset: { s: String(s), e: String(e) } }, text.slice(s, e));
-        if (token && token.k === 'p' && token.id && tokenIndex !== undefined) {
-          el.setAttribute('role', 'button');
-          el.tabIndex = 0;
-          const go = () => jump(item.index, token.s, playing);
-          el.addEventListener('click', go);
-          el.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); go(); } });
-        }
-        line.append(el);
-      };
-      item.verse.t.forEach((token, tokenIndex) => {
-        if (token.s > position) segment(position, token.s);
-        segment(token.s, token.e, token, tokenIndex);
-        position = token.e;
-      });
-      if (position < text.length) segment(position, text.length);
-      const number = button(String(item.verse.v), () => jump(item.index, 0, playing), 'ag-rd-vno');
-      number.setAttribute('aria-label', `從第 ${item.verse.v} 節讀起`);
-      const paragraph = h('p', { className: 'ag-rd-verse', dataset: { i: String(item.index) } }, number, line);
-      article.append(paragraph);
-      if (item.verse.note !== undefined && reading.notes[item.verse.note]) {
-        article.append(h('aside', { className: 'ag-rd-note', dataset: { i: String(item.index) } },
-          h('span', { className: 'ag-rd-note-label' }, '讀經提醒'), reading.notes[item.verse.note]!.text));
-      }
+  const verseAt = () => verses[at]!;
+
+  // ── 經文欄的內容 ─────────────────────────────────────
+  function renderFragment(item: RouteVerse) {
+    renderedFragment = item.fragmentIndex;
+    const heading = chapterHeading(item);
+    const article = h('article', { className: 'ag-rd-text' });
+    // 段落的第一個片段，上面再加段落標題
+    const first = verses[route.segmentStart[item.segmentIndex] ?? 0];
+    if (first && first.fragmentIndex === item.fragmentIndex) {
+      article.append(h('div', { className: 'ag-rd-segment-head' },
+        h('strong', {}, item.segment.title), h('span', {}, item.segment.range)));
+    }
+    article.append(heading.kind === 'named'
+      ? h('h2', { className: 'ag-rd-chapter-head' },
+        h('span', { className: 'ag-rd-chapter-no' }, heading.no),
+        h('span', { className: 'ag-rd-chapter-name' }, heading.name))
+      : h('h2', { className: 'ag-rd-chapter-head' },
+        h('span', { className: 'ag-rd-chapter-no is-book' }, heading.label),
+        h('span', { className: 'ag-rd-chapter-name' })));
+    for (const entry of verses) {
+      if (entry.fragmentIndex !== item.fragmentIndex) continue;
+      article.append(...renderVerse(entry));
     }
     scroll.replaceChildren(article);
     scroll.scrollTop = 0;
+  }
+
+  function renderVerse(item: RouteVerse): HTMLElement[] {
+    const line = h('span', { className: 'ag-rd-line' });
+    let position = 0;
+    const text = item.verse.text;
+    const segment = (s: number, e: number, token?: ReadingToken) => {
+      const named = token ? isNamed(token) : false;
+      const el = h('span', { className: `ag-rd-seg${token ? ` ag-rd-k-${token.k}${named ? ' ag-rd-person' : ''}` : ''}`,
+        dataset: { s: String(s), e: String(e) } }, text.slice(s, e));
+      if (token && named) {
+        el.setAttribute('role', 'button');
+        el.tabIndex = 0;
+        const go = () => jump(item.index, token.s, playing);
+        el.addEventListener('click', go);
+        el.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); go(); } });
+      }
+      line.append(el);
+    };
+    for (const token of item.verse.t) {
+      if (token.s > position) segment(position, token.s);
+      segment(token.s, token.e, token);
+      position = token.e;
+    }
+    if (position < text.length) segment(position, text.length);
+    const number = button(String(item.verse.v), () => jump(item.index, 0, playing), 'ag-rd-vno');
+    number.setAttribute('aria-label', `從第 ${item.verse.v} 節讀起`);
+    const out: HTMLElement[] = [h('p', { className: 'ag-rd-verse', dataset: { i: String(item.index) } }, number, line)];
+    if (item.verse.note !== undefined && reading.notes[item.verse.note]) {
+      out.push(h('aside', { className: 'ag-rd-note', dataset: { i: String(item.index) } },
+        h('span', { className: 'ag-rd-note-label' }, '讀經提醒'), reading.notes[item.verse.note]!.text));
+    }
+    for (const index of item.verse.diff ?? []) {
+      const diff = reading.diffs[index];
+      if (diff) out.push(diffCard(item.index, diff));
+    }
+    item.verse.t.forEach((token, tokenIndex) => {
+      const link = token.link !== undefined ? reading.links[token.link] : undefined;
+      if (!link?.card) return;
+      out.push(h('aside', { className: 'ag-rd-note ag-rd-linkcard', dataset: { i: String(item.index), t: String(tokenIndex) } },
+        h('span', { className: 'ag-rd-note-label' }, '連回祖先'),
+        h('span', { className: 'ag-rd-linkcard-text' }, link.card),
+        link.refs.length ? h('span', { className: 'ag-rd-linkcard-refs' }, link.refs.join('、')) : null));
+    });
+    return out;
+  }
+
+  function diffCard(index: number, diff: ReadingDiff): HTMLElement {
+    return h('aside', { className: 'ag-rd-note ag-rd-diff', dataset: { i: String(index) } },
+      h('span', { className: 'ag-rd-note-label' }, '兩處寫法不同'),
+      h('span', { className: 'ag-rd-diff-title' }, diff.title),
+      ...diff.sides.map((side) => h('span', { className: 'ag-rd-diff-side' },
+        h('span', { className: 'ag-rd-diff-text' }, `「${side.text}」`),
+        h('span', { className: 'ag-rd-diff-ref' }, side.ref))));
   }
 
   // 經文欄只捲動自己，不動整頁
   function scrollToVerse(index: number, smooth: boolean) {
     const paragraph = scroll.querySelector<HTMLElement>(`.ag-rd-verse[data-i="${index}"]`);
     if (!paragraph) return;
-    // 每章第一節捲回最上面，章名才看得到
+    // 每個章片段第一節捲回最上面，章名才看得到
     const inside = paragraph.getBoundingClientRect().top - scroll.getBoundingClientRect().top + scroll.scrollTop;
-    const top = verses[index]!.verse.v === 1 ? 0 : inside - scroll.clientHeight * 0.22;
+    const top = verses[index]!.firstInFragment ? 0 : inside - scroll.clientHeight * 0.22;
     scroll.scrollTo({ top: Math.max(0, top), behavior: smooth && motionOn() ? 'smooth' : 'auto' });
   }
 
@@ -186,7 +240,12 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
       paragraph.classList.toggle('is-past', index < at);
       paragraph.classList.toggle('is-now', index === at);
     }
-    for (const note of scroll.querySelectorAll<HTMLElement>('.ag-rd-note')) note.classList.toggle('is-shown', Number(note.dataset.i) <= at);
+    for (const note of scroll.querySelectorAll<HTMLElement>('.ag-rd-note')) {
+      const index = Number(note.dataset.i);
+      // 連回祖先的小卡跟著人名出現：讀到那個名字才出現
+      const token = note.dataset.t;
+      note.classList.toggle('is-shown', token === undefined ? index <= at : index < at || (index === at && Number(token) < fired));
+    }
     const paragraph = scroll.querySelector<HTMLElement>(`.ag-rd-verse[data-i="${at}"]`);
     if (!paragraph) return;
     for (const segment of paragraph.querySelectorAll<HTMLElement>('.ag-rd-seg')) {
@@ -197,71 +256,217 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
     }
   }
 
-  // ── 鏡頭與標記 ───────────────────────────────────────
-  function focusTarget(): string | null {
-    if (marks.current) return marks.current;
-    const verse = verses[at]!.verse;
-    return verse.hold ?? lastPersonInSection.get(verse.sec ?? '') ?? null;
-  }
-  function focusCamera(animate: boolean) {
-    const target = focusTarget();
-    if (target) void canvas.flyTo(target, animate);
+  // ── 舞台與鏡頭 ───────────────────────────────────────
+  function pushMarks() {
+    for (const id of readyStages) stages[id].setMarks(marks);
   }
 
-  function enterVerse(index: number, keepTrail = true, card = true) {
+  function focusTarget(): string | null {
+    const item = verseAt();
+    const target = stages[item.stage];
+    if (marks.current && target.has(marks.current)) return marks.current;
+    if (item.stage === 'roles') return item.verse.box ?? null;
+    return item.verse.hold ?? lastPersonInSection.get(sectionOf(item)) ?? anchorPerson(route, at);
+  }
+  /** 每個舞台最後一次鏡頭停的位置：偷看另一個畫面時，鏡頭才不是停在不相干的地方 */
+  const lastFocus: Partial<Record<StageId, string>> = {};
+  /** 最後讀到的家譜樹人物 */
+  let lastTreeId: string | null = null;
+  function focusCamera(animate: boolean) {
+    const item = verseAt();
+    if (shown !== item.stage) return;
+    const target = focusTarget();
+    if (!target) return;
+    lastFocus[item.stage] = target;
+    void stages[item.stage].flyTo(target, animate);
+  }
+
+  let leaveTimer = 0;
+  let enterTimer = 0;
+  /** 把 next 換到大畫面。職位圖是疊在畫布上面的一層：出現時從右上角放大淡入，退下時縮回右上角 */
+  function applyFront(next: StageId, animate: boolean) {
+    const previous = shown;
+    shown = next;
+    const overlay = stages.roles.el;
+    const motion = animate && motionOn() && previous !== null && previous !== next;
+    window.clearTimeout(leaveTimer);
+    window.clearTimeout(enterTimer);
+    overlay.classList.remove('ag-rd-overlay-enter', 'ag-rd-overlay-leave');
+    if (next === 'roles') {
+      overlay.classList.add('ag-rd-overlay-on');
+      if (motion) {
+        overlay.getBoundingClientRect();
+        overlay.classList.add('ag-rd-overlay-enter');
+        enterTimer = window.setTimeout(() => overlay.classList.remove('ag-rd-overlay-enter'), SWITCH_MS + 60);
+      }
+    } else if (motion && overlay.classList.contains('ag-rd-overlay-on')) {
+      overlay.classList.add('ag-rd-overlay-leave');
+      leaveTimer = window.setTimeout(() => overlay.classList.remove('ag-rd-overlay-on', 'ag-rd-overlay-leave'), SWITCH_MS);
+    } else {
+      overlay.classList.remove('ag-rd-overlay-on');
+    }
+    miniButton.classList.toggle('is-fresh', motion);
+    refreshMini(true);
+  }
+
+  /** 換畫面：等新舞台準備好 → 出標題卡 → 舊的縮成小地圖、新的浮上來 */
+  async function switchTo(next: StageId, opts: { item?: RouteVerse; card?: 'switch' | 'chapter' | null; focus?: boolean; animate?: boolean }) {
+    const seq = ++switchSeq;
+    if (!readyStages.has(next)) {
+      try { await stages[next].ready(); } catch { return; }
+      readyStages.add(next);
+      if (seq !== switchSeq || !isOpen) return;
+      stages[next].reveal(revealed);
+    }
+    if (seq !== switchSeq || !isOpen) return;
+    pushMarks();
+    if (opts.card && opts.item) showCard(opts.item, opts.card === 'switch');
+    applyFront(next, opts.animate ?? true);
+    if (opts.focus && follow) focusCamera(opts.animate ?? true);
+  }
+
+  function peek() {
+    if (!isOpen || shown === null) return;
+    const target = other(shown);
+    const home = target === verseAt().stage;
+    follow = home;
+    returnButton.hidden = home;
+    void switchTo(target, { focus: home }).then(() => {
+      // 偷看：鏡頭移到現在讀到的人，沒有就停在這個畫面上次停的地方（只移一次，之後使用者自己看）
+      if (home || !isOpen || shown !== target) return;
+      const spot = marks.current && stages[target].has(marks.current) ? marks.current : lastFocus[target] ?? (target === 'tree' ? lastTreeId : null);
+      if (spot) void stages[target].flyTo(spot, false);
+    });
+  }
+
+  function returnToReading() {
+    follow = true;
+    returnButton.hidden = true;
+    const item = verseAt();
+    if (shown !== item.stage) void switchTo(item.stage, { focus: true });
+    else focusCamera(true);
+  }
+
+  // ── 小地圖 ───────────────────────────────────────────
+  function refreshMini(rebuild: boolean) {
+    if (!isOpen || shown === null) { miniButton.hidden = true; return; }
+    const target = other(shown);
+    miniButton.hidden = false;
+    if (rebuild || miniFor !== target) {
+      miniFor = target;
+      miniView.replaceChildren(stages[target].miniature(), miniDot);
+      miniName.textContent = STAGE_LABEL[target].view;
+      miniButton.setAttribute('aria-label', `看${STAGE_LABEL[target].view}`);
+      miniButton.title = `看${STAGE_LABEL[target].view}`;
+    }
+    const spot = marks.current ? stages[target].locate(marks.current) : null;
+    miniDot.hidden = !spot;
+    if (spot) {
+      miniDot.style.left = `${(spot.x * 100).toFixed(1)}%`;
+      miniDot.style.top = `${(spot.y * 100).toFixed(1)}%`;
+    }
+  }
+
+  // ── 進到一節 ─────────────────────────────────────────
+  /** 回傳這一節進來時要出的標題卡種類（播放時依此決定停多久） */
+  function enterVerse(index: number, opts: { keepTrail?: boolean; wantCard?: boolean; opening?: boolean } = {}): 'switch' | 'chapter' | null {
+    const { keepTrail = true, wantCard = true, opening = false } = opts;
     const previous = marks;
     at = Math.max(0, Math.min(verses.length - 1, index));
     cursor = 0;
     fired = 0;
-    const item = verses[at]!;
-    const chapterChanged = item.chapter !== renderedChapter;
-    if (chapterChanged) {
-      renderChapter(item.chapter);
-      if (card) showChapterCard(item);
-    }
-    marks = { ...emptyMarks(), trail: keepTrail ? new Set([...previous.lit]) : new Set() };
+    const item = verseAt();
+    const plan = entryPlan(item, { renderedFragment, shown, follow, wantCard });
+    if (plan.fragmentChanged) renderFragment(item);
+    panelTitle.textContent = item.segment.title;
+    segmentSelect.value = String(item.segmentIndex);
+    marks = {
+      ...emptyMarks(),
+      trail: keepTrail ? new Set([...previous.lit]) : new Set(),
+      boxes: new Set(item.verse.box ? [item.verse.box] : []),
+      links: linksReadBefore(route, at),
+    };
     const ids = new Set<string>();
     for (const token of item.verse.t) {
       if (token.id) ids.add(token.id);
+      if (token.rid) ids.add(token.rid);
       if (token.of) ids.add(token.of);
       for (const from of token.from ?? []) ids.add(from);
       for (const to of token.to ?? []) ids.add(to);
+      if (token.link !== undefined) {
+        const targets = linkTargets(reading.links[token.link]);
+        for (const id of [...targets.tree, ...targets.roles, ...targets.boxes]) ids.add(id);
+      }
     }
     if (item.verse.hold) ids.add(item.verse.hold);
-    canvas.expandMany([...ids]);
-    canvas.setReadingMarks(marks);
-    const firstPerson = item.verse.t.find((token) => token.k === 'p' && token.id);
-    if (!firstPerson && follow) focusCamera(true);
-    // 換章的時候，趁章名卡還在，鏡頭先飛到這一章的第一個人
-    else if (firstPerson && follow && chapterChanged) void canvas.flyTo(firstPerson.id!, true);
+    if (item.verse.box) ids.add(item.verse.box);
+    revealed = [...ids];
+    for (const id of readyStages) stages[id].reveal(revealed);
+    pushMarks();
+
+    if (plan.switching) {
+      void switchTo(item.stage, { item, card: plan.card, focus: true, animate: !opening });
+    } else {
+      if (plan.card) showCard(item, plan.card === 'switch');
+      if (follow) enterCamera(item, plan.fragmentChanged);
+    }
+    refreshMini(false);
     history.replaceState(null, '', `${location.pathname}${location.search}#read=${encodeURIComponent(item.key)}`);
     storage.set('at', item.key);
     paintText();
     scrollToVerse(at, true);
+    return plan.card;
+  }
+
+  /** 進到新的一節：沒有人名就把鏡頭停在這一節的位置；換章片段時趁標題卡還在，先飛到第一個人 */
+  function enterCamera(item: RouteVerse, fragmentChanged: boolean) {
+    const target = stages[item.stage];
+    const first = item.verse.t.find(isNamed);
+    if (first && !fragmentChanged) return;
+    const own = first ? [first.id, first.rid].find((id): id is string => Boolean(id) && target.has(id!)) : undefined;
+    const goal = own ?? focusTarget();
+    if (!goal) return;
+    lastFocus[item.stage] = goal;
+    void target.flyTo(goal, true);
   }
 
   /** 讀到 cursor 為止的標記；quiet 時不要落筆動畫（跳讀時用） */
   function fireUpTo(quiet: boolean) {
-    const item = verses[at]!;
+    const item = verseAt();
     const tokens = item.verse.t;
     const fresh = new Set<string>();
     let moved = false;
     while (fired < tokens.length && tokens[fired]!.s <= cursor) {
       const token = tokens[fired]!;
       const key = `${at}:${fired}`;
-      if (token.k === 'p' && token.id) {
-        marks.lit.add(token.id);
-        marks.current = token.id;
-        if (item.verse.sec) lastPersonInSection.set(item.verse.sec, token.id);
-        for (const from of token.from ?? []) {
-          marks.ink.push({ from, to: token.id, key: `${key}:${from}` });
-          fresh.add(`${key}:${from}`);
+      if (token.k === 'p') {
+        const who = token.id ?? token.rid;
+        if (who) {
+          marks.lit.add(who);
+          marks.current = who;
+          moved = true;
         }
-        for (const to of token.to ?? []) {
-          marks.ink.push({ from: token.id, to, key: `${key}:>${to}` });
-          fresh.add(`${key}:>${to}`);
+        if (token.id) {
+          lastPersonInSection.set(sectionOf(item), token.id);
+          lastTreeId = token.id;
+          for (const from of token.from ?? []) {
+            marks.ink.push({ from, to: token.id, key: `${key}:${from}` });
+            fresh.add(`${key}:${from}`);
+          }
+          for (const to of token.to ?? []) {
+            marks.ink.push({ from: token.id, to, key: `${key}:>${to}` });
+            fresh.add(`${key}:>${to}`);
+          }
         }
-        moved = true;
+        if (token.link !== undefined) {
+          const targets = linkTargets(reading.links[token.link]);
+          marks.links.add(token.link);
+          for (const id of [...targets.tree, ...targets.roles]) marks.lit.add(id);
+          for (const box of targets.boxes) marks.boxes.add(box);
+          if (targets.current) marks.current = targets.current;
+          if (targets.tree[0]) lastPersonInSection.set(sectionOf(item), targets.tree[0]);
+          moved = true;
+        }
       } else if (token.k === 't' && token.of) {
         marks.seals.push({ id: token.of, label: item.verse.text.slice(token.s, token.e), key });
         fresh.add(key);
@@ -270,7 +475,8 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
     }
     if (fresh.size || moved) {
       marks = { ...marks, fresh: quiet ? new Set() : fresh };
-      canvas.setReadingMarks(marks);
+      pushMarks();
+      refreshMini(false);
       // 安靜地點亮（跳讀、換章、打開時）不動鏡頭，由呼叫的地方決定怎麼移；
       // 否則這裡會先直接切過去，換章時「先拉遠再推近」就沒有東西可飛
       if (moved && follow && !quiet) focusCamera(true);
@@ -279,7 +485,7 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
 
   function jump(index: number, toChar: number, keepPlaying: boolean) {
     stopVoice();
-    enterVerse(index, false);
+    enterVerse(index, { keepTrail: false });
     cursor = toChar;
     fireUpTo(true);
     if (follow) focusCamera(true);
@@ -294,7 +500,7 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
 
   /** 上一個／下一個人名，可以跨節 */
   function stepName(direction: -1 | 1) {
-    const persons = (index: number) => verses[index]!.verse.t.filter((token) => token.k === 'p' && token.id);
+    const persons = (index: number) => verses[index]!.verse.t.filter(isNamed);
     if (direction > 0) {
       const next = persons(at).find((token) => token.s > cursor);
       if (next) { jump(at, next.s, playing); return; }
@@ -336,9 +542,9 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
 
   function endOfVerse() {
     if (at >= verses.length - 1) { pause(); return; }
-    enterVerse(at + 1);
-    // 換章時讓章名卡停一下
-    const gap = verses[at]!.chapter !== verses[at - 1]!.chapter ? 2600 : 520 / speed;
+    const card = enterVerse(at + 1);
+    // 換章、換畫面的時候讓標題卡停一下
+    const gap = gapAfterVerse(card, speed);
     pauseUntil = performance.now() + gap;
     window.clearTimeout(gapTimer);
     if (voiceOn && playing) gapTimer = window.setTimeout(() => { if (playing && voiceOn) speakFromCursor(); }, gap);
@@ -350,7 +556,7 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
     const dt = Math.max(0, Math.min(0.25, (now - lastFrame) / 1000));
     lastFrame = now;
     if (!voiceOn && now >= pauseUntil) {
-      const text = verses[at]!.verse.text;
+      const text = verseAt().verse.text;
       cursor = Math.min(text.length, cursor + dt * CHARS_PER_SECOND * speed);
       fireUpTo(false);
       paintText();
@@ -363,7 +569,7 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
   function speakFromCursor() {
     const speech = options.speech;
     if (!speech || !voiceOn) return;
-    const item = verses[at]!;
+    const item = verseAt();
     const start = Math.floor(cursor);
     const index = at;
     speech.speak(item.verse.text, {
@@ -405,14 +611,15 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
     voiceButton.classList.toggle('is-on', voiceOn);
   }
 
-  // ── 章名卡 ───────────────────────────────────────────
+  // ── 標題卡 ───────────────────────────────────────────
   let cardTimer = 0;
-  function showChapterCard(item: FlatVerse) {
+  function showCard(item: RouteVerse, switching: boolean) {
     window.clearTimeout(cardTimer);
+    const text = cardText(item, switching);
     chapterCard.replaceChildren(
-      h('span', { className: 'ag-rd-card-seal' }, reading.bookName),
-      h('span', { className: 'ag-rd-card-no' }, `第${chapterName(item.chapter)}章`),
-      h('span', { className: 'ag-rd-card-title' }, item.chapterTitle));
+      h('span', { className: 'ag-rd-card-seal' }, text.seal),
+      h('span', { className: `ag-rd-card-no${text.bigIsTitle ? ' is-title' : ''}` }, text.big),
+      h('span', { className: 'ag-rd-card-title' }, text.small));
     chapterCard.classList.remove('is-on');
     chapterCard.getBoundingClientRect();
     chapterCard.classList.add('is-on');
@@ -420,34 +627,46 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
   }
 
   // ── 開關 ─────────────────────────────────────────────
-  function parse(ref: string): number | null {
-    const match = new RegExp(`^${book}(\\d+):(\\d+)$`).exec(ref.trim());
-    if (!match) return null;
-    const found = verses.find((item) => item.chapter === Number(match[1]) && item.verse.v === Number(match[2]));
-    return found ? found.index : null;
-  }
-
   function open(ref?: string, autoplay = true) {
-    const index = (ref ? parse(ref) : null) ?? parse(storage.get('at') ?? '') ?? 0;
+    const index = startIndex(route, reading.start, ref, storage.get('at'));
+    const item = verses[index]!;
     if (!isOpen) {
       isOpen = true;
-      expandedBefore = canvas.getExpanded();
+      shown = null;
+      lastTreeId = null;
+      delete lastFocus.tree;
+      delete lastFocus.roles;
+      miniFor = null;
+      savedViews = { tree: stages.tree.saveView(), roles: stages.roles.saveView() };
       panel.hidden = false;
       stage.hidden = false;
       document.documentElement.classList.add('ag-reading');
-      canvas.setReading(true);
+      stages.roles.el.classList.add('ag-rd-overlay');
+      for (const id of stageIds) stages[id].setReading(true);
       options.onOpenChange?.(true);
       document.addEventListener('keydown', onKey);
+      // 職位圖的資料晚一點在背景載入，小地圖和換畫面時才不用等
+      window.clearTimeout(prefetchTimer);
+      prefetchTimer = window.setTimeout(() => {
+        if (!isOpen || readyStages.has('roles')) return;
+        void stages.roles.ready().then(() => {
+          if (!isOpen) return;
+          readyStages.add('roles');
+          stages.roles.reveal(revealed);
+          pushMarks();
+          refreshMini(true);
+        }).catch(() => undefined);
+      }, 700);
     }
     follow = true;
     returnButton.hidden = true;
-    renderedChapter = 0;
-    // 從連結直接打開到章中間的某一節時，不放章名卡
-    enterVerse(index, false, verses[index]!.verse.v === 1);
-    const firstPerson = verses[index]!.verse.t.find((token) => token.k === 'p' && token.id);
+    renderedFragment = -1;
+    // 從連結直接打開到章中間的某一節時，不放標題卡
+    const card = enterVerse(index, { keepTrail: false, wantCard: item.firstInFragment, opening: true });
+    const firstPerson = item.verse.t.find(isNamed);
     if (firstPerson && !autoplay) { cursor = firstPerson.s; fireUpTo(true); paintText(); }
     focusCamera(false);
-    pauseUntil = performance.now() + (verses[index]!.verse.v === 1 ? 2600 : 400);
+    pauseUntil = performance.now() + (card ? 2600 : 400);
     if (autoplay) play(); else pause();
   }
 
@@ -455,12 +674,22 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
     if (!isOpen) return;
     pause();
     isOpen = false;
+    switchSeq += 1;
+    window.clearTimeout(prefetchTimer);
+    window.clearTimeout(leaveTimer);
+    window.clearTimeout(enterTimer);
+    window.clearTimeout(cardTimer);
     panel.hidden = true;
     stage.hidden = true;
+    chapterCard.classList.remove('is-on');
+    miniButton.hidden = true;
+    shown = null;
+    const overlay = stages.roles.el;
+    overlay.classList.remove('ag-rd-overlay', 'ag-rd-overlay-on', 'ag-rd-overlay-enter', 'ag-rd-overlay-leave');
     document.documentElement.classList.remove('ag-reading');
-    canvas.setReading(false);
-    if (expandedBefore) canvas.setExpanded(expandedBefore);
-    expandedBefore = null;
+    for (const id of stageIds) stages[id].setReading(false);
+    for (const id of stageIds) if (savedViews[id] !== null && savedViews[id] !== undefined) stages[id].restoreView(savedViews[id]);
+    savedViews = {};
     document.removeEventListener('keydown', onKey);
     if (location.hash.startsWith('#read=')) history.replaceState(null, '', `${location.pathname}${location.search}`);
     options.onOpenChange?.(false);
