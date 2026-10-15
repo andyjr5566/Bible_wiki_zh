@@ -84,6 +84,16 @@ describe('家譜資料閘門', () => {
     expect(graph.treeParent.get('以實瑪利')).toBe('夏甲');
     expect(graph.bornOf.get(graph.treeParent.get('流便') ?? '')).toBe('利亞');
     expect(tags.has('利亞|猶大')).toBe(true);
+    // 母親底下看得到他生的每一個孩子，主線上的也是（代上3:5 拔示巴生示米亞、朔罷、拿單、所羅門）
+    const bathsheba = graph.treeParent.get('朔罷')!;
+    const shown = (graph.children.get(bathsheba) ?? []).map((id) => graph.childRefs.get(id) ?? id);
+    expect(shown).toEqual(['示米亞#大衛', '朔罷', '拿單', '所羅門']);
+    for (const [card, mother] of graph.bornOf) {
+      const father = graph.treeParent.get(card)!;
+      const recorded = DATA.persons.filter((person) => person.parents?.some((r) => r.id === mother && r.role === '母') && person.parents?.some((r) => r.id === father));
+      const under = new Set((graph.children.get(card) ?? []).map((id) => graph.childRefs.get(id) ?? id));
+      expect(recorded.filter((person) => !under.has(person.id)).map((person) => person.id), card).toEqual([]);
+    }
     // 分身卡不是人物；父母本來就排在同一處的（西庇太一家），不放分身卡，免得同一位母親在旁邊出現兩次
     expect(DATA.persons.some((person) => graph.bornOf.has(person.id))).toBe(false);
     for (const [card, mother] of graph.bornOf) {

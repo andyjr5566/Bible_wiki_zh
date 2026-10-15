@@ -69,8 +69,10 @@ export interface PersonGraph {
   treeParent: Map<string, string>;
   /** 經由大圖安置掛上去的節點：名單牌子、區域、各家牌子，以及各家的根。 */
   placed: Map<string, { kind: PlacedKind; side: PlacementItem['side']; via: PlacementItem['via'] }>;
-  /** 「某某所生」標示 → 那位母親 */
+  /** 母親的分身卡 → 那位母親 */
   bornOf: Map<string, string>;
+  /** 母親底下主線孩子的分身卡 → 主線上那個孩子 */
+  childRefs: Map<string, string>;
 }
 
 const PLACEMENT_KINDS = new Set(['list', 'region', 'family']);
@@ -160,8 +162,28 @@ export function buildGraph(data: GenealogyData): PersonGraph {
     children.set(hub, items);
     treeParent.set(person.id, hub);
   }
-  return { byId, children, spineIds, treeParent, placed, bornOf };
+  // 母親底下也要看得到他生的主線上的孩子（拔示巴生示米亞、朔罷、拿單、所羅門，代上3:5）：
+  // 主線上的人不能搬家，就在母親底下的孩子後面放一張分身卡，點了跳到主線上本人
+  const childRefs = new Map<string, string>();
+  for (const person of data.persons) {
+    if (!spineIds.has(person.id)) continue;
+    const father = (person.parents ?? []).find((relation) => relation.role !== '母' && byId.has(relation.id));
+    const mother = (person.parents ?? []).find((relation) => relation.role === '母' && byId.has(relation.id));
+    if (!father || !mother) continue;
+    const card = `${BORN_OF_PREFIX}${father.id}:${mother.id}`;
+    const hub = byId.has(card) ? card
+      : treeParent.get(mother.id) === father.id && (children.get(mother.id) ?? []).length ? mother.id : undefined;
+    if (!hub) continue;
+    const ref = `${CHILD_REF_PREFIX}${hub}:${person.id}`;
+    byId.set(ref, { ...bornOfPerson(ref, person), lines: person.lines ?? [] });
+    childRefs.set(ref, person.id);
+    children.set(hub, [...(children.get(hub) ?? []), ref]);
+    treeParent.set(ref, hub);
+  }
+  return { byId, children, spineIds, treeParent, placed, bornOf, childRefs };
 }
+
+const CHILD_REF_PREFIX = '主線:';
 
 const BORN_OF_PREFIX = '所生:';
 /** 母親排在娘家那一支時（利亞在拉班底下），父親旁邊放一張他的分身卡，收著他生的孩子；點了跳到娘家那張本人的卡。 */

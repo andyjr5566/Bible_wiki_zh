@@ -356,6 +356,9 @@ function buildEdges(data: GenealogyData, graph: ReturnType<typeof buildGraph>, v
   }
   for (const node of nodesById.values()) {
     if (node.groupParentId && node.groupKey) add(node.groupParentId, node.id, 'parent', node.groupLine ?? 'common');
+    // 母親底下主線孩子的分身卡（拔示巴 → 所羅門）：照一般子女線
+    const refParent = graph.childRefs.has(node.id) ? graph.treeParent.get(node.id) : undefined;
+    if (refParent) add(refParent, node.id, 'parent', lineOf(graph.childRefs.get(node.id)!));
     // 母親的分身卡：父親接過來的線標「妻子」（經文沒記成夫妻的，例如他瑪和猶大，標「孩子的母親」）
     const father = graph.bornOf.has(node.id) ? graph.treeParent.get(node.id) : undefined;
     const motherId = graph.bornOf.get(node.id);

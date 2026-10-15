@@ -745,7 +745,8 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     if (!person) return null;
     const plaque = isPlacementNode(person);
     // 母親的分身卡（利亞在以色列旁邊，本人的卡在娘家拉班那一支）：樣子和人物卡一樣，右上角「↗」，點了跳到本人那裡
-    const bornOf = isBornOfNode(person) ? graph.bornOf.get(person.id) : undefined;
+    const bornOf = isBornOfNode(person) ? graph.bornOf.get(person.id) ?? graph.childRefs.get(person.id) : undefined;
+    const onSpine = Boolean(bornOf && graph.childRefs.has(person.id));
     const group = svgEl('g', {
       class: `ag-node${node.mainline ? ' ag-node-main' : ' ag-node-side'}${bornOf ? ' ag-node-born-of' : ''} ag-node-route-${lineFor(person)}${node.collapsed ? ' ag-node-collapsed' : ''}${plaque ? ` ag-node-plaque ag-node-plaque-${person.kind}` : ''}`,
       transform: `translate(${node.x} ${node.y})`,
@@ -753,7 +754,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       role: 'button', tabindex: '0',
       'aria-label': plaque
         ? `${person.name}，${node.expandedRoot ? '收合' : `展開 ${node.descendantCount ?? 0} 位`}`
-        : `${person.name}${node.collapsed ? `，展開 ${node.descendantCount ?? 0} 位後代` : bornOf ? '，到他娘家那一支看他' : ''}`,
+        : `${person.name}${node.collapsed ? `，展開 ${node.descendantCount ?? 0} 位後代` : onSpine ? '，到主線上看他' : bornOf ? '，到他娘家那一支看他' : ''}`,
       ...(plaque ? { 'aria-expanded': String(Boolean(node.expandedRoot)) } : {}),
     });
     group.style.opacity = String(lineOpacity(lineFor(person)));
@@ -770,7 +771,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       const mark = svgEl('text', { class: 'ag-born-of-mark', x: node.rectX + node.rectWidth - 9, y: top + 10, 'text-anchor': 'middle', 'dominant-baseline': 'central' });
       mark.textContent = '↗';
       const hint = svgEl('title', {});
-      hint.textContent = `${person.name}的人物卡在他娘家那一支，點了過去`;
+      hint.textContent = onSpine ? `${person.name}在主線上，點了過去` : `${person.name}的人物卡在他娘家那一支，點了過去`;
       group.append(mark, hint);
     }
     if (person.marks?.length) {
