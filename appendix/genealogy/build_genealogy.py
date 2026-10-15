@@ -239,29 +239,73 @@ def bar_pads(names: list[str]) -> dict[str, str]:
     width = max(cells(name) for name in names)
     return {name: " " * (width - cells(name)) for name in names}
 
-def timeline_svg(kings: list[dict], mini: bool = False) -> str:
-    """產生不含空白段落的直式南北國年代 SVG。"""
+PROPHET_COLOR = "#5f7896"
+PROPHET_SIDES = OrderedDict([
+    ("north", ("北國", "#4a78c2")),
+    ("south", ("南國", "#c0843a")),
+    ("both", ("南北兩國", None)),
+    ("united", ("統一王國", "#7d8a9e")),
+    ("exile", ("被擄、歸回", "#8b6fb3")),
+    ("unknown", ("書卷沒寫在哪位王時", "#7d8a9e")),
+])
+RULER_COLOR = "#8b6fb3"
+EXILE_COLOR = "#8a8f98"
+
+
+def _prophet_lanes(boxes: list[tuple[str, float, float]]) -> dict[str, int]:
+    """boxes：(先知 id, 上緣 y, 下緣 y，含直排名字的長度)。依畫面上的位置分子欄，回傳 id → 子欄序號。"""
+    lanes: list[float] = []
+    result: dict[str, int] = {}
+    for pid, top, bottom in sorted(boxes, key=lambda box: box[1]):
+        for index, lane_bottom in enumerate(lanes):
+            if top >= lane_bottom + 4:
+                lanes[index] = bottom
+                result[pid] = index
+                break
+        else:
+            lanes.append(bottom)
+            result[pid] = len(lanes) - 1
+    return result
+
+
+def timeline_svg(kings: list[dict], mini: bool = False, extra: dict | None = None) -> str:
+    """產生不含空白段落的直式南北國年代 SVG。
+
+    extra（可省略）：prophets 先知、rulers 外邦君王、exile 被擄色段 (起, 迄, 標籤)、dynasty 王 id → 北國家族。
+    """
     prefix = "mini" if mini else "full"
+    extra = extra or {}
+    prophets = [p for p in extra.get("prophets", []) or [] if p.get("_years")]
+    rulers = list(extra.get("rulers", []) or [])
+    exile = extra.get("exile")
+    dynasty = extra.get("dynasty") or {}
+    width = 540 if (prophets or rulers) else 480
     if not kings:
         return "\n".join([
-            '<svg viewBox="0 0 480 92" role="img" aria-label="南北國列王年代圖" style="width:100%;max-width:560px;height:auto;display:block;margin:0 auto" font-family="inherit">',
+            f'<svg viewBox="0 0 {width} 92" role="img" aria-label="南北國列王年代圖" style="width:100%;max-width:560px;height:auto;display:block;margin:0 auto" font-family="inherit">',
             *_svg_defs(prefix),
             '<text x="0" y="70" fill="currentColor">沒有君王年代資料</text>',
             "</svg>",
         ])
     starts = [int(king["years"].get("co_start", king["years"]["start"])) for king in kings]
     ends = [int(king["years"]["end"]) for king in kings]
+    starts += [p["_years"][0] for p in prophets] + [int(r["years"]["start"]) for r in rulers]
+    ends += [p["_years"][1] for p in prophets] + [int(r["years"]["end"]) for r in rulers]
+    if exile:
+        ends.append(int(exile[1]))
     top_year = ((max(starts) + 9) // 10) * 10
     bottom_year = (min(ends) // 10) * 10
     if top_year == bottom_year:
         top_year += 10
         bottom_year -= 10
     scale = 1 if mini else 3
-    plot_top = 98
+    has_extra = bool(prophets or rulers or exile or dynasty)
+    plot_top = (150 if prophets else 132) if has_extra else 98
+    header_y = plot_top - 10
     summary_space = 44 if mini else 40
     height = plot_top + (top_year - bottom_year) * scale + summary_space
     esc = lambda value: html.escape(str(value), quote=True)
-    lines = [f'<svg viewBox="0 0 480 {height}" role="img" aria-label="南北國列王年代圖" style="width:100%;max-width:560px;height:auto;display:block;margin:0 auto" font-family="inherit">']
+    lines = [f'<svg viewBox="0 0 {width} {height}" role="img" aria-label="南北國列王年代圖" style="width:100%;max-width:{620 if width > 480 else 560}px;height:auto;display:block;margin:0 auto" font-family="inherit">']
     lines.extend(_svg_defs(prefix))
 
     legend = [
@@ -277,8 +321,38 @@ def timeline_svg(kings: list[dict], mini: bool = False) -> str:
     lines.append('<rect x="111" y="40" width="11" height="11" fill="#8a8f98" fill-opacity="0.3" stroke="#8a8f98" stroke-dasharray="3 2"/><text x="127" y="50" font-size="11" fill="currentColor">淡色虛線：共治</text>')
     lines.append('<rect x="241" y="40" width="11" height="11" fill="#8a8f98" fill-opacity="0.4" stroke="currentColor" stroke-dasharray="3 2"/><text x="257" y="50" font-size="11" fill="currentColor">半透明虛線：推估</text>')
     lines.append('<text x="0" y="66" font-size="11" fill="currentColor">同一國同時有兩位王（共治或並立）時，色條並排成窄欄。</text>')
-    lines.append('<text x="192" y="88" text-anchor="middle" font-size="12" fill="currentColor">猶大</text>')
-    lines.append('<text x="288" y="88" text-anchor="middle" font-size="12" fill="currentColor">以色列</text>')
+    if has_extra:
+        legend_y = 84
+        x = 0
+        if rulers:
+            lines.append(f'<rect x="{x + 1}" y="{legend_y - 10}" width="11" height="11" fill="{RULER_COLOR}" fill-opacity="0.6"/>')
+            lines.append(f'<text x="{x + 17}" y="{legend_y}" font-size="11" fill="currentColor">巴比倫、波斯的王</text>')
+            x += 130
+        if exile:
+            lines.append(f'<rect x="{x + 1}" y="{legend_y - 10}" width="11" height="11" fill="{EXILE_COLOR}" fill-opacity="0.18" stroke="{EXILE_COLOR}" stroke-dasharray="2 2"/>')
+            lines.append(f'<text x="{x + 17}" y="{legend_y}" font-size="11" fill="currentColor">被擄</text>')
+            x += 60
+        if dynasty:
+            lines.append(f'<line x1="{x + 1}" y1="{legend_y - 4}" x2="{x + 13}" y2="{legend_y - 4}" stroke="currentColor" stroke-width="1.5"/>')
+            lines.append(f'<text x="{x + 17}" y="{legend_y}" font-size="11" fill="currentColor">北國換一個家族作王</text>')
+        if prophets:
+            lines.append(f'<text x="0" y="{legend_y + 20}" font-size="11" fill="currentColor">先知：</text>')
+            px = 36.0
+            for side, (label, color) in PROPHET_SIDES.items():
+                if not any(p.get("_side") == side for p in prophets):
+                    continue
+                if color is None:
+                    lines.append(f'<rect x="{px:.1f}" y="{legend_y + 10}" width="3" height="11" rx="1" fill="{PROPHET_SIDES["north"][1]}"/>')
+                    lines.append(f'<rect x="{px + 3:.1f}" y="{legend_y + 10}" width="3" height="11" rx="1" fill="{PROPHET_SIDES["south"][1]}"/>')
+                elif side == "unknown":
+                    lines.append(f'<rect x="{px:.1f}" y="{legend_y + 10}" width="6" height="11" rx="3" fill="{color}" fill-opacity="0.25" stroke="{color}" stroke-dasharray="2 1.5"/>')
+                else:
+                    lines.append(f'<rect x="{px:.1f}" y="{legend_y + 10}" width="6" height="11" rx="3" fill="{color}"/>')
+                lines.append(f'<text x="{px + 10:.1f}" y="{legend_y + 20}" font-size="11" fill="currentColor">{label}</text>')
+                px += 10 + 11 * len(label) + 14
+            lines.append(f'<text x="0" y="{legend_y + 38}" font-size="11" fill="currentColor">先知的色條是經文寫的同時期君王的在位年代，先知說話的時間可能只在其中一段。</text>')
+    lines.append(f'<text x="192" y="{header_y}" text-anchor="middle" font-size="12" fill="currentColor">猶大</text>')
+    lines.append(f'<text x="288" y="{header_y}" text-anchor="middle" font-size="12" fill="currentColor">以色列</text>')
 
     def y_of(year: int) -> float:
         return plot_top + (top_year - year) * scale
@@ -287,7 +361,7 @@ def timeline_svg(kings: list[dict], mini: bool = False) -> str:
     first_tick = ((bottom_year + interval - 1) // interval) * interval
     for year in range(first_tick, top_year + 1, interval):
         y = y_of(year)
-        lines.append(f'<line x1="44" y1="{y:.1f}" x2="480" y2="{y:.1f}" stroke="#9aa0a6" stroke-opacity="0.15"/>')
+        lines.append(f'<line x1="44" y1="{y:.1f}" x2="{width}" y2="{y:.1f}" stroke="#9aa0a6" stroke-opacity="0.15"/>')
         lines.append(f'<text x="0" y="{y + 4:.1f}" font-size="11" fill="currentColor">主前 {year}</text>')
 
     columns = _king_columns(kings)
@@ -299,9 +373,9 @@ def timeline_svg(kings: list[dict], mini: bool = False) -> str:
         color = KING_COLORS.get(category, KING_COLORS["none"])
         kingdom = king.get("kingdom")
         if kingdom == "統一":
-            x, width = 178.0, 124.0
+            x, bar_width = 178.0, 124.0
         else:
-            x, width = columns[id(king)]
+            x, bar_width = columns[id(king)]
         gradient = f"url(#kgrad-{prefix}-{KING_GRADIENTS[category]})" if category in KING_GRADIENTS else color
         y_start, y_end = y_of(start), y_of(end)
         bar_top, bar_bottom = min(y_start, y_end), max(y_start, y_end)
@@ -311,9 +385,9 @@ def timeline_svg(kings: list[dict], mini: bool = False) -> str:
         if years.get("co_start") is not None:
             co_top, co_bottom = sorted((y_of(int(years["co_start"])), y_of(start)))
             co_color = KING_GREEN if category == "good_to_bad" else KING_RED if category == "bad_to_good" else color
-            lines.append(f'<rect x="{x:.2f}" y="{co_top:.1f}" width="{width:.2f}" height="{max(2, co_bottom - co_top):.1f}" fill="{co_color}" fill-opacity="0.3" stroke="{co_color}" stroke-dasharray="4 3"/>')
+            lines.append(f'<rect x="{x:.2f}" y="{co_top:.1f}" width="{bar_width:.2f}" height="{max(2, co_bottom - co_top):.1f}" fill="{co_color}" fill-opacity="0.3" stroke="{co_color}" stroke-dasharray="4 3"/>')
         stroke = f' stroke="{KING_GOLD}" stroke-width="2.5"' if category == "good_caveat" else (' stroke="currentColor"' if years.get("estimate") else "")
-        lines.append(f'<rect x="{x:.2f}" y="{bar_top:.1f}" width="{width:.2f}" height="{bar_height:.1f}" fill="{gradient}" fill-opacity="{opacity}"{stroke}{dash}/>')
+        lines.append(f'<rect x="{x:.2f}" y="{bar_top:.1f}" width="{bar_width:.2f}" height="{bar_height:.1f}" fill="{gradient}" fill-opacity="{opacity}"{stroke}{dash}/>')
         if mini:
             continue
         mark = KING_MARKS.get(category, "—") + ("※" if (king.get("verdict") or {}).get("differs") else "")
@@ -327,6 +401,100 @@ def timeline_svg(kings: list[dict], mini: bool = False) -> str:
             label_rows["left"].append((king, middle, middle, bar_top, label, "left"))
         else:
             label_rows["right"].append((king, middle, middle, bar_top, label, "right"))
+
+    # 北國換家族：在新家族第一位王登基的位置畫一條橫線
+    if dynasty:
+        north = sorted((k for k in kings if k.get("kingdom") == "以色列"), key=lambda k: -int(k["years"]["start"]))
+        previous = None
+        drawn: set[float] = set()
+        for king in north:
+            family = dynasty.get(king.get("id"))
+            if previous is not None and family != previous:
+                y = round(y_of(int(king["years"]["start"])), 1)
+                if y not in drawn:
+                    drawn.add(y)
+                    lines.append(f'<line x1="268" y1="{y:.1f}" x2="308" y2="{y:.1f}" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.75"/>')
+            previous = family
+
+    # 被擄：猶大欄的灰色虛線色段
+    if exile:
+        start, end, label = int(exile[0]), int(exile[1]), str(exile[2])
+        top, bottom = y_of(start), y_of(end)
+        lines.append(f'<rect x="178" y="{top:.1f}" width="28" height="{max(2, bottom - top):.1f}" fill="{EXILE_COLOR}" fill-opacity="0.18" stroke="{EXILE_COLOR}" stroke-dasharray="3 2"/>')
+        if not mini:
+            pseudo = {"years": {"start": start, "end": end}, "kingdom": "猶大"}
+            columns[id(pseudo)] = (178.0, 28.0)
+            middle = (top + bottom) / 2
+            label_rows["left"].append((pseudo, middle, middle, top, label, "left"))
+
+    # 巴比倫、波斯的王：北國亡了以後，放在以色列欄
+    for ruler in rulers:
+        start, end = int(ruler["years"]["start"]), int(ruler["years"]["end"])
+        top, bottom = y_of(start), y_of(end)
+        lines.append(f'<rect x="274" y="{top:.1f}" width="28" height="{max(2, bottom - top):.1f}" fill="{RULER_COLOR}" fill-opacity="0.6"/>')
+        if not mini:
+            columns[id(ruler)] = (274.0, 28.0)
+            middle = (top + bottom) / 2
+            label_rows["right"].append((ruler, middle, middle, top, str(ruler.get("name", "")), "right"))
+
+    # 先知欄：淡色底板上，每位先知一條兩端淡出的圓角色條（年代是約數），只有一個年份的畫成圓點；
+    # 名字直排在色條右邊，色條和名字都不能和同一子欄的別人重疊
+    if prophets:
+        pitch = 10 if mini else 22
+        boxes = []
+        for prophet in prophets:
+            top = y_of(prophet["_years"][0])
+            bar_bottom = top + max(6, y_of(prophet["_years"][1]) - top)
+            label_bottom = top + 12 * len(str(prophet["name"])) + 6
+            boxes.append((prophet["id"], top - 4, bar_bottom if mini else max(bar_bottom, label_bottom)))
+        lanes = _prophet_lanes(boxes)
+        lane_count = max(lanes.values()) + 1
+        base_x = 440.0
+        panel_width = lane_count * pitch + (6 if mini else 16)
+        needed = int(base_x - 8 + panel_width + 4)
+        if needed > width:
+            # 先知欄比預設寬：把整張圖放寬，免得最右邊的名字被切掉
+            lines[0] = lines[0].replace(f'viewBox="0 0 {width} ', f'viewBox="0 0 {needed} ', 1)
+            width = needed
+        plot_bottom = y_of(bottom_year)
+        defs = ["<defs>"]
+        for side, (_, color) in PROPHET_SIDES.items():
+            if color is None:
+                continue
+            defs.append(f'<linearGradient id="pgrad-{prefix}-{side}" x1="0" y1="0" x2="0" y2="1">'
+                        f'<stop offset="0%" stop-color="{color}" stop-opacity="0.15"/>'
+                        f'<stop offset="18%" stop-color="{color}" stop-opacity="0.95"/>'
+                        f'<stop offset="82%" stop-color="{color}" stop-opacity="0.95"/>'
+                        f'<stop offset="100%" stop-color="{color}" stop-opacity="0.15"/></linearGradient>')
+        lines.append("".join(defs) + "</defs>")
+        lines.append(f'<rect x="{base_x - 8:.1f}" y="{plot_top - 6:.1f}" width="{panel_width:.1f}" height="{plot_bottom - plot_top + 12:.1f}" rx="10" fill="{PROPHET_COLOR}" fill-opacity="0.07"/>')
+        lines.append(f'<text x="{base_x - 8 + panel_width / 2:.1f}" y="{header_y}" text-anchor="middle" font-size="12" fill="currentColor">先知</text>')
+        for prophet in prophets:
+            start, end = prophet["_years"]
+            top, bottom = y_of(start), y_of(end)
+            x = base_x + lanes[prophet["id"]] * pitch
+            center = x + 2.5
+            estimate = prophet.get("_estimate")
+            side = prophet.get("_side", "unknown")
+            color = PROPHET_SIDES[side][1] or PROPHET_SIDES["north"][1]
+            if bottom - top < 6:
+                fill_opacity = "0.3" if estimate else "0.95"
+                dash = ' stroke-dasharray="2 1.5"' if estimate else ""
+                lines.append(f'<circle cx="{center:.1f}" cy="{(top + bottom) / 2:.1f}" r="4" fill="{color}" fill-opacity="{fill_opacity}" stroke="{color}"{dash}/>')
+            elif estimate:
+                lines.append(f'<rect x="{x:.1f}" y="{top:.1f}" width="5" height="{bottom - top:.1f}" rx="2.5" fill="{color}" fill-opacity="0.18" stroke="{color}" stroke-opacity="0.85" stroke-dasharray="3 2"/>')
+            elif side == "both":
+                # 南北兩國都有：左半藍、右半銅
+                lines.append(f'<rect x="{x:.1f}" y="{top:.1f}" width="2.5" height="{bottom - top:.1f}" rx="1.2" fill="url(#pgrad-{prefix}-north)"/>')
+                lines.append(f'<rect x="{x + 2.5:.1f}" y="{top:.1f}" width="2.5" height="{bottom - top:.1f}" rx="1.2" fill="url(#pgrad-{prefix}-south)"/>')
+                if not mini:
+                    lines.append(f'<circle cx="{center:.1f}" cy="{top + 2.5:.1f}" r="3.2" fill="{PROPHET_SIDES["north"][1]}" stroke="{PROPHET_SIDES["south"][1]}" stroke-width="1.6"/>')
+            else:
+                lines.append(f'<rect x="{x:.1f}" y="{top:.1f}" width="5" height="{bottom - top:.1f}" rx="2.5" fill="url(#pgrad-{prefix}-{side})"/>')
+                if not mini:
+                    lines.append(f'<circle cx="{center:.1f}" cy="{top + 2.5:.1f}" r="3.2" fill="{color}"/>')
+            if not mini:
+                lines.append(f'<text x="{x + 15:.1f}" y="{top - 1:.1f}" font-size="11.5" fill="currentColor" letter-spacing="1" style="writing-mode:vertical-rl;text-orientation:upright" dominant-baseline="hanging">{esc(prophet["name"])}</text>')
 
     if not mini:
         max_label_y = height - summary_space + 2
@@ -654,6 +822,278 @@ class Builder:
             self.err("chronology.estimate_source", "有推估年代時需要 estimate_source")
         if required and not registry.get("kings"):
             self.err("kings_registry", "登錄檔沒有 kings")
+        if registry.get("facts_file"):
+            self.load_facts(path.parent / str(registry["facts_file"]))
+        if registry.get("prophets_file"):
+            self.load_prophets(path.parent / str(registry["prophets_file"]))
+
+    # ---------- 君王卡片欄位與先知 ----------
+    FACT_KINDS = {
+        "accession": ("受膏", "繼位", "被立", "篡位"),
+        "end": ("去世", "病死", "被殺", "戰死", "自盡", "自焚", "被擄", "死在外邦"),
+    }
+
+    def check_fact(self, entry, where: str, need_text: bool = True) -> list[tuple[str, int, int]]:
+        """quote 必須逐字出現在 ref；need_text 時 text（卡片上的短句）不能空白。"""
+        if not isinstance(entry, dict):
+            self.err(where, "必須是 mapping")
+            return []
+        parsed = self.registry_refs(str(entry.get("ref") or ""), where)
+        quote = str(entry.get("quote") or "")
+        if not quote.strip():
+            self.err(where, "quote 不能空白")
+        else:
+            self.need_exact_text(quote, parsed, where, "quote")
+        if need_text and not str(entry.get("text") or "").strip():
+            self.err(where, "text 不能空白")
+        return parsed
+
+    def load_yaml_file(self, path: Path, where: str):
+        try:
+            return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        except (OSError, yaml.YAMLError) as exc:
+            self.err(where, f"無法載入：{exc}")
+            return None
+
+    def load_facts(self, path: Path) -> None:
+        facts = self.load_yaml_file(path, "facts_file")
+        if not isinstance(facts, dict):
+            return
+        for kid, item in facts.items():
+            where = f"facts.{kid}"
+            king = self.kings_by_id.get(kid)
+            if king is None:
+                self.err(where, "不在君王登錄檔")
+                continue
+            if not isinstance(item, dict):
+                self.err(where, "必須是 mapping")
+                continue
+            for key in ("mother", "age"):
+                if key in item:
+                    self.check_fact(item[key], f"{where}.{key}")
+                    also = item[key].get("also") if isinstance(item[key], dict) else None
+                    if also is not None:
+                        self.check_fact(also, f"{where}.{key}.also")
+            for key, kinds in self.FACT_KINDS.items():
+                entry = item.get(key)
+                if entry is None:
+                    self.err(where, f"需要 {key}")
+                    continue
+                self.check_fact(entry, f"{where}.{key}")
+                if isinstance(entry, dict) and entry.get("kind") not in kinds:
+                    self.err(f"{where}.{key}", f"kind 只能是{'、'.join(kinds)}")
+            dynasty = item.get("dynasty")
+            if king.get("kingdom") == "以色列" and not dynasty:
+                self.err(where, "北國的王需要 dynasty")
+            if king.get("kingdom") != "以色列" and dynasty:
+                self.err(where, "只有北國的王寫 dynasty")
+            for j, entry in enumerate(item.get("foreign", []) or []):
+                fwhere = f"{where}.foreign#{j + 1}"
+                self.check_fact(entry, fwhere, need_text=False)
+                if isinstance(entry, dict) and not str(entry.get("who") or "").strip():
+                    self.err(fwhere, "who 不能空白")
+            for j, entry in enumerate(item.get("aliases", []) or []):
+                awhere = f"{where}.aliases#{j + 1}"
+                parsed = self.check_fact(entry, awhere)
+                if not isinstance(entry, dict):
+                    continue
+                if entry.get("kind") not in {"又名", "改名"}:
+                    self.err(awhere, "kind 只能是又名或改名")
+                self.need_exact_text(str(entry.get("name") or ""), parsed, awhere, "name")
+            king["facts"] = item
+        for king in self.kings_by_id.values():
+            if "facts" not in king:
+                self.err(f"facts.{king.get('id')}", "缺少這位王的卡片欄位")
+
+    def king_names(self, king: dict) -> set[str]:
+        names = {str(king.get("name", ""))}
+        for alias in ((king.get("facts") or {}).get("aliases") or []):
+            if isinstance(alias, dict) and alias.get("name"):
+                names.add(str(alias["name"]))
+        return names
+
+    def load_prophets(self, path: Path) -> None:
+        data = self.load_yaml_file(path, "prophets_file")
+        self.rulers_by_id: dict[str, dict] = {}
+        self.prophets: list[dict] = []
+        self.prophets_by_king: dict[str, list[dict]] = defaultdict(list)
+        self.exile: dict | None = None
+        if not isinstance(data, dict):
+            return
+        self.prophet_data = data
+        for i, ruler in enumerate(data.get("rulers", []) or []):
+            where = f"rulers#{i + 1}"
+            if not isinstance(ruler, dict) or not ruler.get("id"):
+                self.err(where, "需要 id")
+                continue
+            self.check_fact(ruler, where, need_text=False)
+            try:
+                if int(ruler["years"]["start"]) < int(ruler["years"]["end"]):
+                    self.err(where, "years.start 必須大於或等於 years.end")
+            except (KeyError, TypeError, ValueError):
+                self.err(where, "years 需要有效的 start 與 end")
+                continue
+            for key in ("name", "short", "empire"):
+                if not ruler.get(key):
+                    self.err(where, f"需要 {key}")
+            self.rulers_by_id[str(ruler["id"])] = ruler
+        if self.rulers_by_id and not data.get("rulers_source"):
+            self.err("rulers_source", "外邦君王年代需要出處")
+        exile = data.get("exile")
+        if isinstance(exile, dict):
+            anchor = self.kings_by_id.get(str(exile.get("anchor")))
+            end_ruler = self.rulers_by_id.get(str(exile.get("end_ruler")))
+            self.check_fact(exile, "exile", need_text=False)
+            self.check_fact({"quote": exile.get("end_quote"), "ref": exile.get("end_ref")}, "exile.end", need_text=False)
+            if anchor is None or end_ruler is None:
+                self.err("exile", "anchor 必須是王的 id，end_ruler 必須是 rulers 的 id")
+            else:
+                self.exile = {"label": str(exile.get("label") or "被擄"),
+                              "start": int(anchor["years"]["end"]),
+                              "end": int(end_ruler["years"]["start"])}
+        sources = data.get("estimate_sources") or {}
+        ids: set[str] = set()
+        for i, prophet in enumerate(data.get("prophets", []) or []):
+            where = f"prophets#{i + 1}"
+            if not isinstance(prophet, dict) or not prophet.get("id") or not prophet.get("name"):
+                self.err(where, "需要 id 與 name")
+                continue
+            pid = str(prophet["id"])
+            where = f"prophets.{pid}"
+            if pid in ids:
+                self.err(where, "id 重複")
+            ids.add(pid)
+            prophet.setdefault("title", prophet["name"])
+            if prophet.get("where"):
+                self.check_fact({"quote": prophet.get("where_quote"), "ref": prophet.get("where_ref")},
+                                f"{where}.where", need_text=False)
+            full: list[tuple[int, int]] = []
+            bounds: dict[str, int] = {}
+            kings: list[str] = []
+            kingdoms: list[str] = []
+            for j, entry in enumerate(prophet.get("times", []) or []):
+                twhere = f"{where}.times#{j + 1}"
+                parsed = self.check_fact(entry, twhere, need_text=False)
+                if not isinstance(entry, dict):
+                    continue
+                if entry.get("exile") is not None:
+                    if self.exile is None:
+                        self.err(twhere, "exile 需要先設定被擄的起點")
+                        continue
+                    year = self.exile["start"] - int(entry["exile"])
+                    span = (year, year)
+                else:
+                    kid = str(entry.get("king") or "")
+                    king = self.kings_by_id.get(kid)
+                    ruler = self.rulers_by_id.get(kid)
+                    if king is None and ruler is None:
+                        self.err(twhere, f"king 不在君王登錄檔或 rulers：{kid}")
+                        continue
+                    names = self.king_names(king) if king else {str(ruler["short"])}
+                    text = self.text_of(parsed)
+                    if parsed and not any(name and name in text for name in names):
+                        self.err(twhere, f"所引經文沒有提到{'、'.join(sorted(names))}")
+                    start = int((king or ruler)["years"]["start"])
+                    end = int((king or ruler)["years"]["end"])
+                    if entry.get("nth") is not None:
+                        year = start - int(entry["nth"])
+                        span = (year, year)
+                    elif entry.get("at") in {"start", "end"}:
+                        year = start if entry["at"] == "start" else end
+                        span = (year, year)
+                    elif entry.get("at") is not None:
+                        self.err(twhere, "at 只能是 start 或 end")
+                        continue
+                    else:
+                        span = (start, end)
+                    if king is not None:
+                        if kid not in kings:
+                            kings.append(kid)
+                        if king["kingdom"] not in kingdoms and not entry.get("link_only"):
+                            kingdoms.append(king["kingdom"])
+                bound = entry.get("bound")
+                if entry.get("link_only"):
+                    continue
+                if bound is not None:
+                    if bound not in {"start", "end"}:
+                        self.err(twhere, "bound 只能是 start 或 end")
+                    else:
+                        bounds[bound] = span[0]
+                else:
+                    full.append(span)
+            prophet["_kings"] = kings
+            years = None
+            estimate = prophet.get("estimate")
+            if estimate is not None:
+                if prophet.get("times"):
+                    self.err(where, "estimate 和 times 不能同時有")
+                if not isinstance(estimate, dict) or estimate.get("source") not in sources:
+                    self.err(where, "estimate 需要 start、end 和有效的 source")
+                else:
+                    years = (int(estimate["start"]), int(estimate["end"]))
+                    prophet["_source"] = sources[estimate["source"]]
+            elif prophet.get("views") is not None:
+                views = prophet["views"]
+                if not isinstance(views, dict) or views.get("source") not in sources:
+                    self.err(where, "views 需要有效的 source")
+                else:
+                    prophet["_source"] = sources[views["source"]]
+            elif full:
+                if prophet.get("span") == "intersect":
+                    years = (min(s for s, _ in full), max(e for _, e in full))
+                    if years[0] < years[1]:
+                        self.err(where, "span: intersect 的各段沒有重疊")
+                else:
+                    years = (max(s for s, _ in full), min(e for _, e in full))
+                if "start" in bounds:
+                    years = (bounds["start"], years[1])
+                if "end" in bounds:
+                    years = (years[0], bounds["end"])
+                if years[0] < years[1]:
+                    self.err(where, "推出來的年代起點晚於終點")
+            else:
+                self.err(where, "需要 times、estimate 或 views")
+            prophet["_years"] = years
+            prophet["_estimate"] = estimate is not None
+            # 色條的顏色：跟哪一國的王（有巴比倫、波斯的王或「被擄第幾年」的歸被擄與歸回）
+            has_foreign = any(isinstance(entry, dict) and (entry.get("exile") is not None or str(entry.get("king")) in self.rulers_by_id)
+                              for entry in prophet.get("times", []) or [])
+            where_text = str(prophet.get("where") or "")
+            sides = set(kingdoms)
+            if "北國" in where_text:
+                sides = {"以色列"}
+            elif "南國" in where_text:
+                sides = {"猶大"}
+            if has_foreign:
+                prophet["_side"] = "exile"
+            elif {"猶大", "以色列"} <= sides:
+                prophet["_side"] = "both"
+            elif "以色列" in sides:
+                prophet["_side"] = "north"
+            elif "猶大" in sides:
+                prophet["_side"] = "south"
+            elif "統一" in sides:
+                prophet["_side"] = "united"
+            else:
+                prophet["_side"] = "unknown"
+            if not prophet.get("where"):
+                labels = {"統一": "統一王國", "猶大": "南國猶大", "以色列": "北國以色列"}
+                prophet["_where"] = "、".join(labels[k] for k in kingdoms)
+            else:
+                prophet["_where"] = str(prophet["where"])
+            if not prophet["_where"]:
+                self.err(where, "推不出在哪裡說話，請寫 where")
+            self.prophets.append(prophet)
+            for kid in kings:
+                self.prophets_by_king[kid].append(prophet)
+
+    @staticmethod
+    def year_text(years: tuple[int, int] | None, estimate: bool = False) -> str:
+        if years is None:
+            return "學者說法不一"
+        start, end = years
+        text = f"約主前 {start}–{end}" if start != end else f"約主前 {start}"
+        return f"推估{text}" if estimate else text
 
     @staticmethod
     def verdict_display(king: dict) -> tuple[str, str]:
@@ -1003,6 +1443,26 @@ class Builder:
                     for check in checks:
                         self.need_exact_text(str(check), parsed, rwhere, "核對字串")
                 self.cover(parsed)
+        diagram = ex.get("family_diagram")
+        if diagram is not None:
+            # 小家譜：每個人和每條關係都要逐字對到所引經節
+            if not isinstance(diagram, dict) or not diagram.get("heading"):
+                self.err("family_diagram", "需要 heading")
+            else:
+                node_ids = set()
+                for i, node in enumerate(diagram.get("nodes", []) or []):
+                    nwhere = f"family_diagram.nodes#{i + 1}"
+                    if not isinstance(node, dict) or not node.get("id") or not node.get("label"):
+                        self.err(nwhere, "需要 id 與 label")
+                        continue
+                    node_ids.add(node["id"])
+                    self.need_exact_text(str(node.get("check") or node["id"]), self.refs(str(node.get("ref") or ""), nwhere), nwhere, "核對字串")
+                for i, edge in enumerate(diagram.get("edges", []) or []):
+                    ewhere = f"family_diagram.edges#{i + 1}"
+                    if not isinstance(edge, dict) or edge.get("from") not in node_ids or edge.get("to") not in node_ids:
+                        self.err(ewhere, "from、to 必須是 nodes 的 id")
+                        continue
+                    self.need_exact_text(str(edge.get("check") or ""), self.refs(str(edge.get("ref") or ""), ewhere), ewhere, "核對字串")
         for name in ex.get("homonyms", []):
             ids = [i for i, n in self.nodes.items() if not n.get("imported_page") and n["name"] == name]
             ids += [i for i, person in self.people.items() if person["name"] == name and i not in ids]
@@ -1281,8 +1741,10 @@ class Builder:
                     ch_title = f"第 {current} 章　{d['chapters'][current]}"
                     out.append(f"- **[[#{ch_title}|第 {current} 章]]**")
                 out.append(f"  - [[#{sec['title']}|{sec['title']}]]　`{fmt_ref(sec['range'], self.book)}`")
-        if ex.get("parallels") or ex.get("homonyms") or ex.get("troops") or ex.get("cities") or ex.get("tables"):
+        if ex.get("parallels") or ex.get("homonyms") or ex.get("troops") or ex.get("cities") or ex.get("tables") or ex.get("family_diagram"):
             out.append("- **[[#附表|附表]]**")
+            if ex.get("family_diagram"):
+                out.append(f"  - [[#{ex['family_diagram']['heading']}|{ex['family_diagram']['heading']}]]")
             if ex.get("parallels"):
                 out.append("  - [[#平行經文對照|平行經文對照]]")
             if ex.get("homonyms"):
@@ -1420,6 +1882,227 @@ class Builder:
         path = str(item.get("path", ""))
         return path[:-3] if path.endswith(".md") else path
 
+    # ---------- 南北國對照頁 ----------
+    def timeline_extra(self) -> dict:
+        kings = self.kings_registry.get("kings", []) or []
+        extra: dict = {}
+        prophets = getattr(self, "prophets", [])
+        if prophets:
+            extra["prophets"] = prophets
+        rulers = list(getattr(self, "rulers_by_id", {}).values())
+        if rulers:
+            extra["rulers"] = rulers
+        exile = getattr(self, "exile", None)
+        judah_ends = [int(k["years"]["end"]) for k in kings if k.get("kingdom") == "猶大"]
+        if exile and judah_ends:
+            extra["exile"] = (min(judah_ends), exile["end"], exile["label"])
+        dynasty = {k["id"]: (k.get("facts") or {}).get("dynasty") for k in kings if k.get("kingdom") == "以色列"}
+        if any(dynasty.values()):
+            extra["dynasty"] = dynasty
+        return extra
+
+    def pattern_numbers(self) -> dict[str, object]:
+        kings = self.kings_registry.get("kings", []) or []
+        def cls(king: dict) -> str:
+            return (king.get("verdict") or {}).get("class", "none")
+
+        def is_good(king: dict) -> bool:
+            # 經文評語裡說他行正（「看為正」「看為善」，不論後面有沒有但書或轉變）；亞哈斯的「不像他祖大衛行……看為正的事」是行惡
+            return cls(king) != "bad" and any(item.get("role") == "評語" and re.search(r"為正|看為善", str(item.get("quote", "")))
+                       for item in (king.get("verdict") or {}).get("items", []) or [])
+
+        def facts(king: dict) -> dict:
+            return king.get("facts") or {}
+
+        north = [k for k in kings if k.get("kingdom") == "以色列"]
+        judah = [k for k in kings if k.get("kingdom") == "猶大"]
+        judah_good = [k for k in judah if is_good(k)]
+        high_places = [k for k in judah_good
+                       if any("邱壇" in str(item.get("quote", "")) for item in (k.get("verdict") or {}).get("items", []) or []
+                              if item.get("role") == "但書")]
+        prophets = getattr(self, "prophets", [])
+        names = lambda rows: "、".join(str(k.get("name")) for k in rows)
+        return {
+            "north_total": len(north),
+            "north_bad": sum(1 for k in north if cls(k) == "bad"),
+            "north_good_names": names([k for k in north if is_good(k)]),
+            "north_good": sum(1 for k in north if is_good(k)),
+            "north_good_phrase": (lambda rows: f"{names(rows)}一位" if len(rows) == 1 else f"{names(rows)}這 {len(rows)} 位")(
+                [k for k in north if is_good(k)]),
+            "north_plain_good": sum(1 for k in north if cls(k) == "good"),
+            "north_dynasties": len({facts(k).get("dynasty") for k in north if facts(k).get("dynasty")}),
+            "north_killed": sum(1 for k in north if (facts(k).get("end") or {}).get("kind") == "被殺"),
+            "north_usurped": sum(1 for k in north if (facts(k).get("accession") or {}).get("kind") == "篡位"),
+            "judah_total": len(judah),
+            "judah_good": len(judah_good),
+            "judah_high_places": len(high_places),
+            "judah_no_high_places_names": names([k for k in judah_good if k not in high_places]),
+            "judah_killed": sum(1 for k in judah if (facts(k).get("end") or {}).get("kind") in {"被殺", "戰死"}),
+            "judah_captive": sum(1 for k in judah if (facts(k).get("end") or {}).get("kind") in {"被擄", "死在外邦"}),
+            "prophets_total": len(prophets),
+            "prophets_dated": sum(1 for p in prophets if p.get("times")),
+            "prophets_undated": sum(1 for p in prophets if not p.get("times")),
+            "prophets_undated_names": "、".join(str(p["name"]) for p in prophets if not p.get("times")),
+        }
+
+    def render_summary(self, templates: list) -> list[str]:
+        numbers = self.pattern_numbers()
+        out = []
+        for i, template in enumerate(templates or []):
+            try:
+                out.append(f"- {str(template).strip().format(**numbers)}")
+            except (KeyError, IndexError, ValueError) as exc:
+                self.err(f"summary#{i + 1}", f"摘要句的欄位不存在：{exc}")
+        return out
+
+    def king_card(self, king: dict) -> list[str]:
+        facts = king.get("facts") or {}
+        rows: list[tuple[str, str, str]] = []
+        mother = facts.get("mother")
+        if mother:
+            text, ref = str(mother["text"]), str(mother["ref"])
+            if mother.get("also"):
+                text += f"；{mother['also']['text']}"
+                ref += f", {mother['also']['ref']}"
+            rows.append((str(mother.get("label") or "母親"), text, ref))
+        age = facts.get("age")
+        if age:
+            text, ref = str(age["text"]), str(age["ref"])
+            if age.get("also"):
+                text += f"；{age['also']['text']}"
+                ref += f", {age['also']['ref']}"
+            rows.append(("登基年歲", text, ref))
+        for key, label in (("accession", "怎麼作王"), ("end", "結局")):
+            entry = facts.get(key)
+            if entry:
+                rows.append((label, f"{entry['kind']}：{entry['text']}", str(entry["ref"])))
+        if facts.get("dynasty"):
+            rows.append(("家族", str(facts["dynasty"]), ""))
+        synchronisms = king.get("synchronism", []) or []
+        if synchronisms:
+            rows.append(("對照紀年", "；".join(f"「{entry['quote']}」" for entry in synchronisms),
+                         ", ".join(str(entry["ref"]) for entry in synchronisms)))
+        prophets = getattr(self, "prophets_by_king", {}).get(king.get("id"), [])
+        if prophets:
+            rows.append(("同時期的先知", "、".join(f"[[#列王時代的先知|{p['title']}]]" for p in prophets), ""))
+        foreign = facts.get("foreign", []) or []
+        if foreign:
+            rows.append(("外國君王", "、".join(str(entry["who"]) for entry in foreign),
+                         ", ".join(dict.fromkeys(str(entry["ref"]) for entry in foreign))))
+        aliases = facts.get("aliases", []) or []
+        if aliases:
+            rows.append(("別名", "；".join(str(entry["text"]) for entry in aliases),
+                         ", ".join(dict.fromkeys(str(entry["ref"]) for entry in aliases))))
+        if not rows:
+            return []
+        lines = ["> [!abstract] 基本資料", "> | 項目 | 內容 | 經節 |", "> |---|---|---|"]
+        for label, content, ref in rows:
+            reference = f"`{fmt_ref(ref, self.book)}`" if ref else ""
+            lines.append(f"> | {label} | {content} | {reference} |")
+        lines.append("")
+        return lines
+
+    def prophet_kings_text(self, prophet: dict) -> str:
+        if not prophet.get("times"):
+            return "書卷開頭沒有寫在哪位王的時候"
+        names: list[str] = []
+        for entry in prophet.get("times", []) or []:
+            if entry.get("exile") is not None:
+                name = "約雅斤被擄以後"
+            else:
+                kid = str(entry.get("king"))
+                king = self.kings_by_id.get(kid)
+                if king is not None:
+                    name = f"[[#{king['title']}|{king['name']}]]"
+                else:
+                    name = str(self.rulers_by_id[kid]["name"])
+            if name not in names:
+                names.append(name)
+        return "、".join(names)
+
+    def render_prophets(self, intro: str) -> list[str]:
+        prophets = getattr(self, "prophets", [])
+        if not prophets:
+            return []
+        out = ["## 列王時代的先知", ""]
+        if intro:
+            out += [intro.strip(), ""]
+        out += ["| 先知 | 對象 | 同時期的王 | 年代 |", "|---|---|---|---|"]
+        for prophet in prophets:
+            out.append(f"| {prophet['title']} | {prophet['_where']} | {self.prophet_kings_text(prophet)} | "
+                       f"{self.year_text(prophet['_years'], prophet['_estimate'])} |")
+        out.append("")
+        notes = [p for p in prophets if p.get("_source")]
+        if notes:
+            out.append("> [!note] 推估年代的出處")
+            for prophet in notes:
+                out.append(f"> - {prophet['name']}：{prophet['_source']}")
+            out.append("")
+        out += [f"[[#目錄|↑ 回到目錄]] · [[#{self.data['title']}|回到頂部]]", ""]
+        return out
+
+    def render_dynasties(self, intro: str) -> list[str]:
+        kings = [k for k in self.kings_registry.get("kings", []) or [] if k.get("kingdom") == "以色列"]
+        families: "OrderedDict[str, list[dict]]" = OrderedDict()
+        for king in kings:
+            family = (king.get("facts") or {}).get("dynasty")
+            if family:
+                families.setdefault(str(family), []).append(king)
+        if not families:
+            return []
+        out = ["### 北國的家族", ""]
+        if intro:
+            out += [intro.strip(), ""]
+        out += ["| | 家族 | 王 | 最後一位王的結局 | 經節 |", "|---:|---|---|---|---|"]
+        for index, (family, members) in enumerate(families.items(), 1):
+            last = members[-1]
+            end = (last.get("facts") or {}).get("end") or {}
+            people = "、".join(f"[[#{k['title']}|{k['name']}]]" for k in members)
+            out.append(f"| {index} | {family} | {people} | {last['name']}{end.get('kind', '')}：{end.get('text', '')} | `{fmt_ref(str(end.get('ref', '')), self.book)}` |")
+        out.append("")
+        return out
+
+    def collapsed_table(self, title: str, intro: str, header: list[str], rows: list[list[str]]) -> list[str]:
+        if not rows:
+            return []
+        out = [f"> [!note]- {title}"]
+        if intro:
+            out += [f"> {intro.strip()}", ">"]
+        out.append("> | " + " | ".join(header) + " |")
+        out.append("> |" + "|".join("---" for _ in header) + "|")
+        for row in rows:
+            out.append("> | " + " | ".join(row) + " |")
+        out.append("")
+        return out
+
+    def render_appendix(self, texts: dict) -> list[str]:
+        kings = self.kings_registry.get("kings", []) or []
+        by_time = sorted(kings, key=lambda k: (-int(k["years"]["start"]), k.get("kingdom") != "猶大"))
+        link = lambda k: f"[[#{k['title']}|{k['name']}]]"
+        kingdom_label = {"統一": "統一", "猶大": "猶大", "以色列": "以色列"}
+        sync_rows = [[link(k), kingdom_label[k["kingdom"]], f"「{entry['quote']}」", f"`{fmt_ref(entry['ref'], self.book)}`"]
+                     for k in by_time for entry in k.get("synchronism", []) or []]
+        alias_rows = [[link(k), str(a["name"]), str(a["kind"]), f"「{a['quote']}」", f"`{fmt_ref(a['ref'], self.book)}`"]
+                      for k in kings for a in (k.get("facts") or {}).get("aliases", []) or []]
+        foreign_rows = [[str(f["who"]), link(k), f"「{f['quote']}」", f"`{fmt_ref(f['ref'], self.book)}`"]
+                        for k in by_time for f in (k.get("facts") or {}).get("foreign", []) or []]
+        prophet_rows = []
+        for prophet in getattr(self, "prophets", []):
+            entries = list(prophet.get("times", []) or [])
+            if prophet.get("where_quote"):
+                entries.append({"quote": prophet["where_quote"], "ref": prophet["where_ref"]})
+            for entry in entries:
+                prophet_rows.append([str(prophet["title"]), f"「{entry['quote']}」", f"`{fmt_ref(entry['ref'], self.book)}`"])
+        out = ["## 附表", "", str(texts.get("intro", "")).strip(), ""]
+        out += self.collapsed_table("對照紀年：兩國的王在對方第幾年登基", texts.get("synchronism", ""),
+                                    ["王", "國", "經文原句", "經節"], sync_rows)
+        out += self.collapsed_table("別名和改名", texts.get("aliases", ""), ["王", "別名", "", "經文原句", "經節"], alias_rows)
+        out += self.collapsed_table("和以色列、猶大往來的外國君王", texts.get("foreign", ""),
+                                    ["外國君王", "以色列或猶大的王", "經文原句", "經節"], foreign_rows)
+        out += self.collapsed_table("先知和君王同時的經文", texts.get("prophets", ""), ["先知", "經文原句", "經節"], prophet_rows)
+        out += [f"[[#目錄|↑ 回到目錄]] · [[#{self.data['title']}|回到頂部]]", ""]
+        return out
+
     def render_compare(self) -> str:
         data = self.data
         registry = self.kings_registry
@@ -1430,23 +2113,34 @@ class Builder:
         if navigation:
             out += [navigation, ""]
         out += [str(data.get("intro", "")).strip(), "",
-                "<!-- 本頁由 appendix/genealogy/build_genealogy.py 從 YAML 資料產生，請改資料檔，不要直接改本頁。 -->", "",
-                "> [!info] 怎麼讀這份圖"]
-        out += [f"> - {item}" for item in data.get("howto", []) or []]
-        out += ["", "## 目錄", "", "- [[#年代圖|年代圖]]", "- [[#評語對照|評語對照]]",
-                "- [[#列王紀和歷代志寫法不同|寫法不同]]"]
+                "<!-- 本頁由 appendix/genealogy/build_genealogy.py 從 YAML 資料產生，請改資料檔，不要直接改本頁。 -->", ""]
+        summary = self.render_summary(data.get("summary", []))
+        if summary:
+            out += ["## 先看幾個規律", ""] + summary + [""]
+        out += ["## 目錄", ""]
+        if summary:
+            out.append("- [[#先看幾個規律|先看幾個規律]]")
+        out += ["- [[#年代圖|年代圖]]", "- [[#評語對照|評語對照]]", "- [[#列王紀和歷代志寫法不同|寫法不同]]"]
+        if getattr(self, "prophets", []):
+            out.append("- [[#列王時代的先知|列王時代的先知]]")
         for group in groups:
             heading = str(group.get("heading", group.get("kingdom", "")))
             out.append(f"- [[#{heading}|{heading}]]")
             for king in kings:
                 if king.get("kingdom") == group.get("kingdom"):
                     out.append(f"  - [[#{king.get('title', king.get('name', king.get('id')))}|{king.get('name', king.get('id'))}]]")
-        out += ["", "## 年代圖", "", f"色條的長短照 {registry['chronology']['label']}，經文本身沒有公元年份。", "",
-                "> [!info] 年代出處", f"> - {registry['chronology']['source']}"]
+        out.append("- [[#附表|附表]]")
+        out += ["", "## 年代圖", "", "> [!info] 怎麼讀這份圖"]
+        out += [f"> - {item}" for item in data.get("howto", []) or []]
+        out += ["", f"色條的長短照 {registry['chronology']['label']}，經文本身沒有公元年份。", "",
+                "> [!info]- 年代出處", f"> - {registry['chronology']['source']}"]
         if registry["chronology"].get("estimate_source"):
             out.append(f"> - 推估年代：{registry['chronology']['estimate_source']}")
+        prophet_data = getattr(self, "prophet_data", {}) or {}
+        if prophet_data.get("rulers_source"):
+            out.append(f"> - 巴比倫、波斯的王：{prophet_data['rulers_source']}")
         out.append(f"> - {registry['chronology']['note']}")
-        out += [""] + timeline_svg(kings).splitlines() + ["", "## 評語對照", ""]
+        out += [""] + timeline_svg(kings, extra=self.timeline_extra()).splitlines() + ["", "## 評語對照", ""]
         for group in groups:
             kingdom = group.get("kingdom")
             heading = str(group.get("heading", kingdom))
@@ -1488,23 +2182,23 @@ class Builder:
             out.append(f"| [[#{title}|{name}]] | {cells[0]} | {cells[1]} |")
         out.append("")
 
+        out += self.render_prophets(str(data.get("prophets_intro", "")))
+
         for group in groups:
             kingdom = group.get("kingdom")
             heading = str(group.get("heading", kingdom))
             out += [f"## {heading}", ""]
             if group.get("intro"):
                 out += [str(group["intro"]).strip(), ""]
+            if kingdom == "以色列":
+                out += self.render_dynasties(str(data.get("dynasty_intro", "")))
             for king in kings:
                 if king.get("kingdom") != kingdom:
                     continue
                 mark, label = self.verdict_display(king)
                 title = str(king.get("title", king.get("name", king.get("id"))))
-                name = str(king.get("name", king.get("id", "")))
                 out += [f"### {title}", "", f"**{mark} {label}**　{self.king_years(king)}", ""]
-                synchronisms = king.get("synchronism", []) or []
-                if synchronisms:
-                    values = [f"「{entry['quote']}」　`{fmt_ref(entry['ref'], self.book)}`" for entry in synchronisms]
-                    out += ["對照紀年：" + "；".join(values), ""]
+                out += self.king_card(king)
                 prose = king["prose"]
                 out += [str(prose["text"]).strip(), "", f"`{fmt_ref(prose['refs'], self.book)}`", ""]
                 if kingdom == "以色列" and king.get("chronicles_refs"):
@@ -1522,6 +2216,7 @@ class Builder:
                         out.append(f"> - {str(note['text']).strip()}　`{fmt_ref(note['refs'], self.book)}`")
                     out.append("")
                 out += [f"[[#目錄|↑ 回到目錄]] · [[#{data['title']}|回到頂部]]", ""]
+        out += self.render_appendix(data.get("appendix", {}) or {})
         return "\n".join(out).rstrip() + "\n"
 
     def overview_spine(self, spine: list[dict]) -> list[str]:
@@ -1559,12 +2254,15 @@ class Builder:
         if data.get("see_also"):
             # 系列以外的相關頁（例如「從亞當到耶穌的家譜」），只在總覽頁列一行，不加進系列導覽
             out += [str(data["see_also"]).strip(), ""]
-        out += ["<!-- 本頁由 appendix/genealogy/build_genealogy.py 從 YAML 資料產生，請改資料檔，不要直接改本頁。 -->", "",
-                "## 主線", ""]
+        out += ["<!-- 本頁由 appendix/genealogy/build_genealogy.py 從 YAML 資料產生，請改資料檔，不要直接改本頁。 -->", ""]
+        summary = self.render_summary(data.get("summary", []))
+        if summary:
+            out += ["## 先看幾個規律", ""] + summary + [""]
+        out += ["## 主線", ""]
         mini_intro = str(data.get("mini_intro") or "依君王登錄檔的分類整理南北國君王在位年代。")
         out += self.overview_spine(data.get("spine", []) or []) + ["", "## 南北國評語分布", "",
                 mini_intro.strip(), ""]
-        out += timeline_svg(kings, mini=True).splitlines() + [""]
+        out += timeline_svg(kings, mini=True, extra=self.timeline_extra()).splitlines() + [""]
         if (compare := self.compare_ready()):
             out.append(f"南北國列王的評語與經節詳見 [[{self.page_target(compare)}|{compare.get('short', '南北國列王對照')}]]。")
             out.append("")
@@ -1796,6 +2494,23 @@ class Builder:
     def tables(self) -> list[str]:
         ex = self.extras or {}
         out = ["---", "", "## 附表", ""]
+        if ex.get("family_diagram"):
+            diagram = ex["family_diagram"]
+            out += [f"### {diagram['heading']}", ""]
+            if diagram.get("intro"):
+                out += [str(diagram["intro"]).strip(), ""]
+            keys = {node["id"]: f"m{i}" for i, node in enumerate(diagram.get("nodes", []) or [])}
+            esc = lambda text: str(text).replace('"', "#quot;")
+            out += ["```mermaid", "flowchart TB"]
+            for node in diagram.get("nodes", []) or []:
+                out.append(f'  {keys[node["id"]]}["{esc(node["label"])}<br/><small>{fmt_ref(node["ref"], self.book)}</small>"]')
+            for edge in diagram.get("edges", []) or []:
+                arrow = "-.->" if edge.get("dashed") else "-->"
+                out.append(f'  {keys[edge["from"]]} {arrow}|{esc(edge["label"])}| {keys[edge["to"]]}')
+            out += ["```", ""]
+            if diagram.get("note"):
+                out += [str(diagram["note"]).strip(), ""]
+            out += [f"[[#目錄|↑ 回到目錄]] · [[#{self.data['title']}|回到頂部]]", ""]
         if ex.get("parallels"):
             out += ["### 平行經文對照", "", "同一件事或同一個人，在別處經文的寫法不同：", "",
                     f"| 項目 | {self.data.get('parallels_label', '歷代志上')} | 對照經文 | 說明 |", "|---|---|---|---|"]

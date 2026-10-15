@@ -5,6 +5,9 @@
 # differs：統一王國與猶大的王，兩卷（撒母耳記或列王紀 vs 歷代志）一卷有評語另一卷沒有、或一卷多寫了轉變時為 true。北國的王不標。
 # prose：事蹟散文，只寫所附經節裡有的事；「」內逐字。
 
+facts_file: facts.yaml
+prophets_file: prophets.yaml
+
 chronology:
   label: Thiele 年表
   source: 'Edwin R. Thiele, The Mysterious Numbers of the Hebrew Kings（新修訂版／第三版，Zondervan 1983），附錄 B「The Dates of the Kings of Israel and Judah」第 217 頁；共治與並立見第 219 頁。本頁數字轉錄自英文維基百科 List of kings of Judah 與 List of kings of Israel 的 Thiele 欄（https://en.wikipedia.org/wiki/List_of_kings_of_Judah 、https://en.wikipedia.org/wiki/List_of_kings_of_Israel ），並參照 Thiele 1974 年 JBL 文章與 McFall 1991、Young 2007 的轉載核對；何細亞的結束年作 723。原書表格未能逐格目驗。'
@@ -236,6 +239,7 @@ kings:
     items:
       - {book: 王下, role: 評語, quote: 亞瑪謝行耶和華眼中看為正的事, ref: "王下 14:3"}
       - {book: 王下, role: 但書, quote: 但不如他祖大衛, ref: "王下 14:3"}
+      - {book: 王下, role: 但書, quote: 只是邱壇還沒有廢去, ref: "王下 14:4"}
       - {book: 代下, role: 評語, quote: 亞瑪謝行耶和華眼中看為正的事, ref: "代下 25:2"}
       - {book: 代下, role: 但書, quote: 只是心不專誠, ref: "代下 25:2"}
       - {book: 代下, role: 轉變, quote: 亞瑪謝殺了以東人回來，就把西珥的神像帶回, ref: "代下 25:14"}

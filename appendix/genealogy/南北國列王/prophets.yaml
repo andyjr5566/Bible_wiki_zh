@@ -1,0 +1,268 @@
+# 列王時代的先知（由 kings.yaml 的 prophets_file 載入）。
+#
+# 每位先知的 times 是經文把他和哪位王放在同一個時候：
+#   king：kings.yaml 的王 id，或下面 rulers 的外邦君王 id；quote 逐字在 ref，ref 的經文也必須出現這位王的名字。
+#   nth：「某王第幾年」。exile：「約雅斤被擄第幾年」（不必有 king）。
+#   at：start／end 取這位王登基或去世那一年，不取整段在位期間。
+#   link_only：true 表示只記他和這位王同時（卡片上會列出），不拿來推年代（例如以利沙見約沙法是在以色列王約蘭的時候）。
+#   bound：start／end 表示這一條只用來定先知年代的起點或終點（例如以賽亞在「烏西雅王崩的那年」蒙召）。
+# 先知的約年代由程式從這些王的 Thiele 年代推出來：整段在位取 start–end，第幾年取 start 減年數。
+# span: intersect 表示經文只記一次同時見兩位王，取兩段在位年代重疊的部分。
+# 書卷開頭沒寫在哪位王時候的先知，用 estimate（附 source）；說法差太多的只寫 views，不畫在年代圖上。
+# where：自動依同時期的王所屬的國；寫了 where 就用它，並附 where_quote／where_ref。
+
+rulers_source: 'Nebuchadnezzar II（https://en.wikipedia.org/wiki/Nebuchadnezzar_II ）、Amel-Marduk（https://en.wikipedia.org/wiki/Amel-Marduk ）、Cyrus the Great（https://en.wikipedia.org/wiki/Cyrus_the_Great ）、Darius the Great（https://en.wikipedia.org/wiki/Darius_the_Great ）各條目的在位年代。古列只取他作巴比倫王以後（約主前 539 起），也就是經文說的「波斯王古列元年」那段時間。'
+exile:
+  label: 被擄巴比倫
+  anchor: 約雅斤
+  ref: "王下 24:15"
+  quote: 並將約雅斤和王母、后妃、太監，與國中的大官，都從耶路撒冷擄到巴比倫去了
+  end_ruler: 古列
+  end_quote: 波斯王古列元年
+  end_ref: "代下 36:22"
+
+rulers:
+  - {id: 尼布甲尼撒, name: 巴比倫王尼布甲尼撒, short: 尼布甲尼撒, empire: 巴比倫, years: {start: 605, end: 562}, quote: 巴比倫王尼布甲尼撒上到猶大, ref: "王下 24:1"}
+  - {id: 以未米羅達, name: 巴比倫王以未米羅達, short: 以未米羅達, empire: 巴比倫, years: {start: 562, end: 560}, quote: 巴比倫王以未米羅達元年, ref: "王下 25:27"}
+  - {id: 古列, name: 波斯王古列, short: 古列, empire: 波斯, years: {start: 539, end: 530}, quote: 波斯王古列元年, ref: "代下 36:22"}
+  - {id: 大利烏, name: 波斯王大利烏, short: 大利烏, empire: 波斯, years: {start: 522, end: 486}, quote: 大利烏王第二年, ref: "該 1:1"}
+
+estimate_sources:
+  wiki_nahum: 'Book of Nahum（https://en.wikipedia.org/wiki/Book_of_Nahum ）：多數學者認為寫在埃及的挪亞們（底比斯）陷落（約主前 663）之後、尼尼微陷落（約主前 612）之前。'
+  wiki_habakkuk: 'Book of Habakkuk（https://en.wikipedia.org/wiki/Book_of_Habakkuk ）：多數學者認為內容最合約雅敬作王的時候（約主前 609–597）。'
+  wiki_obadiah: 'Book of Obadiah（https://en.wikipedia.org/wiki/Book_of_Obadiah ）：多數學者定在耶路撒冷陷落（約主前 587）之後不久；也有人主張主前 853–841 或主前五、四世紀。'
+  wiki_malachi: 'Book of Malachi（https://en.wikipedia.org/wiki/Book_of_Malachi ）：寫在第二聖殿完工（約主前 515）以後，接近以斯拉、尼希米到耶路撒冷的時候（約主前 445）。'
+  wiki_joel: 'Book of Joel（https://en.wikipedia.org/wiki/Book_of_Joel ）：學者的推估從主前九世紀約阿施作王的時候，到主前八世紀烏西雅的時候、約主前 630–587、約主前 520–500，以及主前 400 或 350 前後，沒有多數意見。'
+
+prophets:
+  - id: 撒母耳
+    name: 撒母耳
+    times:
+      - {king: 掃羅, quote: 撒母耳對掃羅說：耶和華差遣我膏你為王, ref: "撒上 15:1"}
+
+  - id: 迦得
+    name: 迦得
+    times:
+      - {king: 大衛, quote: 先知迦得，就是大衛的先見, ref: "撒下 24:11"}
+
+  - id: 拿單
+    name: 拿單
+    times:
+      - {king: 大衛, quote: 耶和華差遣拿單去見大衛, ref: "撒下 12:1"}
+      - {king: 所羅門, quote: 祭司撒督和先知拿單要膏他作以色列的王, ref: "王上 1:34", at: start, bound: end}
+
+  - id: 亞希雅
+    name: 亞希雅
+    times:
+      - {king: 耶羅波安#尼八之子, quote: 示羅人先知亞希雅在路上遇見他, ref: "王上 11:29"}
+
+  - id: 示瑪雅
+    name: 示瑪雅
+    times:
+      - {king: 羅波安, quote: 神的話臨到神人示瑪雅, ref: "王上 12:22-23"}
+
+  - id: 易多
+    name: 易多
+    times:
+      - {king: 所羅門, quote: 先見易多, ref: "代下 9:29"}
+      - {king: 羅波安, quote: 先見易多, ref: "代下 12:15"}
+      - {king: 亞比雅, quote: 先知易多, ref: "代下 13:22"}
+
+  - id: 亞撒利雅#俄德之子
+    name: 亞撒利雅
+    title: 亞撒利雅（俄德的兒子）
+    times:
+      - {king: 亞撒, quote: 神的靈感動俄德的兒子亞撒利雅, ref: "代下 15:1-2"}
+
+  - id: 哈拿尼
+    name: 哈拿尼
+    times:
+      - {king: 亞撒, quote: 先見哈拿尼來見猶大王亞撒, ref: "代下 16:7"}
+
+  - id: 耶戶#哈拿尼之子
+    name: 耶戶
+    title: 耶戶（哈拿尼的兒子）
+    times:
+      - {king: 巴沙, quote: 耶和華的話臨到哈拿尼的兒子耶戶，責備巴沙說, ref: "王上 16:1"}
+      - {king: 約沙法, quote: 先見哈拿尼的兒子耶戶出來迎接約沙法王, ref: "代下 19:2"}
+
+  - id: 以利亞
+    name: 以利亞
+    times:
+      - {king: 亞哈, quote: 基列寄居的提斯比人以利亞對亞哈說, ref: "王上 17:1"}
+      - {king: 亞哈謝#以色列, quote: 亞哈謝果然死了，正如耶和華藉以利亞所說的話, ref: "王下 1:17"}
+      - {king: 約蘭#猶大, quote: 先知以利亞達信與約蘭, ref: "代下 21:12"}
+
+  - id: 米該雅
+    name: 米該雅
+    span: intersect
+    times:
+      - {king: 亞哈, quote: 還有一個人，是音拉的兒子米該雅, ref: "王上 22:8, 王上 22:20"}
+      - {king: 約沙法, quote: 還有一個人，是音拉的兒子米該雅, ref: "王上 22:8"}
+
+  - id: 以利以謝
+    name: 以利以謝
+    times:
+      - {king: 約沙法, quote: 以利以謝向約沙法預言說, ref: "代下 20:37"}
+
+  - id: 以利沙
+    name: 以利沙
+    times:
+      - {king: 約蘭#以色列, quote: 以利沙對以色列王說, ref: "王下 3:1, 王下 3:13"}
+      - {king: 約沙法, quote: 我若不看猶大王約沙法的情面, ref: "王下 3:14", link_only: true}
+      - {king: 耶戶, quote: 先知以利沙叫了一個先知門徒來, ref: "王下 9:1-2"}
+      - {king: 約阿施#以色列, quote: 以利沙得了必死的病，以色列王約阿施下來看他, ref: "王下 13:14"}
+
+  - id: 撒迦利亞#耶何耶大之子
+    name: 撒迦利亞
+    title: 撒迦利亞（耶何耶大的兒子）
+    times:
+      - {king: 約阿施#猶大, quote: 神的靈感動祭司耶何耶大的兒子撒迦利亞, ref: "代下 24:20-22"}
+
+  - id: 約拿
+    name: 約拿
+    book: 約拿書
+    times:
+      - {king: 耶羅波安#約阿施之子, quote: 亞米太的兒子先知約拿, ref: "王下 14:23-25"}
+
+  - id: 阿摩司
+    name: 阿摩司
+    book: 阿摩司書
+    times:
+      - {king: 烏西雅, quote: 當猶大王烏西雅, ref: "摩 1:1"}
+      - {king: 耶羅波安#約阿施之子, quote: 以色列王約阿施的兒子耶羅波安在位的時候, ref: "摩 1:1"}
+
+  - id: 何西阿
+    name: 何西阿
+    book: 何西阿書
+    times:
+      - {king: 烏西雅, quote: 當烏西雅、約坦、亞哈斯、希西家作猶大王, ref: "何 1:1"}
+      - {king: 約坦, quote: 當烏西雅、約坦、亞哈斯、希西家作猶大王, ref: "何 1:1"}
+      - {king: 亞哈斯, quote: 當烏西雅、約坦、亞哈斯、希西家作猶大王, ref: "何 1:1"}
+      - {king: 希西家, quote: 當烏西雅、約坦、亞哈斯、希西家作猶大王, ref: "何 1:1"}
+      - {king: 耶羅波安#約阿施之子, quote: 約阿施的兒子耶羅波安作以色列王的時候, ref: "何 1:1"}
+
+  - id: 以賽亞
+    name: 以賽亞
+    book: 以賽亞書
+    times:
+      - {king: 烏西雅, quote: 當烏西雅、約坦、亞哈斯、希西家作猶大王的時候, ref: "賽 1:1"}
+      - {king: 烏西雅, quote: 烏西雅王崩的那年, ref: "賽 6:1", at: end, bound: start}
+      - {king: 約坦, quote: 當烏西雅、約坦、亞哈斯、希西家作猶大王的時候, ref: "賽 1:1"}
+      - {king: 亞哈斯, quote: 當烏西雅、約坦、亞哈斯、希西家作猶大王的時候, ref: "賽 1:1"}
+      - {king: 希西家, quote: 當烏西雅、約坦、亞哈斯、希西家作猶大王的時候, ref: "賽 1:1"}
+
+  - id: 俄德
+    name: 俄德
+    where: 北國以色列
+    where_quote: 出來迎接往撒瑪利亞去的軍兵
+    where_ref: "代下 28:9"
+    times:
+      - {king: 亞哈斯, quote: 耶和華的一個先知，名叫俄德, ref: "代下 28:1, 代下 28:9"}
+
+  - id: 彌迦
+    name: 彌迦
+    book: 彌迦書
+    times:
+      - {king: 約坦, quote: 當猶大王約坦、亞哈斯、希西家在位的時候, ref: "彌 1:1"}
+      - {king: 亞哈斯, quote: 當猶大王約坦、亞哈斯、希西家在位的時候, ref: "彌 1:1"}
+      - {king: 希西家, quote: 當猶大王約坦、亞哈斯、希西家在位的時候, ref: "彌 1:1"}
+
+  - id: 那鴻
+    name: 那鴻
+    book: 那鴻書
+    where: 論尼尼微
+    where_quote: 論尼尼微的默示
+    where_ref: "鴻 1:1"
+    estimate: {start: 663, end: 612, source: wiki_nahum}
+
+  - id: 西番雅
+    name: 西番雅
+    book: 西番雅書
+    times:
+      - {king: 約西亞, quote: 當猶大王亞們的兒子約西亞在位的時候, ref: "番 1:1"}
+
+  - id: 戶勒大
+    name: 戶勒大
+    times:
+      - {king: 約西亞, quote: 女先知戶勒大, ref: "王下 22:3, 王下 22:14"}
+
+  - id: 耶利米
+    name: 耶利米
+    book: 耶利米書
+    times:
+      - {king: 約西亞, nth: 13, quote: 猶大王亞們的兒子約西亞在位十三年，耶和華的話臨到耶利米, ref: "耶 1:2"}
+      - {king: 約雅敬, quote: 從猶大王約西亞的兒子約雅敬在位的時候, ref: "耶 1:3"}
+      - {king: 西底家, quote: 直到猶大王約西亞的兒子西底家在位的末年, ref: "耶 1:3"}
+
+  - id: 哈巴谷
+    name: 哈巴谷
+    book: 哈巴谷書
+    where: 論迦勒底人興起
+    where_quote: 我必興起迦勒底人
+    where_ref: "哈 1:6"
+    estimate: {start: 609, end: 597, source: wiki_habakkuk}
+
+  - id: 但以理
+    name: 但以理
+    book: 但以理書
+    where: 被擄到巴比倫
+    where_quote: 他們中間有猶大族的人：但以理
+    where_ref: "但 1:1-6"
+    times:
+      - {king: 約雅敬, nth: 3, quote: 猶大王約雅敬在位第三年, ref: "但 1:1"}
+      - {king: 古列, nth: 3, quote: 波斯王古列第三年, ref: "但 10:1"}
+
+  - id: 以西結
+    name: 以西結
+    book: 以西結書
+    where: 被擄到巴比倫的人中
+    where_quote: 在迦巴魯河邊被擄的人中
+    where_ref: "結 1:1"
+    times:
+      - {exile: 5, quote: 正是約雅斤王被擄去第五年, ref: "結 1:2"}
+      - {exile: 25, quote: 我們被擄掠第二十五年, ref: "結 40:1"}
+
+  - id: 俄巴底亞
+    name: 俄巴底亞
+    book: 俄巴底亞書
+    where: 論以東
+    where_quote: 論以東說
+    where_ref: "俄 1:1"
+    estimate: {start: 587, end: 587, source: wiki_obadiah}
+
+  - id: 哈該
+    name: 哈該
+    book: 哈該書
+    where: 歸回的猶大人
+    where_quote: 向猶大省長撒拉鐵的兒子所羅巴伯
+    where_ref: "該 1:1"
+    times:
+      - {king: 大利烏, nth: 2, quote: 大利烏王第二年, ref: "該 1:1"}
+
+  - id: 撒迦利亞#比利家之子
+    name: 撒迦利亞
+    title: 撒迦利亞（比利家的兒子）
+    book: 撒迦利亞書
+    where: 歸回的猶大人
+    where_quote: 耶和華的話臨到易多的孫子、比利家的兒子先知撒迦利亞
+    where_ref: "亞 1:1"
+    times:
+      - {king: 大利烏, nth: 2, quote: 大利烏王第二年, ref: "亞 1:1"}
+      - {king: 大利烏, nth: 4, quote: 大利烏王第四年, ref: "亞 7:1"}
+
+  - id: 瑪拉基
+    name: 瑪拉基
+    book: 瑪拉基書
+    where: 歸回以後的以色列
+    where_quote: 耶和華藉瑪拉基傳給以色列的默示
+    where_ref: "瑪 1:1"
+    estimate: {start: 515, end: 445, source: wiki_malachi}
+
+  - id: 約珥
+    name: 約珥
+    book: 約珥書
+    where: 猶大和耶路撒冷
+    where_quote: 我使猶大和耶路撒冷被擄之人歸回的時候
+    where_ref: "珥 3:1"
+    views: {source: wiki_joel}
