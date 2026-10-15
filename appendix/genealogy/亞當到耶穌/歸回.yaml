@@ -1,0 +1,171 @@
+# 歸回的家族連回祖先（拉 2、尼 7、尼 11）：唯一來源；由 ../reading.py 讀取並檢查根據
+#
+# 每一筆：
+#   at：經節；word：「名字@第幾次出現」
+#   to：連到家譜樹上的人（tree）或職位圖上的一格（role＝方塊 id，member＝成員代號）
+#   effect：returned 子孫歸回（二十四班那一格變紅）／lost 族譜尋不著（虛線）／link 只是連回祖先
+#   card：讀到時旁邊出的小卡（逐字經文放「」，經文經節寫在 refs）
+#   basis：根據（經文逐字、註釋檔名＋逐字引句、STEP 原文編號），建置時用 ../check_basis.py 檢查
+# 只連「前面經文出現過、而且有根據」的家族；其餘家族名只在經文裡亮（見 讀經/歸回_拉2尼7.yaml）。
+# 原文編號：拉 2:36 的耶大雅、2:37 的音麥、2:39 的哈琳和代上 24 的第二、第十六、第三班同一編號；
+# 拉 2:32 平信徒的哈琳是另一個編號（H2766H），不連。
+
+links:
+  # ───────────── 祭司：二十四班裡子孫歸回的那幾班 ─────────────
+  - at: 拉2:36
+    word: 耶大雅@1
+    to: [{role: priests, member: 耶大雅#第二班}]
+    effect: returned
+    card: 大衛時代掣籤分班：「第二是耶大雅」。
+    refs: [代上24:7]
+    basis: &jedaiah
+      - {ref: 代上24:7, quote: 第二是耶大雅}
+      - {source: ccbiblestudy_GT_ezra_2.txt, quote: 耶大雅、哈王樹、音麥是大衛時代的大祭司(代上24:7-14)}
+      - {source: biblehub_study_ezra_2.txt, quote: "1Ch 24:7 The first lot fell to Jehoiarib, the second to Jedaiah,"}
+      - {source: stepbible_ezra_2.txt, quote: H3048H, note: 和代上 24:7 的耶大雅同一個原文編號}
+  - at: 拉2:37
+    word: 音麥@1
+    to: [{role: priests, member: 音麥#第十六班}]
+    effect: returned
+    card: 大衛時代掣籤分班：「第十六是音麥」。
+    refs: [代上24:14]
+    basis: &immer
+      - {ref: 代上24:14, quote: 第十六是音麥}
+      - {source: biblehub_study_ezra_2.txt, quote: belonged to one of the priestly divisions established under David for the ordered service of the temple (1 Chronicles 24:14)}
+      - {source: stepbible_ezra_2.txt, quote: H564H, note: 和代上 24:14 的音麥同一個原文編號}
+  - at: 拉2:39
+    word: 哈琳@1
+    to: [{role: priests, member: 哈琳#第三班}]
+    effect: returned
+    card: 大衛時代掣籤分班：「第三是哈琳」。
+    refs: [代上24:8]
+    basis: &harim
+      - {ref: 代上24:8, quote: 第三是哈琳}
+      - {source: biblehub_study_ezra_2.txt, quote: "1Ch 24:8 the third to Harim, the fourth to Seorim,"}
+      - {source: kingcomments_ezra_2.txt, quote: "Of the priests, only a few families of the twenty-four priestly families return to the land (verses 36-39; cf. 1Chr 24:7-18)."}
+      - {source: stepbible_ezra_2.txt, quote: H2766G, note: 和代上 24:8 的哈琳同一個原文編號}
+  # 「哈哥斯的子孫」：大衛時代第七班哈歌斯的家族，族譜尋不著
+  - at: 拉2:61
+    word: 哈哥斯@1
+    to: [{role: priests, member: 哈歌斯#第七班}]
+    effect: lost
+    card: 大衛時代的第七班是「哈歌斯」（代上 24:10）。這一家「在族譜之中尋查自己的譜系，卻尋不著，因此算為不潔，不准供祭司的職任」（拉 2:62）。代上 9:1：「以色列人都按家譜計算」。
+    refs: [代上24:10, 拉2:62, 代上9:1]
+    basis: &hakkoz
+      - {ref: 代上24:10, quote: 第七是哈歌斯}
+      - {ref: 拉2:62, quote: 這三家的人在族譜之中尋查自己的譜系，卻尋不著}
+      - {source: biblehub_study_ezra_2.txt, quote: "Hakkoz belonged to one of the priestly divisions established in David’s day, listed as the seventh division in 1 Chronicles 24:10."}
+
+  # ───────────── 歌唱的、守門的 ─────────────
+  - at: 拉2:41
+    word: 亞薩@1
+    to: [{tree: 亞薩}, {role: singers, member: 亞薩}]
+    effect: link
+    card: 大衛「分派亞薩、希幔，並耶杜頓的子孫」唱歌。
+    refs: [代上25:1]
+    basis: &asaph
+      - {ref: 代上25:1, quote: 大衛和眾首領分派亞薩、希幔，並耶杜頓的子孫}
+      - {source: ccbiblestudy_CT_ezra_2.txt, quote: 亞薩是大衛時代一位傑出的樂師}
+      - {source: ccbiblestudy_GT_ezra_2.txt, quote: 大衛指定的“在聖殿歌詠的”3個人利未子孫之一(代上25:1;代下5:12;35:15)}
+  - at: 拉2:42
+    word: 沙龍@1
+    to: [{tree: 沙龍}]
+    effect: link
+    card: 「守門的是沙龍、亞谷、達們、亞希幔，和他們的弟兄；沙龍為長。」
+    refs: [代上9:17]
+    basis: &gate
+      - {ref: 代上9:17, quote: 守門的是沙龍、亞谷、達們、亞希幔}
+      - {source: biblehub_study_ezra_2.txt, quote: First Chronicles identifies Shallum as a chief gatekeeper connected with the Korahites}
+  - at: 拉2:42
+    word: 達們@1
+    to: [{tree: 達們}]
+    effect: link
+    refs: [代上9:17]
+    basis: *gate
+  - at: 拉2:42
+    word: 亞谷@1
+    to: [{tree: 亞谷}]
+    effect: link
+    refs: [代上9:17]
+    basis: *gate
+
+  # ───────────── 所羅門僕人的後裔 ─────────────
+  - at: 拉2:55
+    word: 所羅門@1
+    to: [{tree: 所羅門}]
+    effect: link
+    refs: [拉2:55]
+    basis: &solomon
+      - {ref: 拉2:55, quote: 所羅門僕人的後裔}
+
+  # ───────────── 尼希米記 7 章：同一份名單 ─────────────
+  - at: 尼7:39
+    word: 耶大雅@1
+    to: [{role: priests, member: 耶大雅#第二班}]
+    effect: returned
+    card: 大衛時代掣籤分班：「第二是耶大雅」。
+    refs: [代上24:7]
+    basis: *jedaiah
+  - at: 尼7:40
+    word: 音麥@1
+    to: [{role: priests, member: 音麥#第十六班}]
+    effect: returned
+    card: 大衛時代掣籤分班：「第十六是音麥」。
+    refs: [代上24:14]
+    basis: *immer
+  - at: 尼7:42
+    word: 哈琳@1
+    to: [{role: priests, member: 哈琳#第三班}]
+    effect: returned
+    card: 大衛時代掣籤分班：「第三是哈琳」。
+    refs: [代上24:8]
+    basis: *harim
+  - at: 尼7:63
+    word: 哈哥斯@1
+    to: [{role: priests, member: 哈歌斯#第七班}]
+    effect: lost
+    card: 大衛時代的第七班是「哈歌斯」（代上 24:10）；這一家的譜系「卻尋不著」（尼 7:64）。
+    refs: [代上24:10, 尼7:64]
+    basis: *hakkoz
+  - at: 尼7:44
+    word: 亞薩@1
+    to: [{tree: 亞薩}, {role: singers, member: 亞薩}]
+    effect: link
+    refs: [代上25:1]
+    basis: *asaph
+  - at: 尼7:45
+    word: 沙龍@1
+    to: [{tree: 沙龍}]
+    effect: link
+    refs: [代上9:17]
+    basis: *gate
+  - at: 尼7:45
+    word: 達們@1
+    to: [{tree: 達們}]
+    effect: link
+    refs: [代上9:17]
+    basis: *gate
+  - at: 尼7:45
+    word: 亞谷@1
+    to: [{tree: 亞谷}]
+    effect: link
+    refs: [代上9:17]
+    basis: *gate
+  - at: 尼7:57
+    word: 所羅門@1
+    to: [{tree: 所羅門}]
+    effect: link
+    refs: [尼7:57]
+    basis:
+      - {ref: 尼7:57, quote: 所羅門僕人的後裔}
+
+  # ───────────── 尼希米記 11 章：住在耶路撒冷的猶大人 ─────────────
+  - at: 尼11:4
+    word: 法勒斯@1
+    to: [{tree: 法勒斯}]
+    effect: link
+    card: 住在耶路撒冷的猶大人裡「有法勒斯的子孫」，就是猶大的兒子法勒斯的後代。
+    refs: [尼11:4, 尼11:6]
+    basis:
+      - {ref: 尼11:4, quote: 猶大人中有法勒斯的子孫}
+      - {ref: 尼11:6, quote: 法勒斯的子孫共四百六十八名}
