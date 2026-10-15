@@ -16,7 +16,7 @@ from fontTools import subset
 
 SITE = Path(__file__).resolve().parents[1]
 OUT = SITE / "src" / "assets" / "fonts"
-UI_SOURCES = ["src/ui/reader.ts", "src/ui/ink.ts"]
+UI_SOURCES = ["src/ui/reader.ts", "src/ui/ink.ts", "src/ui/tree-stage.ts", "src/ui/roles.ts", "src/ui/canvas.ts"]
 # 數字、標點、章號用的國字（介面上的章名卡、節號）
 ALWAYS = "0123456789０１２３４５６７８９一二三四五六七八九十百千萬零第章節卷代上下，。、；：！？「」『』（）【】—…·・ "
 
@@ -24,14 +24,46 @@ ALWAYS = "0123456789０１２３４５６７８９一二三四五六七八九十
 def used_characters() -> str:
     reading = json.loads((SITE / "src" / "data" / "reading.json").read_text(encoding="utf-8"))
     chars = set(ALWAYS)
-    chars.update(reading.get("bookName", ""))
-    for chapter in reading["chapters"]:
-        chars.update(chapter.get("title", ""))
-        for verse in chapter["verses"]:
-            chars.update(verse["text"])
-            chars.update(verse.get("sec", ""))
+    # 讀經路線：段落標題、分組、經文範圍、章名、經文、小段標題
+    for segment in reading["segments"]:
+        for field in ("title", "group", "range"):
+            chars.update(segment.get(field, ""))
+        for chapter in segment["chapters"]:
+            chars.update(chapter.get("title", ""))
+            chars.update(chapter.get("bookName", ""))
+            chars.update(chapter.get("book", ""))
+            for verse in chapter["verses"]:
+                chars.update(verse["text"])
+                chars.update(verse.get("sec", ""))
     for note in reading.get("notes", []):
         chars.update(note["text"])
+    # 平行經文差異小卡、歸回連結小卡
+    for diff in reading.get("diffs", []):
+        chars.update(diff["title"])
+        for side in diff["sides"]:
+            chars.update(side["text"] + side["ref"])
+    for link in reading.get("links", []):
+        chars.update(link.get("card", ""))
+        for ref in link.get("refs", []):
+            chars.update(ref)
+    # 大衛立的職位：方塊標題、人名、細節、人數、印
+    roles_path = SITE / "src" / "data" / "roles.json"
+    if roles_path.is_file():
+        roles = json.loads(roles_path.read_text(encoding="utf-8"))
+        for category in roles.get("categories", []):
+            chars.update(category.get("title", ""))
+            for box in category.get("boxes", []):
+                for field in ("title", "ref", "note", "seal"):
+                    chars.update(box.get(field, "") or "")
+                for member in box.get("members", []):
+                    for field in ("name", "detail", "ref"):
+                        chars.update(member.get(field, "") or "")
+                for item in box.get("groups", []) + box.get("figures", []):
+                    for value in item.values():
+                        if isinstance(value, str):
+                            chars.update(value)
+        for person in roles.get("people", []):
+            chars.update(person.get("name", "") + (person.get("qualifier", "") or ""))
     # 讀經時大圖上的名字也換成這個字型：所有人名、別名、牌子標題、經節標籤
     genealogy = json.loads((SITE / "src" / "data" / "genealogy.json").read_text(encoding="utf-8"))
     for person in genealogy["persons"]:
@@ -73,7 +105,8 @@ def main() -> int:
     text = used_characters()
     build(regular, OUT / "wenkai-tc-regular.woff2", text)
     build(medium, OUT / "wenkai-tc-medium.woff2", text)
-    shutil.copyfile(license_file, OUT / "OFL.txt")
+    if license_file.resolve() != (OUT / "OFL.txt").resolve():
+        shutil.copyfile(license_file, OUT / "OFL.txt")
     for path in sorted(OUT.iterdir()):
         print(f"{path.name}  {path.stat().st_size:,} bytes")
     print(f"{len(text)} 個字")
