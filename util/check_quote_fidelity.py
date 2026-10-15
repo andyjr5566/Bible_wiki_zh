@@ -19,6 +19,8 @@
   - 引句含 ⋯／… 時視為節錄，拆開後每段各自回查（每段至少 5 字才算數）。
   - 少於 10 字、或含頓線的引句不查：中文用「」兼作強調與並列（「過去／所要去」），
     那不是宣稱逐字引用，硬報只會製造誤報。
+  - 引號分工（AGENTS.md）：「」是逐字引文；「」裡的『』是巢狀引號，隨外層一起比對；
+    單獨出現、不在「」裡的『』是作者標的重點詞，不比對。
 條目模式（--entry）：`link_folder/**.md` 是維護回合實際動筆的地方（情境 E 的活文件），
 章節模式從不掃它，於是寫進定義／主題發展的引句一道閘門都沒有。條目模式改以「該條目
 自己宣告累積過的每一章」為語料——那正好就是它有權引用的來源集合。
@@ -47,9 +49,9 @@ MIN_QUOTE_CHARS = 10
 MIN_FRAGMENT_CHARS = 5
 # 巢狀引號：「…『某詞』…」的外層若用 [^「」『』] 比對會整段漏掉，而外層才是宣稱
 # 逐字引用的那一層（memory: nested-quotes-escape-the-quote-checker）。
+# 單獨出現的『』是作者標的重點詞（AGENTS.md 引號分工），不是引句，不收。
 QUOTE_PATTERNS = (
     re.compile(r"「((?:[^「」]|『[^『』]*』)+?)」"),
-    re.compile(r"『([^『』]+?)』"),
 )
 ELLIPSIS_RE = re.compile(r"[⋯…]+")
 WIKILINK_RE = re.compile(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]")
@@ -337,7 +339,7 @@ def main() -> int:
     parser.add_argument("--min-chars", type=int, default=MIN_QUOTE_CHARS, metavar="N",
                         help=f"引句長度下限（預設 {MIN_QUOTE_CHARS}）。調低到 2~4 可掃出"
                              "「」被當強調記號用的短引句——那是常駐閘門驗不到的一型，"
-                             "但誤報也會變多，報出的每一條都要人工裁決")
+                             "但誤報也會變多，報出的每一條都要人工裁決；是標重點詞的改成『』")
     args = parser.parse_args()
     if args.min_chars < 1:
         parser.error("--min-chars 至少要 1")

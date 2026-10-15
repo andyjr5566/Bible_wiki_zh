@@ -1161,7 +1161,8 @@ def check_quote_fidelity(book: Optional[str] = None, chapter: Optional[int] = No
 
     The structural gates check that files exist, links resolve and formats are
     legal; none of them checks whether the sentence inside the quote marks
-    actually came from a source. This one compares each 「」／『』 quote in the
+    actually came from a source. This one compares each 「」 quote (with any
+    nested 『』 inside it; a standalone 『』 marks a key term, not a quote) in the
     chapter's entry payloads, chapter payload, B-class summary/relation and the
     rendered ``本章整理`` against this chapter's OK commentary plus the whole
     book's scripture — scripture from earlier chapters is normal to quote,
@@ -1182,7 +1183,8 @@ def check_quote_fidelity(book: Optional[str] = None, chapter: Optional[int] = No
 
     ``min_chars`` lowers the length floor (default 10). Quotes shorter than the
     floor are not compared at all, so 「」 used as an emphasis or term marker —
-    which the project forbids, because the marks are a verbatim claim — passes
+    which the project forbids, because the marks are a verbatim claim; key terms
+    go in a standalone 『』 instead — passes
     the standing gate untouched. Re-running with ``min_chars=2`` after the gate
     is green is the way to catch that type; expect more noise and adjudicate each
     hit by hand rather than deleting on sight. The gate itself keeps the default,

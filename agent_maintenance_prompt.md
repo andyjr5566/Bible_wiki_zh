@@ -12,6 +12,7 @@
 6. STEP 不足時使用 MCP 精確 query，不猜測、不 dump full raw。
 7. `find_step_occurrences` 可 bounded 查相鄰章，但每章都必須使用正式且驗證通過的 STEP source。
 8. 實際 M3/M6 寫作格式，以 `run_chapter_manual.py prompts` 當次產生的 prompt 為最終規格。
+9. 引號分工照 `AGENTS.md`：「」只放逐字引文；要標重點詞用單獨出現的『』。勘誤時碰到被拿來標詞的短「」，順手改成『』；沒動到的段落不為此改寫。
 
 新章製作照 `agent_start_prompt.md` 走。本檔管的是**維護**：章節做完之後，回頭修改
 `.tmp/第x章/` 的內容（M3 條目、M6 本章整理、候選、B 類累積），要怎麼把修改正確地

@@ -826,7 +826,7 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
             quote_adjudication_ok,
             "常駐引句閘門門檻 10 字，4-7 字的偽逐字引句不驗。必跑一輪並把裁決寫進紀錄："
             f"python util/check_quote_fidelity.py {canonical} {chapter} --min-chars 2，"
-            f"逐條裁決（逐字命中／已改為轉述／已補全截斷／中譯已移出「」／確為強調用法保留）"
+            f"逐條裁決（逐字命中／已改為轉述／已補全截斷／中譯已移出「」／是標重點詞，已改成『』）"
             f"寫入 {quote_adjudication}。",
         ),
         CheckResult(

@@ -56,6 +56,24 @@ class QuoteFidelityTests(unittest.TestCase):
             _total, misses, _ = cqf.check_quotes(BOOK, CHAPTER, root=root)
             self.assertEqual(1, len(misses))
 
+    def test_standalone_double_brackets_mark_terms_and_are_not_quotes(self):
+        """單獨出現的『』是作者標的重點詞，不比對；「」裡的『』仍隨外層比對。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._chapter(
+                tmp,
+                entry_yaml='name: 測試\ndefinition: 這段講的是『挪亞記得方舟裡所有活物的心意』。\n',
+            )
+            total, misses, _ = cqf.check_quotes(BOOK, CHAPTER, root=root)
+            self.assertEqual((0, []), (total, misses))
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._chapter(
+                tmp,
+                entry_yaml='name: 測試\ndefinition: CT 說「『鴿子』原文字義是使者，神記念挪亞，水勢暴漲」。\n',
+            )
+            total, misses, _ = cqf.check_quotes(BOOK, CHAPTER, root=root)
+            self.assertEqual((1, 1), (total, len(misses)))
+
     def test_excerpt_with_ellipsis_is_checked_fragment_by_fragment(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = self._chapter(
