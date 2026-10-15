@@ -1,6 +1,7 @@
 import type { ReadingData, ReadingToken, ReadingVerse } from '../data/types';
 import type { CanvasApi, ReadingMarks } from './canvas';
 import { button, h } from './dom';
+import type { SpeechController } from './speech';
 
 /**
  * 帶你讀經：經文一節一節往下讀，讀到誰，大家譜的鏡頭就移到誰；
@@ -33,6 +34,7 @@ const storage = {
 };
 
 export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
+  speech?: SpeechController;
   onOpenChange?(open: boolean): void;
 }): ReaderApi {
   const book = reading.book;
@@ -53,6 +55,7 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
   let follow = true;
   let speed = Number(storage.get('speed')) || 1;
   if (!SPEEDS.includes(speed as typeof SPEEDS[number])) speed = 1;
+  let voiceOn = false;
   let renderedChapter = 0;
   let pauseUntil = 0;
   let lastFrame = 0;
@@ -84,7 +87,11 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
   speedSelect.addEventListener('change', () => {
     speed = Number(speedSelect.value);
     storage.set('speed', String(speed));
+    if (playing && voiceOn) speakFromCursor();
   });
+  const voiceButton = button('朗讀', () => toggleVoice(), 'ag-rd-voice');
+  voiceButton.setAttribute('aria-pressed', 'false');
+  const voiceNote = h('p', { className: 'ag-rd-voice-note', hidden: true }, '這台裝置沒有中文語音，可以用文字跟著讀。');
   const panel = h('section', { className: 'ag-rd-panel', role: 'region', 'aria-label': '帶你讀經', hidden: true },
     h('header', { className: 'ag-rd-head' },
       h('div', { className: 'ag-rd-title' }, h('span', { className: 'ag-rd-eyebrow' }, '帶你讀經'), h('strong', {}, reading.bookName)),
@@ -97,7 +104,8 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
         playButton,
         control('下一個名字', '›', () => stepName(1)),
         control('下一節', '⇥', () => stepVerse(1))),
-      h('div', { className: 'ag-rd-options' }, speedSelect),
+      h('div', { className: 'ag-rd-options' }, speedSelect, voiceButton),
+      voiceNote,
       h('p', { className: 'ag-rd-credit' }, '經文：和合本　讀經字型：霞鶩文楷 TC（SIL Open Font License 1.1）')));
   const returnButton = button('回到朗讀處', () => {
     follow = true;
@@ -267,6 +275,7 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
   }
 
   function jump(index: number, toChar: number, keepPlaying: boolean) {
+    stopVoice();
     enterVerse(index, false);
     cursor = toChar;
     fireUpTo(true);
@@ -309,6 +318,7 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
     playButton.textContent = '暫停';
     playButton.classList.add('is-playing');
     lastFrame = performance.now();
+    if (voiceOn) speakFromCursor();
     cancelAnimationFrame(frame);
     frame = requestAnimationFrame(tick);
   }
@@ -316,6 +326,7 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
     playing = false;
     playButton.textContent = '播放';
     playButton.classList.remove('is-playing');
+    stopVoice();
     cancelAnimationFrame(frame);
   }
   function togglePlay() { if (playing) pause(); else play(); }
@@ -326,6 +337,7 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
     // 換章時讓章名卡停一下
     const gap = verses[at]!.chapter !== verses[at - 1]!.chapter ? 2600 : 520 / speed;
     pauseUntil = performance.now() + gap;
+    if (voiceOn && playing) window.setTimeout(() => { if (playing && voiceOn) speakFromCursor(); }, gap);
   }
 
   function tick(now: number) {
@@ -333,7 +345,7 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
     // 背景分頁回來時不要一口氣跳太多
     const dt = Math.max(0, Math.min(0.25, (now - lastFrame) / 1000));
     lastFrame = now;
-    if (now >= pauseUntil) {
+    if (!voiceOn && now >= pauseUntil) {
       const text = verses[at]!.verse.text;
       cursor = Math.min(text.length, cursor + dt * CHARS_PER_SECOND * speed);
       fireUpTo(false);
@@ -341,6 +353,49 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
       if (cursor >= text.length) endOfVerse();
     }
     frame = requestAnimationFrame(tick);
+  }
+
+  // ── 朗讀 ─────────────────────────────────────────────
+  function speakFromCursor() {
+    const speech = options.speech;
+    if (!speech || !voiceOn) return;
+    const item = verses[at]!;
+    const start = Math.floor(cursor);
+    const index = at;
+    speech.speak(item.verse.text, {
+      rate: speed,
+      startChar: start >= item.verse.text.length ? 0 : start,
+      onBoundary(charIndex) {
+        if (index !== at || !playing) return;
+        cursor = Math.max(cursor, charIndex);
+        fireUpTo(false);
+        paintText();
+      },
+      onEnd() {
+        if (index !== at || !playing) return;
+        cursor = item.verse.text.length;
+        fireUpTo(false);
+        paintText();
+        endOfVerse();
+      },
+    });
+  }
+  function stopVoice() { options.speech?.stop(); }
+  async function toggleVoice() {
+    const speech = options.speech;
+    if (!voiceOn) {
+      const ok = Boolean(speech?.supported()) && Boolean(await speech?.ready());
+      voiceNote.hidden = ok;
+      if (!ok) return;
+      voiceOn = true;
+      if (playing) speakFromCursor();
+    } else {
+      voiceOn = false;
+      stopVoice();
+      lastFrame = performance.now();
+    }
+    voiceButton.setAttribute('aria-pressed', String(voiceOn));
+    voiceButton.classList.toggle('is-on', voiceOn);
   }
 
   // ── 章名卡 ───────────────────────────────────────────

@@ -1,6 +1,7 @@
 import './styles.css';
 import './reading.css';
 import { DATA, READING, VERSES, buildGraph, isPlacementNode, lookupVerses, makeSyntheticData, pathToFirstAncestor } from './data/model';
+import { SPEECH_FIXES } from './data/speech-fixes';
 import type { GenealogyData, GenealogyNote, Person } from './data/types';
 import { createAges } from './ui/ages';
 import { createCanvas, type CanvasApi } from './ui/canvas';
@@ -10,6 +11,7 @@ import { button, h } from './ui/dom';
 import { createNotes } from './ui/notes';
 import { createToolbar, type LineFilter, type PageId } from './ui/toolbar';
 import { createReader } from './ui/reader';
+import { createSpeech } from './ui/speech';
 import { createTour } from './ui/tour';
 
 const synthetic = import.meta.env.DEV && new URLSearchParams(location.search).get('synthetic') === '1';
@@ -154,6 +156,7 @@ const toolbar = createToolbar(data, {
   getPage: () => page,
 });
 const reader = createReader(READING, canvas, {
+  speech: createSpeech({ replacements: SPEECH_FIXES }),
   onOpenChange(open) {
     if (open) {
       tour.stop(false);
