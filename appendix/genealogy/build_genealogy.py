@@ -809,6 +809,8 @@ class Builder:
 
             years = king.get("years") or {}
             has_estimate = has_estimate or bool(years.get("estimate"))
+            for j, text in enumerate(king.get("years_source", []) or []):
+                self.check_source(text, f"{where}.years_source#{j + 1}")
             try:
                 start, end = int(years["start"]), int(years["end"])
                 if start < end:
@@ -912,6 +914,22 @@ class Builder:
                 names.add(str(alias["name"]))
         return names
 
+    def commentary_text(self) -> str:
+        if not hasattr(self, "_commentary_text"):
+            self._commentary_text = "".join(path.read_text(encoding="utf-8", errors="ignore")
+                                            for pattern in ("ccbiblestudy_*.txt", "kingcomments_*.txt", "biblehub_study_*.txt")
+                                            for path in sorted((ROOT / "raw_data").glob(pattern)))
+        return self._commentary_text
+
+    def check_source(self, text: str, where: str) -> None:
+        """年代出處要寫註釋名稱，「」內的話必須逐字出現在 raw_data 收錄的註釋。"""
+        if not str(text or "").strip():
+            self.err(where, "需要 source（註釋出處）")
+            return
+        for quote in QUOTE_RE.findall(str(text)):
+            if quote not in self.commentary_text():
+                self.err(where, f"出處引句「{quote}」不在 raw_data 的註釋裡")
+
     def load_prophets(self, path: Path) -> None:
         data = self.load_yaml_file(path, "prophets_file")
         self.rulers_by_id: dict[str, dict] = {}
@@ -927,6 +945,7 @@ class Builder:
                 self.err(where, "需要 id")
                 continue
             self.check_fact(ruler, where, need_text=False)
+            self.check_source(ruler.get("source"), where)
             try:
                 if int(ruler["years"]["start"]) < int(ruler["years"]["end"]):
                     self.err(where, "years.start 必須大於或等於 years.end")
@@ -937,8 +956,6 @@ class Builder:
                 if not ruler.get(key):
                     self.err(where, f"需要 {key}")
             self.rulers_by_id[str(ruler["id"])] = ruler
-        if self.rulers_by_id and not data.get("rulers_source"):
-            self.err("rulers_source", "外邦君王年代需要出處")
         exile = data.get("exile")
         if isinstance(exile, dict):
             anchor = self.kings_by_id.get(str(exile.get("anchor")))
@@ -952,6 +969,8 @@ class Builder:
                               "start": int(anchor["years"]["end"]),
                               "end": int(end_ruler["years"]["start"])}
         sources = data.get("estimate_sources") or {}
+        for key, text in sources.items():
+            self.check_source(text, f"estimate_sources.{key}")
         ids: set[str] = set()
         for i, prophet in enumerate(data.get("prophets", []) or []):
             where = f"prophets#{i + 1}"
@@ -976,11 +995,14 @@ class Builder:
                 parsed = self.check_fact(entry, twhere, need_text=False)
                 if not isinstance(entry, dict):
                     continue
+                if entry.get("year") is not None:
+                    self.check_source(entry.get("source"), twhere)
+                    prophet.setdefault("_sources", []).append(str(entry["source"]))
                 if entry.get("exile") is not None:
                     if self.exile is None:
                         self.err(twhere, "exile 需要先設定被擄的起點")
                         continue
-                    year = self.exile["start"] - int(entry["exile"])
+                    year = int(entry["year"]) if entry.get("year") is not None else self.exile["start"] - int(entry["exile"])
                     span = (year, year)
                 else:
                     kid = str(entry.get("king") or "")
@@ -995,7 +1017,9 @@ class Builder:
                         self.err(twhere, f"所引經文沒有提到{'、'.join(sorted(names))}")
                     start = int((king or ruler)["years"]["start"])
                     end = int((king or ruler)["years"]["end"])
-                    if entry.get("nth") is not None:
+                    if entry.get("year") is not None:
+                        span = (int(entry["year"]), int(entry["year"]))
+                    elif entry.get("nth") is not None:
                         year = start - int(entry["nth"])
                         span = (year, year)
                     elif entry.get("at") in {"start", "end"}:
@@ -1055,6 +1079,8 @@ class Builder:
                 self.err(where, "需要 times、estimate 或 views")
             prophet["_years"] = years
             prophet["_estimate"] = estimate is not None
+            if isinstance(estimate, dict) and estimate.get("label"):
+                prophet["_year_label"] = str(estimate["label"])
             # 色條的顏色：跟哪一國的王（有巴比倫、波斯的王或「被擄第幾年」的歸被擄與歸回）
             has_foreign = any(isinstance(entry, dict) and (entry.get("exile") is not None or str(entry.get("king")) in self.rulers_by_id)
                               for entry in prophet.get("times", []) or [])
@@ -2029,14 +2055,16 @@ class Builder:
             out += [intro.strip(), ""]
         out += ["| 先知 | 對象 | 同時期的王 | 年代 |", "|---|---|---|---|"]
         for prophet in prophets:
-            out.append(f"| {prophet['title']} | {prophet['_where']} | {self.prophet_kings_text(prophet)} | "
-                       f"{self.year_text(prophet['_years'], prophet['_estimate'])} |")
+            years = prophet.get("_year_label") or self.year_text(prophet['_years'], prophet['_estimate'])
+            out.append(f"| {prophet['title']} | {prophet['_where']} | {self.prophet_kings_text(prophet)} | {years} |")
         out.append("")
-        notes = [p for p in prophets if p.get("_source")]
+        notes = [p for p in prophets if p.get("_source") or p.get("_sources")]
         if notes:
-            out.append("> [!note] 推估年代的出處")
+            out.append("> [!note]- 年代出處")
+            out.append("> 沒有列在這裡的先知，年代是從同時期君王的年代推出來的。")
             for prophet in notes:
-                out.append(f"> - {prophet['name']}：{prophet['_source']}")
+                for text in ([prophet["_source"]] if prophet.get("_source") else []) + prophet.get("_sources", []):
+                    out.append(f"> - {prophet['title']}：{text}")
             out.append("")
         out += [f"[[#目錄|↑ 回到目錄]] · [[#{self.data['title']}|回到頂部]]", ""]
         return out
@@ -2100,6 +2128,9 @@ class Builder:
         out += self.collapsed_table("和以色列、猶大往來的外國君王", texts.get("foreign", ""),
                                     ["外國君王", "以色列或猶大的王", "經文原句", "經節"], foreign_rows)
         out += self.collapsed_table("先知和君王同時的經文", texts.get("prophets", ""), ["先知", "經文原句", "經節"], prophet_rows)
+        year_rows = [[link(k), self.king_years(k), "<br/>".join(str(text) for text in k.get("years_source", []) or []) or str(texts.get("years_none", ""))]
+                     for k in by_time]
+        out += self.collapsed_table("各王年代的出處", texts.get("years", ""), ["王", "圖上的年代", "註釋怎麼寫"], year_rows)
         out += [f"[[#目錄|↑ 回到目錄]] · [[#{self.data['title']}|回到頂部]]", ""]
         return out
 
@@ -2136,9 +2167,8 @@ class Builder:
                 "> [!info]- 年代出處", f"> - {registry['chronology']['source']}"]
         if registry["chronology"].get("estimate_source"):
             out.append(f"> - 推估年代：{registry['chronology']['estimate_source']}")
-        prophet_data = getattr(self, "prophet_data", {}) or {}
-        if prophet_data.get("rulers_source"):
-            out.append(f"> - 巴比倫、波斯的王：{prophet_data['rulers_source']}")
+        for ruler in getattr(self, "rulers_by_id", {}).values():
+            out.append(f"> - {ruler['name']}：{ruler['source']}")
         out.append(f"> - {registry['chronology']['note']}")
         out += [""] + timeline_svg(kings, extra=self.timeline_extra()).splitlines() + ["", "## 評語對照", ""]
         for group in groups:

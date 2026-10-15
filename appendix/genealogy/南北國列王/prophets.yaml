@@ -2,7 +2,8 @@
 #
 # 每位先知的 times 是經文把他和哪位王放在同一個時候：
 #   king：kings.yaml 的王 id，或下面 rulers 的外邦君王 id；quote 逐字在 ref，ref 的經文也必須出現這位王的名字。
-#   nth：「某王第幾年」。exile：「約雅斤被擄第幾年」（不必有 king）。
+#   year＋source：經文寫「某王第幾年」「被擄第幾年」時，直接用註釋換算好的年份，source 寫註釋的出處（要能在 raw_data 找到原句）。
+#   nth：「某王第幾年」，沒有 year 時才用王的年代推算。exile：「約雅斤被擄第幾年」（不必有 king）。
 #   at：start／end 取這位王登基或去世那一年，不取整段在位期間。
 #   link_only：true 表示只記他和這位王同時（卡片上會列出），不拿來推年代（例如以利沙見約沙法是在以色列王約蘭的時候）。
 #   bound：start／end 表示這一條只用來定先知年代的起點或終點（例如以賽亞在「烏西雅王崩的那年」蒙召）。
@@ -11,7 +12,6 @@
 # 書卷開頭沒寫在哪位王時候的先知，用 estimate（附 source）；說法差太多的只寫 views，不畫在年代圖上。
 # where：自動依同時期的王所屬的國；寫了 where 就用它，並附 where_quote／where_ref。
 
-rulers_source: 'Nebuchadnezzar II（https://en.wikipedia.org/wiki/Nebuchadnezzar_II ）、Amel-Marduk（https://en.wikipedia.org/wiki/Amel-Marduk ）、Cyrus the Great（https://en.wikipedia.org/wiki/Cyrus_the_Great ）、Darius the Great（https://en.wikipedia.org/wiki/Darius_the_Great ）各條目的在位年代。古列只取他作巴比倫王以後（約主前 539 起），也就是經文說的「波斯王古列元年」那段時間。'
 exile:
   label: 被擄巴比倫
   anchor: 約雅斤
@@ -22,17 +22,17 @@ exile:
   end_ref: "代下 36:22"
 
 rulers:
-  - {id: 尼布甲尼撒, name: 巴比倫王尼布甲尼撒, short: 尼布甲尼撒, empire: 巴比倫, years: {start: 605, end: 562}, quote: 巴比倫王尼布甲尼撒上到猶大, ref: "王下 24:1"}
-  - {id: 以未米羅達, name: 巴比倫王以未米羅達, short: 以未米羅達, empire: 巴比倫, years: {start: 562, end: 560}, quote: 巴比倫王以未米羅達元年, ref: "王下 25:27"}
-  - {id: 古列, name: 波斯王古列, short: 古列, empire: 波斯, years: {start: 539, end: 530}, quote: 波斯王古列元年, ref: "代下 36:22"}
-  - {id: 大利烏, name: 波斯王大利烏, short: 大利烏, empire: 波斯, years: {start: 522, end: 486}, quote: 大利烏王第二年, ref: "該 1:1"}
+  - {id: 尼布甲尼撒, name: 巴比倫王尼布甲尼撒, short: 尼布甲尼撒, empire: 巴比倫, years: {start: 605, end: 562}, quote: 巴比倫王尼布甲尼撒上到猶大, ref: "王下 24:1", source: 《舊約聖經背景注釋》但 1:1 注釋：「尼布甲尼撒二世（主前605～562年在位）」}
+  - {id: 以未米羅達, name: 巴比倫王以未米羅達, short: 以未米羅達, empire: 巴比倫, years: {start: 562, end: 560}, quote: 巴比倫王以未米羅達元年, ref: "王下 25:27", source: '《聖經精讀本》但 5 章注釋：「以未米羅達( 耶51:31,B.C.562-560)」'}
+  - {id: 古列, name: 波斯王古列, short: 古列, empire: 波斯, years: {start: 539, end: 530}, quote: 波斯王古列元年, ref: "代下 36:22", source: 《串珠聖經註釋》但 11 章注釋：「古列（主前五三九至五三○，參拉1:1）」}
+  - {id: 大利烏, name: 波斯王大利烏, short: 大利烏, empire: 波斯, years: {start: 521, end: 486}, quote: 大利烏王第二年, ref: "該 1:1", source: 《串珠聖經註釋》但 11 章注釋：「大利烏（主前五二一至四八六，參拉5:6）」}
 
 estimate_sources:
-  wiki_nahum: 'Book of Nahum（https://en.wikipedia.org/wiki/Book_of_Nahum ）：多數學者認為寫在埃及的挪亞們（底比斯）陷落（約主前 663）之後、尼尼微陷落（約主前 612）之前。'
-  wiki_habakkuk: 'Book of Habakkuk（https://en.wikipedia.org/wiki/Book_of_Habakkuk ）：多數學者認為內容最合約雅敬作王的時候（約主前 609–597）。'
-  wiki_obadiah: 'Book of Obadiah（https://en.wikipedia.org/wiki/Book_of_Obadiah ）：多數學者定在耶路撒冷陷落（約主前 587）之後不久；也有人主張主前 853–841 或主前五、四世紀。'
-  wiki_malachi: 'Book of Malachi（https://en.wikipedia.org/wiki/Book_of_Malachi ）：寫在第二聖殿完工（約主前 515）以後，接近以斯拉、尼希米到耶路撒冷的時候（約主前 445）。'
-  wiki_joel: 'Book of Joel（https://en.wikipedia.org/wiki/Book_of_Joel ）：學者的推估從主前九世紀約阿施作王的時候，到主前八世紀烏西雅的時候、約主前 630–587、約主前 520–500，以及主前 400 或 350 前後，沒有多數意見。'
+  nahum: 《舊約聖經背景注釋》鴻 1:1 注釋：「極可能是主前六六三年（埃及城市底比斯被亞述攻佔的時期──鴻三8）以及主前六一二年，尼尼微陷落於巴比倫與瑪代聯軍的這段時期」。
+  habakkuk: 《啟導本註釋》哈 1:2 注釋：「哈巴谷說預言的時候正值約雅敬王在位（主前609～597年）」；《舊約聖經背景注釋》哈 1:6 年代小注：「本書的寫作日期一定是在主前六○五年迦基米施戰役之前」。
+  obadiah: 《舊約聖經背景注釋》俄 1 注釋：「最可能和它參與耶路撒冷最後的破壞、人民於主前五八七至五八六年被巴比倫王尼布甲尼撒所擄有關」。《靈修版聖經注釋》另列一說：寫於西元前853至841年，約蘭任猶大王期間。
+  malachi: 《舊約聖經背景注釋》瑪 2:14–16 注釋的標題是「主前第五世紀的婚姻與離婚狀況」；《啟導本註釋》瑪 1:8 注釋：「猶大此時在波斯治下」。
+  joel: 《舊約聖經背景注釋》珥 1:2 注釋：有些學者把寫作時間定在主前第九世紀中葉，也有可能是在被擄之後的時期所寫，「此書的寫作年代頗具爭議性而複雜」。
 
 prophets:
   - id: 撒母耳
@@ -174,7 +174,7 @@ prophets:
     where: 論尼尼微
     where_quote: 論尼尼微的默示
     where_ref: "鴻 1:1"
-    estimate: {start: 663, end: 612, source: wiki_nahum}
+    estimate: {start: 663, end: 612, source: nahum}
 
   - id: 西番雅
     name: 西番雅
@@ -191,7 +191,7 @@ prophets:
     name: 耶利米
     book: 耶利米書
     times:
-      - {king: 約西亞, nth: 13, quote: 猶大王亞們的兒子約西亞在位十三年，耶和華的話臨到耶利米, ref: "耶 1:2"}
+      - {king: 約西亞, year: 627, source: ccbiblestudy.org 耶利米書第 1 章註解：「約西亞在位十三年」：主前627年, quote: 猶大王亞們的兒子約西亞在位十三年，耶和華的話臨到耶利米, ref: "耶 1:2"}
       - {king: 約雅敬, quote: 從猶大王約西亞的兒子約雅敬在位的時候, ref: "耶 1:3"}
       - {king: 西底家, quote: 直到猶大王約西亞的兒子西底家在位的末年, ref: "耶 1:3"}
 
@@ -201,7 +201,7 @@ prophets:
     where: 論迦勒底人興起
     where_quote: 我必興起迦勒底人
     where_ref: "哈 1:6"
-    estimate: {start: 609, end: 597, source: wiki_habakkuk}
+    estimate: {start: 609, end: 605, source: habakkuk}
 
   - id: 但以理
     name: 但以理
@@ -210,8 +210,8 @@ prophets:
     where_quote: 他們中間有猶大族的人：但以理
     where_ref: "但 1:1-6"
     times:
-      - {king: 約雅敬, nth: 3, quote: 猶大王約雅敬在位第三年, ref: "但 1:1"}
-      - {king: 古列, nth: 3, quote: 波斯王古列第三年, ref: "但 10:1"}
+      - {king: 約雅敬, year: 605, source: ccbiblestudy.org 但以理書第 1 章註解：「猶大王約雅敬在位第三年」：相當於主前605年, quote: 猶大王約雅敬在位第三年, ref: "但 1:1"}
+      - {king: 古列, year: 536, source: 《啟導本註釋》但 10:1 注釋：這是主前536年, quote: 波斯王古列第三年, ref: "但 10:1"}
 
   - id: 以西結
     name: 以西結
@@ -220,8 +220,8 @@ prophets:
     where_quote: 在迦巴魯河邊被擄的人中
     where_ref: "結 1:1"
     times:
-      - {exile: 5, quote: 正是約雅斤王被擄去第五年, ref: "結 1:2"}
-      - {exile: 25, quote: 我們被擄掠第二十五年, ref: "結 40:1"}
+      - {exile: 5, year: 593, source: ccbiblestudy.org 以西結書第 1 章註解：約雅斤被擄第五年是主前593年, quote: 正是約雅斤王被擄去第五年, ref: "結 1:2"}
+      - {exile: 25, year: 573, source: 《雷氏研讀本》結 40:1 注釋：日期是主前573年四月, quote: 我們被擄掠第二十五年, ref: "結 40:1"}
 
   - id: 俄巴底亞
     name: 俄巴底亞
@@ -229,7 +229,7 @@ prophets:
     where: 論以東
     where_quote: 論以東說
     where_ref: "俄 1:1"
-    estimate: {start: 587, end: 587, source: wiki_obadiah}
+    estimate: {start: 587, end: 586, source: obadiah}
 
   - id: 哈該
     name: 哈該
@@ -238,7 +238,7 @@ prophets:
     where_quote: 向猶大省長撒拉鐵的兒子所羅巴伯
     where_ref: "該 1:1"
     times:
-      - {king: 大利烏, nth: 2, quote: 大利烏王第二年, ref: "該 1:1"}
+      - {king: 大利烏, year: 520, source: 《舊約聖經背景注釋》該 1:1 注釋：哈該記載的日期是主前五二○年，八月二十九日, quote: 大利烏王第二年, ref: "該 1:1"}
 
   - id: 撒迦利亞#比利家之子
     name: 撒迦利亞
@@ -248,8 +248,8 @@ prophets:
     where_quote: 耶和華的話臨到易多的孫子、比利家的兒子先知撒迦利亞
     where_ref: "亞 1:1"
     times:
-      - {king: 大利烏, nth: 2, quote: 大利烏王第二年, ref: "亞 1:1"}
-      - {king: 大利烏, nth: 4, quote: 大利烏王第四年, ref: "亞 7:1"}
+      - {king: 大利烏, year: 520, source: ccbiblestudy.org 撒迦利亞書第 1 章註解：「大利烏王第二年八月」：相當於陽曆主前520年十至十一月, quote: 大利烏王第二年, ref: "亞 1:1"}
+      - {king: 大利烏, year: 518, source: ccbiblestudy.org 撒迦利亞書第 7 章註解：時值陽曆主前518年十一、十二月之間, quote: 大利烏王第四年, ref: "亞 7:1"}
 
   - id: 瑪拉基
     name: 瑪拉基
@@ -257,7 +257,7 @@ prophets:
     where: 歸回以後的以色列
     where_quote: 耶和華藉瑪拉基傳給以色列的默示
     where_ref: "瑪 1:1"
-    estimate: {start: 515, end: 445, source: wiki_malachi}
+    estimate: {start: 500, end: 401, source: malachi, label: 推估主前五世紀}
 
   - id: 約珥
     name: 約珥
@@ -265,4 +265,4 @@ prophets:
     where: 猶大和耶路撒冷
     where_quote: 我使猶大和耶路撒冷被擄之人歸回的時候
     where_ref: "珥 3:1"
-    views: {source: wiki_joel}
+    views: {source: joel}

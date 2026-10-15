@@ -10,9 +10,9 @@ prophets_file: prophets.yaml
 
 chronology:
   label: Thiele 年表
-  source: 'Edwin R. Thiele, The Mysterious Numbers of the Hebrew Kings（新修訂版／第三版，Zondervan 1983），附錄 B「The Dates of the Kings of Israel and Judah」第 217 頁；共治與並立見第 219 頁。本頁數字轉錄自英文維基百科 List of kings of Judah 與 List of kings of Israel 的 Thiele 欄（https://en.wikipedia.org/wiki/List_of_kings_of_Judah 、https://en.wikipedia.org/wiki/List_of_kings_of_Israel ），並參照 Thiele 1974 年 JBL 文章與 McFall 1991、Young 2007 的轉載核對；何細亞的結束年作 723。原書表格未能逐格目驗。'
-  estimate_source: '掃羅、大衛、所羅門不在 Thiele 年表內。大衛、所羅門採英文維基百科 Kings of Israel and Judah 表格 Galil、Kitchen 欄的 1010–970、970–931（https://en.wikipedia.org/wiki/Kings_of_Israel_and_Judah ）；掃羅依使徒行傳 13:21 的四十年，接在大衛之前倒推作 1050–1010。'
-  note: 年代不是經文本身的資料。經文只記「某王第幾年，某某登基」和在位年數，各家年表的換算不同；圖上的數字一律是「約」。
+  source: 'Edwin R. Thiele, The Mysterious Numbers of the Hebrew Kings（新修訂版，Zondervan 1983）的考證。本庫收錄的註釋多處直接引用這套年代，例如《舊約聖經背景注釋》：「按照蒂利(Thiele)的考證，巴沙在位的日期是主前九○九至八八六年」。每位王的年代所根據的註釋原句，列在頁末附表「各王年代的出處」。'
+  estimate_source: 掃羅、大衛、所羅門不在 Thiele 的年表內，用註釋給的約數，出處見頁末附表。
+  note: 年代不是經文本身的資料。經文只記「某王第幾年，某某登基」和在位年數，各家年表的換算不同；Thiele 的王年常寫成跨年（例如 641/640），各家註釋取的年份有時差一年。圖上的數字一律是「約」。
 
 kings:
 # ───────────── 統一王國 ─────────────
@@ -20,6 +20,9 @@ kings:
   name: 掃羅
   kingdom: 統一
   years: {start: 1050, end: 1010, estimate: true}
+  years_source:
+    - '《撒母耳記上綜合解讀》：「掃羅大約於主前1050年登基」'
+    - '《撒母耳記下綜合解讀》：「掃羅大約死於主前1010年」'
   verdict:
     class: bad
     basis: 代上
@@ -40,6 +43,8 @@ kings:
   name: 大衛
   kingdom: 統一
   years: {start: 1010, end: 970, estimate: true}
+  years_source:
+    - '《舊約聖經背景注釋》：「大衛應該是主前一○一○至九七○年在位」'
   verdict:
     class: good_caveat
     basis: 王上
@@ -57,6 +62,8 @@ kings:
   name: 所羅門
   kingdom: 統一
   years: {start: 970, end: 931, estimate: true}
+  years_source:
+    - 'BibleHub Study Bible：「traditionally dated about 970–931 B.C.」（傳統上定在約主前 970–931 年）'
   verdict:
     class: good_to_bad
     basis: 王上
@@ -77,6 +84,9 @@ kings:
   name: 羅波安
   kingdom: 猶大
   years: {start: 931, end: 913}
+  years_source:
+    - '《舊約聖經背景注釋》：「羅波安在主前九三一年繼位為王」'
+    - 'KingComments：「he reigns from 931-913 BC」（他在主前 931–913 年作王）'
   verdict:
     class: good_to_bad
     basis: 代下
@@ -95,6 +105,8 @@ kings:
   name: 亞比雅
   kingdom: 猶大
   years: {start: 913, end: 911}
+  years_source:
+    - '《列王紀上雷氏研讀本》：「他在主前913至911年作王」'
   verdict:
     class: bad
     basis: 王上
@@ -113,6 +125,8 @@ kings:
   name: 亞撒
   kingdom: 猶大
   years: {start: 911, end: 870}
+  years_source:
+    - 'BibleHub Study Bible：「Asa ruled Judah from about 911 to 870 BC」（亞撒約在主前 911–870 年治理猶大）'
   verdict:
     class: good_to_bad
     basis: 代下
@@ -135,6 +149,8 @@ kings:
   name: 約沙法
   kingdom: 猶大
   years: {start: 870, end: 848, co_start: 872}
+  years_source:
+    - '《舊約聖經背景注釋》：「按照蒂利的考證，約沙法的在位日期是主前八七二至八四八年」'
   verdict:
     class: good_caveat
     basis: 代下
@@ -157,6 +173,8 @@ kings:
   title: 約蘭（猶大）
   kingdom: 猶大
   years: {start: 848, end: 841, co_start: 853}
+  years_source:
+    - '《舊約聖經背景注釋》：「按照蒂利的計算，約蘭於主前八五三至八四一年在位」'
   verdict:
     class: bad
     basis: 代下
@@ -177,6 +195,8 @@ kings:
   title: 亞哈謝（猶大）
   kingdom: 猶大
   years: {start: 841, end: 841}
+  years_source:
+    - '《舊約聖經背景注釋》：「亞哈謝於主前八四一年在位」'
   verdict:
     class: bad
     basis: 代下
@@ -196,6 +216,8 @@ kings:
   name: 亞他利雅
   kingdom: 猶大
   years: {start: 841, end: 835}
+  years_source:
+    - 'ccbiblestudy.org 歷代志上第 3 章註解：「作王六年，壞王，主前841~835年」'
   verdict:
     class: none
     differs: false
@@ -211,6 +233,8 @@ kings:
   title: 約阿施（猶大）
   kingdom: 猶大
   years: {start: 835, end: 796}
+  years_source:
+    - '《舊約聖經背景注釋》：「約阿施於主前八三五年至七九六年在位」'
   verdict:
     class: good_to_bad
     basis: 代下
@@ -232,6 +256,8 @@ kings:
   name: 亞瑪謝
   kingdom: 猶大
   years: {start: 796, end: 767}
+  years_source:
+    - '《舊約聖經背景注釋》：「蒂利劃給亞瑪謝的日期是主前七九六至七六七年」'
   verdict:
     class: good_to_bad
     basis: 代下
@@ -255,6 +281,8 @@ kings:
   name: 烏西雅
   kingdom: 猶大
   years: {start: 767, end: 740, co_start: 792}
+  years_source:
+    - '《舊約聖經背景注釋》：「按照蒂利的計算，烏西雅長久的統治始於主前七九二年，終於七四○年」'
   verdict:
     class: good_to_bad
     basis: 代下
@@ -276,6 +304,8 @@ kings:
   name: 約坦
   kingdom: 猶大
   years: {start: 740, end: 732, co_start: 750}
+  years_source:
+    - '《舊約聖經背景注釋》：「約坦於主前七五○年至七三二年在位」'
   verdict:
     class: good_caveat
     basis: 代下
@@ -297,6 +327,8 @@ kings:
   name: 亞哈斯
   kingdom: 猶大
   years: {start: 732, end: 716, co_start: 735}
+  years_source:
+    - 'ccbiblestudy.org 歷代志上第 3 章註解：「作王十六年，壞王，主前732~716年」'
   verdict:
     class: bad
     basis: 代下
@@ -316,6 +348,8 @@ kings:
   name: 希西家
   kingdom: 猶大
   years: {start: 716, end: 687}
+  years_source:
+    - 'ccbiblestudy.org 歷代志上第 3 章註解：「作王二十九年，好王，主前716~687年」'
   verdict:
     class: good_caveat
     basis: 代下
@@ -339,6 +373,9 @@ kings:
   name: 瑪拿西
   kingdom: 猶大
   years: {start: 687, end: 643, co_start: 697}
+  years_source:
+    - '《聖經綜合解讀》：「瑪拿西獨立執政的四十五年(主前687~643年)」'
+    - 'BibleHub Study Bible：「Manasseh’s reign, approximately 697–642 B.C.」（瑪拿西在位約主前 697–642 年，含共治）'
   verdict:
     class: bad_to_good
     basis: 代下
@@ -358,6 +395,8 @@ kings:
   name: 亞們
   kingdom: 猶大
   years: {start: 643, end: 641}
+  years_source:
+    - 'ccbiblestudy.org 歷代志上第 3 章註解：「作王二年，壞王，主前642~640年」'
   verdict:
     class: bad
     basis: 代下
@@ -375,6 +414,8 @@ kings:
   name: 約西亞
   kingdom: 猶大
   years: {start: 641, end: 609}
+  years_source:
+    - '《舊約聖經背景注釋》：「約西亞於主前六四○年至六○九年作猶大王」'
   verdict:
     class: good
     basis: 代下
@@ -393,6 +434,8 @@ kings:
   title: 約哈斯（猶大）
   kingdom: 猶大
   years: {start: 609, end: 609}
+  years_source:
+    - '《舊約聖經背景注釋》：「約哈斯短短三個月統治的開始和結束，都在發生在主前六○九年」'
   verdict:
     class: bad
     basis: 王下
@@ -409,6 +452,8 @@ kings:
   name: 約雅敬
   kingdom: 猶大
   years: {start: 609, end: 598}
+  years_source:
+    - '《舊約聖經背景注釋》：「約雅敬在位的十一年是主前六○九至五九八年」'
   verdict:
     class: bad
     basis: 代下
@@ -426,6 +471,8 @@ kings:
   name: 約雅斤
   kingdom: 猶大
   years: {start: 598, end: 597}
+  years_source:
+    - '《舊約聖經背景注釋》：「約雅斤短暫的任期包括主前五九八年最後一個月，和五九七年頭兩個月」'
   verdict:
     class: bad
     basis: 代下
@@ -443,6 +490,8 @@ kings:
   name: 西底家
   kingdom: 猶大
   years: {start: 597, end: 586}
+  years_source:
+    - '《舊約聖經背景注釋》：「西底家於主前五九七至五八六年在位」'
   verdict:
     class: bad
     basis: 代下
@@ -462,6 +511,8 @@ kings:
   title: 耶羅波安（尼八的兒子）
   kingdom: 以色列
   years: {start: 931, end: 910}
+  years_source:
+    - '《列王紀上雷氏研讀本》：「“耶羅波安”從主前931至910年在以色列作王」'
   verdict:
     class: bad
     basis: 王上
@@ -477,6 +528,8 @@ kings:
   name: 拿答
   kingdom: 以色列
   years: {start: 910, end: 909}
+  years_source:
+    - '《舊約聖經背景注釋》：「拿答第一年很可能要到主前九一一年才開始」'
   verdict:
     class: bad
     basis: 王上
@@ -493,6 +546,8 @@ kings:
   name: 巴沙
   kingdom: 以色列
   years: {start: 909, end: 886}
+  years_source:
+    - '《舊約聖經背景注釋》：「按照蒂利(Thiele)的考證，巴沙在位的日期是主前九○九至八八六年」'
   verdict:
     class: bad
     basis: 王上
@@ -510,6 +565,8 @@ kings:
   name: 以拉
   kingdom: 以色列
   years: {start: 886, end: 885}
+  years_source:
+    - '《舊約聖經背景注釋》：「按照蒂利的考證，他在位的日期是主前八八六至八八五年」'
   verdict:
     class: bad
     basis: 王上
@@ -526,6 +583,8 @@ kings:
   name: 心利
   kingdom: 以色列
   years: {start: 885, end: 885}
+  years_source:
+    - 'ccbiblestudy.org 列王紀上第 16 章註解：「『亞撒二十七年』《聖經手冊》推定主前886年」'
   verdict:
     class: bad
     basis: 王上
@@ -550,13 +609,15 @@ kings:
     text: 心利死後，以色列民分成兩半：一半隨從基納的兒子提比尼，要立他作王；一半隨從暗利。後來「隨從暗利的民勝過隨從基納的兒子提比尼的民」，提比尼死了，暗利就作了王。經文沒有對他的評語。
     refs: "王上 16:21-22"
   notes:
-    - text: 經文沒有寫提比尼爭位多久。Thiele 年表把暗利與提比尼並立的時間算作約主前 885–880，所以圖上兩人並排。
-      refs: "王上 16:21-23"
+    - text: 經文沒有寫提比尼爭位多久。王上 16:15 說心利在「猶大王亞撒二十七年」作王七日，16:23 說暗利在「猶大王亞撒三十一年」登基；圖上把這中間暗利和提比尼並立的時間畫成約主前 885–880。
+      refs: "王上 16:15, 王上 16:21-23"
 
 - id: 暗利
   name: 暗利
   kingdom: 以色列
   years: {start: 885, end: 874}
+  years_source:
+    - '《舊約聖經背景注釋》：「蒂利將暗利的在位日期考證為主前八八五至八七四年」'
   verdict:
     class: bad
     basis: 王上
@@ -574,6 +635,8 @@ kings:
   name: 亞哈
   kingdom: 以色列
   years: {start: 874, end: 853}
+  years_source:
+    - '《舊約聖經背景注釋》：「蒂利將亞哈的在位日期考證為主前八七四至八五三年」'
   verdict:
     class: bad_to_good
     basis: 王上
@@ -596,6 +659,8 @@ kings:
   title: 亞哈謝（以色列）
   kingdom: 以色列
   years: {start: 853, end: 852}
+  years_source:
+    - 'ccbiblestudy.org 列王紀上第 22 章註解：「僅有二年(參51節)，約在主前854~853年」'
   verdict:
     class: bad
     basis: 王上
@@ -614,6 +679,8 @@ kings:
   title: 約蘭（以色列）
   kingdom: 以色列
   years: {start: 852, end: 841}
+  years_source:
+    - '《舊約聖經背景注釋》：「按照蒂利的考證，他的在位日期是主前八五二至八四一年」'
   verdict:
     class: bad
     basis: 王下
@@ -632,6 +699,8 @@ kings:
   name: 耶戶
   kingdom: 以色列
   years: {start: 841, end: 814}
+  years_source:
+    - 'ccbiblestudy.org 列王紀下第 10 章註解：「『二十八年』主前841至814年」'
   verdict:
     class: good_caveat
     basis: 王下
@@ -649,6 +718,8 @@ kings:
   title: 約哈斯（以色列）
   kingdom: 以色列
   years: {start: 814, end: 798}
+  years_source:
+    - '《舊約聖經背景注釋》：「按照蒂利的考據，以色列王約哈斯於主前八一四年登基」'
   verdict:
     class: bad
     basis: 王下
@@ -666,6 +737,8 @@ kings:
   title: 約阿施（以色列）
   kingdom: 以色列
   years: {start: 798, end: 782}
+  years_source:
+    - '《舊約聖經背景注釋》：「按照蒂利的考據，約阿施在主前七九八年(猶大王約阿施三十七年)即位，作王十六年(至主前七八二年」'
   verdict:
     class: bad
     basis: 王下
@@ -684,6 +757,8 @@ kings:
   title: 耶羅波安（約阿施的兒子）
   kingdom: 以色列
   years: {start: 782, end: 753, co_start: 793}
+  years_source:
+    - '《舊約聖經背景注釋》：「耶羅波安二世在主前七八二年即位。在此以前(主前七九三年起)，他可能與父王約阿施共政了十一年」'
   verdict:
     class: bad
     basis: 王下
@@ -700,6 +775,8 @@ kings:
   name: 撒迦利雅
   kingdom: 以色列
   years: {start: 753, end: 753}
+  years_source:
+    - '《丁道爾聖經註釋》：「撒迦利雅的六個月橫跨兩年(主前753~752年)」'
   verdict:
     class: bad
     basis: 王下
@@ -716,6 +793,8 @@ kings:
   name: 沙龍
   kingdom: 以色列
   years: {start: 752, end: 752}
+  years_source:
+    - '《舊約聖經背景注釋》：「按照蒂利的考證，米拿現的在位日期是主前七五二至七四二年」（米拿現殺了沙龍登基）'
   verdict:
     class: none
     items: []
@@ -730,6 +809,8 @@ kings:
   name: 米拿現
   kingdom: 以色列
   years: {start: 752, end: 742}
+  years_source:
+    - '《舊約聖經背景注釋》：「按照蒂利的考證，米拿現的在位日期是主前七五二至七四二年」'
   verdict:
     class: bad
     basis: 王下
@@ -746,6 +827,9 @@ kings:
   name: 比加轄
   kingdom: 以色列
   years: {start: 742, end: 740}
+  years_source:
+    - '《舊約聖經背景注釋》：「按照蒂利的考證，米拿現的在位日期是主前七五二至七四二年」（比加轄接續米拿現作王）'
+    - '《舊約聖經背景注釋》：「按照蒂利的考證，他的在位日期是主前七五二至七三二年」（比加殺了比加轄）'
   verdict:
     class: bad
     basis: 王下
@@ -762,6 +846,8 @@ kings:
   name: 比加
   kingdom: 以色列
   years: {start: 752, end: 732}
+  years_source:
+    - '《舊約聖經背景注釋》：「按照蒂利的考證，他的在位日期是主前七五二至七三二年」'
   verdict:
     class: bad
     basis: 王下
@@ -775,13 +861,16 @@ kings:
     text: 比加殺了比加轄篡位。他和亞蘭王利汛聯手攻打猶大，歷代志說他「一日殺了猶大人十二萬」。亞述王提革拉毘列色來攻，擄走以色列北方和基列的居民。後來以拉的兒子何細亞背叛他，殺了他。
     refs: "王下 15:25-31, 王下 16:5, 代下 28:5-8"
   notes:
-    - text: 王下 15:27 說比加「作以色列王二十年」。Thiele 年表把這二十年從約主前 752 算起，和米拿現、比加轄重疊，所以圖上並排。
+    - text: 王下 15:27 說比加「作以色列王二十年」。《舊約聖經背景注釋》照 Thiele 的考證，把比加的年代定為主前 752–732，和米拿現、比加轄重疊，所以圖上並排。
       refs: "王下 15:27"
 
 - id: 何細亞
   name: 何細亞
   kingdom: 以色列
   years: {start: 732, end: 723}
+  years_source:
+    - '《舊約聖經背景注釋》：「何細亞於主前七三二年登基」'
+    - 'BibleHub Study Bible：「Hoshea’s final regnal year fell about 722 BC」（何細亞的最後一年約在主前 722 年）'
   verdict:
     class: bad
     basis: 王下
