@@ -109,3 +109,72 @@ export function inkHalo(x: number, y: number, rx: number, ry: number): SVGEllips
   halo.setAttribute('filter', 'url(#ag-rd-bleed)');
   return halo;
 }
+
+// ── 家譜樹上的職位印（人物卡旁的小朱印）要用的幾何小工具 ─────────────
+
+export interface SealRect { l: number; t: number; r: number; b: number }
+export type SealSeg = [number, number, number, number];
+export const ROLE_SEAL_H = 17;
+export const ROLE_SEAL_GAP = 3;
+
+/** 一枚職位印的寬度：每個字約 12 單位，加上左右邊 */
+export const roleSealWidth = (label: string): number => Array.from(label).length * 12 + 10;
+
+/** 好幾枚並排：一行放不下就換行（每行寬度不超過 maxWidth）。回傳每枚的相對位置和整組大小 */
+export function roleSealRows(labels: string[], maxWidth: number): { items: Array<{ label: string; x: number; y: number; w: number }>; width: number; height: number } {
+  const items: Array<{ label: string; x: number; y: number; w: number }> = [];
+  let x = 0;
+  let row = 0;
+  let width = 0;
+  for (const label of labels) {
+    const w = roleSealWidth(label);
+    if (x > 0 && x + w > maxWidth) { x = 0; row += 1; }
+    items.push({ label, x, y: row * (ROLE_SEAL_H + 2), w });
+    x += w + ROLE_SEAL_GAP;
+    width = Math.max(width, x - ROLE_SEAL_GAP);
+  }
+  return { items, width, height: items.length ? (row + 1) * ROLE_SEAL_H + row * 2 : 0 };
+}
+
+/** 家譜連線的路徑（只有 M、H、V、L）拆成一段一段的線，用來判斷印會不會壓到線 */
+export function pathSegments(d: string): SealSeg[] {
+  const segments: SealSeg[] = [];
+  const pattern = /([MHVL])\s*(-?[\d.]+)(?:[\s,]+(-?[\d.]+))?/g;
+  let x = 0;
+  let y = 0;
+  let match: RegExpExecArray | null;
+  while ((match = pattern.exec(d))) {
+    const command = match[1];
+    const a = Number(match[2]);
+    const b = match[3] === undefined ? Number.NaN : Number(match[3]);
+    if (command === 'M') { x = a; y = b; continue; }
+    const nx = command === 'V' ? x : a;
+    const ny = command === 'H' ? y : command === 'V' ? a : b;
+    if (Number.isFinite(nx) && Number.isFinite(ny)) segments.push([x, y, nx, ny]);
+    x = nx;
+    y = ny;
+  }
+  return segments;
+}
+
+/** 兩個矩形有沒有重疊（pad 是各邊多留的空隙） */
+export function sealRectsOverlap(a: SealRect, b: SealRect, pad = 0): boolean {
+  return a.l < b.r + pad && a.r > b.l - pad && a.t < b.b + pad && a.b > b.t - pad;
+}
+
+/** 一段線有沒有穿過矩形（Liang–Barsky） */
+export function segmentHitsRect(segment: SealSeg, rect: SealRect, pad = 0): boolean {
+  const [x0, y0, x1, y1] = segment;
+  const dx = x1 - x0;
+  const dy = y1 - y0;
+  const p = [-dx, dx, -dy, dy];
+  const q = [x0 - (rect.l - pad), rect.r + pad - x0, y0 - (rect.t - pad), rect.b + pad - y0];
+  let t0 = 0;
+  let t1 = 1;
+  for (let i = 0; i < 4; i += 1) {
+    if (p[i] === 0) { if (q[i]! < 0) return false; continue; }
+    const t = q[i]! / p[i]!;
+    if (p[i]! < 0) { if (t > t1) return false; if (t > t0) t0 = t; } else { if (t < t0) return false; if (t < t1) t1 = t; }
+  }
+  return true;
+}

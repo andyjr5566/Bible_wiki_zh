@@ -1,0 +1,265 @@
+/* 大衛立的職位：組織圖（分頁與讀經的舞台共用）、人名小卡，以及家譜樹上人物卡旁的職位印。
+   class 一律 ag-ro-（職位圖）／ag-ro-tseal（樹上的印）開頭。顏色用整站的變數：亮色宣紙墨字、暗色墨底金字，朱紅是印。 */
+
+.ag-roles {
+  --ro-ink: var(--ag-ink);
+  --ro-muted: var(--ag-muted);
+  --ro-line: var(--ag-border);
+  --ro-card: var(--ag-paper-raised);
+  --ro-chip: var(--ag-paper);
+  --ro-cell: color-mix(in srgb, var(--ag-ink) 5%, transparent);
+  --ro-cell-alt: color-mix(in srgb, var(--ag-ink) 9%, transparent);
+  --ro-float: var(--ag-paper-raised);
+  --ro-lostbg: var(--ag-paper-raised);
+  --ro-seal: var(--rd-seal, #ab3427);
+  --ro-seal-ink: var(--rd-seal-ink, #f7eedb);
+  --ro-seal-text: var(--ag-seal);
+  --ro-tint: color-mix(in srgb, var(--ro-seal) 11%, transparent);
+  --ro-tint-2: color-mix(in srgb, var(--ro-seal) 22%, transparent);
+  display: block; width: 100%; height: 100%; overflow: auto; overscroll-behavior: contain;
+  color: var(--ro-ink); font-family: var(--rd-font, var(--ag-serif)); font-size: calc(14px * var(--ag-fs, 1)); line-height: 1.5;
+}
+.ag-roles:not(.ag-rd-overlay) { background: var(--ag-paper); }
+
+/* 讀經時疊在畫布上：底色是宣紙（由讀經的樣式給），卡片只是紙上一層淡淡的墨 */
+.ag-reading .ag-roles {
+  --ro-ink: var(--rd-ink);
+  --ro-muted: var(--rd-ink-soft);
+  --ro-line: var(--rd-ink-faint);
+  --ro-card: color-mix(in srgb, var(--rd-ink) 3.5%, transparent);
+  --ro-chip: color-mix(in srgb, var(--rd-paper) 72%, transparent);
+  --ro-float: #fbf6ea;
+  --ro-lostbg: #fffaf0;
+  --ro-seal-text: var(--rd-accent);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]).ag-reading .ag-roles { --ro-float: var(--rd-paper-deep); --ro-lostbg: var(--rd-paper); }
+}
+:root[data-theme="dark"].ag-reading .ag-roles { --ro-float: var(--rd-paper-deep); --ro-lostbg: var(--rd-paper); }
+
+.ag-ro-chart { container-type: inline-size; box-sizing: border-box; width: 100%; max-width: 1560px; margin: 0 auto; padding: 24px 26px 64px; }
+.ag-ro-empty { margin: 48px 0; color: var(--ro-muted); text-align: center; }
+
+/* ── 大衛的牌子與四類 ─────────────────────────────── */
+.ag-ro-king {
+  --ro-stem: 34px;
+  position: relative; display: grid; justify-items: center; width: max-content; max-width: 100%; margin: 0 auto var(--ro-stem);
+  padding: 9px 38px 10px; border: 1.5px solid var(--ro-ink); border-radius: 4px; background: var(--ro-card);
+}
+.ag-ro-king strong { padding-left: .3em; font-size: calc(23px * var(--ag-fs, 1)); font-weight: 600; letter-spacing: .3em; }
+.ag-ro-king span { color: var(--ro-muted); font-size: calc(12px * var(--ag-fs, 1)); letter-spacing: .08em; }
+.ag-ro-king::before {
+  content: "王"; position: absolute; top: -10px; right: -11px; padding: 2px 4px; border-radius: 2px; background: var(--ro-seal); color: var(--ro-seal-ink);
+  font-size: 12px; font-weight: 600; line-height: 1.2; transform: rotate(5deg); box-shadow: 0 1px 2px rgb(60 20 10 / 28%);
+}
+.ag-ro-king::after { content: ""; position: absolute; left: 50%; top: 100%; width: 0; height: var(--ro-stem); border-left: 1.5px solid var(--ro-ink); opacity: .6; }
+.ag-reading .ag-ro-king { --ro-stem: 58px; }
+
+.ag-ro-cats { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 30px 24px; align-items: start; }
+@container (min-width: 640px) {
+  .ag-ro-cats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ag-ro-cat-court { grid-column: 1; grid-row: 1; }
+  .ag-ro-cat-army { grid-column: 1; grid-row: 2; }
+  .ag-ro-cat-tribes { grid-column: 1; grid-row: 3; }
+  .ag-ro-cat-temple { grid-column: 2; grid-row: 1 / span 3; }
+}
+@container (min-width: 1120px) {
+  .ag-ro-cats { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.45fr) minmax(0, .95fr); }
+  .ag-ro-cat-court, .ag-ro-cat-army, .ag-ro-cat-tribes, .ag-ro-cat-temple { grid-column: auto; grid-row: auto; }
+}
+/* 牌子往下一道線，橫過四類的上緣 */
+.ag-ro-cats::before { content: ""; position: absolute; top: -14px; left: 0; right: 0; border-top: 1px solid var(--ro-ink); opacity: .35; }
+@container (max-width: 639px) { .ag-ro-cats::before { display: none; } }
+
+.ag-ro-cat { min-width: 0; }
+.ag-ro-cat-title {
+  position: relative; margin: 0 0 13px; padding-top: 10px; border-top: 2px solid color-mix(in srgb, var(--ro-ink) 72%, transparent);
+  font-size: calc(18px * var(--ag-fs, 1)); font-weight: 600; letter-spacing: .14em;
+}
+.ag-ro-cat-title::before { content: ""; position: absolute; top: -2px; left: 0; width: 34px; height: 2px; background: var(--ro-seal); }
+.ag-ro-boxes { display: grid; gap: 12px; }
+
+/* ── 職位方塊 ─────────────────────────────────── */
+.ag-ro-box {
+  position: relative; min-width: 0; padding: 10px 13px 13px; border: 1px solid var(--ro-line); border-radius: 6px; background: var(--ro-card);
+  transition: border-color 260ms ease, box-shadow 260ms ease;
+}
+.ag-ro-box-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
+.ag-ro-box-title { margin: 0; font-size: calc(16px * var(--ag-fs, 1)); font-weight: 600; letter-spacing: .04em; }
+.ag-ro-box-ref { margin-left: auto; color: var(--ro-muted); font-size: calc(11.5px * var(--ag-fs, 1)); text-align: right; }
+.ag-ro-box-note { margin: 4px 0 0; color: var(--ro-muted); font-size: calc(12.5px * var(--ag-fs, 1)); }
+.ag-ro-box-tag {
+  margin-left: 8px; padding: 0 5px; border: 1px solid var(--ro-seal); border-radius: 3px; color: var(--ro-seal-text);
+  font-size: calc(10.5px * var(--ag-fs, 1)); font-weight: 400; letter-spacing: .04em; vertical-align: middle;
+}
+.ag-ro-box-tag[hidden] { display: none; }
+.ag-ro-box.is-lit { border-color: var(--ro-seal); box-shadow: 0 0 0 1px var(--ro-seal), 0 6px 22px color-mix(in srgb, var(--ro-seal) 16%, transparent); }
+.ag-ro-box.is-active { border-color: color-mix(in srgb, var(--ro-seal) 48%, var(--ro-line)); }
+
+.ag-ro-members { display: flex; flex-wrap: wrap; gap: 6px 5px; margin-top: 9px; }
+
+/* ── 人名小卡 ─────────────────────────────────── */
+.ag-ro-chip {
+  position: relative; display: inline-flex; align-items: stretch; max-width: 100%; border: 1px solid var(--ro-line); border-radius: 5px; background: var(--ro-chip);
+  transition: background 260ms ease, border-color 260ms ease, opacity 260ms ease, transform 220ms ease, box-shadow 220ms ease;
+}
+.ag-ro-chip:hover { border-color: color-mix(in srgb, var(--ro-seal) 60%, var(--ro-line)); }
+.ag-ro-chip-main {
+  display: inline-flex; align-items: baseline; gap: 5px; min-width: 0; padding: 3px 8px; border: 0; border-radius: 5px; background: none;
+  color: inherit; font: inherit; line-height: 1.35; text-align: left; cursor: pointer;
+}
+.ag-ro-chip-name { font-size: calc(14px * var(--ag-fs, 1)); }
+.ag-ro-chip-main small { color: var(--ro-muted); font-size: calc(10.5px * var(--ag-fs, 1)); }
+.ag-ro-tree {
+  padding: 0 6px; border: 0; border-left: 1px solid var(--ro-line); border-radius: 0 5px 5px 0; background: none; color: var(--ro-seal-text);
+  font: inherit; font-size: calc(10.5px * var(--ag-fs, 1)); cursor: pointer;
+}
+.ag-ro-tree:hover { background: var(--ro-tint); }
+.ag-ro-chip-tag { align-self: center; margin: 0 6px 0 2px; padding: 0 4px; border-radius: 3px; font-size: calc(10px * var(--ag-fs, 1)); white-space: nowrap; }
+.ag-ro-chip-tag.is-returned { background: var(--ro-seal-ink); color: var(--ro-seal); }
+.ag-ro-chip-tag.is-lost, .ag-ro-chip-tag.is-link { border: 1px solid var(--ro-seal); color: var(--ro-seal-text); }
+
+/* 讀經：還沒讀到的退淡，讀到的亮起淡朱色，正在讀的加框、微微放大 */
+.ag-roles.is-reading .ag-ro-chip:not(.is-lit):not(.is-trail):not(.is-returned):not(.is-lost) { opacity: .62; }
+.ag-ro-chip.is-trail { border-color: color-mix(in srgb, var(--ro-seal) 38%, var(--ro-line)); background: var(--ro-tint); }
+.ag-ro-chip.is-lit { border-color: var(--ro-seal); background: var(--ro-tint-2); }
+.ag-ro-chip.is-current { z-index: 2; box-shadow: 0 0 0 1.5px var(--ro-seal), 0 4px 12px color-mix(in srgb, var(--ro-seal) 22%, transparent); transform: scale(1.07); }
+.ag-ro-chip.is-returned { border-color: var(--ro-seal); background: var(--ro-seal); color: var(--ro-seal-ink); }
+.ag-ro-chip.is-returned .ag-ro-chip-main small { color: inherit; opacity: .82; }
+.ag-ro-chip.is-returned .ag-ro-tree { border-left-color: rgb(255 255 255 / 35%); color: var(--ro-seal-ink); }
+.ag-ro-chip.is-lost { border: 1.5px dashed var(--ro-seal); background: var(--ro-lostbg); }
+.ag-ro-chip.is-linked { border-color: var(--ro-seal); }
+
+/* 蓋在卡角的朱印 */
+.ag-ro-stamp:not(.is-svg) {
+  position: absolute; top: -10px; right: -7px; z-index: 3; padding: 1px 4px; border-radius: 2px; background: var(--ro-seal); color: var(--ro-seal-ink);
+  font-size: calc(10.5px * var(--ag-fs, 1)); font-weight: 600; letter-spacing: .04em; line-height: 1.3; white-space: nowrap;
+  transform: rotate(-6deg); box-shadow: 0 1px 2px rgb(60 20 10 / 30%); pointer-events: none;
+}
+.ag-ro-stamp:not(.is-svg).is-fresh { animation: ag-ro-stamp 460ms cubic-bezier(.2, .9, .3, 1.15) both; }
+.ag-ro-stamp.is-svg rect { fill: var(--ro-seal); }
+.ag-ro-stamp.is-svg text { fill: var(--ro-seal-ink); font-size: 9.5px; font-weight: 600; }
+.ag-ro-stamp.is-svg.is-fresh { animation: none; }
+.ag-ro-stamp.is-svg.is-fresh .ag-ro-stamp-body { transform-box: fill-box; transform-origin: center; animation: ag-ro-stamp-svg 460ms cubic-bezier(.2, .9, .3, 1.15) both; }
+@keyframes ag-ro-stamp {
+  0% { opacity: 0; transform: rotate(-6deg) scale(2.3); }
+  62% { opacity: 1; transform: rotate(-6deg) scale(.9); }
+  100% { opacity: 1; transform: rotate(-6deg) scale(1); }
+}
+@keyframes ag-ro-stamp-svg {
+  0% { opacity: 0; transform: scale(2.3); }
+  62% { opacity: 1; transform: scale(.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* ── 分組（投奔大衛的人）、人數 ─────────────────── */
+.ag-ro-group { margin-top: 11px; padding-top: 9px; border-top: 1px dashed var(--ro-line); }
+.ag-ro-group:first-of-type { margin-top: 8px; }
+.ag-ro-group-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; margin: 0; font-size: calc(13.5px * var(--ag-fs, 1)); font-weight: 600; }
+.ag-ro-group-title span { color: var(--ro-muted); font-size: calc(11px * var(--ag-fs, 1)); font-weight: 400; }
+.ag-ro-figures { display: grid; gap: 3px; margin: 9px 0 0; }
+.ag-ro-figure { display: flex; align-items: baseline; gap: 6px; font-size: calc(12.5px * var(--ag-fs, 1)); }
+.ag-ro-figure dt { display: flex; flex: 1 1 auto; align-items: baseline; gap: 6px; min-width: 0; margin: 0; }
+.ag-ro-figure dt::after { content: ""; flex: 1 1 14px; min-width: 14px; border-bottom: 1px dotted var(--ro-line); transform: translateY(-3px); }
+.ag-ro-figure dd { margin: 0; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* ── 二十四班的環、十二個月的輪盤 ───────────────── */
+.ag-ro-ring { display: block; width: 100%; max-width: 360px; height: auto; margin: 8px auto 0; overflow: visible; }
+.ag-ro-cell { cursor: pointer; outline: none; }
+.ag-ro-cell > path { fill: var(--ro-cell); stroke: var(--ro-line); stroke-width: 1; transition: fill 260ms ease, stroke 260ms ease; }
+.ag-ro-cell.is-alt > path { fill: var(--ro-cell-alt); }
+.ag-ro-cell:hover > path { fill: var(--ro-tint); }
+.ag-ro-cell:focus-visible > path { stroke: var(--ag-focus); stroke-width: 2.4; }
+.ag-ro-cell-no { fill: var(--ro-muted); font-size: 10.5px; pointer-events: none; }
+.ag-ro-cell-name { fill: var(--ro-ink); font-weight: 600; pointer-events: auto; }
+.ag-ro-cell-name.is-second { fill: var(--ro-muted); font-weight: 400; }
+.ag-ro-cell-tree { fill: var(--ro-seal-text); font-size: 8.5px; pointer-events: none; }
+.ag-ro-ring-title { fill: var(--ro-ink); font-size: 15px; font-weight: 600; letter-spacing: .08em; pointer-events: none; }
+.ag-ro-legend-text { font-size: 11px; pointer-events: none; }
+.ag-ro-legend-text.is-returned { fill: var(--ro-seal-text); }
+.ag-ro-legend-text.is-lost { fill: var(--ro-muted); }
+
+.ag-roles.is-reading .ag-ro-cell:not(.is-lit):not(.is-trail):not(.is-returned):not(.is-lost) > path { opacity: .72; }
+.ag-ro-cell.is-trail > path { fill: var(--ro-tint); }
+.ag-ro-cell.is-lit > path { fill: var(--ro-tint-2); stroke: var(--ro-seal); }
+.ag-ro-cell.is-current > path { fill: color-mix(in srgb, var(--ro-seal) 34%, transparent); stroke: var(--ro-seal); stroke-width: 2.6; }
+.ag-ro-cell.is-linked > path { stroke: var(--ro-seal); stroke-width: 1.7; }
+.ag-ro-cell.is-returned > path { fill: var(--ro-seal); stroke: var(--ro-seal); }
+.ag-ro-cell.is-returned .ag-ro-cell-no, .ag-ro-cell.is-returned .ag-ro-cell-name, .ag-ro-cell.is-returned .ag-ro-cell-tree { fill: var(--ro-seal-ink); }
+.ag-ro-cell.is-lost > path { fill: var(--ro-lostbg); stroke: var(--ro-seal); stroke-width: 2; stroke-dasharray: 5 3; }
+.ag-ro-cell.is-lost .ag-ro-cell-name { fill: var(--ro-seal-text); }
+
+/* ── 家譜樹點過來時閃一下 ────────────────────── */
+.ag-ro-box.is-flash, .ag-ro-chip.is-flash { animation: ag-ro-flash 1800ms ease-out; }
+.ag-ro-cell.is-flash > path { animation: ag-ro-flash-cell 1800ms ease-out; }
+@keyframes ag-ro-flash {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--ro-seal) 65%, transparent); }
+  22% { box-shadow: 0 0 0 7px color-mix(in srgb, var(--ro-seal) 32%, transparent); }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+@keyframes ag-ro-flash-cell {
+  0%, 30% { fill: color-mix(in srgb, var(--ro-seal) 42%, transparent); stroke: var(--ro-seal); }
+  100% { }
+}
+
+/* ── 人名小卡（在職位圖裡浮出，不是整頁的視窗）──── */
+.ag-ro-floats { position: sticky; top: 0; left: 0; z-index: 6; width: 100%; height: 0; pointer-events: none; }
+.ag-ro-card {
+  position: absolute; right: 14px; top: calc(var(--ag-ro-vh, 560px) - 14px); translate: 0 -100%; box-sizing: border-box;
+  width: min(320px, calc(100% - 28px)); max-height: calc(var(--ag-ro-vh, 560px) - 28px); overflow: auto; padding: 14px 16px 14px;
+  border: 1px solid var(--ro-seal); border-radius: 8px; background: var(--ro-float); color: var(--ro-ink); pointer-events: auto;
+  box-shadow: 0 12px 34px rgb(30 20 10 / 22%); animation: ag-ro-card-in 260ms cubic-bezier(.2, .8, .2, 1) both;
+}
+@keyframes ag-ro-card-in { from { opacity: 0; translate: 0 calc(-100% + 12px); } to { opacity: 1; translate: 0 -100%; } }
+.ag-ro-card h4 { margin: 0 24px 0 0; font-size: calc(19px * var(--ag-fs, 1)); font-weight: 600; letter-spacing: .04em; }
+.ag-ro-card h4 small { display: block; margin-top: 1px; color: var(--ro-muted); font-size: calc(12.5px * var(--ag-fs, 1)); font-weight: 400; letter-spacing: 0; }
+.ag-ro-card-x {
+  position: absolute; top: 6px; right: 8px; width: 28px; height: 28px; border: 0; border-radius: 50%; background: none; color: var(--ro-muted);
+  font-size: 20px; line-height: 1; cursor: pointer;
+}
+.ag-ro-card-x:hover { background: var(--ro-tint); color: var(--ro-ink); }
+.ag-ro-card-roles { display: grid; gap: 8px; margin: 10px 0 0; padding: 0; list-style: none; }
+.ag-ro-card-roles li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 1px 8px; padding-left: 10px; border-left: 2px solid var(--ro-seal); }
+.ag-ro-card-roles b { font-size: calc(14px * var(--ag-fs, 1)); font-weight: 600; }
+.ag-ro-card-detail { color: var(--ro-ink); font-size: calc(12.5px * var(--ag-fs, 1)); }
+.ag-ro-card-roles small { flex-basis: 100%; color: var(--ro-muted); font-size: calc(11.5px * var(--ag-fs, 1)); }
+.ag-ro-card-tree {
+  margin-top: 12px; padding: 4px 13px; border: 1px solid var(--ro-seal); border-radius: 15px; background: transparent; color: var(--ro-seal-text);
+  font: inherit; font-size: calc(13px * var(--ag-fs, 1)); cursor: pointer;
+}
+.ag-ro-card-tree:hover { background: var(--ro-seal); color: var(--ro-seal-ink); }
+
+/* ── 讀經的小縮影 ─────────────────────────────── */
+.ag-ro-mini { display: block; }
+.ag-ro-mini-line { fill: none; stroke: var(--rd-ink-soft, #8a867b); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.ag-ro-mini-plaque { fill: var(--rd-seal, #ab3427); }
+.ag-ro-mini-box { fill: var(--rd-ink-faint, rgb(30 27 23 / 14%)); stroke: var(--rd-ink-soft, #8a867b); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.ag-ro-mini-box.is-round { fill: color-mix(in srgb, var(--rd-ink, #1e1b17) 22%, transparent); }
+
+/* ── 手機 ─────────────────────────────────────── */
+@media (max-width: 520px) {
+  .ag-ro-chart { padding: 16px 12px 52px; }
+  .ag-ro-king { padding: 8px 28px 9px; }
+  .ag-ro-box { padding: 9px 11px 12px; }
+  .ag-ro-card { right: 10px; width: calc(100% - 20px); max-height: calc(var(--ag-ro-vh, 560px) * .62); padding: 12px 14px; }
+  .ag-reading .ag-ro-king { --ro-stem: 40px; }
+}
+
+/* 動畫開關關掉：不做蓋印、閃爍、浮出 */
+html[data-motion="off"] .ag-ro-stamp.is-fresh,
+html[data-motion="off"] .ag-ro-stamp.is-svg.is-fresh .ag-ro-stamp-body,
+html[data-motion="off"] .ag-ro-box.is-flash,
+html[data-motion="off"] .ag-ro-chip.is-flash,
+html[data-motion="off"] .ag-ro-cell.is-flash > path,
+html[data-motion="off"] .ag-ro-card { animation: none; }
+html[data-motion="off"] .ag-ro-chip, html[data-motion="off"] .ag-ro-box, html[data-motion="off"] .ag-ro-cell > path { transition: none; }
+
+/* ── 家譜樹上人物卡旁的職位印（canvas.ts 畫在 SVG 裡）──────────── */
+.ag-ro-tseal { cursor: pointer; outline: none; }
+.ag-ro-tseal rect { fill: var(--rd-seal, #ab3427); stroke: rgb(0 0 0 / 0%); stroke-width: 1.5; transition: filter 160ms ease; }
+.ag-ro-tseal text { fill: var(--rd-seal-ink, #f7eedb); font-family: var(--rd-font, serif); font-size: 11.5px; font-weight: 600; pointer-events: none; }
+.ag-ro-tseal:hover rect { filter: brightness(1.14); }
+.ag-ro-tseal:focus-visible rect { stroke: var(--ag-focus); }
+/* 讀經時，沒讀到的人身上的印退淡，讀到的人亮著 */
+.ag-canvas.ag-rd-on .ag-ro-tseal { opacity: .5; transition: opacity 500ms ease; }
+.ag-canvas.ag-rd-on .ag-ro-tseal.ag-rd-lit, .ag-canvas.ag-rd-on .ag-ro-tseal.ag-rd-trail { opacity: 1; }

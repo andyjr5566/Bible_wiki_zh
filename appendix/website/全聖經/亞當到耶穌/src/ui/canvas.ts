@@ -1,9 +1,10 @@
-import type { GenealogyData, Person } from '../data/types';
+import type { GenealogyData, Person, RoleSeal } from '../data/types';
 import { branchRoots, buildGraph, firstReference, isBornOfNode, isPlacementNode } from '../data/model';
 import { COLUMN_W, ROW_H, computeLayout, type CanvasLayout, type LayoutNode } from './layout';
 import { svgEl } from './dom';
-import { ensureInkDefs, inkHalo, inkStroke, sealMark } from './ink';
+import { ROLE_SEAL_H, ensureInkDefs, inkHalo, inkStroke, pathSegments, roleSealRows, sealMark, sealRectsOverlap, segmentHitsRect, type SealRect, type SealSeg } from './ink';
 import { FONT_SCALE_EVENT, getFontScale } from './fontscale';
+import './roles.css';
 
 export type CanvasLine = 'both' | '馬太' | '路加';
 
@@ -37,6 +38,8 @@ export interface CanvasApi {
   setExpanded(ids: Set<string>): void;
   /** 使用者自己拖動或縮放畫布時通知 */
   onUserCamera(listener: (() => void) | null): void;
+  /** 點了人物卡旁的職位印：boxId 是職位圖的方塊，personId 是印的主人 */
+  onRoleSeal(listener: ((boxId: string, personId: string) => void) | null): void;
 }
 
 export interface ReadingMarks {
@@ -81,8 +84,9 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
   const labelLayer = svgEl('g', { class: 'ag-edge-label-layer' });
   let labelEls = new Map<string, SVGGElement>();
   const sealLayer = svgEl('g', { class: 'ag-rd-seal-layer' });
+  const roleSealLayer = svgEl('g', { class: 'ag-ro-tseal-layer' });
   const hudLayer = svgEl('g', { class: 'ag-overview-hud' });
-  scene.append(segmentLayer, frameLayer, edgeLayer, labelLayer, inkLayer, overviewLayer, nodeLayer, sealLayer, hudLayer);
+  scene.append(segmentLayer, frameLayer, edgeLayer, labelLayer, inkLayer, overviewLayer, nodeLayer, roleSealLayer, sealLayer, hudLayer);
   svg.append(scene);
   const graph = buildGraph(data);
   const expanded = new Set<string>();
@@ -114,6 +118,8 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
   let ovHeads: Array<{ line: string; x: number; text: SVGTextElement }> = [];
   let ovHint: SVGTextElement | null = null;
   let mainEdgeEls = new Map<string, SVGPathElement>();
+  let roleSealListener: ((boxId: string, personId: string) => void) | null = null;
+  let roleSealEls: Array<{ id: string; g: SVGGElement }> = [];
 
   const nodeFor = (id: string) => layout.nodes.find((node) => node.id === id);
   const lineFor = (person: Person) => person.lines?.includes('common') ? 'common' : person.lines?.includes('馬太') ? '馬太' : person.lines?.includes('路加') ? '路加' : 'common';
@@ -295,6 +301,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     // 線上的關係字只在放大看得清名字時出現
     labelLayer.style.display = overview || zoomLevel < READABLE_ZOOM * 0.92 ? 'none' : '';
     sealLayer.style.display = overview ? 'none' : '';
+    roleSealLayer.style.display = overview ? 'none' : '';
     overviewLayer.style.display = overview ? '' : 'none';
     hudLayer.style.display = overview ? '' : 'none';
     if (overview) {
@@ -343,6 +350,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       const el = nodeEls.get(node.id);
       if (el) el.style.display = shown ? '' : 'none';
     }
+    for (const item of roleSealEls) item.g.style.display = visible.has(item.id) ? '' : 'none';
     // 連線只要「兩端節點圍成的範圍」碰到畫面就畫：父親在畫面外、孩子在畫面內（或一條長幹線穿過畫面）時，
     // 不能因為父親被隱藏就讓孩子看起來斷線
     const byId = new Map(allLayoutNodes().map((node) => [node.id, node]));
@@ -571,6 +579,10 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       element.classList.toggle('ag-rd-lit', reading && marks.lit.has(id));
       element.classList.toggle('ag-rd-trail', reading && !marks.lit.has(id) && marks.trail.has(id));
       element.classList.toggle('ag-rd-current', reading && marks.current === id);
+    }
+    for (const item of roleSealEls) {
+      item.g.classList.toggle('ag-rd-lit', reading && marks.lit.has(item.id));
+      item.g.classList.toggle('ag-rd-trail', reading && !marks.lit.has(item.id) && marks.trail.has(item.id));
     }
     if (!reading) return;
     const motion = animate && document.documentElement.dataset.motion !== 'off';
@@ -937,6 +949,80 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     return `M${startX} ${a.y} H${midX} V${b.y} H${endX}`;
   };
 
+  // 家譜樹上的職位印：人物卡下方的小朱印（元帥、勇士、第三班）。平常讀經與否都畫，縮成總覽時不畫。
+  // 位置避開別的卡片、連線、線上的關係字、名字上方的小標、妻子小標、收合鈕和備註鈕；先試卡片下方，放不下再換位置。
+  function placeRoleSeals(tagRects: SealRect[], edgeSegs: SealSeg[]) {
+    roleSealLayer.replaceChildren();
+    roleSealEls = [];
+    const grouped = new Map<string, RoleSeal[]>();
+    for (const seal of data.roleSeals ?? []) {
+      const list = grouped.get(seal.id) ?? [];
+      if (!list.some((item) => item.label === seal.label)) list.push(seal);
+      grouped.set(seal.id, list);
+    }
+    if (!grouped.size) return;
+    const cards = allLayoutNodes().map((node) => ({ id: node.id, l: node.x + node.rectX, r: node.x + node.rectX + node.width, t: node.y - node.height / 2, b: node.y + node.height / 2 }));
+    for (const [id, list] of grouped) {
+      const node = nodeFor(id);
+      const person = graph.byId.get(id);
+      if (!node || !person) continue;
+      const left = node.x + node.rectX;
+      const right = left + node.rectWidth;
+      const top = node.y - node.height / 2;
+      const cardBottom = top + node.rectHeight;
+      const group = roleSealRows(list.map((seal) => seal.label), node.rectWidth + 44);
+      const below = cardBottom + (person.marks?.length ? 21 : 4);
+      const own: SealRect[] = [];
+      if (node.collapsed || node.expandedRoot) own.push({ l: right + 1, r: right + 23, t: top + 1, b: top + 23 });
+      if (person.notes?.length) own.push({ l: right - 13, r: right + 7, t: cardBottom - 12, b: cardBottom + 8 });
+      if (graph.wifeSlots.has(id)) own.push({ l: left - 6, r: left + 28, t: top - 11, b: top + 5 });
+      const candidates = [
+        { x: left, y: below },
+        { x: right - group.width, y: below },
+        { x: left - group.width - 4, y: top + 2 },
+        { x: left, y: below + group.height + 3 },
+        { x: right - group.width, y: below + group.height + 3 },
+        { x: right + 5, y: cardBottom - group.height + 2 },
+      ];
+      const hits = (x: number, y: number) => {
+        const rect: SealRect = { l: x, r: x + group.width, t: y, b: y + group.height };
+        let count = 0;
+        for (const card of cards) if (card.id !== id && sealRectsOverlap(rect, card, 2)) count += 1;
+        for (const other of [...tagRects, ...own]) if (sealRectsOverlap(rect, other, 1)) count += 1;
+        for (const segment of edgeSegs) if (segmentHitsRect(segment, rect, 1)) count += 1;
+        return count;
+      };
+      let best = candidates[0]!;
+      let bestHits = Infinity;
+      for (const candidate of candidates) {
+        const count = hits(candidate.x, candidate.y);
+        if (count < bestHits) { best = candidate; bestHits = count; }
+        if (count === 0) break;
+      }
+      list.forEach((seal, index) => {
+        const item = group.items[index]!;
+        const g = svgEl('g', {
+          class: 'ag-ro-tseal', 'data-id': id, 'data-box': seal.box, role: 'button', tabindex: '0',
+          transform: `translate(${best.x + item.x} ${best.y + item.y})`,
+          'aria-label': `${person.name}，${seal.label}，到職位圖上看`,
+        });
+        g.append(svgEl('rect', { width: item.w, height: ROLE_SEAL_H, rx: 2.5 }));
+        const text = svgEl('text', { x: item.w / 2, y: ROLE_SEAL_H / 2 + 0.5, 'text-anchor': 'middle', 'dominant-baseline': 'central' });
+        text.textContent = seal.label;
+        const hint = svgEl('title', {});
+        hint.textContent = `${seal.label}　${seal.ref}`;
+        g.append(text, hint);
+        const open = () => roleSealListener?.(seal.box, id);
+        // 按在印上不當成拖曳畫布，也不選取底下的人物
+        g.addEventListener('pointerdown', (event) => event.stopPropagation());
+        g.addEventListener('click', (event) => { event.stopPropagation(); open(); });
+        g.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); event.stopPropagation(); open(); } });
+        roleSealLayer.append(g);
+        roleSealEls.push({ id, g });
+      });
+    }
+  }
+
   function refresh(animate = false) {
     const previousLayout = layout;
     const previousNodeEls = nodeEls;
@@ -961,6 +1047,9 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     const nodesById = new Map(allLayoutNodes().map((node) => [node.id, node]));
     // 關係字放在人名上方角落的人，「妻子：某某」標籤往上讓一行，不疊在一起
     const labelAbove = new Set<string>();
+    // 職位印要避開的東西：線上的關係字、名字上方的小標、妻子小標、連線
+    const tagRects: SealRect[] = [];
+    const edgeSegs: SealSeg[] = [];
     for (const edge of layout.edges) {
       const a = nodesById.get(edge.from);
       const b = nodesById.get(edge.to);
@@ -974,11 +1063,13 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       path.style.opacity = String(lineOpacity(edge.line));
       edgeLayer.append(path);
       edgeEls.set(edge.key, path);
+      edgeSegs.push(...pathSegments(path.getAttribute('d') ?? ''));
       if (a.mainline && b.mainline) mainEdgeEls.set(edge.key, path);
       if (edge.label) {
         const width = Array.from(edge.label).length * 11 + 10;
         const at = labelPoint(edge.kind, a, b, width);
         if (at.above) labelAbove.add(at.above);
+        tagRects.push({ l: at.x - width / 2, r: at.x + width / 2, t: at.y - 8, b: at.y + 8 });
         const tag = svgEl('g', { class: `ag-edge-label ag-edge-label-${edge.kind}`, transform: `translate(${at.x} ${at.y})` });
         tag.style.opacity = String(lineOpacity(edge.line));
         tag.append(svgEl('rect', { x: -width / 2, y: -8, width, height: 16, rx: 8 }));
@@ -1008,7 +1099,9 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
         const names = others.map((other) => graph.byId.get(other)!.name);
         const prefix = `${label}：`;
         const width = (Array.from(prefix).length + names.reduce((sum, name) => sum + Array.from(name).length + 1, -1)) * 11 + 14;
-        const tag = svgEl('g', { class: 'ag-edge-label ag-far-link', transform: `translate(${node.x} ${node.y - node.height / 2 - (graph.wifeSlots.has(id) ? 20 : 11) - row * 19})` });
+        const tagY = node.y - node.height / 2 - (graph.wifeSlots.has(id) ? 20 : 11) - row * 19;
+        tagRects.push({ l: node.x - width / 2, r: node.x + width / 2, t: tagY - 8, b: tagY + 8 });
+        const tag = svgEl('g', { class: 'ag-edge-label ag-far-link', transform: `translate(${node.x} ${tagY})` });
         tag.append(svgEl('rect', { x: -width / 2, y: -8, width, height: 16, rx: 8 }));
         const text = svgEl('text', { x: 0, y: 0.5, 'text-anchor': 'middle', 'dominant-baseline': 'central' });
         text.append(document.createTextNode(prefix));
@@ -1031,6 +1124,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
         nodeEls.set(node.id, rendered);
       }
     }
+    placeRoleSeals(tagRects, edgeSegs);
     // 動畫只聽頁面上的「動畫」開關，不跟作業系統的「減少動態」設定（使用者的決定）
     const shouldAnimate = animate && document.documentElement.dataset.motion !== 'off';
     if (shouldAnimate) {
@@ -1351,6 +1445,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       refresh(false);
     },
     onUserCamera(listener) { userCameraListener = listener; },
+    onRoleSeal(listener) { roleSealListener = listener; },
   };
 
   svg.addEventListener('wheel', (event) => {
