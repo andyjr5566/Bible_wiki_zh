@@ -39,6 +39,8 @@ export interface ReadingStage {
   /** 讀經模式開關（家譜樹：淡墨底；職位圖：讀經樣式） */
   setReading(on: boolean): void;
   setMarks(marks: StageMarks): void;
+  /** 讀經程式每進一節先通知（在 reveal、setMarks 之前）：舞台可依這一節決定要怎麼呈現同一個人 */
+  setVerse?(key: string): void;
   /** 打開這些人（或方塊）所在的位置，只重畫一次 */
   reveal(ids: string[]): void;
   /** 鏡頭移到這個人或方塊；已在舒適範圍內就不動；距離很遠先拉遠再推近。職位圖只捲動自己的容器 */

@@ -8,6 +8,52 @@ import { type ReadingStage, type StageMarks } from './stage';
 const LINE_CLASS: Record<string, string> = { '馬太': 'is-matthew', '路加': 'is-luke' };
 
 /**
+ * 妻子在丈夫家裡的那張「↗」卡（所生:丈夫:妻子）：娘家在別支的妻子（利亞、拉結、以掃的妻子……），
+ * 讀到丈夫這一家時，鏡頭、亮名字、墨線都用丈夫家裡那張卡，順著「丈夫 → 妻子 → 兒女」往下走，不跳回娘家。
+ * 沿著讀經路線依序決定每一節（每一段開頭重來），所以從哪一節打開、跳讀都一樣：
+ * 1. 這一節提到丈夫，或提到他為丈夫生的孩子 → 丈夫家裡那張卡；
+ * 2. 否則提到他的父母（講娘家）→ 本人；
+ * 3. 都沒提（「耶和華見利亞失寵」「神顧念拉結」）→ 照這一段前面的決定接下去；前面沒有、他只嫁一位丈夫，就用丈夫家裡那張卡。
+ * 回傳：經節 → （妻子 id → 卡的 id）
+ */
+export function householdAliasByVerse(reading: ReadingData, graph: PersonGraph): Map<string, Map<string, string>> {
+  const slotsOfWife = new Map<string, Array<{ slot: string; husband: string }>>();
+  for (const [slot, wife] of graph.bornOf) {
+    // 卡的 id 是「所生:丈夫:妻子」；丈夫的 id 可能有冒號（撒督#9:11），所以從尾端扣掉妻子
+    const husband = slot.slice('所生:'.length, slot.length - wife.length - 1);
+    const list = slotsOfWife.get(wife) ?? [];
+    list.push({ slot, husband });
+    slotsOfWife.set(wife, list);
+  }
+  const parentsOf = (id: string) => new Set((graph.byId.get(id)?.parents ?? []).map((relation) => relation.id));
+  const table = new Map<string, Map<string, string>>();
+  for (const segment of reading.segments) {
+    const sticky = new Map<string, string>();
+    for (const chapter of segment.chapters) {
+      for (const verse of chapter.verses) {
+        const context = new Set<string>();
+        for (const token of verse.t) {
+          for (const id of [token.id, ...(token.from ?? []), ...(token.to ?? [])]) if (id) context.add(id);
+        }
+        const alias = new Map<string, string>();
+        for (const wife of context) {
+          const slots = slotsOfWife.get(wife);
+          if (!slots) continue;
+          const hit = slots.find(({ husband }) => context.has(husband)
+            || [...context].some((other) => other !== wife && parentsOf(other).has(wife) && parentsOf(other).has(husband)));
+          const ownFamily = [...parentsOf(wife)].some((parent) => context.has(parent));
+          // 都沒提時：照這一段前面的決定；前面沒有、而且他只嫁一位丈夫，就用丈夫家裡那張卡
+          const choice = hit ? hit.slot : ownFamily ? null : sticky.get(wife) ?? (slots.length === 1 ? slots[0]!.slot : null);
+          if (choice) { sticky.set(wife, choice); alias.set(wife, choice); } else sticky.delete(wife);
+        }
+        if (alias.size) table.set(`${chapter.book}${chapter.n}:${verse.v}`, alias);
+      }
+    }
+  }
+  return table;
+}
+
+/**
  * 家譜樹的讀經舞台：包住現有的畫布（CanvasApi），把讀經程式給的標記轉成畫布認得的樣子。
  * 職位圖才有的 id（rid、role: 開頭）一律在這裡丟掉。
  */
@@ -56,6 +102,11 @@ export function createTreeStage(
   }
   const clamp01 = (value: number) => Math.max(0, Math.min(1, value));
 
+  // 妻子要停在本人還是丈夫家裡那張卡：沿著讀經路線先算好每一節（見 householdAliasByVerse）
+  const aliasTable = reading ? householdAliasByVerse(reading, graph) : new Map<string, Map<string, string>>();
+  let alias = new Map<string, string>();
+  let previousAlias = new Map<string, string>();
+  const mapId = (id: string, table = alias) => table.get(id) ?? id;
   /** 讀到、已讀過的歸回連結指到的樹上祖先：讀過就留著淡淡的亮 */
   const linkedAncestors = (links: Set<number>): string[] => {
     const ids: string[] = [];
@@ -70,38 +121,46 @@ export function createTreeStage(
     el: wrap,
     ready: () => Promise.resolve(),
     setReading(on) { canvas.setReading(on); },
+    setVerse(key) {
+      previousAlias = alias;
+      alias = aliasTable.get(key) ?? new Map();
+    },
     setMarks(marks: StageMarks) {
-      const lit = new Set([...marks.lit].filter(onTree));
-      const trail = new Set([...marks.trail, ...linkedAncestors(marks.links)].filter((id) => onTree(id) && !lit.has(id)));
+      const lit = new Set([...marks.lit].filter(onTree).map((id) => mapId(id)));
+      // 上一節用丈夫家裡那張卡的，退淡時也退在那張卡上
+      const trail = new Set([...marks.trail, ...linkedAncestors(marks.links)].filter(onTree)
+        .map((id) => mapId(mapId(id), previousAlias)).filter((id) => !lit.has(id)));
       const next: ReadingMarks = {
         lit,
         trail,
-        current: marks.current && onTree(marks.current) ? marks.current : null,
-        seals: marks.seals.filter((seal) => onTree(seal.id)),
-        ink: marks.ink.filter((line) => onTree(line.from) && onTree(line.to)),
+        current: marks.current && onTree(marks.current) ? mapId(marks.current) : null,
+        seals: marks.seals.filter((seal) => onTree(seal.id)).map((seal) => ({ ...seal, id: mapId(seal.id) })),
+        ink: marks.ink.filter((line) => onTree(line.from) && onTree(line.to))
+          .map((line) => ({ ...line, from: mapId(line.from), to: mapId(line.to) })),
         fresh: marks.fresh,
       };
       canvas.setReadingMarks(next);
     },
     reveal(ids) {
       const wanted = ids.filter(onTree);
-      if (wanted.length) canvas.expandMany(wanted);
+      if (wanted.length) canvas.expandMany(wanted.map((id) => mapId(id)));
     },
     async flyTo(target, animate) {
       if (!onTree(target)) return;
-      await canvas.flyTo(target, animate);
+      await canvas.flyTo(mapId(target), animate);
     },
     has(target) {
       if (!onTree(target)) return false;
       nodes();
-      return nodeIds.has(target);
+      return nodeIds.has(mapId(target));
     },
     onUserCamera(listener) { canvas.onUserCamera(listener); },
     locate(target) {
       if (!onTree(target)) return null;
       nodes();
-      if (!nodeIds.has(target)) return null;
-      const node = [...canvas.layoutNow().nodes, ...canvas.layoutNow().groups].find((item) => item.id === target);
+      const id = mapId(target);
+      if (!nodeIds.has(id)) return null;
+      const node = [...canvas.layoutNow().nodes, ...canvas.layoutNow().groups].find((item) => item.id === id);
       if (!node) return null;
       const box = frame ?? spineBounds();
       return { x: clamp01((node.x - box.x) / box.width), y: clamp01((node.y - box.y) / box.height) };

@@ -224,8 +224,9 @@ sections:
     - ref: "1:40"
       parent: 祭便
       children: [亞雅, 亞拿#祭便]
+    # 緊接 1:40「祭便的兒子是亞雅、亞拿」：這位亞拿是祭便的兒子（創 36:2、36:24–25）
     - ref: "1:41"
-      parent: 亞拿
+      parent: 亞拿#祭便
       children: [底順#亞拿]
     - ref: "1:41"
       parent: 底順

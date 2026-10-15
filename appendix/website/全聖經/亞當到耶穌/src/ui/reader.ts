@@ -404,6 +404,7 @@ export function createReader(reading: ReadingData, stages: { tree: ReadingStage;
     if (item.verse.hold) ids.add(item.verse.hold);
     if (item.verse.box) ids.add(item.verse.box);
     revealed = [...ids];
+    for (const id of ['tree', 'roles'] as const) stages[id].setVerse?.(item.key);
     for (const id of readyStages) stages[id].reveal(revealed);
     pushMarks();
 
