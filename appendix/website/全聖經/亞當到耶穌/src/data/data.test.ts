@@ -1,4 +1,6 @@
 import { describe, expect, it } from 'vitest';
+import rolesSource from './roles.json';
+import type { RolesData } from './types';
 import { DATA, READING, VERSES, branchRoots, expandVerseRefs, lookupVerses, buildGraph, makeSyntheticData, pathToFirstAncestor, searchNameForms, searchPeople } from './model';
 import type { GenealogyData } from './types';
 import { computeLayout } from '../ui/layout';
@@ -337,22 +339,28 @@ describe('家譜資料閘門', () => {
 
 });
 
-describe('讀經資料閘門（代上 1–9 章）', () => {
-  const verses = READING.chapters.flatMap((chapter) => chapter.verses.map((verse) => ({ chapter: chapter.n, verse })));
+describe('讀經資料閘門（整條路線）', () => {
+  const verses = READING.segments.flatMap((segment) => segment.chapters.flatMap((chapter) =>
+    chapter.verses.map((verse) => ({ segment, key: `${chapter.book}${chapter.n}:${verse.v}`, verse }))));
   const personIds = new Set(DATA.persons.map((person) => person.id));
+  const chronicles = verses.filter((item) => item.segment.id === 'chr1-9');
 
-  it('407 節全收，經文和正式經文逐字相同', () => {
-    expect(READING.chapters.map((chapter) => chapter.n)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-    expect(verses.length).toBe(407);
-    for (const { chapter, verse } of verses) expect(verse.text, `代上${chapter}:${verse.v}`).toBe(VERSES[`代上${chapter}:${verse.v}`]);
+  it('路線 34 段，從創 4:17 開始；代上 1–9 的 407 節全收；經文和正式經文逐字相同', () => {
+    expect(READING.segments.length).toBe(34);
+    expect(READING.start).toBe('創4:17');
+    expect(verses[0]!.key).toBe('創4:17');
+    expect(verses.at(-1)!.key).toBe('路3:38');
+    expect(chronicles.length).toBe(407);
+    expect(new Set(verses.map((item) => item.key)).size).toBe(verses.length);
+    for (const { key, verse } of verses) expect(verse.text, key).toBe(VERSES[key]);
   });
 
   it('每個標記的位置都在經文裡，前後不重疊', () => {
     const errors: string[] = [];
-    for (const { chapter, verse } of verses) {
+    for (const { key, verse } of verses) {
       let end = 0;
       for (const token of verse.t) {
-        if (token.s < end || token.e <= token.s || token.e > verse.text.length) errors.push(`代上${chapter}:${verse.v} ${token.s}-${token.e}`);
+        if (token.s < end || token.e <= token.s || token.e > verse.text.length) errors.push(`${key} ${token.s}-${token.e}`);
         end = token.e;
       }
     }
@@ -362,27 +370,104 @@ describe('讀經資料閘門（代上 1–9 章）', () => {
   it('人名對到的人物都存在，而且在大圖上有節點', () => {
     const layoutIds = new Set(computeLayout(DATA, everythingOpen(DATA)).nodes.map((node) => node.id));
     const missing: string[] = [];
-    for (const { chapter, verse } of verses) {
+    for (const { key, verse } of verses) {
       for (const token of verse.t) {
-        for (const id of [token.id, token.of, ...(token.from ?? []), ...(token.to ?? [])].filter((value): value is string => Boolean(value))) {
-          if (!personIds.has(id) || !layoutIds.has(id)) missing.push(`代上${chapter}:${verse.v} ${id}`);
+        // 職稱可以屬於只在職位圖上的人（rid），那些另在職位資料的測試裡檢查
+        const owner = token.of && !personIds.has(token.of) ? undefined : token.of;
+        for (const id of [token.id, owner, ...(token.from ?? []), ...(token.to ?? [])].filter((value): value is string => Boolean(value))) {
+          if (!personIds.has(id) || !layoutIds.has(id)) missing.push(`${key} ${id}`);
         }
       }
     }
     expect(missing).toEqual([]);
-    expect(verses.reduce((sum, { verse }) => sum + verse.t.filter((token) => token.k === 'p' && token.id).length, 0)).toBeGreaterThan(1500);
+    expect(chronicles.reduce((sum, { verse }) => sum + verse.t.filter((token) => token.k === 'p' && token.id).length, 0)).toBeGreaterThan(1500);
   });
 
-  it('名單牌子與讀經提醒都對得上', () => {
+  it('名單牌子、讀經提醒、差異小卡、歸回連結都對得上', () => {
     const plaques = new Set((DATA.placements?.nodes ?? []).map((node) => node.id));
-    for (const { chapter, verse } of verses) {
-      if (verse.hold) expect(plaques.has(verse.hold), `代上${chapter}:${verse.v} ${verse.hold}`).toBe(true);
-      if (verse.note !== undefined) expect(READING.notes[verse.note], `代上${chapter}:${verse.v}`).toBeTruthy();
+    for (const { key, verse } of verses) {
+      if (verse.hold) expect(plaques.has(verse.hold), `${key} ${verse.hold}`).toBe(true);
+      if (verse.note !== undefined) expect(READING.notes[verse.note], key).toBeTruthy();
+      for (const index of verse.diff ?? []) expect(READING.diffs[index], key).toBeTruthy();
+      for (const token of verse.t) if (token.link !== undefined) expect(READING.links[token.link]?.at, key).toBe(key);
     }
     for (const note of READING.notes) {
       expect(note.text).toBeTruthy();
-      for (const key of note.verses) expect(VERSES[key], key).toBeTruthy();
+      for (const noteKey of note.verses) expect(VERSES[noteKey], noteKey).toBeTruthy();
     }
+    for (const diff of READING.diffs) {
+      for (const side of diff.sides) expect(lookupVerses(side.ref).map((line) => line.text ?? '').join(''), side.ref).toContain(side.text);
+    }
+  });
+});
+
+describe('大衛立的職位與歸回連結', () => {
+  const roles = rolesSource as unknown as RolesData;
+  const personIds = new Set(DATA.persons.map((person) => person.id));
+  const rids = new Set(roles.people.map((person) => person.rid));
+  const boxes = new Map(roles.categories.flatMap((category) => category.boxes.map((box) => [box.id, box] as const)));
+  const verses = READING.segments.flatMap((segment) => segment.chapters.flatMap((chapter) =>
+    chapter.verses.map((verse) => ({ key: `${chapter.book}${chapter.n}:${verse.v}`, verse, stage: verse.stage ?? segment.stage }))));
+
+  it('四類職位；每個成員對到家譜樹上的人或只在職位圖上的人', () => {
+    expect(roles.categories.map((category) => category.id)).toEqual(['court', 'army', 'temple', 'tribes']);
+    const problems: string[] = [];
+    for (const box of boxes.values()) {
+      const keys = new Set<string>();
+      for (const member of box.members) {
+        if (keys.has(member.key)) problems.push(`${box.id} 代號重複 ${member.key}`);
+        keys.add(member.key);
+        if (member.id ? !personIds.has(member.id) : !member.rid || !rids.has(member.rid)) problems.push(`${box.id} ${member.name}`);
+        if (member.id && member.rid) problems.push(`${box.id} ${member.name} 同時有 id 和 rid`);
+      }
+      if (box.kind === 'ring24') expect(new Set(box.members.map((member) => member.order)).size, box.id).toBe(24);
+      if (box.kind === 'wheel12') expect(new Set(box.members.map((member) => member.order)).size, box.id).toBe(12);
+    }
+    expect(problems).toEqual([]);
+  });
+
+  it('讀經標記裡只在職位圖上的人都存在；職位印的人都在家譜樹上', () => {
+    const missing: string[] = [];
+    for (const { key, verse } of verses) {
+      for (const token of verse.t) {
+        if (token.rid && !rids.has(token.rid)) missing.push(`${key} ${token.rid}`);
+        if (token.of && !personIds.has(token.of) && !rids.has(token.of)) missing.push(`${key} 職稱 ${token.of}`);
+      }
+      if (verse.box && !boxes.has(verse.box)) missing.push(`${key} 方塊 ${verse.box}`);
+    }
+    for (const seal of DATA.roleSeals ?? []) {
+      if (!personIds.has(seal.id)) missing.push(`印 ${seal.id}`);
+      if (!boxes.has(seal.box)) missing.push(`印的方塊 ${seal.box}`);
+    }
+    expect(missing).toEqual([]);
+    expect((DATA.roleSeals ?? []).length).toBeGreaterThan(20);
+  });
+
+  it('歸回連結：目標存在；耶大雅、哈琳、音麥子孫歸回，哈歌斯族譜尋不著', () => {
+    for (const link of READING.links) {
+      for (const target of link.to) {
+        if (target.tree) expect(personIds.has(target.tree), `${link.at} ${target.tree}`).toBe(true);
+        if (target.role) {
+          const box = boxes.get(target.role);
+          expect(box, `${link.at} ${target.role}`).toBeTruthy();
+          if (target.member) expect(box!.members.some((member) => member.key === target.member), `${link.at} ${target.member}`).toBe(true);
+        }
+      }
+    }
+    const effect = (at: string) => READING.links.find((link) => link.at === at)?.effect;
+    expect(effect('拉2:36')).toBe('returned');
+    expect(effect('拉2:37')).toBe('returned');
+    expect(effect('拉2:39')).toBe('returned');
+    expect(effect('拉2:61')).toBe('lost');
+  });
+
+  it('職位章換成職位圖，夾在中間的家譜換回家譜樹', () => {
+    const stageOf = (key: string) => verses.find((item) => item.key === key)?.stage;
+    expect(stageOf('代上9:44')).toBe('tree');
+    expect(stageOf('代上11:10')).toBe('roles');
+    expect(stageOf('代上23:7')).toBe('tree');
+    expect(stageOf('代上24:10')).toBe('roles');
+    expect(stageOf('代上27:5')).toBe('roles');
   });
 });
 
