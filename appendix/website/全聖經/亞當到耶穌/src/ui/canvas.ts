@@ -856,7 +856,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     const facing = near === a ? direction : -direction;
     const edgeX = near.x + facing * near.rectWidth / 2;
     if (Math.abs(b.x - a.x) < 1) return { x: a.x + width / 2 + 6, y: (a.y + b.y) / 2 };
-    if ((endX - startX) * direction < width + 16) return { x: edgeX - facing * (width / 2 + 4), y: near.y - near.rectHeight / 2 - 11 };
+    if ((endX - startX) * direction < width + 16) return { x: edgeX - facing * (width / 2 + 4), y: near.y - near.rectHeight / 2 - 11, above: near.id };
     return { x: edgeX + facing * (width / 2 + 6), y: near.y };
   };
   const edgePath = (a: LayoutNode, b: LayoutNode) => {
@@ -899,6 +899,8 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     }
     buildOverview();
     const nodesById = new Map(allLayoutNodes().map((node) => [node.id, node]));
+    // 關係字放在人名上方角落的人，「妻子：某某」標籤往上讓一行，不疊在一起
+    const labelAbove = new Set<string>();
     for (const edge of layout.edges) {
       const a = nodesById.get(edge.from);
       const b = nodesById.get(edge.to);
@@ -916,6 +918,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       if (edge.label) {
         const width = Array.from(edge.label).length * 11 + 10;
         const at = labelPoint(edge.kind, a, b, width);
+        if (at.above) labelAbove.add(at.above);
         const tag = svgEl('g', { class: `ag-edge-label ag-edge-label-${edge.kind}`, transform: `translate(${at.x} ${at.y})` });
         tag.style.opacity = String(lineOpacity(edge.line));
         tag.append(svgEl('rect', { x: -width / 2, y: -8, width, height: 16, rx: 8 }));
@@ -939,7 +942,9 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       const node = nodesById.get(id);
       if (!node) continue;
       const rows = [...byLabel].sort(([a], [b]) => (a === '母親' ? -1 : 0) - (b === '母親' ? -1 : 0));
-      rows.forEach(([label, others], row) => {
+      const skip = labelAbove.has(id) ? 1 : 0;
+      rows.forEach(([label, others], index) => {
+        const row = index + skip;
         const names = others.map((other) => graph.byId.get(other)!.name);
         const prefix = `${label}：`;
         const width = (Array.from(prefix).length + names.reduce((sum, name) => sum + Array.from(name).length + 1, -1)) * 11 + 14;

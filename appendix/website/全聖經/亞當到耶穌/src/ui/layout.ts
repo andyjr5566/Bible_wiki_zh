@@ -337,7 +337,8 @@ function buildEdges(data: GenealogyData, graph: ReturnType<typeof buildGraph>, v
         const mother = nodesById.get(parent.id);
         const child = nodesById.get(person.id);
         const father = fatherId ? nodesById.get(fatherId) : undefined;
-        const beside = fatherId !== undefined && graph.treeParent.get(parent.id) === fatherId;
+        // 母親排在父親旁邊（撒拉在亞伯拉罕旁邊），或就排在孩子旁邊（他瑪在法勒斯旁邊）
+        const beside = (fatherId !== undefined && graph.treeParent.get(parent.id) === fatherId) || graph.treeParent.get(parent.id) === person.id;
         if (!beside || (mother && child && father && (mother.x - father.x) * (child.x - father.x) < 0)) {
           far(person.id, parent.id, '母親');
           continue;
