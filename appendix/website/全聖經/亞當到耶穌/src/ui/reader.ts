@@ -60,6 +60,7 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
   let pauseUntil = 0;
   let lastFrame = 0;
   let frame = 0;
+  let gapTimer = 0;
   let expandedBefore: Set<string> | null = null;
   let marks: ReadingMarks = emptyMarks();
   const lastPersonInSection = new Map<string, string>();
@@ -337,7 +338,8 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
     // 換章時讓章名卡停一下
     const gap = verses[at]!.chapter !== verses[at - 1]!.chapter ? 2600 : 520 / speed;
     pauseUntil = performance.now() + gap;
-    if (voiceOn && playing) window.setTimeout(() => { if (playing && voiceOn) speakFromCursor(); }, gap);
+    window.clearTimeout(gapTimer);
+    if (voiceOn && playing) gapTimer = window.setTimeout(() => { if (playing && voiceOn) speakFromCursor(); }, gap);
   }
 
   function tick(now: number) {
@@ -380,7 +382,10 @@ export function createReader(reading: ReadingData, canvas: CanvasApi, options: {
       },
     });
   }
-  function stopVoice() { options.speech?.stop(); }
+  function stopVoice() {
+    window.clearTimeout(gapTimer);
+    options.speech?.stop();
+  }
   async function toggleVoice() {
     const speech = options.speech;
     if (!voiceOn) {
