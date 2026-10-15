@@ -1,5 +1,5 @@
 import type { GenealogyData, Person } from '../data/types';
-import { branchRoots, buildGraph, firstReference, isPlacementNode } from '../data/model';
+import { branchRoots, buildGraph, firstReference, isBornOfNode, isPlacementNode } from '../data/model';
 import { COLUMN_W, ROW_H, computeLayout, type CanvasLayout, type LayoutNode } from './layout';
 import { svgEl } from './dom';
 import { ensureInkDefs, inkHalo, inkStroke, sealMark } from './ink';
@@ -686,6 +686,14 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       current = parent;
     }
   };
+  // 「妻子：利百加」「利亞所生」：打開通往那個人的那一支，跳過去並打開人物卡
+  const jumpTo = (id: string) => {
+    const person = graph.byId.get(id);
+    if (!person) return;
+    openAncestors(id, false);
+    refresh(true);
+    onSelect(person);
+  };
   const nodeSubtitle = (person: Person) => isPlacementNode(person)
     ? person.qualifier || '經文沒有寫和主線的關係'
     : person.qualifier || firstReference(person) ||
@@ -736,14 +744,16 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     const person = graph.byId.get(node.id);
     if (!person) return null;
     const plaque = isPlacementNode(person);
+    // 母親的分身卡（利亞在以色列旁邊，本人的卡在娘家拉班那一支）：樣子和人物卡一樣，右上角「↗」，點了跳到本人那裡
+    const bornOf = isBornOfNode(person) ? graph.bornOf.get(person.id) : undefined;
     const group = svgEl('g', {
-      class: `ag-node${node.mainline ? ' ag-node-main' : ' ag-node-side'} ag-node-route-${lineFor(person)}${node.collapsed ? ' ag-node-collapsed' : ''}${plaque ? ` ag-node-plaque ag-node-plaque-${person.kind}` : ''}`,
+      class: `ag-node${node.mainline ? ' ag-node-main' : ' ag-node-side'}${bornOf ? ' ag-node-born-of' : ''} ag-node-route-${lineFor(person)}${node.collapsed ? ' ag-node-collapsed' : ''}${plaque ? ` ag-node-plaque ag-node-plaque-${person.kind}` : ''}`,
       transform: `translate(${node.x} ${node.y})`,
       'data-id': node.id,
       role: 'button', tabindex: '0',
       'aria-label': plaque
         ? `${person.name}，${node.expandedRoot ? '收合' : `展開 ${node.descendantCount ?? 0} 位`}`
-        : `${person.name}${node.collapsed ? `，展開 ${node.descendantCount ?? 0} 位後代` : ''}`,
+        : `${person.name}${node.collapsed ? `，展開 ${node.descendantCount ?? 0} 位後代` : bornOf ? '，到他娘家那一支看他' : ''}`,
       ...(plaque ? { 'aria-expanded': String(Boolean(node.expandedRoot)) } : {}),
     });
     group.style.opacity = String(lineOpacity(lineFor(person)));
@@ -756,6 +766,13 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     secondary.textContent = nodeSubtitle(person);
     const dot = svgEl('circle', { class: 'ag-node-dot', cx: 0, cy: 0, r: 3.2 });
     group.append(rect, dot, primary, secondary);
+    if (bornOf) {
+      const mark = svgEl('text', { class: 'ag-born-of-mark', x: node.rectX + node.rectWidth - 9, y: top + 10, 'text-anchor': 'middle', 'dominant-baseline': 'central' });
+      mark.textContent = '↗';
+      const hint = svgEl('title', {});
+      hint.textContent = `${person.name}的人物卡在他娘家那一支，點了過去`;
+      group.append(mark, hint);
+    }
     if (person.marks?.length) {
       const label = person.marks.map((item) => item.label).filter(Boolean).join('／');
       const capsuleWidth = Math.min(node.rectWidth, Math.max(42, Array.from(label).length * 10 + 16));
@@ -811,10 +828,11 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
         expanded.add(node.id);
         refresh(true);
         requestAnimationFrame(() => focusIds([person.id, ...(graph.children.get(person.id) ?? [])], true, READABLE_ZOOM));
-      } else onSelect(person);
+      } else if (bornOf) jumpTo(bornOf);
+      else onSelect(person);
     });
     group.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); if (plaque) togglePlacement(node.id); else onSelect(person); }
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); if (plaque) togglePlacement(node.id); else if (bornOf) jumpTo(bornOf); else onSelect(person); }
     });
     return group;
   };
@@ -853,7 +871,8 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     const direction = Math.sign(dx);
     const startX = a.x + direction * a.width / 2;
     const endX = b.x - direction * b.width / 2;
-    const midX = (startX + endX) / 2;
+    // 轉折點從父母那頭量固定距離：同一位父母底下的孩子框寬不同（收著的有「+N」），也共用同一條直線
+    const midX = startX + direction * Math.min(Math.abs(endX - startX) / 2, 24);
     if (endX * direction < startX * direction) return `M${a.x + direction * a.width / 2} ${a.y} L${b.x - direction * b.width / 2} ${b.y}`;
     return `M${startX} ${a.y} H${midX} V${b.y} H${endX}`;
   };
@@ -907,7 +926,39 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
         labelEls.set(edge.key, tag);
       }
     }
-    for (const node of allLayoutNodes()) {
+    // 夫妻、母子分在大圖兩處（利百加在娘家拿鶴那一支）：不拉長線，在名字上方標「妻子：利百加」「母親：利亞」，
+    // 一種關係一行往上疊；點名字打開那一支、跳過去並打開人物卡
+    const farByNode = new Map<string, Map<string, string[]>>();
+    for (const item of layout.farLinks) {
+      if (!graph.byId.has(item.other)) continue;
+      const byLabel = farByNode.get(item.id) ?? new Map<string, string[]>();
+      byLabel.set(item.label, [...(byLabel.get(item.label) ?? []), item.other]);
+      farByNode.set(item.id, byLabel);
+    }
+    for (const [id, byLabel] of farByNode) {
+      const node = nodesById.get(id);
+      if (!node) continue;
+      const rows = [...byLabel].sort(([a], [b]) => (a === '母親' ? -1 : 0) - (b === '母親' ? -1 : 0));
+      rows.forEach(([label, others], row) => {
+        const names = others.map((other) => graph.byId.get(other)!.name);
+        const prefix = `${label}：`;
+        const width = (Array.from(prefix).length + names.reduce((sum, name) => sum + Array.from(name).length + 1, -1)) * 11 + 14;
+        const tag = svgEl('g', { class: 'ag-edge-label ag-far-link', transform: `translate(${node.x} ${node.y - node.rectHeight / 2 - 11 - row * 19})` });
+        tag.append(svgEl('rect', { x: -width / 2, y: -8, width, height: 16, rx: 8 }));
+        const text = svgEl('text', { x: 0, y: 0.5, 'text-anchor': 'middle', 'dominant-baseline': 'central' });
+        text.append(document.createTextNode(prefix));
+        others.forEach((other, index) => {
+          if (index) text.append(document.createTextNode('、'));
+          const name = svgEl('tspan', { class: 'ag-far-link-name', role: 'link', tabindex: '0', 'aria-label': `${label}${names[index]}，跳過去看` });
+          name.textContent = names[index]!;
+          name.addEventListener('click', (event) => { event.stopPropagation(); jumpTo(other); });
+          name.addEventListener('keydown', (event) => { if ((event as KeyboardEvent).key === 'Enter') { event.stopPropagation(); jumpTo(other); } });
+          text.append(name);
+        });
+        tag.append(text);
+        labelLayer.append(tag);
+      });
+    }    for (const node of allLayoutNodes()) {
       const rendered = renderNode(node);
       if (rendered) {
         nodeLayer.append(rendered);

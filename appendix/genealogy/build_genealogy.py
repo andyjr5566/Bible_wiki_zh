@@ -3939,7 +3939,8 @@ class LineageBuilder:
                     if other in self.people and other != pid:
                         links[pid].append((kind, other))
                         links[other].append((kind, pid))
-        rank = {"parent": 0, "mother": 0, "spouse": 1, "sibling": 2, "kin": 3, "descends": 4}
+        # 妻子先放在丈夫旁邊（撒拉在亞伯拉罕旁邊，母子線再畫到以撒）；其次才是父母子女
+        rank = {"spouse": 0, "parent": 1, "mother": 1, "sibling": 2, "kin": 3, "descends": 4}
         placed: dict[str, dict] = {}
         nodes: list[dict] = []
 

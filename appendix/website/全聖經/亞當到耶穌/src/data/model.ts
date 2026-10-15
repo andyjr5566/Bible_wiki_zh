@@ -69,6 +69,8 @@ export interface PersonGraph {
   treeParent: Map<string, string>;
   /** 經由大圖安置掛上去的節點：名單牌子、區域、各家牌子，以及各家的根。 */
   placed: Map<string, { kind: PlacedKind; side: PlacementItem['side']; via: PlacementItem['via'] }>;
+  /** 「某某所生」標示 → 那位母親 */
+  bornOf: Map<string, string>;
 }
 
 const PLACEMENT_KINDS = new Set(['list', 'region', 'family']);
@@ -129,7 +131,45 @@ export function buildGraph(data: GenealogyData): PersonGraph {
     const under = byId.get(item.under);
     placed.set(item.root, { kind: isPlacementNode(under) ? (under!.kind as PlacedKind) : 'link', side: item.side, via: item.via });
   }
-  return { byId, children, spineIds, treeParent, placed };
+  // 經文記了母親的孩子，在圖上照母親分開：妻子就排在丈夫旁邊的（夏甲在亞伯拉罕旁邊），孩子直接掛在他底下；
+  // 母親排在自己娘家那一支的（利亞在拉班底下），在父親底下加一個「利亞所生」，把他生的孩子收在一起。
+  // 主線上的孩子不動（以撒、猶大），母親另外用線或「母親：某某」標出來。
+  const bornOf = new Map<string, string>();
+  for (const person of data.persons) {
+    if (spineIds.has(person.id)) continue;
+    const father = (person.parents ?? []).find((relation) => relation.role !== '母' && byId.has(relation.id));
+    const mother = (person.parents ?? []).find((relation) => relation.role === '母' && byId.has(relation.id));
+    if (!father || !mother || treeParent.get(person.id) !== father.id) continue;
+    let hub = mother.id;
+    if (treeParent.get(mother.id) !== father.id || !placed.has(mother.id)) {
+      hub = `${BORN_OF_PREFIX}${father.id}:${mother.id}`;
+      if (!byId.has(hub)) {
+        byId.set(hub, bornOfPerson(hub, byId.get(mother.id)!));
+        bornOf.set(hub, mother.id);
+        const siblings = children.get(father.id)!;
+        siblings.splice(siblings.indexOf(person.id), 0, hub);
+        treeParent.set(hub, father.id);
+      }
+    }
+    const siblings = children.get(father.id)!;
+    siblings.splice(siblings.indexOf(person.id), 1);
+    const items = children.get(hub) ?? [];
+    items.push(person.id);
+    children.set(hub, items);
+    treeParent.set(person.id, hub);
+  }
+  return { byId, children, spineIds, treeParent, placed, bornOf };
+}
+
+const BORN_OF_PREFIX = '所生:';
+/** 母親排在娘家那一支時（利亞在拉班底下），父親旁邊放一張他的分身卡，收著他生的孩子；點了跳到娘家那張本人的卡。 */
+export const isBornOfNode = (person: Person | undefined | null): boolean => Boolean(person && person.kind === 'born-of');
+function bornOfPerson(id: string, mother: Person): Person {
+  return {
+    id, name: mother.name, qualifier: mother.qualifier || firstReference(mother), kind: 'born-of', names: [], parents: [], spouses: [], siblings: [],
+    kin: [], descends: [], desc: null, note: null, entry: null, entryGloss: '', gen: {}, lines: mother.lines ?? [], marks: [], notes: [],
+    imported: null, anchor: null,
+  };
 }
 
 // 資訊卡的「子女」：父母記載裡有這個人的都算（不論父親或母親），和畫布的樹（每人只掛一處）不同。
@@ -168,7 +208,7 @@ export function descendantCount(personId: string, graph: PersonGraph): number {
     const id = queue.pop()!;
     if (seen.has(id)) continue;
     seen.add(id);
-    total += 1;
+    if (!isBornOfNode(graph.byId.get(id))) total += 1;
     queue.push(...(graph.children.get(id) ?? []));
   }
   return total;

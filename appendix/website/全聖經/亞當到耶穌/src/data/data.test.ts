@@ -3,10 +3,11 @@ import { DATA, READING, VERSES, branchRoots, expandVerseRefs, lookupVerses, buil
 import type { GenealogyData } from './types';
 import { computeLayout } from '../ui/layout';
 
-/** 全部展開：每位主線人物的旁支、「N 位子女」、名單牌子和區域都打開。 */
+/** 全部展開：每位主線人物的旁支、「N 位子女」、「某某所生」底下各個孩子、名單牌子和區域都打開。 */
 function everythingOpen(data: GenealogyData): Set<string> {
   const graph = buildGraph(data);
   const open = new Set<string>(branchRoots(data, graph).map((item) => item.rootId));
+  for (const id of graph.byId.keys()) open.add(id);
   for (const id of graph.spineIds) for (const direction of [-1, 1]) open.add(`siblings:${id}:${direction}`);
   for (const node of data.placements?.nodes ?? []) open.add(node.id);
   return open;
@@ -60,6 +61,54 @@ describe('家譜資料閘門', () => {
   it('全部展開時節點框不重疊', () => {
     const layout = computeLayout(DATA, everythingOpen(DATA));
     expect(findOverlaps(layout.nodes).slice(0, 5)).toEqual([]);
+  });
+
+  it('經文記載的母親：孩子在圖上時，不是掛在母親（或「某某所生」）底下，就是有母子線或「母親：某某」', () => {
+    const graph = buildGraph(DATA);
+    const layout = computeLayout(DATA, everythingOpen(DATA));
+    const ids = new Set(layout.nodes.map((node) => node.id));
+    const mothers = new Set(layout.edges.filter((edge) => edge.kind === 'mother').map((edge) => `${edge.from}|${edge.to}`));
+    const tags = new Set(layout.farLinks.filter((item) => item.label === '母親').map((item) => `${item.other}|${item.id}`));
+    const missing: string[] = [];
+    for (const person of DATA.persons) {
+      if (!ids.has(person.id)) continue;
+      for (const parent of person.parents ?? []) {
+        if (parent.role !== '母' || !graph.byId.has(parent.id)) continue;
+        const tree = graph.treeParent.get(person.id);
+        const underMother = tree === parent.id || graph.bornOf.get(tree ?? '') === parent.id;
+        if (!underMother && !mothers.has(`${parent.id}|${person.id}`) && !tags.has(`${parent.id}|${person.id}`)) missing.push(`${parent.id} → ${person.id}`);
+      }
+    }
+    expect(missing).toEqual([]);
+    // 以實瑪利掛在夏甲底下；流便在「利亞所生」底下；猶大（主線）頭上標「母親：利亞」
+    expect(graph.treeParent.get('以實瑪利')).toBe('夏甲');
+    expect(graph.bornOf.get(graph.treeParent.get('流便') ?? '')).toBe('利亞');
+    expect(tags.has('利亞|猶大')).toBe(true);
+    // 「某某所生」不算進後代人數，也不是人物
+    expect(DATA.persons.some((person) => graph.bornOf.has(person.id))).toBe(false);
+  });
+
+  it('經文記載的夫妻：兩人都在圖上時，不是有夫妻線，就是名字上方標出配偶', () => {
+    const graph = buildGraph(DATA);
+    const layout = computeLayout(DATA, everythingOpen(DATA));
+    const linked = new Set(layout.edges.flatMap((edge) => [`${edge.from}|${edge.to}`, `${edge.to}|${edge.from}`]));
+    const chips = new Set(layout.farLinks.map((item) => `${item.id}|${item.other}`));
+    const ids = new Set(layout.nodes.map((node) => node.id));
+    const missing: string[] = [];
+    for (const person of DATA.persons) {
+      for (const spouse of person.spouses ?? []) {
+        if (spouse.id === person.id || !ids.has(person.id) || !ids.has(spouse.id)) continue;
+        const key = `${person.id}|${spouse.id}`;
+        // 丈夫旁邊有妻子的分身卡（以色列旁邊的利亞）也算標出來了
+        const card = graph.bornOf.has(`所生:${person.id}:${spouse.id}`) || graph.bornOf.has(`所生:${spouse.id}:${person.id}`);
+        const tagged = (chips.has(key) || card) && (chips.has(`${spouse.id}|${person.id}`) || card);
+        if (!linked.has(key) && !tagged) missing.push(key);
+      }
+    }
+    expect(missing).toEqual([]);
+    // 撒拉就在亞伯拉罕旁邊，線上標「妻子」
+    const sarah = layout.edges.find((edge) => edge.kind === 'kin' && [edge.from, edge.to].includes('撒拉') && [edge.from, edge.to].includes('亞伯拉罕'));
+    expect(sarah?.label).toBe('妻子');
   });
 
   it('名單牌子掛在圖上的人底下，區域在主線人物旁邊而且不畫連到主線的線', () => {

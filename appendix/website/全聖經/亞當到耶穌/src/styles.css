@@ -182,6 +182,11 @@ a { color: var(--ag-focus); }
 .ag-edge-label text { fill: var(--ag-muted); font: 10px var(--ag-sans); letter-spacing: .04em; }
 .ag-edge-label-kin text { fill: var(--ag-ink); }
 .ag-rd-on .ag-edge-label { opacity: .55; }
+.ag-far-link text { fill: var(--ag-muted); }
+.ag-far-link-name { pointer-events: auto; cursor: pointer; fill: var(--ag-ink); text-decoration: underline; text-underline-offset: 2px; }
+.ag-far-link-name:hover, .ag-far-link-name:focus-visible { fill: var(--ag-seal, var(--ag-ink)); outline: none; }
+/* 母親的分身卡：右上角「↗」表示本人的卡在娘家那一支 */
+.ag-born-of-mark { fill: var(--ag-muted); font: 11px var(--ag-sans); pointer-events: none; }
 .ag-legend-line { display: inline-block; width: 18px; height: 0; border-top: 2.5px dotted var(--ag-branch); }
 .ag-canvas-legend-panel { position: absolute; right: 22px; bottom: 17px; display: grid; gap: 6px; max-width: calc(100% - 44px); padding: 8px 10px; border: 1px solid var(--ag-border); border-radius: 4px; background: color-mix(in srgb, var(--ag-paper-raised) 94%, transparent); pointer-events: none; }
 .ag-canvas-hint { color: var(--ag-muted); font-size: calc(11px * var(--ag-fs)); pointer-events: none; }
