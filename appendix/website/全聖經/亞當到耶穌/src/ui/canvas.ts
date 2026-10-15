@@ -1,5 +1,5 @@
 import type { GenealogyData, Person } from '../data/types';
-import { branchRoots, buildGraph, firstReference } from '../data/model';
+import { branchRoots, buildGraph, firstReference, isPlacementNode } from '../data/model';
 import { COLUMN_W, ROW_H, computeLayout, type CanvasLayout, type LayoutNode } from './layout';
 import { svgEl } from './dom';
 import { FONT_SCALE_EVENT, getFontScale } from './fontscale';
@@ -42,6 +42,7 @@ const READABLE_ZOOM = 0.72;
 interface Pointer { x: number; y: number }
 
 const COLORS: Record<string, string> = { common: 'var(--ag-ink)', '馬太': 'var(--ag-matthew)', '路加': 'var(--ag-luke)' };
+const EDGE_WIDTH: Record<string, number> = { mother: 1.1, descends: 1.4, list: 1.4, member: 1, kin: 1.1 };
 
 export function createCanvas(data: GenealogyData, onSelect: (person: Person) => void, onNote: (noteId: string) => void): CanvasApi {
   const svg = svgEl('svg', {
@@ -50,11 +51,12 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
   });
   const scene = svgEl('g', { class: 'ag-scene' });
   const segmentLayer = svgEl('g', { class: 'ag-segment-layer' });
+  const frameLayer = svgEl('g', { class: 'ag-frame-layer' });
   const edgeLayer = svgEl('g', { class: 'ag-edge-layer' });
   const overviewLayer = svgEl('g', { class: 'ag-overview-layer' });
   const nodeLayer = svgEl('g', { class: 'ag-node-layer' });
   const hudLayer = svgEl('g', { class: 'ag-overview-hud' });
-  scene.append(segmentLayer, edgeLayer, overviewLayer, nodeLayer, hudLayer);
+  scene.append(segmentLayer, frameLayer, edgeLayer, overviewLayer, nodeLayer, hudLayer);
   svg.append(scene);
   const graph = buildGraph(data);
   const expanded = new Set<string>();
@@ -259,6 +261,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     overviewMode = overview;
     scene.classList.toggle('ag-overview-on', overview);
     segmentLayer.style.display = overview ? '' : 'none';
+    frameLayer.style.display = overview ? 'none' : '';
     overviewLayer.style.display = overview ? '' : 'none';
     hudLayer.style.display = overview ? '' : 'none';
     if (overview) {
@@ -519,8 +522,43 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     }
   }
 
-  const nodeSubtitle = (person: Person) => person.qualifier || firstReference(person) ||
-    Object.entries(person.gen ?? {}).map(([line, generation]) => `${line} ${generation}代`).join('／') || person.id;
+  // 沿著大圖上的掛法往上，把路上每一層（「N 位子女」、旁支的根、名單牌子、區域）都打開
+  const openAncestors = (id: string) => {
+    let current = id;
+    const visited = new Set<string>();
+    while (!visited.has(current)) {
+      visited.add(current);
+      const parent = graph.treeParent.get(current);
+      if (!parent) break;
+      expanded.add(current);
+      if (graph.spineIds.has(parent)) {
+        for (const direction of [-1, 1]) {
+          const key = `siblings:${parent}:${direction}`;
+          const forest = layout.groups.find((node) => node.groupKey === key);
+          if (!forest || forest.groupMembers?.includes(current)) expanded.add(key);
+        }
+        break;
+      }
+      if (isPlacementNode(graph.byId.get(parent))) expanded.add(parent);
+      current = parent;
+    }
+  };
+  const nodeSubtitle = (person: Person) => isPlacementNode(person)
+    ? person.qualifier || '經文沒有寫和主線的關係'
+    : person.qualifier || firstReference(person) ||
+      Object.entries(person.gen ?? {}).map(([line, generation]) => `${line} ${generation}代`).join('／') || person.id;
+  // 名單牌子、區域、各家牌子：點了就展開或收合，不開人物卡
+  const togglePlacement = (id: string) => {
+    if (expanded.has(id)) {
+      expanded.delete(id);
+      refresh(true);
+      requestAnimationFrame(() => focusIds([id], true));
+    } else {
+      expanded.add(id);
+      refresh(true);
+      requestAnimationFrame(() => focusIds([id, ...(graph.children.get(id) ?? [])], true, READABLE_ZOOM));
+    }
+  };
   const renderNode = (node: LayoutNode) => {
     if (node.groupLabel && node.groupKey) {
       const group = svgEl('g', {
@@ -554,16 +592,20 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     }
     const person = graph.byId.get(node.id);
     if (!person) return null;
+    const plaque = isPlacementNode(person);
     const group = svgEl('g', {
-      class: `ag-node${node.mainline ? ' ag-node-main' : ' ag-node-side'} ag-node-route-${lineFor(person)}${node.collapsed ? ' ag-node-collapsed' : ''}`,
+      class: `ag-node${node.mainline ? ' ag-node-main' : ' ag-node-side'} ag-node-route-${lineFor(person)}${node.collapsed ? ' ag-node-collapsed' : ''}${plaque ? ` ag-node-plaque ag-node-plaque-${person.kind}` : ''}`,
       transform: `translate(${node.x} ${node.y})`,
       'data-id': node.id,
       role: 'button', tabindex: '0',
-      'aria-label': `${person.name}${node.collapsed ? `，展開 ${node.descendantCount ?? 0} 位後代` : ''}`,
+      'aria-label': plaque
+        ? `${person.name}，${node.expandedRoot ? '收合' : `展開 ${node.descendantCount ?? 0} 位`}`
+        : `${person.name}${node.collapsed ? `，展開 ${node.descendantCount ?? 0} 位後代` : ''}`,
+      ...(plaque ? { 'aria-expanded': String(Boolean(node.expandedRoot)) } : {}),
     });
     group.style.opacity = String(lineOpacity(lineFor(person)));
     const top = -node.height / 2;
-    const rect = svgEl('rect', { x: node.rectX, y: top, width: node.rectWidth, height: node.rectHeight, rx: node.mainline ? 8 : 6 });
+    const rect = svgEl('rect', { x: node.rectX, y: top, width: node.rectWidth, height: node.rectHeight, rx: plaque ? (person.kind === 'region' ? 14 : 3) : node.mainline ? 8 : 6 });
     const textX = node.rectX + node.rectWidth / 2;
     const primary = svgEl('text', { class: 'ag-node-label', 'text-anchor': 'middle', 'dominant-baseline': 'middle', x: textX, y: top + 16 });
     primary.textContent = person.name;
@@ -621,14 +663,15 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     group.addEventListener('click', (event) => {
       event.stopPropagation();
       if (didDrag) return;
-      if (node.collapsed) {
+      if (plaque) togglePlacement(node.id);
+      else if (node.collapsed) {
         expanded.add(node.id);
         refresh(true);
         requestAnimationFrame(() => focusIds([person.id, ...(graph.children.get(person.id) ?? [])], true, READABLE_ZOOM));
       } else onSelect(person);
     });
     group.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onSelect(person); }
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); if (plaque) togglePlacement(node.id); else onSelect(person); }
     });
     return group;
   };
@@ -662,6 +705,12 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     mainEdgeEls = new Map();
     edgeLayer.replaceChildren();
     nodeLayer.replaceChildren();
+    frameLayer.replaceChildren();
+    for (const frame of layout.regions) {
+      const box = svgEl('g', { class: 'ag-region-frame', 'data-region': frame.id });
+      box.append(svgEl('rect', { x: frame.x0, y: frame.y0, width: frame.x1 - frame.x0, height: frame.y1 - frame.y0, rx: 18 }));
+      frameLayer.append(box);
+    }
     buildOverview();
     const nodesById = new Map(allLayoutNodes().map((node) => [node.id, node]));
     for (const edge of layout.edges) {
@@ -672,7 +721,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
         class: `ag-edge ag-edge-${edge.kind}${a.mainline && b.mainline ? ' ag-edge-main' : ''}${traceEdges.has(`${edge.from}>${edge.to}>${edge.kind}`) ? ' ag-edge-traced' : ''}${tourEdgeKeys.has(edge.key) ? ' ag-edge-tour-lit' : ''}`,
         d: edgePath(a, b), 'data-from': edge.from, 'data-to': edge.to,
         stroke: COLORS[edge.line] ?? COLORS.common,
-        'stroke-width': tourEdgeKeys.has(edge.key) ? 4 : edge.kind === 'mother' ? 1.1 : edge.kind === 'descends' ? 1.4 : 1.7,
+        'stroke-width': tourEdgeKeys.has(edge.key) ? 4 : EDGE_WIDTH[edge.kind] ?? 1.7,
       });
       path.style.opacity = String(lineOpacity(edge.line));
       edgeLayer.append(path);
@@ -713,9 +762,11 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
         if (old) startPositions.set(node.id, { x: old.x, y: old.y });
         else if (node.sideRoot) {
           const root = previousNodes.get(node.sideRoot);
-          const rootPerson = graph.byId.get(node.sideRoot);
-          const parent = rootPerson?.parents?.map((relation) => previousNodes.get(relation.id)).find(Boolean);
-          const origin = root ?? parent;
+          // 從大圖上的上一層長出來（父親、牌子或區域）
+          let upward = graph.treeParent.get(node.id);
+          while (upward && !previousNodes.has(upward)) upward = graph.treeParent.get(upward);
+          const parent = upward ? previousNodes.get(upward) : undefined;
+          const origin = parent ?? root;
           if (origin) startPositions.set(node.id, { x: origin.x, y: origin.y });
         }
       }
@@ -914,46 +965,32 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       refresh();
     },
     expandFor(id) {
-      let current = id;
-      const visited = new Set<string>();
-      while (!visited.has(current)) {
-        visited.add(current);
-        const group = layout.groups.find((node) => node.groupKey && node.groupMembers?.includes(current));
-        if (group?.groupKey) {
-          expanded.add(group.groupKey);
-          expanded.add(current);
-        }
-        if (layout.nodes.some((node) => node.id === current && node.collapsed)) expanded.add(current);
-        const person = graph.byId.get(current);
-        const parent = person?.parents?.find((item) => graph.spineIds.has(item.id)) ?? person?.parents?.[0] ?? person?.descends?.[0];
-        if (!parent) break;
-        current = parent.id;
-      }
+      openAncestors(id);
       refresh(true);
     },
     expandPath(ids) {
-      const pathIds = new Set(ids);
-      for (const startId of ids) {
-        let current = startId;
-        const visited = new Set<string>();
-        while (!visited.has(current)) {
-          visited.add(current);
-          const group = layout.groups.find((node) => node.groupKey && node.groupMembers?.includes(current));
-          if (group?.groupKey) {
-            expanded.add(group.groupKey);
-            expanded.add(current);
-          }
-          if (layout.nodes.some((node) => node.id === current && node.collapsed)) expanded.add(current);
-          const person = graph.byId.get(current);
-          const relation = [...(person?.parents ?? []), ...(person?.descends ?? [])].find((item) => pathIds.has(item.id));
-          if (!relation) break;
-          current = relation.id;
-        }
-      }
+      for (const id of ids) openAncestors(id);
       refresh(true);
     },
     expandFamily(id) {
-      const family = [...(data.families ?? []), ...(data.ntFamilies ?? [])].find((item) => item.id === id);
+      // 新約家族：大圖上有那一家的牌子就打開牌子；整家都接到主線的，就打開每個人所在的位置
+      const plaque = (data.placements?.nodes ?? []).find((node) => node.kind === 'family' && node.family === id);
+      if (plaque) {
+        openAncestors(plaque.id);
+        expanded.add(plaque.id);
+        refresh(true);
+        focusIds([plaque.id, ...(graph.children.get(plaque.id) ?? [])], true);
+        return;
+      }
+      const ntFamily = (data.ntFamilies ?? []).find((item) => item.id === id);
+      if (ntFamily) {
+        const members = (ntFamily.members ?? []).filter((member) => graph.byId.has(member));
+        for (const member of members) openAncestors(member);
+        refresh(true);
+        focusIds(members, true);
+        return;
+      }
+      const family = (data.families ?? []).find((item) => item.id === id);
       const targets = family?.roots ?? family?.members ?? (graph.byId.has(id) ? [id] : []);
       const directRoots = new Set(branchRoots(data, graph).map(({ rootId }) => rootId));
       const focus = new Set<string>();
@@ -980,6 +1017,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       focusIds([...focus], true);
     },
     expandAll() {
+      for (const node of data.placements?.nodes ?? []) expanded.add(node.id);
       const roots = branchRoots(data, graph);
       const counts = new Map<string, number>();
       for (const { parentId, rootId } of roots) {

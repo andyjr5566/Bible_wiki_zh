@@ -3,7 +3,7 @@ import { h } from './dom';
 import { createSearch } from './search';
 import { FONT_SCALES, getFontScale, setFontScale } from './fontscale';
 
-export type PageId = 'tree' | 'compare' | 'ages' | 'notes' | 'families' | 'unconnected';
+export type PageId = 'tree' | 'compare' | 'ages' | 'notes';
 export type LineFilter = 'both' | '馬太' | '路加';
 
 export interface ToolbarActions {
@@ -28,7 +28,7 @@ export function createToolbar(data: GenealogyData, actions: ToolbarActions): { e
     lineGroup.append(button);
   }
   const tabs: Array<[PageId, string]> = [
-    ['tree', '家譜樹'], ['compare', '兩條線對照'], ['ages', '年歲時間軸'], ['notes', '經文不同的地方'], ['families', '新約家族'], ['unconnected', '接不上主線的家族'],
+    ['tree', '家譜樹'], ['compare', '兩條線對照'], ['ages', '年歲時間軸'], ['notes', '經文不同的地方'],
   ];
   const tabButtons = new Map<PageId, HTMLButtonElement>();
   const tabBar = h('nav', { className: 'ag-tabs', 'aria-label': '家譜檢視' });

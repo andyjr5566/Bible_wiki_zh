@@ -7,14 +7,13 @@ export interface CardActions {
   tree(id: string): void;
   verse(ref: string): void;
   trace(id: string): void;
-  family(id: string): void;
   note(id: string): void;
 }
 
 export interface PersonCard {
   el: HTMLElement;
   show(person: Person | null, treeTargetId?: string | null): void;
-  setTraceMessage(message: string, unknownGenerations?: boolean, showFamilyLink?: boolean): void;
+  setTraceMessage(message: string, unknownGenerations?: boolean): void;
 }
 
 export function createPersonCard(data: GenealogyData, actions: CardActions): PersonCard {
@@ -26,7 +25,6 @@ export function createPersonCard(data: GenealogyData, actions: CardActions): Per
   let current: Person | null = null;
   let traceMessage = '';
   let unknownGenerations = false;
-  let showFamilyLink = false;
   const close = el.querySelector<HTMLButtonElement>('.ag-card-close')!;
   close.addEventListener('click', () => show(null));
 
@@ -73,7 +71,6 @@ export function createPersonCard(data: GenealogyData, actions: CardActions): Per
     current = person;
     traceMessage = '';
     unknownGenerations = false;
-    showFamilyLink = false;
     body.replaceChildren();
     if (!person) {
       el.classList.remove('ag-card-open');
@@ -197,21 +194,16 @@ export function createPersonCard(data: GenealogyData, actions: CardActions): Per
         h('a', { href: `${WIKI_BASE}/link_folder/${parts.join('/')}`, target: '_blank', rel: 'noopener noreferrer' }, '查看完整條目（另開網頁）'));
       body.append(section);
     }
-    const familyButton = button('看他所在的家族', () => actions.family(person.id), 'ag-text-button ag-trace-family');
-    familyButton.hidden = !showFamilyLink;
     body.append(h('div', { className: 'ag-trace-box' },
       h('p', { className: 'ag-trace-message' }, traceMessage),
-      button('往上追到亞當', () => actions.trace(person.id), 'ag-primary-button'), familyButton));
+      button('往上追到亞當', () => actions.trace(person.id), 'ag-primary-button')));
     if (unknownGenerations) body.querySelector('.ag-trace-message')!.textContent = '這一段經文只說是後裔，沒有寫代數。';
   };
-  const setTraceMessage = (message: string, unknown = false, showFamilyLinkValue = false) => {
+  const setTraceMessage = (message: string, unknown = false) => {
     traceMessage = message;
     unknownGenerations = unknown;
-    showFamilyLink = showFamilyLinkValue;
     const messageEl = body.querySelector<HTMLElement>('.ag-trace-message');
     if (messageEl) messageEl.textContent = unknown ? '這一段經文只說是後裔，沒有寫代數。' : message;
-    const familyButton = body.querySelector<HTMLButtonElement>('.ag-trace-family');
-    if (familyButton) familyButton.hidden = !showFamilyLink;
   };
   show(current);
   return { el, show, setTraceMessage };

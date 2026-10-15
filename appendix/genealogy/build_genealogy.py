@@ -2683,6 +2683,8 @@ class LineageBuilder:
         self._validate_families()
         self._validate_tour()
         self._validate_name_meanings()
+        self.placement_data = self._yaml("大圖安置.yaml", {}) or {}
+        self.placements = self._compute_placements()
 
     def err(self, where: str, msg: str) -> None:
         self.errors.append(f"[{where}] {msg}")
@@ -3857,10 +3859,197 @@ class LineageBuilder:
                 links.append(f"[[{page}#{person['anchor']}|族譜頁]]")
             out.append(f"| {family.get('title', family.get('id', ''))} | {self._family_count(roots)} | "
                        f"{family.get('intro', '')} | {'、'.join(links)} |")
-        unattached = len(self.unattached_people())
-        out += ["", f"另有 {unattached} 位經文沒有交代與主線關係的人（多半是歷代志上各支派名單的源頭），"
-                "在網站的『接不上主線的家族』裡。", ""]
+        lists = sum(1 for node in self.placements.get("nodes", []) if node.get("kind") == "list")
+        out += ["", f"經文只把一些人列在某段名單裡，沒有交代接在誰底下（多半是歷代志上各支派的名單）。"
+                f"網站的大圖把這些名單做成 {lists} 塊名單牌子，用點線掛在該段經文所屬的支派或人物底下；"
+                "經文沒有寫家譜的人（例如北國以色列的王、新約裡的一些家庭），放在同時代的主線人物旁邊，"
+                "不畫連到主線的線。", ""]
         return out
+
+    def _tree_parents(self) -> dict[str, str]:
+        """網站大圖上每人只掛一處（和網站 buildGraph 同一條規則）：先父親，沒有父親才看母親，
+        都沒有才看後裔（代數不詳）的對象。主線上的人由主線排版，不在這裡掛。"""
+        spine = set(self.lines.get("馬太", [])) | set(self.lines.get("路加", []))
+        result: dict[str, str] = {}
+        for pid, person in self.people.items():
+            if pid in spine:
+                continue
+            parents = person.get("parents", []) or []
+            father = next((r for r in parents if r.get("role") != "母" and r.get("id") in self.people), None)
+            mother = next((r for r in parents if r.get("role") == "母" and r.get("id") in self.people), None)
+            descend = next((r for r in person.get("descends", []) or [] if r.get("id") in self.people), None)
+            chosen = father or mother or descend
+            if chosen and str(chosen["id"]) != pid:
+                result[pid] = str(chosen["id"])
+        return result
+
+    def _compute_placements(self) -> dict:
+        """把主線往下接不到的家族，依 大圖安置.yaml 的規則放上網站大圖。
+        回傳 {"nodes": 牌子與區域, "items": 每一家的根掛在哪裡、靠哪條經文關係}。"""
+        where = "大圖安置.yaml"
+        spine = set(self.lines.get("馬太", [])) | set(self.lines.get("路加", []))
+        if not spine:
+            return {"nodes": [], "items": []}
+        tree_parent = self._tree_parents()
+        tree_children: dict[str, list[str]] = defaultdict(list)
+        for child, parent in tree_parent.items():
+            tree_children[parent].append(child)
+        drawn, stack = set(spine), list(spine)
+        while stack:
+            for child in tree_children.get(stack.pop(), []):
+                if child not in drawn:
+                    drawn.add(child)
+                    stack.append(child)
+
+        def top(pid: str) -> str:
+            seen = set()
+            while pid in tree_parent and pid not in seen:
+                seen.add(pid)
+                pid = tree_parent[pid]
+            return pid
+        order = {pid: index for index, pid in enumerate(self.people)}
+        groups: dict[str, list[str]] = defaultdict(list)
+        for pid in self.people:
+            if pid not in drawn:
+                groups[top(pid)].append(pid)
+        roots_in_order = sorted(groups, key=lambda pid: order[pid])
+
+        # 每個人經文寫明的家人（雙向）：kind 是畫在圖上的那條線
+        links: dict[str, list[tuple[str, str]]] = defaultdict(list)
+        for pid, person in self.people.items():
+            for relation in person.get("parents", []) or []:
+                other = str(relation.get("id", ""))
+                if other in self.people and other != pid:
+                    kind = "mother" if relation.get("role") == "母" else "parent"
+                    links[pid].append((kind, other))
+                    links[other].append((kind, pid))
+            for field, kind in (("spouses", "spouse"), ("siblings", "sibling"), ("kin", "kin"), ("descends", "descends")):
+                for relation in person.get(field, []) or []:
+                    other = str(relation.get("id", ""))
+                    if other in self.people and other != pid:
+                        links[pid].append((kind, other))
+                        links[other].append((kind, pid))
+        rank = {"parent": 0, "mother": 0, "spouse": 1, "sibling": 2, "kin": 3, "descends": 4}
+        placed: dict[str, dict] = {}
+        nodes: list[dict] = []
+
+        def place(root: str, under: str, via: dict | None = None, side: str = "same") -> None:
+            placed[root] = {"root": root, "under": under, "via": via, "side": side}
+            drawn.update(groups[root])
+
+        def settle_relations() -> None:
+            changed = True
+            while changed:
+                changed = False
+                for root in roots_in_order:
+                    if root in placed:
+                        continue
+                    best = None
+                    for member in groups[root]:
+                        for kind, other in links.get(member, []):
+                            if other not in drawn or other in groups[root]:
+                                continue
+                            # 先選主線上的人（一打開網站就看得到），再依關係遠近
+                            key = (0 if other in spine else 1, rank[kind], order[other], order[member])
+                            if best is None or key < best[0]:
+                                best = (key, kind, member, other)
+                    if best:
+                        _, kind, member, other = best
+                        # 母親、妻子放在那人的另一側，不和子女排在一起
+                        mother_of_other = any(r.get("id") == member for r in self.people[other].get("parents", []) or [])
+                        side = "opposite" if kind == "spouse" or mother_of_other else "same"
+                        place(root, other, {"from": member, "to": other, "kind": kind}, side)
+                        changed = True
+
+        settle_relations()
+        anchors_known = {str(p.get("anchor")) for p in self.people.values() if p.get("anchor")}
+        for index, item in enumerate(self.placement_data.get("lists", []) or []):
+            iwhere = f"{where}.lists#{index + 1}"
+            anchor, title, under = str(item.get("anchor", "")), str(item.get("title", "")).strip(), str(item.get("under", ""))
+            if anchor not in anchors_known:
+                self.err(iwhere, f"找不到這個段落標題：{anchor}")
+            if not title:
+                self.err(iwhere, "title 不能空白")
+            if under not in self.people:
+                self.err(iwhere, f"under 人物不存在：{under}")
+            elif under not in drawn:
+                self.err(iwhere, f"under 不在大圖上：{under}")
+            self.refs(str(item.get("ref", "")), iwhere + ".ref")
+            self.refs(str(item.get("basis", "")), iwhere + ".basis")
+            node_id = f"名單:{title}"
+            chosen = [str(r) for r in item.get("roots", []) or []]
+            for root in chosen:
+                if root not in groups:
+                    self.err(iwhere, f"roots 不是一家的源頭：{root}")
+            members = []
+            for root in roots_in_order:
+                if root in placed:
+                    continue
+                if chosen and root not in chosen:
+                    continue
+                if any(self.people[pid].get("anchor") == anchor for pid in groups[root]):
+                    members.append(root)
+            if not members:
+                self.err(iwhere, f"這塊牌子沒有收到任何人：{title}")
+                continue
+            nodes.append({"id": node_id, "kind": "list", "title": title, "ref": str(item.get("ref", "")),
+                          "under": under, "basis": str(item.get("basis", ""))})
+            for root in members:
+                place(root, node_id)
+        settle_relations()
+
+        nt_family_of = {str(pid): str(family.get("id")) for family in self.data.get("nt_families", []) or []
+                        for pid in family.get("members", []) or []}
+        nt_titles = {str(family.get("id")): family for family in self.data.get("nt_families", []) or []}
+        for index, region in enumerate(self.placement_data.get("regions", []) or []):
+            rwhere = f"{where}.regions#{index + 1}"
+            title, near = str(region.get("title", "")).strip(), str(region.get("near", ""))
+            if near not in spine:
+                self.err(rwhere, f"near 必須是主線上的人：{near}")
+                continue
+            region_id = f"區域:{title}"
+            nodes.append({"id": region_id, "kind": "region", "title": title, "ref": "", "under": near, "basis": ""})
+            for root in region.get("roots", []) or []:
+                root = str(root)
+                if root not in groups:
+                    self.err(rwhere, f"roots 不是一家的源頭：{root}")
+                elif root not in placed:
+                    place(root, region_id)
+            plaques: list[tuple[str, str, list[str], str]] = []
+            if region.get("nt_families"):
+                extra = {str(k): [str(r) for r in v or []] for k, v in (region.get("family_roots") or {}).items()}
+                for family_id, family in nt_titles.items():
+                    roots = [root for root in roots_in_order if root not in placed
+                             and any(nt_family_of.get(pid) == family_id for pid in groups[root])]
+                    for root in extra.get(family_id, []):
+                        if root not in groups:
+                            self.err(rwhere, f"family_roots 不是一家的源頭：{root}")
+                        elif root not in placed and root not in roots:
+                            roots.append(root)
+                    first_ref = re.split(r"[、，,。]", str(family.get("intro", "")))[0].strip()
+                    title_override = (region.get("family_titles") or {}).get(family_id)
+                    plaques.append((str(title_override or family.get("title", family_id)), first_ref, roots, family_id))
+            for plaque in region.get("plaques", []) or []:
+                self.refs(str(plaque.get("ref", "")), rwhere + ".plaques.ref")
+                plaques.append((str(plaque.get("title", "")).strip(), str(plaque.get("ref", "")),
+                                [str(r) for r in plaque.get("roots", []) or []], ""))
+            for plaque_title, plaque_ref, roots, family_id in plaques:
+                roots = [root for root in roots if root in groups and root not in placed]
+                if not roots:
+                    continue
+                plaque_id = f"家庭:{plaque_title}"
+                nodes.append({"id": plaque_id, "kind": "family", "title": plaque_title, "ref": plaque_ref,
+                              "under": region_id, "basis": "", "family": family_id})
+                for root in roots:
+                    place(root, plaque_id)
+            settle_relations()
+
+        left = [root for root in roots_in_order if root not in placed]
+        if left:
+            sample = "、".join(f"{display(root)}（{len(groups[root])} 人）" for root in left[:20])
+            self.err(where, f"還有 {len(left)} 家沒有放上大圖：{sample}{'…' if len(left) > 20 else ''}")
+        items = [placed[root] for root in roots_in_order if root in placed]
+        return {"nodes": nodes, "items": items}
 
     def unattached_people(self) -> set[str]:
         """網站「接不上主線的家族」分頁收的人（網站用同一條規則）：
@@ -4107,7 +4296,7 @@ class LineageBuilder:
             "persons": persons, "spine": {"segments": segments, "lines": self.lines},
             "witnesses": [{k: v for k, v in witness.items() if not k.startswith("_")} for witness in self.witnesses],
             "ages": self.ages_result, "notes": self.notes, "tour": self.tour,
-            "unattached": sorted(self.unattached_people()),
+            "placements": self.placements,
             "families": [{"id": family.get("id"), "title": family.get("title"),
                           "roots": family.get("roots", []), "count": self._family_count(family.get("roots", [])),
                           "intro": family.get("intro", "")} for family in self.data.get("families", []) or []],

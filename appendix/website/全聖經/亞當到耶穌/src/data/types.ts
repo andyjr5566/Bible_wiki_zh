@@ -162,9 +162,33 @@ export interface Family {
   [key: string]: unknown;
 }
 
+/** 大圖上的名單牌子（list）、同時代區域（region）、區域裡各家的牌子（family）。 */
+export interface PlacementNode {
+  id: string;
+  kind: 'list' | 'region' | 'family';
+  title: string;
+  ref: string;
+  under: string;
+  basis: string;
+  family?: string;
+}
+
+/** 主線往下接不到的一家，掛在哪裡；via 是畫在圖上的那條經文關係。 */
+export interface PlacementItem {
+  root: string;
+  under: string;
+  via: { from: string; to: string; kind: 'parent' | 'mother' | 'spouse' | 'sibling' | 'kin' | 'descends' } | null;
+  side: 'same' | 'opposite';
+}
+
+export interface Placements {
+  nodes: PlacementNode[];
+  items: PlacementItem[];
+}
+
 export interface GenealogyData {
   persons: Person[];
-  unattached?: string[];
+  placements?: Placements;
   spine: Spine;
   witnesses: Witness[];
   ages: Ages;

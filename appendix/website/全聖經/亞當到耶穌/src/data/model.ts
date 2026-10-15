@@ -1,6 +1,6 @@
 import source from './genealogy.json';
 import verseSource from './verses.json';
-import type { GenealogyData, Person, Relation, VerseMap } from './types';
+import type { GenealogyData, Person, PlacementItem, PlacementNode, Relation, VerseMap } from './types';
 
 export const DATA = source as unknown as GenealogyData;
 export const VERSES = verseSource as VerseMap;
@@ -57,40 +57,77 @@ export function verseText(ref: string, verses: VerseMap = VERSES): string | null
 export const WIKI_BASE = ((import.meta.env?.VITE_WIKI_BASE as string | undefined) ||
   'https://andyjr5566.github.io/Bible_wiki_zh_website').replace(/\/+$/, '');
 
+export type PlacedKind = PlacementNode['kind'] | 'link';
+
 export interface PersonGraph {
   byId: Map<string, Person>;
   children: Map<string, string[]>;
   spineIds: Set<string>;
+  /** 每個節點在大圖上掛在誰底下（主線上的人不在這裡）。 */
+  treeParent: Map<string, string>;
+  /** 經由大圖安置掛上去的節點：名單牌子、區域、各家牌子，以及各家的根。 */
+  placed: Map<string, { kind: PlacedKind; side: PlacementItem['side']; via: PlacementItem['via'] }>;
+}
+
+const PLACEMENT_KINDS = new Set(['list', 'region', 'family']);
+/** 名單牌子、同時代區域、區域裡各家的牌子：在畫布上是可以展開收合的標示，不是人物。 */
+export const isPlacementNode = (person: Person | undefined | null): boolean => Boolean(person && PLACEMENT_KINDS.has(String(person.kind)));
+
+function placementPerson(node: PlacementNode): Person {
+  return {
+    id: node.id, name: node.title, qualifier: node.ref, kind: node.kind, names: [], parents: [], spouses: [], siblings: [],
+    kin: [], descends: [], desc: null, note: null, entry: null, entryGloss: '', gen: {}, lines: [], marks: [], notes: [],
+    imported: null, anchor: null, ...(node.family ? { family: node.family } : {}),
+  };
 }
 
 export function buildGraph(data: GenealogyData): PersonGraph {
   const byId = new Map(data.persons.map((person) => [person.id, person]));
+  for (const node of data.placements?.nodes ?? []) byId.set(node.id, placementPerson(node));
   const children = new Map<string, string[]>();
+  const treeParent = new Map<string, string>();
   const addChild = (parentId: string, childId: string) => {
     if (!byId.has(parentId) || !byId.has(childId) || parentId === childId) return;
     const items = children.get(parentId) ?? [];
     if (!items.includes(childId)) items.push(childId);
     children.set(parentId, items);
+    treeParent.set(childId, parentId);
   };
   const spineIds = new Set(Object.values(data.spine.lines).flat());
   // 樹的連線每人只掛一處，避免同一個孩子同時出現在父親和母親底下、後代數重複計算：
   // 優先掛父親；經文沒記父親才掛母親；都沒有才用「後裔（代數不詳）」。
   // 主線上的人只掛在主線的父親底下（由主線版面處理），這裡不再掛到旁支。
-  // 其餘的父母、後裔關係照樣在資訊卡列出。
+  // 其餘的父母、後裔關係照樣在資訊卡列出。（和匯出程式 _tree_parents 同一條規則）
   for (const person of data.persons) {
     const parents = person.parents ?? [];
-    const father = parents.find((relation) => relation.role !== '母');
-    const mother = parents.find((relation) => relation.role === '母');
-    const descend = (person.descends ?? [])[0];
-    const treeParent = father ?? mother ?? descend;
-    if (!treeParent) continue;
+    const father = parents.find((relation) => relation.role !== '母' && byId.has(relation.id));
+    const mother = parents.find((relation) => relation.role === '母' && byId.has(relation.id));
+    const descend = (person.descends ?? []).find((relation) => byId.has(relation.id));
+    const parent = father ?? mother ?? descend;
+    if (!parent) continue;
     if (spineIds.has(person.id)) {
-      if (father) addChild(father.id, person.id);
+      if (father) {
+        const items = children.get(father.id) ?? [];
+        if (!items.includes(person.id)) items.push(person.id);
+        children.set(father.id, items);
+      }
       continue;
     }
-    addChild(treeParent.id, person.id);
+    addChild(parent.id, person.id);
   }
-  return { byId, children, spineIds };
+  // 主線往下接不到的家族：照匯出時決定的位置掛上去（排在真正的子女後面）
+  const placed: PersonGraph['placed'] = new Map();
+  for (const node of data.placements?.nodes ?? []) {
+    addChild(node.under, node.id);
+    placed.set(node.id, { kind: node.kind, side: 'same', via: null });
+  }
+  for (const item of data.placements?.items ?? []) {
+    if (treeParent.has(item.root)) continue;
+    addChild(item.under, item.root);
+    const under = byId.get(item.under);
+    placed.set(item.root, { kind: isPlacementNode(under) ? (under!.kind as PlacedKind) : 'link', side: item.side, via: item.via });
+  }
+  return { byId, children, spineIds, treeParent, placed };
 }
 
 // 資訊卡的「子女」：父母記載裡有這個人的都算（不論父親或母親），和畫布的樹（每人只掛一處）不同。

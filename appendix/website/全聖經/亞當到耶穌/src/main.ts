@@ -1,16 +1,14 @@
 import './styles.css';
-import { DATA, VERSES, buildGraph, lookupVerses, makeSyntheticData, pathToFirstAncestor } from './data/model';
+import { DATA, VERSES, buildGraph, isPlacementNode, lookupVerses, makeSyntheticData, pathToFirstAncestor } from './data/model';
 import type { GenealogyData, GenealogyNote, Person } from './data/types';
 import { createAges } from './ui/ages';
 import { createCanvas, type CanvasApi } from './ui/canvas';
 import { createCompare } from './ui/compare';
 import { createPersonCard, type PersonCard } from './ui/card';
 import { button, h } from './ui/dom';
-import { createNTFamilies } from './ui/ntfamilies';
 import { createNotes } from './ui/notes';
 import { createToolbar, type LineFilter, type PageId } from './ui/toolbar';
 import { createTour } from './ui/tour';
-import { createUnconnectedFamilies } from './ui/unconnected';
 
 const synthetic = import.meta.env.DEV && new URLSearchParams(location.search).get('synthetic') === '1';
 const data: GenealogyData = synthetic ? makeSyntheticData() : DATA;
@@ -78,14 +76,11 @@ canvas = createCanvas(data, selectPerson, openNote);
 card = createPersonCard(data, {
   select: (id) => {
     const person = graph.byId.get(id);
-    if (!person) return;
-    if (page === 'families' || page === 'unconnected') showFamilyPagePerson(person);
-    else selectPerson(person);
+    if (person) selectPerson(person);
   },
   tree: focusTreeTarget,
   verse: openVerse,
   trace: traceToAdam,
-  family: openPersonFamily,
   note: openNote,
 });
 
@@ -96,7 +91,8 @@ const treePage = h('section', { className: 'ag-workspace ag-page-view', 'data-pa
         h('span', {}, h('i', { className: 'ag-dot ag-dot-common' }), '共同主線'),
         h('span', {}, h('i', { className: 'ag-dot ag-dot-matthew' }), '馬太'),
         h('span', {}, h('i', { className: 'ag-dot ag-dot-luke' }), '路加'),
-        h('span', {}, h('i', { className: 'ag-dot ag-dot-side' }), '旁支')),
+        h('span', {}, h('i', { className: 'ag-dot ag-dot-side' }), '旁支'),
+        h('span', {}, h('i', { className: 'ag-legend-line ag-legend-list' }), '只列在名單裡')),
       h('div', { className: 'ag-canvas-hint' }, '拖曳移動畫布 · 滾輪縮放 · 觸控可平移與雙指縮放'))));
 const comparePage = createCompare(data, (id) => {
   const person = graph.byId.get(id);
@@ -110,37 +106,9 @@ const notesPage = createNotes(data, VERSES, (id) => {
   const person = graph.byId.get(id);
   if (person) selectPerson(person);
 }, openVerse);
-const familiesPage = createNTFamilies(data, (id, groupId) => {
-  const person = graph.byId.get(id);
-  if (person) showFamilyPagePerson(person, groupId);
-});
-const unconnectedFamiliesPage = createUnconnectedFamilies(data, (id, groupId) => {
-  const person = graph.byId.get(id);
-  if (person) showFamilyPagePerson(person, groupId);
-});
 const pageNodes = new Map<PageId, HTMLElement>([
-  ['tree', treePage], ['compare', comparePage], ['ages', agesPage], ['notes', notesPage], ['families', familiesPage.el], ['unconnected', unconnectedFamiliesPage.el],
+  ['tree', treePage], ['compare', comparePage], ['ages', agesPage], ['notes', notesPage],
 ]);
-
-let activeFamilyGroup: string | null = null;
-let activeFamilyPage: PageId | null = null;
-
-function familyPageController(id: PageId) {
-  return id === 'families' ? familiesPage : id === 'unconnected' ? unconnectedFamiliesPage : null;
-}
-
-function showFamilyPagePerson(person: Person, suppliedGroupId?: string) {
-  const controller = familyPageController(page);
-  if (!controller) return;
-  const groupId = suppliedGroupId ?? controller.groupIdFor(person.id);
-  if (groupId && (activeFamilyPage !== page || activeFamilyGroup !== groupId)) controller.focusPerson(person.id);
-  controller.highlightPerson(groupId ? person.id : null);
-  activeFamilyPage = page;
-  activeFamilyGroup = groupId;
-  activeCardPerson = person;
-  card.show(person, treeTargetForPerson(person));
-  history.replaceState(null, '', `${location.pathname}${location.search}#p=${encodeURIComponent(person.id)}`);
-}
 
 function focusTreeTarget(id: string) {
   const target = graph.byId.get(id);
@@ -153,82 +121,10 @@ function focusTreeTarget(id: string) {
   if (activeCardPerson) history.replaceState(null, '', `${location.pathname}${location.search}#p=${encodeURIComponent(activeCardPerson.id)}`);
 }
 
-function treeTargetForPerson(person: Person): string | null {
-  const reachesSpine = (id: string) => graph.spineIds.has(id) || Boolean(pathToFirstAncestor(id, data, graph)?.ids.some((pathId) => graph.spineIds.has(pathId)));
-  if (reachesSpine(person.id)) return person.id;
-
-  const motherOf = data.persons.find((candidate) => reachesSpine(candidate.id) && (
-    candidate.parents?.some((parent) => parent.id === person.id && /母|mother/i.test(parent.role ?? '')) ||
-    candidate.mother_name === person.name || candidate.mother_name === person.id));
-  if (motherOf) return motherOf.id;
-
-  const spouse = person.spouses?.find((relation) => reachesSpine(relation.id));
-  if (spouse) return spouse.id;
-  const reverseSpouse = data.persons.find((candidate) => reachesSpine(candidate.id) && candidate.spouses?.some((relation) => relation.id === person.id));
-  return reverseSpouse?.id ?? null;
-}
-
-function openPersonFamily(id: string) {
-  card.show(null);
-  activeCardPerson = null;
-  activeFamilyGroup = null;
-  activeFamilyPage = null;
-  if (unconnectedFamiliesPage.hasPerson(id)) {
-    page = 'unconnected';
-    applyPage();
-    unconnectedFamiliesPage.focusPerson(id);
-    return;
-  }
-  const family = (data.ntFamilies ?? []).find((item) => item.members?.includes(id) || item.roots?.includes(id));
-  if (family) {
-    page = 'families';
-    applyPage();
-    familiesPage.focusPerson(id);
-    return;
-  }
-  page = 'unconnected';
-  applyPage();
-}
-
-function chooseSearchPerson(person: Person) {
-  if (unconnectedFamiliesPage.hasPerson(person.id)) {
-    page = 'unconnected';
-    applyPage();
-    activeFamilyGroup = null;
-    activeFamilyPage = null;
-    showFamilyPagePerson(person);
-    return;
-  }
-  if (familiesPage.hasPerson(person.id)) {
-    page = 'families';
-    applyPage();
-    activeFamilyGroup = null;
-    activeFamilyPage = null;
-    showFamilyPagePerson(person);
-    return;
-  }
-  selectPerson(person);
-}
-
+// 每個人在大圖上都有自己的節點（經文只列在名單裡的，掛在名單牌子底下）
 function focusIdForPerson(person: Person): string | null {
   canvas.expandFor(person.id);
-  if (canvas.layoutNow().nodes.some((node) => node.id === person.id)) return person.id;
-
-  const childThroughMother = data.persons.find((candidate) =>
-    candidate.parents?.some((parent) => parent.id === person.id && parent.role === '母') ||
-    candidate.mother_name === person.name || candidate.mother_name === person.id);
-  const childId = childThroughMother?.id ?? graph.children.get(person.id)?.[0];
-  if (childId) {
-    canvas.expandFor(childId);
-    return childId;
-  }
-
-  const spouseId = person.spouses?.[0]?.id;
-  if (spouseId) {
-    canvas.expandFor(spouseId);
-    return spouseId;
-  }
-  return null;
+  return canvas.layoutNow().nodes.some((node) => node.id === person.id) ? person.id : null;
 }
 
 function applyPage() {
@@ -237,12 +133,10 @@ function applyPage() {
 }
 
 const toolbar = createToolbar(data, {
-  selectPerson: chooseSearchPerson,
+  selectPerson,
   setPage(id) {
     if (id !== page) {
       activeCardPerson = null;
-      activeFamilyGroup = null;
-      activeFamilyPage = null;
       card.show(null);
     }
     page = id;
@@ -283,6 +177,8 @@ function applyDeepLink() {
     tour.stop(false);
     page = 'tree';
     applyPage();
+    activeCardPerson = null;
+    card.show(null);
     canvas.expandFamily(id);
   }
 }
@@ -303,11 +199,16 @@ function traceToAdam(id: string) {
   if (!route) {
     canvas.expandFor(id);
     canvas.setTrace([], []);
-    const unattached = data.unattached?.includes(id) ?? false;
-    const message = !person.parents?.length && !unattached
-      ? '經文沒有記載他的父母。'
-      : '經文沒有記載他和主線的關係。';
-    card.setTraceMessage(message, false, unattached);
+    // 往上找他掛在哪一塊名單牌子底下
+    let upward = graph.treeParent.get(id);
+    while (upward && !isPlacementNode(graph.byId.get(upward))) upward = graph.treeParent.get(upward);
+    const holder = upward ? graph.byId.get(upward) : undefined;
+    const message = holder?.kind === 'list'
+      ? `經文把他列在『${holder.name}』這段名單裡，沒有寫他接在哪一代底下。`
+      : !person.parents?.length && !holder
+        ? '經文沒有記載他的父母。'
+        : '經文沒有記載他和主線的關係。';
+    card.setTraceMessage(message, false);
     const focusId = focusIdForPerson(person);
     if (focusId) canvas.focusPerson(focusId, true);
     return;

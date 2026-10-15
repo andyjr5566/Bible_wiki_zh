@@ -1,5 +1,5 @@
 import { hierarchy, tree } from 'd3-hierarchy';
-import { branchRoots, buildGraph, firstReference } from '../data/model';
+import { branchRoots, buildGraph, firstReference, isPlacementNode } from '../data/model';
 import type { GenealogyData, Person } from '../data/types';
 
 export const MAIN_NODE_W = 96;
@@ -39,7 +39,7 @@ export interface LayoutNode {
 export interface LayoutEdge {
   from: string;
   to: string;
-  kind: 'parent' | 'mother' | 'descends';
+  kind: 'parent' | 'mother' | 'descends' | 'list' | 'member' | 'kin';
   line: string;
   key: string;
 }
@@ -48,6 +48,7 @@ export interface CanvasLayout {
   nodes: LayoutNode[];
   groups: LayoutNode[];
   edges: LayoutEdge[];
+  regions: Array<{ id: string; title: string; x0: number; y0: number; x1: number; y1: number }>;
   segments: Array<{ title: string; y0: number; y1: number; line: string; labelX: number }>;
   bounds: { x: number; y: number; width: number; height: number };
   durationMs: number;
@@ -78,6 +79,7 @@ interface BranchPlacement {
   groupMembers?: string[];
   groupLine?: string;
   groupParentId?: string;
+  inGroup?: boolean;
   metrics: NodeMetrics;
 }
 
@@ -131,6 +133,14 @@ function nodeMetrics(person: Person, mainline: boolean, control = false): NodeMe
   };
 }
 
+// 名單牌子與區域：標題較長，下面一行是經節範圍
+function plaqueMetrics(person: Person, control: boolean): NodeMetrics {
+  const rectWidth = Math.max(SIDE_NODE_W + 24, Math.ceil(Math.max(textWidth(person.name, 14), textWidth(person.qualifier ?? '', 11)) + 36));
+  const rectHeight = person.kind === 'region' ? 54 : 48;
+  const extraWidth = control ? 24 : 0;
+  return { width: rectWidth + extraWidth, height: rectHeight, rectX: -((rectWidth + extraWidth) / 2), rectWidth, rectHeight };
+}
+
 function groupNodeMetrics(label: string): NodeMetrics {
   const rectWidth = Math.max(104, Math.ceil(textWidth(label, 12) + 28));
   const rectHeight = 34;
@@ -157,7 +167,9 @@ function buildForests(
   mainIds: Set<string>,
   expanded: Set<string>,
 ): BranchForest[] {
-  const groups = new Map<string, { parentId: string; direction: -1 | 1; roots: string[] }>();
+  // 每位主線人物左右各一片旁支；真正的子女超過三位時收成一個「N 位子女」，
+  // 大圖安置掛上來的（母親、妻子、名單牌子、區域）另外排在子女後面，不算進子女數。
+  const groups = new Map<string, { parentId: string; direction: -1 | 1; roots: string[]; extras: string[] }>();
   const rootOwner = new Set<string>();
   const rootCounts = new Map<string, number>();
   for (const { parentId, rootId } of branchRoots(data, graph)) {
@@ -166,20 +178,27 @@ function buildForests(
     const parent = graph.byId.get(parentId);
     if (!rootPerson || !parent) continue;
     rootOwner.add(rootId);
+    const placement = graph.placed.get(rootId);
     const route = lineColorKey(rootPerson) !== 'common' ? lineColorKey(rootPerson) : lineColorKey(parent);
-    const direction: -1 | 1 = route === '馬太' ? -1 : 1;
+    const outward: -1 | 1 = route === '馬太' ? -1 : 1;
+    // 母親、妻子放在另一側；只有共同主線（畫面中央）那段的另一側是空的，馬太、路加兩欄往中間放會撞到對面那一欄
+    const direction: -1 | 1 = placement?.side === 'opposite' && lineColorKey(parent) === 'common' ? (-outward as -1 | 1) : outward;
     const key = `${parentId}\u0000${direction}`;
-    const group = groups.get(key) ?? { parentId, direction, roots: [] };
-    group.roots.push(rootId);
+    const group = groups.get(key) ?? { parentId, direction, roots: [], extras: [] };
+    if (placement) group.extras.push(rootId);
+    else {
+      group.roots.push(rootId);
+      rootCounts.set(parentId, (rootCounts.get(parentId) ?? 0) + 1);
+    }
     groups.set(key, group);
-    rootCounts.set(parentId, (rootCounts.get(parentId) ?? 0) + 1);
   }
 
   const globallyAssigned = new Set<string>();
   const forests: BranchForest[] = [];
   for (const group of groups.values()) {
     const localAssigned = new Set<string>();
-    const descendantCount = new Map(group.roots.map((id) => [id, countDesc(id, graph.children)]));
+    const allRoots = [...group.roots, ...group.extras];
+    const descendantCount = new Map(allRoots.map((id) => [id, countDesc(id, graph.children)]));
     const grouped = (rootCounts.get(group.parentId) ?? 0) > 3 && group.roots.length > 1;
     const groupKey = `siblings:${group.parentId}:${group.direction}`;
     const groupOpen = grouped && (expanded.has(groupKey) || group.roots.every((id) => expanded.has(id)));
@@ -188,7 +207,9 @@ function buildForests(
       const person = graph.byId.get(id);
       if (!person) return null;
       localAssigned.add(id);
-      const children = includeChildren
+      // 名單牌子和區域各自展開收合：上一層打開了，牌子底下的人還是要再點牌子才出來
+      const open = isPlacementNode(person) ? expanded.has(id) : includeChildren;
+      const children = open
         ? (graph.children.get(id) ?? []).map((childId) => makeBranch(childId, rootId, true)).filter((item): item is BranchDatum => Boolean(item))
         : [];
       return { person, rootId, children };
@@ -196,13 +217,14 @@ function buildForests(
     const members = groupOpen
       ? group.roots.map((rootId) => makeBranch(rootId, rootId, expanded.has(rootId))).filter((item): item is BranchDatum => Boolean(item))
       : [];
-    const firstRoot = graph.byId.get(group.roots[0]!);
+    const firstRoot = graph.byId.get(group.roots[0] ?? group.extras[0]!);
     const parentPerson = graph.byId.get(group.parentId)!;
     const line = firstRoot && lineColorKey(firstRoot) !== 'common' ? lineColorKey(firstRoot) : lineColorKey(parentPerson);
+    const extraData = group.extras.map((rootId) => makeBranch(rootId, rootId, expanded.has(rootId))).filter((item): item is BranchDatum => Boolean(item));
     const rootData = grouped
       ? [{ person: null, rootId: group.parentId, groupKey, groupLabel: groupOpen ? `收合 ${group.roots.length} 位子女 −` : `${group.roots.length} 位子女 ＋`,
-        groupMembers: group.roots, groupLine: line, groupParentId: group.parentId, children: members }]
-      : group.roots.map((rootId) => makeBranch(rootId, rootId, expanded.has(rootId))).filter((item): item is BranchDatum => Boolean(item));
+        groupMembers: group.roots, groupLine: line, groupParentId: group.parentId, children: members }, ...extraData]
+      : [...group.roots.map((rootId) => makeBranch(rootId, rootId, expanded.has(rootId))).filter((item): item is BranchDatum => Boolean(item)), ...extraData];
     for (const id of localAssigned) globallyAssigned.add(id);
     if (!rootData.length) continue;
     const datum: BranchDatum = { person: null, children: rootData };
@@ -211,7 +233,8 @@ function buildForests(
     const visible = laidOut.descendants().filter((item) => item.data.person || item.data.groupLabel);
     const metricsOf = (item: typeof visible[number]) => item.data.groupLabel
       ? groupNodeMetrics(item.data.groupLabel)
-      : nodeMetrics(item.data.person!, false, item.data.rootId === item.data.person!.id && expanded.has(item.data.rootId));
+      : isPlacementNode(item.data.person) ? plaqueMetrics(item.data.person!, true)
+        : nodeMetrics(item.data.person!, false, item.data.rootId === item.data.person!.id && expanded.has(item.data.rootId));
     const top = Math.min(...visible.map((item) => {
       return item.x - metricsOf(item).height / 2;
     }));
@@ -234,9 +257,12 @@ function buildForests(
       const person = item.data.person!;
       const rootId = item.data.rootId!;
       const isRoot = rootId === person.id;
-      const isOpen = isRoot && expanded.has(rootId);
-      const hasControl = isRoot && (isOpen || (descendantCount.get(rootId) ?? 0) > 0);
-      const metrics = nodeMetrics(person, false, hasControl);
+      // 旁支的根和名單牌子、區域都可以單獨展開收合
+      const toggles = isRoot || isPlacementNode(person);
+      const count = toggles ? (descendantCount.get(person.id) ?? countDesc(person.id, graph.children)) : 0;
+      const isOpen = toggles && count > 0 && expanded.has(person.id);
+      const hasControl = toggles && (isOpen || count > 0);
+      const metrics = isPlacementNode(person) ? plaqueMetrics(person, hasControl) : nodeMetrics(person, false, hasControl);
       levelWidths.set(item.depth, Math.max(levelWidths.get(item.depth) ?? 0, metrics.width));
       return {
         person,
@@ -244,9 +270,10 @@ function buildForests(
         rootId,
         depth: item.depth,
         vertical: item.x - center,
-        collapsed: isRoot && !isOpen && (descendantCount.get(rootId) ?? 0) > 0,
+        collapsed: toggles && !isOpen && count > 0,
         expandedRoot: isOpen,
-        descendantCount: descendantCount.get(rootId) ?? 0,
+        descendantCount: count,
+        inGroup: Boolean(item.parent?.data.groupKey),
         metrics,
       };
     });
@@ -264,7 +291,7 @@ function buildForests(
   return forests;
 }
 
-function buildEdges(data: GenealogyData, visibleIds: Set<string>, nodesById: Map<string, LayoutNode>): LayoutEdge[] {
+function buildEdges(data: GenealogyData, graph: ReturnType<typeof buildGraph>, visibleIds: Set<string>, nodesById: Map<string, LayoutNode>): LayoutEdge[] {
   const result: LayoutEdge[] = [];
   const seen = new Set<string>();
   const witnessLines = new Map((data.witnesses ?? []).map((witness) => [witness.id, witness.line ?? 'common']));
@@ -296,7 +323,45 @@ function buildEdges(data: GenealogyData, visibleIds: Set<string>, nodesById: Map
       if (person) add(node.syntheticParent, node.id, 'parent', lineColorKey(person));
     }
   }
+  // 大圖安置：名單牌子用點線掛在支派底下，牌子到各家用細線；區域不畫連到主線的線；
+  // 靠妻子、兄弟姊妹、親屬掛上來的一家，畫出那條經文關係
+  const lineOf = (id: string) => { const person = graph.byId.get(id); return person ? lineColorKey(person) : 'common'; };
+  for (const node of data.placements?.nodes ?? []) {
+    if (node.kind === 'list') add(node.under, node.id, 'list', lineOf(node.under));
+  }
+  for (const item of data.placements?.items ?? []) {
+    const under = graph.byId.get(item.under);
+    if (under && (under.kind === 'list' || under.kind === 'family')) add(item.under, item.root, 'member', lineOf(item.root));
+    if (item.via && ['spouse', 'sibling', 'kin'].includes(item.via.kind)) add(item.via.to, item.via.from, 'kin', lineOf(item.via.from));
+  }
   return result;
+}
+
+/** 展開的區域畫一個框，把區域裡各家框在一起。 */
+function regionFrames(graph: ReturnType<typeof buildGraph>, nodesById: Map<string, LayoutNode>): CanvasLayout['regions'] {
+  const frames: CanvasLayout['regions'] = [];
+  for (const node of nodesById.values()) {
+    const person = graph.byId.get(node.id);
+    if (person?.kind !== 'region' || !node.expandedRoot) continue;
+    const inside: LayoutNode[] = [node];
+    const stack = [...(graph.children.get(node.id) ?? [])];
+    while (stack.length) {
+      const id = stack.pop()!;
+      const child = nodesById.get(id);
+      if (!child) continue;
+      inside.push(child);
+      stack.push(...(graph.children.get(id) ?? []));
+    }
+    const pad = 22;
+    frames.push({
+      id: node.id, title: person.name,
+      x0: Math.min(...inside.map((item) => item.x - item.width / 2)) - pad,
+      y0: Math.min(...inside.map((item) => item.y - item.height / 2)) - pad,
+      x1: Math.max(...inside.map((item) => item.x + item.width / 2)) + pad,
+      y1: Math.max(...inside.map((item) => item.y + item.height / 2)) + pad,
+    });
+  }
+  return frames;
 }
 
 function routeX(id: string, line: string, sharedIds: Set<string>): number {
@@ -424,7 +489,7 @@ function positionSpine(
           groupLabel: branch.groupLabel, groupKey: branch.groupKey, groupMembers: branch.groupMembers,
           groupLine: branch.groupLine, groupParentId: branch.groupParentId,
         } : {}),
-        ...(forest.grouped && branch.depth === 2 && forest.groupKey ? { syntheticParent: forest.groupKey } : {}),
+        ...(forest.grouped && branch.inGroup && forest.groupKey ? { syntheticParent: forest.groupKey } : {}),
       });
     }
   }
@@ -438,7 +503,8 @@ export function computeLayout(data: GenealogyData, expanded = new Set<string>())
   const allNodes = [...nodeMap.values()];
   const nodes = allNodes.filter((node) => !node.groupLabel);
   const groups = allNodes.filter((node) => Boolean(node.groupLabel));
-  const edges = buildEdges(data, new Set(nodeMap.keys()), nodeMap);
+  const edges = buildEdges(data, graph, new Set(nodeMap.keys()), nodeMap);
+  const regions = regionFrames(graph, nodeMap);
   const minX = Math.min(0, ...allNodes.map((node) => node.x - node.width / 2)) - 80;
   const maxX = Math.max(0, ...allNodes.map((node) => node.x + node.width / 2)) + 80;
   const minY = Math.min(0, ...allNodes.map((node) => node.y - node.height / 2)) - 80;
@@ -447,6 +513,7 @@ export function computeLayout(data: GenealogyData, expanded = new Set<string>())
     nodes,
     groups,
     edges,
+    regions,
     segments,
     bounds: { x: minX, y: minY, width: maxX - minX, height: maxY - minY },
     durationMs: performance.now() - started,

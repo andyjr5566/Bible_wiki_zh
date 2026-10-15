@@ -2,7 +2,15 @@ import { describe, expect, it } from 'vitest';
 import { DATA, VERSES, branchRoots, expandVerseRefs, lookupVerses, buildGraph, makeSyntheticData, pathToFirstAncestor, searchNameForms, searchPeople } from './model';
 import type { GenealogyData } from './types';
 import { computeLayout } from '../ui/layout';
-import { groupUnattachedPeople } from '../ui/unconnected';
+
+/** 全部展開：每位主線人物的旁支、「N 位子女」、名單牌子和區域都打開。 */
+function everythingOpen(data: GenealogyData): Set<string> {
+  const graph = buildGraph(data);
+  const open = new Set<string>(branchRoots(data, graph).map((item) => item.rootId));
+  for (const id of graph.spineIds) for (const direction of [-1, 1]) open.add(`siblings:${id}:${direction}`);
+  for (const node of data.placements?.nodes ?? []) open.add(node.id);
+  return open;
+}
 
 function allReferenceKeys(data: GenealogyData): string[] {
   const refs: string[] = [];
@@ -41,18 +49,35 @@ function findOverlaps(nodes: ReturnType<typeof computeLayout>['nodes']): string[
 }
 
 describe('家譜資料閘門', () => {
-  it('未接主線分頁只列資料名單，且每人恰好屬於一組', () => {
-    const unattachedIds = DATA.unattached ?? [];
-    const result = groupUnattachedPeople(DATA);
-    const displayedIds = [...result.families.flatMap((group) => group.members.map((person) => person.id)),
-      ...result.singles.map((person) => person.id)];
-    const countById = new Map<string, number>();
-    for (const id of displayedIds) countById.set(id, (countById.get(id) ?? 0) + 1);
+  it('每個人物在大圖上都有自己的節點（全部展開時）', () => {
+    const layout = computeLayout(DATA, everythingOpen(DATA));
+    const ids = new Set(layout.nodes.map((node) => node.id));
+    const missing = DATA.persons.filter((person) => !ids.has(person.id)).map((person) => person.id);
+    expect(missing).toEqual([]);
+    for (const node of DATA.placements?.nodes ?? []) expect(ids.has(node.id), node.id).toBe(true);
+  });
 
-    expect(result.people.length).toBe(unattachedIds.length);
-    expect(displayedIds.length).toBe(unattachedIds.length);
-    expect(new Set(displayedIds).size).toBe(unattachedIds.length);
-    for (const id of unattachedIds) expect(countById.get(id), id).toBe(1);
+  it('全部展開時節點框不重疊', () => {
+    const layout = computeLayout(DATA, everythingOpen(DATA));
+    expect(findOverlaps(layout.nodes).slice(0, 5)).toEqual([]);
+  });
+
+  it('名單牌子掛在圖上的人底下，區域在主線人物旁邊而且不畫連到主線的線', () => {
+    const graph = buildGraph(DATA);
+    const layout = computeLayout(DATA, everythingOpen(DATA));
+    const placements = DATA.placements!;
+    expect(placements.nodes.filter((node) => node.kind === 'list').length).toBeGreaterThan(10);
+    for (const node of placements.nodes) {
+      expect(graph.byId.has(node.under), `${node.id} → ${node.under}`).toBe(true);
+      if (node.kind === 'region') {
+        expect(graph.spineIds.has(node.under), node.id).toBe(true);
+        expect(layout.edges.some((edge) => edge.to === node.id), `${node.id} 不該有線`).toBe(false);
+      }
+      if (node.kind === 'list') expect(layout.edges.some((edge) => edge.from === node.under && edge.to === node.id && edge.kind === 'list'), node.id).toBe(true);
+    }
+    // 新約家族頁的每一位都在大圖上
+    const ids = new Set(layout.nodes.map((node) => node.id));
+    for (const family of DATA.ntFamilies) for (const member of family.members ?? []) expect(ids.has(member), member).toBe(true);
   });
 
   it('人物搜尋只比對姓名和別名，並優先顯示主線候選', () => {
