@@ -804,6 +804,15 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
     return group;
   };
 
+  // 夫妻、兄弟姊妹、親屬線：在靠近對方那一側才轉折，不要在兩人正中間往下走（會貼著分岔處的主線）
+  const kinPath = (a: LayoutNode, b: LayoutNode) => {
+    const direction = Math.sign(b.x - a.x) || 1;
+    const startX = a.x + direction * a.width / 2;
+    const endX = b.x - direction * b.width / 2;
+    if (Math.abs(b.y - a.y) < 1) return `M${startX} ${a.y} H${endX}`;
+    const turnX = endX - direction * 14;
+    return `M${startX} ${a.y} H${turnX} V${b.y} H${endX}`;
+  };
   const edgePath = (a: LayoutNode, b: LayoutNode) => {
     const dx = b.x - a.x;
     const dy = b.y - a.y;
@@ -847,7 +856,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
       if (!a || !b) continue;
       const path = svgEl('path', {
         class: `ag-edge ag-edge-${edge.kind}${a.mainline && b.mainline ? ' ag-edge-main' : ''}${traceEdges.has(`${edge.from}>${edge.to}>${edge.kind}`) ? ' ag-edge-traced' : ''}${tourEdgeKeys.has(edge.key) ? ' ag-edge-tour-lit' : ''}`,
-        d: edgePath(a, b), 'data-from': edge.from, 'data-to': edge.to,
+        d: edge.kind === 'kin' ? kinPath(a, b) : edgePath(a, b), 'data-from': edge.from, 'data-to': edge.to,
         stroke: COLORS[edge.line] ?? COLORS.common,
         'stroke-width': tourEdgeKeys.has(edge.key) ? 4 : EDGE_WIDTH[edge.kind] ?? 1.7,
       });
@@ -919,7 +928,7 @@ export function createCanvas(data: GenealogyData, onSelect: (person: Person) => 
           const a = currentNodes.get(edge.from);
           const b = currentNodes.get(edge.to);
           const element = edgeEls.get(edge.key);
-          if (a && b && element) element.setAttribute('d', edgePath(a, b));
+          if (a && b && element) element.setAttribute('d', edge.kind === 'kin' ? kinPath(a, b) : edgePath(a, b));
         }
         if (t < 1) layoutAnimationFrame = requestAnimationFrame(tick);
         else cullToViewport();
