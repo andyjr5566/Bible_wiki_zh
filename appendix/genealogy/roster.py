@@ -326,6 +326,9 @@ def build_roster(
                 if label is not None:
                     if not isinstance(label, str) or not label:
                         errors.append(f"{location}label 必須是非空字串。")
+                    elif _COUNT_RE.search(label):
+                        # 「馬七百三十六匹」這種把數字吞進 label 的寫法，會讓 count 對到下一項的數字
+                        errors.append(f"{location}label「{label}」不可包含數字與量詞。")
                     else:
                         found = text.find(label, label_cursor.get(at or "", 0))
                         if found < 0:
@@ -467,6 +470,16 @@ def build_roster(
         for item in rows:
             if isinstance(item["at"], str):
                 rows_by_ref.setdefault(item["at"], []).append(item)
+        # 一行的數字必須是它自己那一項的：label 和它的數字中間不可夾著同一節別一行的 label
+        for same_verse_rows in rows_by_ref.values():
+            for item in same_verse_rows:
+                start, number = item["label_pos"], item["output"].get("n")
+                if start is None or number is None:
+                    continue
+                for other in same_verse_rows:
+                    if other is not item and other["label_pos"] is not None and start < other["label_pos"] < number:
+                        errors.append(f"{_location(segment_id, item['at'])}label「{item['source'].get('label')}」的數字跨過了"
+                                      f"「{other['source'].get('label')}」，對到的是別一項的數字。")
         for same_verse_rows in rows_by_ref.values():
             for i, item in enumerate(same_verse_rows):
                 item["row_index"] = i

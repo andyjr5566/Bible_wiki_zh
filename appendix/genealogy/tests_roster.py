@@ -130,6 +130,22 @@ class BuildRosterTests(unittest.TestCase):
         _, errors = self.build(changed)
         self.assertTrue(any("拉2:3" in error and "count" in error for error in errors), errors)
 
+    def test_label_swallowing_its_number_is_reported(self) -> None:
+        # 審查找到的漏洞：label 吞進自己的數字後，count 會對到下一項（騾子）的數字
+        changed = copy.deepcopy(self.spec)
+        row = _find_row(changed, "ezra2", "拉2:66")
+        row["label"], row["count"] = "馬七百三十六匹", 245
+        _, errors = self.build(changed)
+        self.assertTrue(any("拉2:66" in error for error in errors), errors)
+
+    def test_number_borrowed_across_another_label_is_reported(self) -> None:
+        # 同一節的第一行標成「馬」卻宣稱騾子的數字：中間夾著「騾子」那一行的 label
+        changed = copy.deepcopy(self.spec)
+        rows = [r for s in changed["rosters"][0]["sections"] for r in s["rows"] if r.get("at") == "拉2:66"]
+        rows[0]["count"] = 245
+        _, errors = self.build(changed)
+        self.assertTrue(any("拉2:66" in error for error in errors), errors)
+
     def test_changed_label_is_reported(self) -> None:
         changed = copy.deepcopy(self.spec)
         _find_row(changed, "ezra2", "拉2:3")["label"] = "巴錄的後裔"

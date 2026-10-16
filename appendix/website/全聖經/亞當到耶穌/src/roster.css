@@ -118,7 +118,7 @@
 .ag-rs-num b { font-weight: 600; }
 .ag-rs-num small { margin-left: .25em; color: var(--rd-ink-soft, #8a867b); font-size: .72em; }
 .ag-rs-num.is-fresh, .ag-rs-big-num.is-fresh, .ag-rs-subtotal.is-fresh { animation: ag-rs-fade 420ms ease-out both; }
-.ag-rs-row.is-differs .ag-rs-num b { text-decoration: underline dotted var(--rd-ink-soft, #8a867b); text-decoration-thickness: 1.5px; text-underline-offset: .28em; }
+.ag-rs-row.is-differs .ag-rs-num b, .ag-rs-row.is-differs .ag-rs-subtotal b { text-decoration: underline dotted var(--rd-ink-soft, #8a867b); text-decoration-thickness: 1.5px; text-underline-offset: .28em; }
 .ag-rs-row.is-named .ag-rs-num b { color: var(--rs-gold-text); }
 
 /* 引句、出處、標記 */

@@ -351,7 +351,9 @@ export function createRoster(options: RosterOptions): ReadingStage {
     let changed = false;
     view.rows.forEach((rv, i) => {
       const { row } = rv.flat;
-      const state = rowState(row, cur, rv.flat.idx, chars, rv.numLen);
+      // 動畫關閉：唸到數字就直接畫滿、數字同時出現（不跟著數字的字慢慢伸長）
+      const numLen = motionOn() ? rv.numLen : 0;
+      const state = rowState(row, cur, rv.flat.idx, chars, numLen);
       const el = rv.el;
       // 這一行出現／消失
       if (state.visible !== rv.visible) {
@@ -386,7 +388,7 @@ export function createRoster(options: RosterOptions): ReadingStage {
       if (rv.labelText) writeChars(rv.labelText, charsShown(rv.labelText.start, rv.labelText.chars.length, cur, rv.flat.idx, chars), animate);
       // 人數條跟著唸數字的字伸長
       if (rv.fill) {
-        const width = barWidth(row.count ?? 0, view.roster.max, barProgress(row.n ?? row.s, rv.numLen, cur, rv.flat.idx, chars));
+        const width = barWidth(row.count ?? 0, view.roster.max, barProgress(row.n ?? row.s, numLen, cur, rv.flat.idx, chars));
         if (Math.abs(width - rv.width) > 0.0005) {
           rv.width = width;
           rv.fill.style.setProperty('--rs-w', `${(width * 100).toFixed(2)}%`);
