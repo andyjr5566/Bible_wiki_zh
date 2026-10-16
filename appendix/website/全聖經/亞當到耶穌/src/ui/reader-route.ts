@@ -34,6 +34,7 @@ export interface Route {
 export const STAGE_LABEL: Record<StageId, { card: string; view: string }> = {
   tree: { card: '家譜', view: '家譜樹' },
   roles: { card: '職位', view: '職位圖' },
+  roster: { card: '名冊', view: '名冊' },
 };
 
 export function buildRoute(reading: ReadingData): Route {

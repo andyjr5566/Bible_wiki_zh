@@ -31,7 +31,7 @@ STATED_FORWARD = re.compile(r"(的?(兒子|女兒|長子|次子|三子|四子|�
 # 「後一位是前一位的兒子」的後半
 STATED_BACKWARD = re.compile(r"的(兒子|女兒|長子|次子)")
 ROLE_PREFIX = "r:"
-STAGES = ("tree", "roles")
+STAGES = ("tree", "roles", "roster")
 
 
 def load_yaml(path: Path, builder, where: str, default):
@@ -345,8 +345,8 @@ def build_reading(builder, helpers: dict) -> dict | None:
                     target.get("member") and (str(target["role"]), str(target["member"])) not in role_members)):
                 builder.err(l_where, f"職位圖上沒有：{target.get('role')} {target.get('member', '')}")
             targets.append({k: str(v) for k, v in target.items() if k in ("tree", "role", "member")})
-        if item.get("effect") not in ("returned", "lost", "link"):
-            builder.err(l_where, "effect 必須是 returned／lost／link")
+        if item.get("effect") not in ("returned", "lost", "link", "town"):
+            builder.err(l_where, "effect 必須是 returned／lost／link／town")
         if check_basis:
             for message in check_basis(item.get("basis"), l_where, root):
                 builder.err(l_where, message)
@@ -366,8 +366,12 @@ def build_reading(builder, helpers: dict) -> dict | None:
                     builder.err(l_where, f"經節不存在：{k}")
                 else:
                     builder.refs_used[k] = text
+        # 子母畫面標題裡的名字（「伯利恆之祖薩瑪」）：必須逐字出現在 refs 的經文裡
+        if item.get("pip") and not any(str(item["pip"]) in verse_text for verse_text in ref_texts):
+            builder.err(l_where, f"pip 不在 refs 的經文裡：{item['pip']}")
         links.append({"at": at, "word": str(item.get("word", "")), "to": targets, "effect": str(item.get("effect", "")),
-                      **({"card": str(item["card"]).strip()} if item.get("card") else {}), "refs": refs})
+                      **({"card": str(item["card"]).strip()} if item.get("card") else {}), "refs": refs,
+                      **({"pip": str(item["pip"])} if item.get("pip") else {})})
         links_at[at].append((str(item.get("word", "")), len(links) - 1))
 
     segments_out = []
@@ -459,6 +463,10 @@ def build_reading(builder, helpers: dict) -> dict | None:
                 decision = forced.get(span)
                 if decision is not None:
                     if decision.get("place"):
+                        assignment[span] = None
+                        place_spans.add(span)
+                    elif "link" in decision and links[decision["link"]]["effect"] == "town":
+                        # 家譜裡記過的城（伯利恆人）：照樣是地名，只帶著連結
                         assignment[span] = None
                         place_spans.add(span)
                     elif "link" in decision:
@@ -555,6 +563,8 @@ def build_reading(builder, helpers: dict) -> dict | None:
                 pid = assignment.get(span)
                 if span in place_spans:
                     token = {"s": span[0], "e": span[1], "k": "l"}
+                    if span in link_spans:
+                        token["link"] = link_spans[span]
                 else:
                     token = {"s": span[0], "e": span[1], "k": "p"}
                     if pid and pid.startswith(ROLE_PREFIX):

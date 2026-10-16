@@ -16,7 +16,8 @@ from fontTools import subset
 
 SITE = Path(__file__).resolve().parents[1]
 OUT = SITE / "src" / "assets" / "fonts"
-UI_SOURCES = ["src/ui/reader.ts", "src/ui/ink.ts", "src/ui/tree-stage.ts", "src/ui/roles.ts", "src/ui/canvas.ts"]
+UI_SOURCES = ["src/ui/reader.ts", "src/ui/ink.ts", "src/ui/tree-stage.ts", "src/ui/roles.ts", "src/ui/canvas.ts",
+              "src/ui/roster.ts", "src/ui/roster-model.ts"]
 # 數字、標點、章號用的國字（介面上的章名卡、節號）
 ALWAYS = "0123456789０１２３４５６７８９一二三四五六七八九十百千萬零第章節卷代上下，。、；：！？「」『』（）【】—…·・ "
 
@@ -44,8 +45,23 @@ def used_characters() -> str:
             chars.update(side["text"] + side["ref"])
     for link in reading.get("links", []):
         chars.update(link.get("card", ""))
+        chars.update(link.get("pip", "") or "")
         for ref in link.get("refs", []):
             chars.update(ref)
+    # 歸回的名冊：標題、分區、行的字、名字、引句、捐獻者、量詞
+    roster_path = SITE / "src" / "data" / "roster.json"
+    if roster_path.is_file():
+        for roster in json.loads(roster_path.read_text(encoding="utf-8")).get("rosters", []):
+            chars.update(roster.get("title", ""))
+            chars.update((roster.get("quote") or {}).get("text", "") + (roster.get("quote") or {}).get("ref", ""))
+            for section in roster.get("sections", []):
+                chars.update(section.get("title", ""))
+                for row in section.get("rows", []):
+                    for field in ("label", "unit", "who", "at"):
+                        chars.update(row.get(field, "") or "")
+                    chars.update((row.get("quote") or {}).get("t", ""))
+                    for name in row.get("names", []) or []:
+                        chars.update(name.get("t", ""))
     # 大衛立的職位：方塊標題、人名、細節、人數、印
     roles_path = SITE / "src" / "data" / "roles.json"
     if roles_path.is_file():

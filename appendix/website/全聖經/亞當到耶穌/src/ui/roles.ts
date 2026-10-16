@@ -452,13 +452,15 @@ export function createRoles(options: RolesOptions): RolesView {
     const boxes = new Set<string>();
     for (const i of marks.links) {
       const link = options.reading.links[i];
-      if (!link) continue;
+      // 城的連結（家譜裡有這座城）只在名冊上，不連到職位圖
+      if (!link || link.effect === 'town') continue;
+      const effect: Effect = link.effect;
       for (const to of link.to) {
         if (!to.role) continue;
         if (!to.member) { boxes.add(to.role); continue; }
         const key = cellKey(to.role, to.member);
         const known = result.get(key);
-        if (!known || EFFECT_RANK[link.effect] > EFFECT_RANK[known]) result.set(key, link.effect);
+        if (!known || EFFECT_RANK[effect] > EFFECT_RANK[known]) result.set(key, effect);
       }
     }
     return { cells: result, boxes };

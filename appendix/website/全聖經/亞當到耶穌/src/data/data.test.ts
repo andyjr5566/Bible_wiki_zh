@@ -562,6 +562,13 @@ describe('大衛立的職位與歸回連結', () => {
     expect(stageOf('代上24:10')).toBe('roles');
     expect(stageOf('代上27:5')).toBe('roles');
   });
+
+  it('拉 2、尼 7 讀到時是名冊；段內的祭司班次、尋不著譜系照舊在職位圖', () => {
+    const stageOf = (key: string) => verses.find((item) => item.key === key)?.stage;
+    for (const key of ['拉2:1', '拉2:10', '拉2:42', '拉2:64', '尼7:8', '尼7:73']) expect(stageOf(key), key).toBe('roster');
+    for (const key of ['拉2:36', '拉2:39', '拉2:61', '拉2:62', '尼7:39', '尼7:63']) expect(stageOf(key), key).toBe('roles');
+    expect(stageOf('拉7:1')).toBe('tree');
+  });
 });
 
 describe('三千人物版面壓力測試', () => {

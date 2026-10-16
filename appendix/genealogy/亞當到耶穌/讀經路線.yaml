@@ -5,7 +5,7 @@
 #   title：讀者看得到的段落名（不加「」，除非是逐字經文）
 #   group：段落選單的分組
 #   ranges：經文範圍（可多段）
-#   stage：預設畫面（tree 家譜樹／roles 大衛立的職位）
+#   stage：預設畫面（tree 家譜樹／roles 大衛立的職位／roster 歸回的名冊）
 #   stages：段內換畫面的地方（經節範圍 → 畫面），依「這幾節在講什麼」切
 #   parallel：平行經文（同一份名單的另一處記載）；那裡記的人也算這一段的候選人
 #   chronicles：代上 1–9，沿用附錄的章名、小段、讀經提醒、名單牌子
@@ -38,9 +38,9 @@ segments:
   - {id: 2chr11, title: 羅波安的妻子兒女, group: 列王, ranges: 代下11:18-23, stage: tree}
   - {id: 2chr21, title: 約沙法的兒子, group: 列王, ranges: 代下21:2-3, stage: tree}
   - {id: 2chr24, title: 約阿施的兩個妻, group: 列王, ranges: 代下24:3, stage: tree}
-  - {id: ezra2, title: 從被擄之地歸回的人, group: 歸回, ranges: 拉2:1-70, stage: tree, stages: {"拉2:36-39": roles, "拉2:61-62": roles}}
+  - {id: ezra2, title: 從被擄之地歸回的人, group: 歸回, ranges: 拉2:1-70, stage: roster, stages: {"拉2:36-39": roles, "拉2:61-62": roles}}
   - {id: ezra7, title: 以斯拉的家譜, group: 歸回, ranges: 拉7:1-5, stage: tree}
-  - {id: neh7, title: 尼希米記的歸回名單, group: 歸回, ranges: 尼7:6-73, stage: tree, parallel: 拉2:1-70, stages: {"尼7:39-42": roles, "尼7:63-64": roles}}
+  - {id: neh7, title: 尼希米記的歸回名單, group: 歸回, ranges: 尼7:6-73, stage: roster, parallel: 拉2:1-70, stages: {"尼7:39-42": roles, "尼7:63-64": roles}}
   - {id: neh11, title: 住在耶路撒冷的人, group: 歸回, ranges: 尼11:1-36, stage: tree}
   - {id: neh12, title: 歸回的祭司和利未人, group: 歸回, ranges: 尼12:1-26, stage: tree}
   - {id: mat1, title: 耶穌基督的家譜（馬太）, group: 新約, ranges: 太1:1-17, stage: tree}

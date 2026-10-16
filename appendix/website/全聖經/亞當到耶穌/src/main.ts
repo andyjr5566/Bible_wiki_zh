@@ -1,6 +1,6 @@
 import './styles.css';
 import './reading.css';
-import { DATA, READING, VERSES, buildGraph, isPlacementNode, loadRoles, lookupVerses, makeSyntheticData, pathToFirstAncestor } from './data/model';
+import { DATA, READING, VERSES, buildGraph, isPlacementNode, loadRoles, loadRoster, lookupVerses, makeSyntheticData, pathToFirstAncestor } from './data/model';
 import { SPEECH_FIXES } from './data/speech-fixes';
 import type { GenealogyData, GenealogyNote, Person } from './data/types';
 import { createAges } from './ui/ages';
@@ -12,6 +12,7 @@ import { createNotes } from './ui/notes';
 import { createToolbar, type LineFilter, type PageId } from './ui/toolbar';
 import { createReader } from './ui/reader';
 import { createRoles } from './ui/roles';
+import { createRoster } from './ui/roster';
 import { createSpeech } from './ui/speech';
 import { createTour } from './ui/tour';
 import { createTreeStage } from './ui/tree-stage';
@@ -172,12 +173,20 @@ const toolbar = createToolbar(data, {
   getPage: () => page,
 });
 const treeStage = createTreeStage(canvas, data, graph, canvasWrap, READING);
-const reader = createReader(READING, { tree: treeStage, roles: rolesView }, {
+// 歸回的名冊：只在讀經時出現（疊在畫布上），平常不在頁面上
+const rosterStage = createRoster({
+  load: loadRoster,
+  reading: READING,
+  data,
+  graph,
+  onTreePerson(id) { reader?.showOnTree(id); },
+});
+const reader = createReader(READING, { tree: treeStage, roles: rolesView, roster: rosterStage }, {
   speech: createSpeech({ replacements: SPEECH_FIXES }),
   onOpenChange(open) {
     // 讀經時職位圖借去疊在畫布上；離開讀經就放回分頁
-    if (open) canvasWrap.append(rolesView.el);
-    else rolesPage.append(rolesView.el);
+    if (open) canvasWrap.append(rolesView.el, rosterStage.el);
+    else { rolesPage.append(rolesView.el); rosterStage.el.remove(); }
     if (open) {
       tour.stop(false);
       page = 'tree';

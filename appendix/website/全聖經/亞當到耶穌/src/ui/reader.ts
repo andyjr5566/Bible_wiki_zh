@@ -1,4 +1,4 @@
-import type { ReadingData, ReadingDiff, ReadingToken, StageId } from '../data/types';
+import type { ReadingData, ReadingDiff, ReadingLink, ReadingToken, StageId } from '../data/types';
 import { button, h } from './dom';
 import {
   STAGE_LABEL, anchorPerson, buildRoute, cardText, chapterHeading, entryPlan, gapAfterVerse,
@@ -30,18 +30,35 @@ const storage = {
   get(key: string) { try { return localStorage.getItem(`adam-jesus:reader-${key}`); } catch { return null; } },
   set(key: string, value: string) { try { localStorage.setItem(`adam-jesus:reader-${key}`, value); } catch { /* 私密模式不保存 */ } },
 };
-const other = (id: StageId): StageId => (id === 'tree' ? 'roles' : 'tree');
 /** 經文裡讀得出是誰的人名（家譜樹上的人、只在職位圖的人、歸回連回祖先的家族） */
 const isNamed = (token: ReadingToken) => token.k === 'p' && (token.id !== undefined || token.rid !== undefined || token.link !== undefined);
+/** 疊在畫布上的畫面（職位圖、名冊）；家譜樹是底下的畫布本身 */
+const OVERLAYS: StageId[] = ['roles', 'roster'];
+/** 經文欄裡歸回連結小卡的標籤：名冊段（拉 2、尼 7）和名冊上的字一致 */
+function linkLabel(effect: ReadingLink['effect'], segmentStage: StageId): string {
+  if (effect === 'town') return '家譜裡有這座城';
+  if (effect === 'lost') return '族譜尋不著';
+  return segmentStage === 'roster' ? '冊上有名' : '連回祖先';
+}
 
-export function createReader(reading: ReadingData, stages: { tree: ReadingStage; roles: ReadingStage }, options: {
+export function createReader(reading: ReadingData, stages: Record<StageId, ReadingStage>, options: {
   speech?: SpeechController;
   onOpenChange?(open: boolean): void;
 }): ReaderApi {
   const route = buildRoute(reading);
   const verses = route.verses;
   const motionOn = () => document.documentElement.dataset.motion !== 'off';
-  const stageIds: StageId[] = ['tree', 'roles'];
+  const stageIds: StageId[] = ['tree', 'roles', 'roster'];
+  /**
+   * 小地圖與「偷看」的另一個畫面：名冊 → 家譜樹（看祖先在樹上哪裡）；
+   * 名冊段裡的職位圖 → 名冊；其他照舊（家譜樹 ↔ 職位圖）
+   */
+  function other(id: StageId): StageId {
+    const base = verseAt().segment.stage;
+    if (id === 'roster') return 'tree';
+    if (base === 'roster') return 'roster';
+    return id === 'tree' ? 'roles' : 'tree';
+  }
 
   // ── 狀態 ─────────────────────────────────────────────
   let isOpen = false;
@@ -67,6 +84,8 @@ export function createReader(reading: ReadingData, stages: { tree: ReadingStage;
   let marks: StageMarks = emptyMarks();
   let revealed: string[] = [];
   let prefetchTimer = 0;
+  /** 這一次的游標是跳讀、打開造成的（名冊直接畫好，不播動畫）；照速度往下讀時是 false */
+  let cursorJumped = true;
   const lastPersonInSection = new Map<string, string>();
   const sectionOf = (item: RouteVerse) => item.verse.sec ?? item.segment.id;
 
@@ -211,7 +230,7 @@ export function createReader(reading: ReadingData, stages: { tree: ReadingStage;
       const link = token.link !== undefined ? reading.links[token.link] : undefined;
       if (!link?.card) return;
       out.push(h('aside', { className: 'ag-rd-note ag-rd-linkcard', dataset: { i: String(item.index), t: String(tokenIndex) } },
-        h('span', { className: 'ag-rd-note-label' }, '連回祖先'),
+        h('span', { className: 'ag-rd-note-label' }, linkLabel(link.effect, item.segment.stage)),
         h('span', { className: 'ag-rd-linkcard-text' }, link.card),
         link.refs.length ? h('span', { className: 'ag-rd-linkcard-refs' }, link.refs.join('、')) : null));
     });
@@ -249,6 +268,7 @@ export function createReader(reading: ReadingData, stages: { tree: ReadingStage;
       const token = note.dataset.t;
       note.classList.toggle('is-shown', token === undefined ? index <= at : index < at || (index === at && Number(token) < fired));
     }
+    if (shown !== null && readyStages.has(shown)) stages[shown].setCursor?.(cursor, cursorJumped);
     const paragraph = scroll.querySelector<HTMLElement>(`.ag-rd-verse[data-i="${at}"]`);
     if (!paragraph) return;
     for (const segment of paragraph.querySelectorAll<HTMLElement>('.ag-rd-seg')) {
@@ -267,6 +287,8 @@ export function createReader(reading: ReadingData, stages: { tree: ReadingStage;
   function focusTarget(): string | null {
     const item = verseAt();
     const target = stages[item.stage];
+    // 名冊沒有「人」的位置：鏡頭就是讓讀到的那一行留在看得到的地方
+    if (item.stage === 'roster') return 'roster:now';
     if (marks.current && target.has(marks.current)) return marks.current;
     if (item.stage === 'roles') return item.verse.box ?? null;
     return item.verse.hold ?? lastPersonInSection.get(sectionOf(item)) ?? anchorPerson(route, at);
@@ -286,30 +308,34 @@ export function createReader(reading: ReadingData, stages: { tree: ReadingStage;
 
   let leaveTimer = 0;
   let enterTimer = 0;
-  /** 把 next 換到大畫面。職位圖是疊在畫布上面的一層：出現時從右上角放大淡入，退下時縮回右上角 */
+  /** 把 next 換到大畫面。職位圖、名冊是疊在畫布上面的一層：出現時從右上角放大淡入，退下時縮回右上角 */
   function applyFront(next: StageId, animate: boolean) {
     const previous = shown;
     shown = next;
-    const overlay = stages.roles.el;
     const motion = animate && motionOn() && previous !== null && previous !== next;
     window.clearTimeout(leaveTimer);
     window.clearTimeout(enterTimer);
-    overlay.classList.remove('ag-rd-overlay-enter', 'ag-rd-overlay-leave');
-    if (next === 'roles') {
-      overlay.classList.add('ag-rd-overlay-on');
-      if (motion) {
-        overlay.getBoundingClientRect();
-        overlay.classList.add('ag-rd-overlay-enter');
-        enterTimer = window.setTimeout(() => overlay.classList.remove('ag-rd-overlay-enter'), SWITCH_MS + 60);
+    for (const id of OVERLAYS) {
+      const overlay = stages[id].el;
+      overlay.classList.remove('ag-rd-overlay-enter', 'ag-rd-overlay-leave');
+      if (id === next) {
+        overlay.classList.add('ag-rd-overlay-on');
+        if (motion) {
+          overlay.getBoundingClientRect();
+          overlay.classList.add('ag-rd-overlay-enter');
+          enterTimer = window.setTimeout(() => overlay.classList.remove('ag-rd-overlay-enter'), SWITCH_MS + 60);
+        }
+      } else if (motion && id === previous && overlay.classList.contains('ag-rd-overlay-on')) {
+        overlay.classList.add('ag-rd-overlay-leave');
+        leaveTimer = window.setTimeout(() => overlay.classList.remove('ag-rd-overlay-on', 'ag-rd-overlay-leave'), SWITCH_MS);
+      } else {
+        overlay.classList.remove('ag-rd-overlay-on');
       }
-    } else if (motion && overlay.classList.contains('ag-rd-overlay-on')) {
-      overlay.classList.add('ag-rd-overlay-leave');
-      leaveTimer = window.setTimeout(() => overlay.classList.remove('ag-rd-overlay-on', 'ag-rd-overlay-leave'), SWITCH_MS);
-    } else {
-      overlay.classList.remove('ag-rd-overlay-on');
     }
     miniButton.classList.toggle('is-fresh', motion);
     refreshMini(true);
+    // 名冊換上來時，先照目前讀到的位置畫好
+    if (readyStages.has(next)) stages[next].setCursor?.(cursor, true);
   }
 
   /** 換畫面：等新舞台準備好 → 出標題卡 → 舊的縮成小地圖、新的浮上來 */
@@ -409,7 +435,7 @@ export function createReader(reading: ReadingData, stages: { tree: ReadingStage;
       if (back) ids.add(back);
     }
     revealed = [...ids];
-    for (const id of ['tree', 'roles'] as const) stages[id].setVerse?.(item.key);
+    for (const id of stageIds) stages[id].setVerse?.(item.key);
     for (const id of readyStages) stages[id].reveal(revealed);
     pushMarks();
 
@@ -469,18 +495,19 @@ export function createReader(reading: ReadingData, stages: { tree: ReadingStage;
             fresh.add(`${key}:>${to}`);
           }
         }
-        if (token.link !== undefined) {
-          const targets = linkTargets(reading.links[token.link]);
-          marks.links.add(token.link);
-          for (const id of [...targets.tree, ...targets.roles]) marks.lit.add(id);
-          for (const box of targets.boxes) marks.boxes.add(box);
-          if (targets.current) marks.current = targets.current;
-          if (targets.tree[0]) lastPersonInSection.set(sectionOf(item), targets.tree[0]);
-          moved = true;
-        }
       } else if (token.k === 't' && token.of) {
         marks.seals.push({ id: token.of, label: item.verse.text.slice(token.s, token.e), key });
         fresh.add(key);
+      }
+      // 歸回連結：家族名（人名）或城名（地名，「家譜裡有這座城」）
+      if (token.link !== undefined) {
+        const targets = linkTargets(reading.links[token.link]);
+        marks.links.add(token.link);
+        for (const id of [...targets.tree, ...targets.roles]) marks.lit.add(id);
+        for (const box of targets.boxes) marks.boxes.add(box);
+        if (targets.current) marks.current = targets.current;
+        if (targets.tree[0]) lastPersonInSection.set(sectionOf(item), targets.tree[0]);
+        moved = true;
       }
       fired += 1;
     }
@@ -496,6 +523,7 @@ export function createReader(reading: ReadingData, stages: { tree: ReadingStage;
 
   function jump(index: number, toChar: number, keepPlaying: boolean) {
     stopVoice();
+    cursorJumped = true;
     enterVerse(index, { keepTrail: false });
     cursor = toChar;
     fireUpTo(true);
@@ -553,6 +581,7 @@ export function createReader(reading: ReadingData, stages: { tree: ReadingStage;
 
   function endOfVerse() {
     if (at >= verses.length - 1) { pause(); return; }
+    cursorJumped = false;
     const card = enterVerse(at + 1);
     // 換章、換畫面的時候讓標題卡停一下
     const gap = gapAfterVerse(card, speed);
@@ -569,6 +598,7 @@ export function createReader(reading: ReadingData, stages: { tree: ReadingStage;
     if (!voiceOn && now >= pauseUntil) {
       const text = verseAt().verse.text;
       cursor = Math.min(text.length, cursor + dt * CHARS_PER_SECOND * speed);
+      cursorJumped = false;
       fireUpTo(false);
       paintText();
       if (cursor >= text.length) endOfVerse();
@@ -589,12 +619,14 @@ export function createReader(reading: ReadingData, stages: { tree: ReadingStage;
       onBoundary(charIndex) {
         if (index !== at || !playing) return;
         cursor = Math.max(cursor, charIndex);
+        cursorJumped = false;
         fireUpTo(false);
         paintText();
       },
       onEnd() {
         if (index !== at || !playing) return;
         cursor = item.verse.text.length;
+        cursorJumped = false;
         fireUpTo(false);
         paintText();
         endOfVerse();
@@ -645,30 +677,32 @@ export function createReader(reading: ReadingData, stages: { tree: ReadingStage;
       isOpen = true;
       shown = null;
       lastTreeId = null;
-      delete lastFocus.tree;
-      delete lastFocus.roles;
+      for (const id of stageIds) delete lastFocus[id];
       miniFor = null;
-      savedViews = { tree: stages.tree.saveView(), roles: stages.roles.saveView() };
+      savedViews = Object.fromEntries(stageIds.map((id) => [id, stages[id].saveView()]));
       panel.hidden = false;
       stage.hidden = false;
       document.documentElement.classList.add('ag-reading');
-      stages.roles.el.classList.add('ag-rd-overlay');
+      for (const id of OVERLAYS) stages[id].el.classList.add('ag-rd-overlay');
       for (const id of stageIds) stages[id].setReading(true);
       options.onOpenChange?.(true);
       document.addEventListener('keydown', onKey);
-      // 職位圖的資料晚一點在背景載入，小地圖和換畫面時才不用等
+      // 職位圖、名冊的資料晚一點在背景載入，小地圖和換畫面時才不用等
       window.clearTimeout(prefetchTimer);
       prefetchTimer = window.setTimeout(() => {
-        if (!isOpen || readyStages.has('roles')) return;
-        void stages.roles.ready().then(() => {
-          if (!isOpen) return;
-          readyStages.add('roles');
-          stages.roles.reveal(revealed);
-          pushMarks();
-          refreshMini(true);
-        }).catch(() => undefined);
+        for (const id of OVERLAYS) {
+          if (!isOpen || readyStages.has(id)) continue;
+          void stages[id].ready().then(() => {
+            if (!isOpen || readyStages.has(id)) return;
+            readyStages.add(id);
+            stages[id].reveal(revealed);
+            pushMarks();
+            refreshMini(true);
+          }).catch(() => undefined);
+        }
       }, 700);
     }
+    cursorJumped = true;
     follow = true;
     returnButton.hidden = true;
     renderedFragment = -1;
@@ -695,8 +729,7 @@ export function createReader(reading: ReadingData, stages: { tree: ReadingStage;
     chapterCard.classList.remove('is-on');
     miniButton.hidden = true;
     shown = null;
-    const overlay = stages.roles.el;
-    overlay.classList.remove('ag-rd-overlay', 'ag-rd-overlay-on', 'ag-rd-overlay-enter', 'ag-rd-overlay-leave');
+    for (const id of OVERLAYS) stages[id].el.classList.remove('ag-rd-overlay', 'ag-rd-overlay-on', 'ag-rd-overlay-enter', 'ag-rd-overlay-leave');
     document.documentElement.classList.remove('ag-reading');
     for (const id of stageIds) stages[id].setReading(false);
     for (const id of stageIds) if (savedViews[id] !== null && savedViews[id] !== undefined) stages[id].restoreView(savedViews[id]);

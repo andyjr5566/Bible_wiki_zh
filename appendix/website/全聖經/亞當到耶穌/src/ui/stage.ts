@@ -41,6 +41,12 @@ export interface ReadingStage {
   setMarks(marks: StageMarks): void;
   /** 讀經程式每進一節先通知（在 reveal、setMarks 之前）：舞台可依這一節決定要怎麼呈現同一個人 */
   setVerse?(key: string): void;
+  /**
+   * 這一節讀到第幾個字（每一格畫面都會通知，只有這個舞台顯示在大畫面時才呼叫）。
+   * 名冊用它讓「讀到哪寫到哪」：那一行、那個名字、人數條在讀到的時候才出現。
+   * jumped＝跳讀、打開、換節按鈕造成的（直接畫好，不播動畫）。
+   */
+  setCursor?(chars: number, jumped: boolean): void;
   /** 打開這些人（或方塊）所在的位置，只重畫一次 */
   reveal(ids: string[]): void;
   /** 鏡頭移到這個人或方塊；已在舒適範圍內就不動；距離很遠先拉遠再推近。職位圖只捲動自己的容器 */

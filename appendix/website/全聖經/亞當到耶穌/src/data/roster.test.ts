@@ -80,9 +80,9 @@ const rosterModule = Object.values(rosterModules)[0] as
   | { default?: RosterData }
   | RosterData
   | undefined;
-const rosterData = rosterModule
+const rosterData = (rosterModule
   ? ('default' in rosterModule ? rosterModule.default : rosterModule)
-  : undefined;
+  : undefined) as RosterData | undefined;
 
 if (rosterData) {
   describe('roster.json', () => {

@@ -225,8 +225,8 @@ export interface ReadingToken {
   link?: number;
 }
 
-/** 讀經的兩個畫面：家譜樹、大衛立的職位（組織圖） */
-export type StageId = 'tree' | 'roles';
+/** 讀經的三個畫面：家譜樹、大衛立的職位（組織圖）、歸回的名冊（拉 2、尼 7） */
+export type StageId = 'tree' | 'roles' | 'roster';
 
 export interface ReadingVerse {
   v: number;
@@ -280,17 +280,20 @@ export interface ReadingDiff {
 /**
  * 歸回的家族連回祖先（拉 2、尼 7、尼 11–12）。
  * to：連到家譜樹上的人（tree）或職位圖上的方塊成員（role＝RoleBox.id，member＝成員 key）。
- * effect：returned＝子孫歸回（二十四班那一格變紅）；lost＝族譜尋不著（虛線）；link＝只是連回祖先。
+ * effect：returned＝子孫歸回（二十四班那一格變紅）；lost＝族譜尋不著（虛線）；link＝只是連回祖先；
+ *         town＝這座城在前面的家譜裡記過（名冊上較淡的「家譜裡有這座城」，不說住在那城的人是誰的子孫）。
  */
 export interface ReadingLink {
   at: string;
   word: string;
   to: Array<{ tree?: string; role?: string; member?: string }>;
-  effect: 'returned' | 'lost' | 'link';
+  effect: 'returned' | 'lost' | 'link' | 'town';
   /** 小卡上的一句話（逐字經文用「」） */
   card?: string;
   /** 小卡要列的經節 */
   refs: string[];
+  /** 子母畫面標題裡的名字（城：經文裡的「伯利恆之祖薩瑪」）；沒寫就用連到的人的名字 */
+  pip?: string;
 }
 
 export interface ReadingData {
@@ -300,6 +303,72 @@ export interface ReadingData {
   notes: Array<{ text: string; verses: string[] }>;
   diffs: ReadingDiff[];
   links: ReadingLink[];
+}
+
+// ── 歸回的名冊（roster.json，讀到拉 2、尼 7 時才載入） ─────────────
+// 照經文本身的分段排；只有經文寫出來的數字，不算累計。s、ls、n 都是那一節經文裡的字元位置，
+// 讀經讀到那個位置，那一行（名字、人數條）才出現。
+
+export interface RosterName {
+  t: string;
+  s: number;
+  /** 這個名字連回前面家譜的歸回連結（ReadingData.links 的索引） */
+  link?: number;
+}
+
+export interface RosterRow {
+  /** 經節，例如「拉2:3」 */
+  at: string;
+  /** 這一行在經文裡最早出現的位置：讀到這裡這一行才出現 */
+  s: number;
+  label?: string;
+  ls?: number;
+  count?: number;
+  /** 量詞（名、匹、隻、達利克、彌拿、件、個） */
+  unit?: string;
+  /** 數字在經文裡的起點：讀到這裡人數條才伸長 */
+  n?: number;
+  /** 只列名字的節（尼提寧、守門的）：名字一個個出現 */
+  names?: RosterName[];
+  /** 這一節要原句引出的經文 */
+  quote?: { t: string; s: number };
+  /** 誰捐的（尼 7:70–72） */
+  who?: string;
+  /** 經文自己寫的「共……名」 */
+  total?: boolean;
+  /** 會眾總數，畫大字 */
+  big?: boolean;
+  /** 畫人數條 */
+  bar?: boolean;
+  /** 這一行裡的歸回連結（冊上有名、家譜裡有這座城、尋不著） */
+  links?: number[];
+  /** 尼 7 這一行和拉 2 的寫法或人數不同 */
+  differs?: boolean;
+}
+
+export interface RosterSection {
+  title: string;
+  /** 不能指明譜系、尋不著譜系的：虛線框 */
+  lost?: boolean;
+  bars?: boolean;
+  rows: RosterRow[];
+}
+
+export interface Roster {
+  /** 讀經路線的段落 id（ezra2、neh7） */
+  segment: string;
+  title: string;
+  /** 名冊開頭的經文（尼 7:5） */
+  quote?: { ref: string; text: string };
+  /** 這一段的經節，依次序 */
+  verses: string[];
+  /** 人數條滿格的人數（這份名冊最大的一行） */
+  max: number;
+  sections: RosterSection[];
+}
+
+export interface RosterData {
+  rosters: Roster[];
 }
 
 // ── 大衛立的職位（roles.json，分頁打開或讀到時才載入） ─────────────
