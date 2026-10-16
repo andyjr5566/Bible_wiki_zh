@@ -56,6 +56,10 @@ def keys_of(ref: str) -> list[str]:
 
 TRIBES = {"以色列", "猶大", "利未", "瑪拿西", "便雅憫", "迦得", "流便", "以薩迦", "亞設", "以法蓮", "西布倫",
           "拿弗他利", "西緬", "但", "約瑟"}
+# 支派名後面接這些字，才是指支派、國家、土地（「瑪拿西半支派」「猶大、西緬、便雅憫三支派」「以色列的神」「猶大王」「猶大地」）；
+# 其餘（「流便往田裡去」「猶大的兒子」）是本人，照一般人名檢查漏標
+TRIBE_USE = re.compile(r"(?:(?:、[^、，。；：\s]{1,4})*[一二三兩]?半?支派|人|族(?!長)|子孫|的子孫|女子|的?(?:一切)?城邑|的?地"
+                       r"|的?王|的神|營|諸王|和耶路撒冷|的外事)")
 segment_of: dict[str, str] = {}
 tagged: set[tuple[str, str]] = set()
 rows = []
@@ -137,9 +141,9 @@ for segment in reading["segments"]:
             for t in verse["t"]:
                 if t["k"] == "p" and (t.get("id") or t.get("rid")):
                     seg_forms.add(verse["text"][t["s"]:t["e"]])
-    # 支派名（「流便支派」「猶大人」）照第一階段的做法不連到人；宗族名後面接「族」「的子孫」也是指一群人
+    # 支派名的支派用法（「流便支派」「猶大人」）照第一階段的做法不連到人；宗族名後面接「族」「的子孫」也是指一群人
     all_forms = {f for f in seg_forms if len(f) >= 2} | TRIBES
-    seg_forms = {f for f in seg_forms if len(f) >= 2 and f not in TRIBES}
+    seg_forms = {f for f in seg_forms if len(f) >= 2}
     for chapter in segment["chapters"]:
         for verse in chapter["verses"]:
             key = f"{chapter['book']}{chapter['n']}:{verse['v']}"
@@ -152,9 +156,10 @@ for segment in reading["segments"]:
                 while start >= 0:
                     end = start + len(form)
                     inside = any(s <= start and end <= e and e - s > end - start for s, e in longer)
-                    # 族名、民族的用法：「迦南女子」「米甸人」「哥轄族」「米拉利子孫」「某某的子孫」
-                    clan = (text[end:end + 1] in ("族", "人") or text[end:end + 2] in ("女子", "子孫")
-                            or text[end:end + 3] == "的子孫")
+                    # 族名、民族的用法：「迦南女子」「米甸人」「哥轄族」「米拉利子孫」「某某的子孫」；「亞瑪力族長」是人
+                    clan = ((text[end:end + 1] in ("族", "人") and text[end:end + 2] != "族長")
+                            or text[end:end + 2] in ("女子", "子孫") or text[end:end + 3] == "的子孫"
+                            or (form in TRIBES and TRIBE_USE.match(text, end) is not None))
                     if not inside and not clan and not any(s < end and start < e for s, e in covered):
                         wrong_name[segment["id"]].append(f"{key}「{form}」在這一段別處標過，這裡沒標")
                     start = text.find(form, start + 1)

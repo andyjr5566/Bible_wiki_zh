@@ -28,6 +28,7 @@ export function householdAliasByVerse(reading: ReadingData, graph: PersonGraph):
   const parentsOf = (id: string) => new Set((graph.byId.get(id)?.parents ?? []).map((relation) => relation.id));
   const table = new Map<string, Map<string, string>>();
   for (const segment of reading.segments) {
+    // 這一段前面的決定：丈夫家裡那張卡，或妻子本人的 id（講娘家）；沒有記錄＝還沒決定
     const sticky = new Map<string, string>();
     for (const chapter of segment.chapters) {
       for (const verse of chapter.verses) {
@@ -43,8 +44,9 @@ export function householdAliasByVerse(reading: ReadingData, graph: PersonGraph):
             || [...context].some((other) => other !== wife && parentsOf(other).has(wife) && parentsOf(other).has(husband)));
           const ownFamily = [...parentsOf(wife)].some((parent) => context.has(parent));
           // 都沒提時：照這一段前面的決定；前面沒有、而且他只嫁一位丈夫，就用丈夫家裡那張卡
-          const choice = hit ? hit.slot : ownFamily ? null : sticky.get(wife) ?? (slots.length === 1 ? slots[0]!.slot : null);
-          if (choice) { sticky.set(wife, choice); alias.set(wife, choice); } else sticky.delete(wife);
+          const choice = hit ? hit.slot : ownFamily ? wife : sticky.get(wife) ?? (slots.length === 1 ? slots[0]!.slot : null);
+          if (choice) sticky.set(wife, choice);
+          if (choice && choice !== wife) alias.set(wife, choice);
         }
         if (alias.size) table.set(`${chapter.book}${chapter.n}:${verse.v}`, alias);
       }

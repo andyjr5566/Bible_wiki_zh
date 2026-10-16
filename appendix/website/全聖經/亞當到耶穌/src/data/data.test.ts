@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import rolesSource from './roles.json';
 import { householdAliasByVerse } from '../ui/tree-stage';
-import type { RolesData } from './types';
+import type { ReadingData, RolesData } from './types';
 import { DATA, READING, VERSES, branchRoots, expandVerseRefs, lookupVerses, buildGraph, makeSyntheticData, pathToFirstAncestor, searchNameForms, searchPeople } from './model';
 import type { GenealogyData } from './types';
 import { computeLayout } from '../ui/layout';
@@ -398,13 +398,15 @@ describe('讀經資料閘門（整條路線）', () => {
 
   it('同一段裡標過的人名，在別節出現也要有標記（漏標閘門；支派名、族名用法除外）', () => {
     const tribes = new Set(['以色列', '猶大', '利未', '瑪拿西', '便雅憫', '迦得', '流便', '以薩迦', '亞設', '以法蓮', '西布倫', '拿弗他利', '西緬', '但', '約瑟']);
+    // 支派名後面接這些字，才是指支派、國家、土地；其餘（「流便往田裡去」）是本人，照樣檢查
+    const tribeUse = /^(?:(?:、[^、，。；：\s]{1,4})*[一二三兩]?半?支派|人|族(?!長)|子孫|的子孫|女子|的?(?:一切)?城邑|的?地|的?王|的神|營|諸王|和耶路撒冷|的外事)/;
     const missed: string[] = [];
     for (const segment of READING.segments) {
       const tagged = new Set<string>();
       for (const chapter of segment.chapters) for (const verse of chapter.verses) {
         for (const token of verse.t) if (token.k === 'p' && (token.id || token.rid)) tagged.add(verse.text.slice(token.s, token.e));
       }
-      const forms = [...tagged].filter((form) => form.length >= 2 && !tribes.has(form));
+      const forms = [...tagged].filter((form) => form.length >= 2);
       const all = [...new Set([...tagged].filter((form) => form.length >= 2)), ...tribes];
       for (const chapter of segment.chapters) for (const verse of chapter.verses) {
         const text = verse.text;
@@ -414,7 +416,10 @@ describe('讀經資料閘門（整條路線）', () => {
           for (let start = text.indexOf(form); start >= 0; start = text.indexOf(form, start + 1)) {
             const end = start + form.length;
             const inside = longer.some(([s, e]) => s <= start && end <= e && e - s > form.length);
-            const clan = ['族', '人'].includes(text.slice(end, end + 1)) || ['女子', '子孫'].includes(text.slice(end, end + 2)) || text.slice(end, end + 3) === '的子孫';
+            // 「亞瑪力族長」是人，不是族名
+            const clan = (['族', '人'].includes(text.slice(end, end + 1)) && text.slice(end, end + 2) !== '族長')
+              || ['女子', '子孫'].includes(text.slice(end, end + 2)) || text.slice(end, end + 3) === '的子孫'
+              || (tribes.has(form) && tribeUse.test(text.slice(end)));
             const covered = spans.some(([s, e]) => s < end && start < e);
             if (!inside && !clan && !covered) missed.push(`${chapter.book}${chapter.n}:${verse.v}「${form}」`);
           }
@@ -461,6 +466,26 @@ describe('讀經時妻子停在丈夫家裡那張卡', () => {
   it('只講娘家的經節用本人', () => {
     // 「亞拿的女兒是阿何利巴瑪」
     expect(at('創36:25', '阿何利巴瑪#亞拿')).toBe('阿何利巴瑪#亞拿');
+  });
+
+  it('前一節講娘家用本人，下一節都沒提時沿用本人', () => {
+    // 創 29:16「拉班有兩個女兒」講娘家 → 本人；29:17「利亞的眼睛沒有神氣，拉結卻生得美貌俊秀」沒提誰 → 沿用本人
+    const token = (id: string) => ({ s: 0, e: 1, k: 'p' as const, id });
+    const reading = {
+      start: '創29:16', notes: [], diffs: [], links: [],
+      segments: [{
+        id: 't', title: 't', group: 't', range: 't', stage: 'tree',
+        chapters: [{ book: '創', n: 29, verses: [
+          { v: 16, text: '', t: [token('拉班'), token('利亞'), token('拉結')] },
+          { v: 17, text: '', t: [token('利亞'), token('拉結')] },
+        ] }],
+      }],
+    } as unknown as ReadingData;
+    const local = householdAliasByVerse(reading, buildGraph(DATA));
+    for (const key of ['創29:16', '創29:17']) {
+      expect(local.get(key)?.get('利亞') ?? '利亞', key).toBe('利亞');
+      expect(local.get(key)?.get('拉結') ?? '拉結', key).toBe('拉結');
+    }
   });
 
   it('每張卡都真的在大圖上', () => {
