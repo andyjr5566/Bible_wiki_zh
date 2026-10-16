@@ -3476,6 +3476,18 @@ class LineageBuilder:
     def _validate_tour(self) -> None:
         for index, stop in enumerate(self.tour):
             where = f"tour#{index + 1}({stop.get('id', '')})"
+            # kind：reading（介紹帶你讀經）、catalog（打開目錄分頁）——這兩種站不對準家譜樹上的人
+            if stop.get("kind") not in (None, "reading", "catalog"):
+                self.err(where, "kind 只能是 reading 或 catalog")
+            if stop.get("kind") and (stop.get("focus") or stop.get("sequence")):
+                self.err(where, "reading／catalog 站不寫 focus、sequence")
+            if not stop.get("title") or not stop.get("text"):
+                self.err(where, "title、text 不能空白")
+            if stop.get("kind"):
+                # 這兩站介紹網站本身，沒有經節：不可放「」引句
+                if "「" in str(stop.get("text", "")):
+                    self.err(where, "reading／catalog 站沒有經節，text 不可放「」引句")
+                continue
             for pid in stop.get("focus", []) or []:
                 if pid not in self.people:
                     self.err(where, f"focus 人物不存在：{pid}")

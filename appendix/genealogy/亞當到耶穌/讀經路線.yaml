@@ -3,6 +3,7 @@
 # 讀者按一次「帶你讀經」，從創 4:17 一路讀到路 3:38。每一段：
 #   id：段落代號（網址、選單用，不給讀者看）
 #   title：讀者看得到的段落名（不加「」，除非是逐字經文）
+#   intro：目錄裡這一段的一句介紹（照經文寫、白話、不加評論；不可含「」、60 字以內）
 #   group：段落選單的分組
 #   ranges：經文範圍（可多段）
 #   stage：預設畫面（tree 家譜樹／roles 大衛立的職位／roster 歸回的名冊／wall 修城牆的人）
@@ -11,42 +12,42 @@
 #   chronicles：代上 1–9，沿用附錄的章名、小段、讀經提醒、名單牌子
 start: 創4:17
 segments:
-  - {id: gen4, title: 該隱和塞特的後代, group: 創世記, ranges: 創4:17-26, stage: tree}
-  - {id: gen5, title: 亞當到挪亞, group: 創世記, ranges: 創5:1-32, stage: tree, parallel: 代上1:1-4}
-  - {id: gen10, title: 挪亞三個兒子的後代, group: 創世記, ranges: 創10:1-32, stage: tree, parallel: 代上1:4-23}
-  - {id: gen11, title: 閃到亞伯蘭, group: 創世記, ranges: 創11:10-32, stage: tree, parallel: 代上1:17-27}
-  - {id: gen22, title: 拿鶴的兒子, group: 創世記, ranges: 創22:20-24, stage: tree}
-  - {id: gen25a, title: 基土拉的兒子, group: 創世記, ranges: 創25:1-4, stage: tree, parallel: 代上1:32-33}
-  - {id: gen25b, title: 以實瑪利的兒子, group: 創世記, ranges: 創25:12-18, stage: tree, parallel: 代上1:28-31}
-  - {id: gen29, title: 雅各的兒子出生, group: 創世記, ranges: "創29:31-30:24, 創35:16-18", stage: tree}
-  - {id: gen35, title: 雅各的十二個兒子, group: 創世記, ranges: 創35:22-26, stage: tree}
-  - {id: gen36, title: 以掃的後代, group: 創世記, ranges: 創36:1-43, stage: tree, parallel: 代上1:35-54}
-  - {id: gen46, title: 下埃及的雅各家, group: 創世記, ranges: 創46:8-27, stage: tree}
-  - {id: exo6, title: 流便、西緬、利未的家長, group: 出埃及記到撒母耳記, ranges: 出6:14-25, stage: tree}
-  - {id: ruth4, title: 法勒斯到大衛, group: 出埃及記到撒母耳記, ranges: 得4:18-22, stage: tree, parallel: 代上2:4-15}
-  - {id: sam14, title: 掃羅的家, group: 出埃及記到撒母耳記, ranges: 撒上14:49-51, stage: tree}
-  - {id: sam3, title: 大衛在希伯崙生的兒子, group: 出埃及記到撒母耳記, ranges: 撒下3:2-5, stage: tree, parallel: 代上3:1-4}
-  - {id: sam5, title: 大衛在耶路撒冷生的兒女, group: 出埃及記到撒母耳記, ranges: 撒下5:13-16, stage: tree, parallel: "代上3:5-9, 代上14:3-7"}
-  - {id: chr1-9, title: 歷代志上的族譜, group: 歷代志上的族譜, ranges: 代上1:1-9:44, stage: tree, chronicles: true}
-  - {id: chr11, title: 大衛的勇士, group: 大衛立的職位, ranges: 代上11:10-47, stage: roles, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 基士, 耶西, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳]}
-  - {id: chr12, title: 投奔大衛的人, group: 大衛立的職位, ranges: 代上12:1-40, stage: roles, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 基士, 耶西, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳]}
-  - {id: chr14, title: 大衛在耶路撒冷生的兒女, group: 大衛立的職位, ranges: 代上14:3-7, stage: tree, parallel: "代上3:5-9, 撒下5:13-16"}
-  - {id: chr15, title: 抬約櫃和歌唱的利未人, group: 大衛立的職位, ranges: "代上15:4-24, 代上16:4-6, 代上16:37-42", stage: roles, auto_pool: false, people: [哥轄, 米拉利, 革順, 以利撒反, 希伯倫, 烏薛#哥轄, 利未, 大衛, 約押, 洗魯雅, 掃羅, 基士, 耶西, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳]}
-  - {id: chr18, title: 大衛的官員, group: 大衛立的職位, ranges: "代上18:14-17, 撒下8:15-18, 撒下20:23-26", stage: roles, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 基士, 耶西, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳]}
-  - {id: chr23, title: 利未人的班次與職務, group: 大衛立的職位, ranges: 代上23:1-26:32, stage: roles, stages: {"代上23:6-23": tree, "代上24:1-2": tree, "代上24:20-30": tree, "代上25:2-5": tree, "代上26:1-3": tree}, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳, 尼珥, 利未, 革順, 哥轄, 米拉利, 暗蘭, 以斯哈, 希伯倫, 烏薛#哥轄, 抹利, 母示, 以利亞撒, 以他瑪, 拿答#亞倫, 亞比戶, 撒督, 希幔, 亞薩, 可拉, 米施利米雅, 可利, 革舜, 以利以謝#摩西]}
-  - {id: chr27, title: 軍隊、支派首領、管產業的、謀士, group: 大衛立的職位, ranges: 代上27:1-34, stage: roles, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 基士, 耶西, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳]}
-  - {id: kings4, title: 所羅門的臣子和十二個官吏, group: 大衛立的職位, ranges: 王上4:1-19, stage: roles, auto_pool: false, people: [所羅門, 大衛]}
-  - {id: 2chr11, title: 羅波安的妻子兒女, group: 列王, ranges: 代下11:18-23, stage: tree}
-  - {id: 2chr21, title: 約沙法的兒子, group: 列王, ranges: 代下21:2-3, stage: tree}
-  - {id: 2chr24, title: 約阿施的兩個妻, group: 列王, ranges: 代下24:3, stage: tree}
-  - {id: ezra2, title: 從被擄之地歸回的人, group: 歸回, ranges: 拉2:1-70, stage: roster, stages: {"拉2:36-39": roles, "拉2:61-62": roles}}
-  - {id: ezra7, title: 以斯拉的家譜, group: 歸回, ranges: 拉7:1-5, stage: tree}
-  - {id: ezra8, title: 同以斯拉從巴比倫上來的人, group: 歸回, ranges: 拉8:1-20, stage: roster}
-  - {id: ezra10, title: 娶了外邦女子為妻的人, group: 歸回, ranges: 拉10:18-44, stage: roster}
-  - {id: neh3, title: 修造城牆的人, group: 歸回, ranges: 尼3:1-32, stage: wall}
-  - {id: neh7, title: 尼希米記的歸回名單, group: 歸回, ranges: 尼7:6-73, stage: roster, parallel: 拉2:1-70, stages: {"尼7:39-42": roles, "尼7:63-64": roles}}
-  - {id: neh10, title: 在約上簽名的人, group: 歸回, ranges: 尼10:1-27, stage: roster}
-  - {id: neh11, title: 住在耶路撒冷的人, group: 歸回, ranges: 尼11:1-36, stage: tree}
-  - {id: neh12, title: 歸回的祭司和利未人, group: 歸回, ranges: 尼12:1-26, stage: tree}
-  - {id: mat1, title: 耶穌基督的家譜（馬太）, group: 新約, ranges: 太1:1-17, stage: tree}
-  - {id: luke3, title: 耶穌的家譜（路加）, group: 新約, ranges: 路3:23-38, stage: tree}
+  - {id: gen4, title: 該隱和塞特的後代, intro: 該隱一支有人建城、牧養牲畜、彈琴吹簫、打造銅鐵；塞特生了以挪士，那時人才求告耶和華的名。, group: 創世記, ranges: 創4:17-26, stage: tree}
+  - {id: gen5, title: 亞當到挪亞, intro: 從亞當到挪亞共十代，每一代都記下幾歲生子、一生活了多少歲。, group: 創世記, ranges: 創5:1-32, stage: tree, parallel: 代上1:1-4}
+  - {id: gen10, title: 挪亞三個兒子的後代, intro: 挪亞的兒子閃、含、雅弗的後代，在洪水以後分散各地，成了各邦國。, group: 創世記, ranges: 創10:1-32, stage: tree, parallel: 代上1:4-23}
+  - {id: gen11, title: 閃到亞伯蘭, intro: 從閃一路記到他拉，他拉生了亞伯蘭、拿鶴、哈蘭。, group: 創世記, ranges: 創11:10-32, stage: tree, parallel: 代上1:17-27}
+  - {id: gen22, title: 拿鶴的兒子, intro: 亞伯拉罕的兄弟拿鶴生了八個兒子，其中彼土利生了利百加。, group: 創世記, ranges: 創22:20-24, stage: tree}
+  - {id: gen25a, title: 基土拉的兒子, intro: 亞伯拉罕又娶了基土拉，生了心蘭、約珊等六個兒子。, group: 創世記, ranges: 創25:1-4, stage: tree, parallel: 代上1:32-33}
+  - {id: gen25b, title: 以實瑪利的兒子, intro: 以實瑪利的十二個兒子，各作一族的族長。, group: 創世記, ranges: 創25:12-18, stage: tree, parallel: 代上1:28-31}
+  - {id: gen29, title: 雅各的兒子出生, intro: 利亞、拉結和兩個使女先後為雅各生下兒女，每個孩子的名字都說明了由來。, group: 創世記, ranges: "創29:31-30:24, 創35:16-18", stage: tree}
+  - {id: gen35, title: 雅各的十二個兒子, intro: 照母親分組，列出雅各的十二個兒子。, group: 創世記, ranges: 創35:22-26, stage: tree}
+  - {id: gen36, title: 以掃的後代, intro: 以掃的妻子、兒子和族長，還有以東地的列王。, group: 創世記, ranges: 創36:1-43, stage: tree, parallel: 代上1:35-54}
+  - {id: gen46, title: 下埃及的雅各家, intro: 雅各全家下埃及時，照母親分組列出的子孫，共七十人。, group: 創世記, ranges: 創46:8-27, stage: tree}
+  - {id: exo6, title: 流便、西緬、利未的家長, intro: 從流便、西緬講到利未的家，一路記到摩西、亞倫和非尼哈。, group: 出埃及記到撒母耳記, ranges: 出6:14-25, stage: tree}
+  - {id: ruth4, title: 法勒斯到大衛, intro: 路得記的結尾，從法勒斯十代記到大衛。, group: 出埃及記到撒母耳記, ranges: 得4:18-22, stage: tree, parallel: 代上2:4-15}
+  - {id: sam14, title: 掃羅的家, intro: 掃羅的兒子、女兒、妻子和元帥押尼珥。, group: 出埃及記到撒母耳記, ranges: 撒上14:49-51, stage: tree}
+  - {id: sam3, title: 大衛在希伯崙生的兒子, intro: 大衛在希伯崙作王時，六位妻子各生了一個兒子。, group: 出埃及記到撒母耳記, ranges: 撒下3:2-5, stage: tree, parallel: 代上3:1-4}
+  - {id: sam5, title: 大衛在耶路撒冷生的兒女, intro: 大衛到耶路撒冷以後又生的兒女，所羅門也在其中。, group: 出埃及記到撒母耳記, ranges: 撒下5:13-16, stage: tree, parallel: "代上3:5-9, 代上14:3-7"}
+  - {id: chr1-9, title: 歷代志上的族譜, intro: 從亞當到被擄歸回，歷代志上用九章把以色列各支派的家譜重新整理一次。, group: 歷代志上的族譜, ranges: 代上1:1-9:44, stage: tree, chronicles: true}
+  - {id: chr11, title: 大衛的勇士, intro: 大衛勇士的名單；和撒母耳記下第23章寫法不同的地方會出小卡。, group: 大衛立的職位, ranges: 代上11:10-47, stage: roles, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 基士, 耶西, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳]}
+  - {id: chr12, title: 投奔大衛的人, intro: 大衛躲避掃羅、在希伯崙作王的時候，各支派前來投奔的人。, group: 大衛立的職位, ranges: 代上12:1-40, stage: roles, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 基士, 耶西, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳]}
+  - {id: chr14, title: 大衛在耶路撒冷生的兒女, intro: 歷代志上再記一次大衛在耶路撒冷生的兒女。, group: 大衛立的職位, ranges: 代上14:3-7, stage: tree, parallel: "代上3:5-9, 撒下5:13-16"}
+  - {id: chr15, title: 抬約櫃和歌唱的利未人, intro: 大衛把約櫃抬進耶路撒冷，派利未人抬櫃、奏樂、歌唱、守門。, group: 大衛立的職位, ranges: "代上15:4-24, 代上16:4-6, 代上16:37-42", stage: roles, auto_pool: false, people: [哥轄, 米拉利, 革順, 以利撒反, 希伯倫, 烏薛#哥轄, 利未, 大衛, 約押, 洗魯雅, 掃羅, 基士, 耶西, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳]}
+  - {id: chr18, title: 大衛的官員, intro: 大衛朝廷的元帥、史官、祭司長和書記；三處經文寫法不同的地方會出小卡。, group: 大衛立的職位, ranges: "代上18:14-17, 撒下8:15-18, 撒下20:23-26", stage: roles, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 基士, 耶西, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳]}
+  - {id: chr23, title: 利未人的班次與職務, intro: 大衛晚年把利未人和祭司分班，歌唱的、守門的、管庫的各有職分。, group: 大衛立的職位, ranges: 代上23:1-26:32, stage: roles, stages: {"代上23:6-23": tree, "代上24:1-2": tree, "代上24:20-30": tree, "代上25:2-5": tree, "代上26:1-3": tree}, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳, 尼珥, 利未, 革順, 哥轄, 米拉利, 暗蘭, 以斯哈, 希伯倫, 烏薛#哥轄, 抹利, 母示, 以利亞撒, 以他瑪, 拿答#亞倫, 亞比戶, 撒督, 希幔, 亞薩, 可拉, 米施利米雅, 可利, 革舜, 以利以謝#摩西]}
+  - {id: chr27, title: 軍隊、支派首領、管產業的、謀士, intro: 十二個月輪流的軍隊、各支派的首領、替王管產業的人和王的謀士。, group: 大衛立的職位, ranges: 代上27:1-34, stage: roles, auto_pool: false, people: [大衛, 約押, 洗魯雅, 掃羅, 基士, 耶西, 摩西, 亞倫, 所羅門, 押尼珥, 撒母耳]}
+  - {id: kings4, title: 所羅門的臣子和十二個官吏, intro: 所羅門朝廷的臣子和大衛時對照，還有輪流供應王家食物的十二個官吏。, group: 大衛立的職位, ranges: 王上4:1-19, stage: roles, auto_pool: false, people: [所羅門, 大衛]}
+  - {id: 2chr11, title: 羅波安的妻子兒女, intro: 羅波安的妻妾和兒女，他立瑪迦的兒子亞比雅作太子。, group: 列王, ranges: 代下11:18-23, stage: tree}
+  - {id: 2chr21, title: 約沙法的兒子, intro: 約沙法的七個兒子，約蘭是長子，接續作王。, group: 列王, ranges: 代下21:2-3, stage: tree}
+  - {id: 2chr24, title: 約阿施的兩個妻, intro: 祭司耶何耶大為約阿施王娶了兩個妻。, group: 列王, ranges: 代下24:3, stage: tree}
+  - {id: ezra2, title: 從被擄之地歸回的人, intro: 第一批從巴比倫歸回的人，一家一家、一城一城記下人數。, group: 歸回, ranges: 拉2:1-70, stage: roster, stages: {"拉2:36-39": roles, "拉2:61-62": roles}}
+  - {id: ezra7, title: 以斯拉的家譜, intro: 文士以斯拉的家譜，一路上溯到大祭司亞倫。, group: 歸回, ranges: 拉7:1-5, stage: tree}
+  - {id: ezra8, title: 同以斯拉從巴比倫上來的人, intro: 以斯拉帶第二批人回耶路撒冷：各家族的首領和人數，還有招來的利未人。, group: 歸回, ranges: 拉8:1-20, stage: roster}
+  - {id: ezra10, title: 娶了外邦女子為妻的人, intro: 查出娶了外邦女子為妻的人，祭司、利未人、以色列人一一列名。, group: 歸回, ranges: 拉10:18-44, stage: roster}
+  - {id: neh3, title: 修造城牆的人, intro: 重修耶路撒冷城牆時，一段一段分給誰修，從羊門繞城一圈回到羊門。, group: 歸回, ranges: 尼3:1-32, stage: wall}
+  - {id: neh7, title: 尼希米記的歸回名單, intro: 尼希米找到第一批歸回者的家譜，和以斯拉記第2章幾乎一樣，寫法不同的地方會標出來。, group: 歸回, ranges: 尼7:6-73, stage: roster, parallel: 拉2:1-70, stages: {"尼7:39-42": roles, "尼7:63-64": roles}}
+  - {id: neh10, title: 在約上簽名的人, intro: 百姓立約遵守神的律法，省長、祭司、利未人和民的首領在約上簽名。, group: 歸回, ranges: 尼10:1-27, stage: roster}
+  - {id: neh11, title: 住在耶路撒冷的人, intro: 掣籤十人中一人住進聖城，記下住在耶路撒冷的各家族。, group: 歸回, ranges: 尼11:1-36, stage: tree}
+  - {id: neh12, title: 歸回的祭司和利未人, intro: 同所羅巴伯回來的祭司和利未人，還有大祭司一代一代的承接。, group: 歸回, ranges: 尼12:1-26, stage: tree}
+  - {id: mat1, title: 耶穌基督的家譜（馬太）, intro: 從亞伯拉罕到大衛、從大衛到被擄、從被擄到基督，各十四代。, group: 新約, ranges: 太1:1-17, stage: tree}
+  - {id: luke3, title: 耶穌的家譜（路加）, intro: 從耶穌往上一路數到亞當，最後寫亞當是神的兒子。, group: 新約, ranges: 路3:23-38, stage: tree}

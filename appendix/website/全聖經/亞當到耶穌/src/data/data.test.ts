@@ -259,11 +259,20 @@ describe('家譜資料閘門', () => {
     }
   });
 
+  it('導覽最後兩站介紹帶你讀經、打開目錄；每一段讀經都有目錄介紹', () => {
+    expect(DATA.tour.slice(-2).map((stop) => stop.kind)).toEqual(['reading', 'catalog']);
+    for (const segment of READING.segments) {
+      expect(segment.intro, segment.id).toBeTruthy();
+      expect(segment.intro!.length, segment.id).toBeLessThanOrEqual(60);
+      expect(segment.intro, segment.id).not.toMatch(/[「」]/);
+    }
+  });
+
   it('每個導覽焦點與經節都存在於匯出資料', () => {
     const ids = new Set(DATA.persons.map((person) => person.id));
     for (const stop of DATA.tour) {
-      for (const focus of stop.focus) expect(ids.has(focus), `${stop.id}: ${focus}`).toBe(true);
-      const refs = Array.isArray(stop.refs) ? stop.refs : [stop.refs];
+      for (const focus of stop.focus ?? []) expect(ids.has(focus), `${stop.id}: ${focus}`).toBe(true);
+      const refs = Array.isArray(stop.refs) ? stop.refs : stop.refs ? [stop.refs] : [];
       for (const ref of refs.flatMap((value) => expandVerseRefs(value))) {
         expect(VERSES[ref], `${stop.id}: ${ref}`).toBeTruthy();
       }
@@ -275,6 +284,8 @@ describe('家譜資料閘門', () => {
     const layout = computeLayout(DATA);
     const layoutIds = new Set(layout.nodes.map((node) => node.id));
     for (const stop of DATA.tour) {
+      // 介紹帶你讀經、打開目錄的兩站不對準家譜樹上的人
+      if (stop.kind) continue;
       expect(stop.sequence?.length, `${stop.id}: sequence`).toBeGreaterThan(0);
       for (const id of stop.sequence ?? []) {
         expect(graph.spineIds.has(id), `${stop.id}: ${id} should be on the spine`).toBe(true);

@@ -3,7 +3,7 @@ import { h } from './dom';
 import { createSearch } from './search';
 import { FONT_SCALES, getFontScale, setFontScale } from './fontscale';
 
-export type PageId = 'tree' | 'compare' | 'ages' | 'notes' | 'roles';
+export type PageId = 'catalog' | 'tree' | 'compare' | 'ages' | 'notes' | 'roles' | 'returns';
 export type LineFilter = 'both' | '馬太' | '路加';
 
 export interface ToolbarActions {
@@ -20,7 +20,7 @@ export interface ToolbarActions {
   getPage(): PageId;
 }
 
-export function createToolbar(data: GenealogyData, actions: ToolbarActions): { el: HTMLElement; setState(): void } {
+export function createToolbar(data: GenealogyData, actions: ToolbarActions): { el: HTMLElement; setState(): void; hintRead(on: boolean): void } {
   const search = createSearch(data, actions.selectPerson);
   const lineButtons = new Map<LineFilter, HTMLButtonElement>();
   const lineGroup = h('div', { className: 'ag-line-toggle', role: 'group', 'aria-label': '顯示家譜線' });
@@ -31,7 +31,7 @@ export function createToolbar(data: GenealogyData, actions: ToolbarActions): { e
     lineGroup.append(button);
   }
   const tabs: Array<[PageId, string]> = [
-    ['tree', '家譜樹'], ['compare', '兩條線對照'], ['ages', '年歲時間軸'], ['notes', '經文不同的地方'], ['roles', '大衛立的職位'],
+    ['catalog', '目錄'], ['tree', '家譜樹'], ['compare', '兩條線對照'], ['ages', '年歲時間軸'], ['notes', '經文不同的地方'], ['roles', '大衛立的職位'], ['returns', '歸回的名單'],
   ];
   const tabButtons = new Map<PageId, HTMLButtonElement>();
   const tabBar = h('nav', { className: 'ag-tabs', 'aria-label': '家譜檢視' });
@@ -106,5 +106,7 @@ export function createToolbar(data: GenealogyData, actions: ToolbarActions): { e
     readButton.setAttribute('aria-pressed', String(actions.isReading()));
     readButton.textContent = actions.isReading() ? '離開讀經' : '帶你讀經';
   };
-  return { el: header, setState };
+  /** 導覽的「一起讀經」站：把「帶你讀經」按鈕標亮（朱色呼吸框） */
+  const hintRead = (on: boolean) => readButton.classList.toggle('is-hint', on);
+  return { el: header, setState, hintRead };
 }

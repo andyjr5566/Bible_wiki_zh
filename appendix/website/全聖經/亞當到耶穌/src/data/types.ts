@@ -145,9 +145,11 @@ export interface GenealogyNote {
 export interface TourStop {
   id: string;
   title: string;
-  focus: string[];
+  /** reading：介紹帶你讀經；catalog：打開目錄分頁。這兩種站不對準家譜樹上的人（沒有 focus、refs） */
+  kind?: 'reading' | 'catalog';
+  focus?: string[];
   sequence?: string[];
-  refs: string | string[];
+  refs?: string | string[];
   text: string;
 }
 
@@ -264,6 +266,8 @@ export interface ReadingSegment {
   title: string;
   /** 段落選單的分組（例如「創世記」「大衛立的職位」「歸回」「新約」） */
   group: string;
+  /** 目錄裡這一段的一句介紹 */
+  intro?: string;
   /** 經文範圍的顯示文字，例如「創 36:1–43」 */
   range: string;
   /** 預設畫面 */

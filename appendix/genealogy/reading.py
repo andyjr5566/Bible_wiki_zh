@@ -123,6 +123,12 @@ def build_reading(builder, helpers: dict) -> dict | None:
         for field in ("id", "title", "group"):
             if not segment.get(field):
                 builder.err(seg_where, f"{field} 不能空白")
+        # 目錄裡的一句介紹：每一段都要有，照經文寫、不放「」引句（引句不逐字比對）、60 字以內
+        intro = str(segment.get("intro", "") or "")
+        if not intro:
+            builder.err(seg_where, "intro 不能空白（目錄裡的一句介紹）")
+        elif "「" in intro or "」" in intro or len(intro) > 60:
+            builder.err(seg_where, "intro 不可含「」，而且要在 60 字以內")
         segments_in.append((segment, parsed))
     route_order: list[str] = [key(*item) for _, parsed in segments_in for item in parsed]
     route_keys = set(route_order)
@@ -702,6 +708,7 @@ def build_reading(builder, helpers: dict) -> dict | None:
             carry_keys = (carry_keys + [k]) if continues else []
             previous_section = section_of.get(k).get("title") if chronicles and section_of.get(k) is not None else None
         segments_out.append({"id": str(segment.get("id")), "title": str(segment.get("title")), "group": str(segment.get("group")),
+                             "intro": str(segment.get("intro", "") or ""),
                              "range": range_label(str(segment.get("ranges", ""))), "stage": seg_stage, "chapters": chapters})
         if chronicles:
             count = sum(len(chapter["verses"]) for chapter in chapters)

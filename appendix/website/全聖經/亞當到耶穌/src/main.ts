@@ -15,6 +15,8 @@ import { createRoles } from './ui/roles';
 import { createRoster } from './ui/roster';
 import { createSpeech } from './ui/speech';
 import { createTour } from './ui/tour';
+import { createCatalog } from './ui/catalog';
+import { createReturns } from './ui/returns';
 import { createTreeStage } from './ui/tree-stage';
 import { createWall } from './ui/wall';
 
@@ -127,8 +129,13 @@ const rolesView = createRoles({
   },
 });
 const rolesPage = h('section', { className: 'ag-page-view ag-rd-roles-page', 'data-page': 'roles' }, rolesView.el);
+// 目錄（最左邊）和「歸回的名單」：點一段就從那裡開始帶你讀
+const catalogPage = h('section', { className: 'ag-page-view', 'data-page': 'catalog' },
+  createCatalog({ reading: READING, onOpen(start) { reader.open(start); } }));
+const returnsView = createReturns({ reading: READING, loadRoster, loadWall, onOpen(start) { reader.open(start); } });
+const returnsPage = h('section', { className: 'ag-page-view', 'data-page': 'returns' }, returnsView.el);
 const pageNodes = new Map<PageId, HTMLElement>([
-  ['tree', treePage], ['compare', comparePage], ['ages', agesPage], ['notes', notesPage], ['roles', rolesPage],
+  ['catalog', catalogPage], ['tree', treePage], ['compare', comparePage], ['ages', agesPage], ['notes', notesPage], ['roles', rolesPage], ['returns', returnsPage],
 ]);
 
 function focusTreeTarget(id: string) {
@@ -151,6 +158,7 @@ function focusIdForPerson(person: Person): string | null {
 function applyPage() {
   for (const [id, element] of pageNodes) element.hidden = id !== page;
   if (page === 'roles') rolesView.showPage();
+  if (page === 'returns') returnsView.showPage();
   toolbar?.setState();
 }
 
@@ -216,7 +224,11 @@ canvas.onRoleSeal((boxId, personId) => {
   applyPage();
   void rolesView.ready().then(() => rolesView.focusBox(boxId, personId));
 });
-const tour = createTour(data, canvas, openVerse, () => reader.open());
+const tour = createTour(data, canvas, openVerse, {
+  hintRead: (on) => toolbar.hintRead(on),
+  showCatalog() { if (page !== 'catalog') { activeCardPerson = null; card.show(null); page = 'catalog'; applyPage(); } },
+  showTree() { if (page !== 'tree') { page = 'tree'; applyPage(); } },
+});
 const main = h('main', { className: 'ag-main' });
 for (const element of pageNodes.values()) main.append(element);
 main.append(card.el, reader.panel);
