@@ -403,6 +403,11 @@ export function createReader(reading: ReadingData, stages: { tree: ReadingStage;
     }
     if (item.verse.hold) ids.add(item.verse.hold);
     if (item.verse.box) ids.add(item.verse.box);
+    // 這一節沒有人名時鏡頭停在前面讀到的人（拉 2:10 停在 2:2 的耶書亞）：直接從這一節打開時那一支還沒展開，也要展開
+    if (item.stage === 'tree' && !item.verse.hold) {
+      const back = lastPersonInSection.get(sectionOf(item)) ?? anchorPerson(route, at);
+      if (back) ids.add(back);
+    }
     revealed = [...ids];
     for (const id of ['tree', 'roles'] as const) stages[id].setVerse?.(item.key);
     for (const id of readyStages) stages[id].reveal(revealed);
