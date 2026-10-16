@@ -569,6 +569,25 @@ describe('大衛立的職位與歸回連結', () => {
     for (const key of ['拉2:36', '拉2:39', '拉2:61', '拉2:62', '尼7:39', '尼7:63']) expect(stageOf(key), key).toBe('roles');
     expect(stageOf('拉7:1')).toBe('tree');
   });
+
+  it('家譜裡有這座城：標在地名上（不是人名），子母畫面的標題是經文裡的字', () => {
+    const tokenOf = new Map<number, { k: string; key: string }>();
+    for (const { key, verse } of verses) for (const token of verse.t) if (token.link !== undefined) tokenOf.set(token.link, { k: token.k, key });
+    const towns = READING.links.map((link, index) => ({ link, index })).filter(({ link }) => link.effect === 'town');
+    expect(towns.length).toBeGreaterThan(10);
+    for (const { link, index } of towns) {
+      expect(tokenOf.get(index)?.k, `${link.at} ${link.word}`).toBe('l');
+      if (link.pip) {
+        expect(link.to.some((target) => target.tree), `${link.at} pip 要有家譜樹上的人`).toBe(true);
+        expect(lookupVerses(link.refs.join(',')).map((line) => line.text ?? '').join(''), link.at).toContain(link.pip);
+      }
+    }
+    // 冊上有名的家族都連到家譜樹上的人
+    for (const at of ['拉2:2', '拉2:38', '尼7:41']) {
+      const link = READING.links.find((item) => item.at === at && item.effect === 'link');
+      expect(link?.to.some((target) => target.tree), at).toBe(true);
+    }
+  });
 });
 
 describe('三千人物版面壓力測試', () => {

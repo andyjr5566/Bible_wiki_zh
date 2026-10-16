@@ -159,6 +159,207 @@ links:
     basis:
       - {ref: 尼7:57, quote: 所羅門僕人的後裔}
 
+  # ───────────── 冊上有名：前面家譜記過的家族（名冊上金色、朱印、子母畫面） ─────────────
+  # 只連原文編號相同、而且 TIPNR 或註釋明說的。查過不連的（以攔、拉 2:36 耶書亞家、拉 2:2 耶書亞、示法提雅、
+  # 巴尼、亞拉、何達威雅、巴西萊、西拿）見回報；那些家族只寫進名冊、照讀。
+  - at: 拉2:2
+    word: 所羅巴伯@1
+    to: [{tree: 所羅巴伯}]
+    effect: link
+    card: 歷代志上大衛的後代裡記著：「毘大雅的兒子是所羅巴伯」。
+    refs: [代上3:19]
+    basis: &zerubbabel
+      - {ref: 代上3:19, quote: 毘大雅的兒子是所羅巴伯}
+      - {source: ccbiblestudy_CT_ezra_2.txt, quote: 「所羅巴伯」：是約雅斤王的孫子}
+      - {source: biblehub_study_ezra_2.txt, quote: "Zerubbabel, a descendant of David, governed the returned community under Persian authority"}
+      - {source: stepbible_ezra_2.txt, quote: H2216, note: 和代上 3:19 的所羅巴伯同一個原文編號}
+      - {source: stepbible_1_chronicles_3.txt, quote: H2216}
+  - at: 尼7:7
+    word: 所羅巴伯@1
+    to: [{tree: 所羅巴伯}]
+    effect: link
+    card: 歷代志上大衛的後代裡記著：「毘大雅的兒子是所羅巴伯」。
+    refs: [代上3:19]
+    basis: *zerubbabel
+  - at: 拉2:38
+    word: 巴施戶珥@1
+    to: [{tree: 巴施戶珥}]
+    effect: link
+    card: 歷代志上的祭司名單裡記著：「巴施戶珥的孫子、耶羅罕的兒子亞大雅」。
+    refs: [代上9:12]
+    basis: &pashhur
+      - {ref: 代上9:12, quote: 巴施戶珥的孫子、耶羅罕的兒子亞大雅}
+      - {source: stepbible_ezra_2.txt, quote: H6583G, note: 和代上 9:12 的巴施戶珥同一個原文編號}
+      - {source: stepbible_1_chronicles_9.txt, quote: H6583G}
+      - {source: biblehub_study_ezra_2.txt, quote: "1Ch 9:12 Adaiah son of Jeroham, the son of Pashhur"}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Pashhur@1Ch.9.12-Neh（同一條收拉 2:38、尼 7:41、代上 9:12）}
+  - at: 尼7:41
+    word: 巴施戶珥@1
+    to: [{tree: 巴施戶珥}]
+    effect: link
+    card: 歷代志上的祭司名單裡記著：「巴施戶珥的孫子、耶羅罕的兒子亞大雅」。
+    refs: [代上9:12]
+    basis: *pashhur
+
+  # ───────────── 家譜裡有這座城：代上 2–9 的家譜經文記過的城（較淡的標記） ─────────────
+  # 原文編號相同、TIPNR 同一個地點條目才算；只說這座城在家譜裡記過，不說住在那城的人是誰的子孫。
+  # 經文寫明「某城之祖」「某城的父親」而那個人在家譜樹上的，子母畫面畫那個人（pip）。
+  - at: 拉2:21
+    word: 伯利恆@1
+    to: [{tree: 薩瑪}]
+    effect: town
+    pip: 伯利恆之祖薩瑪
+    card: 歷代志上迦勒的子孫裡記著：「伯利恆之祖薩瑪」。
+    refs: [代上2:51]
+    basis: &bethlehem
+      - {ref: 代上2:51, quote: 伯利恆之祖薩瑪}
+      - {source: stepbible_ezra_2.txt, quote: H1035G, note: 和代上 2:51 的伯利恆同一個原文編號}
+      - {source: stepbible_1_chronicles_2.txt, quote: H1035G}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Bethlehem@Gen.35.16-Jhn（同一條收拉 2:21、尼 7:26、代上 2:51）}
+  - at: 尼7:26
+    word: 伯利恆@1
+    to: [{tree: 薩瑪}]
+    effect: town
+    pip: 伯利恆之祖薩瑪
+    card: 歷代志上迦勒的子孫裡記著：「伯利恆之祖薩瑪」。
+    refs: [代上2:51]
+    basis: *bethlehem
+  - at: 拉2:22
+    word: 尼陀法@1
+    to: []
+    effect: town
+    card: 歷代志上利未人的家譜裡記著：「他們都住在尼陀法人的村莊」。
+    refs: [代上9:16]
+    basis: &netophah
+      - {ref: 代上9:16, quote: 他們都住在尼陀法人的村莊}
+      - {source: ccbiblestudy_GT_ezra_2.txt, quote: 很早以前迦勒居住的地方(代上2:54)}
+      - {source: biblehub_study_ezra_2.txt, quote: "Netophah was a small Judean town near Bethlehem, associated with the clans descending from Salma in 1 Chronicles 2:54."}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Netophah@2Sa.23.28-Jer（尼陀法與尼陀法人同一個地點條目）}
+  - at: 尼7:26
+    word: 尼陀法@1
+    to: []
+    effect: town
+    card: 歷代志上利未人的家譜裡記著：「他們都住在尼陀法人的村莊」。
+    refs: [代上9:16]
+    basis: *netophah
+  - at: 拉2:23
+    word: 亞拿突@1
+    to: []
+    effect: town
+    card: 歷代志上亞倫的子孫得的城裡有：「亞拿突與其郊野」。
+    refs: [代上6:60]
+    basis: &anathoth
+      - {ref: 代上6:60, quote: 亞拿突與其郊野}
+      - {source: ccbiblestudy_GT_ezra_2.txt, quote: 約書亞為祭司準備的地(書21:18;代上6:60)}
+      - {source: stepbible_ezra_2.txt, quote: H6068G, note: 和代上 6:60 的亞拿突同一個原文編號}
+      - {source: stepbible_1_chronicles_6.txt, quote: H6068G}
+  - at: 尼7:27
+    word: 亞拿突@1
+    to: []
+    effect: town
+    card: 歷代志上亞倫的子孫得的城裡有：「亞拿突與其郊野」。
+    refs: [代上6:60]
+    basis: *anathoth
+  - at: 拉2:25
+    word: 基列耶琳@1
+    to: [{tree: 朔巴#戶珥}]
+    effect: town
+    pip: 基列耶琳之祖朔巴
+    card: 歷代志上迦勒的子孫裡記著：「基列耶琳之祖朔巴」。
+    refs: [代上2:50]
+    basis: &kiriath
+      - {ref: 代上2:50, quote: 基列耶琳之祖朔巴}
+      - {source: stepbible_ezra_2.txt, quote: H7157, note: 和代上 2:50 的基列耶琳同一個原文編號}
+      - {source: stepbible_1_chronicles_2.txt, quote: H7157}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Kiriath-jearim@Jos.9.17-Jer（同一條收拉 2:25、尼 7:29、代上 2:50）}
+  - at: 尼7:29
+    word: 基列耶琳@1
+    to: [{tree: 朔巴#戶珥}]
+    effect: town
+    pip: 基列耶琳之祖朔巴
+    card: 歷代志上迦勒的子孫裡記著：「基列耶琳之祖朔巴」。
+    refs: [代上2:50]
+    basis: *kiriath
+  - at: 拉2:26
+    word: 迦巴@1
+    to: []
+    effect: town
+    card: 歷代志上亞倫的子孫得的城裡有：「迦巴與其郊野」。
+    refs: [代上6:60]
+    basis: &geba
+      - {ref: 代上6:60, quote: 迦巴與其郊野}
+      - {source: stepbible_ezra_2.txt, quote: H1387G, note: 和代上 6:60 的迦巴同一個原文編號}
+      - {source: stepbible_1_chronicles_6.txt, quote: H1387G}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Geba@Jos.18.24-Zec}
+  - at: 尼7:30
+    word: 迦巴@1
+    to: []
+    effect: town
+    card: 歷代志上亞倫的子孫得的城裡有：「迦巴與其郊野」。
+    refs: [代上6:60]
+    basis: *geba
+  - at: 拉2:28
+    word: 伯特利@1
+    to: []
+    effect: town
+    card: 歷代志上的家譜裡記著：「以法蓮人的地業和住處是伯特利與其村莊」。
+    refs: [代上7:28]
+    basis: &bethel
+      - {ref: 代上7:28, quote: 以法蓮人的地業和住處是伯特利與其村莊}
+      - {source: stepbible_ezra_2.txt, quote: H1008G, note: 和代上 7:28 的伯特利同一個原文編號}
+      - {source: stepbible_1_chronicles_7.txt, quote: H1008G}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Bethel@Gen.12.8-Zec}
+  - at: 尼7:32
+    word: 伯特利@1
+    to: []
+    effect: town
+    card: 歷代志上的家譜裡記著：「以法蓮人的地業和住處是伯特利與其村莊」。
+    refs: [代上7:28]
+    basis: *bethel
+  - at: 拉2:33
+    word: 羅德@1
+    to: []
+    effect: town
+    card: 歷代志上便雅憫的家譜裡記著：「沙麥建立阿挪和羅德二城與其村莊」。
+    refs: [代上8:12]
+    basis: &lodono
+      - {ref: 代上8:12, quote: 沙麥建立阿挪和羅德二城與其村莊}
+      - {source: biblehub_study_ezra_2.txt, quote: "Lod lay on the western edge of Benjamin’s territory and was associated with Ono in the early tribal settlement (1 Chron. 8:12)."}
+      - {source: stepbible_ezra_2.txt, quote: H3850, note: 羅德和代上 8:12 同一個原文編號}
+      - {source: stepbible_1_chronicles_8.txt, quote: H3850}
+  - at: 拉2:33
+    word: 阿挪@1
+    to: []
+    effect: town
+    refs: [代上8:12]
+    basis: *lodono
+  - at: 尼7:37
+    word: 羅德@1
+    to: []
+    effect: town
+    card: 歷代志上便雅憫的家譜裡記著：「沙麥建立阿挪和羅德二城與其村莊」。
+    refs: [代上8:12]
+    basis: *lodono
+  - at: 尼7:37
+    word: 阿挪@1
+    to: []
+    effect: town
+    refs: [代上8:12]
+    basis: *lodono
+  # 拉 2:20 寫吉罷珥（原文編號不同）；尼 7:25 寫基遍，和代上 8:29 同一個原文編號
+  - at: 尼7:25
+    word: 基遍@1
+    to: [{tree: 耶利}]
+    effect: town
+    pip: 基遍的父親耶利
+    card: 歷代志上便雅憫的家譜裡記著：「在基遍住的有基遍的父親耶利」。
+    refs: [代上8:29]
+    basis:
+      - {ref: 代上8:29, quote: 在基遍住的有基遍的父親耶利}
+      - {source: stepbible_nehemiah_7.txt, quote: H1391, note: 和代上 8:29 的基遍同一個原文編號}
+      - {source: stepbible_1_chronicles_8.txt, quote: H1391}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Gibeon@Jos.9.3-Ezk}
+
   # ───────────── 尼希米記 11 章：住在耶路撒冷的猶大人 ─────────────
   - at: 尼11:4
     word: 法勒斯@1
