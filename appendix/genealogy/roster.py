@@ -9,7 +9,7 @@ _DIGITS = {
     "三": 3, "四": 4, "五": 5, "六": 6, "七": 7, "八": 8, "九": 9,
 }
 _NUMERAL_CHARS = "零〇一二三四五六七八九十百千萬兩"
-_COUNT_RE = re.compile(r"([" + re.escape(_NUMERAL_CHARS) + r"]+)(達利克|彌拿|名|匹|隻|件|個)")
+_COUNT_RE = re.compile(r"(?:共)?([" + re.escape(_NUMERAL_CHARS) + r"]+)(達利克|彌拿|名|人|匹|隻|件|個)")
 _REF_RE = re.compile(r"^(.+?)(\d+):(\d+)$")
 
 
@@ -120,7 +120,10 @@ def chinese_number(text: str) -> int | None:
         value = _parse_under_10000(normalized)
         if value is None:
             return None
-    return value if _format_chinese_number(value) == normalized else None
+    canonical = _format_chinese_number(value)
+    if canonical == normalized or (normalized.startswith("一十") and canonical == normalized[1:]):
+        return value
+    return None
 
 
 def _all_occurrences(text: str, needle: str) -> list[int]:
@@ -135,18 +138,33 @@ def _all_occurrences(text: str, needle: str) -> list[int]:
     return positions
 
 
-def _find_name(text: str, name: str, start: int) -> int:
+def _find_name(
+    text: str,
+    name: str,
+    start: int,
+    markers: list[dict] | None = None,
+    label_end: int | None = None,
+) -> int:
     before_delimiters = "、，；：。()（）「」『』"
     after_delimiters = "、，；：。()（）「」『』"
-    before_phrases = ("同著", "從", "是", "和", "並", "與", "及")
+    before_phrases = ("同著", "從", "是", "和", "並", "與", "及", "有")
     after_phrases = ("的", "回", "並", "共", "上來")
     for relative in _all_occurrences(text[start:], name):
         position = start + relative
+        if any(
+            isinstance(marker, dict)
+            and marker.get("k") == "p"
+            and marker.get("s") == position
+            and marker.get("e") == position + len(name)
+            for marker in (markers or [])
+        ):
+            return position
         prefix = text[:position]
         suffix = text[position + len(name):]
         left_ok = (
             position == 0
             or text[position - 1] in before_delimiters
+            or position == label_end
             or any(prefix.endswith(phrase) for phrase in before_phrases)
         )
         right_ok = (
@@ -177,6 +195,7 @@ def build_roster(
         if isinstance(item, dict) and isinstance(item.get("id"), str)
     }
     verse_texts: dict[str, str] = {}
+    verse_rows: dict[str, dict] = {}
     for item in reading.get("segments", []):
         if not isinstance(item, dict):
             continue
@@ -188,7 +207,9 @@ def build_roster(
                 continue
             for verse in chapter.get("verses", []):
                 if isinstance(verse, dict) and isinstance(verse.get("v"), int) and isinstance(verse.get("text"), str):
-                    verse_texts[f"{book}{number}:{verse['v']}"] = verse["text"]
+                    ref = f"{book}{number}:{verse['v']}"
+                    verse_texts[ref] = verse["text"]
+                    verse_rows[ref] = verse
 
     refs_by_segment: dict[str, list[str]] = {}
     positions_by_segment: dict[str, dict[str, int]] = {}
@@ -256,6 +277,25 @@ def build_roster(
             "max": 0,
             "sections": [],
         }
+        if "tone" in roster:
+            tone = roster["tone"]
+            if not isinstance(tone, str):
+                errors.append(f"{prefix}：tone 必須是字串。")
+            elif tone != "plain":
+                errors.append(f"{prefix}：tone 只支援 plain。")
+            else:
+                built["tone"] = tone
+                if any(
+                    isinstance(link, dict) and link.get("at") in positions
+                    for link in (links if isinstance(links, list) else [])
+                ):
+                    errors.append(f"{prefix}：plain 的名冊不得有冊上有名的連結。")
+        if "seal" in roster:
+            seal = roster["seal"]
+            if not isinstance(seal, bool):
+                errors.append(f"{prefix}：seal 必須是布林值。")
+            elif seal:
+                built["seal"] = True
         quote = roster.get("quote")
         if isinstance(quote, dict):
             ref, text = quote.get("ref"), quote.get("text")
@@ -326,9 +366,14 @@ def build_roster(
                 if label is not None:
                     if not isinstance(label, str) or not label:
                         errors.append(f"{location}label 必須是非空字串。")
-                    elif _COUNT_RE.search(label):
-                        # 「馬七百三十六匹」這種把數字吞進 label 的寫法，會讓 count 對到下一項的數字
-                        errors.append(f"{location}label「{label}」不可包含數字與量詞。")
+                    elif any(char in _NUMERAL_CHARS for char in label):
+                        errors.append(f"{location}label「{label}」不可包含中文數字字。")
+                        found = text.find(label, label_cursor.get(at or "", 0))
+                        if found < 0:
+                            errors.append(f"{location}label「{label}」沒有依序出現在經文裡。")
+                        else:
+                            label_pos = found
+                            label_cursor[at or ""] = found + len(label)
                     else:
                         found = text.find(label, label_cursor.get(at or "", 0))
                         if found < 0:
@@ -350,7 +395,14 @@ def build_roster(
                             if not isinstance(name, str) or not name:
                                 errors.append(f"{location}names 裡的每個名字都必須是非空字串。")
                                 continue
-                            found = _find_name(text, name, cursor)
+                            verse_row = verse_rows.get(at or "", {})
+                            markers = verse_row.get("t", []) if isinstance(verse_row, dict) else []
+                            label_end = (
+                                label_pos + len(label)
+                                if label_pos is not None and isinstance(label, str)
+                                else None
+                            )
+                            found = _find_name(text, name, cursor, markers, label_end)
                             if found < 0:
                                 errors.append(f"{location}名字「{name}」沒有依序出現在經文裡。")
                                 continue
@@ -409,7 +461,9 @@ def build_roster(
                         errors.append(f"{location}count 必須是整數。")
                     else:
                         out["count"], out["unit"] = count, unit
-                        if unit not in ("名", "匹", "隻", "達利克", "彌拿", "件", "個"):
+                        if not isinstance(unit, str):
+                            errors.append(f"{location}unit 必須是字串。")
+                        elif unit not in ("名", "人", "", "匹", "隻", "達利克", "彌拿", "件", "個"):
                             errors.append(f"{location}unit 不是支援的量詞。")
                         if last_name_end is not None:
                             start = last_name_end
@@ -419,22 +473,50 @@ def build_roster(
                             start = label_cursor.get(at or "", 0)
                         else:
                             start = 0
-                        quantity = next(iter(_COUNT_RE.finditer(text, start)), None)
-                        if quantity is None:
+                        number_text: str | None = None
+                        number_pos: int | None = None
+                        actual_unit: str | None = None
+                        boundary_ok = True
+                        if unit == "":
+                            first_number = re.search(r"(?:共)?([" + re.escape(_NUMERAL_CHARS) + r"]+)", text[start:])
+                            if first_number is not None:
+                                number_text = first_number.group(1)
+                                number_pos = start + first_number.start(1)
+                                after_pos = start + first_number.end(1)
+                                after = text[after_pos:after_pos + 1]
+                                if after and after in "名人匹隻件個達利克彌拿":
+                                    actual_unit = next((
+                                        candidate for candidate in ("達利克", "彌拿", "名", "人", "匹", "隻", "件", "個")
+                                        if text.startswith(candidate, after_pos)
+                                    ), after)
+                                    boundary_ok = False
+                                elif after and after not in "，。；：、":
+                                    boundary_ok = False
+                        else:
+                            quantity = next(iter(_COUNT_RE.finditer(text, start)), None)
+                            if quantity is not None:
+                                number_text = quantity.group(1)
+                                number_pos = quantity.start(1)
+                                actual_unit = quantity.group(2)
+                        if number_text is None or number_pos is None:
                             errors.append(f"{location}label 或名字之後找不到中文數字與量詞。")
                         else:
-                            parsed = chinese_number(quantity.group(1))
+                            if number_pos > 0 and text[number_pos - 1] in _NUMERAL_CHARS:
+                                errors.append(f"{location}數字串左邊界不能緊接中文數字字。")
+                            parsed = chinese_number(number_text)
                             if parsed is None:
-                                errors.append(f"{location}「{quantity.group(1)}」不是合法中文數字。")
+                                errors.append(f"{location}「{number_text}」不是合法中文數字。")
                             elif parsed != count:
                                 errors.append(f"{location}經文數字是 {parsed}，與 count {count} 不同。")
-                            if quantity.group(2) != unit:
-                                errors.append(f"{location}經文量詞是「{quantity.group(2)}」，與 unit「{unit}」不同。")
-                            out["n"] = quantity.start(1)
+                            if actual_unit is not None and actual_unit != unit:
+                                errors.append(f"{location}經文量詞是「{actual_unit}」，與 unit「{unit}」不同。")
+                            if unit == "" and not boundary_ok:
+                                errors.append(f"{location}unit 為空時，數字後必須接標點或節尾。")
+                            out["n"] = number_pos
 
                 bar = bool(
                     bars and "count" in row and "total" not in row
-                    and "big" not in row and unit == "名"
+                    and "big" not in row and unit in ("名", "人", "")
                 )
                 out["bar"] = bar
                 if bar and isinstance(count, int) and not isinstance(count, bool):

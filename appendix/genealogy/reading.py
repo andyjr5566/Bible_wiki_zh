@@ -31,7 +31,7 @@ STATED_FORWARD = re.compile(r"(的?(兒子|女兒|長子|次子|三子|四子|�
 # 「後一位是前一位的兒子」的後半
 STATED_BACKWARD = re.compile(r"的(兒子|女兒|長子|次子)")
 ROLE_PREFIX = "r:"
-STAGES = ("tree", "roles", "roster")
+STAGES = ("tree", "roles", "roster", "wall")
 
 
 def load_yaml(path: Path, builder, where: str, default):

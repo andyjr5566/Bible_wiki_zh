@@ -127,5 +127,7 @@ export function chineseNumber(text: string): number | null {
     value = parsed;
   }
 
-  return formatChineseNumber(value) === normalized ? value : null;
+  // 「共一十八人」（拉 8:18）：十幾的數也有寫成「一十幾」的，和 roster.py 一樣接受
+  const canonical = formatChineseNumber(value);
+  return canonical === normalized || (normalized.startsWith('一十') && canonical === normalized.slice(1)) ? value : null;
 }

@@ -2699,21 +2699,53 @@ class LineageBuilder:
         self.roles_data, self.role_seals = build_roles(self, self._yaml("職位.yaml", {}) or {}, helpers)
         self.reading_review: list[str] = []
         self.reading = build_reading(self, helpers)
-        # 歸回的名冊（拉 2、尼 7）：讀經時第三個畫面
+        # 歸回名冊、城牆與家族軌跡：讀經模式中的輔助畫面資料
         self.roster = None
+        self.wall = None
+
+        def verse_text(ref: str) -> str | None:
+            try:
+                found = parse_refs(ref, "", self.sc)
+            except ValueError:
+                return None
+            return self.sc.verse(*found[0]) if found else None
+
         roster_spec = self._yaml("名冊.yaml", None)
         if self.reading and roster_spec:
             from roster import build_roster
 
-            def verse_text(ref: str) -> str | None:
-                try:
-                    found = parse_refs(ref, "", self.sc)
-                except ValueError:
-                    return None
-                return self.sc.verse(*found[0]) if found else None
-            self.roster, roster_errors = build_roster(roster_spec, self.reading, verse_text, self.reading.get("links", []))
+            self.roster, roster_errors = build_roster(
+                roster_spec, self.reading, verse_text, self.reading.get("links", [])
+            )
             for message in roster_errors:
                 self.err("名冊.yaml", message)
+
+        wall_spec = self._yaml("城牆.yaml", None)
+        if self.reading and wall_spec:
+            from wall import build_wall
+
+            self.wall, wall_errors = build_wall(
+                wall_spec, self.reading, verse_text, self.reading.get("links", [])
+            )
+            for message in wall_errors:
+                self.err("城牆.yaml", message)
+
+        family_spec = self._yaml("家族.yaml", None)
+        if self.reading and family_spec:
+            from family import build_families, step_strongs
+
+            family_errors = build_families(
+                family_spec,
+                self.reading,
+                self.roster if isinstance(self.roster, dict) else {"rosters": []},
+                self.wall,
+                verse_text,
+                step_strongs,
+                check_basis,
+                ROOT,
+            )
+            for message in family_errors:
+                self.err("家族.yaml", message)
         review_path = os.environ.get("READING_REVIEW")
         if review_path and self.reading_review:
             Path(review_path).write_text("\n".join(self.reading_review) + "\n", encoding="utf-8")
@@ -4344,11 +4376,14 @@ class LineageBuilder:
         if self.roster:
             (output_dir / "roster.json").write_text(
                 json.dumps(self.roster, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        if self.wall is not None:
+            (output_dir / "wall.json").write_text(
+                json.dumps(self.wall, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         if self.roles_data:
             roles_out = {"categories": [{**category, "boxes": [{k: v for k, v in box.items() if k != "verses"}
                                                                 for box in category["boxes"]]}
                                         for category in self.roles_data["categories"]],
-                         "people": [{k: v for k, v in person.items() if k != "aliases"} for person in self.roles_data["people"]]}
+                         "people": [{k: v for k, v in person.items() if k != "aliases" or v} for person in self.roles_data["people"]]}
             (output_dir / "roles.json").write_text(
                 json.dumps(roles_out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         (output_dir / "verses.json").write_text(

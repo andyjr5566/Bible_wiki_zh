@@ -16,7 +16,7 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-BOOKS = {"創": "創世記", "出": "出埃及記", "得": "路得記", "撒上": "撒母耳記上", "撒下": "撒母耳記下", "代上": "歷代志上",
+BOOKS = {"創": "創世記", "出": "出埃及記", "得": "路得記", "撒上": "撒母耳記上", "撒下": "撒母耳記下", "王上": "列王紀上", "代上": "歷代志上",
          "代下": "歷代志下", "拉": "以斯拉記", "尼": "尼希米記", "太": "馬太福音", "路": "路加福音"}
 site = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "appendix/website/全聖經/亞當到耶穌"
 data_dir = site / "src/data"
@@ -104,6 +104,8 @@ for pid, person in persons.items():
     forms[pid].add(person.get("name", pid.split("#")[0]))
     forms[pid].update(str(n.get("as")) for n in person.get("names", []) or [] if n.get("as"))
 role_names = {p["rid"]: p["name"] for p in roles.get("people", [])}
+# 職位圖人物的別寫（亞多蘭在王上 4:6 寫亞多尼蘭）
+role_forms = {p["rid"]: {p["name"], *p.get("aliases", [])} for p in roles.get("people", [])}
 wrong_name: dict[str, list[str]] = defaultdict(list)
 # 裁決檔寫明「只在經文裡亮」的名字（names）：那個位置必須真的有一個沒有連到人的人名標記
 import yaml  # noqa: E402
@@ -124,7 +126,7 @@ for segment in reading["segments"]:
                 word = verse["text"][t["s"]:t["e"]]
                 if t.get("id") and word not in forms[t["id"]]:
                     wrong_name[segment_of[key]].append(f"{key}「{word}」≠ {t['id']}")
-                if t.get("rid") and word != role_names.get(t["rid"]):
+                if t.get("rid") and word not in role_forms.get(t["rid"], set()):
                     wrong_name[segment_of[key]].append(f"{key}「{word}」≠ {t['rid']}")
 for key, word in declared:
     verse = verse_of.get(key)

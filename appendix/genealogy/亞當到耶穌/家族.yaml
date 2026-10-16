@@ -1,0 +1,322 @@
+# 家族軌跡：同一個家族（或同一個人）在歸回後的幾份名單都出現（唯一來源；由 ../family.py 讀取並檢查）
+#
+# 名冊、城牆畫面上，那一行（或那個名字）底下一排小籤「也在：……」，點了跳到那一節讀。
+# 連結規則（使用者定案：有根據且沒人反對才連）：
+#   每一處 STEP 原文編號（含字母）都和 strong 相同，而且 TIPNR 是同一條；四套註釋沒有人說不是。
+#   原文編號不同的那一處，必須有註釋明說是同一家、而且沒有人反對，寫在那一處的 basis（建置會擋）。
+# 照規則不連的（原文編號或 TIPNR 分開）：
+#   拉 8:3、尼 3:25、尼 10:14 的巴錄（H6551H／I／J，TIPNR 各自一條，和 H6551G 分開）；
+#   尼 3:4、3:21 哈哥斯（H6976J）和拉 2:61、尼 7:63 的哈哥斯（H6976I）；
+#   尼 3:11 巴哈摩押、哈琳，尼 3:29 音麥，尼 10:14–27 民的首領裡的家族名（各自一條）；
+#   拉 2:31、尼 7:34「別的以攔」：經文自己寫「別的」，CT 也說和 2:7 的以攔有別。
+#   尼 3:20「薩拜」：STEP 寫 H2140（和拉 2:9 薩改同號），TIPNR 在這一節卻列 H2079H，兩邊不一致。
+#   只在拉 2、尼 7 兩份平行名單出現的家族不列（兩份已逐行對照）。
+# forms：這個家族在經文裡的中文寫法；tipnr：TIPNR 的那一條（每一處的原文編號都必須屬於這一條）。
+# places：at 經節；word「名字@第幾次出現」。
+families:
+  - name: 巴錄的子孫
+    forms: [巴錄]
+    strong: H6551G
+    tipnr: Parosh@Ezr.2.3-Neh
+    places:
+      - {at: 拉2:3, word: 巴錄@1}
+      - {at: 拉10:25, word: 巴錄@1}
+      - {at: 尼7:8, word: 巴錄@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H6551G}
+      - {source: stepbible_ezra_10.txt, quote: H6551G}
+      - {source: stepbible_nehemiah_7.txt, quote: H6551G}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Parosh@Ezr.2.3-Neh}
+  - name: 巴哈摩押的子孫
+    forms: [巴哈摩押]
+    strong: H6355G
+    tipnr: Pahath-moab@Ezr.2.6-Neh
+    places:
+      - {at: 拉2:6, word: 巴哈摩押@1}
+      - {at: 拉8:4, word: 巴哈摩押@1}
+      - {at: 拉10:30, word: 巴哈摩押@1}
+      - {at: 尼7:11, word: 巴哈摩押@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H6355G}
+      - {source: stepbible_ezra_8.txt, quote: H6355G}
+      - {source: stepbible_ezra_10.txt, quote: H6355G}
+      - {source: stepbible_nehemiah_7.txt, quote: H6355G}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Pahath-moab@Ezr.2.6-Neh}
+  - name: 以攔的子孫
+    forms: [以攔]
+    strong: H5867B
+    tipnr: Elam@Ezr.2.7-Neh
+    places:
+      - {at: 拉2:7, word: 以攔@1}
+      - {at: 拉8:7, word: 以攔@1}
+      - {at: 拉10:26, word: 以攔@1}
+      - {at: 尼7:12, word: 以攔@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H5867B}
+      - {source: stepbible_ezra_8.txt, quote: H5867B}
+      - {source: stepbible_ezra_10.txt, quote: H5867B}
+      - {source: stepbible_nehemiah_7.txt, quote: H5867B}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Elam@Ezr.2.7-Neh}
+  - name: 薩土的子孫
+    forms: [薩土]
+    strong: H2240G
+    tipnr: Zattu@Ezr.2.8-Neh
+    places:
+      - {at: 拉2:8, word: 薩土@1}
+      - {at: 拉10:27, word: 薩土@1}
+      - {at: 尼7:13, word: 薩土@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H2240G}
+      - {source: stepbible_ezra_10.txt, quote: H2240G}
+      - {source: stepbible_nehemiah_7.txt, quote: H2240G}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Zattu@Ezr.2.8-Neh}
+  - name: 巴尼的子孫
+    forms: [巴尼]
+    strong: H1137Q
+    tipnr: Bani@Ezr.2.10-Neh
+    places:
+      - {at: 拉2:10, word: 巴尼@1}
+      - {at: 拉10:29, word: 巴尼@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H1137Q}
+      - {source: stepbible_ezra_10.txt, quote: H1137Q}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Bani@Ezr.2.10-Neh}
+  - name: 比拜的子孫
+    forms: [比拜]
+    strong: H893G
+    tipnr: Bebai@Ezr.2.11-Neh
+    places:
+      - {at: 拉2:11, word: 比拜@1}
+      - {at: 拉8:11, word: 比拜@1}
+      - {at: 拉10:28, word: 比拜@1}
+      - {at: 尼7:16, word: 比拜@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H893G}
+      - {source: stepbible_ezra_8.txt, quote: H893G}
+      - {source: stepbible_ezra_10.txt, quote: H893G}
+      - {source: stepbible_nehemiah_7.txt, quote: H893G}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Bebai@Ezr.2.11-Neh}
+  - name: 押甲的子孫
+    forms: [押甲]
+    strong: H5803G
+    tipnr: Azgad@Ezr.2.12-Neh
+    places:
+      - {at: 拉2:12, word: 押甲@1}
+      - {at: 拉8:12, word: 押甲@1}
+      - {at: 尼7:17, word: 押甲@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H5803G}
+      - {source: stepbible_ezra_8.txt, quote: H5803G}
+      - {source: stepbible_nehemiah_7.txt, quote: H5803G}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Azgad@Ezr.2.12-Neh}
+  - name: 亞多尼干的子孫
+    forms: [亞多尼干]
+    strong: H140
+    tipnr: Adonikam@Ezr.2.13-Neh
+    places:
+      - {at: 拉2:13, word: 亞多尼干@1}
+      - {at: 拉8:13, word: 亞多尼干@1}
+      - {at: 尼7:18, word: 亞多尼干@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H140}
+      - {source: stepbible_ezra_8.txt, quote: H140}
+      - {source: stepbible_nehemiah_7.txt, quote: H140}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Adonikam@Ezr.2.13-Neh}
+  - name: 比革瓦伊的子孫
+    forms: [比革瓦伊]
+    strong: H902H
+    tipnr: Bigvai@Ezr.2.14-Neh
+    places:
+      - {at: 拉2:14, word: 比革瓦伊@1}
+      - {at: 拉8:14, word: 比革瓦伊@1}
+      - {at: 尼7:19, word: 比革瓦伊@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H902H}
+      - {source: stepbible_ezra_8.txt, quote: H902H}
+      - {source: stepbible_nehemiah_7.txt, quote: H902H}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Bigvai@Ezr.2.14-Neh}
+  - name: 亞丁的子孫
+    forms: [亞丁]
+    strong: H5720G
+    tipnr: Adin@Ezr.2.15-Neh
+    places:
+      - {at: 拉2:15, word: 亞丁@1}
+      - {at: 拉8:6, word: 亞丁@1}
+      - {at: 尼7:20, word: 亞丁@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H5720G}
+      - {source: stepbible_ezra_8.txt, quote: H5720G}
+      - {source: stepbible_nehemiah_7.txt, quote: H5720G}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Adin@Ezr.2.15-Neh}
+  - name: 哈順的子孫
+    forms: [哈順]
+    strong: H2828G
+    tipnr: Hashum@Ezr.2.19-Neh
+    places:
+      - {at: 拉2:19, word: 哈順@1}
+      - {at: 拉10:33, word: 哈順@1}
+      - {at: 尼7:22, word: 哈順@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H2828G}
+      - {source: stepbible_ezra_10.txt, quote: H2828G}
+      - {source: stepbible_nehemiah_7.txt, quote: H2828G}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Hashum@Ezr.2.19-Neh}
+  - name: 示法提雅的子孫
+    forms: [示法提雅]
+    strong: H8203L
+    tipnr: Shephatiah@Ezr.2.4-Neh
+    places:
+      - {at: 拉2:4, word: 示法提雅@1}
+      - {at: 拉8:8, word: 示法提雅@1}
+      - {at: 尼7:9, word: 示法提雅@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H8203L}
+      - {source: stepbible_ezra_8.txt, quote: H8203L}
+      - {source: stepbible_nehemiah_7.txt, quote: H8203L}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Shephatiah@Ezr.2.4-Neh}
+  - name: 耶書亞家
+    forms: [耶書亞]
+    strong: H3442G
+    tipnr: Jeshua@1Ch.24.11-Neh
+    places:
+      - {at: 拉2:36, word: 耶書亞@1}
+      - {at: 拉10:18, word: 耶書亞@1}
+      - {at: 尼7:39, word: 耶書亞@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H3442G}
+      - {source: stepbible_ezra_10.txt, quote: H3442G}
+      - {source: stepbible_nehemiah_7.txt, quote: H3442G}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Jeshua@1Ch.24.11-Neh}
+  - name: 音麥的子孫
+    forms: [音麥]
+    strong: H564H
+    tipnr: Immer@1Ch.24.14-Jer
+    places:
+      - {at: 拉2:37, word: 音麥@1}
+      - {at: 拉10:20, word: 音麥@1}
+      - {at: 尼7:40, word: 音麥@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H564H}
+      - {source: stepbible_ezra_10.txt, quote: H564H}
+      - {source: stepbible_nehemiah_7.txt, quote: H564H}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Immer@1Ch.24.14-Jer}
+  - name: 巴施戶珥的子孫
+    forms: [巴施戶珥]
+    strong: H6583G
+    tipnr: Pashhur@1Ch.9.12-Neh
+    places:
+      - {at: 拉2:38, word: 巴施戶珥@1}
+      - {at: 拉10:22, word: 巴施戶珥@1}
+      - {at: 尼7:41, word: 巴施戶珥@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H6583G}
+      - {source: stepbible_ezra_10.txt, quote: H6583G}
+      - {source: stepbible_nehemiah_7.txt, quote: H6583G}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Pashhur@1Ch.9.12-Neh}
+  - name: 哈琳的子孫
+    forms: [哈琳]
+    strong: H2766G
+    tipnr: Harim@1Ch.24.8-Neh
+    places:
+      - {at: 拉2:39, word: 哈琳@1}
+      - {at: 拉10:21, word: 哈琳@1}
+      - {at: 尼7:42, word: 哈琳@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H2766G}
+      - {source: stepbible_ezra_10.txt, quote: H2766G}
+      - {source: stepbible_nehemiah_7.txt, quote: H2766G}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Harim@1Ch.24.8-Neh}
+  - name: 利未人耶書亞
+    forms: [耶書亞]
+    strong: H3442J
+    tipnr: Jeshua@Ezr.2.40-Neh
+    places:
+      - {at: 拉2:40, word: 耶書亞@1}
+      - {at: 尼7:43, word: 耶書亞@1}
+      - {at: 尼10:9, word: 耶書亞@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H3442J}
+      - {source: stepbible_nehemiah_7.txt, quote: H3442J}
+      - {source: stepbible_nehemiah_10.txt, quote: H3442J}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Jeshua@Ezr.2.40-Neh}
+  - name: 利未人甲篾
+    forms: [甲篾]
+    strong: H6934
+    tipnr: Kadmiel@Ezr.2.40-Neh
+    places:
+      - {at: 拉2:40, word: 甲篾@1}
+      - {at: 尼7:43, word: 甲篾@1}
+      - {at: 尼10:9, word: 甲篾@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H6934}
+      - {source: stepbible_nehemiah_7.txt, quote: H6934}
+      - {source: stepbible_nehemiah_10.txt, quote: H6934}
+      - {source: ccbiblestudy_GT_nehemiah_10.txt, quote: 耶書亞、賓內、甲篾是與所羅巴伯一起歸回的利未三大家族}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Kadmiel@Ezr.2.40-Neh}
+  - name: 西萊雅
+    forms: [西萊雅]
+    strong: H8304L
+    tipnr: Seraiah@Ezr.2.2-Neh
+    places:
+      - {at: 拉2:2, word: 西萊雅@1}
+      - {at: 尼10:2, word: 西萊雅@1}
+    basis:
+      - {source: stepbible_ezra_2.txt, quote: H8304L}
+      - {source: stepbible_nehemiah_10.txt, quote: H8304L}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Seraiah@Ezr.2.2-Neh}
+  - name: 亞撒利雅
+    forms: [亞撒利雅]
+    strong: H5838X
+    tipnr: Azariah@Neh.7.7-
+    places:
+      - {at: 尼7:7, word: 亞撒利雅@1}
+      - {at: 尼10:2, word: 亞撒利雅@1}
+    basis:
+      - {source: stepbible_nehemiah_7.txt, quote: H5838X}
+      - {source: stepbible_nehemiah_10.txt, quote: H5838X}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Azariah@Neh.7.7-}
+  - name: 但以理
+    forms: [但以理]
+    strong: H1841G
+    tipnr: Daniel@Ezr.8.2-Neh
+    places:
+      - {at: 拉8:2, word: 但以理@1}
+      - {at: 尼10:6, word: 但以理@1}
+    basis:
+      - {source: stepbible_ezra_8.txt, quote: H1841G}
+      - {source: stepbible_nehemiah_10.txt, quote: H1841G}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Daniel@Ezr.8.2-Neh}
+  - name: 哈沙比雅
+    forms: [哈沙比雅]
+    strong: H2811M
+    tipnr: Hashabiah@Ezr.8.19-Neh
+    places:
+      - {at: 拉8:19, word: 哈沙比雅@1}
+      - {at: 尼10:11, word: 哈沙比雅@1}
+    basis:
+      - {source: stepbible_ezra_8.txt, quote: H2811M}
+      - {source: stepbible_nehemiah_10.txt, quote: H2811M}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Hashabiah@Ezr.8.19-Neh}
+  - name: 米利末
+    forms: [米利末]
+    strong: H4822G
+    tipnr: Meremoth@Ezr.8.33-Neh
+    places:
+      - {at: 尼3:4, word: 米利末@1}
+      - {at: 尼3:21, word: 米利末@1}
+      - {at: 尼10:5, word: 米利末@1}
+    basis:
+      - {source: stepbible_nehemiah_3.txt, quote: H4822G}
+      - {source: stepbible_nehemiah_10.txt, quote: H4822G}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Meremoth@Ezr.8.33-Neh}
+  - name: 哈羅黑
+    forms: [哈羅黑]
+    strong: H3873
+    tipnr: Hallohesh@Neh.3.12-
+    places:
+      - {at: 尼3:12, word: 哈羅黑@1}
+      - {at: 尼10:24, word: 哈羅黑@1}
+    basis:
+      - {source: stepbible_nehemiah_3.txt, quote: H3873}
+      - {source: stepbible_nehemiah_10.txt, quote: H3873}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Hallohesh@Neh.3.12-}

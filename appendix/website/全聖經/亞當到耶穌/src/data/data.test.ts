@@ -346,8 +346,8 @@ describe('讀經資料閘門（整條路線）', () => {
   const personIds = new Set(DATA.persons.map((person) => person.id));
   const chronicles = verses.filter((item) => item.segment.id === 'chr1-9');
 
-  it('路線 34 段，從創 4:17 開始；代上 1–9 的 407 節全收；經文和正式經文逐字相同', () => {
-    expect(READING.segments.length).toBe(34);
+  it('路線 38 段，從創 4:17 開始；代上 1–9 的 407 節全收；經文和正式經文逐字相同', () => {
+    expect(READING.segments.length).toBe(38);
     expect(READING.start).toBe('創4:17');
     expect(verses[0]!.key).toBe('創4:17');
     expect(verses.at(-1)!.key).toBe('路3:38');
@@ -568,6 +568,9 @@ describe('大衛立的職位與歸回連結', () => {
     for (const key of ['拉2:1', '拉2:10', '拉2:42', '拉2:64', '尼7:8', '尼7:73']) expect(stageOf(key), key).toBe('roster');
     for (const key of ['拉2:36', '拉2:39', '拉2:61', '拉2:62', '尼7:39', '尼7:63']) expect(stageOf(key), key).toBe('roles');
     expect(stageOf('拉7:1')).toBe('tree');
+    // 第三階段：拉 8、拉 10、尼 10 是名冊，尼 3 是城牆
+    for (const key of ['拉8:1', '拉8:20', '拉10:18', '拉10:44', '尼10:1', '尼10:27']) expect(stageOf(key), key).toBe('roster');
+    for (const key of ['尼3:1', '尼3:26', '尼3:32']) expect(stageOf(key), key).toBe('wall');
   });
 
   it('家譜裡有這座城：標在地名上（不是人名），子母畫面的標題是經文裡的字', () => {

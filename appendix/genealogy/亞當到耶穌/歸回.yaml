@@ -360,6 +360,68 @@ links:
       - {source: stepbible_1_chronicles_8.txt, quote: H1391}
       - {external: STEPBible TIPNR, version: commit bd09545, entry: Gibeon@Jos.9.3-Ezk}
 
+  # ───────────── 以斯拉記 8 章：同以斯拉上來的祭司、大衛的子孫、利未人 ─────────────
+  - at: 拉8:2
+    word: 非尼哈@1
+    to: [{tree: 非尼哈}]
+    effect: link
+    card: 亞倫的兒子以利亞撒「娶了普鐵的一個女兒為妻，他給他生了非尼哈」。
+    refs: [出6:25]
+    basis:
+      - {ref: 出6:25, quote: 他給他生了非尼哈}
+      - {source: ccbiblestudy_CT_ezra_8.txt, quote: 非尼哈是亞倫的第三子以利亞撒的兒子}
+      - {source: biblehub_study_ezra_8.txt, quote: "Phinehas, grandson of Aaron, was commended for defending God’s holiness"}
+      - {source: stepbible_ezra_8.txt, quote: H6372G, note: 和出 6:25 的非尼哈同一個原文編號}
+      - {source: stepbible_exodus_6.txt, quote: H6372G}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Phinehas@Exo.6.25-Psa}
+  - at: 拉8:2
+    word: 以他瑪@1
+    to: [{tree: 以他瑪}]
+    effect: link
+    card: 亞倫的妻子以利沙巴「給他生了拿答、亞比戶、以利亞撒、以他瑪」。
+    refs: [出6:23]
+    basis:
+      - {ref: 出6:23, quote: 他給他生了拿答、亞比戶、以利亞撒、以他瑪}
+      - {source: ccbiblestudy_CT_ezra_8.txt, quote: 他們都是亞倫的後裔，故此處有兩個祭司家族}
+      - {source: biblehub_study_ezra_8.txt, quote: "Ithamar was Aaron’s younger son, and his descendants shared in Israel’s priestly service (Exodus 6:23)."}
+      - {source: stepbible_ezra_8.txt, quote: H385, note: 和出 6:23 的以他瑪同一個原文編號}
+      - {source: stepbible_exodus_6.txt, quote: H385}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Ithamar@Exo.6.23-Ezr}
+  - at: 拉8:2
+    word: 大衛@1
+    to: [{tree: 大衛}]
+    effect: link
+    refs: [拉8:2]
+    basis:
+      - {ref: 拉8:2, quote: 屬大衛的子孫有哈突}
+      - {source: biblehub_study_ezra_8.txt, quote: Hattush represented the preserved line of David}
+      - {source: stepbible_ezra_8.txt, quote: H1732}
+  - at: 拉8:18
+    word: 抹利@1
+    to: [{tree: 抹利}]
+    effect: link
+    card: 「米拉利的兒子是抹利和母示」。
+    refs: [出6:19]
+    basis:
+      - {ref: 出6:19, quote: 米拉利的兒子是抹利和母示}
+      - {source: ccbiblestudy_GT_ezra_8.txt, quote: 屬抹利宗族的利未人示利比}
+      - {source: biblehub_study_ezra_8.txt, quote: "Sherebiah belonged to the Merarite branch of the Levites, descended from Mahli."}
+      - {source: stepbible_ezra_8.txt, quote: H4249G, note: 和出 6:19 的抹利同一個原文編號}
+      - {source: stepbible_exodus_6.txt, quote: H4249G}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Mahli@Exo.6.19-Ezr}
+  - at: 拉8:19
+    word: 米拉利@1
+    to: [{tree: 米拉利}]
+    effect: link
+    card: 「利未眾子的名字按著他們的後代記在下面：就是革順、哥轄、米拉利」。
+    refs: [出6:16]
+    basis:
+      - {ref: 出6:16, quote: 就是革順、哥轄、米拉利}
+      - {source: kingcomments_ezra_8.txt, quote: "Two more descendants of Merari with brothers and sons, a total of twenty men, are brought to Ezra."}
+      - {source: stepbible_ezra_8.txt, quote: H4847, note: 和出 6:16 的米拉利同一個原文編號}
+      - {source: stepbible_exodus_6.txt, quote: H4847}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Merari@Gen.46.11-Ezr}
+
   # ───────────── 尼希米記 11 章：住在耶路撒冷的猶大人 ─────────────
   - at: 尼11:4
     word: 法勒斯@1
