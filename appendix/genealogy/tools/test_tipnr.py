@@ -96,10 +96,22 @@ class ParserTest(unittest.TestCase):
         first = person("One@Gen.1.1", "H3077G", "Gen.1.1")
         second = person("Two@Gen.1.2", "H3077H", "Gen.1.2")
         index = t.TipnrIndex([first, second])
-        self.assertEqual(index.match_step("H3077G", "Gen.1.2"), [first])
+        self.assertEqual(index.match_step("H3077G", "Gen.1.1"), [first])
+        # 完全相同的字碼本節沒有、本節另有同基本碼的人：以本節為準（個人後綴字母 STEP／TIPNR 不一定一致）
+        self.assertEqual(index.match_step("H3077G", "Gen.1.2"), [second])
+        # 本節也沒有同基本碼的人：仍回完全相同字碼的人
+        self.assertEqual(index.match_step("H3077G", "Gen.1.5"), [first])
         self.assertEqual(index.match_step("H3077Z", "Gen.1.2"), [second])
         self.assertEqual(index.match_step("H3077Z", "Gen.1.3"), [])
         self.assertEqual(index.match_step("G3077", "Gen.1.2"), [])
+
+    def test_exact_strong_absent_from_verse_yields_to_same_base_here(self):
+        # 亞薩：STEP 的 H0623H 在 TIPNR 是另一個人（王下18:18），本節（代上6:39）是 H0623G
+        other = person("Other@2Ki.18.18", "H0623H", "2Ki.18.18")
+        singer = person("Singer@1Ch.6.39", "H0623G", "1Ch.6.39")
+        index = t.TipnrIndex([other, singer])
+        self.assertEqual(index.match_step("H0623H", "1Ch.6.39"), [singer])
+        self.assertEqual(index.match_step("H0623H", "2Ki.18.18"), [other])
 
     def test_unpadded_strong_retains_person_suffix(self):
         adam = person("Adam@Gen.1.1", "H0121G", "Gen.1.1")

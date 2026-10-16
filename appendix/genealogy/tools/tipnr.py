@@ -232,12 +232,20 @@ class TipnrIndex:
     def match_step(self, strong: str, ref: str) -> list[TipnrPerson]:
         codes = [canonical_strong(code) for code in STRONG.findall(strong)]
         exact = {p.unique_name: p for code in codes for p in self.by_dstrong.get(code, [])}
-        if exact:
-            return sorted(exact.values(), key=lambda p: p.unique_name)
         bases = {base_strong(code) for code in codes}
-        return [p for p in self.by_ref.get(ref, []) if any(
+        by_base = [p for p in self.by_ref.get(ref, []) if any(
             ref in form.refs and base_strong(form.dstrong) in bases for form in p.forms
         )]
+        if exact:
+            # STEP 與 TIPNR 的個人後綴字母有時不同（亞薩 G／H 對調、大衛省略後綴）：
+            # 完全相同的字碼若在本節根本沒出現，而本節另有同基本碼的人，改用本節的人。
+            here = {name: p for name, p in exact.items() if ref in p.refs}
+            if here:
+                return sorted(here.values(), key=lambda p: p.unique_name)
+            if by_base:
+                return sorted(by_base, key=lambda p: p.unique_name)
+            return sorted(exact.values(), key=lambda p: p.unique_name)
+        return by_base
 
 
 def load_tipnr(path: Path = SOURCE) -> TipnrIndex:
