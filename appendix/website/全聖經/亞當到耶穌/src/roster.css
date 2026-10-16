@@ -13,6 +13,7 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --rs-wash: 26%;
+    --rs-sweep: 62%;
     --rs-bloom: rgb(230 189 90 / 38%);
     --rs-wash: 26%;
   --rs-bloom: rgb(230 189 90 / 38%);
@@ -24,6 +25,7 @@
   }
 }
 :root[data-theme="dark"] {
+  --rs-sweep: 62%;
   --rs-gold: #e6bd5a;
   --rs-gold-text: #efcb73;
   --rs-gold-soft: rgb(230 189 90 / 15%);
@@ -344,3 +346,11 @@ html[data-motion="off"] .ag-rs-fam-tag { transition: none; }
 }
 :root:not([data-motion="off"]):has(.ag-rd-play.is-playing) .ag-rs-row.is-now::after { animation: ag-rs-breathe 2s ease-in-out var(--rs-breath-delay, 0ms) infinite; }
 @keyframes ag-rs-breathe { 0%, 100% { opacity: .03; } 15%, 50% { opacity: .58; } 65% { opacity: .03; } }
+/* 再加一道緩慢掃過的淡朱色光帶（2.9 秒一趟，和 2 秒的呼吸錯開），播放中這一行不會有兩個瞬間看起來一樣 */
+:root:not([data-motion="off"]):has(.ag-rd-play.is-playing) .ag-rs-row.is-now {
+  background-image: linear-gradient(90deg, transparent, color-mix(in srgb, var(--rd-seal, #ab3427) var(--rs-sweep, 38%), transparent), transparent);
+  background-size: 46% 100%; background-repeat: no-repeat;
+  animation: ag-rs-sweep 2.9s linear infinite;
+}
+@keyframes ag-rs-sweep { from { background-position: -60% 0; } to { background-position: 160% 0; } }
+:root:not([data-motion="off"]):has(.ag-rd-play.is-playing) .ag-rs-row.is-now.is-fresh { animation: ag-rs-in 480ms ease-out both, ag-rs-sweep 2.9s linear infinite; }

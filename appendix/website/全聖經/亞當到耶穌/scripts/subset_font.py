@@ -17,7 +17,7 @@ from fontTools import subset
 SITE = Path(__file__).resolve().parents[1]
 OUT = SITE / "src" / "assets" / "fonts"
 UI_SOURCES = ["src/ui/reader.ts", "src/ui/ink.ts", "src/ui/tree-stage.ts", "src/ui/roles.ts", "src/ui/canvas.ts",
-              "src/ui/roster.ts", "src/ui/roster-model.ts"]
+              "src/ui/roster.ts", "src/ui/roster-model.ts", "src/ui/wall.ts", "src/ui/wall-model.ts", "src/ui/reader-route.ts"]
 # 數字、標點、章號用的國字（介面上的章名卡、節號）
 ALWAYS = "0123456789０１２３４５６７８９一二三四五六七八九十百千萬零第章節卷代上下，。、；：！？「」『』（）【】—…·・ "
 
@@ -62,6 +62,18 @@ def used_characters() -> str:
                     chars.update((row.get("quote") or {}).get("t", ""))
                     for name in row.get("names", []) or []:
                         chars.update(name.get("t", ""))
+    # 家族軌跡（名冊、城牆共用）與尼 3 城牆：門、樓、地方、修造的人
+    if roster_path.is_file():
+        for family in json.loads(roster_path.read_text(encoding="utf-8")).get("families", []):
+            chars.update(family.get("name", ""))
+            for place in family.get("places", []):
+                chars.update(place.get("at", "") + (place.get("unit", "") or ""))
+    wall_path = SITE / "src" / "data" / "wall.json"
+    if wall_path.is_file():
+        for item in json.loads(wall_path.read_text(encoding="utf-8")).get("ring", []):
+            chars.update(item.get("t", "") + item.get("at", ""))
+            for name in item.get("names", []) or []:
+                chars.update(name.get("t", ""))
     # 大衛立的職位：方塊標題、人名、細節、人數、印
     roles_path = SITE / "src" / "data" / "roles.json"
     if roles_path.is_file():
@@ -74,12 +86,20 @@ def used_characters() -> str:
                 for member in box.get("members", []):
                     for field in ("name", "detail", "ref"):
                         chars.update(member.get(field, "") or "")
+                    chars.update((member.get("spouse") or {}).get("name", ""))
+                # 從大衛到所羅門：職位、大衛時的人；十二個官吏的引句
+                for row in box.get("rows", []) or []:
+                    chars.update(row.get("office", "") + (row.get("moved") or {}).get("from", ""))
+                    for entry in row.get("david", []):
+                        for field in ("name", "detail", "ref"):
+                            chars.update(entry.get(field, "") or "")
+                chars.update((box.get("quote") or {}).get("text", "") + (box.get("quote") or {}).get("ref", ""))
                 for item in box.get("groups", []) + box.get("figures", []):
                     for value in item.values():
                         if isinstance(value, str):
                             chars.update(value)
         for person in roles.get("people", []):
-            chars.update(person.get("name", "") + (person.get("qualifier", "") or ""))
+            chars.update(person.get("name", "") + (person.get("qualifier", "") or "") + "".join(person.get("aliases", []) or []))
     # 讀經時大圖上的名字也換成這個字型：所有人名、別名、牌子標題、經節標籤
     genealogy = json.loads((SITE / "src" / "data" / "genealogy.json").read_text(encoding="utf-8"))
     for person in genealogy["persons"]:
