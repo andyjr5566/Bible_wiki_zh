@@ -164,7 +164,7 @@
 .ag-ro-figure dd { margin: 0; font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 /* ── 二十四班的環、十二個月的輪盤 ───────────────── */
-.ag-ro-ring { display: block; width: 100%; max-width: 360px; height: auto; margin: 8px auto 0; overflow: visible; }
+.ag-ro-ring { display: block; width: 100%; max-width: 420px; height: auto; margin: 8px auto 0; overflow: visible; }
 .ag-ro-cell { cursor: pointer; outline: none; }
 .ag-ro-cell > path { fill: var(--ro-cell); stroke: var(--ro-line); stroke-width: 1; transition: fill 260ms ease, stroke 260ms ease; }
 .ag-ro-cell.is-alt > path { fill: var(--ro-cell-alt); }

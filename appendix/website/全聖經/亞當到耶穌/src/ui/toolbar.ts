@@ -1,7 +1,7 @@
 import type { GenealogyData, Person } from '../data/types';
 import { h } from './dom';
 import { createSearch } from './search';
-import { FONT_SCALES, getFontScale, setFontScale } from './fontscale';
+import { FONT_SCALE_EVENT, PAGE_SCALE_MAX, PAGE_SCALE_MIN, PAGE_SCALE_STEP, getPageScale, setPageScale } from './fontscale';
 
 export type PageId = 'catalog' | 'tree' | 'compare' | 'ages' | 'notes' | 'roles' | 'returns';
 export type LineFilter = 'both' | '馬太' | '路加';
@@ -79,18 +79,27 @@ export function createToolbar(data: GenealogyData, actions: ToolbarActions): { e
     syncPreferences();
   });
   syncPreferences();
-  const smaller = h('button', { className: 'ag-quiet-button', type: 'button', title: '字體變小', 'aria-label': '字體變小' }, 'A−');
-  const larger = h('button', { className: 'ag-quiet-button', type: 'button', title: '字體變大', 'aria-label': '字體變大' }, 'A＋');
-  const fontGroup = h('div', { className: 'ag-font-size', role: 'group', 'aria-label': '字體大小' }, smaller, larger);
+  // 大小滑桿：字、圓盤、方塊一起放大；兩端的 A 點一下各走一格
+  const smaller = h('button', { className: 'ag-size-end ag-size-small', type: 'button', title: '變小', 'aria-label': '變小' }, 'A');
+  const larger = h('button', { className: 'ag-size-end ag-size-large', type: 'button', title: '變大', 'aria-label': '變大' }, 'A');
+  const slider = h('input', {
+    className: 'ag-size-range', type: 'range', min: String(PAGE_SCALE_MIN), max: String(PAGE_SCALE_MAX), step: String(PAGE_SCALE_STEP), 'aria-label': '大小',
+  }) as HTMLInputElement;
+  const percent = h('output', { className: 'ag-size-value' });
+  const fontGroup = h('div', { className: 'ag-font-size', role: 'group', 'aria-label': '大小' }, smaller, slider, larger, percent);
   const syncFont = () => {
-    const index = (FONT_SCALES as readonly number[]).indexOf(getFontScale());
-    smaller.disabled = index <= 0;
-    larger.disabled = index >= FONT_SCALES.length - 1;
-    fontGroup.title = `字體大小 ${Math.round(getFontScale() * 100)}%`;
+    const scale = getPageScale();
+    slider.value = String(scale);
+    slider.setAttribute('aria-valuetext', `${Math.round(scale * 100)}%`);
+    percent.textContent = `${Math.round(scale * 100)}%`;
+    smaller.disabled = scale <= PAGE_SCALE_MIN + 1e-6;
+    larger.disabled = scale >= PAGE_SCALE_MAX - 1e-6;
+    fontGroup.title = `大小 ${Math.round(scale * 100)}%`;
   };
-  smaller.addEventListener('click', () => setFontScale(FONT_SCALES[Math.max(0, (FONT_SCALES as readonly number[]).indexOf(getFontScale()) - 1)]!));
-  larger.addEventListener('click', () => setFontScale(FONT_SCALES[Math.min(FONT_SCALES.length - 1, (FONT_SCALES as readonly number[]).indexOf(getFontScale()) + 1)]!));
-  window.addEventListener('ag-fontscale', syncFont);
+  slider.addEventListener('input', () => setPageScale(Number(slider.value)));
+  smaller.addEventListener('click', () => setPageScale(getPageScale() - 0.1));
+  larger.addEventListener('click', () => setPageScale(getPageScale() + 0.1));
+  window.addEventListener(FONT_SCALE_EVENT, syncFont);
   syncFont();
   const controls = h('div', { className: 'ag-controls' }, readButton, lineGroup, zoomOut, zoomIn, fit, restart, fontGroup, theme, motion);
   const header = h('header', { className: 'ag-header' },
@@ -102,7 +111,8 @@ export function createToolbar(data: GenealogyData, actions: ToolbarActions): { e
     tabBar);
   const setState = () => {
     for (const [id, button] of lineButtons) button.setAttribute('aria-pressed', String(actions.getLine() === id));
-    for (const [id, button] of tabButtons) button.setAttribute('aria-pressed', String(actions.getPage() === id));
+    // 讀經時沒有哪個分頁是「目前這頁」
+    for (const [id, button] of tabButtons) button.setAttribute('aria-pressed', String(!actions.isReading() && actions.getPage() === id));
     readButton.setAttribute('aria-pressed', String(actions.isReading()));
     readButton.textContent = actions.isReading() ? '離開讀經' : '帶你讀經';
   };

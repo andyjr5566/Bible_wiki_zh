@@ -165,6 +165,8 @@ function applyPage() {
 const toolbar = createToolbar(data, {
   selectPerson,
   setPage(id) {
+    // 讀經時分頁照常看得到；點分頁就離開讀經、到那一頁
+    if (reader.isOpen()) reader.close();
     if (id !== page) {
       activeCardPerson = null;
       card.show(null);

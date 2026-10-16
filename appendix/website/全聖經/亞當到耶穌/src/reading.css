@@ -87,8 +87,7 @@ html[data-motion="off"] .ag-rd-entry.is-hint, html[data-motion="off"] .ag-rd-ent
 .ag-tour-invite { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; margin-top: 10px; color: var(--ag-muted); }
 
 .ag-reading .ag-canvas-wrap { background-color: var(--rd-paper); background-image: var(--rd-texture); }
-.ag-reading .ag-canvas-legend-panel,
-.ag-reading .ag-tabs { display: none; }
+.ag-reading .ag-canvas-legend-panel { display: none; }
 
 /* 大圖：沒讀到的人退成淡墨，讀到的人亮起來。
    節點本身的 opacity 用來隱藏另一條線，所以淡墨調在節點裡面的圖形上。 */
