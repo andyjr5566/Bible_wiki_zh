@@ -160,7 +160,7 @@ links:
       - {ref: 尼7:57, quote: 所羅門僕人的後裔}
 
   # ───────────── 冊上有名：前面家譜記過的家族（名冊上金色、朱印、子母畫面） ─────────────
-  # 只連原文編號相同、而且 TIPNR 或註釋明說的。查過不連的（以攔、拉 2:36 耶書亞家、拉 2:2 耶書亞、示法提雅、
+  # 只連原文編號相同、而且 TIPNR 或註釋明說的。查過不連的（以攔、拉 2:36 耶書亞家、示法提雅、
   # 巴尼、亞拉、何達威雅、巴西萊、西拿）見回報；那些家族只寫進名冊、照讀。
   - at: 拉2:2
     word: 所羅巴伯@1
@@ -181,6 +181,29 @@ links:
     card: 歷代志上大衛的後代裡記著：「毘大雅的兒子是所羅巴伯」。
     refs: [代上3:19]
     basis: *zerubbabel
+  # 耶書亞的父親約薩達就是代上 6:15 被擄去的大祭司約薩答（見 people/03 的根據），大祭司世系接上
+  - at: 拉2:2
+    word: 耶書亞@1
+    to: [{tree: 耶書亞#約薩答}]
+    effect: link
+    card: 耶書亞是「約薩達的兒子」（拉 3:2）；歷代志上大祭司的家譜記到「西萊雅生約薩答」，「這約薩答也被擄去」。
+    refs: [拉3:2, 代上6:14, 代上6:15]
+    basis: &jeshua
+      - {ref: 拉3:2, quote: 約薩達的兒子耶書亞和他的弟兄眾祭司}
+      - {ref: 代上6:15, quote: 這約薩答也被擄去}
+      - {source: ccbiblestudy_CT_ezra_2.txt, quote: 「耶書亞」：和《哈該書》、《撒迦利亞書》中的約書亞係同一人。}
+      - {source: biblehub_study_ezra_2.txt, quote: "Jeshua, whose name means “The Lord saves,” served as high priest alongside Zerubbabel."}
+      - {source: ccbiblestudy_CT_ezra_3.txt, quote: 約薩達是被擄前的最後一位大祭司(參代上六14~15又名「約薩答」)}
+      - {source: stepbible_ezra_2.txt, quote: H3442P, note: 和拉 3:2 的耶書亞同一個原文編號}
+      - {source: stepbible_ezra_3.txt, quote: H3442P}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Joshua@Ezr.2.2-Zec}
+  - at: 尼7:7
+    word: 耶書亞@1
+    to: [{tree: 耶書亞#約薩答}]
+    effect: link
+    card: 耶書亞是「約薩達的兒子」（拉 3:2）；歷代志上大祭司的家譜記到「西萊雅生約薩答」，「這約薩答也被擄去」。
+    refs: [拉3:2, 代上6:14, 代上6:15]
+    basis: *jeshua
   - at: 拉2:38
     word: 巴施戶珥@1
     to: [{tree: 巴施戶珥}]

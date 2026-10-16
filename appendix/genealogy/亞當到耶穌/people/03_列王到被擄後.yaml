@@ -770,13 +770,22 @@
     - {id: 撒拉鐵, ref: 該2:23}
     - {id: 撒拉鐵, ref: 尼12:1}
 
-- id: 約薩達#耶書亞之父
+# 耶書亞的父親約薩達（拉 3:2）就是代上 6:14–15 被擄去的大祭司約薩答：
+# TIPNR 把兩種寫法收在同一條（Jehozadak@1Ch.6.14-Zec，H3087／H3136A），CT 明說，沒有人反對
+- id: 約薩答
   names:
     - {as: 約薩達, ref: 拉3:2}
     - {as: 約撒答, ref: 該1:1}
     - {as: 約撒達, ref: 尼12:26}
-  maybe_same:
-    - {id: 約薩答, refs: [拉3:2, 代上6:14]}
+  same_person:
+    basis:
+      - {ref: 代上6:15, quote: 這約薩答也被擄去}
+      - {ref: 拉3:2, quote: 約薩達的兒子耶書亞}
+      - {source: ccbiblestudy_CT_ezra_3.txt, quote: 約薩達是被擄前的最後一位大祭司(參代上六14~15又名「約薩答」)}
+      - {source: stepbible_ezra_3.txt, quote: H3136A}
+      - {source: stepbible_1_chronicles_6.txt, quote: H3087}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Jehozadak@1Ch.6.14-Zec}
+    refs: [拉3:2, 代上6:15]
 
 - id: 耶書亞#約薩答
   sex: m
@@ -784,15 +793,15 @@
     - {as: 耶書亞, ref: 拉3:2}
     - {as: 約書亞, ref: 該1:1}
   parents:
-    - {id: 約薩達#耶書亞之父, ref: 拉3:2}
-    - {id: 約薩達#耶書亞之父, ref: 拉3:8}
-    - {id: 約薩達#耶書亞之父, ref: 拉5:2}
-    - {id: 約薩達#耶書亞之父, ref: 該1:1}
-    - {id: 約薩達#耶書亞之父, ref: 該1:12}
-    - {id: 約薩達#耶書亞之父, ref: 該1:14}
-    - {id: 約薩達#耶書亞之父, ref: 該2:2}
-    - {id: 約薩達#耶書亞之父, ref: 該2:4}
-    - {id: 約薩達#耶書亞之父, ref: 亞6:11}
+    - {id: 約薩答, ref: 拉3:2}
+    - {id: 約薩答, ref: 拉3:8}
+    - {id: 約薩答, ref: 拉5:2}
+    - {id: 約薩答, ref: 該1:1}
+    - {id: 約薩答, ref: 該1:12}
+    - {id: 約薩答, ref: 該1:14}
+    - {id: 約薩答, ref: 該2:2}
+    - {id: 約薩答, ref: 該2:4}
+    - {id: 約薩答, ref: 亞6:11}
 
 - id: 約雅金#耶書亞
   sex: m
@@ -802,7 +811,7 @@
     - {id: 耶書亞#約薩答, ref: 尼12:10}
     - {id: 耶書亞#約薩答, ref: 尼12:26}
   descends:
-    - {id: 約薩達#耶書亞之父, generations: 2, ref: 尼12:26}
+    - {id: 約薩答, generations: 2, ref: 尼12:26}
 
 - id: 以利亞實#約雅金
   sex: m
