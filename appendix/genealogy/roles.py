@@ -12,9 +12,9 @@ from __future__ import annotations
 from collections import OrderedDict
 from pathlib import Path
 
-KINDS = {"list", "ring24", "wheel12", "groups"}
+KINDS = {"list", "ring24", "wheel12", "groups", "compare", "tiles"}
 RING_SIZE = {"ring24": 24, "wheel12": 12}
-CATEGORY_IDS = ("court", "army", "temple", "tribes")
+CATEGORY_IDS = ("court", "army", "temple", "tribes", "solomon")
 
 
 def build_roles(builder, raw: dict, helpers: dict) -> tuple[dict, list[dict]]:
@@ -60,13 +60,141 @@ def build_roles(builder, raw: dict, helpers: dict) -> tuple[dict, list[dict]]:
                             "refs": [], "aliases": [str(a) for a in item.get("aliases", []) or []]}
     declared = set(people)
     used_declared: set[str] = set()
+    people_definitions = raw.get("people") or {}
+
+    def raw_entity(item):
+        if not isinstance(item, dict):
+            return "", ("", "")
+        if item.get("id"):
+            pid = str(item["id"])
+            return str(item.get("name") or display(pid)), ("id", pid)
+        if item.get("rid"):
+            rid = str(item["rid"])
+            person = people_definitions.get(rid, {})
+            return str(person.get("name", "")), ("rid", rid)
+        if item.get("n"):
+            name = str(item["n"])
+            q = str(item.get("q", "") or "")
+            rid = f"{name}#{q}" if q else name
+            if item.get("qid") is not None:
+                rid += f"#{item['qid']}"
+            return name, ("rid", rid)
+        return "", ("", "")
+
+    solomon_entities = []
+    for category_spec in raw.get("categories", []) or []:
+        if not isinstance(category_spec, dict) or category_spec.get("id") != "solomon":
+            continue
+        for box_spec in category_spec.get("boxes", []) or []:
+            if not isinstance(box_spec, dict):
+                continue
+            for member_spec in box_spec.get("members", []) or []:
+                entity_name, identity = raw_entity(member_spec)
+                solomon_entities.append((member_spec, entity_name, identity))
+            for row_spec in box_spec.get("rows", []) or []:
+                if not isinstance(row_spec, dict):
+                    continue
+                for david_spec in row_spec.get("david", []) or []:
+                    entity_name, identity = raw_entity(david_spec)
+                    solomon_entities.append((david_spec, entity_name, identity))
+
+    # 其他類別的職位成員、家譜樹上的人也算同名（以拉的兒子示每 vs 拉瑪人示每、家譜樹上的示每）
+    other_entities = []
+    for category_spec in raw.get("categories", []) or []:
+        if not isinstance(category_spec, dict) or category_spec.get("id") == "solomon":
+            continue
+        for box_spec in category_spec.get("boxes", []) or []:
+            for member_spec in (box_spec.get("members", []) or []) if isinstance(box_spec, dict) else []:
+                entity_name, identity = raw_entity(member_spec)
+                other_entities.append((member_spec, entity_name, identity))
+    tree_names = {display(pid) for pid in builder.people}
+
+    def name_conflicts(member, name: str, rid: str) -> bool:
+        if name in tree_names:
+            return True
+        for other_source, other_name, identity in other_entities:
+            if other_name == name and identity != ("rid", rid):
+                return True
+        for other_rid, person in people_definitions.items():
+            if (str(other_rid) != rid and isinstance(person, dict)
+                    and str(person.get("name", "")) == name):
+                return True
+        for other_source, other_name, identity in solomon_entities:
+            if other_source is not member and other_name == name and identity != ("rid", rid):
+                return True
+        return False
+
+    def compare_rows(box: dict, keys: set[str], people: dict, at: str) -> list[dict]:
+        """「從大衛到所羅門」：一個職位一列，左欄大衛時、右欄所羅門時。"""
+        rows = []
+        used: set[str] = set()
+        for r_index, row in enumerate(box.get("rows", []) or []):
+            r_at = f"{at}.rows[{r_index}]"
+            office = str(row.get("office", ""))
+            if not office:
+                builder.err(r_at, "office 不能空白")
+            david = []
+            for d_index, item in enumerate(row.get("david", []) or []):
+                d_at = f"{r_at}.david[{d_index}]"
+                ref = str(item.get("ref", ""))
+                text = text_of(ref, d_at)
+                entry: dict = {"ref": ref}
+                if item.get("id"):
+                    pid = str(item["id"])
+                    if pid not in builder.people:
+                        builder.err(d_at, f"家譜樹上沒有這個人：{pid}")
+                    entry.update({"id": pid, "name": display(pid)})
+                elif item.get("rid"):
+                    rid = str(item["rid"])
+                    if rid not in people:
+                        builder.err(d_at, f"people 沒有定義：{rid}")
+                        continue
+                    entry.update({"rid": rid, "name": people[rid]["name"]})
+                elif item.get("n"):
+                    entry["name"] = str(item["n"])
+                else:
+                    builder.err(d_at, "id／rid／n 必須寫一個")
+                    continue
+                if not any(form in text for form in [entry["name"]] + (people[entry["rid"]]["aliases"] if entry.get("rid") else [])):
+                    builder.err(d_at, f"{ref} 的經文裡沒有「{entry['name']}」")
+                if item.get("d"):
+                    entry["detail"] = str(item["d"])
+                david.append(entry)
+            solomon = [str(k) for k in row.get("solomon", []) or []]
+            for key in solomon:
+                if key not in keys:
+                    builder.err(r_at, f"members 裡沒有這個人：{key}")
+            out_row: dict = {"office": office, "david": david, "solomon": solomon}
+            if row.get("same"):
+                same = str(row["same"])
+                # 合併成同一人（金框橫跨兩欄）：必須是 people 定義過、寫了根據（basis）的人
+                if same not in keys:
+                    builder.err(r_at, f"members 裡沒有這個人：{same}")
+                if same not in declared:
+                    builder.err(r_at, f"同一人（same）必須在 people 定義並寫根據：{same}")
+                out_row["same"] = same
+            if row.get("moved"):
+                moved = row["moved"]
+                key, origin = str(moved.get("key", "")), str(moved.get("from", ""))
+                if key not in solomon:
+                    builder.err(r_at, f"moved 的人必須在這一列的所羅門時：{key}")
+                if not origin:
+                    builder.err(r_at, "moved 要寫原本的職位（from）")
+                out_row["moved"] = {"key": key, "from": origin}
+            used.update(solomon)
+            if row.get("same"):
+                used.add(str(row["same"]))
+            rows.append(out_row)
+        for key in sorted(keys - used):
+            builder.err(at, f"這個人沒有排進任何一列：{key}")
+        return rows
 
     categories = []
     seals: list[dict] = []
     box_ids: set[str] = set()
     seen_ids = {str(c.get("id")) for c in raw.get("categories", []) or []}
     if seen_ids != set(CATEGORY_IDS):
-        builder.err(where, f"四類必須是 {'、'.join(CATEGORY_IDS)}")
+        builder.err(where, f"類別必須是 {'、'.join(CATEGORY_IDS)}")
     for category in raw.get("categories", []) or []:
         boxes = []
         for box in category.get("boxes", []) or []:
@@ -76,6 +204,9 @@ def build_roles(builder, raw: dict, helpers: dict) -> tuple[dict, list[dict]]:
                 builder.err(at, "方塊 id 空白或重複")
             box_ids.add(box_id)
             kind = str(box.get("kind", "list"))
+            is_officials = box_id == "solomon-officials"
+            if is_officials and kind != "tiles":
+                builder.err(at, "solomon-officials 的 kind 必須是 tiles")
             if kind not in KINDS:
                 builder.err(at, f"kind 必須是 {'／'.join(sorted(KINDS))}")
             for field in ("title", "ref", "seal"):
@@ -91,6 +222,9 @@ def build_roles(builder, raw: dict, helpers: dict) -> tuple[dict, list[dict]]:
                     continue
                 ref = str(member.get("ref", ""))
                 text = text_of(ref, m_at)
+                q = str(member.get("q", "") or "")
+                if category.get("id") == "solomon" and q and not _is_ref(q) and q not in text:
+                    builder.err(m_at, f"限定詞「{q}」沒有逐字出現在 {ref} 的經文裡")
                 row: dict = {}
                 if member.get("id"):
                     pid = str(member["id"])
@@ -99,7 +233,9 @@ def build_roles(builder, raw: dict, helpers: dict) -> tuple[dict, list[dict]]:
                     basis_ok(member.get("basis"), m_at)
                     name = str(member.get("name") or display(pid))
                     row["id"] = pid
-                    seals.append({"id": pid, "label": str(box.get("seal", "")), "box": box_id, "ref": ref.split(",")[0].strip()})
+                    # 成員可以有自己的印（「從大衛到所羅門」裡撒督的兒子亞撒利雅是「祭司」）
+                    seals.append({"id": pid, "label": str(member.get("seal") or box.get("seal", "")), "box": box_id,
+                                  "ref": ref.split(",")[0].strip()})
                 else:
                     if member.get("rid"):
                         rid = str(member["rid"])
@@ -118,11 +254,21 @@ def build_roles(builder, raw: dict, helpers: dict) -> tuple[dict, list[dict]]:
                         people.setdefault(rid, {"rid": rid, "name": str(member["n"]), "qualifier": q if not _is_ref(q) else "",
                                                 "refs": [], "aliases": []})
                     name = people[rid]["name"]
+                    if member.get("n"):
+                        conflict = category.get("id") == "solomon" and name_conflicts(
+                            member, name, rid
+                        )
+                        if conflict and not member.get("basis"):
+                            builder.err(m_at, "同名不同人的分開要寫根據")
+                        if conflict or "basis" in member:
+                            basis_ok(member.get("basis"), m_at)
                     row["rid"] = rid
                     for part in [p.strip() for p in ref.split(",") if p.strip()]:
                         if part not in people[rid]["refs"]:
                             people[rid]["refs"].append(part)
-                if name and name not in text:
+                # 別寫（亞多蘭／亞多尼蘭）：名字或任一個別寫出現在經文裡就算
+                forms = [name] + (people[row["rid"]]["aliases"] if row.get("rid") else [])
+                if name and not any(form in text for form in forms):
                     builder.err(m_at, f"{ref} 的經文裡沒有「{name}」")
                 key = str(member.get("key") or row.get("id") or row.get("rid"))
                 if key in keys:
@@ -131,6 +277,14 @@ def build_roles(builder, raw: dict, helpers: dict) -> tuple[dict, list[dict]]:
                 row = {"key": key, **row, "name": name, "ref": ref}
                 if member.get("d"):
                     row["detail"] = str(member["d"])
+                # 十二個官吏裡娶了所羅門女兒的兩位：名牌連到家譜樹上的妻子（名字必須在出處經文裡）
+                if member.get("spouse"):
+                    spouse = str(member["spouse"])
+                    if spouse not in builder.people:
+                        builder.err(m_at, f"家譜樹上沒有這個人：{spouse}")
+                    elif display(spouse) not in text:
+                        builder.err(m_at, f"{ref} 的經文裡沒有「{display(spouse)}」")
+                    row["spouse"] = {"id": spouse, "name": display(spouse)}
                 if member.get("order") is not None:
                     order = int(member["order"])
                     if kind in RING_SIZE and not 1 <= order <= RING_SIZE[kind]:
@@ -157,6 +311,24 @@ def build_roles(builder, raw: dict, helpers: dict) -> tuple[dict, list[dict]]:
                 figures.append({"label": str(figure.get("label", "")), "count": count, "ref": ref})
             if figures:
                 out["figures"] = figures
+            if kind == "compare":
+                out["rows"] = compare_rows(box, keys, people, at)
+            if box.get("quote"):
+                quote = box["quote"]
+                q_ref, q_text = str(quote.get("ref", "")), str(quote.get("text", ""))
+                if not q_text or q_text not in text_of(q_ref, f"{at}.quote"):
+                    builder.err(f"{at}.quote", f"{q_ref} 的經文裡沒有「{q_text}」")
+                out["quote"] = {"ref": q_ref, "text": q_text}
+            if is_officials:
+                if any("order" in m or "month" in m for m in box.get("members", []) or []):
+                    builder.err(at, "十二個官吏不得有 order（序號）或 month（月份）")
+                if len(members) != 12:
+                    builder.err(at, f"十二個官吏應有 12 位，現在 {len(members)} 位")
+            elif kind == "tiles":
+                if any("order" in m or "month" in m for m in box.get("members", []) or []):
+                    builder.err(at, "方塊 tiles 不得有 order（序號）或 month（月份）")
+                if len(members) != 12:
+                    builder.err(at, f"tiles 應有 12 位，現在 {len(members)} 位")
             if box.get("groups"):
                 groups = []
                 for g_index, group in enumerate(box["groups"]):

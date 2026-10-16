@@ -1,9 +1,11 @@
 # 大衛立的職位（唯一來源；由 ../build_genealogy.py 檢查並匯出 roles.json，讀經模式由 ../reading.py 讀取）
 #
-# 四類：王的身邊（court）、軍隊（army）、聖殿與利未人（temple）、支派與產業（tribes）。
+# 四類：王的身邊（court）、軍隊（army）、聖殿與利未人（temple）、支派與產業（tribes）；
+# 第五類「從大衛到所羅門」（solomon）：王上 4 所羅門的臣子對照大衛時的官員，加上十二個官吏。
 # 每類底下是職位方塊（box）：
 #   id／title／ref（讀者看的經文範圍）／verses（讀經時這幾節的鏡頭停在這個方塊）
-#   kind：list 一般名單、ring24 二十四格環、wheel12 十二月輪盤、groups 依支派分組
+#   kind：list 一般名單、ring24 二十四格環、wheel12 十二月輪盤、groups 依支派分組、
+#         compare 兩欄對照（rows：一個職位一列）、tiles 名牌（十二個官吏）
 #   seal：蓋在家譜樹人物卡旁的職位印（兩三個字）
 #   note：方塊底下一句說明；figures：照經文寫的人數（不畫比例）
 # 成員（members）三種寫法：
@@ -24,12 +26,17 @@ people:
       - {ref: 撒下20:23, quote: 耶何耶大的兒子比拿雅}
       - {ref: 代上27:5, quote: 祭司耶何耶大的兒子比拿雅}
       - {ref: 代上27:6, quote: 這比拿雅是那三十人中的勇士}
+      - {ref: 王上4:4, quote: 耶何耶大的兒子比拿雅作元帥}
+      - {source: ccbiblestudy_CT_1_kings_4.txt, quote: 比拿雅原為王室近衛軍的統帥，現在取代約押作全軍的元帥}
   約沙法#亞希律之子:
     name: 約沙法
     q: 亞希律的兒子
     basis:
       - {ref: 代上18:15, quote: 亞希律的兒子約沙法作史官}
       - {ref: 撒下20:24, quote: 亞希律的兒子約沙法作史官}
+      - {ref: 王上4:3, quote: 亞希律的兒子約沙法作史官}
+      - {source: ccbiblestudy_GT_1_kings_4.txt, quote: 約沙法也曾任職於大衛手下(撒下八16，二十24)，繼續擔任史官}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Jehoshaphat@2Sa.8.16-1Ch}
   亞比亞他#祭司:
     name: 亞比亞他
     q: 祭司
@@ -57,6 +64,20 @@ people:
     q: 哈革摩尼的兒子
     basis:
       - {ref: 代上11:11, quote: 哈革摩尼的兒子雅朔班}
+  # 掌管服苦的人：撒下 20:24 寫亞多蘭、王上 4:6 寫亞多尼蘭。TIPNR 收在同一條（Adoram@2Sa.20.24-2Ch），
+  # CT、GT 都明說是同一人，沒有人反對 → 同一人（原文編號 H151／H141 是同一人的兩種寫法）
+  亞多蘭:
+    name: 亞多蘭
+    q: 又寫作亞多尼蘭
+    aliases: [亞多尼蘭]
+    basis:
+      - {ref: 撒下20:24, quote: 亞多蘭掌管服苦的人}
+      - {ref: 王上4:6, quote: 亞比大的兒子亞多尼蘭掌管服苦的人}
+      - {source: ccbiblestudy_CT_2_samuel_20.txt, quote: 『亞多蘭』即王上四6的亞多尼蘭}
+      - {source: ccbiblestudy_GT_2_samuel_20.txt, quote: “亞多蘭”即列王紀上四章6節的亞多尼蘭}
+      - {source: stepbible_2_samuel_20.txt, quote: H151}
+      - {source: stepbible_1_kings_4.txt, quote: H141}
+      - {external: STEPBible TIPNR, version: commit bd09545, entry: Adoram@2Sa.20.24-2Ch}
   # 十二班班長和三十個勇士名單寫法一樣的，是同一人（出身、父親都相同）
   以拉#益吉之子:
     name: 以拉
@@ -203,7 +224,7 @@ categories:
         ref: 撒下20:24
         kind: list
         members:
-          - {n: 亞多蘭, ref: 撒下20:24}
+          - {rid: 亞多蘭, ref: 撒下20:24}
       - id: minister
         title: 大衛的宰相
         seal: 宰相
@@ -849,3 +870,163 @@ categories:
           - {n: 阿比勒, q: 以實瑪利人, ref: 代上27:30, d: 駝群}
           - {n: 耶希底亞, q: 米崙人, ref: 代上27:30, d: 驢群}
           - {n: 雅悉, q: 夏甲人, ref: 代上27:30, d: 羊群}
+
+  # ─────────────────────────────── 從大衛到所羅門 ───────────────────────────────
+  # 一個職位一列：左欄大衛時、右欄所羅門時（王上 4:2–6），經文怎麼寫就怎麼排，不解釋。
+  # members 是所羅門時的人（讀經時亮的人）；rows 每一列：
+  #   office：職位名；david：大衛時的人（n 名字＋ref，或 id／rid＋ref）；solomon：members 的 key；
+  #   same：同一個人（金框橫跨兩欄），必須是 people 定義過、有根據（basis）的人；
+  #   moved：換了職位的人（紅框），from 寫他原本的職位。
+  # 照「有根據且沒人反對才連」：約沙法、比拿雅、亞多蘭（王上 4 寫亞多尼蘭）合併；撒督、亞比亞他（GT 說可能只是同名）、
+  # 示沙與沙威沙、西萊雅、示法（TIPNR 同一條，但 GT 說是換了人）不合併，兩欄各列。
+  - id: solomon
+    title: 從大衛到所羅門
+    boxes:
+      - id: solomon-court
+        title: 所羅門的臣子
+        seal: 臣子
+        ref: 王上4:1-6
+        verses: 王上4:1-6
+        kind: compare
+        members:
+          - id: 亞撒利雅#撒督
+            ref: 王上4:2
+            seal: 祭司
+            d: 撒督的兒子
+            basis:
+              - {ref: 王上4:2, quote: 撒督的兒子亞撒利雅作祭司}
+          - {n: 以利何烈, q: 示沙的兩個兒子, ref: 王上4:3}
+          # 示沙的兒子亞希亞：只出現在王上 4:3（原文編號 H281G，TIPNR 自成一條），不是家譜樹上的亞希亞
+          - n: 亞希亞
+            q: 示沙的兩個兒子
+            ref: 王上4:3
+            basis:
+              - {ref: 王上4:3, quote: 示沙的兩個兒子以利何烈、亞希亞作書記}
+              - {source: stepbible_1_kings_4.txt, quote: H281G}
+              - {external: STEPBible TIPNR, version: commit bd09545, entry: Ahijah@1Ki.4.3}
+          - {rid: 約沙法#亞希律之子, ref: 王上4:3}
+          - {rid: 比拿雅#耶何耶大之子, ref: 王上4:4}
+          # 同名不同人的分開（GT 說王上 4:4 的撒督、亞比亞他可能只是同名者，所以不和大衛時的合併）
+          - n: 撒督
+            q: 王上4:4
+            ref: 王上4:4
+            basis:
+              - {ref: 王上4:4, quote: 撒督和亞比亞他作祭司長}
+              - {source: ccbiblestudy_GT_1_kings_4.txt, quote: 撒督及亞比亞他可能只是與撒母耳記下八17及二十25同名者}
+          - n: 亞比亞他
+            q: 王上4:4
+            ref: 王上4:4
+            basis:
+              - {ref: 王上4:4, quote: 撒督和亞比亞他作祭司長}
+              - {source: ccbiblestudy_GT_1_kings_4.txt, quote: 撒督及亞比亞他可能只是與撒母耳記下八17及二十25同名者}
+          # 拿單的兒子亞撒利雅（4:5）≠ 撒督的兒子亞撒利雅（4:2）：父親不同，原文編號、TIPNR 都分開
+          - n: 亞撒利雅
+            q: 拿單的兒子
+            ref: 王上4:5
+            basis:
+              - {ref: 王上4:5, quote: 拿單的兒子亞撒利雅作眾吏長}
+              - {ref: 王上4:2, quote: 撒督的兒子亞撒利雅作祭司}
+              - {source: stepbible_1_kings_4.txt, quote: H5838H}
+              - {external: STEPBible TIPNR, version: commit bd09545, entry: Azariah@1Ki.4.5}
+          - {n: 撒布得, q: 拿單的兒子, ref: 王上4:5, d: 王的朋友，作領袖}
+          - {n: 亞希煞, ref: 王上4:6}
+          - {rid: 亞多蘭, ref: 王上4:6, d: 亞比大的兒子}
+        rows:
+          - office: 元帥
+            david: [{id: 約押, ref: 代上18:15}]
+            solomon: [比拿雅#耶何耶大之子]
+            moved: {key: 比拿雅#耶何耶大之子, from: 統轄基利提人和比利提人}
+          - office: 統轄基利提人和比利提人
+            david: [{rid: 比拿雅#耶何耶大之子, ref: 代上18:17}]
+            solomon: []
+          - office: 史官
+            same: 約沙法#亞希律之子
+            david: []
+            solomon: []
+          - office: 祭司長
+            david: [{id: 撒督, ref: 代上18:16}, {rid: 亞希米勒#亞比亞他之子, ref: 代上18:16}, {rid: 亞比亞他#祭司, ref: 撒下20:25}]
+            solomon: [撒督#王上4:4, 亞比亞他#王上4:4]
+          - office: 書記
+            david: [{n: 沙威沙, ref: 代上18:16}, {n: 西萊雅, ref: 撒下8:17}, {n: 示法, ref: 撒下20:25}]
+            solomon: [以利何烈#示沙的兩個兒子, 亞希亞#示沙的兩個兒子]
+          - office: 掌管服苦的人
+            same: 亞多蘭
+            david: []
+            solomon: []
+          - office: 王的陪伴、王的朋友
+            david: [{n: 戶篩, ref: 代上27:33, d: 王的陪伴}]
+            solomon: [撒布得#拿單的兒子]
+          - office: 祭司
+            david: []
+            solomon: [亞撒利雅#撒督]
+          - office: 眾吏長
+            david: []
+            solomon: [亞撒利雅#拿單的兒子]
+          - office: 家宰
+            david: []
+            solomon: [亞希煞]
+      # 王上 4:7「每年各人供給一月」：經文沒有說誰是哪一個月，不編月份、不畫成輪盤
+      - id: solomon-officials
+        title: 十二個官吏
+        seal: 官吏
+        ref: 王上4:7-19
+        verses: 王上4:7-19
+        kind: tiles
+        quote: {ref: 王上4:7, text: 每年各人供給一月}
+        members:
+          - {n: 便戶珥, ref: 王上4:8, d: 以法蓮山地}
+          - {n: 便底甲, ref: 王上4:9, d: 瑪迦斯、沙賓、伯示麥、以倫伯哈南}
+          - {n: 便希悉, ref: 王上4:10, d: 亞魯泊}
+          - id: 便亞比拿達
+            ref: 王上4:11
+            d: 多珥山岡
+            spouse: 他法
+            basis:
+              - {ref: 王上4:11, quote: 有便亞比拿達，他娶了所羅門的女兒他法為妻}
+          # 兩個巴拿（4:12 亞希律的兒子、4:16 戶篩的兒子）：CT 明說同名兩人，原文編號、TIPNR 也分開
+          - n: 巴拿
+            q: 亞希律的兒子
+            ref: 王上4:12
+            d: 他納和米吉多
+            basis:
+              - {ref: 王上4:12, quote: 亞希律的兒子巴拿}
+              - {source: ccbiblestudy_CT_1_kings_4.txt, quote: 巴拿有兩個人同名}
+              - {source: stepbible_1_kings_4.txt, quote: H1195G}
+              - {external: STEPBible TIPNR, version: commit bd09545, entry: Baana@1Ki.4.12}
+          - {n: 便基別, ref: 王上4:13, d: 基列的拉末}
+          - {n: 亞希拿達, q: 易多的兒子, ref: 王上4:14, d: 瑪哈念}
+          - id: 亞希瑪斯#拿弗他利
+            ref: 王上4:15
+            d: 拿弗他利
+            spouse: 巴實抹
+            basis:
+              - {ref: 王上4:15, quote: 在拿弗他利有亞希瑪斯，他也娶了所羅門的一個女兒巴實抹為妻}
+          - n: 巴拿
+            q: 戶篩的兒子
+            ref: 王上4:16
+            d: 亞設和亞祿
+            basis:
+              - {ref: 王上4:16, quote: 戶篩的兒子巴拿}
+              - {source: ccbiblestudy_CT_1_kings_4.txt, quote: 巴拿有兩個人同名}
+              - {source: stepbible_1_kings_4.txt, quote: H1195H}
+              - {external: STEPBible TIPNR, version: commit bd09545, entry: Baana@1Ki.4.16}
+          # 帕路亞的兒子約沙法（4:17）≠ 亞希律的兒子約沙法（4:3 史官）：父親不同，原文編號、TIPNR 都分開
+          - n: 約沙法
+            q: 帕路亞的兒子
+            ref: 王上4:17
+            d: 以薩迦
+            basis:
+              - {ref: 王上4:17, quote: 帕路亞的兒子約沙法}
+              - {ref: 王上4:3, quote: 亞希律的兒子約沙法作史官}
+              - {source: stepbible_1_kings_4.txt, quote: H3092H}
+              - {external: STEPBible TIPNR, version: commit bd09545, entry: Jehoshaphat@1Ki.4.17}
+          # 以拉的兒子示每：BH 明說不是咒罵大衛的那個示每
+          - n: 示每
+            q: 以拉的兒子
+            ref: 王上4:18
+            d: 便雅憫
+            basis:
+              - {ref: 王上4:18, quote: 以拉的兒子示每}
+              - {source: biblehub_study_1_kings_4.txt, quote: "He is distinct from Shimei the Benjamite who cursed David during Absalom’s rebellion."}
+              - {source: stepbible_1_kings_4.txt, quote: H8096I}
+          - {n: 基別, q: 烏利的兒子, ref: 王上4:19, d: 基列地}

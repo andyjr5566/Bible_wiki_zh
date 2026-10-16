@@ -1,5 +1,6 @@
-import type { GenealogyData, Person, ReadingData, RoleBox, RoleCategory, RoleMember, RolePerson, RolesData } from '../data/types';
+import type { CompareRow, GenealogyData, Person, ReadingData, RoleBox, RoleCategory, RoleMember, RolePerson, RolesData } from '../data/types';
 import { h, svgEl } from './dom';
+import { refLabel, refsText } from './roster-model';
 import { emptyMarks, type ReadingStage, type StageMarks } from './stage';
 import './roles.css';
 
@@ -10,6 +11,7 @@ import './roles.css';
  *
  * 畫法：大衛在最上面，底下四類；每類是幾個職位方塊，方塊裡是人名小卡。
  * 二十四班畫成二十四格的環，十二班軍隊畫成十二個月的輪盤，投奔大衛的人依支派分組。
+ * 「從大衛到所羅門」：一個職位一列，左大衛時、右所羅門時（同一人金框橫跨、換職位紅框）；十二個官吏是十二張名牌。
  */
 export interface RolesView extends ReadingStage {
   /** 分頁用的元素（和 el 是同一個；分頁與舞台共用一份畫面） */
@@ -98,6 +100,73 @@ export const cellKey = (boxId: string, memberKey: string) => `${boxId}:${memberK
 /** 一位成員在職位圖上的身分：家譜樹上的人用 id，只在職位圖上的人用 rid */
 export const pidOf = (member: RoleMember): string => member.id ?? member.rid ?? member.key;
 
+/** 這個格子這一刻要不要亮：讀到這個人（家譜樹 id 或職位圖 rid），或歸回連結直接指到這一格 */
+export function cellIsLit(lit: ReadonlySet<string>, pid: string, boxId: string, memberKey: string): boolean {
+  return lit.has(pid) || lit.has(`role:${cellKey(boxId, memberKey)}`);
+}
+
+/** 這一節（例如「王上4:12」）落在成員出處（可多處，逗號分隔）裡：播放時這張卡開始「呼吸」 */
+export function refCoversVerse(ref: string, verse: string): boolean {
+  return ref.split(/\s*[,，]\s*/).some((part) => part && refInRange(verse, part));
+}
+
+/** 成員卡要不要呼吸：他的名字已經讀到（亮著），而且出處含目前這一節 */
+export function shouldBreathe(lit: boolean, ref: string, verse: string | null): boolean {
+  return lit && verse !== null && refCoversVerse(ref, verse);
+}
+
+/** 人名旁的限定詞（亞希律的兒子）：家譜樹人物或職位圖人物的 qualifier；detail 已經寫到的（「撒督」對「撒督的兒子」）不重複寫 */
+export function qualifierOf(
+  who: { id?: string; rid?: string; detail?: string },
+  people: ReadonlyMap<string, RolePerson>,
+  tree: (id: string) => Person | undefined,
+): string {
+  const text = (who.rid ? people.get(who.rid)?.qualifier : undefined) || (who.id ? (tree(who.id)?.qualifier as string | undefined) : undefined) || '';
+  return text && !(who.detail ?? '').includes(text) ? text : '';
+}
+
+export type SolKind = 'plain' | 'same' | 'moved';
+export interface SolCard {
+  member: RoleMember;
+  kind: SolKind;
+  /** 換了職位的人：原本的職位 */
+  from?: string;
+  /** 同一人：大衛時那邊的經節（人物資料裡不是「王上」開頭的出處） */
+  davidRefs: string[];
+}
+export interface CompareRowModel {
+  office: string;
+  david: CompareRow['david'];
+  /** 同一個人：一張金框卡橫跨兩欄（這時兩欄不再各畫一份） */
+  same?: SolCard;
+  solomon: SolCard[];
+}
+
+/** 從大衛到所羅門：每一列要畫哪些卡。沒有寫 same 的人，哪怕兩欄同名，也不合併 */
+export function compareModel(box: RoleBox, people: ReadonlyMap<string, RolePerson>): CompareRowModel[] {
+  const byKey = new Map(box.members.map((member) => [member.key, member]));
+  return (box.rows ?? []).map((row) => {
+    const out: CompareRowModel = { office: row.office, david: row.david, solomon: [] };
+    if (row.same) {
+      const member = byKey.get(row.same);
+      if (member) {
+        const person = people.get(pidOf(member));
+        let refs = (person?.refs ?? []).filter((ref) => !ref.startsWith('王上'));
+        if (!refs.length) refs = row.david.filter((entry) => (entry.id ?? entry.rid) === pidOf(member)).map((entry) => entry.ref);
+        out.same = { member, kind: 'same', davidRefs: [...new Set(refs)] };
+        return out;
+      }
+    }
+    for (const key of row.solomon) {
+      const member = byKey.get(key);
+      if (!member) continue;
+      const moved = row.moved?.key === key;
+      out.solomon.push({ member, kind: moved ? 'moved' : 'plain', from: moved ? row.moved!.from : undefined, davidRefs: [] });
+    }
+    return out;
+  });
+}
+
 export interface Placement { box: RoleBox; category: RoleCategory; member: RoleMember }
 export interface RolesIndex {
   /** 人（id 或 rid）→ 他出現的每一個位置，照圖上由上到下、由左到右的順序 */
@@ -159,6 +228,8 @@ export function estimateBoxHeight(box: RoleBox): number {
   const head = 36 + (box.note ? 16 : 0);
   const figures = (box.figures?.length ?? 0) * 18;
   if (box.kind === 'ring24' || box.kind === 'wheel12') return head + 280;
+  if (box.kind === 'compare') return head + (box.rows?.length ?? 0) * 44 + 24;
+  if (box.kind === 'tiles') return head + 24 + Math.ceil(box.members.length / 4) * 56;
   const rows = Math.ceil(box.members.length / 3) * 26;
   if (box.kind === 'groups') return head + (box.groups?.length ?? 0) * 34 + rows + figures;
   return head + rows + figures;
@@ -168,26 +239,37 @@ export function miniLayout(data: RolesData): { plaque: MiniRect; boxes: Map<stri
   const margin = 3;
   const gap = 4;
   const top = 21;
-  const count = Math.max(1, data.categories.length);
+  // 「從大衛到所羅門」橫跨整個版面，排在四欄底下；其他類各一欄
+  const columnsOf = data.categories.filter((category) => category.id !== 'solomon');
+  const bandBoxes = data.categories.filter((category) => category.id === 'solomon').flatMap((category) => category.boxes);
+  const count = Math.max(1, columnsOf.length);
   const colW = (MINI_W - margin * 2 - gap * (count - 1)) / count;
-  const boxGap = 2.2;
+  const boxGap = 1.6;
   const plaque: MiniRect = { x: MINI_W / 2 - 22, y: 3, w: 44, h: 10 };
-  const avail = MINI_H - top - 2;
-  const minHeight = 2.6;
-  const heightsAt = (scale: number) => data.categories.map((category) => category.boxes.map((box) => Math.max(minHeight, estimateBoxHeight(box) * scale)));
+  const bandHeights = bandBoxes.map((box) => (box.kind === 'compare' ? 6.5 : 3.8));
+  const bandH = bandBoxes.length ? bandHeights.reduce((sum, height) => sum + height, 0) + (bandBoxes.length - 1) * boxGap : 0;
+  const bandTop = MINI_H - 2 - bandH;
+  const avail = (bandBoxes.length ? bandTop - 3.5 : MINI_H - 2) - top;
+  const minHeight = 2;
+  const heightsAt = (scale: number) => columnsOf.map((category) => category.boxes.map((box) => Math.max(minHeight, estimateBoxHeight(box) * scale)));
   const fits = (scale: number) => heightsAt(scale).every((column) => column.reduce((sum, height) => sum + height, 0) + Math.max(0, column.length - 1) * boxGap <= avail);
   // 最高的那一欄剛好排滿；其他欄照同一個比例（小方塊有下限，下限會讓欄變高，所以一路縮到全部放得下）
   let scale = 0.1;
   for (let i = 0; i < 200 && !fits(scale); i += 1) scale *= 0.97;
   const boxes = new Map<string, MiniRect & { kind: RoleBox['kind'] }>();
   const heights = heightsAt(scale);
-  data.categories.forEach((category, c) => {
+  columnsOf.forEach((category, c) => {
     let y = top;
     category.boxes.forEach((box, i) => {
       const height = heights[c]![i]!;
       boxes.set(box.id, { x: margin + c * (colW + gap), y, w: colW, h: height, kind: box.kind });
       y += height + boxGap;
     });
+  });
+  let bandY = bandTop;
+  bandBoxes.forEach((box, i) => {
+    boxes.set(box.id, { x: margin, y: bandY, w: MINI_W - margin * 2, h: bandHeights[i]!, kind: box.kind });
+    bandY += bandHeights[i]! + boxGap;
   });
   return { plaque, boxes };
 }
@@ -218,6 +300,7 @@ export function createRoles(options: RolesOptions): RolesView {
   let reading = false;
   let marks: StageMarks = emptyMarks();
   let previousCurrent: string | null = null;
+  let verseKey: string | null = null;
 
   const personById = new Map<string, Person>();
   for (const person of options.data.persons) personById.set(person.id, person);
@@ -292,8 +375,13 @@ export function createRoles(options: RolesOptions): RolesView {
     boxEls.set(box.id, article);
     if (box.note) article.append(h('p', { className: 'ag-ro-box-note' }, box.note));
     const placeOf = (member: RoleMember): Placement => ({ box, category, member });
+    if (box.quote) {
+      article.append(h('p', { className: 'ag-ro-quote' }, `「${box.quote.text}」`, h('cite', {}, refLabel(box.quote.ref))));
+    }
     if (box.kind === 'ring24') article.append(renderRing(box, placeOf));
     else if (box.kind === 'wheel12') article.append(renderWheel(box, placeOf));
+    else if (box.kind === 'compare') article.append(renderCompare(box, placeOf));
+    else if (box.kind === 'tiles') article.append(renderTiles(box, placeOf));
     else if (box.kind === 'groups') {
       const { groups, rest } = groupLayout(box);
       for (const group of groups) {
@@ -337,6 +425,97 @@ export function createRoles(options: RolesOptions): RolesView {
     }
     register({ el: root, place });
     return root;
+  }
+
+  const treeOf = (id: string) => personById.get(id);
+
+  /** 從大衛到所羅門、十二個官吏的人名卡：名字、限定詞、補充、出處；樹上有的人帶「樹」字 */
+  function solCard(place: Placement, kind: SolKind, extra: { from?: string; refs?: string; spouse?: boolean; tile?: boolean }): HTMLElement {
+    const { member } = place;
+    const qualifier = qualifierOf(member, index?.people ?? new Map(), treeOf);
+    const label = [member.name, qualifier, member.detail].filter(Boolean).join('，');
+    const nameLine = h('span', { className: 'ag-ro-sc-line' },
+      h('span', { className: 'ag-ro-sc-name' }, member.name),
+      qualifier ? h('small', { className: 'ag-ro-sc-q' }, qualifier) : null,
+      kind === 'same' ? h('small', { className: 'ag-ro-sc-same' }, '同一人') : null);
+    const main = h('button', { className: 'ag-ro-sc-main', type: 'button', 'aria-label': `${label}，看他的職位` },
+      nameLine,
+      member.detail ? h('small', { className: 'ag-ro-sc-detail' }, member.detail) : null,
+      extra.from ? h('small', { className: 'ag-ro-sc-from' }, `原本：${extra.from}`) : null,
+      extra.refs ? h('small', { className: 'ag-ro-sc-ref' }, extra.refs) : null);
+    main.addEventListener('click', () => openPerson(pidOf(member), 'manual'));
+    const root = h('div', {
+      className: `ag-ro-sc is-cell is-${kind}${extra.tile ? ' is-tile' : ''}${member.id ? ' has-tree' : ''}`,
+      'data-pid': pidOf(member), 'data-key': member.key, title: extra.tile ? member.ref : undefined,
+    }, main);
+    if (member.id) {
+      const id = member.id;
+      const tree = h('button', { className: 'ag-ro-tree', type: 'button', title: '在家譜樹上看', 'aria-label': `${member.name}，在家譜樹上看` }, '樹');
+      tree.addEventListener('click', () => options.onTreePerson(id));
+      root.append(tree);
+    }
+    if (extra.spouse && member.spouse) {
+      const spouse = member.spouse;
+      const go = h('button', { className: 'ag-ro-sc-spouse', type: 'button', 'aria-label': `${member.name}的妻子${spouse.name}，在家譜樹上看` }, `妻子${spouse.name}`);
+      go.addEventListener('click', () => options.onTreePerson(spouse.id));
+      root.append(h('span', { className: 'ag-ro-sc-foot' }, go));
+    }
+    register({ el: root, place });
+    return root;
+  }
+
+  /** 大衛時的人：只顯示，不跟著讀經亮（樹上有的人帶「樹」字） */
+  function davidCard(entry: CompareRow['david'][number]): HTMLElement {
+    const qualifier = qualifierOf(entry, index?.people ?? new Map(), treeOf);
+    const main = h('span', { className: 'ag-ro-sc-main' },
+      h('span', { className: 'ag-ro-sc-line' },
+        h('span', { className: 'ag-ro-sc-name' }, entry.name),
+        qualifier ? h('small', { className: 'ag-ro-sc-q' }, qualifier) : null),
+      entry.detail ? h('small', { className: 'ag-ro-sc-detail' }, entry.detail) : null,
+      h('small', { className: 'ag-ro-sc-ref' }, refsText([entry.ref])));
+    const root = h('div', { className: `ag-ro-sc is-ref${entry.id ? ' has-tree' : ''}` }, main);
+    if (entry.id) {
+      const id = entry.id;
+      const tree = h('button', { className: 'ag-ro-tree', type: 'button', title: '在家譜樹上看', 'aria-label': `${entry.name}，在家譜樹上看` }, '樹');
+      tree.addEventListener('click', () => options.onTreePerson(id));
+      root.append(tree);
+    }
+    return root;
+  }
+
+  // 從大衛到所羅門：三欄（職位｜大衛時｜所羅門時），一個職位一列
+  function renderCompare(box: RoleBox, placeOf: (member: RoleMember) => Placement): HTMLElement {
+    const wrap = h('div', { className: 'ag-ro-cmp' },
+      h('div', { className: 'ag-ro-cmp-row ag-ro-cmp-head', 'aria-hidden': 'true' },
+        h('span', {}, '職位'), h('span', {}, '大衛時'), h('span', {}, '所羅門時')));
+    for (const row of compareModel(box, index?.people ?? new Map())) {
+      const line = h('div', { className: `ag-ro-cmp-row${row.same ? ' has-same' : ''}` }, h('div', { className: 'ag-ro-cmp-office' }, row.office));
+      if (row.same) {
+        const refs = [refsText(row.same.davidRefs), refsText([row.same.member.ref])].filter(Boolean);
+        const spanCard = solCard(placeOf(row.same.member), 'same', {});
+        // 兩邊的出處：大衛時 ｜ 所羅門時
+        const main = spanCard.querySelector('.ag-ro-sc-main')!;
+        main.append(h('small', { className: 'ag-ro-sc-ref' }, ...refs.flatMap((text, i) => (i ? [h('i', { className: 'ag-ro-sc-bar', 'aria-hidden': 'true' }), text] : [text]))));
+        line.append(h('div', { className: 'ag-ro-cmp-span' }, spanCard));
+      } else {
+        const left = h('div', { className: 'ag-ro-cmp-col is-david' }, h('span', { className: 'ag-ro-cmp-lab' }, '大衛時'));
+        if (row.david.length) left.append(...row.david.map(davidCard));
+        else left.append(h('span', { className: 'ag-ro-cmp-none' }, '—'));
+        const right = h('div', { className: 'ag-ro-cmp-col is-solomon' }, h('span', { className: 'ag-ro-cmp-lab' }, '所羅門時'));
+        if (row.solomon.length) {
+          right.append(...row.solomon.map((card) => solCard(placeOf(card.member), card.kind, { from: card.from, refs: refsText([card.member.ref]) })));
+        } else right.append(h('span', { className: 'ag-ro-cmp-none' }, '王上 4 沒有寫'));
+        line.append(left, right);
+      }
+      wrap.append(line);
+    }
+    return wrap;
+  }
+
+  // 十二個官吏：十二張名牌，不編號、不排月份
+  function renderTiles(box: RoleBox, placeOf: (member: RoleMember) => Placement): HTMLElement {
+    return h('div', { className: 'ag-ro-tiles' },
+      ...box.members.map((member) => solCard(placeOf(member), 'plain', { tile: true, spouse: true })));
   }
 
   // 二十四格的環：每格一個序號、一個名字（沿著半徑寫）
@@ -491,6 +670,7 @@ export function createRoles(options: RolesOptions): RolesView {
     lit: boolean;
     trail: boolean;
     current: boolean;
+    breathe: boolean;
     effect?: Effect;
     stamp?: { text: string; fresh: boolean };
   }
@@ -519,12 +699,13 @@ export function createRoles(options: RolesOptions): RolesView {
       const key = cellKey(box.id, member.key);
       const roleKey = `role:${key}`;
       const isCurrent = reading && (current === pid || (currentKey !== null && currentKey === key));
-      const lit = reading && (marks.lit.has(pid) || marks.lit.has(roleKey) || isCurrent);
+      const lit = reading && (cellIsLit(marks.lit, pid, box.id, member.key) || isCurrent);
       const trail = reading && !lit && (marks.trail.has(pid) || marks.trail.has(roleKey));
-      const state = states.get(cell.el) ?? { boxId: box.id, anchor: cell.anchor, lit: false, trail: false, current: false };
+      const state = states.get(cell.el) ?? { boxId: box.id, anchor: cell.anchor, lit: false, trail: false, current: false, breathe: false };
       state.lit ||= lit;
       state.trail ||= trail;
       state.current ||= isCurrent;
+      state.breathe ||= reading && shouldBreathe(lit, member.ref, verseKey);
       const effect = effects.cells.get(key);
       if (effect && (!state.effect || EFFECT_RANK[effect] > EFFECT_RANK[state.effect])) state.effect = effect;
       if (!state.stamp) {
@@ -541,6 +722,7 @@ export function createRoles(options: RolesOptions): RolesView {
       node.classList.toggle('is-lit', state.lit);
       node.classList.toggle('is-trail', state.trail);
       node.classList.toggle('is-current', state.current);
+      node.classList.toggle('is-breathe', state.breathe);
       node.classList.toggle('is-returned', state.effect === 'returned');
       node.classList.toggle('is-lost', state.effect === 'lost');
       node.classList.toggle('is-linked', state.effect === 'link');
@@ -631,7 +813,7 @@ export function createRoles(options: RolesOptions): RolesView {
   document.addEventListener('pointerdown', (event) => {
     if (cardSource !== 'manual' || !cardEl) return;
     const target = event.target as Node | null;
-    if (target && (cardEl.contains(target) || (target instanceof Element && target.closest('.ag-ro-chip-main, .ag-ro-cell')))) return;
+    if (target && (cardEl.contains(target) || (target instanceof Element && target.closest('.ag-ro-chip-main, .ag-ro-sc-main, .ag-ro-cell')))) return;
     closeCard();
   }, true);
 
@@ -822,6 +1004,7 @@ export function createRoles(options: RolesOptions): RolesView {
       reading = on;
       if (!on) {
         marks = emptyMarks();
+        verseKey = null;
         previousCurrent = null;
         dismissedAuto = null;
         lastAutoPid = null;
@@ -830,6 +1013,9 @@ export function createRoles(options: RolesOptions): RolesView {
       }
       el.classList.toggle('is-reading', on);
       applyMarks();
+    },
+    setVerse(key) {
+      verseKey = key;
     },
     setMarks(next) {
       marks = next;
