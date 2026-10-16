@@ -1,4 +1,4 @@
-/* 歸回的名冊（拉 2、尼 7）：讀經的第三個舞台，疊在畫布上。class 一律 ag-rs- 開頭。
+﻿/* 名冊（拉 2、拉 8、拉 10、尼 7、尼 10）：讀經的第三個舞台，疊在畫布上。class 一律 ag-rs- 開頭。
    底色是宣紙（由 .ag-rd-overlay 給），墨字；冊上有名是金色加朱印。亮色、暗色各一組金色。 */
 
 :root {
@@ -73,6 +73,7 @@
   font-size: calc(15px * var(--ag-fs, 1)); font-weight: 600; letter-spacing: .16em;
 }
 .ag-rs-section-title::after { content: ""; flex: 1; height: 1px; background: var(--rd-ink-faint, rgb(30 27 23 / 14%)); }
+.ag-rs-section.is-untitled { margin-top: 26px; padding-top: 14px; border-top: 1px solid var(--rd-ink-faint, rgb(30 27 23 / 14%)); }
 .ag-rs-section.is-lost {
   margin-right: -6px; margin-left: -6px; padding: 12px 14px 8px; border: 1.5px dashed var(--rd-ink-soft, #8a867b); border-radius: 6px;
 }
@@ -80,7 +81,7 @@
 /* ── 一行 ─────────────────────────────────────── */
 .ag-rs-row { position: relative; padding: 5px 8px 5px 10px; margin-left: -10px; border-radius: 3px; transition: background-color 400ms ease, box-shadow 400ms ease; }
 .ag-rs-row.is-now {
-  background: linear-gradient(90deg, color-mix(in srgb, var(--rd-seal, #ab3427) var(--rs-wash), transparent) var(--rs-read, 100%), color-mix(in srgb, var(--rd-seal, #ab3427) 6%, transparent) var(--rs-read, 100%));
+  background: color-mix(in srgb, var(--rd-seal, #ab3427) var(--rs-wash), transparent);
   box-shadow: inset 2px 0 0 var(--rd-seal, #ab3427);
 }
 .ag-rs-row.is-fresh { animation: ag-rs-in 480ms ease-out both; }
@@ -170,6 +171,40 @@
 .ag-rs-subtotal { margin: 6px 0 0; text-align: right; color: var(--rd-ink-soft, #8a867b); font-size: calc(15px * var(--ag-fs, 1)); font-variant-numeric: tabular-nums; }
 .ag-rs-subtotal b { color: var(--rd-ink, #1e1b17); font-weight: 600; }
 
+/* 名字行也有人數（拉 8:3–14）：標籤、人數條、數字一排，領頭的名字牌在底下 */
+.ag-rs-row.has-bar .ag-rs-tiles { margin-top: 2px; }
+
+/* 家族軌跡：這一行（這個名字）也在別的名單裡，一排小籤，點了跳到那一節讀 */
+.ag-rs-fam { display: grid; gap: 3px; margin-top: 5px; }
+.ag-rs-fam-line { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; min-width: 0; }
+.ag-rs-fam-line.is-fresh { animation: ag-rs-fade 420ms ease-out both; }
+.ag-rs-fam-lead { color: var(--rd-ink-soft, #8a867b); font-size: calc(12px * var(--ag-fs, 1)); letter-spacing: .1em; }
+.ag-rs-fam-tag {
+  display: inline-flex; align-items: baseline; gap: .5em; min-height: 26px; box-sizing: border-box; padding: 3px 10px; margin: 0; cursor: pointer;
+  border: 1px solid color-mix(in srgb, var(--rd-ink, #1e1b17) 26%, transparent); border-radius: 13px;
+  background: color-mix(in srgb, var(--rd-paper, #f2e9d6) 78%, transparent); color: var(--rd-ink, #1e1b17);
+  font: inherit; font-size: calc(12.5px * var(--ag-fs, 1)); line-height: 1.4; letter-spacing: .02em; text-align: left;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+.ag-rs-fam-cnt { color: var(--rd-ink-soft, #8a867b); font-size: .94em; font-variant-numeric: tabular-nums; }
+.ag-rs-fam-tag:hover { border-color: var(--rd-seal, #ab3427); background: color-mix(in srgb, var(--rd-seal, #ab3427) 8%, var(--rd-paper, #f2e9d6)); }
+.ag-rs-fam-tag:focus-visible { outline: 2px solid var(--rd-seal, #ab3427); outline-offset: 2px; }
+@media (pointer: coarse) { .ag-rs-fam-tag { min-height: 34px; padding: 5px 12px; } }
+
+/* 簽名蓋印（尼 10）：每個名字像蓋上去的一枚印，朱色細框、名字墨色；冊上有名的名字仍然金色 */
+.ag-rs.is-seal .ag-rs-tiles { gap: 10px 10px; }
+.ag-rs.is-seal .ag-rs-tile {
+  --rs-line: var(--rd-seal, #ab3427);
+  --rs-tilt: 0deg;
+  padding: 5px 12px; border-width: 1.5px; border-radius: 2px; transform: rotate(var(--rs-tilt));
+  background: color-mix(in srgb, var(--rd-seal, #ab3427) calc(var(--rs-ink) * 7%), transparent);
+  box-shadow:
+    inset 0 0 0 2px color-mix(in srgb, var(--rd-paper, #f2e9d6) calc(var(--rs-ink) * 100%), transparent),
+    inset 0 0 0 3px color-mix(in srgb, var(--rd-seal, #ab3427) calc(var(--rs-ink) * 32%), transparent);
+}
+.ag-rs.is-seal .ag-rs-tile.is-named { background: color-mix(in srgb, var(--rs-gold-soft) calc(var(--rs-ink) * 100%), transparent); }
+.ag-rs.is-seal .ag-rs-tile.is-fresh { animation: ag-rs-sign 460ms cubic-bezier(.2, .9, .3, 1.15) both; }
+
 /* 虛線框裡（不能指明譜系、尋不著譜系）：名字牌淡一些，引句墨色稍淡 */
 .ag-rs-section.is-lost .ag-rs-tile { border-style: dashed; background: transparent; box-shadow: none; color: color-mix(in srgb, var(--rd-ink, #1e1b17) 72%, transparent); }
 .ag-rs-section.is-lost .ag-rs-quote { color: color-mix(in srgb, var(--rd-ink, #1e1b17) 62%, transparent); }
@@ -236,6 +271,11 @@
   55% { transform: rotate(-5deg) scale(.93); opacity: 1; }
   100% { transform: rotate(-5deg) scale(1); opacity: 1; }
 }
+@keyframes ag-rs-sign {
+  0% { transform: rotate(var(--rs-tilt, 0deg)) scale(1.7); opacity: 0; }
+  55% { transform: rotate(var(--rs-tilt, 0deg)) scale(.94); opacity: 1; }
+  100% { transform: rotate(var(--rs-tilt, 0deg)) scale(1); opacity: 1; }
+}
 @keyframes ag-rs-pip-in { from { opacity: 0; translate: 0 calc(-100% + 14px); } to { opacity: 1; translate: 0 -100%; } }
 @keyframes ag-rs-pip-out { from { opacity: 1; translate: 0 -100%; } to { opacity: 0; translate: 0 calc(-100% + 14px); } }
 @keyframes ag-rs-glow { 0%, 100% { box-shadow: 0 0 6px 0 var(--rs-gold-glow); } 50% { box-shadow: 0 0 14px 3px var(--rs-gold-glow); } }
@@ -248,6 +288,8 @@ html[data-motion="off"] .ag-rs-big-num.is-fresh,
 html[data-motion="off"] .ag-rs-subtotal.is-fresh,
 html[data-motion="off"] .ag-rs-quote.is-fresh,
 html[data-motion="off"] .ag-rs-tile.is-fresh,
+html[data-motion="off"] .ag-rs.is-seal .ag-rs-tile.is-fresh,
+html[data-motion="off"] .ag-rs-fam-line.is-fresh,
 html[data-motion="off"] .ag-rs-seal.is-fresh,
 html[data-motion="off"] .ag-rs-pip.is-enter,
 html[data-motion="off"] .ag-rs-pip.is-leave,
@@ -255,7 +297,8 @@ html[data-motion="off"] .ag-rs-pcard.is-me { animation: none; }
 html[data-motion="off"] .ag-rs-row,
 html[data-motion="off"] .ag-rs-ch.is-on,
 html[data-motion="off"] .ag-rs-fill,
-html[data-motion="off"] .ag-rs-tile { transition: none; }
+html[data-motion="off"] .ag-rs-tile,
+html[data-motion="off"] .ag-rs-fam-tag { transition: none; }
 /* 跳讀、打開：直接畫好，不播淡入與伸長 */
 .ag-rs.is-still .ag-rs-ch.is-on, .ag-rs.is-still .ag-rs-fill, .ag-rs.is-still .ag-rs-tile, .ag-rs.is-still .ag-rs-row { transition: none !important; }
 
@@ -276,6 +319,9 @@ html[data-motion="off"] .ag-rs-tile { transition: none; }
   .ag-rs-bar { height: 15px; }
   .ag-rs-row { padding-right: 4px; }
   .ag-rs-tile { padding: 2px 8px; font-size: .94em; }
+  .ag-rs.is-seal .ag-rs-tile { padding: 4px 9px; }
+  .ag-rs-fam-line { gap: 5px; }
+  .ag-rs-fam-tag { padding: 4px 9px; }
   .ag-rs-seal { font-size: 10px; }
   .ag-rs-seal.is-small { font-size: 8.5px; }
   .ag-rs-pip { right: 8px; top: calc(var(--ag-rs-vh, 320px) - 8px); width: 152px; gap: 4px; padding: 7px 8px 6px; }
@@ -289,3 +335,12 @@ html[data-motion="off"] .ag-rs-tile { transition: none; }
   .ag-rs-pip-card, .ag-rs-pip-refs { font-size: calc(9.5px * var(--ag-fs, 1)); line-height: 1.4; }
   .ag-rs-pip-card { -webkit-line-clamp: 2; line-clamp: 2; }
 }
+
+/* 播放中（讀經程式的播放鍵亮著、動畫開著）：目前這一行像呼吸，約 2 秒一個循環；暫停、動畫關閉時不呼吸 */
+.ag-rs-row.is-now { isolation: isolate; }
+.ag-rs-row.is-now::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none; opacity: 0;
+  background: var(--rd-seal, #ab3427);
+}
+:root:not([data-motion="off"]):has(.ag-rd-play.is-playing) .ag-rs-row.is-now::after { animation: ag-rs-breathe 2s ease-in-out var(--rs-breath-delay, 0ms) infinite; }
+@keyframes ag-rs-breathe { 0%, 100% { opacity: .03; } 15%, 50% { opacity: .58; } 65% { opacity: .03; } }

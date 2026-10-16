@@ -1,8 +1,8 @@
 import type { ReadingData, ReadingDiff, ReadingLink, ReadingToken, StageId } from '../data/types';
 import { button, h } from './dom';
 import {
-  STAGE_LABEL, anchorPerson, buildRoute, cardText, chapterHeading, entryPlan, gapAfterVerse,
-  linkTargets, linksReadBefore, startIndex, type RouteVerse,
+  OVERLAY_STAGES, STAGE_LABEL, anchorPerson, buildRoute, cardText, chapterHeading, entryPlan, gapAfterVerse, jumpIndex,
+  linkTargets, linksReadBefore, listFocusTarget, otherStage, startIndex, type RouteVerse,
 } from './reader-route';
 import type { SpeechController } from './speech';
 import { emptyMarks, type ReadingStage, type StageMarks } from './stage';
@@ -21,6 +21,8 @@ export interface ReaderApi {
   isOpen(): boolean;
   /** 讀經中要看家譜樹上的某個人（例如職位圖小卡的「在家譜樹上看」）：像偷看一樣換到家譜樹、停止跟隨 */
   showOnTree(id: string): void;
+  /** 跳到某一節（例如「拉10:25」）開始讀，跟按「下一節」一樣；路線上沒有這一節就不動，讀經沒開就從那一節打開 */
+  jumpTo(key: string): void;
 }
 
 const CHARS_PER_SECOND = 4.6;
@@ -32,13 +34,13 @@ const storage = {
 };
 /** 經文裡讀得出是誰的人名（家譜樹上的人、只在職位圖的人、歸回連回祖先的家族） */
 const isNamed = (token: ReadingToken) => token.k === 'p' && (token.id !== undefined || token.rid !== undefined || token.link !== undefined);
-/** 疊在畫布上的畫面（職位圖、名冊）；家譜樹是底下的畫布本身 */
-const OVERLAYS: StageId[] = ['roles', 'roster'];
-/** 經文欄裡歸回連結小卡的標籤：名冊段（拉 2、尼 7）和名冊上的字一致 */
+/** 疊在畫布上的畫面（職位圖、名冊、城牆）；家譜樹是底下的畫布本身 */
+const OVERLAYS = OVERLAY_STAGES;
+/** 經文欄裡歸回連結小卡的標籤：名冊段（拉 2、尼 7）、城牆段（尼 3）和畫面上的字一致 */
 function linkLabel(effect: ReadingLink['effect'], segmentStage: StageId): string {
   if (effect === 'town') return '家譜裡有這座城';
   if (effect === 'lost') return '族譜尋不著';
-  return segmentStage === 'roster' ? '冊上有名' : '連回祖先';
+  return segmentStage === 'roster' || segmentStage === 'wall' ? '冊上有名' : '連回祖先';
 }
 
 export function createReader(reading: ReadingData, stages: Record<StageId, ReadingStage>, options: {
@@ -48,16 +50,10 @@ export function createReader(reading: ReadingData, stages: Record<StageId, Readi
   const route = buildRoute(reading);
   const verses = route.verses;
   const motionOn = () => document.documentElement.dataset.motion !== 'off';
-  const stageIds: StageId[] = ['tree', 'roles', 'roster'];
-  /**
-   * 小地圖與「偷看」的另一個畫面：名冊 → 家譜樹（看祖先在樹上哪裡）；
-   * 名冊段裡的職位圖 → 名冊；其他照舊（家譜樹 ↔ 職位圖）
-   */
+  const stageIds: StageId[] = ['tree', 'roles', 'roster', 'wall'];
+  /** 小地圖與「偷看」的另一個畫面（規則在 reader-route.ts 的 otherStage） */
   function other(id: StageId): StageId {
-    const base = verseAt().segment.stage;
-    if (id === 'roster') return 'tree';
-    if (base === 'roster') return 'roster';
-    return id === 'tree' ? 'roles' : 'tree';
+    return otherStage(id, verseAt().segment.stage);
   }
 
   // ── 狀態 ─────────────────────────────────────────────
@@ -287,8 +283,9 @@ export function createReader(reading: ReadingData, stages: Record<StageId, Readi
   function focusTarget(): string | null {
     const item = verseAt();
     const target = stages[item.stage];
-    // 名冊沒有「人」的位置：鏡頭就是讓讀到的那一行留在看得到的地方
-    if (item.stage === 'roster') return 'roster:now';
+    // 名冊、城牆沒有「人」的位置：鏡頭就是讓讀到的那一行（那一段）留在看得到的地方
+    const listTarget = listFocusTarget(item.stage);
+    if (listTarget) return listTarget;
     if (marks.current && target.has(marks.current)) return marks.current;
     if (item.stage === 'roles') return item.verse.box ?? null;
     return item.verse.hold ?? lastPersonInSection.get(sectionOf(item)) ?? anchorPerson(route, at);
@@ -388,7 +385,9 @@ export function createReader(reading: ReadingData, stages: Record<StageId, Readi
       miniButton.setAttribute('aria-label', `看${STAGE_LABEL[target].view}`);
       miniButton.title = `看${STAGE_LABEL[target].view}`;
     }
-    const spot = marks.current ? stages[target].locate(marks.current) : null;
+    // 城牆的縮圖不靠家譜樹上的人：用「現在讀到的那一段」定位
+    const spotKey = marks.current ?? (target === 'wall' ? 'wall:now' : null);
+    const spot = spotKey ? stages[target].locate(spotKey) : null;
     miniDot.hidden = !spot;
     if (spot) {
       miniDot.style.left = `${(spot.x * 100).toFixed(1)}%`;
@@ -762,5 +761,15 @@ export function createReader(reading: ReadingData, stages: Record<StageId, Readi
     });
   }
 
-  return { panel, stage, open, close, isOpen: () => isOpen, showOnTree };
+  function jumpTo(key: string) {
+    const index = jumpIndex(route, key);
+    if (index === null) return;
+    if (!isOpen) { open(key, false); return; }
+    // 回到朗讀處、繼續跟隨，再跳到那一節
+    follow = true;
+    returnButton.hidden = true;
+    jump(index, 0, playing);
+  }
+
+  return { panel, stage, open, close, isOpen: () => isOpen, showOnTree, jumpTo };
 }

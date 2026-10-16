@@ -1,15 +1,16 @@
 import { pathToFirstAncestor, type PersonGraph } from '../data/model';
-import type { GenealogyData, ReadingData, Roster, RosterData, RosterName, RosterSection } from '../data/types';
+import type { GenealogyData, ReadingData, Roster, RosterData, RosterFamily, RosterName, RosterSection } from '../data/types';
 import { h, svgEl } from './dom';
 import {
-  PIP_COMPACT_CARDS, PIP_MAX_CARDS, barProgress, barWidth, charsShown, flattenRows, numberLength, formatCount, hasBar, isLandmark, linkMark, mergeMarks, miniLayout, pickPipLinks,
-  pipChain, pipNames, pipPeople, pipTitle, refGroups, refLabel, refsText, rowState, verseIndex, type FlatRow, type LinkMark,
+  PIP_COMPACT_CARDS, PIP_MAX_CARDS, barProgress, barWidth, charsShown, familyLead, familyTags, flattenRows, numberLength, formatCount, isLandmark, mergeMarks, miniLayout, namesBar, pickPipLinks,
+  pipAllowed, pipChain, pipNames, pipPeople, pipTitle, refGroups, refLabel, refsText, rosterClassName, rosterMark, rowKind, rowState, sealTilt, sectionHasTitle, tileClassName, totalUnitText,
+  verseIndex, type FamilyTag, type FlatRow, type LinkMark,
 } from './roster-model';
 import { emptyMarks, type ReadingStage, type StageMarks } from './stage';
 import '../roster.css';
 
 /**
- * 歸回的名冊（拉 2、尼 7）：讀經的第三個舞台，疊在畫布上。
+ * 名冊（拉 2、拉 8、拉 10、尼 7、尼 10）：讀經的第三個舞台，疊在畫布上。
  * 讀到哪寫到哪：這一行、這個名字、人數條都在朗讀唸到的那一刻才出現；
  * 前面的家譜裡記過的家族變金色、蓋「冊上有名」，旁邊開一個小窗，畫家譜樹的一小角。
  */
@@ -21,6 +22,8 @@ export interface RosterOptions {
   graph: PersonGraph;
   /** 點子母畫面：讀經程式換到家譜樹看這個人 */
   onTreePerson(id: string): void;
+  /** 點家族軌跡的小籤：讀經程式跳到那一節（例如「拉10:25」）讀 */
+  onJump?(key: string): void;
 }
 
 const PIP_MIN_OPEN_MS = 2500;
@@ -50,6 +53,14 @@ interface TileView {
   ink: number;
 }
 
+/** 一行（或一個名字）底下的一排家族軌跡小籤：那一行（那個名字）出現才一起出現 */
+interface FamLine {
+  el: HTMLElement;
+  /** 屬於哪個名字；整行的家族是 null */
+  tile: TileView | null;
+  shown: boolean;
+}
+
 interface RowView {
   flat: FlatRow;
   el: HTMLElement;
@@ -69,6 +80,8 @@ interface RowView {
   width: number;
   num: HTMLElement | null;
   noteEl: HTMLElement;
+  famEl: HTMLElement;
+  famLines: FamLine[];
   quoteEl: HTMLElement | null;
   subtotal: HTMLElement | null;
   tiles: TileView[];
@@ -155,6 +168,7 @@ export function createRoster(options: RosterOptions): ReadingStage {
   function buildRoster(roster: Roster): RosterView {
     const flat = flattenRows(roster);
     const range = segmentRange(roster);
+    const families = rosters?.families;
     const head = h('header', { className: 'ag-rs-head' },
       h('span', { className: 'ag-rs-title-seal', 'aria-hidden': 'true' }, '名冊'),
       h('div', { className: 'ag-rs-head-text' },
@@ -170,14 +184,16 @@ export function createRoster(options: RosterOptions): ReadingStage {
     const sections: SectionView[] = [];
     roster.sections.forEach((section, si) => {
       const titleText = written(section.title, 0);
-      const sectionEl = h('section', { className: `ag-rs-section ${OFF}${section.lost ? ' is-lost' : ''}` },
-        h('h3', { className: 'ag-rs-section-title' }, h('span', { className: 'ag-rs-section-text' }, ...titleText.nodes)));
+      // 沒有標題的分區（拉 10:44 那句引句）不畫標題
+      const titled = sectionHasTitle(section);
+      const sectionEl = h('section', { className: `ag-rs-section ${OFF}${section.lost ? ' is-lost' : ''}${titled ? '' : ' is-untitled'}` },
+        titled ? h('h3', { className: 'ag-rs-section-title' }, h('span', { className: 'ag-rs-section-text' }, ...titleText.nodes)) : null);
       const firstRow = section.rows[0];
-      const titleStart = firstRow ? verseText(firstRow.at).indexOf(section.title) : -1;
+      const titleStart = firstRow && titled ? verseText(firstRow.at).indexOf(section.title) : -1;
       titleText.written.start = Math.max(0, titleStart);
       let previousWho: string | undefined;
       for (const item of flat.filter((entry) => entry.si === si)) {
-        const rv = buildRow(item, previousWho);
+        const rv = buildRow(item, previousWho, roster, families);
         previousWho = item.row.who;
         rows.push(rv);
         sectionEl.append(rv.el);
@@ -187,7 +203,7 @@ export function createRoster(options: RosterOptions): ReadingStage {
     });
     // 讀到最後一行時，名冊底下留一些空，捲動才有地方放
     sheet.append(h('div', { className: 'ag-rs-foot', 'aria-hidden': 'true' }));
-    const root = h('div', { className: `ag-rs ${OFF}`, 'data-segment': roster.segment }, sheet);
+    const root = h('div', { className: `${rosterClassName(roster)} ${OFF}`, 'data-segment': roster.segment }, sheet);
     return { roster, root, flat, rows, sections, nowRow: -1, nowEl: null, progress: -1 };
   }
 
@@ -230,21 +246,55 @@ export function createRoster(options: RosterOptions): ReadingStage {
     tile.el.style.setProperty('--rs-ink', ink.toFixed(3));
   }
 
-  function buildRow(flat: FlatRow, previousWho: string | undefined): RowView {
+  /** 一排家族軌跡小籤：開頭小字「也在」，後面每一處一個可以點的小籤 */
+  function famLine(tags: FamilyTag[], lead: string): HTMLElement {
+    const line = h('div', { className: `ag-rs-fam-line ${OFF}` }, h('span', { className: 'ag-rs-fam-lead' }, lead));
+    for (const tag of tags) {
+      const button = h('button', {
+        className: 'ag-rs-fam-tag', type: 'button', title: tag.family,
+        'aria-label': `${tag.family}也在${tag.text}，跳到那一節讀`,
+      }, h('span', { className: 'ag-rs-fam-ref' }, tag.ref), tag.count ? h('span', { className: 'ag-rs-fam-cnt' }, tag.count) : null);
+      button.addEventListener('click', () => options.onJump?.(tag.at));
+      line.append(button);
+    }
+    return line;
+  }
+
+  function buildRow(flat: FlatRow, previousWho: string | undefined, roster: Roster, families: RosterFamily[] | undefined): RowView {
     const { row, section } = flat;
-    const bar = hasBar(section, row);
-    const kind = row.big ? 'big' : row.total ? 'total' : row.names?.length ? 'names' : bar ? 'bar' : row.label !== undefined || row.count !== undefined ? 'plain' : 'quote';
-    const el = h('div', { className: `ag-rs-row is-${kind} ${OFF}${row.differs ? ' is-differs' : ''}` });
+    const kind = rowKind(section, row);
+    const barred = namesBar(section, row);
+    const el = h('div', { className: `ag-rs-row is-${kind}${barred ? ' has-bar' : ''} ${OFF}${row.differs ? ' is-differs' : ''}` });
     const rv: RowView = {
       flat, el, slot: null, label: null, labelText: null, verseLen: Array.from(verseText(row.at)).length, read: -1, numLen: row.n !== undefined ? numberLength(verseText(row.at), row.n) : 0, fill: null, width: 0, num: null, quoteEl: null, subtotal: null, tiles: [],
       noteEl: h('div', { className: 'ag-rs-note' }),
+      famEl: h('div', { className: `ag-rs-fam ${OFF}` }), famLines: [],
       visible: false, filled: false, quoteShown: false, subtotalShown: false, markKey: '',
     };
     if (row.who && row.who !== previousWho) el.append(h('p', { className: 'ag-rs-who' }, row.who));
     const unit = row.unit ? h('small', {}, row.unit) : null;
     const count = row.count !== undefined ? formatCount(row.count) : '';
+    const totalUnit = totalUnitText(row.unit);
 
     const labelStart = row.ls ?? row.s;
+    /** 標籤＋人數條＋數字那一排（有標籤的名字行也用它） */
+    const mainLine = () => {
+      rv.slot = h('span', { className: 'ag-rs-slot' });
+      const text = written(row.label ?? '', labelStart);
+      rv.labelText = text.written;
+      rv.label = h('span', { className: 'ag-rs-label' }, h('span', { className: 'ag-rs-label-text' }, ...text.nodes), rv.slot);
+      rv.num = h('span', { className: 'ag-rs-num ag-rs-hide' }, h('b', {}, count), unit);
+      let middle: HTMLElement;
+      if (kind === 'bar' || barred) {
+        rv.fill = h('span', { className: 'ag-rs-fill' });
+        rv.fill.style.setProperty('--rs-w', '0%');
+        middle = h('span', { className: 'ag-rs-bar' }, rv.fill);
+      } else {
+        middle = h('span', { className: 'ag-rs-leader' });
+      }
+      if (row.count === undefined) return h('div', { className: 'ag-rs-main is-label-only' }, rv.label);
+      return h('div', { className: 'ag-rs-main' }, rv.label, middle, rv.num);
+    };
     if (kind === 'big') {
       const text = written(row.label ?? '', labelStart);
       rv.labelText = text.written;
@@ -255,10 +305,12 @@ export function createRoster(options: RosterOptions): ReadingStage {
       const text = written(row.label ?? '', labelStart);
       rv.labelText = text.written;
       rv.label = h('span', { className: 'ag-rs-label' }, h('span', { className: 'ag-rs-label-text' }, ...text.nodes));
-      rv.num = h('span', { className: 'ag-rs-num ag-rs-hide' }, '共 ', h('b', {}, count), ` ${row.unit ?? '名'}`);
+      rv.num = h('span', { className: 'ag-rs-num ag-rs-hide' }, '共 ', h('b', {}, count), totalUnit);
       el.append(h('div', { className: 'ag-rs-totalbox' }, rv.label, rv.num));
     } else if (kind === 'names') {
-      if (row.label) {
+      if (barred) {
+        el.append(mainLine());
+      } else if (row.label) {
         rv.slot = h('span', { className: 'ag-rs-slot' });
         const text = written(row.label, labelStart);
         rv.labelText = text.written;
@@ -266,40 +318,39 @@ export function createRoster(options: RosterOptions): ReadingStage {
         el.append(h('div', { className: 'ag-rs-caption' }, rv.label, rv.slot));
       }
       const tiles = h('div', { className: 'ag-rs-tiles' });
-      for (const name of row.names ?? []) {
+      (row.names ?? []).forEach((name, ni) => {
         const slot = h('span', { className: 'ag-rs-slot' });
         const text = written(name.t, name.s);
-        const tile = h('span', { className: `ag-rs-tile ${OFF}` }, h('span', { className: 'ag-rs-tile-name' }, ...text.nodes), slot);
+        const tile = h('span', { className: `${tileClassName(roster)} ${OFF}` }, h('span', { className: 'ag-rs-tile-name' }, ...text.nodes), slot);
         tile.style.setProperty('--rs-ink', '0');
+        if (roster.seal) tile.style.setProperty('--rs-tilt', `${sealTilt(ni)}deg`);
         rv.tiles.push({ name, el: tile, slot, text: text.written, shown: false, markKey: '', ink: 0 });
         tiles.append(tile);
-      }
+      });
       el.append(tiles);
-      if (row.count !== undefined) {
-        rv.subtotal = h('p', { className: `ag-rs-subtotal ag-rs-hide` }, '共 ', h('b', {}, count), ` ${row.unit ?? '名'}`);
+      if (row.count !== undefined && !barred) {
+        rv.subtotal = h('p', { className: `ag-rs-subtotal ag-rs-hide` }, '共 ', h('b', {}, count), totalUnit);
         el.append(rv.subtotal);
       }
     } else if (kind === 'bar' || kind === 'plain') {
-      rv.slot = h('span', { className: 'ag-rs-slot' });
-      const text = written(row.label ?? '', labelStart);
-      rv.labelText = text.written;
-      rv.label = h('span', { className: 'ag-rs-label' }, h('span', { className: 'ag-rs-label-text' }, ...text.nodes), rv.slot);
-      rv.num = h('span', { className: 'ag-rs-num ag-rs-hide' }, h('b', {}, count), unit);
-      let middle: HTMLElement;
-      if (kind === 'bar') {
-        rv.fill = h('span', { className: 'ag-rs-fill' });
-        rv.fill.style.setProperty('--rs-w', '0%');
-        middle = h('span', { className: 'ag-rs-bar' }, rv.fill);
-      } else {
-        middle = h('span', { className: 'ag-rs-leader' });
-      }
-      if (row.count === undefined) {
-        el.append(h('div', { className: 'ag-rs-main is-label-only' }, rv.label));
-      } else {
-        el.append(h('div', { className: 'ag-rs-main' }, rv.label, middle, rv.num));
-      }
+      el.append(mainLine());
     }
     el.append(rv.noteEl);
+    // 家族軌跡：整行的家族，再來是各個名字的家族
+    const rowTags = familyTags(families, row.fam, roster.segment);
+    if (rowTags.length) {
+      const line = famLine(rowTags, familyLead(rowTags, [row.label]));
+      rv.famLines.push({ el: line, tile: null, shown: false });
+      rv.famEl.append(line);
+    }
+    rv.tiles.forEach((tile) => {
+      const tags = familyTags(families, tile.name.fam, roster.segment);
+      if (!tags.length) return;
+      const line = famLine(tags, familyLead(tags, [tile.name.t, row.label], tile.name.t));
+      rv.famLines.push({ el: line, tile, shown: false });
+      rv.famEl.append(line);
+    });
+    if (rv.famLines.length) el.append(rv.famEl);
     if (row.quote) {
       rv.quoteEl = h('p', { className: `ag-rs-quote ${OFF}` }, `「${row.quote.t}」`);
       el.append(rv.quoteEl);
@@ -380,6 +431,8 @@ export function createRoster(options: RosterOptions): ReadingStage {
             tile.shown = false; tile.markKey = ''; tile.el.classList.add(OFF); tile.el.classList.remove('is-named', 'is-town', 'is-fresh'); tile.slot.replaceChildren();
             writeChars(tile.text, 0); setInk(tile, 0);
           }
+          for (const line of rv.famLines) { line.shown = false; line.el.classList.add(OFF); line.el.classList.remove('is-fresh'); }
+          rv.famEl.classList.add(OFF);
         }
       }
       if (!state.visible) return;
@@ -431,7 +484,7 @@ export function createRoster(options: RosterOptions): ReadingStage {
         // 名字一個字一個字寫上去，名字牌的框線跟著畫出來
         writeChars(tile.text, typed, animate);
         setInk(tile, typed / tile.text.chars.length);
-        const mark = tile.name.link === undefined ? { kind: null, refs: [] } as LinkMark : linkMark(links, [tile.name.link], read());
+        const mark = tile.name.link === undefined ? { kind: null, refs: [] } as LinkMark : rosterMark(view.roster, links, [tile.name.link], read());
         const markKey = markKeyOf(mark);
         if (markKey !== tile.markKey) {
           changed = true;
@@ -452,8 +505,26 @@ export function createRoster(options: RosterOptions): ReadingStage {
           if (show && animate) rv.subtotal.classList.add('is-fresh');
         }
       }
+      // 家族軌跡小籤：這一行（這個名字）出現了才一起出現
+      if (rv.famLines.length) {
+        let any = false;
+        for (const line of rv.famLines) {
+          // 整行的小籤等標籤寫完才出現；名字的小籤等那個名字寫完才出現
+          const written = line.tile ? line.tile.text : rv.labelText;
+          const show = !written || written.chars.length === 0 || written.shown >= written.chars.length;
+          if (show !== line.shown) {
+            line.shown = show;
+            changed = true;
+            line.el.classList.toggle(OFF, !show);
+            line.el.classList.remove('is-fresh');
+            if (show && animate) line.el.classList.add('is-fresh');
+          }
+          if (show) any = true;
+        }
+        rv.famEl.classList.toggle(OFF, !any);
+      }
       // 冊上有名／家譜裡有這座城（整行）
-      const rowMark = linkMark(links, row.links ?? [], read());
+      const rowMark = rosterMark(view.roster, links, row.links ?? [], read());
       const merged = rv.tiles.length ? mergeMarks([rowMark, ...tileMarks.map((item) => item.mark)]) : rowMark;
       const markKey = `${markKeyOf(merged)}#${tileMarks.map((item) => `${item.label}:${markKeyOf(item.mark)}`).join(';')}`;
       if (markKey !== rv.markKey) {
@@ -491,7 +562,12 @@ export function createRoster(options: RosterOptions): ReadingStage {
     if (nowRow !== view.nowRow) {
       const old = view.nowRow >= 0 ? view.rows[view.nowRow] : undefined;
       if (old) { old.el.classList.remove('is-now'); old.el.style.removeProperty('--rs-read'); old.read = -1; }
-      if (nowRow >= 0) view.rows[nowRow]!.el.classList.add('is-now');
+      if (nowRow >= 0) {
+        const next = view.rows[nowRow]!.el;
+        // 呼吸的節拍跟著全頁同一個時鐘（每 2 秒一圈），換到新的一行也不會重新起拍
+        next.style.setProperty('--rs-breath-delay', `${-(performance.now() % 2000).toFixed(0)}ms`);
+        next.classList.add('is-now');
+      }
       view.nowRow = nowRow;
     }
     // 目前那一行底下一道淡淡的朱紅，跟著朗讀由左往右染過去（前面的節整行染滿）
@@ -624,7 +700,7 @@ export function createRoster(options: RosterOptions): ReadingStage {
   }
 
   function syncPip() {
-    const want = reading && cur >= 0 ? pickPipLinks(options.reading.links, key, read(), onTree) : [];
+    const want = reading && cur >= 0 && active && pipAllowed(active.roster) ? pickPipLinks(options.reading.links, key, read(), onTree) : [];
     if (want.length) {
       window.clearTimeout(pipTimer);
       pipTimer = 0;
@@ -741,6 +817,7 @@ export function createRoster(options: RosterOptions): ReadingStage {
     if (row && row.tiles.length && !row.noteEl.classList.contains(OFF)) {
       for (const child of Array.from(row.noteEl.children)) rects.push(child.getBoundingClientRect());
     }
+    if (row && row.tiles.length) for (const line of row.famLines) if (line.shown) rects.push(line.el.getBoundingClientRect());
     const top = Math.min(...rects.map((r) => r.top));
     const bottom = Math.max(...rects.map((r) => r.bottom));
     return { top, bottom, left: Math.min(...rects.map((r) => r.left)), right: Math.max(...rects.map((r) => r.right)), height: bottom - top };
@@ -755,6 +832,7 @@ export function createRoster(options: RosterOptions): ReadingStage {
     for (const tile of row.tiles) if (tile.shown) rects.push(tile.el.getBoundingClientRect());
     if (!row.noteEl.classList.contains(OFF)) for (const child of Array.from(row.noteEl.children)) rects.push(child.getBoundingClientRect());
     if (row.label) rects.push(row.label.getBoundingClientRect());
+    for (const line of row.famLines) if (line.shown) rects.push(line.el.getBoundingClientRect());
     return rects;
   }
 

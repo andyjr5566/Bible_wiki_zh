@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { READING } from '../data/model';
 import type { ReadingData, ReadingVerse, StageId } from '../data/types';
 import {
-  anchorPerson, buildRoute, cardText, chapterHeading, chineseNumber, entryPlan, gapAfterVerse,
-  linkTargets, linksReadBefore, normalizeRef, resolveRef, startIndex,
+  OVERLAY_STAGES, STAGE_LABEL, anchorPerson, buildRoute, cardText, chapterHeading, chineseNumber, entryPlan, gapAfterVerse, isListStage, jumpIndex,
+  linkTargets, linksReadBefore, listFocusTarget, normalizeRef, otherStage, resolveRef, startIndex,
 } from './reader-route';
 
 const verse = (v: number, extra: Partial<ReadingVerse> = {}): ReadingVerse => ({ v, text: `第${v}節`, t: [], ...extra });
@@ -215,5 +215,63 @@ describe('真正的讀經路線', () => {
 
   it('歸回連結的索引都在 links 範圍內', () => {
     for (const index of route.linkOrder) expect(READING.links[index]).toBeDefined();
+  });
+});
+
+describe('城牆畫面接進讀經', () => {
+  const route = buildRoute(READING);
+
+  it('尼 3 整段走城牆畫面，標題卡寫「城牆」', () => {
+    const first = route.verses[resolveRef(route, '尼3:1')!]!;
+    const last = route.verses[resolveRef(route, '尼3:32')!]!;
+    expect(first.stage).toBe('wall');
+    expect(last.stage).toBe('wall');
+    expect(first.segment.id).toBe(last.segment.id);
+    expect(STAGE_LABEL.wall).toEqual({ card: '城牆', view: '城牆' });
+    expect(cardText(first, true).seal).toBe('城牆');
+  });
+
+  it('疊在畫布上的畫面包含城牆；城牆和名冊都是名單類', () => {
+    expect(OVERLAY_STAGES).toEqual(expect.arrayContaining(['roles', 'roster', 'wall']));
+    expect(OVERLAY_STAGES).not.toContain('tree');
+    expect(isListStage('wall')).toBe(true);
+    expect(isListStage('roster')).toBe(true);
+    expect(isListStage('roles')).toBe(false);
+  });
+
+  it('從城牆讀到名冊（尼 3 → 尼 7）會換畫面；讀回前面就換回來', () => {
+    const wallEnd = route.verses[resolveRef(route, '尼3:32')!]!;
+    const next = route.verses[wallEnd.index + 1]!;
+    expect(next.stage).toBe('roster');
+    expect(entryPlan(next, { renderedFragment: wallEnd.fragmentIndex, shown: 'wall', follow: true, wantCard: true }).switching).toBe(true);
+    const before = route.verses[resolveRef(route, '尼3:1')!.valueOf() - 1]!;
+    expect(entryPlan(wallEnd, { renderedFragment: before.fragmentIndex, shown: before.stage, follow: true, wantCard: true }).switching).toBe(before.stage !== 'wall');
+  });
+
+  it('偷看：城牆 → 家譜樹；城牆段裡從家譜樹偷看回來還是城牆；名冊段照舊', () => {
+    expect(otherStage('wall', 'wall')).toBe('tree');
+    expect(otherStage('tree', 'wall')).toBe('wall');
+    expect(otherStage('roles', 'wall')).toBe('wall');
+    expect(otherStage('roster', 'roster')).toBe('tree');
+    expect(otherStage('tree', 'roster')).toBe('roster');
+    expect(otherStage('tree', 'tree')).toBe('roles');
+    expect(otherStage('roles', 'tree')).toBe('tree');
+  });
+
+  it('朗讀處的鏡頭目標：名冊「roster:now」、城牆「wall:now」，其他畫面沒有', () => {
+    expect(listFocusTarget('roster')).toBe('roster:now');
+    expect(listFocusTarget('wall')).toBe('wall:now');
+    expect(listFocusTarget('tree')).toBeNull();
+    expect(listFocusTarget('roles')).toBeNull();
+  });
+
+  it('跳到某一節：寫法有空格、全形冒號都找得到；路線上沒有就是 null', () => {
+    const key = '拉10:25';
+    const index = jumpIndex(route, key);
+    expect(index).not.toBeNull();
+    expect(route.verses[index!]!.key).toBe(key);
+    expect(jumpIndex(route, ' 尼 3：15 ')).toBe(resolveRef(route, '尼3:15'));
+    expect(jumpIndex(route, '拉999:1')).toBeNull();
+    expect(jumpIndex(route, '')).toBeNull();
   });
 });

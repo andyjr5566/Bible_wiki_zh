@@ -266,6 +266,12 @@
 .ag-reading .ag-rd-overlay:not(.ag-rd-overlay-on) { display: none !important; }
 .ag-reading .ag-rd-overlay-enter { transform-origin: calc(100% - clamp(340px, 31vw, 470px) - 94px) 64px; animation: ag-rd-stage-in 450ms cubic-bezier(.2, .8, .2, 1) both; }
 .ag-reading .ag-rd-overlay-leave { transform-origin: calc(100% - clamp(340px, 31vw, 470px) - 94px) 64px; animation: ag-rd-stage-out 450ms cubic-bezier(.5, 0, .8, .4) both; pointer-events: none; }
+/* 右上角的小地圖卡不蓋住名冊、職位圖的內容：桌機讓出右邊一欄（城牆自己排版時避開，不讓欄） */
+.ag-reading .ag-rd-overlay:not(.ag-wall) { padding-right: calc(clamp(340px, 31vw, 470px) + 28px + 152px); }
+.ag-reading .ag-rd-stage::before {
+  content: ""; display: none; position: absolute; top: 0; right: 0; left: 0; height: 52px;
+  background: var(--rd-paper); border-bottom: 1px solid var(--rd-paper-edge);
+}
 @keyframes ag-rd-stage-in { from { opacity: 0; transform: scale(.2); } to { opacity: 1; transform: none; } }
 @keyframes ag-rd-stage-out { from { opacity: 1; transform: none; } to { opacity: 0; transform: scale(.2); } }
 
@@ -311,6 +317,8 @@ html[data-motion="off"] .ag-rd-mini.is-fresh { animation: none; }
   .ag-rd-title { grid-column: 1; grid-row: 1; grid-auto-flow: column; justify-content: start; align-items: baseline; gap: 10px; }
   .ag-rd-title strong { font-size: calc(18px * var(--ag-fs)); }
   .ag-reading .ag-rd-overlay { padding-right: 0; padding-bottom: 47dvh; }
+  /* 平板：小地圖卡（112px）占右邊一欄，內容讓開 */
+  .ag-reading .ag-rd-overlay:not(.ag-wall) { padding-right: 132px; }
   .ag-reading .ag-rd-overlay-enter, .ag-reading .ag-rd-overlay-leave { transform-origin: calc(100% - 70px) 54px; }
   .ag-rd-mini { top: 8px; right: 10px; width: 112px; }
   .ag-rd-mini-view { height: 62px; }
@@ -331,6 +339,10 @@ html[data-motion="off"] .ag-rd-mini.is-fresh { animation: none; }
   .ag-rd-return { left: auto; right: 12px; bottom: calc(47dvh + 12px); }
 }
 @media (max-width: 520px) {
+  /* 手機：「家譜樹」膠囊放在上方一條帶子裡，捲動的內容在帶子下面，不會跑到按鈕底下 */
+  .ag-reading .ag-rd-overlay:not(.ag-wall) { top: 52px; padding-right: 0; }
+  .ag-reading .ag-rd-overlay:not(.ag-wall).ag-rd-overlay-enter, .ag-reading .ag-rd-overlay:not(.ag-wall).ag-rd-overlay-leave { transform-origin: calc(100% - 70px) 2px; }
+  .ag-reading:has(.ag-rd-overlay-on:not(.ag-wall)) .ag-rd-stage::before { display: block; }
   .ag-rd-mini { width: auto; padding: 6px 14px; border-color: var(--rd-seal); border-radius: 18px; color: var(--rd-seal); font-weight: 600; letter-spacing: .14em; }
   .ag-rd-mini-view { display: none; }
   .ag-rd-options { flex-wrap: wrap; }

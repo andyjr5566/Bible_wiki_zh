@@ -226,7 +226,7 @@ export interface ReadingToken {
 }
 
 /** 讀經的三個畫面：家譜樹、大衛立的職位（組織圖）、歸回的名冊（拉 2、尼 7） */
-export type StageId = 'tree' | 'roles' | 'roster';
+export type StageId = 'tree' | 'roles' | 'roster' | 'wall';
 
 export interface ReadingVerse {
   v: number;
@@ -314,6 +314,8 @@ export interface RosterName {
   s: number;
   /** 這個名字連回前面家譜的歸回連結（ReadingData.links 的索引） */
   link?: number;
+  /** 這個名字屬於的家族軌跡（RosterData.families／WallData.families 的索引） */
+  fam?: number[];
 }
 
 export interface RosterRow {
@@ -324,7 +326,7 @@ export interface RosterRow {
   label?: string;
   ls?: number;
   count?: number;
-  /** 量詞（名、匹、隻、達利克、彌拿、件、個） */
+  /** 量詞（名、人、匹、隻、達利克、彌拿、件、個）；空字串＝經文沒有量詞（拉 8:4「男丁二百」） */
   unit?: string;
   /** 數字在經文裡的起點：讀到這裡人數條才伸長 */
   n?: number;
@@ -344,6 +346,8 @@ export interface RosterRow {
   links?: number[];
   /** 尼 7 這一行和拉 2 的寫法或人數不同 */
   differs?: boolean;
+  /** 這一行屬於的家族軌跡（RosterData.families 的索引） */
+  fam?: number[];
 }
 
 export interface RosterSection {
@@ -365,10 +369,54 @@ export interface Roster {
   /** 人數條滿格的人數（這份名冊最大的一行） */
   max: number;
   sections: RosterSection[];
+  /** plain：口氣中性（拉 10），不加金色、不蓋「冊上有名」、不開子母畫面；家族軌跡照常 */
+  tone?: 'plain';
+  /** 名字像簽名一樣一個個蓋上去（尼 10） */
+  seal?: boolean;
 }
 
 export interface RosterData {
   rosters: Roster[];
+  /** 家族軌跡：同一個家族（或同一個人）在好幾份名單都出現 */
+  families?: RosterFamily[];
+}
+
+/** 家族軌跡：名冊行（或名字）底下一排小籤「也在：……」，點了跳到那一節讀 */
+export interface RosterFamily {
+  name: string;
+  places: Array<{
+    at: string;
+    /** 那一節所屬的讀經段落 id */
+    seg: string;
+    /** 那一處掛到的名冊行有人數時才有 */
+    count?: number;
+    unit?: string;
+  }>;
+}
+
+// ── 修城牆的人（wall.json，讀到尼 3 時才載入） ─────────────
+// 示意的一圈（不照真實比例）：照經文出現的次序，從羊門出發繞一圈回到羊門。
+
+export interface WallItem {
+  /** 經節，例如「尼3:1」 */
+  at: string;
+  /** gate 城門、tower 城樓、place 牆上別的地方、part 一段（修造的人） */
+  kind: 'gate' | 'tower' | 'place' | 'part';
+  /** 門、樓、地方的名字（part 沒有） */
+  t?: string;
+  /** 在那一節經文裡的字元位置 */
+  s?: number;
+  /** 繞回起點（尼 3:32 回到羊門） */
+  back?: boolean;
+  /** part：修造的人，讀到哪寫到哪 */
+  names?: RosterName[];
+}
+
+export interface WallData {
+  segment: string;
+  verses: string[];
+  ring: WallItem[];
+  families?: RosterFamily[];
 }
 
 // ── 大衛立的職位（roles.json，分頁打開或讀到時才載入） ─────────────
@@ -389,6 +437,8 @@ export interface RoleMember {
   ref: string;
   /** 二十四班、十二月輪盤的序號（1 起算） */
   order?: number;
+  /** 十二個官吏裡娶了所羅門女兒的：名牌連到家譜樹上的妻子 */
+  spouse?: { id: string; name: string };
 }
 
 export interface RoleBox {
@@ -397,7 +447,7 @@ export interface RoleBox {
   /** 經文範圍的顯示文字 */
   ref: string;
   /** 畫法：一般名單、二十四格環、十二月輪盤、依支派分組 */
-  kind: 'list' | 'ring24' | 'wheel12' | 'groups';
+  kind: 'list' | 'ring24' | 'wheel12' | 'groups' | 'compare' | 'tiles';
   /** 家譜樹上職位印的字 */
   seal: string;
   /** 方塊底下一句說明 */
@@ -407,10 +457,14 @@ export interface RoleBox {
   groups?: Array<{ title: string; ref: string; keys: string[] }>;
   /** 照經文寫的人數（count 是經文裡逐字的寫法，例如「六千八百人」）；只列數字，不畫比例 */
   figures?: Array<{ label: string; count: string; ref: string }>;
+  /** kind=compare（從大衛到所羅門）：一個職位一列 */
+  rows?: CompareRow[];
+  /** 方塊標題下原句引出的經文（十二個官吏：王上 4:7「每年各人供給一月」） */
+  quote?: { ref: string; text: string };
 }
 
 export interface RoleCategory {
-  id: 'court' | 'army' | 'temple' | 'tribes';
+  id: 'court' | 'army' | 'temple' | 'tribes' | 'solomon';
   title: string;
   boxes: RoleBox[];
 }
@@ -421,6 +475,8 @@ export interface RolePerson {
   name: string;
   /** 例如「哈律人」「耶何耶大的兒子」 */
   qualifier?: string;
+  /** 別的寫法（亞多蘭在王上 4:6 寫亞多尼蘭） */
+  aliases?: string[];
   refs: string[];
 }
 
@@ -437,4 +493,17 @@ export interface RoleSeal {
   /** 對應的職位方塊 */
   box: string;
   ref: string;
+}
+
+/** 從大衛到所羅門：一個職位一列，左欄大衛時、右欄所羅門時 */
+export interface CompareRow {
+  office: string;
+  /** 大衛時的人（只顯示；id＝家譜樹人物，rid＝職位圖上的人） */
+  david: Array<{ name: string; ref: string; id?: string; rid?: string; detail?: string }>;
+  /** 所羅門時的人：方塊 members 的 key */
+  solomon: string[];
+  /** 同一個人：金框卡橫跨兩欄（方塊 members 的 key） */
+  same?: string;
+  /** 換了職位的人：紅框，寫原本的職位 */
+  moved?: { key: string; from: string };
 }

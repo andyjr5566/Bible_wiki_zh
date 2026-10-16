@@ -1,4 +1,4 @@
-import type { ReadingLink, Roster, RosterName, RosterRow, RosterSection } from '../data/types';
+import type { ReadingLink, Roster, RosterFamily, RosterName, RosterRow, RosterSection } from '../data/types';
 
 /**
  * 歸回的名冊：不碰 DOM 的純函式（讀到哪寫到哪、冊上有名的判定、子母畫面的卡片截斷、縮圖排版）。
@@ -17,6 +17,16 @@ export function refLabel(ref: string): string {
   const text = ref.trim();
   const match = /^(\D+?)\s*(\d.*)$/.exec(text);
   return match ? `${match[1]} ${match[2]}` : text;
+}
+
+/** 數字加量詞：「2,172 名」「150 人」；經文沒有量詞（unit 空字串或沒給）就只有數字「200」 */
+export function countText(count: number, unit?: string): string {
+  return unit ? `${formatCount(count)} ${unit}` : formatCount(count);
+}
+
+/** 小計、總數那句「共 N 名」後面接的量詞：沒給 unit 沿用「名」，空字串＝經文沒有量詞 */
+export function totalUnitText(unit?: string): string {
+  return unit === undefined ? ' 名' : unit ? ` ${unit}` : '';
 }
 
 /** 好幾個出處用頓號連起來 */
@@ -111,6 +121,64 @@ export function hasBar(section: Pick<RosterSection, 'bars'>, row: RosterRow): bo
   return (row.bar ?? section.bars ?? true) !== false;
 }
 
+/**
+ * 名字行（家族標籤＋一兩個領頭的名字）也有人數時，標籤旁邊畫人數條（拉 8:3–14「屬巴錄的後裔……男丁一百五十人」）；
+ * 沒有標籤的名字行（拉 2:42 的守門的）照舊只在底下寫小計。
+ */
+export function namesBar(section: Pick<RosterSection, 'bars'>, row: RosterRow): boolean {
+  if (row.count === undefined || !row.names?.length || row.total || row.big || !row.label) return false;
+  return (row.bar ?? section.bars ?? true) !== false;
+}
+
+export type RowKind = 'big' | 'total' | 'names' | 'bar' | 'plain' | 'quote';
+
+/** 這一行用哪一種版面 */
+export function rowKind(section: Pick<RosterSection, 'bars'>, row: RosterRow): RowKind {
+  if (row.big) return 'big';
+  if (row.total) return 'total';
+  if (row.names?.length) return 'names';
+  if (hasBar(section, row)) return 'bar';
+  return row.label !== undefined || row.count !== undefined ? 'plain' : 'quote';
+}
+
+/** 分區有標題才畫標題（拉 10:44 那句引句所在的分區沒有標題） */
+export function sectionHasTitle(section: Pick<RosterSection, 'title'>): boolean {
+  return section.title.trim() !== '';
+}
+
+/** 口氣中性的名冊（拉 10）：不加金色、不蓋「冊上有名」、不開子母畫面 */
+export function isPlain(roster: Pick<Roster, 'tone'>): boolean {
+  return roster.tone === 'plain';
+}
+
+const NO_MARK: LinkMark = { kind: null, refs: [] };
+
+/** 這份名冊裡一行（或一個名字）的標記：中性的名冊永遠沒有標記 */
+export function rosterMark(roster: Pick<Roster, 'tone'>, links: ReadingLink[], indices: number[], read: ReadonlySet<number>): LinkMark {
+  return isPlain(roster) ? NO_MARK : linkMark(links, indices, read);
+}
+
+/** 這份名冊要不要開子母畫面 */
+export function pipAllowed(roster: Pick<Roster, 'tone'>): boolean {
+  return !isPlain(roster);
+}
+
+/** 整份名冊最外層的 class */
+export function rosterClassName(roster: Pick<Roster, 'tone' | 'seal'>): string {
+  return `ag-rs${isPlain(roster) ? ' is-tone-plain' : ''}${roster.seal ? ' is-seal' : ''}`;
+}
+
+/** 名字牌的 class：簽名蓋印的名冊（尼 10）每個名字牌都像蓋上去的一枚印 */
+export function tileClassName(roster: Pick<Roster, 'seal'>): string {
+  return `ag-rs-tile${roster.seal ? ' is-seal' : ''}`;
+}
+
+/** 蓋印的名字牌微微歪一點，每個歪的角度不同（固定，不隨機） */
+const TILTS = [-1.6, 1.1, -0.7, 1.7, -1.2, 0.8, -0.4, 1.4];
+export function sealTilt(index: number): number {
+  return TILTS[((index % TILTS.length) + TILTS.length) % TILTS.length]!;
+}
+
 /** 人數條的長度：人數 ÷ 這份名冊最大的一行 */
 export function barFraction(count: number, max: number): number {
   if (!(max > 0) || !(count > 0)) return 0;
@@ -192,6 +260,55 @@ export function refGroups(items: Array<{ label: string; refs: string[] }>): Arra
     groups.set(refs, [...(groups.get(refs) ?? []), item.label]);
   }
   return [...groups].map(([refs, labels]) => ({ labels, refs }));
+}
+
+
+// ── 家族軌跡 ─────────────────────────────────────────
+
+export interface FamilyTag {
+  /** 要跳到的那一節，例如「拉10:25」 */
+  at: string;
+  /** 小籤上的經節：「拉 10:25」 */
+  ref: string;
+  /** 那一處的人數加量詞：「2,172 名」「150 人」「200」；沒有人數是空字串 */
+  count: string;
+  /** 小籤整句：「拉 10:25」「尼 7:8 2,172 名」 */
+  text: string;
+  /** 家族名稱：當 title／讀屏的說明 */
+  family: string;
+}
+
+/**
+ * 一行（或一個名字）的家族軌跡小籤：fam 是 RosterData.families 的索引；
+ * 這份名冊自己的那幾處（place.seg === segment）不列；同一節只列一次。
+ */
+export function familyTags(families: RosterFamily[] | undefined, fam: number[] | undefined, segment: string): FamilyTag[] {
+  const tags: FamilyTag[] = [];
+  for (const index of fam ?? []) {
+    const family = families?.[index];
+    if (!family) continue;
+    for (const place of family.places) {
+      if (place.seg === segment || tags.some((tag) => tag.at === place.at)) continue;
+      const ref = refLabel(place.at);
+      const count = place.count === undefined ? '' : countText(place.count, place.unit);
+      tags.push({ at: place.at, ref, count, text: count ? `${ref} ${count}` : ref, family: family.name });
+    }
+  }
+  return tags;
+}
+
+/**
+ * 一排小籤開頭那句：「也在」。家族名和這一行的標籤、這個名字相同（或被它們包含）就不重複寫；
+ * 不同的（小籤掛在「某某的兒子」那個名字上）把家族名寫出來，讀者才知道別處出現的是哪一家。
+ * 名字層的小籤（name）開頭先寫那個名字；家族名已經包著這個名字的，只寫家族名。
+ */
+export function familyLead(tags: FamilyTag[], contexts: Array<string | undefined>, name?: string): string {
+  const own = contexts.filter((text): text is string => Boolean(text));
+  const unrelated = [...new Set(tags.map((tag) => tag.family))].filter((family) => !own.some((text) => text.includes(family)));
+  // 家族名本來就包著這個名字（利未人耶書亞）：只寫家族名，不重複寫名字
+  const names = unrelated.join('、');
+  const who = !unrelated.length ? name ?? '' : !name || unrelated.every((family) => family.includes(name)) ? names : `${name}（${names}）`;
+  return who ? `${who}　也在` : '也在';
 }
 
 // ── 子母畫面 ─────────────────────────────────────────

@@ -35,7 +35,36 @@ export const STAGE_LABEL: Record<StageId, { card: string; view: string }> = {
   tree: { card: '家譜', view: '家譜樹' },
   roles: { card: '職位', view: '職位圖' },
   roster: { card: '名冊', view: '名冊' },
+  wall: { card: '城牆', view: '城牆' },
 };
+
+/** 疊在畫布上的畫面（職位圖、名冊、城牆）；家譜樹是底下的畫布本身 */
+export const OVERLAY_STAGES: StageId[] = ['roles', 'roster', 'wall'];
+
+/** 這個畫面是「名單類」（名冊、城牆）：沒有人的位置，鏡頭就是讓目前讀到的地方留在看得到的範圍 */
+export function isListStage(id: StageId): boolean {
+  return id === 'roster' || id === 'wall';
+}
+
+/**
+ * 小地圖與「偷看」的另一個畫面：名冊、城牆 → 家譜樹（看祖先在樹上哪裡）；
+ * 名冊段、城牆段裡的家譜樹或職位圖 → 回到那一段自己的畫面；其他照舊（家譜樹 ↔ 職位圖）
+ */
+export function otherStage(id: StageId, base: StageId): StageId {
+  if (isListStage(id)) return 'tree';
+  if (isListStage(base)) return base;
+  return id === 'tree' ? 'roles' : 'tree';
+}
+
+/** 鏡頭在名單類畫面上的目標：讓目前讀到的地方留在看得到的範圍（'roster:now'、'wall:now'） */
+export function listFocusTarget(id: StageId): string | null {
+  return isListStage(id) ? `${id}:now` : null;
+}
+
+/** 讀經跳到某一節（「拉10:25」）：路線上沒有這一節就回 null */
+export function jumpIndex(route: Route, key: string): number | null {
+  return resolveRef(route, key);
+}
 
 export function buildRoute(reading: ReadingData): Route {
   const verses: RouteVerse[] = [];

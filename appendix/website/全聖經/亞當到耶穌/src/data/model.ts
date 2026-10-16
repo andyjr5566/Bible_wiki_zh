@@ -1,7 +1,7 @@
 import source from './genealogy.json';
 import readingSource from './reading.json';
 import verseSource from './verses.json';
-import type { GenealogyData, Person, PlacementItem, PlacementNode, ReadingData, Relation, RolesData, RosterData, VerseMap } from './types';
+import type { GenealogyData, Person, PlacementItem, PlacementNode, ReadingData, Relation, RolesData, RosterData, VerseMap, WallData } from './types';
 
 export const DATA = source as unknown as GenealogyData;
 export const VERSES = verseSource as VerseMap;
@@ -10,6 +10,8 @@ export const READING = readingSource as unknown as ReadingData;
 export const loadRoles = (): Promise<RolesData> => import('./roles.json').then((module) => module.default as unknown as RolesData);
 /** 歸回的名冊（拉 2、尼 7）：讀到時才載入 */
 export const loadRoster = (): Promise<RosterData> => import('./roster.json').then((module) => module.default as unknown as RosterData);
+/** 修造城牆的人（尼 3）：讀到時才載入 */
+export const loadWall = (): Promise<WallData> => import('./wall.json').then((module) => module.default as unknown as WallData);
 /**
  * 把「代上8:30-31」「創11:10-12:1」「創5:1-3, 路3:38」這類寫法展開成逐節的 key（和 verses.json 一致）。
  * 跨章的範圍靠 verses.json 有哪些節來判斷章尾；後面的片段沒寫書卷時沿用前一段的書卷。

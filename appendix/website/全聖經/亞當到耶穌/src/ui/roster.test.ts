@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import type { ReadingLink, Roster, RosterRow } from '../data/types';
+import rosterSource from '../data/roster.json';
+import type { ReadingLink, Roster, RosterData, RosterRow } from '../data/types';
 import {
+  countText, familyLead, familyTags, isPlain, namesBar, pipAllowed, rosterClassName, rosterMark, rowKind, sealTilt, sectionHasTitle, tileClassName, totalUnitText,
   PIP_COMPACT_CARDS, PIP_MAX_CARDS, barFraction, barProgress, barWidth, charsShown, numberLength, currentRowIndex, flattenRows, formatCount, hasBar, isLandmark, linkMark, mergeMarks, miniLayout, nameShown,
   pickPipLinks, pipChain, pipNames, pipPeople, pipTitle, reached, refGroups, refLabel, refsText, rowState, verseIndex,
 } from './roster-model';
@@ -369,5 +371,138 @@ describe('一個字一個字寫上去', () => {
     expect(rowState(row, idx, idx, 16, 7).filled).toBe(false);
     expect(rowState(row, idx, idx, 17, 7).filled).toBe(true);
     expect(rowState(row, idx + 1, idx, 0, 7).filled).toBe(true);
+  });
+});
+
+const real = rosterSource as unknown as RosterData;
+const realRoster = (segment: string): Roster => real.rosters.find((item) => item.segment === segment)!;
+const allRows = (roster: Roster) => roster.sections.flatMap((section) => section.rows.map((row) => ({ section, row })));
+
+describe('量詞', () => {
+  it('沒有量詞（經文「男丁二百」）只顯示數字，「人」寫「150 人」，「名」照舊', () => {
+    expect(countText(200, '')).toBe('200');
+    expect(countText(200)).toBe('200');
+    expect(countText(150, '人')).toBe('150 人');
+    expect(countText(2172, '名')).toBe('2,172 名');
+  });
+  it('小計、總數：沒給量詞沿用「名」，空字串＝沒有量詞', () => {
+    expect(totalUnitText()).toBe(' 名');
+    expect(totalUnitText('人')).toBe(' 人');
+    expect(totalUnitText('')).toBe('');
+  });
+  it('拉 8 沒有量詞、量詞「人」的行都畫人數條，比例照這份名冊自己的最大一行（300）', () => {
+    const ezra8 = realRoster('ezra8');
+    expect(ezra8.max).toBe(300);
+    const bare = allRows(ezra8).find((item) => item.row.at === '拉8:4')!;
+    expect(bare.row.unit).toBe('');
+    expect(rowKind(bare.section, bare.row)).toBe('names');
+    expect(namesBar(bare.section, bare.row)).toBe(true);
+    expect(barFraction(bare.row.count!, ezra8.max)).toBeCloseTo(200 / 300, 5);
+    const person = allRows(ezra8).find((item) => item.row.at === '拉8:3')!;
+    expect(person.row.unit).toBe('人');
+    expect(namesBar(person.section, person.row)).toBe(true);
+    expect(barFraction(150, ezra8.max)).toBe(0.5);
+  });
+  it('沒有標籤的名字行（拉 2:42）照舊只有小計，不畫人數條', () => {
+    const guards = allRows(realRoster('ezra2')).find((item) => item.row.at === '拉2:42')!;
+    expect(namesBar(guards.section, guards.row)).toBe(false);
+  });
+  it('只有人數沒有名字的行（拉 8:20 尼提寧）畫人數條', () => {
+    const item = allRows(realRoster('ezra8')).find((entry) => entry.row.at === '拉8:20')!;
+    expect(rowKind(item.section, item.row)).toBe('bar');
+  });
+});
+
+describe('中性的名冊（拉 10）', () => {
+  const links: ReadingLink[] = [{ at: '拉10:18', word: '耶書亞', to: [{ tree: '耶書亞' }], effect: 'link', refs: ['代上9:12'] }];
+  it('tone: plain 即使資料裡有連結也沒有標記，不開子母畫面', () => {
+    const ezra10 = realRoster('ezra10');
+    expect(isPlain(ezra10)).toBe(true);
+    expect(rosterMark(ezra10, links, [0], new Set([0]))).toEqual({ kind: null, refs: [] });
+    expect(pipAllowed(ezra10)).toBe(false);
+    expect(rosterClassName(ezra10)).not.toContain('is-seal');
+  });
+  it('其他名冊照舊：有標記、開子母畫面', () => {
+    const ezra2 = realRoster('ezra2');
+    expect(isPlain(ezra2)).toBe(false);
+    expect(rosterMark(ezra2, links, [0], new Set([0]))).toEqual({ kind: 'named', refs: ['代上9:12'] });
+    expect(pipAllowed(ezra2)).toBe(true);
+  });
+  it('分區沒有標題就不畫標題（拉 10:44 的引句）', () => {
+    const ezra10 = realRoster('ezra10');
+    const last = ezra10.sections[ezra10.sections.length - 1]!;
+    expect(last.title).toBe('');
+    expect(sectionHasTitle(last)).toBe(false);
+    expect(sectionHasTitle(ezra10.sections[0]!)).toBe(true);
+    expect(last.rows[0]!.quote?.t).toBe('這些人都娶了外邦女子為妻，其中也有生了兒女的');
+    expect(rowKind(last, last.rows[0]!)).toBe('quote');
+  });
+});
+
+describe('簽名蓋印（尼 10）', () => {
+  it('seal 名冊的名字牌有蓋印 class，其他沒有', () => {
+    expect(tileClassName(realRoster('neh10'))).toBe('ag-rs-tile is-seal');
+    expect(rosterClassName(realRoster('neh10'))).toContain('is-seal');
+    expect(tileClassName(realRoster('ezra2'))).toBe('ag-rs-tile');
+    expect(tileClassName(realRoster('ezra10'))).toBe('ag-rs-tile');
+  });
+  it('蓋印微微歪一點，角度固定、循環使用', () => {
+    expect(sealTilt(0)).toBe(sealTilt(8));
+    expect(Math.abs(sealTilt(3))).toBeLessThan(3);
+    expect(sealTilt(-1)).toBe(sealTilt(7));
+  });
+});
+
+describe('家族軌跡小籤', () => {
+  const ezra2 = realRoster('ezra2');
+  const row = allRows(ezra2).find((item) => item.row.at === '拉2:3')!.row;
+
+  it('拉 2:3 那一行有「拉 10:25」「尼 7:8」兩個小籤，沒有自己', () => {
+    const tags = familyTags(real.families, row.fam, ezra2.segment);
+    expect(tags.map((tag) => tag.text)).toEqual(['拉 10:25', '尼 7:8 2,172 名']);
+    expect(tags.map((tag) => tag.at)).toEqual(['拉10:25', '尼7:8']);
+    expect(tags.some((tag) => tag.at === '拉2:3')).toBe(false);
+    expect(tags[0]!.family).toBe('巴錄的子孫');
+  });
+  it('有人數寫人數加量詞，沒有量詞只寫數字，沒有人數只寫經節', () => {
+    const family = real.families!.findIndex((item) => item.name === '巴哈摩押的子孫');
+    const tags = familyTags(real.families, [family], 'neh7');
+    expect(tags.map((tag) => tag.text)).toEqual(['拉 2:6 2,812 名', '拉 8:4 200', '拉 10:30']);
+  });
+  it('沒有家族、索引不存在、整份都是自己這份名冊：沒有小籤', () => {
+    expect(familyTags(real.families, undefined, 'ezra2')).toEqual([]);
+    expect(familyTags(real.families, [999], 'ezra2')).toEqual([]);
+    expect(familyTags(undefined, [0], 'ezra2')).toEqual([]);
+    const only = [{ name: '甲', places: [{ at: '拉2:1', seg: 'ezra2' }] }];
+    expect(familyTags(only, [0], 'ezra2')).toEqual([]);
+  });
+  it('好幾個家族同一節只列一次', () => {
+    const two = [
+      { name: '甲', places: [{ at: '拉2:1', seg: 'ezra2' }, { at: '尼7:1', seg: 'neh7' }] },
+      { name: '乙', places: [{ at: '尼7:1', seg: 'neh7' }, { at: '尼10:1', seg: 'neh10' }] },
+    ];
+    expect(familyTags(two, [0, 1], 'ezra2').map((tag) => tag.at)).toEqual(['尼7:1', '尼10:1']);
+  });
+  it('開頭那句：家族名和標籤、名字相同或被包含就只寫「也在」，不同才寫家族名', () => {
+    const tags = familyTags(real.families, row.fam, ezra2.segment);
+    expect(familyLead(tags, [row.label])).toBe('也在');
+    expect(familyLead(tags, [undefined])).toBe('巴錄的子孫　也在');
+    expect(familyLead(tags, ['耶書亞的子孫巴錄的子孫'])).toBe('也在');
+    expect(familyLead(tags, ['巴錄的後裔'])).toBe('巴錄的子孫　也在');
+    expect(familyLead(tags, ['甲'], '甲')).toBe('甲（巴錄的子孫）　也在');
+    expect(familyLead([{ ...tags[0]!, family: '利未人耶書亞' }], ['耶書亞', undefined], '耶書亞')).toBe('利未人耶書亞　也在');
+    expect(familyLead([{ ...tags[0]!, family: '西萊雅' }], ['西萊雅', undefined], '西萊雅')).toBe('西萊雅　也在');
+  });
+  it('每份名冊的小籤都指向別的名單，經節格式正確', () => {
+    for (const roster of real.rosters) {
+      for (const { row: item } of allRows(roster)) {
+        for (const fam of [item.fam, ...(item.names ?? []).map((name) => name.fam)]) {
+          for (const tag of familyTags(real.families, fam, roster.segment)) {
+            expect(tag.ref).toMatch(/^\D+ \d+:\d+/);
+            expect(tag.at).not.toBe('');
+          }
+        }
+      }
+    }
   });
 });

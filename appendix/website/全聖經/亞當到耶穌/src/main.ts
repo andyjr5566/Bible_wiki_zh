@@ -1,6 +1,6 @@
 import './styles.css';
 import './reading.css';
-import { DATA, READING, VERSES, buildGraph, isPlacementNode, loadRoles, loadRoster, lookupVerses, makeSyntheticData, pathToFirstAncestor } from './data/model';
+import { DATA, READING, VERSES, buildGraph, isPlacementNode, loadRoles, loadRoster, loadWall, lookupVerses, makeSyntheticData, pathToFirstAncestor } from './data/model';
 import { SPEECH_FIXES } from './data/speech-fixes';
 import type { GenealogyData, GenealogyNote, Person } from './data/types';
 import { createAges } from './ui/ages';
@@ -16,6 +16,7 @@ import { createRoster } from './ui/roster';
 import { createSpeech } from './ui/speech';
 import { createTour } from './ui/tour';
 import { createTreeStage } from './ui/tree-stage';
+import { createWall } from './ui/wall';
 
 const synthetic = import.meta.env.DEV && new URLSearchParams(location.search).get('synthetic') === '1';
 const data: GenealogyData = synthetic ? makeSyntheticData() : DATA;
@@ -180,13 +181,21 @@ const rosterStage = createRoster({
   data,
   graph,
   onTreePerson(id) { reader?.showOnTree(id); },
+  onJump(key) { reader?.jumpTo(key); },
 });
-const reader = createReader(READING, { tree: treeStage, roles: rolesView, roster: rosterStage }, {
+// 修城牆的人（尼 3）：同樣只在讀經時疊在畫布上
+const wallStage = createWall({
+  load: loadWall,
+  reading: READING,
+  onJump(key) { reader?.jumpTo(key); },
+  onTreePerson(id) { reader?.showOnTree(id); },
+});
+const reader = createReader(READING, { tree: treeStage, roles: rolesView, roster: rosterStage, wall: wallStage }, {
   speech: createSpeech({ replacements: SPEECH_FIXES }),
   onOpenChange(open) {
     // 讀經時職位圖借去疊在畫布上；離開讀經就放回分頁
-    if (open) canvasWrap.append(rolesView.el, rosterStage.el);
-    else { rolesPage.append(rolesView.el); rosterStage.el.remove(); }
+    if (open) canvasWrap.append(rolesView.el, rosterStage.el, wallStage.el);
+    else { rolesPage.append(rolesView.el); rosterStage.el.remove(); wallStage.el.remove(); }
     if (open) {
       tour.stop(false);
       page = 'tree';
