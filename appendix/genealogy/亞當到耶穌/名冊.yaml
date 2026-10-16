@@ -1,0 +1,240 @@
+# 歸回的名冊（拉 2、尼 7）：讀經時第三個畫面「名冊」的內容（唯一來源；由 ../roster.py 讀取並檢查）
+#
+# 每一份名冊對應讀經路線上的一段（segment）。名冊照經文本身的分段排（sections），每一段有很多行（rows）：
+#   at：經節。一節可以有好幾行（拉 2:65 僕婢、歌唱的男女）。
+#   label：顯示的字，必須在那一節經文裡逐字出現。
+#   count：人數（或件數），必須等於 label 後面那個中文數字；unit 是數字後面的量詞（沒寫就是「名」）。
+#   names：只列名字、沒有各自人數的節（尼提寧、守門的），每個名字都必須在那一節逐字出現；
+#          同一行的 count 是經文給的總數（拉 2:42「共一百三十九名」）。
+#   total：這一行是前面幾行合起來的總數（經文自己寫的「共……名」），不畫長條。
+#   big：會眾的總數，畫大字。
+#   who：誰捐的（尼 7:70–72），必須在那一節逐字出現。
+#   quote：這一節要在名冊上原句引出的經文（必須是那一節的逐字片段）。
+#   par：尼 7 這一行在拉 2 的對應節；建置時比較兩邊的 label 與 count，不同的標出來。
+# 段落屬性：
+#   bars: false 的段不畫人數條（牲畜、捐獻，單位不同）；lost: true 的段畫虛線框（不能指明、尋不著譜系的）。
+# narrative：敘述節，名冊不加行。名冊段裡的每一節不是有行，就是寫在 narrative。
+# 只寫經文給的數字；不寫任何累計或自己加總的數字。
+
+rosters:
+  - segment: ezra2
+    title: 歸回的名冊
+    narrative: [拉2:1, 拉2:63, 拉2:68, 拉2:70]
+    sections:
+      - title: 帶領回來的
+        rows:
+          - {at: 拉2:2, names: [所羅巴伯, 耶書亞, 尼希米, 西萊雅, 利來雅, 末底改, 必珊, 米斯拔, 比革瓦伊, 利宏, 巴拿]}
+      - title: 照家族
+        rows:
+          - {at: 拉2:3, label: 巴錄的子孫, count: 2172}
+          - {at: 拉2:4, label: 示法提雅的子孫, count: 372}
+          - {at: 拉2:5, label: 亞拉的子孫, count: 775}
+          - {at: 拉2:6, label: 巴哈摩押的後裔, count: 2812}
+          - {at: 拉2:7, label: 以攔的子孫, count: 1254}
+          - {at: 拉2:8, label: 薩土的子孫, count: 945}
+          - {at: 拉2:9, label: 薩改的子孫, count: 760}
+          - {at: 拉2:10, label: 巴尼的子孫, count: 642}
+          - {at: 拉2:11, label: 比拜的子孫, count: 623}
+          - {at: 拉2:12, label: 押甲的子孫, count: 1222}
+          - {at: 拉2:13, label: 亞多尼干的子孫, count: 666}
+          - {at: 拉2:14, label: 比革瓦伊的子孫, count: 2056}
+          - {at: 拉2:15, label: 亞丁的子孫, count: 454}
+          - {at: 拉2:16, label: 亞特的後裔, count: 98}
+          - {at: 拉2:17, label: 比賽的子孫, count: 323}
+          - {at: 拉2:18, label: 約拉的子孫, count: 112}
+          - {at: 拉2:19, label: 哈順的子孫, count: 223}
+      # 2:20–35 多半是城名；2:31、2:32 夾著兩個家族，照經文的次序留在這裡
+      - title: 照城邑
+        rows:
+          - {at: 拉2:20, label: 吉罷珥人, count: 95}
+          - {at: 拉2:21, label: 伯利恆人, count: 123}
+          - {at: 拉2:22, label: 尼陀法人, count: 56}
+          - {at: 拉2:23, label: 亞拿突人, count: 128}
+          - {at: 拉2:24, label: 亞斯瑪弗人, count: 42}
+          - {at: 拉2:25, label: 基列耶琳人、基非拉人、比錄人, count: 743}
+          - {at: 拉2:26, label: 拉瑪人、迦巴人, count: 621}
+          - {at: 拉2:27, label: 默瑪人, count: 122}
+          - {at: 拉2:28, label: 伯特利人、艾人, count: 223}
+          - {at: 拉2:29, label: 尼波人, count: 52}
+          - {at: 拉2:30, label: 末必人, count: 156}
+          - {at: 拉2:31, label: 別的以攔子孫, count: 1254}
+          - {at: 拉2:32, label: 哈琳的子孫, count: 320}
+          - {at: 拉2:33, label: 羅德人、哈第人、阿挪人, count: 725}
+          - {at: 拉2:34, label: 耶利哥人, count: 345}
+          - {at: 拉2:35, label: 西拿人, count: 3630}
+      - title: 祭司
+        rows:
+          - {at: 拉2:36, label: 耶書亞家耶大雅的子孫, count: 973}
+          - {at: 拉2:37, label: 音麥的子孫, count: 1052}
+          - {at: 拉2:38, label: 巴施戶珥的子孫, count: 1247}
+          - {at: 拉2:39, label: 哈琳的子孫, count: 1017}
+      - title: 利未人
+        rows:
+          - {at: 拉2:40, label: 何達威雅的後裔, count: 74}
+      - title: 歌唱的
+        rows:
+          - {at: 拉2:41, label: 亞薩的子孫, count: 128}
+      - title: 守門的
+        rows:
+          - {at: 拉2:42, names: [沙龍, 亞特, 達們, 亞谷, 哈底大, 朔拜], count: 139}
+      - title: 尼提寧（就是殿役）
+        rows:
+          - {at: 拉2:43, names: [西哈, 哈蘇巴, 答巴俄]}
+          - {at: 拉2:44, names: [基綠, 西亞, 巴頓]}
+          - {at: 拉2:45, names: [利巴拿, 哈迦巴, 亞谷]}
+          - {at: 拉2:46, names: [哈甲, 薩買, 哈難]}
+          - {at: 拉2:47, names: [吉德, 迦哈, 利亞雅]}
+          - {at: 拉2:48, names: [利汛, 尼哥大, 迦散]}
+          - {at: 拉2:49, names: [烏撒, 巴西亞, 比賽]}
+          - {at: 拉2:50, names: [押拿, 米烏寧, 尼普心]}
+          - {at: 拉2:51, names: [巴卜, 哈古巴, 哈忽]}
+          - {at: 拉2:52, names: [巴洗律, 米希大, 哈沙]}
+          - {at: 拉2:53, names: [巴柯, 西西拉, 答瑪]}
+          - {at: 拉2:54, names: [尼細亞, 哈提法]}
+      - title: 所羅門僕人的後裔
+        rows:
+          - {at: 拉2:55, names: [瑣太, 瑣斐列, 比路大]}
+          - {at: 拉2:56, names: [雅拉, 達昆, 吉德]}
+          - {at: 拉2:57, names: [示法提雅, 哈替, 玻黑列哈斯巴音, 亞米]}
+          - {at: 拉2:58, label: 尼提寧和所羅門僕人的後裔, count: 392, total: true}
+      - title: 不能指明宗族譜系的
+        lost: true
+        rows:
+          - {at: 拉2:59, names: [特米拉, 特哈薩, 基綠, 押但, 音麥], quote: 不能指明他們的宗族譜系是以色列人不是}
+          - {at: 拉2:60, names: [第來雅, 多比雅, 尼哥大], count: 652}
+      - title: 祭司中尋不著譜系的
+        lost: true
+        rows:
+          - {at: 拉2:61, names: [哈巴雅, 哈哥斯, 巴西萊]}
+          - {at: 拉2:62, quote: 在族譜之中尋查自己的譜系，卻尋不著}
+      - title: 會眾
+        bars: false
+        rows:
+          - {at: 拉2:64, label: 會眾共有, count: 42360, big: true}
+          - {at: 拉2:65, label: 僕婢, count: 7337}
+          - {at: 拉2:65, label: 歌唱的男女, count: 200}
+      - title: 牲畜
+        bars: false
+        rows:
+          - {at: 拉2:66, label: 馬, count: 736, unit: 匹}
+          - {at: 拉2:66, label: 騾子, count: 245, unit: 匹}
+          - {at: 拉2:67, label: 駱駝, count: 435, unit: 隻}
+          - {at: 拉2:67, label: 驢, count: 6720, unit: 匹}
+      - title: 捐獻
+        bars: false
+        rows:
+          - {at: 拉2:69, label: 金子, count: 61000, unit: 達利克}
+          - {at: 拉2:69, label: 銀子, count: 5000, unit: 彌拿}
+          - {at: 拉2:69, label: 祭司的禮服, count: 100, unit: 件}
+
+  - segment: neh7
+    title: 歸回的名冊
+    quote: {ref: 尼7:5, text: 我找著第一次上來之人的家譜，其上寫著}
+    narrative: [尼7:6, 尼7:65, 尼7:73]
+    sections:
+      - title: 帶領回來的
+        rows:
+          - {at: 尼7:7, par: 拉2:2, names: [所羅巴伯, 耶書亞, 尼希米, 亞撒利雅, 拉米, 拿哈瑪尼, 末底改, 必珊, 米斯毘列, 比革瓦伊, 尼宏, 巴拿]}
+      - title: 照家族
+        rows:
+          - {at: 尼7:8, par: 拉2:3, label: 巴錄的子孫, count: 2172}
+          - {at: 尼7:9, par: 拉2:4, label: 示法提雅的子孫, count: 372}
+          - {at: 尼7:10, par: 拉2:5, label: 亞拉的子孫, count: 652}
+          - {at: 尼7:11, par: 拉2:6, label: 巴哈摩押的後裔, count: 2818}
+          - {at: 尼7:12, par: 拉2:7, label: 以攔的子孫, count: 1254}
+          - {at: 尼7:13, par: 拉2:8, label: 薩土的子孫, count: 845}
+          - {at: 尼7:14, par: 拉2:9, label: 薩改的子孫, count: 760}
+          - {at: 尼7:15, par: 拉2:10, label: 賓內的子孫, count: 648}
+          - {at: 尼7:16, par: 拉2:11, label: 比拜的子孫, count: 628}
+          - {at: 尼7:17, par: 拉2:12, label: 押甲的子孫, count: 2322}
+          - {at: 尼7:18, par: 拉2:13, label: 亞多尼干的子孫, count: 667}
+          - {at: 尼7:19, par: 拉2:14, label: 比革瓦伊的子孫, count: 2067}
+          - {at: 尼7:20, par: 拉2:15, label: 亞丁的子孫, count: 655}
+          - {at: 尼7:21, par: 拉2:16, label: 亞特的後裔, count: 98}
+          - {at: 尼7:22, par: 拉2:19, label: 哈順的子孫, count: 328}
+          - {at: 尼7:23, par: 拉2:17, label: 比賽的子孫, count: 324}
+          - {at: 尼7:24, par: 拉2:18, label: 哈拉的子孫, count: 112}
+      - title: 照城邑
+        rows:
+          - {at: 尼7:25, par: 拉2:20, label: 基遍人, count: 95}
+          - {at: 尼7:26, par: 拉2:21-22, label: 伯利恆人和尼陀法人, count: 188}
+          - {at: 尼7:27, par: 拉2:23, label: 亞拿突人, count: 128}
+          - {at: 尼7:28, par: 拉2:24, label: 伯亞斯瑪弗人, count: 42}
+          - {at: 尼7:29, par: 拉2:25, label: 基列耶琳人、基非拉人、比錄人, count: 743}
+          - {at: 尼7:30, par: 拉2:26, label: 拉瑪人和迦巴人, count: 621}
+          - {at: 尼7:31, par: 拉2:27, label: 默瑪人, count: 122}
+          - {at: 尼7:32, par: 拉2:28, label: 伯特利人和艾人, count: 123}
+          - {at: 尼7:33, par: 拉2:29, label: 別的尼波人, count: 52}
+          - {at: 尼7:34, par: 拉2:31, label: 別的以攔子孫, count: 1254}
+          - {at: 尼7:35, par: 拉2:32, label: 哈琳的子孫, count: 320}
+          - {at: 尼7:36, par: 拉2:34, label: 耶利哥人, count: 345}
+          - {at: 尼7:37, par: 拉2:33, label: 羅德人、哈第人、阿挪人, count: 721}
+          - {at: 尼7:38, par: 拉2:35, label: 西拿人, count: 3930}
+      - title: 祭司
+        rows:
+          - {at: 尼7:39, par: 拉2:36, label: 耶書亞家，耶大雅的子孫, count: 973}
+          - {at: 尼7:40, par: 拉2:37, label: 音麥的子孫, count: 1052}
+          - {at: 尼7:41, par: 拉2:38, label: 巴施戶珥的子孫, count: 1247}
+          - {at: 尼7:42, par: 拉2:39, label: 哈琳的子孫, count: 1017}
+      - title: 利未人
+        rows:
+          - {at: 尼7:43, par: 拉2:40, label: 何達威的後裔, count: 74}
+      - title: 歌唱的
+        rows:
+          - {at: 尼7:44, par: 拉2:41, label: 亞薩的子孫, count: 148}
+      - title: 守門的
+        rows:
+          - {at: 尼7:45, par: 拉2:42, names: [沙龍, 亞特, 達們, 亞谷, 哈底大, 朔拜], count: 138}
+      - title: 尼提寧（就是殿役）
+        rows:
+          - {at: 尼7:46, names: [西哈, 哈蘇巴, 答巴俄]}
+          - {at: 尼7:47, names: [基綠, 西亞, 巴頓]}
+          - {at: 尼7:48, names: [利巴拿, 哈迦巴, 薩買]}
+          - {at: 尼7:49, names: [哈難, 吉德, 迦哈]}
+          - {at: 尼7:50, names: [利亞雅, 利汛, 尼哥大]}
+          - {at: 尼7:51, names: [迦散, 烏撒, 巴西亞]}
+          - {at: 尼7:52, names: [比賽, 米烏寧, 尼普心]}
+          - {at: 尼7:53, names: [巴卜, 哈古巴, 哈忽]}
+          - {at: 尼7:54, names: [巴洗律, 米希大, 哈沙]}
+          - {at: 尼7:55, names: [巴柯, 西西拉, 答瑪]}
+          - {at: 尼7:56, names: [尼細亞, 哈提法]}
+      - title: 所羅門僕人的後裔
+        rows:
+          - {at: 尼7:57, names: [瑣太, 瑣斐列, 比路大]}
+          - {at: 尼7:58, names: [雅拉, 達昆, 吉德]}
+          - {at: 尼7:59, names: [示法提雅, 哈替, 玻黑列哈斯巴音, 亞們]}
+          - {at: 尼7:60, par: 拉2:58, label: 尼提寧和所羅門僕人的後裔, count: 392, total: true}
+      - title: 不能指明宗族譜系的
+        lost: true
+        rows:
+          - {at: 尼7:61, names: [特米拉, 特哈薩, 基綠, 亞頓, 音麥], quote: 不能指明他們的宗族譜系是以色列人不是}
+          - {at: 尼7:62, par: 拉2:60, names: [第萊雅, 多比雅, 尼哥大], count: 642}
+      - title: 祭司中尋不著譜系的
+        lost: true
+        rows:
+          - {at: 尼7:63, names: [哈巴雅, 哈哥斯, 巴西萊]}
+          - {at: 尼7:64, quote: 在族譜之中尋查自己的譜系，卻尋不著}
+      - title: 會眾
+        bars: false
+        rows:
+          - {at: 尼7:66, par: 拉2:64, label: 會眾共有, count: 42360, big: true}
+          - {at: 尼7:67, par: 拉2:65, label: 僕婢, count: 7337}
+          - {at: 尼7:67, par: 拉2:65, label: 歌唱的男女, count: 245}
+      - title: 牲畜
+        bars: false
+        rows:
+          - {at: 尼7:68, par: 拉2:66, label: 馬, count: 736, unit: 匹}
+          - {at: 尼7:68, par: 拉2:66, label: 騾子, count: 245, unit: 匹}
+          - {at: 尼7:69, par: 拉2:67, label: 駱駝, count: 435, unit: 隻}
+          - {at: 尼7:69, par: 拉2:67, label: 驢, count: 6720, unit: 匹}
+      - title: 捐獻
+        bars: false
+        rows:
+          - {at: 尼7:70, who: 省長, label: 金子, count: 1000, unit: 達利克}
+          - {at: 尼7:70, who: 省長, label: 碗, count: 50, unit: 個}
+          - {at: 尼7:70, who: 省長, label: 祭司的禮服, count: 530, unit: 件}
+          - {at: 尼7:71, who: 族長, label: 金子, count: 20000, unit: 達利克}
+          - {at: 尼7:71, who: 族長, label: 銀子, count: 2200, unit: 彌拿}
+          - {at: 尼7:72, who: 其餘百姓, label: 金子, count: 20000, unit: 達利克}
+          - {at: 尼7:72, who: 其餘百姓, label: 銀子, count: 2000, unit: 彌拿}
+          - {at: 尼7:72, who: 其餘百姓, label: 祭司的禮服, count: 67, unit: 件}

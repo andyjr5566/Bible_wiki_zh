@@ -2699,6 +2699,21 @@ class LineageBuilder:
         self.roles_data, self.role_seals = build_roles(self, self._yaml("職位.yaml", {}) or {}, helpers)
         self.reading_review: list[str] = []
         self.reading = build_reading(self, helpers)
+        # 歸回的名冊（拉 2、尼 7）：讀經時第三個畫面
+        self.roster = None
+        roster_spec = self._yaml("名冊.yaml", None)
+        if self.reading and roster_spec:
+            from roster import build_roster
+
+            def verse_text(ref: str) -> str | None:
+                try:
+                    found = parse_refs(ref, "", self.sc)
+                except ValueError:
+                    return None
+                return self.sc.verse(*found[0]) if found else None
+            self.roster, roster_errors = build_roster(roster_spec, self.reading, verse_text, self.reading.get("links", []))
+            for message in roster_errors:
+                self.err("名冊.yaml", message)
         review_path = os.environ.get("READING_REVIEW")
         if review_path and self.reading_review:
             Path(review_path).write_text("\n".join(self.reading_review) + "\n", encoding="utf-8")
@@ -4326,6 +4341,9 @@ class LineageBuilder:
         if self.reading:
             (output_dir / "reading.json").write_text(
                 json.dumps(self.reading, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        if self.roster:
+            (output_dir / "roster.json").write_text(
+                json.dumps(self.roster, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         if self.roles_data:
             roles_out = {"categories": [{**category, "boxes": [{k: v for k, v in box.items() if k != "verses"}
                                                                 for box in category["boxes"]]}
