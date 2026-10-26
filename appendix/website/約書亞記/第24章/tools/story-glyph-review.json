@@ -1,0 +1,13 @@
+{
+  "scope": "芫荽故事子集的漢字，與教育部標準楷書 5.1 原檔逐字並排檢視。清單列出用於人工核對的代表字，字形比較圖只供工程端檢視。",
+  "source": "芫荽 Iansui 1.020",
+  "reference": "教育部標準楷書 5.1",
+  "focusGlyphs": [
+    {"char": "為", "codepoint": "U+70BA", "inSubset": true, "visualReview": "與參照字形一致"},
+    {"char": "說", "codepoint": "U+8AAA", "inSubset": true, "visualReview": "與參照字形一致"},
+    {"char": "內", "codepoint": "U+5167", "inSubset": true, "visualReview": "與參照字形一致"},
+    {"char": "全", "codepoint": "U+5168", "inSubset": true, "visualReview": "與參照字形一致"},
+    {"char": "別", "codepoint": "U+5225", "inSubset": true, "visualReview": "與參照字形一致"}
+  ],
+  "decision": "故事經文與對話使用芫荽子集；這次檢視的代表字形與教育部參照字形相符。"
+}

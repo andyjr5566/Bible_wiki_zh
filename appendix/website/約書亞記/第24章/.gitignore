@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.tmp-shots/
+# Blender 中間檔（線性 .f32 等，可由 scripts/blender 重生，約 3 GB）
+_work/
+.tmp-ci/
+# 素材工作區與蒐集原檔留在本機（建置不需要；CI 已驗證）
+lab/
+collect/
