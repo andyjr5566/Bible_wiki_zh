@@ -3,7 +3,7 @@ import type { StoryState } from './state';
 import { sampleStation } from '../scene/stations';
 import { FLIGHT_PX, stationReadPx } from '../data/storytelling';
 import { beatRhythm, stationRhythm } from '../data/story-content.mjs';
-import { stepAutoplayFrame } from './playback-speed';
+import { paceRate, stepAutoplayFrame } from './playback-speed';
 
 /** Seconds are apportioned to each verse, not to the entire map beat. */
 export function readingSeconds(text: string, actionSeconds = 4): number {
@@ -61,14 +61,15 @@ export function attachAutoplay(data: SiteData, state: StoryState, button: HTMLBu
       speed = element.offsetHeight / beatPlaybackSeconds(beat, data);
     }
     const paused = pauseRemaining > 0;
-    pauseRemaining = Math.max(0, pauseRemaining - dt * state.playbackRate);
-    const next = stepAutoplayFrame(position, velocity, speed, dt, state.playbackRate, paused);
+    const pace = paceRate(state.playbackRate);
+    pauseRemaining = Math.max(0, pauseRemaining - dt * pace);
+    const next = stepAutoplayFrame(position, velocity, speed, dt, pace, paused);
     velocity = next.velocity;
     position = Math.min(end, next.position);
     window.scrollTo({ top: position, behavior: 'instant' });
     if (beat.interaction === 'raise-stone' && !state.raiseStone.done) {
       state.raiseStone.auto = true;
-      state.raiseStone.progress = Math.min(1, state.raiseStone.progress + dt * state.playbackRate / 3);
+      state.raiseStone.progress = Math.min(1, state.raiseStone.progress + dt * pace / 3);
       state.raiseStone.done = state.raiseStone.progress >= 1;
       onChange();
     }

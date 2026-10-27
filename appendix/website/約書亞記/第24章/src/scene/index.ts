@@ -557,7 +557,7 @@ export function createScene(opts: SceneOptions): ExtendedSceneHandle | null {
       cast.root.visible = false;
       memMap.setVisibility(1);
       const t = ease(0, 1, station.flightProgress);
-      const focus = memMap.stationFlight(station.index, t, station.verse, state.onlyI);
+      const focus = memMap.stationFlight(station.index, t, station.verse, state.onlyI, elapsed);
       const height = 24 + Math.sin(t * Math.PI) * 20;
       shot.pos.set(focus.x, height, focus.z + height * .55);
       shot.look.set(focus.x, .2, focus.z);

@@ -27,10 +27,10 @@ describe('第二幕十一站閘門', () => {
     }
     expect(total).toBeLessThanOrEqual(15_000_000);
   });
-  it('每站至少一層人物，棺材自第四節起不缺站', () => {
-    stations.forEach((s, i) => {
+  it('每站至少一層人物，棺材只在出埃及與抵達迦南兩站', () => {
+    stations.forEach(s => {
       expect(s.layers.some(l => l.role === 'person' || l.role === 'coffin'), s.id).toBe(true);
-      expect(s.layers.some(l => l.role === 'coffin'), s.id).toBe(i >= 3);
+      expect(s.layers.some(l => l.role === 'coffin'), s.id).toBe(['egypt', 'canaan'].includes(s.id));
     });
   });
   it('人物圖層依原定進度換姿勢，入場與退場有至少180px緩衝', () => {

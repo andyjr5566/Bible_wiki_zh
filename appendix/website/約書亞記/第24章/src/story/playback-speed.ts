@@ -1,12 +1,20 @@
+/** 讀者看到的 1× 就是原本的 1.5× 節奏；檔位再以它為基準調整。 */
+export const PLAYBACK_BASE = 1.5;
 export const PLAYBACK_SPEEDS = [
-  { value: 0.75, label: '慢（0.75×）' },
+  { value: 0.5, label: '慢（0.5×）' },
+  { value: 0.75, label: '稍慢（0.75×）' },
   { value: 1, label: '標準（1×）' },
   { value: 1.5, label: '快（1.5×）' },
   { value: 2, label: '很快（2×）' },
 ] as const;
 
 export const DEFAULT_PLAYBACK_RATE = 1;
-const STORAGE_KEY = 'jos24-playback-rate';
+const STORAGE_KEY = 'jos24-playback-speed';
+
+/** 檔位換算成實際節奏倍率。 */
+export function paceRate(rate: number): number {
+  return rate * PLAYBACK_BASE;
+}
 
 export function sentenceRevealSeconds(rate = 1): number {
   return Math.max(0.3, 0.8 / rate);

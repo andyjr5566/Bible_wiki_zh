@@ -95,11 +95,6 @@
 }
 .jos-diff-text { font-family: 'JOS Story', serif; font-size: 22px; }
 .jos-diff-hl { color: #66341e; }
-.jos-panel[data-panel-beat='beat-35-epilogue-diff'] .jos-wslot-wide {
-  background: #f5f0e5;
-  padding-bottom: 16px;
-  box-shadow: 0 16px 0 #f5f0e5;
-}
 .jos-panel[data-panel-beat='beat-35-epilogue-diff'] .jos-wslot-wide { width: min(68rem, 86vw); max-height: none; overflow: visible; }
 /* 終幕兩欄：捲動帶動一次亮一組，前一組淡淡留著，其他收起；面板不另外捲動 */
 .jos-diff-wrap [data-diff-row] { transition: opacity .45s ease; }
@@ -118,6 +113,30 @@
   text-underline-offset: 4px;
   padding: 0 2px;
 }
+/* 最後一拍的提示：告訴讀者下面還有內容 */
+.jos-outro-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  pointer-events: auto;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--jos-ink);
+  background: var(--jos-bg-elev);
+  border: 1px solid var(--jos-border);
+  border-radius: 999px;
+  padding: 10px 22px;
+  box-shadow: 0 4px 18px rgb(0 0 0 / .22);
+  animation: jos-outro-hint-in .9s ease both, jos-outro-hint-bob 2.4s ease-in-out 1s infinite;
+}
+.jos-outro-hint[hidden] { display: none; }
+.jos-outro-hint:focus-visible { outline: 2px solid var(--jos-bronze); outline-offset: 3px; }
+.jos-motion-off .jos-outro-hint { animation: none; }
+@keyframes jos-outro-hint-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes jos-outro-hint-bob { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(5px); } }
+@media (prefers-reduced-motion: reduce) { .jos-outro-hint { animation: none; } }
 .jos-autoplay[aria-pressed='true'] { background: var(--jos-oak); color: #fff7e3; }
 .jos-playback-controls { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
 .jos-speed-select {

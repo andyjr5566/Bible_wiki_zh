@@ -41,7 +41,7 @@
   cursor: help;
 }
 .jos-station-coffin:focus-visible { outline: 2px solid #f5cc80; outline-offset: 4px; }
-.jos-station-coffin:hover::after, .jos-station-coffin:focus-visible::after {
+.jos-station-coffin::after {
   content: attr(aria-label);
   position: absolute;
   bottom: 100%;
@@ -50,8 +50,10 @@
   white-space: nowrap;
   padding: 6px 10px;
   color: #fff1d3;
-  background: #211a20;
+  background: rgb(33 26 32 / .82);
+  border-radius: 4px;
   font-size: 12px;
+  pointer-events: none;
 }
 .jos-in-stations .jos-stage-tags { visibility: hidden; }
 .jos-in-stations .jos-webgl-fallback { visibility: hidden; }
@@ -89,6 +91,8 @@ body.jos-motion-off .jos-station-memory-light {
 .jos-in-stations .jos-panel-on .jos-wslot { max-width: 38vw; }
 .jos-in-stations .jos-panel-on .jos-balak-grid { grid-template-columns: minmax(0, 1fr); }
 .jos-balak-card[hidden] { display: none; }
+/* 翻牌時外框不再出現捲軸 */
+.jos-in-stations .jos-panel-on .jos-wslot:has(.jos-balak-grid) { overflow: visible; max-height: none; }
 @media (max-height: 520px) and (orientation: landscape) {
   .jos-station-composition { top: 34%; }
   .jos-station-person { left: 26%; }

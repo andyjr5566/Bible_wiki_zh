@@ -548,8 +548,8 @@ segments:
             text: 爺爺，你真的看過海水淹沒埃及人嗎？
           - speaker: grandfather
             kind: cuv-quote
-            ref: 出14:31
-            text: 以色列人看見耶和華向埃及人所行的大事
+            ref: 出14:30
+            text: 以色列人看見埃及人的死屍都在海邊了
         daughterQA:
           question: 爺爺，你真的看過海水淹沒埃及人嗎？
           answerer: grandfather

@@ -330,18 +330,6 @@
           }
         ],
         "key": "white"
-      },
-      {
-        "id": "coffin-bearers",
-        "asset": "coffin-bearers.webp",
-        "source": "lab/assets-codex/shared/coffin-bearers.png",
-        "scale": 0.095,
-        "x": 7,
-          "y": 27,
-        "parallax": 5,
-        "role": "coffin",
-        "actions": [],
-        "key": "white"
       }
     ]
   },
@@ -429,7 +417,7 @@
         "source": "lab/assets-codex/shared/coffin-bearers.png",
         "scale": 0.095,
         "x": 7,
-          "y": 27,
+        "y": 27,
         "parallax": 5,
         "role": "coffin",
         "actions": [],
@@ -627,18 +615,6 @@
         "parallax": 10,
         "role": "person",
         "actions": []
-      },
-      {
-        "id": "coffin-bearers",
-        "asset": "coffin-bearers.webp",
-        "source": "lab/assets-codex/shared/coffin-bearers.png",
-        "scale": 0.065,
-        "x": 12,
-          "y": 22,
-        "parallax": 5,
-        "role": "coffin",
-        "actions": [],
-        "key": "white"
       }
     ]
   },
@@ -719,18 +695,6 @@
         "role": "person",
         "actions": [],
         "key": "white"
-      },
-      {
-        "id": "coffin-bearers",
-        "asset": "coffin-bearers.webp",
-        "source": "lab/assets-codex/shared/coffin-bearers.png",
-        "scale": 0.095,
-        "x": 7,
-          "y": 27,
-        "parallax": 5,
-        "role": "coffin",
-        "actions": [],
-        "key": "white"
       }
     ]
   },
@@ -797,18 +761,6 @@
         "y": 8,
         "parallax": 7,
         "role": "person",
-        "actions": [],
-        "key": "white"
-      },
-      {
-        "id": "coffin-bearers",
-        "asset": "coffin-bearers.webp",
-        "source": "lab/assets-codex/shared/coffin-bearers.png",
-        "scale": 0.095,
-        "x": 7,
-          "y": 27,
-        "parallax": 5,
-        "role": "coffin",
         "actions": [],
         "key": "white"
       }
@@ -878,18 +830,6 @@
         "y": 13,
         "parallax": 7,
         "role": "person",
-        "actions": [],
-        "key": "white"
-      },
-      {
-        "id": "coffin-bearers",
-        "asset": "coffin-bearers.webp",
-        "source": "lab/assets-codex/shared/coffin-bearers.png",
-        "scale": 0.095,
-        "x": 7,
-          "y": 27,
-        "parallax": 5,
-        "role": "coffin",
         "actions": [],
         "key": "white"
       }
@@ -974,11 +914,11 @@
         "actions": [
           {
             "property": "opacity",
-              "start": 0.5,
-              "end": 0.5,
+            "start": 0.5,
+            "end": 0.5,
             "from": 1,
-              "to": 0,
-              "step": true
+            "to": 0,
+            "step": true
           }
         ],
         "key": "white"
@@ -995,25 +935,13 @@
         "actions": [
           {
             "property": "opacity",
-              "start": 0.5,
-              "end": 0.5,
+            "start": 0.5,
+            "end": 0.5,
             "from": 0,
-              "to": 1,
-              "step": true
+            "to": 1,
+            "step": true
           }
         ],
-        "key": "white"
-      },
-      {
-        "id": "coffin-bearers",
-        "asset": "coffin-bearers.webp",
-        "source": "lab/assets-codex/shared/coffin-bearers.png",
-        "scale": 0.095,
-        "x": 7,
-          "y": 27,
-        "parallax": 5,
-        "role": "coffin",
-        "actions": [],
         "key": "white"
       }
     ]
@@ -1090,7 +1018,7 @@
         "source": "lab/assets-codex/shared/coffin-bearers.png",
         "scale": 0.095,
         "x": 7,
-          "y": 27,
+        "y": 27,
         "parallax": 5,
         "role": "coffin",
         "actions": [],

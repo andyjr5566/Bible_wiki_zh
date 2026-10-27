@@ -6,7 +6,8 @@ import { beatReadPx, FLIGHT_PX, splitSentences, stationLayouts, stationReadPx, v
 import { primaryRefOf, stationRhythm, storyLines } from '../data/story-content.mjs';
 import { scrollToElement } from '../story/scroll';
 import { beatPlaybackSeconds } from '../story/autoplay';
-import { sentenceRevealSeconds } from '../story/playback-speed';
+import { paceRate, sentenceRevealSeconds } from '../story/playback-speed';
+import { reviewNavigate } from './review-navigation';
 import type { StoryState } from '../story/state';
 import { h } from './dom';
 import { beatHasMore, buildMoreBody, createMoreCard, SPEAKER_NAMES } from './more-card';
@@ -255,6 +256,13 @@ export function createStoryView(
 
   const moreCard = createMoreCard(state, onStateChange);
   overlay.appendChild(moreCard.element);
+
+  // 最後一拍：提醒讀者下面還有整理區，點一下就過去。
+  const lastBeatId = data.segments.at(-1)!.beats.at(-1)!.id;
+  const outroHint = h('button', { type: 'button', className: 'jos-outro-hint' }, '往下還有補充整理 ↓');
+  outroHint.hidden = true;
+  outroHint.addEventListener('click', () => reviewNavigate(document.getElementById('jos-review-root'), state, onStateChange, true));
+  overlay.appendChild(outroHint);
 
   const moreCtx = { data, state, peek, onStateChange, rerenderHighlights, toggleSyncs };
 
@@ -633,6 +641,7 @@ export function createStoryView(
     if (!observedHeader) measureHeader();
     const panel = panels.get(state.beat) ?? null;
     if (panel !== active) activate(panel);
+    outroHint.hidden = !(panel && panel.beat.id === lastBeatId && state.beatProgress > .3);
     if (!panel) return;
     const p = state.beatProgress;
     const station = sampleStation(panel.beat.id, p);
@@ -665,12 +674,14 @@ export function createStoryView(
         verseEl.scrollTop = 0;
       }
       if (station && panel.slot && panel.beat.balakStages) {
-        panel.slot.style.visibility = station.station.id === 'moab' ? 'visible' : 'hidden';
+        // 飛行途中不顯示；牌只在翻到接近正面時才浮現，不會停在邊緣翻到一半的樣子。
+        panel.slot.style.visibility = station.station.id === 'moab' && !station.flight ? 'visible' : 'hidden';
         const stage = Math.min(2, Math.floor(station.p * 3));
         panel.slot.querySelectorAll<HTMLElement>('.jos-balak-card').forEach((card, i) => {
           card.hidden = i !== stage;
           const turn = (station.p * 3) % 1;
           card.style.transform = state.motionOff ? '' : `perspective(500px) rotateX(${(1 - smoothstep(0, .15, turn)) * -75}deg)`;
+          card.style.opacity = state.motionOff ? '' : String(smoothstep(.02, .1, turn));
         });
       }
     }
@@ -697,7 +708,7 @@ export function createStoryView(
       : beatPlaybackSeconds(panel.beat, data) * (readingEnd - readingStart) / verseCount;
     sentences?.forEach((sentence, index) => {
       const start = .025 + index / Math.max(1, sentences.length) * .58;
-      const rate = state.autoplaying ? state.playbackRate : 1;
+      const rate = state.autoplaying ? paceRate(state.playbackRate) : 1;
       const duration = sentenceRevealSeconds(rate) * rate / secondsPerVerse;
       const reveal = (verseLocal - start) / duration;
       // Three phrases per inscription keep the open part of the painting clear.

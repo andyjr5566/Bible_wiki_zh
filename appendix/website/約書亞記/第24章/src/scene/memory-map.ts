@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 import type { SiteData } from '../data/types';
-import { buildCoffinModel } from './props';
 import { stations } from './stations';
 
 const SHECHEM_LON = 35.288;
@@ -31,7 +30,7 @@ export interface MemoryMapHandle {
     motionOff: boolean,
   ): void;
   applyReliefImage(img: HTMLImageElement): void;
-  stationFlight(index: number, progress: number, verse: number, onlyI: boolean): THREE.Vector3;
+  stationFlight(index: number, progress: number, verse: number, onlyI: boolean, time?: number): THREE.Vector3;
 }
 
 export function createMemoryMap(data: SiteData): MemoryMapHandle {
@@ -70,7 +69,7 @@ export function createMemoryMap(data: SiteData): MemoryMapHandle {
     const H = texCanvas.height;
 
     // 1. 海面底色
-    ctx.fillStyle = dark ? '#14130f' : '#cfc2a6';
+    ctx.fillStyle = dark ? '#1a2a34' : '#cfc2a6';
     ctx.fillRect(0, 0, W, H);
 
     // 海面細微橫向版畫水紋
@@ -96,12 +95,12 @@ export function createMemoryMap(data: SiteData): MemoryMapHandle {
         ctx.closePath();
       }
     }
-    ctx.fillStyle = dark ? '#242018' : '#e8dec9';
+    ctx.fillStyle = dark ? '#4a4230' : '#e8dec9';
     ctx.fill();
 
     if (reliefImg) {
       ctx.clip();
-      ctx.globalAlpha = dark ? 0.36 : 0.62;
+      ctx.globalAlpha = dark ? 0.5 : 0.62;
       ctx.globalCompositeOperation = dark ? 'soft-light' : 'multiply';
       ctx.drawImage(reliefImg, 0, 0, W, H);
       ctx.globalAlpha = 1;
@@ -110,7 +109,7 @@ export function createMemoryMap(data: SiteData): MemoryMapHandle {
     ctx.restore();
 
     // 3. 海岸墨線
-    ctx.strokeStyle = dark ? 'rgba(235,227,210,0.52)' : 'rgba(30,27,22,0.62)';
+    ctx.strokeStyle = dark ? 'rgba(240,230,205,0.7)' : 'rgba(30,27,22,0.62)';
     ctx.lineWidth = 2.2;
     for (const poly of data.geo.wide.land) {
       for (const ring of poly) {
@@ -126,7 +125,7 @@ export function createMemoryMap(data: SiteData): MemoryMapHandle {
     }
 
     // 4. 內陸湖泊（加利利海、死海等）
-    ctx.fillStyle = dark ? '#182229' : '#b8c3be';
+    ctx.fillStyle = dark ? '#27424f' : '#b8c3be';
     ctx.strokeStyle = dark ? 'rgba(235,227,210,0.45)' : 'rgba(30,27,22,0.55)';
     ctx.lineWidth = 1.6;
     for (const lk of data.geo.wide.lakes) {
@@ -177,15 +176,11 @@ export function createMemoryMap(data: SiteData): MemoryMapHandle {
       ctx.stroke();
     }
 
-    // 7. 主要地名墨字標記（直接繪在羊皮紙底圖上，清晰雅致、不重疊）
+    // 7. 區域與地形地名（站點名稱改由飛行時的目的地名牌顯示，避免重複）
     const labels: { text: string; lon: number; lat: number; big?: boolean; italic?: boolean }[] = [
       { text: '大河那邊（幼發拉底河）', lon: 41.2, lat: 35.4, big: true },
       { text: '吾珥', lon: 46.1, lat: 30.65 },
-      { text: '哈蘭', lon: 39.03, lat: 37.25 },
       { text: '迦南地', lon: 34.85, lat: 32.55, big: true },
-      { text: '示劍', lon: 34.5, lat: 32.0 }, // 只移底圖文字，讓出棺材模型與行軍路線；地點座標不變。
-      { text: '耶利哥', lon: 36.15, lat: 32.12 }, // 標籤向東北避開金色小燈與說明框；地點與燈的座標不變。
-      { text: '摩押', lon: 36.15, lat: 31.42 },
       { text: '西珥山', lon: 35.65, lat: 30.22 },
       { text: '埃及', lon: 31.1, lat: 30.35, big: true },
       { text: '紅海', lon: 32.85, lat: 29.35 },
@@ -228,22 +223,144 @@ export function createMemoryMap(data: SiteData): MemoryMapHandle {
     return new THREE.Vector3(x, 0.14, z);
   }
 
-  const flightStops = stations.map(s => pXZ(s.place));
   const flightPosition = new THREE.Vector3();
-  const curvePts = flightStops;
-  const routeCurve = new THREE.CatmullRomCurve3(curvePts, false, 'catmullrom', 0.35);
+  // 曠野一段沿民數記33章的路線大略走過：拉美西斯→疏割→以倘→（過紅海）→瑪拉→以琳→利非訂→西奈→哈洗羅→以旬迦別→加低斯→何珥山→普嫩→阿伯→底本→亞並‧什亭（摩押平原）。
+  // 資料順序與 build-geodata 的 keyPicks 相同，共 15 站。
+  const wild = data.geo.wildernessRoute.map(([lon, lat]) => {
+    const [x, z] = lonLatToMapXZ(lon, lat);
+    return new THREE.Vector3(x, 0.14, z);
+  });
+  const waypointsBetween = (from: string, to: string): THREE.Vector3[] => {
+    if (from === 'rameses' && to === 'redsea') return wild.slice(1, 3);
+    if (from === 'redsea' && to === 'kadesh') return wild.slice(3, 9);
+    if (from === 'kadesh' && to === 'heshbon') return wild.slice(10, 14);
+    return [];
+  };
+  const routePoints: THREE.Vector3[] = [];
+  const stationRouteIndex: number[] = [];
+  const campPoints: { vec: THREE.Vector3; index: number }[] = [];
+  stations.forEach((st, i) => {
+    if (i > 0) {
+      for (const wp of waypointsBetween(stations[i - 1].place, st.place)) {
+        campPoints.push({ vec: wp, index: routePoints.length });
+        routePoints.push(wp);
+      }
+    }
+    stationRouteIndex.push(routePoints.length);
+    routePoints.push(pXZ(st.place));
+  });
+  const stationT = stationRouteIndex.map(i => i / (routePoints.length - 1));
+  const routeCurve = new THREE.CatmullRomCurve3(routePoints, false, 'centripetal');
   const TOTAL_SAMPLES = 240;
   const sampledPts = routeCurve.getPoints(TOTAL_SAMPLES);
-  const routeGeo = new THREE.BufferGeometry().setFromPoints(sampledPts);
-  routeGeo.setDrawRange(0, 2);
 
-  const routeMat = new THREE.LineBasicMaterial({
-    color: '#d8a44f',
-    transparent: true,
-    opacity: 0.9,
+  /** 沿路線鋪一條貼地的帶子，寬度看得清；draw range 以「段」為單位，與取樣點一一對應。 */
+  function buildRibbon(width: number, color: string, opacity: number) {
+    const positions: number[] = [];
+    const indices: number[] = [];
+    sampledPts.forEach((pt, i) => {
+      const prev = sampledPts[Math.max(0, i - 1)];
+      const next = sampledPts[Math.min(sampledPts.length - 1, i + 1)];
+      const tx = next.x - prev.x;
+      const tz = next.z - prev.z;
+      const len = Math.hypot(tx, tz) || 1;
+      const nx = (-tz / len) * width / 2;
+      const nz = (tx / len) * width / 2;
+      positions.push(pt.x + nx, pt.y, pt.z + nz, pt.x - nx, pt.y, pt.z - nz);
+      if (i > 0) {
+        const a = (i - 1) * 2;
+        indices.push(a, a + 1, a + 2, a + 1, a + 3, a + 2);
+      }
+    });
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+    geo.setIndex(indices);
+    const mat = new THREE.MeshBasicMaterial({ color, transparent: true, opacity, side: THREE.DoubleSide, depthWrite: false, depthTest: false });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.renderOrder = 2;
+    mesh.frustumCulled = false;
+    group.add(mesh);
+    return { geo, mat };
+  }
+  // 整條路線淡淡先畫好（知道要去哪），走過的部分用亮金色加粗。
+  const routeAhead = buildRibbon(0.16, '#d8a44f', 0.3);
+  const route = buildRibbon(0.3, '#f0b64e', 0.95);
+  const routeGeo = route.geo;
+  const routeMat = route.mat;
+  const setRouteQuads = (quads: number) => routeGeo.setDrawRange(0, Math.max(1, Math.min(TOTAL_SAMPLES, quads)) * 6);
+  setRouteQuads(1);
+
+  // ---- 目前位置的亮點與環
+  const travelDot = new THREE.Mesh(
+    new THREE.SphereGeometry(0.42, 16, 12),
+    new THREE.MeshBasicMaterial({ color: '#ffe3a0', transparent: true, opacity: 1, depthWrite: false }),
+  );
+  travelDot.position.y = 0.3;
+  const travelRing = new THREE.Mesh(
+    new THREE.RingGeometry(0.62, 0.86, 28),
+    new THREE.MeshBasicMaterial({ color: '#f0b64e', transparent: true, opacity: 0.85, side: THREE.DoubleSide, depthWrite: false }),
+  );
+  travelRing.rotation.x = -Math.PI / 2;
+  travelRing.position.y = 0.2;
+  travelDot.renderOrder = 4;
+  travelRing.renderOrder = 3;
+  group.add(travelDot, travelRing);
+
+  // ---- 站點小圓點（走過的亮起）
+  const stopIndexByPlace = new Map<string, number>();
+  stations.forEach((st, i) => { if (!stopIndexByPlace.has(st.place)) stopIndexByPlace.set(st.place, i); });
+  const stopMarks = [...stopIndexByPlace.entries()].map(([placeId, firstIndex]) => {
+    const p = pXZ(placeId);
+    const mesh = new THREE.Mesh(
+      new THREE.CircleGeometry(0.3, 18),
+      new THREE.MeshBasicMaterial({ color: '#f0b64e', transparent: true, opacity: 0.4, depthWrite: false }),
+    );
+    mesh.rotation.x = -Math.PI / 2;
+    mesh.position.set(p.x, 0.19, p.z);
+    mesh.renderOrder = 3;
+    group.add(mesh);
+    return { firstIndex, mesh };
   });
-  const routeLine = new THREE.Line(routeGeo, routeMat);
-  group.add(routeLine);
+
+  // 曠野各處紮營的地方：小點，不加名字，走到才亮
+  const campMarks = campPoints.map(({ vec, index }) => {
+    const mesh = new THREE.Mesh(
+      new THREE.CircleGeometry(0.17, 14),
+      new THREE.MeshBasicMaterial({ color: '#f0b64e', transparent: true, opacity: 0.3, depthWrite: false, depthTest: false }),
+    );
+    mesh.rotation.x = -Math.PI / 2;
+    mesh.position.set(vec.x, 0.18, vec.z);
+    mesh.renderOrder = 3;
+    group.add(mesh);
+    return { t: index / (routePoints.length - 1), mesh };
+  });
+
+  // ---- 目的地名牌：飛向哪裡，就在那裡立一塊名字
+  const labelCanvas = document.createElement('canvas');
+  labelCanvas.width = 512;
+  labelCanvas.height = 128;
+  const labelTexture = new THREE.CanvasTexture(labelCanvas);
+  labelTexture.colorSpace = THREE.SRGBColorSpace;
+  const labelSprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: labelTexture, transparent: true, depthTest: false, depthWrite: false }));
+  labelSprite.scale.set(7, 1.75, 1);
+  labelSprite.renderOrder = 10;
+  group.add(labelSprite);
+  let labelPlace = '';
+  let labelDark = false;
+  function drawLabel(text: string, dark: boolean): void {
+    const lc = labelCanvas.getContext('2d')!;
+    lc.clearRect(0, 0, 512, 128);
+    lc.font = '700 60px "Noto Serif TC", serif';
+    lc.textAlign = 'center';
+    lc.textBaseline = 'middle';
+    lc.lineJoin = 'round';
+    lc.lineWidth = 14;
+    lc.strokeStyle = dark ? 'rgba(20,17,12,0.92)' : 'rgba(250,244,229,0.94)';
+    lc.strokeText(text, 256, 66);
+    lc.fillStyle = dark ? '#ffe3a0' : '#4a2e0c';
+    lc.fillText(text, 256, 66);
+    labelTexture.needsUpdate = true;
+  }
 
   // ---- 20 盞「神說『我』」的金色小燈 (--jos-lamp) ----
   const lampGroup = new THREE.Group();
@@ -328,29 +445,11 @@ export function createMemoryMap(data: SiteData): MemoryMapHandle {
     return ring;
   });
 
-  // ---- 約瑟的棺材記號（規則 1 前因後果：第4節末在埃及出現，一路隨隊伍到示劍） ----
-  const coffinMarker = buildCoffinModel(0.75);
+  // 約瑟的靈柩只在說書畫面（出埃及、抵達迦南）出現；地圖上不放，避免被當成多餘的方塊。
+  const coffinMarker = new THREE.Group();
   coffinMarker.visible = false;
-  group.add(coffinMarker);
   const coffinWorldPos = new THREE.Vector3();
-  let coffinVisible = false;
-
-  // 棺材行進專線（埃及 → 蘭塞 → 紅海 → 西乃 → 加低斯 → 摩押 → 耶利哥 → 示劍）
-  const coffinCurve = new THREE.CatmullRomCurve3(
-    [
-      pXZ('egypt'),
-      pXZ('rameses'),
-      pXZ('redsea'),
-      pXZ('sinai'),
-      pXZ('kadesh'),
-      pXZ('moab'),
-      pXZ('jericho'),
-      pXZ('shechem'),
-    ],
-    false,
-    'catmullrom',
-    0.35,
-  );
+  const coffinVisible = false;
 
   const CUE_ROUTE_FRAC: Record<string, [number, number, number]> = {
     'beyond-river': [0.0, 0.08, 2],
@@ -360,15 +459,6 @@ export function createMemoryMap(data: SiteData): MemoryMapHandle {
     jericho: [0.82, 0.95, 12],
     gifts: [0.95, 1.0, 13],
     'family-2': [1.0, 1.0, 13],
-  };
-
-  const COFFIN_FRAC: Record<string, [number, number]> = {
-    abraham: [0, 0],
-    egypt: [0.0, 0.52],
-    east: [0.52, 0.78],
-    jericho: [0.78, 0.96],
-    gifts: [0.96, 1.0],
-    'family-2': [1.0, 1.0],
   };
 
   return {
@@ -382,22 +472,23 @@ export function createMemoryMap(data: SiteData): MemoryMapHandle {
       const a = Math.max(0, Math.min(1, alpha));
       group.visible = a > 0.01;
       boardMat.opacity = a;
-      routeMat.opacity = a * 0.92;
+      routeMat.opacity = a * 0.95;
+      routeAhead.mat.opacity = a * 0.3;
+      (labelSprite.material as THREE.SpriteMaterial).opacity = a;
     },
     update(cue, beatProgress, onlyI, sameGive, dark, time, motionOff) {
       if (lastDarkState !== dark) {
         lastDarkState = dark;
         redrawMapCanvas(dark);
       }
-      if (!group.visible) {
-        coffinVisible = false;
-        return;
-      }
+      if (!group.visible) return;
 
       const [r0, r1, maxVerse] = CUE_ROUTE_FRAC[cue] ?? [1, 1, 13];
       const frac = r0 + (r1 - r0) * beatProgress;
-      const drawCount = Math.max(2, Math.round(frac * TOTAL_SAMPLES));
-      routeGeo.setDrawRange(0, drawCount);
+      setRouteQuads(Math.round(frac * TOTAL_SAMPLES));
+      travelDot.visible = false;
+      travelRing.visible = false;
+      labelSprite.visible = false;
 
       // 20 盞「神說『我』」的燈
       const pulse = motionOff ? 1 : 0.92 + Math.sin(time * 2.8) * 0.08;
@@ -430,31 +521,47 @@ export function createMemoryMap(data: SiteData): MemoryMapHandle {
         const gMat = gr.material as THREE.MeshBasicMaterial;
         gMat.opacity = sameGive ? 0.85 * pulse : 0;
       }
-
-      // 約瑟棺材記號：第4節後半出現於埃及，第5節起跟著隊伍走完曠野進入迦南
-      if (cue in COFFIN_FRAC && (cue !== 'abraham' || beatProgress > 0.62)) {
-        const [c0, c1] = COFFIN_FRAC[cue];
-        const cf = c0 + (c1 - c0) * beatProgress;
-        const pos = coffinCurve.getPointAt(Math.max(0, Math.min(1, cf)));
-        const tangent = coffinCurve.getTangentAt(Math.max(0.001, Math.min(0.999, cf)));
-        coffinMarker.visible = true;
-        coffinMarker.position.set(pos.x, 0.22, pos.z);
-        coffinMarker.rotation.y = Math.atan2(tangent.z, -tangent.x);
-        coffinMarker.getWorldPosition(coffinWorldPos);
-        coffinVisible = true;
-      } else {
-        coffinMarker.visible = false;
-        coffinVisible = false;
-      }
     },
-    stationFlight(index, progress, verse, onlyI) {
-      routeCurve.getPoint((Math.max(0, index - 1) + (index > 0 ? progress : 0)) / 10, flightPosition);
-      routeGeo.setDrawRange(0, Math.max(2, Math.round(((Math.max(0, index - 1) + progress) / 10) * TOTAL_SAMPLES)));
+    stationFlight(index, progress, verse, onlyI, time = 0) {
+      const fromT = stationT[Math.max(0, index - 1)];
+      const stopT = index > 0 ? fromT + (stationT[index] - fromT) * progress : fromT;
+      routeCurve.getPoint(stopT, flightPosition);
+      setRouteQuads(Math.round(stopT * TOTAL_SAMPLES));
+      travelDot.visible = true;
+      travelRing.visible = true;
+      travelDot.position.set(flightPosition.x, 0.3, flightPosition.z);
+      travelRing.position.set(flightPosition.x, 0.2, flightPosition.z);
+      travelRing.scale.setScalar(1 + 0.18 * Math.sin(time * 3));
+      for (const mark of stopMarks) {
+        const reached = mark.firstIndex < index || (mark.firstIndex === index && progress > 0.97);
+        (mark.mesh.material as THREE.MeshBasicMaterial).opacity = reached ? 0.95 : 0.38;
+      }
+      const dark = lastDarkState ?? false;
+      for (const camp of campMarks) {
+        const cm = camp.mesh.material as THREE.MeshBasicMaterial;
+        cm.opacity = camp.t <= stopT ? 0.9 : 0.28;
+        cm.color.set(dark ? '#f0b64e' : '#a85f16');
+      }
+      route.mat.color.set(dark ? '#f0b64e' : '#a85f16');
+      routeAhead.mat.color.set(dark ? '#d8a44f' : '#7a4a14');
+      (travelDot.material as THREE.MeshBasicMaterial).color.set(dark ? '#ffe3a0' : '#fff4d0');
+      (travelRing.material as THREE.MeshBasicMaterial).color.set(dark ? '#f0b64e' : '#a85f16');
+      for (const mark of stopMarks) (mark.mesh.material as THREE.MeshBasicMaterial).color.set(dark ? '#f0b64e' : '#a85f16');
+      const destination = stations[index].place;
+      if (labelPlace !== destination || labelDark !== dark) {
+        labelPlace = destination;
+        labelDark = dark;
+        drawLabel((data.places[destination]?.nameZh ?? '').split(/[（(]/)[0], dark);
+      }
+      const dest = pXZ(destination);
+      labelSprite.position.set(dest.x, 1.9, dest.z);
+      labelSprite.visible = true;
+      // 20 盞「神說『我』」的燈只在「只看神說我」時亮起；平常飛行只看路線、站點與目的地。
       for (const lamp of lamps) {
         const reached = lamp.verse <= verse;
-        (lamp.flame.material as THREE.MeshBasicMaterial).opacity = reached ? .98 : onlyI ? .12 : .04;
-        (lamp.pillar.material as THREE.MeshBasicMaterial).opacity = reached ? .35 : 0;
-        (lamp.halo.material as THREE.MeshBasicMaterial).opacity = reached ? .7 : 0;
+        (lamp.flame.material as THREE.MeshBasicMaterial).opacity = onlyI ? (reached ? .98 : .12) : 0;
+        (lamp.pillar.material as THREE.MeshBasicMaterial).opacity = onlyI && reached ? .35 : 0;
+        (lamp.halo.material as THREE.MeshBasicMaterial).opacity = onlyI && reached ? .7 : 0;
       }
       return flightPosition;
     },

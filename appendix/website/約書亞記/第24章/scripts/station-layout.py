@@ -39,11 +39,10 @@ def station(id, beat, verses, weight, place, figures):
     if id == 'redsea':
         # 近岸與遠岸人物在前景地面之後，沿用已認可試作的遮擋次序。
         layers = plates[:3] + figures[:4] + plates[3:] + figures[4:]
-    if len(stations) >= 3:
+    # 靈柩只在出埃及（出13:19）與抵達迦南兩處出現並附常駐說明；中間幕不重複，免得被當成約櫃。
+    if id in ('egypt', 'canaan'):
         coffin = actor('shared', 'coffin-bearers', .095, 7, 17)
         coffin.update(role='coffin', parallax=5)
-        if id == 'redsea':
-            coffin.update(scale=.065, x=12, y=12)
         layers.append(coffin)
     stations.append(dict(id=id, beat=beat, verses=verses, weight=weight, place=place,
                          still=.72 if id == 'redsea' else .5, layers=layers))
