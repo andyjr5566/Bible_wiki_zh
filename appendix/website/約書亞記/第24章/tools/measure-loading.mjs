@@ -83,15 +83,13 @@ try {
   await c.evaluate('scrollTo({top:document.documentElement.scrollHeight,behavior:"instant"})');
   await sleep(700); await idle();
   report.completeSilent = snapshot();
-  if (report.completeSilent.resources.some(r => /audio\/|\.mp3/.test(r.url))) failures.push('Sound downloaded before opt-in');
-  await c.evaluate(`document.querySelector('[data-coach="sound-btn"]')?.click()`);
-  // 使用實際頂列按鈕，驗證使用者手勢後才發出音效請求。
-  if (!await c.evaluate('window.__josState.soundOn')) {
-    await c.evaluate(`[...document.querySelectorAll('button')].find(b=>b.textContent.includes('聲音'))?.click()`);
-  }
+  if (report.completeSilent.resources.some(r => /audio\/|\.mp3/.test(r.url))) failures.push('Sound downloaded before the first interaction');
+  // 聲音預設開，但瀏覽器要讀者先操作頁面才准出聲：用真滑鼠點一下空白處，驗證這之後才發出音檔請求。
+  if (!await c.evaluate('window.__josState.soundOn')) failures.push('Sound should default to on');
+  for (const type of ['mousePressed', 'mouseReleased']) await c.send('Input.dispatchMouseEvent', { type, x: 700, y: 450, button: 'left', clickCount: 1 });
   await sleep(1500); await idle();
   report.completeWithSound = snapshot();
-  if (!report.completeWithSound.resources.some(r => /\.mp3/.test(r.url))) failures.push('Sound opt-in did not fetch audio');
+  if (!report.completeWithSound.resources.some(r => /\.mp3/.test(r.url))) failures.push('First interaction did not start audio');
   report.errors = c.consoleLog.filter(s => /^\[(error|exception)\]/.test(s));
   failures.push(...report.errors);
   const files = readdirSync('dist/assets').map(name => ({ name, bytes: statSync(join('dist/assets', name)).size }));

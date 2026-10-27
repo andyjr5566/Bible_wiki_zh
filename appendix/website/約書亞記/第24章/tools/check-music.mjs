@@ -8,7 +8,7 @@ try {
   for (let i = 0; i < 60; i++) { if (await c.evaluate('!!window.__josState')) break; await sleep(500); }
   await sleep(1500);
   // 真實滑鼠點擊『聲音』按鈕（算使用者操作）
-  const pos = await c.evaluate(`(()=>{const b=[...document.querySelectorAll('button')].find(b=>b.textContent.includes('聲音'));const r=b.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2}})()`);
+  const pos = { x: 700, y: 450 };
   for (const type of ['mousePressed', 'mouseReleased']) await c.send('Input.dispatchMouseEvent', { type, x: pos.x, y: pos.y, button: 'left', clickCount: 1 });
   await sleep(800);
   const beats = ['beat-02-gather', 'beat-06-beyond-river', 'beat-08-egypt', 'beat-11-gifts', 'beat-13-now', 'beat-17-answer-1', 'beat-18-cannot', 'beat-23-family-4', 'beat-26-raise', 'beat-30-joshua-dies'];

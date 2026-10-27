@@ -55,7 +55,7 @@ export interface StoryAudioController {
   playStoneThud(): void;
 }
 
-export function createStoryAudio(_data: SiteData, state: StoryState): StoryAudioController {
+export function createStoryAudio(_data: SiteData, state: StoryState, onActivated?: () => void): StoryAudioController {
   const loops: Partial<Record<LoopKey, HTMLAudioElement>> = {};
   const targets: Record<LoopKey, number> = {
     valleyWind: 0,
@@ -100,7 +100,7 @@ export function createStoryAudio(_data: SiteData, state: StoryState): StoryAudio
   }
 
   function playOneShot(el: HTMLAudioElement | null, vol: number): void {
-    if (!el || !state.soundOn || document.hidden) return;
+    if (!el || !state.soundOn || !state.audioReady || document.hidden) return;
     try {
       el.pause();
       el.currentTime = 0;
@@ -118,7 +118,7 @@ export function createStoryAudio(_data: SiteData, state: StoryState): StoryAudio
     for (const k of Object.keys(musicTargets) as MusicKey[]) {
       musicTargets[k] = 0;
     }
-    if (!state.soundOn || inReviewZone || document.hidden) return;
+    if (!state.soundOn || !state.audioReady || inReviewZone || document.hidden) return;
 
     const music = musicFor(state.cue, state.segment);
     if (music) musicTargets[music] = MUSIC_VOLUME[music];
@@ -238,9 +238,26 @@ export function createStoryAudio(_data: SiteData, state: StoryState): StoryAudio
     ensureFadeLoop();
   });
 
+  // 瀏覽器要讀者先操作過頁面才准出聲；在那之前不載入任何音檔，首屏不受影響。
+  let lastInReviewZone = false;
+  const activationEvents = ['pointerdown', 'keydown', 'touchend', 'click'];
+  function activate(): void {
+    if (state.audioReady) return;
+    state.audioReady = true;
+    for (const name of activationEvents) window.removeEventListener(name, activate, true);
+    if (state.soundOn) ensureElements();
+    computeTargets(lastInReviewZone);
+    ensureFadeLoop();
+    onActivated?.();
+  }
+  if (!state.audioReady && typeof window !== 'undefined') {
+    for (const name of activationEvents) window.addEventListener(name, activate, { capture: true, passive: true });
+  }
+
   return {
     sync(inReviewZone: boolean) {
-      if (state.soundOn) {
+      lastInReviewZone = inReviewZone;
+      if (state.soundOn && state.audioReady) {
         ensureElements();
       }
       computeTargets(inReviewZone);
@@ -264,7 +281,7 @@ export function createStoryAudio(_data: SiteData, state: StoryState): StoryAudio
       }
     },
     playStoneThud() {
-      if (!state.soundOn) return;
+      if (!state.soundOn || !state.audioReady) return;
       ensureElements();
       playOneShot(stoneThudShot, 0.68);
     },

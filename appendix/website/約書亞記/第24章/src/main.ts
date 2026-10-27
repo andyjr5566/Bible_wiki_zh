@@ -87,7 +87,7 @@ function mountApp(siteData: SiteData): void {
   let syncAll = () => {};
 
   const coach = createCoachPanel(state);
-  const storyAudio = createStoryAudio(siteData, state);
+  const storyAudio = createStoryAudio(siteData, state, () => syncAll());
   const peek = createPeekDrawer(siteData, state, () => syncAll());
   const header = createHeader(
     siteData,
