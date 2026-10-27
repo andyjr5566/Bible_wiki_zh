@@ -2,8 +2,13 @@
 import json
 from pathlib import Path
 
-import numpy as np
-from PIL import Image, ImageFilter
+try:
+    import numpy as np
+    from PIL import Image, ImageFilter
+except ImportError:
+    # 部署環境沒有 numpy／Pillow：這是本機素材檢查，略過不擋建置。
+    print('Person alpha check skipped: numpy and Pillow are not installed.')
+    raise SystemExit(0)
 
 ROOT = Path(__file__).resolve().parent.parent
 THRESHOLD = 0.9

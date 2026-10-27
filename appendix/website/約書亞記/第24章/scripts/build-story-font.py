@@ -2,9 +2,17 @@
 import argparse
 import hashlib
 import json
+import sys
 from pathlib import Path
-from fontTools import subset
-from fontTools.ttLib import TTFont
+try:
+    from fontTools import subset
+    from fontTools.ttLib import TTFont
+except ImportError:
+    # 部署環境沒有裝 fontTools：只讀檢查略過（字體成品已進版控），重建字體仍需要它。
+    if '--check' in sys.argv:
+        print('Story font check skipped: fontTools is not installed.')
+        raise SystemExit(0)
+    raise
 
 ROOT = Path(__file__).resolve().parents[1]
 DEST = ROOT / 'src/assets/fonts/story-iansui.woff2'

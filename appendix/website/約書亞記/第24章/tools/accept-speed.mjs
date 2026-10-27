@@ -22,7 +22,7 @@ try {
   await c.send('Page.navigate', { url: siteUrl });
   await wait('!!window.__josScene && document.querySelectorAll("[data-beat-id]").length===36');
   await sleep(700);
-  for (const rate of [.75, 1, 1.5, 2]) {
+  for (const rate of [.5, .75, 1, 1.5, 2]) {
     await c.evaluate(`if(window.__josState.autoplaying)document.querySelector('.jos-autoplay').click();scrollTo({top:0,behavior:'instant'})`);
     await choose(rate); await sleep(350);
     await c.shot(join(out, `${device}-${rate}-start.png`));
@@ -59,7 +59,7 @@ try {
   report.header = await c.evaluate(`(()=>{const e=document.querySelector('.jos-header'),r=e.getBoundingClientRect(),s=document.querySelector('.jos-speed-select').getBoundingClientRect();return {height:r.height,overflow:document.documentElement.scrollWidth-innerWidth,selectRight:s.right,selectBottom:s.bottom}})()`);
   if (report.header.overflow || report.header.selectRight > (mobile ? 844 : 1440) || report.header.selectBottom > report.header.height) report.failures.push('Speed control overflowed header');
   // The authored pause and automatic raising use playback time in every gear.
-  for (const rate of [.75, 1, 1.5, 2]) {
+  for (const rate of [.5, .75, 1, 1.5, 2]) {
     await choose(rate); await goto('beat-18-cannot', .10);
     const hold = await c.evaluate(`new Promise(resolve=>{
       const start=performance.now(), y=scrollY;document.querySelector('.jos-autoplay').click();
@@ -67,7 +67,7 @@ try {
       setTimeout(()=>{clearInterval(timer);resolve({rate:${rate},timeout:true})},12000);
     })`);
     report.holds.push(hold);
-    if (hold.timeout || Math.abs(hold.seconds - 6.5 / rate) > .65) report.failures.push(`Pause timing ${rate}: ${hold.seconds}`);
+    if (hold.timeout || Math.abs(hold.seconds - 4.5 / (rate * 1.5)) > .65) report.failures.push(`Pause timing ${rate}: ${hold.seconds}`);
     await goto('beat-26-raise', .05);
     const stone = await c.evaluate(`new Promise(resolve=>{
       Object.assign(window.__josState.raiseStone,{done:false,progress:0,holding:false});
@@ -76,7 +76,7 @@ try {
       setTimeout(()=>{clearInterval(timer);resolve({rate:${rate},timeout:true})},6500);
     })`);
     report.stones.push(stone);
-    if (stone.timeout || Math.abs(stone.seconds - 3 / rate) > .4) report.failures.push(`Stone timing ${rate}: ${stone.seconds}`);
+    if (stone.timeout || Math.abs(stone.seconds - 3 / (rate * 1.5)) > .4) report.failures.push(`Stone timing ${rate}: ${stone.seconds}`);
   }
   // Check every line of all three changed dialogues, without truncating text.
   for (const index of [4, 11, 33]) {
