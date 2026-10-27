@@ -1,4 +1,4 @@
-"""從 collect/audio/bgm-candidates/（OpenGameArt，皆為 CC0）裁出配樂，做成無縫循環的 MP3，輸出至 src/assets/music/。
+"""從 collect/audio/bgm-candidates/ 與 bgm-more/raw/（OpenGameArt，皆為 CC0）裁出配樂，做成無縫循環的 MP3，輸出至 src/assets/music/。
 
 每首取一段，頭尾以等功率交叉淡化接成可無限循環的檔案，響度統一到 -22 LUFS（程式播放時再乘上音量）。
 來源與授權見 素材來源.md〈配樂〉；來源檔不進版控，成品進版控，部署環境不需要重做。
@@ -10,6 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "collect" / "audio" / "bgm-candidates"
+MORE = ROOT / "collect" / "audio" / "bgm-more" / "raw"
 OUT = ROOT / "src" / "assets" / "music"
 OUT.mkdir(parents=True, exist_ok=True)
 
@@ -20,9 +21,13 @@ FADE = 3.0  # 頭尾交叉淡化秒數
 TRACKS = [
     ("ruins", "ruins_of_an_ancient_culture_.wav", 0.0, 75.0),
     ("plains", "sunset_plains.wav", 30.0, 120.0),
-    ("laments", "laments-of-the-war.flac", 8.0, 120.0),
     ("hope", "hope.mp3", 10.0, 120.0),
-    ("choir", "fantasy-choir/Fantasy Choir 2.wav", 0.0, 120.0),
+    # 2026-10-27 使用者試聽後選定（collect/audio/bgm-more/聽歌清單.html）
+    ("epic", str(MORE / "epic-endgame-cinematic" / "ChoirChordsBassMaster.wav"), 4.0, 84.0),
+    ("pursuit", str(MORE / "determined-pursuit-epic-orchestra-loop" / "determined_pursuit_loop.wav"), 0.0, 108.0),
+    ("waiting", str(MORE / "waiting-ii" / "Waiting II_0.ogg"), 2.0, 94.0),
+    ("expansion", str(MORE / "unexplored-expansion" / "tad_-_unexplored_-_expanded_1_by_bo_jingles_0.mp3"), 0.5, 87.0),
+    ("firstlight", str(MORE / "first-light-particles-%E2%80%93-cc0-atmospheric-pianoambient-track" / "first_light_particles_0.wav"), 1.0, 122.0),
 ]
 
 

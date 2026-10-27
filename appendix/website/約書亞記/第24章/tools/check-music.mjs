@@ -15,7 +15,7 @@ try {
   for (const id of beats) {
     await c.evaluate(`(()=>{const e=document.querySelector('section[data-beat-id="${id}"]');const r=e.getBoundingClientRect();scrollTo({top:scrollY+r.top-innerHeight*.36+.35*(r.height-innerHeight*.35),behavior:'instant'})})()`);
     await sleep(id === 'beat-18-cannot' ? 3000 : 7000);
-    const st = await c.evaluate(`(()=>({sound:window.__josState.soundOn,cue:window.__josState.cue,music:window.__auds.filter(a=>/(ruins|plains|laments|hope|choir)-/.test(a.__src)).map(a=>a.__src.split('/').pop().split('-')[0]+':'+a.volume.toFixed(2)+(a.paused?'(paused)':'(playing)'))}))()`);
+    const st = await c.evaluate(`(()=>({sound:window.__josState.soundOn,cue:window.__josState.cue,music:window.__auds.filter(a=>/(ruins|plains|epic|pursuit|waiting|expansion|firstlight|hope)-/.test(a.__src)).map(a=>a.__src.split('/').pop().split('-')[0]+':'+a.volume.toFixed(2)+(a.paused?'(paused)':'(playing)'))}))()`);
     console.log(id.padEnd(24), JSON.stringify(st));
   }
 } finally { clearInterval(ka); await c.close(); }
