@@ -78,6 +78,23 @@ export async function launch({
     });
   await send('Page.enable');
   await send('Runtime.enable');
+  // 開頁的載入畫面會擋住點擊；檢查故事的工具預設把它藏起來（檢查載入畫面本身的工具設 JOS_KEEP_LOADER=1）
+  if (process.env.JOS_KEEP_LOADER !== '1') {
+    await send('Page.addScriptToEvaluateOnNewDocument', { source: `document.addEventListener('DOMContentLoaded', () => {
+      const s = document.createElement('style'); s.textContent = '#jos-loading{display:none!important}'; document.head.appendChild(s); });` });
+  }
+  // 手機模式下網站在專用捲動區（#jos-scroll）裡捲；讓各工具沿用 window.scrollTo／scrollY 也能操作它
+  await send('Page.addScriptToEvaluateOnNewDocument', { source: `(() => {
+    const box = () => document.getElementById('jos-scroll');
+    const nativeTo = window.scrollTo.bind(window), nativeBy = window.scrollBy.bind(window);
+    window.scrollTo = function (a, b) { const e = box(); if (!e) return b === undefined ? nativeTo(a) : nativeTo(a, b);
+      e.scrollTo({ top: typeof a === 'object' ? (a.top ?? e.scrollTop) : b, behavior: 'instant' }); };
+    window.scrollBy = function (a, b) { const e = box(); if (!e) return b === undefined ? nativeBy(a) : nativeBy(a, b);
+      e.scrollBy({ top: typeof a === 'object' ? (a.top ?? 0) : b, behavior: 'instant' }); };
+    const desc = Object.getOwnPropertyDescriptor(window, 'scrollY') ?? Object.getOwnPropertyDescriptor(Window.prototype, 'scrollY');
+    for (const name of ['scrollY', 'pageYOffset']) Object.defineProperty(window, name, { configurable: true,
+      get() { const e = box(); return e ? e.scrollTop : desc.get.call(window); } });
+  })();` });
   if (ua) await send('Network.setUserAgentOverride', { userAgent: ua });
   await send('Emulation.setDeviceMetricsOverride', {
     width,
