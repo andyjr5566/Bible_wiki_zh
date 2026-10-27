@@ -1,3 +1,8 @@
+import choirUrl from '../assets/music/choir.mp3';
+import hopeUrl from '../assets/music/hope.mp3';
+import lamentsUrl from '../assets/music/laments.mp3';
+import plainsUrl from '../assets/music/plains.mp3';
+import ruinsUrl from '../assets/music/ruins.mp3';
 import crowdMurmurUrl from '../assets/audio/crowd-murmur.mp3';
 import crowdSurgeUrl from '../assets/audio/crowd-surge.mp3';
 import desertWindUrl from '../assets/audio/desert-wind.mp3';
@@ -21,6 +26,30 @@ const LOOP_URLS: Record<LoopKey, string> = {
   crowdMurmur: crowdMurmurUrl,
 };
 
+/** 配樂：依段落分五首，各自接成無縫循環（見 素材來源.md〈配樂〉）。 */
+type MusicKey = 'ruins' | 'plains' | 'laments' | 'hope' | 'choir';
+
+const MUSIC_URLS: Record<MusicKey, string> = {
+  ruins: ruinsUrl,
+  plains: plainsUrl,
+  laments: lamentsUrl,
+  hope: hopeUrl,
+  choir: choirUrl,
+};
+// 成品統一在約 -22 LUFS，這裡的音量決定它在環境音之上多少；平靜的壓低，史詩的略大。
+const MUSIC_VOLUME: Record<MusicKey, number> = { ruins: 0.26, plains: 0.26, laments: 0.34, hope: 0.28, choir: 0.3 };
+
+/** 平靜處用平靜的曲子，第二幕的史詩段用高亢的，第四幕用合唱；第19節整個安靜下來。 */
+export function musicFor(cue: string, segment: string): MusicKey | null {
+  if (cue === 'cannot') return null;
+  if (segment === 'prologue' || segment === 'act-1') return 'ruins';
+  if (segment === 'act-2') return cue === 'egypt' || cue === 'east' || cue === 'jericho' ? 'laments' : 'plains';
+  if (segment === 'act-3') return 'plains';
+  if (segment === 'act-4') return cue === 'family-4' ? 'ruins' : 'choir';
+  if (segment === 'act-5') return 'ruins';
+  return 'hope';
+}
+
 export interface StoryAudioController {
   sync(inReviewZone: boolean): void;
   playStoneThud(): void;
@@ -36,6 +65,9 @@ export function createStoryAudio(_data: SiteData, state: StoryState): StoryAudio
     desertWind: 0,
     crowdMurmur: 0,
   };
+
+  const musicEls: Partial<Record<MusicKey, HTMLAudioElement>> = {};
+  const musicTargets: Record<MusicKey, number> = { ruins: 0, plains: 0, laments: 0, hope: 0, choir: 0 };
 
   let seaCloseShot: HTMLAudioElement | null = null;
   let crowdSurgeShot: HTMLAudioElement | null = null;
@@ -83,7 +115,13 @@ export function createStoryAudio(_data: SiteData, state: StoryState): StoryAudio
     for (const k of Object.keys(targets) as LoopKey[]) {
       targets[k] = 0;
     }
+    for (const k of Object.keys(musicTargets) as MusicKey[]) {
+      musicTargets[k] = 0;
+    }
     if (!state.soundOn || inReviewZone || document.hidden) return;
+
+    const music = musicFor(state.cue, state.segment);
+    if (music) musicTargets[music] = MUSIC_VOLUME[music];
 
     const id = state.cue;
     const seg = state.segment;
@@ -152,6 +190,33 @@ export function createStoryAudio(_data: SiteData, state: StoryState): StoryAudio
         if (goal <= 0.002 && !el.paused) {
           el.pause();
         }
+      }
+      if (goal > 0.002) anyActive = true;
+    }
+
+    // 配樂換曲慢慢交疊（約 3 秒）；第19節則很快收掉。曲子要用到才載入。
+    const musicRate = state.cue === 'cannot' ? 0.5 : 0.06;
+    for (const k of Object.keys(musicTargets) as MusicKey[]) {
+      const goal = musicTargets[k];
+      let el = musicEls[k];
+      if (!el) {
+        if (goal <= 0.005) continue;
+        el = new Audio(MUSIC_URLS[k]);
+        el.loop = true;
+        el.preload = 'auto';
+        el.volume = 0;
+        musicEls[k] = el;
+      }
+      if (goal > 0.005 && el.paused && state.soundOn && !document.hidden) {
+        void el.play().catch(() => {});
+      }
+      const diff = goal - el.volume;
+      if (Math.abs(diff) > 0.004) {
+        el.volume = Math.max(0, Math.min(1, el.volume + diff * musicRate));
+        anyActive = true;
+      } else {
+        el.volume = goal;
+        if (goal <= 0.002 && !el.paused) el.pause();
       }
       if (goal > 0.002) anyActive = true;
     }
