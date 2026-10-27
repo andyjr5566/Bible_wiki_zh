@@ -16,7 +16,7 @@ try {
     for (const f of [0.03, 0.12, 0.22, 0.34, 0.46, 0.58, 0.7, 0.82, 0.94]) {
       await c.evaluate(`(()=>{const e=document.querySelector('section[data-beat-id="${id}"]');const r=e.getBoundingClientRect();scrollTo({top:scrollY+r.top-innerHeight*.36+${f}*r.height,behavior:'instant'})})()`);
       await sleep(1600);
-      const v = await c.evaluate(`(()=>{const o={};for(const n of ${JSON.stringify(names)}){const a=window.__auds.find(a=>a.__src.includes('/'+n+'-'));o[n]=a?(a.paused?0:+a.volume.toFixed(2)):0}return {beat:window.__josState.beat.slice(8),p:+window.__josState.beatProgress.toFixed(2),...o}})()`);
+      const v = await c.evaluate(`(()=>{const o={};for(const n of ${JSON.stringify(names)}){const a=window.__auds.find(a=>a.__src.includes('/'+n+'-'));o[n]=a?(a.paused?0:+(a.josLevel??a.volume).toFixed(2)):0}return {beat:window.__josState.beat.slice(8),p:+window.__josState.beatProgress.toFixed(2),...o}})()`);
       console.log(JSON.stringify(v));
     }
   }

@@ -14,7 +14,7 @@ try {
   const go = async (id, f, wait = 2500) => {
     await c.evaluate(`(()=>{const e=document.querySelector('section[data-beat-id="${id}"]');const r=e.getBoundingClientRect();scrollTo({top:scrollY+r.top-innerHeight*.36+${f}*r.height,behavior:'instant'})})()`);
     await sleep(wait);
-    return c.evaluate(`(()=>{const o={};for(const n of ${JSON.stringify(names)}){const a=window.__auds.find(a=>a.__src.includes('/'+n+'-'));if(a&&!a.paused&&a.volume>0.004)o[n]=+a.volume.toFixed(3)+'@'+a.currentTime.toFixed(0)+'s'}return {beat:window.__josState.beat.slice(8),p:+window.__josState.beatProgress.toFixed(3),music:o}})()`);
+    return c.evaluate(`(()=>{const o={};for(const n of ${JSON.stringify(names)}){const a=window.__auds.find(a=>a.__src.includes('/'+n+'-'));if(a&&!a.paused&&(a.josLevel??a.volume)>0.004)o[n]=+(a.josLevel??a.volume).toFixed(3)+'@'+a.currentTime.toFixed(0)+'s'}return {beat:window.__josState.beat.slice(8),p:+window.__josState.beatProgress.toFixed(3),music:o}})()`);
   };
   const plan = [
     ['beat-02-gather', [.5]],

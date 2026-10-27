@@ -463,6 +463,8 @@ CSS class 一律 `jos-` 開頭，用之前查舊站有沒有同名。
 
 各站的音量表在 `src/story/audio.ts` 的 `STATION_SOUND` 與 `redseaRoar`；`tools/check-ambience.mjs` 逐段取樣第二幕各環境音的實際音量。
 
+音量一律經 Web Audio 的音量節點（`createVoice`／`setLevel`），不可直接設或讀 `<audio>` 的 volume：iPhone Safari 的 volume 是唯讀、永遠是 1，以前在 iPhone 上每個聲音都最大聲、淡出不會結束、播過的全部疊著播（2026-10-28 使用者回報雜音很吵）。`tools/probe-audio-pileup.mjs`（IOS=1 模擬）走完全部拍，同時在播的聲音應不超過 4 個。
+
 不用的：號角（經文這裡沒有）、營火（沒有）、鑿石聲（石頭是立起來的，經文沒說有鑿）。
 
 ### 配樂（2026-10-27 使用者要求，取代原本『不用背景音樂』）
@@ -710,4 +712,4 @@ Gemini 版也注意到約瑟的骸骨跟著以色列人走過曠野，和這份�
 - **節奏基準（2026-10-27 兩次放慢）**：經文以每秒 4.7 字、每百像素 7 字計（`story-content.mjs` 的 `contentRhythm`）；一節與一句依字數分時間；地圖飛行 880 像素、自動播放 6.6 秒；
 - **每組停留與慢推（2026-10-27）**：每組三句的最後一句另加 14 字的停留（`GROUP_HOLD`）；終幕對照每組 500 像素、6.6 秒；示劍 3D 各拍有捲動帶動的鏡頭慢推（推近約 8%、橫移一點），文字停久時畫面也不停格。整理區保留 The Hope 小聲播放。
 - **載入畫面（2026-10-27）**：開啟網頁先出現站名、進度條與百分比，一塊大石頭隨進度立起；進度照字體、經文、景物圖、地形、第一格畫面的實際下載計算，最多 12 秒就進入。
-- **觸控裝置的專用捲動區（2026-10-27）**：iPhone Safari 整頁捲動時頂列與字會一起抖；觸控裝置改在 #jos-scroll 裡捲（網頁本身不捲、網址列不伸縮），桌機不變。全站捲動一律經過 `src/ui/scroller.ts`，不要直接用 window.scrollY／scrollTo。
+- **觸控裝置的專用捲動區（2026-10-27）**：iPhone Safari 整頁捲動時頂列與字會一起抖；觸控裝置改在 #jos-scroll 裡捲（網頁本身不捲、網址列不伸縮），桌機不變。全站捲動一律經過 `src/ui/scroller.ts`，不要直接用 window.scrollY／scrollTo。固定在畫面上的圖層（頂列、經文與泡泡、事奉線、教學列、小卡）一律放在捲動區外（`liftFixedLayers`，頂列在觸控模式改成 fixed）：留在捲動區裡的，iPhone 捲動時每格上下跳 2px（2026-10-28 使用者錄影；`tools/list-fixed-in-scroller.mjs` 應回報 0 個）。3D 畫布的繪製尺寸照畫布實際大小（ResizeObserver＋轉向後補量），不可只靠 resize 事件：iPhone 轉向時事件帶舊尺寸，畫布會卡在直拿尺寸被撐成橫擺，人物拉寬、出現錯開的重影（`tools/probe-canvas-size.mjs`，NO_RESIZE=1 重現）。
