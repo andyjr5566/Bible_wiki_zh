@@ -54,5 +54,6 @@ GT《舊約背景註釋》〈創十六13 給神起名〉指出這件事的獨特
 
 ## 來源依據
 
-- ccbiblestudy 註解、拾穗
+- 逐節註解（ccbiblestudy CT）: 創世記第十六章註解（<https://www.ccbiblestudy.org/Old%20Testament/01Gen/01CT16.htm>）
+- 拾穗（ccbiblestudy GT）: 創世記第十六章拾穗（<https://www.ccbiblestudy.org/Old%20Testament/01Gen/01GT16.htm>）
 - 原文資料（STEP Bible）: 創16:13 אֵל רֳאִי 及「看見」字根的逐詞資料（<https://github.com/STEPBible/STEPBible-Data>）
