@@ -126,4 +126,4 @@ herem 在出埃及記、利未記與申命記中分別落在刑律、永獻條�
 - 逐節註解（ccbiblestudy CT）: 利未記第二十七章註解（<https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT27.htm>）
 - 拾穗（ccbiblestudy GT）: 利未記第二十七章拾穗（<https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT27.htm>）
 - 研經註解（KingComments）: Leviticus 27（<https://www.kingcomments.com/en/bible-studies/Lev/27>）
-- https://github.com/STEPBible/STEPBible-Data — STEP Bible 原文資料（CC BY 4.0）利未記第27章
+- 原文資料（STEP Bible）: 利未記第27章（CC BY 4.0）（<https://github.com/STEPBible/STEPBible-Data>）
