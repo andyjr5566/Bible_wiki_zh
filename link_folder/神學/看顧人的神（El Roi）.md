@@ -55,4 +55,4 @@ GT《舊約背景註釋》〈創十六13 給神起名〉指出這件事的獨特
 ## 來源依據
 
 - ccbiblestudy 註解、拾穗
-- 原文資料（STEP Bible）：創16:13 אֵל רֳאִי 及「看見」字根的逐詞資料（https://github.com/STEPBible/STEPBible-Data）
+- 原文資料（STEP Bible）: 創16:13 אֵל רֳאִי 及「看見」字根的逐詞資料（<https://github.com/STEPBible/STEPBible-Data>）
